@@ -6,6 +6,7 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': 0,
+    'react/jsx-one-expression-per-line': 0,
     'semi': 0,
   }
 };
