@@ -1,4 +1,12 @@
 import React from 'react'
-import { View } from 'react-native'
+import { enableScreens } from 'react-native-screens'
+import { NavigationContainer } from '@react-navigation/native'
+import { Text } from 'react-native'
 
-export default () => <View />
+enableScreens()
+
+export default () => (
+  <NavigationContainer>
+    <Text>Hello</Text>
+  </NavigationContainer>
+)
