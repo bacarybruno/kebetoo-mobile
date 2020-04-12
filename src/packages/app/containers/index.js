@@ -30,7 +30,7 @@ export default () => {
   })
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <NavigationContainer />
     </SafeAreaView>
   )
