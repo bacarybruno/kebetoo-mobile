@@ -1,14 +1,15 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, memo } from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import styles, { placeholderColor } from '../styles'
 
-export default (props) => {
+const InputPassword = (props) => {
   const [value, setValue] = useState(null)
   const [secureTextEntry, setSecureTextEntry] = useState(true)
 
   const onChangeText = useCallback((text) => {
-    props.onChangeText(text)
+    const { fieldName } = props
+    props.onValueChange(text, fieldName)
     setValue(text)
   }, [setValue, props])
 
@@ -39,3 +40,5 @@ export default (props) => {
     </View>
   )
 }
+
+export default memo(InputPassword)

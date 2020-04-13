@@ -10,7 +10,7 @@ export default StyleSheet.create({
     paddingVertical: Metrics.marginVertical,
   },
   normalSignUp: {
-    flex: 4,
+    flex: 5,
     justifyContent: 'space-between',
   },
   socialSignUp: {
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     height: '100%',
   },
   socialSignUpContent: {
-    flex: 3,
+    flex: 1.4,
     justifyContent: 'space-evenly',
   },
   footerText: {
@@ -48,5 +48,10 @@ export default StyleSheet.create({
   },
   socialLoginButton: {
     marginHorizontal: Metrics.marginHorizontal / 2,
+  },
+  forgotPassword: {
+    textAlign: 'right',
+    fontSize: 16,
+    marginTop: 10,
   },
 })

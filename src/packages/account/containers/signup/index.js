@@ -11,6 +11,7 @@ import PasswordInput from '../../../shared/components/inputs/password'
 import FullButton from '../../../shared/components/buttons/full'
 import HrLine from '../../components/hr-line'
 import styles from './styles'
+import { useKeyboard } from '../../../shared/hooks'
 
 import { routeName as signUpRouteName } from '../signin'
 
@@ -30,12 +31,9 @@ export default ({ navigation }) => {
     password: '',
   })
 
-  const onChangeText = useCallback((field) => (value) => {
-    setInfos({
-      ...infos,
-      [field]: value,
-    })
-  }, [infos, setInfos])
+  const onChangeText = useCallback((value, field) => {
+    setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
+  }, [setInfos])
 
   const navigateToSignIn = useCallback(() => {
     navigation.navigate(signUpRouteName)
@@ -43,11 +41,14 @@ export default ({ navigation }) => {
 
   const onSubmit = useCallback(async () => {
     try {
+      console.log(infos)
       const validation = await schema.validate(infos)
     } catch (e) {
       console.log(e.errors)
     }
   }, [schema, infos])
+
+  const keyboardShown = useKeyboard()
 
   return (
     <View style={styles.wrapper}>
@@ -55,51 +56,54 @@ export default ({ navigation }) => {
         <View style={styles.logo} />
         <TextInput
           placeholder="Full Name"
-          onChangeText={onChangeText('fullName')}
+          fieldName="fullName"
+          onValueChange={onChangeText}
           returnKeyType="next"
         />
         <TextInput
           placeholder="Email"
-          onChangeText={onChangeText('email')}
+          fieldName="email"
+          onValueChange={onChangeText}
+          keyboardType="email-address"
           returnKeyType="next"
         />
         <PasswordInput
           placeholder="Password"
-          onChangeText={onChangeText('password')}
+          fieldName="password"
+          onValueChange={onChangeText}
           returnKeyType="done"
         />
-        <FullButton
-          text="SIGN UP"
-          onPress={onSubmit}
-        />
+        <FullButton text="SIGN UP" onPress={onSubmit} />
       </View>
-      <View style={styles.socialSignUp}>
-        <View style={styles.socialSignUpContainer}>
-          <View style={styles.socialSignUpContent}>
-            <HrLine
-              textStyle={styles.hrLineText}
-              text="Or sign up with"
-            />
-            <View style={styles.socialSignUpButtons}>
-              <TouchableOpacity onPress={() => { }}>
-                <Image
-                  style={styles.socialLoginButton}
-                  source={require('../../../../../assets/images/facebook.png')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Image
-                  style={styles.socialLoginButton}
-                  source={require('../../../../../assets/images/google.png')}
-                />
-              </TouchableOpacity>
+      {!keyboardShown && (
+        <View style={styles.socialSignUp}>
+          <View style={styles.socialSignUpContainer}>
+            <View style={styles.socialSignUpContent}>
+              <HrLine
+                textStyle={styles.hrLineText}
+                text="Or sign up with"
+              />
+              <View style={styles.socialSignUpButtons}>
+                <TouchableOpacity onPress={() => { }}>
+                  <Image
+                    style={styles.socialLoginButton}
+                    source={require('../../../../../assets/images/facebook.png')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Image
+                    style={styles.socialLoginButton}
+                    source={require('../../../../../assets/images/google.png')}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
+            <Text style={styles.footerText} onPress={navigateToSignIn}>
+              Have an account ? <Text style={styles.linkButton}>Sign in</Text>
+            </Text>
           </View>
-          <Text style={styles.footerText} onPress={navigateToSignIn}>
-            Have an account ? <Text style={styles.linkButton}>Sign in</Text>
-          </Text>
         </View>
-      </View>
+      )}
     </View>
   )
 }
