@@ -7,16 +7,19 @@ export default StyleSheet.create({
     marginHorizontal: Metrics.marginHorizontal,
   },
   image: {
+    height: Metrics.screenHeight * 0.45,
+    resizeMode: 'contain',
     alignSelf: 'center',
   },
   title: {
-    marginTop: 70,
+    marginTop: Metrics.screenHeight * 0.07,
+    maxHeight: Metrics.screenHeight * 0.1,
     fontSize: 27,
     fontWeight: 'bold',
     color: Colors.black,
   },
   description: {
-    marginTop: 25,
+    marginTop: Metrics.screenHeight * 0.035,
     fontSize: 16,
     color: Colors.black,
   },

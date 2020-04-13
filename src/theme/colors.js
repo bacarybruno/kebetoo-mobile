@@ -5,4 +5,5 @@ export default {
   inactive: '#CECECE',
   white: '#FFFFFF',
   grey: '#707070',
+  background: '#FAFAFA',
 }
