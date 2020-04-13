@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useRef } from 'react'
 import {
   View,
   Text,
@@ -6,17 +6,18 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import * as yup from 'yup'
-import TextInput from '../../../shared/components/inputs/text'
-import PasswordInput from '../../../shared/components/inputs/password'
-import FullButton from '../../../shared/components/buttons/full'
-import HrLine from '../../components/hr-line'
+
+import TextInput from 'Kebetoo/src/shared/components/inputs/text'
+import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
+import FullButton from 'Kebetoo/src/shared/components/buttons/full'
+import HrLine from 'Kebetoo/src/packages/account/components/hr-line'
+import Metrics from 'Kebetoo/src/theme/metrics'
+import routes from 'Kebetoo/src/navigation/routes'
+import { useKeyboard } from 'Kebetoo/src/shared/hooks'
+
 import styles from './styles'
-import { useKeyboard } from '../../../shared/hooks'
 
-import { routeName as signUpRouteName } from '../signup'
-
-export const routeName = 'Sign in'
-export const routeOptions = {}
+export const routeOptions = { title: 'Sign in' }
 
 export default ({ navigation }) => {
   const schema = yup.object().shape({
@@ -28,6 +29,9 @@ export default ({ navigation }) => {
     email: '',
     password: '',
   })
+
+  const emailRef = useRef()
+  const passwordRef = useRef()
 
   const onChangeText = useCallback((value, field) => {
     setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
@@ -42,26 +46,34 @@ export default ({ navigation }) => {
   }, [schema, infos])
 
   const navigateToSignUp = useCallback(() => {
-    navigation.navigate(signUpRouteName)
+    navigation.navigate(routes.SIGNUP)
   }, [navigation])
 
-  const keyboardShown = useKeyboard()
+  const focusInput = useCallback((ref) => () => {
+    ref.current.focus()
+  }, [])
+
+  const { keyboardShown, keyboardHeight } = useKeyboard()
+  const availableHeight = Metrics.screenHeight - keyboardHeight
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.normalSignUp}>
-        <View style={styles.logo} />
+        {availableHeight > 480 && <View style={styles.logo} />}
         <TextInput
           placeholder="Email"
           fieldName="email"
           onValueChange={onChangeText}
           keyboardType="email-address"
+          ref={emailRef}
+          onSubmitEditing={focusInput(passwordRef)}
           returnKeyType="next"
         />
         <PasswordInput
           placeholder="Password"
           fieldName="password"
           onValueChange={onChangeText}
+          ref={passwordRef}
           returnKeyType="done"
         />
         <View>
@@ -81,13 +93,13 @@ export default ({ navigation }) => {
                 <TouchableOpacity onPress={() => { }}>
                   <Image
                     style={styles.socialLoginButton}
-                    source={require('../../../../../assets/images/facebook.png')}
+                    source={require('Kebetoo/assets/images/facebook.png')}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity>
                   <Image
                     style={styles.socialLoginButton}
-                    source={require('../../../../../assets/images/google.png')}
+                    source={require('Kebetoo/assets/images/google.png')}
                   />
                 </TouchableOpacity>
               </View>

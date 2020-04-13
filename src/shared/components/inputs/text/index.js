@@ -1,8 +1,14 @@
-import React, { useState, useCallback, memo } from 'react'
+import React, {
+  useState,
+  useCallback,
+  memo,
+  forwardRef,
+} from 'react'
 import { View, TextInput } from 'react-native'
+
 import styles, { placeholderColor } from '../styles'
 
-const InputText = (props) => {
+const InputText = forwardRef((props, ref) => {
   const [value, setValue] = useState(null)
 
   const onChangeText = useCallback((text) => {
@@ -18,10 +24,11 @@ const InputText = (props) => {
         value={value}
         placeholderTextColor={placeholderColor}
         onChangeText={onChangeText}
+        ref={ref}
         {...props}
       />
     </View>
   )
-}
+})
 
 export default memo(InputText)

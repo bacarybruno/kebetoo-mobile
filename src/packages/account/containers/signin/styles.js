@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
-import Colors from '../../../../theme/colors'
-import Metrics from '../../../../theme/metrics'
+import Colors from 'Kebetoo/src/theme/colors'
+import Metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   wrapper: {
@@ -10,11 +10,12 @@ export default StyleSheet.create({
     paddingVertical: Metrics.marginVertical,
   },
   normalSignUp: {
-    flex: 5,
+    flex: 3,
+    maxHeight: 360,
     justifyContent: 'space-between',
   },
   socialSignUp: {
-    flex: 3,
+    flex: 1,
   },
   socialSignUpContainer: {
     justifyContent: 'space-between',

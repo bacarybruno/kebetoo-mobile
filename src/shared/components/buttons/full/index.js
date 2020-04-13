@@ -1,13 +1,12 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { TouchableOpacity, Text } from 'react-native'
+
 import styles from './styles'
 
 export default ({
   onPress,
   text,
   style,
-  iconName,
   ...rest
 }) => (
   <TouchableOpacity
@@ -15,10 +14,6 @@ export default ({
     onPress={onPress}
     {...rest}
   >
-    <Ionicon
-      style={styles.icon}
-      name={iconName}
-      size={30}
-    />
+    <Text style={styles.text}>{text}</Text>
   </TouchableOpacity>
 )

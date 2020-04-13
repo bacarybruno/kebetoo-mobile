@@ -1,25 +1,26 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
-import styles from './styles'
-import OnbordingSlide from '../components'
-import IconButton from '../../shared/components/buttons/icon'
-import FullButton from '../../shared/components/buttons/full'
-import { routeName as signUpRouteName } from '../../account/containers/signup'
 
-export const routeName = 'Onboarding'
+import IconButton from 'Kebetoo/src/shared/components/buttons/icon'
+import FullButton from 'Kebetoo/src/shared/components/buttons/full'
+import OnbordingSlide from 'Kebetoo/src/packages/onboarding/components'
+import routes from 'Kebetoo/src/navigation/routes'
+
+import styles from './styles'
+
 export const routeOptions = { headerShown: false }
 
 export const slideItems = [{
-  imageSrc: require('../../../../assets/images/onboarding1.png'),
+  imageSrc: require('Kebetoo/assets/images/onboarding1.png'),
   title: 'Join Our Social Media',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }, {
-  imageSrc: require('../../../../assets/images/onboarding2.png'),
+  imageSrc: require('Kebetoo/assets/images/onboarding2.png'),
   title: 'Create Your Account',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }, {
-  imageSrc: require('../../../../assets/images/onboarding3.png'),
+  imageSrc: require('Kebetoo/assets/images/onboarding3.png'),
   title: 'Have a Fun With Your Friends',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }]
@@ -47,7 +48,7 @@ export default ({ navigation }) => {
   }, [swiperRef])
 
   const onGetStarted = useCallback(() => {
-    navigation.navigate(signUpRouteName)
+    navigation.navigate(routes.SIGNUP)
   }, [navigation])
 
   return (

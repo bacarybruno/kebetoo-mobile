@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native'
+
+import Colors from 'Kebetoo/src/theme/colors'
 import defaultStyles from '../styles'
-import Colors from '../../../../../theme/colors'
+
 
 export default StyleSheet.create({
   button: {

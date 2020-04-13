@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
-import Metrics from '../../../../theme/metrics'
+
+import Metrics from 'Kebetoo/src/theme/metrics'
 
 export const placeholderColor = '#ACACAC'
 
