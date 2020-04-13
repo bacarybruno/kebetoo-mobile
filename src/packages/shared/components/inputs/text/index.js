@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, memo } from 'react'
 import { View, TextInput } from 'react-native'
 import styles, { placeholderColor } from '../styles'
 
-export default (props) => {
+const InputText = (props) => {
   const [value, setValue] = useState(null)
 
   const onChangeText = useCallback((text) => {
-    props.onChangeText(text)
+    const { fieldName } = props
+    props.onValueChange(text, fieldName)
     setValue(text)
   }, [setValue, props])
 
@@ -22,3 +23,5 @@ export default (props) => {
     </View>
   )
 }
+
+export default memo(InputText)
