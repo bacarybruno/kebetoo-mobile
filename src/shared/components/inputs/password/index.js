@@ -1,9 +1,15 @@
-import React, { useState, useCallback, memo } from 'react'
+import React, {
+  useState,
+  useCallback,
+  memo,
+  forwardRef,
+} from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+
 import styles, { placeholderColor } from '../styles'
 
-const InputPassword = (props) => {
+const InputPassword = forwardRef((props, ref) => {
   const [value, setValue] = useState(null)
   const [secureTextEntry, setSecureTextEntry] = useState(true)
 
@@ -25,6 +31,7 @@ const InputPassword = (props) => {
         value={value}
         placeholderTextColor={placeholderColor}
         onChangeText={onChangeText}
+        ref={ref}
         {...props}
       />
       <TouchableOpacity
@@ -39,6 +46,6 @@ const InputPassword = (props) => {
       </TouchableOpacity>
     </View>
   )
-}
+})
 
 export default memo(InputPassword)

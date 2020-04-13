@@ -2,22 +2,20 @@ import React from 'react'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import NavBackButton from '../packages/shared/components/buttons/nav-back'
 
+import NavBackButton from 'Kebetoo/src/shared/components/buttons/nav-back'
 import OnboardingComponent, {
-  routeName as onboardingRouteName,
   routeOptions as onboardingRouteOptions,
-} from '../packages/onboarding/containers'
+} from 'Kebetoo/src/packages/onboarding/containers'
 import SignUpComponent, {
-  routeName as signUpRouteName,
   routeOptions as signUpRouteOptions,
-} from '../packages/account/containers/signup'
+} from 'Kebetoo/src/packages/account/containers/signup'
 import SignInComponent, {
-  routeName as signInRouteName,
   routeOptions as signInRouteOptions,
-} from '../packages/account/containers/signin'
+} from 'Kebetoo/src/packages/account/containers/signin'
 
 import styles from './styles'
+import routes from './routes'
 
 enableScreens()
 const Stack = createStackNavigator()
@@ -32,17 +30,17 @@ export default () => (
       }}
     >
       <Stack.Screen
-        name={onboardingRouteName}
+        name={routes.ONBOARDING}
         component={OnboardingComponent}
         options={onboardingRouteOptions}
       />
       <Stack.Screen
-        name={signUpRouteName}
+        name={routes.SIGNUP}
         component={SignUpComponent}
         options={signUpRouteOptions}
       />
       <Stack.Screen
-        name={signInRouteName}
+        name={routes.SIGNIN}
         component={SignInComponent}
         options={signInRouteOptions}
       />

@@ -1,5 +1,6 @@
 import LocalizedStrings from 'react-native-localization'
-import frStrings from '../../assets/locales/fr'
+
+import frStrings from 'Kebetoo/assets/locales/fr'
 
 const strings = new LocalizedStrings({
   fr: frStrings,

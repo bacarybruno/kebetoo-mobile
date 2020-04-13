@@ -3,13 +3,16 @@ import { Keyboard } from 'react-native'
 
 export default () => {
   const [keyboardShown, setKeyboardShown] = useState(false)
+  const [keyboardHeight, setKeyboardHeight] = useState(0)
 
-  const keyboardDidShow = () => {
+  const keyboardDidShow = (e) => {
     setKeyboardShown(true)
+    setKeyboardHeight(e.endCoordinates.height)
   }
 
   const keyboardDidHide = () => {
     setKeyboardShown(false)
+    setKeyboardHeight(0)
   }
 
   useEffect(() => {
@@ -21,5 +24,5 @@ export default () => {
     }
   }, [])
 
-  return keyboardShown
+  return { keyboardShown, keyboardHeight }
 }

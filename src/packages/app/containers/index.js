@@ -3,10 +3,12 @@ import { useColorScheme } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
-import NavigationContainer from '../../../navigation'
-import { SET_THEME, SET_LOCALE } from '../../../redux/types'
+
+import NavigationContainer from 'Kebetoo/src/navigation'
+import strings from 'Kebetoo/src/config/strings'
+import { SET_THEME, SET_LOCALE } from 'Kebetoo/src/redux/types'
+
 import styles from './styles'
-import strings from '../../../config/strings'
 
 enableScreens()
 

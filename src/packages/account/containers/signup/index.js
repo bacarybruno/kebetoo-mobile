@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useRef } from 'react'
 import {
   View,
   Text,
@@ -6,17 +6,18 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import * as yup from 'yup'
-import TextInput from '../../../shared/components/inputs/text'
-import PasswordInput from '../../../shared/components/inputs/password'
-import FullButton from '../../../shared/components/buttons/full'
-import HrLine from '../../components/hr-line'
+
+import TextInput from 'Kebetoo/src/shared/components/inputs/text'
+import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
+import FullButton from 'Kebetoo/src/shared/components/buttons/full'
+import HrLine from 'Kebetoo/src/packages/account/components/hr-line'
+import Metrics from 'Kebetoo/src/theme/metrics'
+import routes from 'Kebetoo/src/navigation/routes'
+import { useKeyboard } from 'Kebetoo/src/shared/hooks'
+
 import styles from './styles'
-import { useKeyboard } from '../../../shared/hooks'
 
-import { routeName as signUpRouteName } from '../signin'
-
-export const routeName = 'Sign up'
-export const routeOptions = {}
+export const routeOptions = { title: 'Sign up' }
 
 export default ({ navigation }) => {
   const schema = yup.object().shape({
@@ -31,33 +32,43 @@ export default ({ navigation }) => {
     password: '',
   })
 
+  const fullNameRef = useRef()
+  const emailRef = useRef()
+  const passwordRef = useRef()
+
   const onChangeText = useCallback((value, field) => {
     setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
   }, [setInfos])
 
   const navigateToSignIn = useCallback(() => {
-    navigation.navigate(signUpRouteName)
+    navigation.navigate(routes.SIGNIN)
   }, [navigation])
+
+  const focusInput = useCallback((ref) => () => {
+    ref.current.focus()
+  }, [])
 
   const onSubmit = useCallback(async () => {
     try {
-      console.log(infos)
       const validation = await schema.validate(infos)
     } catch (e) {
       console.log(e.errors)
     }
   }, [schema, infos])
 
-  const keyboardShown = useKeyboard()
+  const { keyboardShown, keyboardHeight } = useKeyboard()
+  const availableHeight = Metrics.screenHeight - keyboardHeight
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.normalSignUp}>
-        <View style={styles.logo} />
+        {availableHeight > 480 && <View style={styles.logo} />}
         <TextInput
           placeholder="Full Name"
           fieldName="fullName"
           onValueChange={onChangeText}
+          ref={fullNameRef}
+          onSubmitEditing={focusInput(emailRef)}
           returnKeyType="next"
         />
         <TextInput
@@ -65,12 +76,15 @@ export default ({ navigation }) => {
           fieldName="email"
           onValueChange={onChangeText}
           keyboardType="email-address"
+          ref={emailRef}
+          onSubmitEditing={focusInput(passwordRef)}
           returnKeyType="next"
         />
         <PasswordInput
           placeholder="Password"
           fieldName="password"
           onValueChange={onChangeText}
+          ref={passwordRef}
           returnKeyType="done"
         />
         <FullButton text="SIGN UP" onPress={onSubmit} />
@@ -87,13 +101,13 @@ export default ({ navigation }) => {
                 <TouchableOpacity onPress={() => { }}>
                   <Image
                     style={styles.socialLoginButton}
-                    source={require('../../../../../assets/images/facebook.png')}
+                    source={require('Kebetoo/assets/images/facebook.png')}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity>
                   <Image
                     style={styles.socialLoginButton}
-                    source={require('../../../../../assets/images/google.png')}
+                    source={require('Kebetoo/assets/images/google.png')}
                   />
                 </TouchableOpacity>
               </View>

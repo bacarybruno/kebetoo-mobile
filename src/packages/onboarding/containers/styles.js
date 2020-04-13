@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
-import Colors from '../../../theme/colors'
-import Metrics from '../../../theme/metrics'
+
+import Colors from 'Kebetoo/src/theme/colors'
+import Metrics from 'Kebetoo/src/theme/metrics'
 
 export const paginationBottom = Metrics.marginVertical
 export const dotHeight = 8

@@ -5,8 +5,9 @@ import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
-import { store, persistor } from './redux/store'
+
 import RootContainer from './packages/app/containers'
+import { store, persistor } from './redux/store'
 
 export default () => (
   <Provider store={store}>
