@@ -1,9 +1,10 @@
 import { Dimensions } from 'react-native'
 
-const { width, height } = Dimensions.get('screen')
+const { width, height } = Dimensions.get('window')
 
 export default {
-  marginHorizontal: 25,
+  marginHorizontal: 16,
+  marginVertical: 24,
   screenWidth: width,
   screenHeight: height,
 }
