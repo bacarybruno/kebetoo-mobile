@@ -1,16 +1,11 @@
 import React, { useCallback, useState, useRef } from 'react'
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-} from 'react-native'
+import { View, Text } from 'react-native'
 import * as yup from 'yup'
 
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
-import HrLine from 'Kebetoo/src/packages/account/components/hr-line'
+import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
 import Metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
@@ -82,33 +77,14 @@ export default ({ navigation }) => {
         </View>
       </View>
       {!keyboardShown && (
-        <View style={styles.socialSignUp}>
-          <View style={styles.socialSignUpContainer}>
-            <View style={styles.socialSignUpContent}>
-              <HrLine
-                textStyle={styles.hrLineText}
-                text="Or sign in with"
-              />
-              <View style={styles.socialSignUpButtons}>
-                <TouchableOpacity onPress={() => { }}>
-                  <Image
-                    style={styles.socialLoginButton}
-                    source={require('Kebetoo/assets/images/facebook.png')}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Image
-                    style={styles.socialLoginButton}
-                    source={require('Kebetoo/assets/images/google.png')}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
-            <Text style={styles.footerText} onPress={navigateToSignUp}>
-              Don't have an account ? <Text style={styles.linkButton}>Sign up</Text>
-            </Text>
-          </View>
-        </View>
+        <SocialSignIn
+          onSignIn={(infos) => console.log(infos)}
+          sectionText="Or sign in with"
+        >
+          <Text style={styles.footerText} onPress={navigateToSignUp}>
+            Don't have an account ? <Text style={styles.linkButton}>Sign up</Text>
+          </Text>
+        </SocialSignIn>
       )}
     </View>
   )
