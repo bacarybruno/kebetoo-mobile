@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 import './config/strings'
+import './config/init'
 
 import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'

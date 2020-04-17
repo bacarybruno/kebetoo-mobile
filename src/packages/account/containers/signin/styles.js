@@ -14,17 +14,6 @@ export default StyleSheet.create({
     maxHeight: 360,
     justifyContent: 'space-between',
   },
-  socialSignUp: {
-    flex: 1,
-  },
-  socialSignUpContainer: {
-    justifyContent: 'space-between',
-    height: '100%',
-  },
-  socialSignUpContent: {
-    flex: 1.4,
-    justifyContent: 'space-evenly',
-  },
   footerText: {
     flex: 1,
     textAlign: 'center',
@@ -39,16 +28,6 @@ export default StyleSheet.create({
     width: 115,
     alignSelf: 'center',
     backgroundColor: 'grey',
-  },
-  hrLineText: {
-    fontSize: 14,
-  },
-  socialSignUpButtons: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  socialLoginButton: {
-    marginHorizontal: Metrics.marginHorizontal / 2,
   },
   forgotPassword: {
     textAlign: 'right',
