@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { View, Text } from 'react-native'
 import * as yup from 'yup'
+import auth from '@react-native-firebase/auth'
 
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
@@ -34,9 +35,10 @@ export default ({ navigation }) => {
 
   const onSubmit = useCallback(async () => {
     try {
-      const validation = await schema.validate(infos)
+      await schema.validate(infos)
+      await auth().signInWithEmailAndPassword(infos.email, infos.password)
     } catch (e) {
-      console.log(e.errors)
+      console.log(e)
     }
   }, [schema, infos])
 
