@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
+import colors from 'Kebetoo/src/theme/colors'
 import defaultStyles from '../styles'
 
 
@@ -11,6 +11,6 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: Colors.white,
+    color: colors.white,
   },
 })

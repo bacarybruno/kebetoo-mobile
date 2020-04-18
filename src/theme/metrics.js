@@ -7,4 +7,5 @@ export default {
   marginVertical: 24,
   screenWidth: width,
   screenHeight: height,
+  tabBarHeight: 50,
 }

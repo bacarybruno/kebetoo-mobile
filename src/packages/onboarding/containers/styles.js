@@ -1,19 +1,19 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
-import Metrics from 'Kebetoo/src/theme/metrics'
+import colors from 'Kebetoo/src/theme/colors'
+import metrics from 'Kebetoo/src/theme/metrics'
 
-export const paginationBottom = Metrics.marginVertical
+export const paginationBottom = metrics.marginVertical
 export const dotHeight = 8
 
 export default StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: colors.background,
   },
   container: {
     flex: 1,
-    marginVertical: Metrics.marginVertical,
+    marginVertical: metrics.marginVertical,
   },
   swiper: {
     marginTop: 11,
@@ -21,21 +21,21 @@ export default StyleSheet.create({
   dotStyle: {
     width: 8,
     height: dotHeight,
-    backgroundColor: Colors.inactive,
+    backgroundColor: colors.inactive,
   },
   activeDotStyle: {
     width: 15,
     height: dotHeight,
-    backgroundColor: Colors.black,
+    backgroundColor: colors.black,
   },
   paginationStyle: {
-    marginHorizontal: Metrics.marginHorizontal,
+    marginHorizontal: metrics.marginHorizontal,
     justifyContent: 'flex-start',
   },
   buttonWrapper: {
     position: 'absolute',
-    width: Metrics.screenWidth - (Metrics.marginHorizontal * 2),
-    right: Metrics.marginHorizontal,
+    width: metrics.screenWidth - (metrics.marginHorizontal * 2),
+    right: metrics.marginHorizontal,
     bottom: dotHeight,
   },
   nextButton: {
@@ -44,14 +44,14 @@ export default StyleSheet.create({
     bottom: 0,
   },
   skipButtonWrapper: {
-    // marginTop: Metrics.mar,
+    // marginTop: metrics.mar,
   },
   skipButton: {
-    marginHorizontal: Metrics.marginHorizontal,
+    marginHorizontal: metrics.marginHorizontal,
     alignSelf: 'flex-end',
   },
   skipText: {
     fontSize: 16,
-    color: Colors.grey,
+    color: colors.grey,
   },
 })

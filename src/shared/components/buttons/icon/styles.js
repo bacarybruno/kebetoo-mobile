@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
+import colors from 'Kebetoo/src/theme/colors'
 import defaultStyles from '../styles'
 
 export default StyleSheet.create({
   button: {
     ...defaultStyles.button,
     width: 57,
-    backgroundColor: Colors.primary,
+    backgroundColor: colors.primary,
   },
   icon: {
-    color: Colors.white,
+    color: colors.white,
   },
 })
