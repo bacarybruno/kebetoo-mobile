@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
-import Metrics from 'Kebetoo/src/theme/metrics'
+import colors from 'Kebetoo/src/theme/colors'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: Colors.background,
-    paddingHorizontal: Metrics.marginHorizontal,
-    paddingVertical: Metrics.marginVertical,
+    backgroundColor: colors.background,
+    paddingHorizontal: metrics.marginHorizontal,
+    paddingVertical: metrics.marginVertical,
   },
   normalSignUp: {
     flex: 3,
@@ -19,10 +19,6 @@ export default StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     textAlignVertical: 'bottom',
-    fontSize: 16,
-  },
-  linkButton: {
-    color: Colors.secondary,
   },
   logo: {
     height: 115,

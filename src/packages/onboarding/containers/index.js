@@ -1,36 +1,35 @@
 import React, { useCallback, useState, useRef } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
 
+import Text from 'Kebetoo/src/shared/components/text'
 import IconButton from 'Kebetoo/src/shared/components/buttons/icon'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
 import OnbordingSlide from 'Kebetoo/src/packages/onboarding/components'
 import routes from 'Kebetoo/src/navigation/routes'
+import images from 'Kebetoo/src/theme/images'
 
 import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
 export const slideItems = [{
-  imageSrc: require('Kebetoo/assets/images/onboarding1.png'),
+  imageSrc: images.onboarding1,
   title: 'Join Our Social Media',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }, {
-  imageSrc: require('Kebetoo/assets/images/onboarding2.png'),
+  imageSrc: images.onboarding2,
   title: 'Create Your Account',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }, {
-  imageSrc: require('Kebetoo/assets/images/onboarding3.png'),
+  imageSrc: images.onboarding3,
   title: 'Have a Fun With Your Friends',
   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
 }]
 
 export const SkipButton = ({ onPress }) => (
-  <TouchableOpacity
-    style={styles.skipButton}
-    onPress={onPress}
-  >
-    <Text style={styles.skipText}>Skip</Text>
+  <TouchableOpacity style={styles.skipButton} onPress={onPress}>
+    <Text color="grey" text="Skip" />
   </TouchableOpacity>
 )
 

@@ -1,12 +1,20 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image } from 'react-native'
+
+import Text from 'Kebetoo/src/shared/components/text'
 
 import styles from './styles'
 
 export default ({ imageSrc, slideTitle, slideDescription }) => (
   <View style={styles.wrapper}>
     <Image style={styles.image} source={imageSrc} />
-    <Text adjustsFontSizeToFit style={styles.title}>{slideTitle}</Text>
-    <Text style={styles.description}>{slideDescription}</Text>
+    <Text
+      bold
+      adjustsFontSizeToFit
+      size="xl"
+      style={styles.title}
+      text={slideTitle}
+    />
+    <Text style={styles.description} text={slideDescription} />
   </View>
 )

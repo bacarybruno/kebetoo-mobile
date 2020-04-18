@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import Metrics from 'Kebetoo/src/theme/metrics'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   socialSignUp: {
@@ -19,9 +19,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   socialLoginButton: {
-    marginHorizontal: Metrics.marginHorizontal / 2,
-  },
-  hrLineText: {
-    fontSize: 14,
+    marginHorizontal: metrics.marginHorizontal / 2,
   },
 })

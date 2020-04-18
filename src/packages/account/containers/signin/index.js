@@ -1,13 +1,14 @@
 import React, { useCallback, useState, useRef } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import * as yup from 'yup'
 import auth from '@react-native-firebase/auth'
 
+import Text from 'Kebetoo/src/shared/components/text'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
 import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
-import Metrics from 'Kebetoo/src/theme/metrics'
+import metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
 
@@ -51,7 +52,7 @@ export default ({ navigation }) => {
   }, [])
 
   const { keyboardShown, keyboardHeight } = useKeyboard()
-  const availableHeight = Metrics.screenHeight - keyboardHeight
+  const availableHeight = metrics.screenHeight - keyboardHeight
 
   return (
     <View style={styles.wrapper}>
@@ -75,7 +76,11 @@ export default ({ navigation }) => {
         />
         <View>
           <FullButton text="SIGN IN" onPress={onSubmit} />
-          <Text style={[styles.linkButton, styles.forgotPassword]}>Forgot your password ?</Text>
+          <Text
+            style={styles.forgotPassword}
+            text="Forgot your password ?"
+            color="secondary"
+          />
         </View>
       </View>
       {!keyboardShown && (
@@ -84,7 +89,7 @@ export default ({ navigation }) => {
           sectionText="Or sign in with"
         >
           <Text style={styles.footerText} onPress={navigateToSignUp}>
-            Don't have an account ? <Text style={styles.linkButton}>Sign up</Text>
+            Don't have an account ? <Text color="secondary" text="Sign up" />
           </Text>
         </SocialSignIn>
       )}

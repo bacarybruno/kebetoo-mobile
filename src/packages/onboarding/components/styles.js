@@ -1,27 +1,22 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
-import Metrics from 'Kebetoo/src/theme/metrics'
+import colors from 'Kebetoo/src/theme/colors'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   wrapper: {
-    marginHorizontal: Metrics.marginHorizontal,
+    marginHorizontal: metrics.marginHorizontal,
   },
   image: {
-    height: Metrics.screenHeight * 0.45,
+    height: metrics.screenHeight * 0.45,
     resizeMode: 'contain',
     alignSelf: 'center',
   },
   title: {
-    marginTop: Metrics.screenHeight * 0.07,
-    maxHeight: Metrics.screenHeight * 0.1,
-    fontSize: 27,
-    fontWeight: 'bold',
-    color: Colors.black,
+    marginTop: metrics.screenHeight * 0.07,
+    maxHeight: metrics.screenHeight * 0.1,
   },
   description: {
-    marginTop: Metrics.screenHeight * 0.035,
-    fontSize: 16,
-    color: Colors.black,
+    marginTop: metrics.screenHeight * 0.035,
   },
 })

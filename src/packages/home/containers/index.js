@@ -6,7 +6,7 @@ import Header from '../components/header'
 
 import styles from './styles'
 
-export const routeOptions = { headerShown: false }
+export const routeOptions = { title: 'Home' }
 
 export default () => {
   const user = auth().currentUser

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import Metrics from 'Kebetoo/src/theme/metrics'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export const placeholderColor = '#ACACAC'
 
@@ -11,7 +11,7 @@ export default StyleSheet.create({
     borderColor: '#E8E8E8',
     borderRadius: 15,
     borderWidth: 1,
-    paddingLeft: Metrics.marginHorizontal,
+    paddingLeft: metrics.marginHorizontal,
   },
   textInput: {
     fontSize: 16,

@@ -21,10 +21,7 @@ export default ({ sectionText, onSignIn, children }) => {
     <View style={styles.socialSignUp}>
       <View style={styles.socialSignUpContainer}>
         <View style={styles.socialSignUpContent}>
-          <HrLine
-            textStyle={styles.hrLineText}
-            text={sectionText}
-          />
+          <HrLine text={sectionText} />
           <View style={styles.socialSignUpButtons}>
             <TouchableOpacity onPress={signInWithFacebook}>
               <Image

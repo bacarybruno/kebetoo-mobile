@@ -1,17 +1,17 @@
 import { StyleSheet } from 'react-native'
 
-import Colors from 'Kebetoo/src/theme/colors'
+import colors from 'Kebetoo/src/theme/colors'
 
 export default StyleSheet.create({
   button: {
     width: '100%',
     height: 48,
-    backgroundColor: Colors.primary,
-    color: Colors.white,
+    backgroundColor: colors.primary,
+    color: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 15,
-    shadowColor: Colors.black,
+    shadowColor: colors.black,
     shadowOffset: {
       width: 0,
       height: 1,
