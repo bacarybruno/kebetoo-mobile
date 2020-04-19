@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { View } from 'react-native'
 import * as yup from 'yup'
+import { useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import Text from 'Kebetoo/src/shared/components/text'
@@ -10,6 +11,7 @@ import FullButton from 'Kebetoo/src/shared/components/buttons/full'
 import metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
+import { SET_DISPLAY_NAME } from 'Kebetoo/src/redux/types'
 
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
 
@@ -34,6 +36,8 @@ export default ({ navigation }) => {
   const emailRef = useRef()
   const passwordRef = useRef()
 
+  const dispatch = useDispatch()
+
   const onChangeText = useCallback((value, field) => {
     setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
   }, [setInfos])
@@ -50,12 +54,14 @@ export default ({ navigation }) => {
     try {
       await schema.validate(infos)
       const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
-      await user.updateProfile({ displayName: infos.fullName, photoURL: null })
+      const displayName = infos.fullName
+      dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
+      await user.updateProfile({ displayName, photoURL: null })
       await auth().signInWithEmailAndPassword(infos.email, infos.password)
     } catch (e) {
       console.log(e)
     }
-  }, [schema, infos])
+  }, [schema, infos, dispatch])
 
   const { keyboardShown, keyboardHeight } = useKeyboard()
   const availableHeight = metrics.screenHeight - keyboardHeight
@@ -91,10 +97,7 @@ export default ({ navigation }) => {
         <FullButton text="SIGN UP" onPress={onSubmit} />
       </View>
       {!keyboardShown && (
-        <SocialSignIn
-          onSignIn={(infos) => console.log(infos.data.user)}
-          sectionText="Or sign up with"
-        >
+        <SocialSignIn sectionText="Or sign up with">
           <Text style={styles.footerText} onPress={navigateToSignIn}>
             Have an account ? <Text color="secondary" text="Sign in" />
           </Text>

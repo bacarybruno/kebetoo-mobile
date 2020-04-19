@@ -162,7 +162,7 @@ export default () => {
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
 
   useEffect(() => {
-    const onAuthStateChanged = (user) => {
+    const onAuthStateChanged = async (user) => {
       setIsLoggedIn(!!user)
     }
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
@@ -171,7 +171,14 @@ export default () => {
 
   return (
     <NavigationContainer>
-      {isLoggedIn ? <HomeStack /> : <OnboardingStack />}
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {isLoggedIn ? (
+          <Stack.Screen component={HomeStack} name={routes.HOME_NAV} />
+        ) : (
+          <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />
+        )}
+      </Stack.Navigator>
+      {/* {isLoggedIn ? <HomeStack /> : <OnboardingStack />} */}
     </NavigationContainer>
   )
 }

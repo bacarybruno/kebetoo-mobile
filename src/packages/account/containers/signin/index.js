@@ -84,10 +84,7 @@ export default ({ navigation }) => {
         </View>
       </View>
       {!keyboardShown && (
-        <SocialSignIn
-          onSignIn={(infos) => console.log(infos)}
-          sectionText="Or sign in with"
-        >
+        <SocialSignIn sectionText="Or sign in with">
           <Text style={styles.footerText} onPress={navigateToSignUp}>
             Don't have an account ? <Text color="secondary" text="Sign up" />
           </Text>

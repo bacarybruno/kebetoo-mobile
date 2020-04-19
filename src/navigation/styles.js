@@ -21,7 +21,7 @@ export default StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: 0,
-    height: 90,
+    height: 95,
     width: '100%',
     resizeMode: 'stretch',
   },

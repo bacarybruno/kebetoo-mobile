@@ -8,12 +8,12 @@ import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
-export default ({ username, imageSrc }) => (
+export default ({ displayName, imageSrc }) => (
   <View style={styles.header}>
     <View style={styles.greetings}>
-      <Text size="lg">Hey {username},</Text>
+      <Text size="lg">Hey {displayName.split(' ')[0]},</Text>
       <Text text="what's new in Ramallah ?" />
     </View>
-    <Avatar src={imageSrc} text={username} />
+    <Avatar src={imageSrc} text={displayName} />
   </View>
 )
