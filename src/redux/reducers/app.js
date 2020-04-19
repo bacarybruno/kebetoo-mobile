@@ -2,27 +2,26 @@ import { combineReducers } from 'redux'
 
 import { SET_LOCALE, SET_THEME } from '../types'
 
-const locale = (state = null, action) => {
+const initialState = {
+  locale: null,
+  theme: 'light',
+}
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_LOCALE:
-      return action.payload
-    default:
-      return state
-  }
-}
-
-const theme = (state = null, action) => {
-  switch (action.type) {
+      return {
+        ...state,
+        locale: action.payload,
+      }
     case SET_THEME:
-      return action.payload
+      return {
+        ...state,
+        theme: action.payload,
+      }
     default:
       return state
   }
 }
 
-const app = combineReducers({
-  locale,
-  theme,
-})
-
-export default app
+export default reducer
