@@ -10,9 +10,9 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
   },
   tabBar: {
+    elevation: 0,
     height: metrics.tabBarHeight,
     backgroundColor: 'transparent',
-    elevation: 0,
     borderTopColor: 'transparent',
     borderTopWidth: 0,
     paddingBottom: 10,

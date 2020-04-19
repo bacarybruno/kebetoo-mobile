@@ -9,7 +9,6 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
-import metrics from 'Kebetoo/src/theme/metrics'
 import Text from 'Kebetoo/src/shared/components/text'
 import NavBackButton from 'Kebetoo/src/shared/components/buttons/nav-back'
 import TabBarButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
