@@ -7,11 +7,11 @@ import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom
 import auth from '@react-native-firebase/auth'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 
+import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
 import Text from 'Kebetoo/src/shared/components/text'
 import NavBackButton from 'Kebetoo/src/shared/components/buttons/nav-back'
-import TabBarButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
 import OnboardingPage, {
   routeOptions as onboardingRouteOptions,
 } from 'Kebetoo/src/packages/onboarding/containers'
@@ -33,6 +33,9 @@ import SearchPage, {
 import StoriesPage, {
   routeOptions as storiesRouteOptions,
 } from 'Kebetoo/src/packages/stories/containers'
+import CreatePostPage, {
+  routeOptions as createPostRouteOptions,
+} from 'Kebetoo/src/packages/post/containers/create'
 
 import styles from './styles'
 import routes from './routes'
@@ -123,7 +126,7 @@ export const TabBar = (props) => (
   </>
 )
 
-export const HomeStack = () => (
+export const TabPage = () => (
   <Tab.Navigator
     screenOptions={defaultTabOptions}
     tabBarOptions={defaultTabBarOptions}
@@ -140,9 +143,13 @@ export const HomeStack = () => (
       options={storiesRouteOptions}
     />
     <Tab.Screen
-      name=" "
+      name={routes.TABS_FAB}
       component={Empty}
-      options={{ tabBarButton: () => <TabBarButton /> }}
+      options={{
+        tabBarButton: () => (
+          <TabBarAddButton route={routes.CREATE_POST} />
+        ),
+      }}
     />
     <Tab.Screen
       name={routes.SEARCH}
@@ -173,12 +180,22 @@ export default () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isLoggedIn ? (
-          <Stack.Screen component={HomeStack} name={routes.HOME_NAV} />
+          <>
+            <Stack.Screen
+              component={TabPage}
+              name={routes.HOME_NAV}
+            />
+            <Stack.Screen
+              options={createPostRouteOptions}
+              component={CreatePostPage}
+              name={routes.CREATE_POST}
+            />
+          </>
         ) : (
           <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />
         )}
       </Stack.Navigator>
-      {/* {isLoggedIn ? <HomeStack /> : <OnboardingStack />} */}
+      {/* {isLoggedIn ? <TabPage /> : <OnboardingStack />} */}
     </NavigationContainer>
   )
 }

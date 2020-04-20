@@ -12,7 +12,7 @@ export default ({ displayName, imageSrc }) => (
   <View style={styles.header}>
     <View style={styles.greetings}>
       <Text size="lg">Hey {displayName.split(' ')[0]},</Text>
-      <Text text="what's new in Ramallah ?" />
+      <Text text="what's new in Paris ?" />
     </View>
     <Avatar src={imageSrc} text={displayName} />
   </View>

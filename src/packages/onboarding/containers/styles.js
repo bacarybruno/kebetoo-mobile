@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
+import { fontSizes } from 'Kebetoo/src/shared/components/text'
 
 export const paginationBottom = metrics.marginVertical
 export const dotHeight = 8
@@ -51,7 +52,7 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
   },
   skipText: {
-    fontSize: 16,
+    fontSize: fontSizes.md,
     color: colors.grey,
   },
 })

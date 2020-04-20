@@ -2,19 +2,21 @@ import { StyleSheet } from 'react-native'
 
 import metrics from 'Kebetoo/src/theme/metrics'
 
+import { fontSizes } from 'Kebetoo/src/shared/components/text'
+
 export const placeholderColor = '#ACACAC'
 
 export default StyleSheet.create({
   wrapper: {
     backgroundColor: '#F2F2F2',
-    height: 48,
+    minHeight: 48,
     borderColor: '#E8E8E8',
     borderRadius: 15,
     borderWidth: 1,
     paddingLeft: metrics.marginHorizontal,
   },
   textInput: {
-    fontSize: 16,
+    fontSize: fontSizes.md,
   },
   iconWrapper: {
     height: 48,
