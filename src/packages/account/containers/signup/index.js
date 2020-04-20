@@ -19,12 +19,8 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Sign up' }
 
-export default ({ navigation }) => {
-  const schema = yup.object().shape({
-    fullName: yup.string().required(),
-    email: yup.string().email().required(),
-    password: yup.string().min(8),
-  })
+const SignUp = ({ navigation }) => {
+  const dispatch = useDispatch()
 
   const [infos, setInfos] = useState({
     fullName: '',
@@ -32,11 +28,15 @@ export default ({ navigation }) => {
     password: '',
   })
 
+  const schema = yup.object().shape({
+    fullName: yup.string().required(),
+    email: yup.string().email().required(),
+    password: yup.string().min(8),
+  })
+
   const fullNameRef = useRef()
   const emailRef = useRef()
   const passwordRef = useRef()
-
-  const dispatch = useDispatch()
 
   const onChangeText = useCallback((value, field) => {
     setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
@@ -65,6 +65,7 @@ export default ({ navigation }) => {
 
   const { keyboardShown, keyboardHeight } = useKeyboard()
   const availableHeight = metrics.screenHeight - keyboardHeight
+
 
   return (
     <View style={styles.wrapper}>
@@ -106,3 +107,5 @@ export default ({ navigation }) => {
     </View>
   )
 }
+
+export default SignUp

@@ -4,8 +4,10 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import styles from './styles'
 
-export default ({ tintColor }) => (
+const HeaderBack = ({ tintColor }) => (
   <View style={styles.wrapper}>
     <Ionicon name="ios-close" color={tintColor} size={40} />
   </View>
 )
+
+export default HeaderBack

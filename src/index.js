@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import RootContainer from './packages/app/containers'
 import { store, persistor } from './redux/store'
 
-export default () => (
+const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <SafeAreaProvider>
@@ -19,3 +19,5 @@ export default () => (
     </PersistGate>
   </Provider>
 )
+
+export default App

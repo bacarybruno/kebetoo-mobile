@@ -5,7 +5,7 @@ import Text from 'Kebetoo/src/shared/components/text'
 
 import styles from './styles'
 
-export default ({
+const FullButton = ({
   onPress,
   text,
   style,
@@ -15,3 +15,5 @@ export default ({
     <Text color="white" text={text} />
   </TouchableOpacity>
 )
+
+export default FullButton

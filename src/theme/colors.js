@@ -1,5 +1,5 @@
 /* eslint-disable no-bitwise */
-export default {
+const colors = {
   primary: '#7581DE',
   secondary: '#EB79A0',
   black: '#242424',
@@ -20,3 +20,5 @@ export const hexToRgb = (hex) => {
   const b = bigint & 255
   return [r, g, b]
 }
+
+export default colors

@@ -33,7 +33,7 @@ export const SkipButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-export default ({ navigation }) => {
+const OnboardingPage = ({ navigation }) => {
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
   const isLastSlideItem = slideItems.length - 1 === slideIndex
@@ -90,3 +90,5 @@ export default ({ navigation }) => {
     </View>
   )
 }
+
+export default OnboardingPage

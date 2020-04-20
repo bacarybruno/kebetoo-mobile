@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { TransitionPresets, StackNavigationOptions } from '@react-navigation/stack'
+import { TransitionPresets } from '@react-navigation/stack'
 
 import Text from 'Kebetoo/src/shared/components/text'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
@@ -11,7 +11,7 @@ import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 
 import styles from './styles'
 
-export const routeOptions: StackNavigationOptions = {
+export const routeOptions = {
   title: 'Create post',
   headerShown: true,
   headerBackImage: ({ tintColor }) => <HeaderBack tintColor={tintColor} />,
@@ -22,7 +22,7 @@ export const routeOptions: StackNavigationOptions = {
 
 const TEXT_MAX_LENGHT = 180
 
-export default () => {
+const CreatePostPage = () => {
   const { setOptions } = useNavigation()
   const [text, setText] = useState('')
 
@@ -32,7 +32,7 @@ export default () => {
 
   useLayoutEffect(() => {
     setOptions({
-      headerRight: () => <HeaderSave onPress={onHeaderSavePress} />
+      headerRight: () => <HeaderSave onPress={onHeaderSavePress} />,
     })
   })
 
@@ -64,3 +64,5 @@ export default () => {
     </View>
   )
 }
+
+export default CreatePostPage

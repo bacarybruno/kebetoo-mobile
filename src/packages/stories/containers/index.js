@@ -7,8 +7,10 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Stories' }
 
-export default () => (
+const StoriesPage = () => (
   <View style={styles.wrapper}>
     <Text text="Hello Stories" />
   </View>
 )
+
+export default StoriesPage

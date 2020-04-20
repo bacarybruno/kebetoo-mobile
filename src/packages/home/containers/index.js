@@ -9,9 +9,10 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Home' }
 
-export default () => {
+const HomePage = () => {
   const user = auth().currentUser
-  const displayName = user.displayName || useSelector((state) => state.userReducer.displayName)
+  const savedDisplayName = useSelector((state) => state.userReducer.displayName)
+  const displayName = user.displayName || savedDisplayName
 
   return (
     <View style={styles.wrapper}>
@@ -19,3 +20,5 @@ export default () => {
     </View>
   )
 }
+
+export default HomePage

@@ -4,7 +4,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import styles from './styles'
 
-export default ({ style, onPress, ...rest }) => (
+const NavBackButton = ({ style, onPress, ...rest }) => (
   <TouchableOpacity
     style={[styles.wrapper, style]}
     onPress={onPress}
@@ -13,3 +13,5 @@ export default ({ style, onPress, ...rest }) => (
     <Ionicon name="ios-arrow-back" size={30} />
   </TouchableOpacity>
 )
+
+export default NavBackButton

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
@@ -8,9 +8,13 @@ import colors from 'Kebetoo/src/theme/colors'
 import styles from './styles'
 
 
-export default ({ route }) => {
+const TabBarAddButton = ({ route }) => {
   const { navigate } = useNavigation()
-  const navigateToPage = () => navigate(route)
+
+  const navigateToPage = useCallback(() => {
+    navigate(route)
+  }, [navigate, route])
+
   return (
     <View style={styles.wrapper}>
       <TouchableOpacity
@@ -24,3 +28,5 @@ export default ({ route }) => {
     </View>
   )
 }
+
+export default TabBarAddButton
