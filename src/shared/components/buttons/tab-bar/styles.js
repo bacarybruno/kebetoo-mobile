@@ -15,10 +15,9 @@ export default StyleSheet.create({
     borderRadius: size / 2,
     backgroundColor: colors.primary,
     position: 'absolute',
-    bottom: size / 2,
+    bottom: size / 3,
     justifyContent: 'center',
     alignItems: 'center',
-    // shadow / elevation
     shadowColor: colors.black,
     shadowOffset: {
       width: 0,

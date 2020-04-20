@@ -5,7 +5,8 @@ import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
-const fontSizes = {
+export const fontSizes = {
+  tiny: 10,
   xs: 12,
   sm: 14,
   md: 16,

@@ -8,4 +8,6 @@ export default {
   PROFILE: 'route:profile',
   SEARCH: 'route:search',
   STORIES: 'route:stories',
+  CREATE_POST: 'route:create_post',
+  TABS_FAB: 'route:custom:tabs_fab',
 }

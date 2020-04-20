@@ -18,9 +18,9 @@ const InputText = forwardRef((props, ref) => {
   }, [setValue, props])
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, props.wrapperStyle]}>
       <TextInput
-        style={styles.textInput}
+        style={[styles.textInput, props.textStyle]}
         value={value}
         placeholderTextColor={placeholderColor}
         onChangeText={onChangeText}

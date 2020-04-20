@@ -6,10 +6,11 @@ export default {
   inactive: '#CECECE',
   white: '#FFFFFF',
   grey: '#707070',
-  grey_lighter: '#E6E6E6',
   background: '#FAFAFA',
+  background_darker: '#F5F5F5',
   icon: '#7A8FA6',
   purple: '#874FB1',
+  blue_dark: '#322153',
 }
 
 export const hexToRgb = (hex) => {

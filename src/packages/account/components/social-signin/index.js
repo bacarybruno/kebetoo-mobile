@@ -6,7 +6,7 @@ import googleLogin from 'Kebetoo/src/shared/helpers/google-login'
 import facebookLogin from 'Kebetoo/src/shared/helpers/facebook-login'
 import styles from './styles'
 
-export default ({ sectionText, onSignIn, children }) => {
+export default ({ sectionText, onSignIn = () => {}, children }) => {
   const signInWithGoogle = useCallback(async () => {
     const result = await googleLogin()
     return onSignIn(result)
