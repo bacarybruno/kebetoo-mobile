@@ -4,7 +4,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import styles from './styles'
 
-export default ({
+const IconButton = ({
   onPress,
   text,
   style,
@@ -23,3 +23,5 @@ export default ({
     />
   </TouchableOpacity>
 )
+
+export default IconButton

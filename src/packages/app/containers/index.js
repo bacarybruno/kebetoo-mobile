@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
 
-import NavigationContainer from 'Kebetoo/src/navigation'
+import AppNavigation from 'Kebetoo/src/navigation'
 import strings from 'Kebetoo/src/config/strings'
 import { SET_THEME, SET_LOCALE } from 'Kebetoo/src/redux/types'
 
@@ -12,7 +12,7 @@ import styles from './styles'
 
 enableScreens()
 
-export default () => {
+const RootContainer = () => {
   const { theme, locale } = useSelector((state) => state.appReducer)
   const defaultTheme = useColorScheme()
   const dispatch = useDispatch()
@@ -35,7 +35,9 @@ export default () => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <NavigationContainer />
+      <AppNavigation />
     </SafeAreaView>
   )
 }
+
+export default RootContainer

@@ -20,6 +20,8 @@ export const TextAvatar = ({ text }) => (
   </View>
 )
 
-export default ({ src, text }) => (
+const Avatar = ({ src, text }) => (
   src ? <ImageAvatar src={src} /> : <TextAvatar text={text} />
 )
+
+export default Avatar

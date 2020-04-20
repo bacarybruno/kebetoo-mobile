@@ -23,6 +23,7 @@ export default StyleSheet.create({
   textInputWrapper: {
     marginTop: 8,
     backgroundColor: colors.background_darker,
+    paddingRight: metrics.marginHorizontal,
   },
   textCount: {
     marginTop: 8,

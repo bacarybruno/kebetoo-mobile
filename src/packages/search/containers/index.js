@@ -7,8 +7,10 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Search' }
 
-export default () => (
+const SearchPage = () => (
   <View style={styles.wrapper}>
     <Text text="Hello Search" />
   </View>
 )
+
+export default SearchPage

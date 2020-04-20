@@ -6,8 +6,10 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Profile' }
 
-export default () => (
+const ProfilePage = () => (
   <View style={styles.wrapper}>
     <Text text="Hello Profile" />
   </View>
 )
+
+export default ProfilePage

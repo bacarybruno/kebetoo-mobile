@@ -6,7 +6,7 @@ import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
-export default ({
+const IconButton = ({
   onPress,
   name,
   style,
@@ -16,3 +16,5 @@ export default ({
     <Ionicon name={name} size={20} color={color} />
   </TouchableOpacity>
 )
+
+export default IconButton

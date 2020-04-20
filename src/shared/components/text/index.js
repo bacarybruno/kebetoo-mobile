@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text as RNText } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
 
@@ -14,7 +14,7 @@ export const fontSizes = {
   lg: 24,
   xl: 27,
 }
-export default ({
+const Text = ({
   text,
   children,
   size = 'md',
@@ -23,7 +23,7 @@ export default ({
   color = 'black',
   ...props
 }) => (
-  <Text
+  <RNText
     style={[
       styles.wrapper,
       {
@@ -36,5 +36,7 @@ export default ({
     {...props}
   >
     {text || children}
-  </Text>
+  </RNText>
 )
+
+export default Text

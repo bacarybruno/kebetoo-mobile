@@ -1,7 +1,7 @@
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin'
 import auth from '@react-native-firebase/auth'
 
-export default async () => {
+const googleLogin = async () => {
   const result = { error: null, data: null }
   try {
     await GoogleSignin.hasPlayServices()
@@ -23,3 +23,5 @@ export default async () => {
   }
   return Promise.resolve(result)
 }
+
+export default googleLogin

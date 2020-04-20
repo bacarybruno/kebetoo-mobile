@@ -16,7 +16,7 @@ import styles from './styles'
 
 export const routeOptions = { title: 'Sign in' }
 
-export default ({ navigation }) => {
+const SignIn = ({ navigation }) => {
   const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(8),
@@ -93,3 +93,5 @@ export default ({ navigation }) => {
     </View>
   )
 }
+
+export default SignIn

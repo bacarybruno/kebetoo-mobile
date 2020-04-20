@@ -8,7 +8,7 @@ import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
-export default ({ displayName, imageSrc }) => (
+const Header = ({ displayName, imageSrc }) => (
   <View style={styles.header}>
     <View style={styles.greetings}>
       <Text size="lg">Hey {displayName.split(' ')[0]},</Text>
@@ -17,3 +17,5 @@ export default ({ displayName, imageSrc }) => (
     <Avatar src={imageSrc} text={displayName} />
   </View>
 )
+
+export default Header

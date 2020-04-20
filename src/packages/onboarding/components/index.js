@@ -5,7 +5,7 @@ import Text from 'Kebetoo/src/shared/components/text'
 
 import styles from './styles'
 
-export default ({ imageSrc, slideTitle, slideDescription }) => (
+const OnboardingSlide = ({ imageSrc, slideTitle, slideDescription }) => (
   <View style={styles.wrapper}>
     <Image style={styles.image} source={imageSrc} />
     <Text
@@ -18,3 +18,5 @@ export default ({ imageSrc, slideTitle, slideDescription }) => (
     <Text style={styles.description} text={slideDescription} />
   </View>
 )
+
+export default OnboardingSlide

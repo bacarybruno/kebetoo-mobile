@@ -1,4 +1,4 @@
-export default {
+const routes = {
   ONBARDING_NAV: 'route:nav:onboarding',
   SIGNIN: 'route:signin',
   SIGNUP: 'route:signup',
@@ -11,3 +11,5 @@ export default {
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'route:custom:tabs_fab',
 }
+
+export default routes

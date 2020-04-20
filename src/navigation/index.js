@@ -164,7 +164,7 @@ export const TabPage = () => (
   </Tab.Navigator>
 )
 
-export default () => {
+const AppNavigation = () => {
   const initialUserState = auth().currentUser !== null
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
 
@@ -195,7 +195,8 @@ export default () => {
           <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />
         )}
       </Stack.Navigator>
-      {/* {isLoggedIn ? <TabPage /> : <OnboardingStack />} */}
     </NavigationContainer>
   )
 }
+
+export default AppNavigation
