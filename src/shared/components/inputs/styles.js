@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native'
 
 import metrics from 'Kebetoo/src/theme/metrics'
-
+import colors from 'Kebetoo/src/theme/colors'
 import { fontSizes } from 'Kebetoo/src/shared/components/text'
 
 export const placeholderColor = '#ACACAC'
 
 export default StyleSheet.create({
   wrapper: {
-    backgroundColor: '#F2F2F2',
+    backgroundColor: colors.input,
     minHeight: 48,
     borderColor: '#E8E8E8',
     borderRadius: 15,

@@ -22,7 +22,7 @@ export default StyleSheet.create({
   },
   textInputWrapper: {
     marginTop: 8,
-    backgroundColor: colors.background_darker,
+    backgroundColor: colors.input,
     paddingRight: metrics.marginHorizontal,
   },
   textCount: {
