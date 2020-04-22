@@ -12,7 +12,7 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
 import { SET_DISPLAY_NAME } from 'Kebetoo/src/redux/types'
-
+import { createUser } from 'Kebetoo/src/shared/helpers/users'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
 
 import styles from './styles'
@@ -55,6 +55,14 @@ const SignUp = ({ navigation }) => {
       await schema.validate(infos)
       const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
       const displayName = infos.fullName
+
+      await createUser({
+        id: user.uid,
+        email: user.email,
+        displayName,
+        photoURL: null,
+      })
+
       dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
       await user.updateProfile({ displayName, photoURL: null })
       await auth().signInWithEmailAndPassword(infos.email, infos.password)
