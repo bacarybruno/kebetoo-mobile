@@ -1,4 +1,5 @@
 /* eslint-disable no-bitwise */
+
 const colors = {
   primary: '#7581DE',
   secondary: '#EB79A0',
@@ -6,8 +7,9 @@ const colors = {
   inactive: '#CECECE',
   white: '#FFFFFF',
   grey: '#707070',
-  background: '#FAFAFA',
-  background_darker: '#F5F5F5',
+  background: '#FFFFFF',
+  input: '#F2F2F2',
+  white_darken: '#FAFAFA',
   icon: '#7A8FA6',
   purple: '#874FB1',
   blue_dark: '#322153',
