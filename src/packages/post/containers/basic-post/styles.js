@@ -5,7 +5,7 @@ import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   wrapper: {
-    marginBottom: 20,
+    marginBottom: 30,
   },
   header: {
     flexDirection: 'row',
@@ -33,6 +33,7 @@ export default StyleSheet.create({
   },
   reaction: {
     flexDirection: 'row',
+    minWidth: 35,
     marginRight: 15,
     alignItems: 'center',
   },

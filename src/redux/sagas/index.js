@@ -1,5 +1,5 @@
 import {
-  takeLeading, call, put, all,
+  takeLeading, call, put, all, select,
 } from 'redux-saga/effects'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
@@ -30,8 +30,10 @@ function* refreshPosts() {
 
 function* fetchAuthors(action) {
   try {
-    const { docs } = yield call(getUsers, action.payload)
-    const authors = {}
+    const authors = yield select((state) => state.postsReducer.authors)
+    const authorsToFetch = action.payload.filter((authorId) => !authors[authorId])
+    if (authorsToFetch.length === 0) return
+    const { docs } = yield call(getUsers, authorsToFetch)
     docs.forEach((doc) => {
       const { displayName: name, photoURL } = doc.data()
       authors[doc.id] = {
