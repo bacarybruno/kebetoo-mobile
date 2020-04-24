@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux'
-
 import { SET_LOCALE, SET_THEME } from '../types'
 
 const initialState = {
