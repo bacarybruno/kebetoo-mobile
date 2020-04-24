@@ -8,6 +8,7 @@ const Theme = {
   screenWidth: width,
   screenHeight: height,
   tabBarHeight: 50,
+  tabBarFullHeight: 80,
 }
 
 export default Theme
