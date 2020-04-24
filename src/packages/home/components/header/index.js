@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { View } from 'react-native'
 
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -8,8 +8,8 @@ import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
-const Header = ({ displayName, imageSrc }) => (
-  <View style={styles.header}>
+const Header = ({ displayName, imageSrc, style }) => (
+  <View style={[styles.header, style]}>
     <View style={styles.greetings}>
       <Text size="lg">Hey {displayName.split(' ')[0]},</Text>
       <Text text="what's new in Paris ?" />
@@ -18,4 +18,4 @@ const Header = ({ displayName, imageSrc }) => (
   </View>
 )
 
-export default Header
+export default memo(Header)

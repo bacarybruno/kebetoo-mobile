@@ -1,13 +1,15 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
+import auth from '@react-native-firebase/auth'
 
 import Text from 'Kebetoo/src/shared/components/text'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import HeaderBack from 'Kebetoo/src/packages/post/components/header-back'
 import HeaderSave from 'Kebetoo/src/packages/post/components/header-save'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
+import { createPost } from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 
@@ -23,16 +25,20 @@ export const routeOptions = {
 const TEXT_MAX_LENGHT = 180
 
 const CreatePostPage = () => {
-  const { setOptions } = useNavigation()
+  const { setOptions, goBack } = useNavigation()
   const [text, setText] = useState('')
 
-  const onHeaderSavePress = () => {
-    console.log('header save press')
-  }
+  const onHeaderSavePress = useCallback(async () => {
+    const user = auth().currentUser
+    await createPost({ author: user.uid, content: text })
+    goBack()
+  }, [text, goBack])
 
   useLayoutEffect(() => {
     setOptions({
-      headerRight: () => <HeaderSave onPress={onHeaderSavePress} />,
+      headerRight: () => (
+        <HeaderSave onPress={onHeaderSavePress} />
+      ),
     })
   })
 
@@ -55,10 +61,10 @@ const CreatePostPage = () => {
           {TEXT_MAX_LENGHT - text.length} characters
         </Text>
         <View style={styles.buttonsContainer}>
-          <IconButton name="ios-videocam" style={styles.iconButton} onPress={() => {}} />
-          <IconButton name="ios-mic" style={styles.iconButton} onPress={() => {}} />
-          <IconButton name="ios-camera" style={styles.iconButton} onPress={() => {}} />
-          <IconButton name="ios-more" style={styles.iconButton} onPress={() => {}} />
+          <IconButton name="ios-videocam" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="ios-mic" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="ios-camera" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="ios-more" style={styles.iconButton} onPress={() => { }} />
         </View>
       </View>
     </View>

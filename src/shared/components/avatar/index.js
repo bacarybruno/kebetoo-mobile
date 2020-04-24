@@ -6,22 +6,29 @@ import Text from 'Kebetoo/src/shared/components/text'
 import generateColor from 'Kebetoo/src/shared/helpers/color-generator'
 import styles from './styles'
 
-export const ImageAvatar = ({ src }) => (
-  <View style={styles.wrapper}>
-    <Image style={styles.content} source={{ uri: src }} />
+const borderRadius = (size) => size && { borderRadius: size / 2 }
+const dimensions = (size) => size && { width: size, height: size }
+const backgroundColor = (text) => text && { backgroundColor: generateColor(text) }
+
+export const ImageAvatar = ({ src, size }) => (
+  <View style={[styles.wrapper, dimensions(size)]}>
+    <Image
+      style={[styles.content, borderRadius(size)]}
+      source={{ uri: src }}
+    />
   </View>
 )
 
-export const TextAvatar = ({ text }) => (
-  <View style={styles.wrapper}>
-    <View style={[styles.content, { backgroundColor: generateColor(text) }]}>
+export const TextAvatar = ({ text, size }) => (
+  <View style={[styles.wrapper, dimensions(size)]}>
+    <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
       <Text color="white" size="md" bold>{text[0].toUpperCase()}</Text>
     </View>
   </View>
 )
 
-const Avatar = ({ src, text }) => (
-  src ? <ImageAvatar src={src} /> : <TextAvatar text={text} />
+const Avatar = ({ src, text, size }) => (
+  src ? <ImageAvatar src={src} size={size} /> : <TextAvatar text={text} size={size} />
 )
 
 export default Avatar
