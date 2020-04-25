@@ -31,6 +31,7 @@ const InputText = forwardRef((props, ref) => {
         placeholderTextColor={placeholderColor}
         onChangeText={onChangeText}
         ref={ref}
+        blurOnSubmit={false}
         {...otherProps}
       />
     </View>
