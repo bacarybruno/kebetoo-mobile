@@ -12,3 +12,6 @@
 
 #Firebase
 - https://rnfirebase.io/
+
+#Optimize vector-icons (find a way to do the same for iOS) or use only desired icons
+- https://github.com/oblador/react-native-vector-icons/blob/master/README.md#android

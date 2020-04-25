@@ -33,7 +33,6 @@
 		434D3C581A3F4656A303C334 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28736B9828894B679493F1C1 /* SimpleLineIcons.ttf */; };
 		F3DC3D8ADA514D17B040A0B6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F85F6B8E40FE4AADB7CCB92F /* Zocial.ttf */; };
 		1D5DF12FD98046CA94183B89 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9AF289AFA2240C18E751117 /* Ionicons.ttf */; };
-		3FFC48E8AF324534AD959454 /* Kebeticons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC35C09A29F84CA883B6606B /* Kebeticons.ttf */; };
 		A08AB5411FB7449E997417A5 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50A5CCEFF8584CE2A6761799 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		28736B9828894B679493F1C1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F85F6B8E40FE4AADB7CCB92F /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F9AF289AFA2240C18E751117 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FC35C09A29F84CA883B6606B /* Kebeticons.ttf */ = {isa = PBXFileReference; name = "Kebeticons.ttf"; path = "../assets/fonts/Kebeticons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		50A5CCEFF8584CE2A6761799 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
@@ -216,7 +214,6 @@
 				28736B9828894B679493F1C1 /* SimpleLineIcons.ttf */,
 				F85F6B8E40FE4AADB7CCB92F /* Zocial.ttf */,
 				F9AF289AFA2240C18E751117 /* Ionicons.ttf */,
-				FC35C09A29F84CA883B6606B /* Kebeticons.ttf */,
 				50A5CCEFF8584CE2A6761799 /* icomoon.ttf */,
 			);
 			name = Resources;
@@ -378,7 +375,6 @@
 				434D3C581A3F4656A303C334 /* SimpleLineIcons.ttf in Resources */,
 				F3DC3D8ADA514D17B040A0B6 /* Zocial.ttf in Resources */,
 				1D5DF12FD98046CA94183B89 /* Ionicons.ttf in Resources */,
-				3FFC48E8AF324534AD959454 /* Kebeticons.ttf in Resources */,
 				A08AB5411FB7449E997417A5 /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
