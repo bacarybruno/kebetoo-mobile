@@ -49,35 +49,43 @@ function* fetchAuthors(action) {
 }
 
 function* toggleLikePost(action) {
-  const { post, author } = action.payload
-  if (hasLiked({ post, author })) {
-    const { id } = post.likes.find((like) => like.author === author.id)
-    yield call(api.deleteLike, id)
-  } else {
-    if (hasDisliked({ post, author })) {
-      const { id } = post.dislikes.find((dislike) => dislike.author === author.id)
-      yield call(api.deleteDislike, id)
-    }
-    yield call(api.likePost, ({ post: post.id, author: author.id }))
-  }
-  const updatedPost = yield call(api.getPost, post.id)
-  yield put({ type: types.REPLACE_POST, payload: updatedPost })
-}
-
-function* toggleDislikePost(action) {
-  const { post, author } = action.payload
-  if (hasDisliked({ post, author })) {
-    const { id } = post.dislikes.find((dislike) => dislike.author === author.id)
-    yield call(api.deleteDislike, id)
-  } else {
+  try {
+    const { post, author } = action.payload
     if (hasLiked({ post, author })) {
       const { id } = post.likes.find((like) => like.author === author.id)
       yield call(api.deleteLike, id)
+    } else {
+      if (hasDisliked({ post, author })) {
+        const { id } = post.dislikes.find((dislike) => dislike.author === author.id)
+        yield call(api.deleteDislike, id)
+      }
+      yield call(api.likePost, ({ post: post.id, author: author.id }))
     }
-    yield call(api.dislikePost, { post: post.id, author: author.id })
+    const updatedPost = yield call(api.getPost, post.id)
+    yield put({ type: types.REPLACE_POST, payload: updatedPost })
+  } catch (error) {
+    yield put({ type: types.API_TOGGLE_LIKE_DISLIKE_ERROR, error })
   }
-  const updatedPost = yield call(api.getPost, post.id)
-  yield put({ type: types.REPLACE_POST, payload: updatedPost })
+}
+
+function* toggleDislikePost(action) {
+  try {
+    const { post, author } = action.payload
+    if (hasDisliked({ post, author })) {
+      const { id } = post.dislikes.find((dislike) => dislike.author === author.id)
+      yield call(api.deleteDislike, id)
+    } else {
+      if (hasLiked({ post, author })) {
+        const { id } = post.likes.find((like) => like.author === author.id)
+        yield call(api.deleteLike, id)
+      }
+      yield call(api.dislikePost, { post: post.id, author: author.id })
+    }
+    const updatedPost = yield call(api.getPost, post.id)
+    yield put({ type: types.REPLACE_POST, payload: updatedPost })
+  } catch (error) {
+    yield put({ type: types.API_TOGGLE_LIKE_DISLIKE_ERROR, error })
+  }
 }
 
 export default function* root() {
