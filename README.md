@@ -13,5 +13,7 @@
 #Firebase
 - https://rnfirebase.io/
 
-#Optimize vector-icons (find a way to do the same for iOS) or use only desired icons
-- https://github.com/oblador/react-native-vector-icons/blob/master/README.md#android
+#Optimize vector-icons to use only desired icons
+- Android: https://github.com/oblador/react-native-vector-icons/blob/master/README.md#android
+- iOS: remove undesired icon from resources and UIAppFonts 
+- Or use only a ionic icon package and fite a way to use custom icons
