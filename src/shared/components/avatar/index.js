@@ -19,16 +19,16 @@ export const ImageAvatar = ({ src, size }) => (
   </View>
 )
 
-export const TextAvatar = ({ text, size }) => (
+export const TextAvatar = ({ text, size, fontSize }) => (
   <View style={[styles.wrapper, dimensions(size)]}>
     <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
-      <Text color="white" size="md" bold>{text[0].toUpperCase()}</Text>
+      <Text color="white" size="md" bold fontSize={fontSize}>{text[0].toUpperCase()}</Text>
     </View>
   </View>
 )
 
-const Avatar = ({ src, text, size }) => (
-  src ? <ImageAvatar src={src} size={size} /> : <TextAvatar text={text} size={size} />
+const Avatar = ({ src, text, ...props }) => (
+  src ? <ImageAvatar src={src} {...props} /> : <TextAvatar text={text} {...props} />
 )
 
 export default Avatar

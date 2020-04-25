@@ -1,14 +1,15 @@
 import React, { useCallback } from 'react'
 import {
-  View, Image, TouchableOpacity, ScrollView,
+  View, TouchableOpacity, ScrollView,
 } from 'react-native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Text from 'Kebetoo/src/shared/components/text'
 import colors from 'Kebetoo/src/theme/colors'
+import Avatar from 'Kebetoo/src/shared/components/avatar'
 
-import styles from './styles'
+import styles, { imageSize } from './styles'
 
 export const routeOptions = { title: 'Profile' }
 
@@ -26,7 +27,7 @@ export const SectionTitle = ({ text }) => (
 export const Summary = ({ photoURL, email, displayName }) => (
   <View style={styles.summary}>
     <View style={styles.imageWrapper}>
-      <Image style={styles.photo} source={{ uri: photoURL }} />
+      <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
     </View>
     <View style={styles.summaryText}>
       <Text size="lg" color="blue_dark" text={displayName} />
@@ -45,7 +46,7 @@ export const Stat = ({ title, value }) => (
 export const IconButton = ({ icon, text, onPress }) => (
   <TouchableOpacity style={styles.iconButton} onPress={onPress}>
     <View style={styles.iconWrapper}>
-      <Ionicon style={styles.icon} name={icon} size={20} color={colors.white} />
+      <Ionicon style={styles.icon} name={icon} size={20} color={colors.primary} />
     </View>
     <Text text={text} />
   </TouchableOpacity>
