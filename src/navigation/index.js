@@ -5,8 +5,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import auth from '@react-native-firebase/auth'
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 
+import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
@@ -62,15 +62,14 @@ const defaultTabOptions = ({ route }) => ({
     if (route.name === routes.HOME) {
       iconName = 'home'
     } else if (route.name === routes.STORIES) {
-      const source = focused ? images.stories_active : images.stories
-      return <Image source={source} style={{ width: size, height: size }} />
+      iconName = 'stories'
     } else if (route.name === routes.SEARCH) {
-      iconName = 'magnifier'
+      iconName = 'search'
     } else if (route.name === routes.PROFILE) {
       iconName = 'user'
     }
 
-    return <SimpleLineIcons name={iconName} size={size} color={color} />
+    return <Kebeticon name={iconName} size={size} color={color} />
   },
   tabBarLabel: ({ focused, color }) => {
     let label

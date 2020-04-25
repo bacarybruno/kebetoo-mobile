@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 
+import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
@@ -13,7 +13,7 @@ const IconButton = ({
   color = colors.blue_dark,
 }) => (
   <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
-    <Ionicon name={name} size={20} color={color} />
+    <Kebeticon name={name} size={18} color={color} />
   </TouchableOpacity>
 )
 

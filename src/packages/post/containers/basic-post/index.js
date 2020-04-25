@@ -2,8 +2,8 @@ import React, { memo, useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 import Text from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -66,38 +66,41 @@ export const Reaction = ({
   count,
   onPress,
   color = colors.blue_dark,
-  IconSet = MaterialCommunityIcon,
 }) => (
   <TouchableOpacity style={styles.reaction} onPress={onPress}>
-    <IconSet color={color} style={styles.icon} size={20} name={iconName} />
+    <Kebeticon color={color} style={styles.icon} size={18} name={iconName} />
     <ThemedText size="xs" bold text={count.toString()} />
   </TouchableOpacity>
 )
 
-export const Reactions = ({ post, author, onReaction }) => (
-  <View style={styles.reactions}>
-    <Reaction
-      iconName={hasLiked({ post, author }) ? 'thumb-up' : 'thumb-up-outline'}
-      count={post.likes.length}
-      onPress={() => onReaction(REACTION_TYPES.LIKE)}
-    />
-    <Reaction
-      iconName={hasDisliked({ post, author }) ? 'thumb-down' : 'thumb-down-outline'}
-      count={post.dislikes.length}
-      onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
-    />
-    <Reaction
-      iconName={hasCommented({ post, author }) ? 'comment-text' : 'comment-text-outline'}
-      count={post.comments.length}
-      onPress={() => onReaction(REACTION_TYPES.COMMENT)}
-    />
-    <Reaction
-      iconName="share-outline"
-      count={0}
-      onPress={() => { }}
-    />
-  </View>
-)
+export const Reactions = ({ post, author, onReaction }) => {
+  const liked = hasLiked({ post, author })
+  const disliked = hasDisliked({ post, author })
+  return (
+    <View style={styles.reactions}>
+      <Reaction
+        iconName={liked ? 'like-fill' : 'like'}
+        count={post.likes.length}
+        onPress={() => onReaction(REACTION_TYPES.LIKE)}
+      />
+      <Reaction
+        iconName={disliked ? 'dislike-fill' : 'dislike'}
+        count={post.dislikes.length}
+        onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
+      />
+      <Reaction
+        iconName="comment"
+        count={post.comments.length}
+        onPress={() => onReaction(REACTION_TYPES.COMMENT)}
+      />
+      <Reaction
+        iconName="share"
+        count={0}
+        onPress={() => { }}
+      />
+    </View>
+  )
+}
 
 const Placeholder = () => null
 

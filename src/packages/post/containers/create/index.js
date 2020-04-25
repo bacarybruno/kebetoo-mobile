@@ -61,10 +61,10 @@ const CreatePostPage = () => {
           {TEXT_MAX_LENGHT - text.length} characters
         </Text>
         <View style={styles.buttonsContainer}>
-          <IconButton name="ios-videocam" style={styles.iconButton} onPress={() => { }} />
-          <IconButton name="ios-mic" style={styles.iconButton} onPress={() => { }} />
-          <IconButton name="ios-camera" style={styles.iconButton} onPress={() => { }} />
-          <IconButton name="ios-more" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="camera" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="microphone" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="photo" style={styles.iconButton} onPress={() => { }} />
+          <IconButton name="more-h" style={styles.iconButton} onPress={() => { }} />
         </View>
       </View>
     </View>
