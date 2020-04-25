@@ -4,7 +4,11 @@ import { View, TouchableOpacity, Image } from 'react-native'
 import HrLine from 'Kebetoo/src/packages/account/components/hr-line'
 import googleLogin from 'Kebetoo/src/shared/helpers/google-login'
 import facebookLogin from 'Kebetoo/src/shared/helpers/facebook-login'
+import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
+
 import styles from './styles'
+import images from 'Kebetoo/src/theme/images'
+import colors from 'Kebetoo/src/theme/colors'
 
 const SocialSignIn = ({ sectionText, onSignIn = () => {}, children }) => {
   const signInWithGoogle = useCallback(async () => {
@@ -24,16 +28,10 @@ const SocialSignIn = ({ sectionText, onSignIn = () => {}, children }) => {
           <HrLine text={sectionText} />
           <View style={styles.socialSignUpButtons}>
             <TouchableOpacity onPress={signInWithFacebook}>
-              <Image
-                style={styles.socialLoginButton}
-                source={require('Kebetoo/assets/images/facebook.png')}
-              />
+              <Kebeticon name="facebook" color={colors.facebook} size={33} />
             </TouchableOpacity>
             <TouchableOpacity onPress={signInWithGoogle}>
-              <Image
-                style={styles.socialLoginButton}
-                source={require('Kebetoo/assets/images/google.png')}
-              />
+              <Image style={styles.googleIcon} source={images.google_icon} />
             </TouchableOpacity>
           </View>
         </View>

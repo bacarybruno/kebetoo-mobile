@@ -18,7 +18,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  socialLoginButton: {
+  googleIcon: {
+    width: 32,
+    height: 33,
     marginHorizontal: metrics.marginHorizontal / 2,
   },
 })
