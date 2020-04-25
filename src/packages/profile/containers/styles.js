@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
 
-const imageSize = 90
+export const imageSize = 90
 const elevation = {
   shadowColor: colors.black,
   shadowOffset: {
@@ -73,7 +73,7 @@ export default StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.primary,
+    backgroundColor: colors.input,
     marginRight: 20,
   },
   section: {

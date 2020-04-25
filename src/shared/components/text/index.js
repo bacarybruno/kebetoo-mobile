@@ -22,13 +22,14 @@ const Text = ({
   style = {},
   color = 'black',
   opacity = 1,
+  fontSize = null,
   ...props
 }) => (
   <RNText
     style={[
       styles.wrapper,
       {
-        fontSize: fontSizes[size],
+        fontSize: fontSize || fontSizes[size],
         fontWeight: bold ? 'bold' : 'normal',
         color: colors[color],
         opacity,
