@@ -19,6 +19,8 @@ export default StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+  padding: {
     paddingHorizontal: metrics.marginHorizontal,
   },
   header: {
@@ -63,9 +65,9 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   iconButton: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15,
   },
   iconWrapper: {
     width: 40,
@@ -81,5 +83,15 @@ export default StyleSheet.create({
   },
   sectionTitle: {
     marginBottom: 10,
+  },
+  iconButtonWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+    justifyContent: 'space-between',
+  },
+  scrollViewContent: {
+    paddingBottom: metrics.marginVertical,
   },
 })
