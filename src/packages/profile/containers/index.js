@@ -43,13 +43,21 @@ export const Stat = ({ title, value }) => (
   </View>
 )
 
-export const IconButton = ({ icon, text, onPress }) => (
-  <TouchableOpacity style={styles.iconButton} onPress={onPress}>
-    <View style={styles.iconWrapper}>
-      <Ionicon style={styles.icon} name={icon} size={20} color={colors.primary} />
-    </View>
-    <Text text={text} />
-  </TouchableOpacity>
+export const IconButton = ({
+  icon, text, message, onPress, children,
+}) => (
+  <View style={styles.iconButtonWrapper}>
+    <TouchableOpacity style={styles.iconButton} onPress={onPress}>
+      <View style={styles.iconWrapper}>
+        <Ionicon style={styles.icon} name={icon} size={20} color={colors.primary} />
+      </View>
+      <View>
+        <Text text={text} />
+        {message && <Text text={message} size="sm" opacity={0.35} />}
+      </View>
+    </TouchableOpacity>
+    {children}
+  </View>
 )
 
 const ProfilePage = () => {
@@ -69,7 +77,7 @@ const ProfilePage = () => {
 
   const ProfileSection = () => (
     <View style={styles.section}>
-      <IconButton icon="ios-at" text="Edit username" />
+      <IconButton icon="ios-at" text="Edit username" message="No username defined" />
       <IconButton icon="md-create" text="Edit profile" />
     </View>
   )
@@ -86,6 +94,7 @@ const ProfilePage = () => {
       <SectionTitle text="Preferences" />
       <IconButton icon="ios-color-palette" text="Dark Mode" />
       <IconButton icon="ios-notifications" text="Notifications" />
+      <IconButton icon="ios-globe" text="Language" message="English" />
     </View>
   )
 
@@ -101,12 +110,19 @@ const ProfilePage = () => {
   )
 
   return (
-    <ScrollView style={styles.wrapper}>
-      <Header profile={profile} />
-      <ProfileSection />
-      <PreferencesSection />
-      <AccountSection />
-    </ScrollView>
+    <View style={styles.wrapper}>
+      <View style={styles.padding}>
+        <Header profile={profile} />
+      </View>
+      <ScrollView
+        style={styles.padding}
+        contentContainerStyle={styles.scrollViewContent}
+      >
+        <ProfileSection />
+        <PreferencesSection />
+        <AccountSection />
+      </ScrollView>
+    </View>
   )
 }
 export default ProfilePage
