@@ -19,7 +19,7 @@ const InputText = forwardRef((props, ref) => {
   const [value, setValue] = useState(null)
 
   const onChangeText = useCallback((text) => {
-    onValueChange(text, fieldName)
+    if (onValueChange) onValueChange(text, fieldName)
     setValue(text)
   }, [setValue, fieldName, onValueChange])
 

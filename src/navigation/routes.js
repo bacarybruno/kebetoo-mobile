@@ -10,6 +10,7 @@ const routes = {
   STORIES: 'route:stories',
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'route:custom:tabs_fab',
+  COMMENTS: 'route:comments',
 }
 
 export default routes
