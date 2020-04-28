@@ -1,12 +1,14 @@
 import React, { memo, useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
 import moment from 'moment'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 import Text from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
+import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 
 import styles from './styles'
@@ -42,9 +44,14 @@ export const hasDisliked = ({ post, author }) => post
   .dislikes
   .some((dislike) => dislike.author === author.id)
 
-export const Header = ({ post, author, size }) => (
+export const Header = ({
+  post, author, size, Left,
+}) => (
   <View style={styles.header}>
-    <Avatar src={author.photoURL} text={author.displayName} size={size} />
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      {Left && <Left />}
+      <Avatar src={author.photoURL} text={author.displayName} size={size} />
+    </View>
     <View style={[styles.meta, { height: size }]}>
       <ThemedText size="sm" text={author.displayName} />
       <View style={styles.smallMeta}>
@@ -55,8 +62,8 @@ export const Header = ({ post, author, size }) => (
   </View>
 )
 
-export const Content = ({ post }) => (
-  <View style={styles.content}>
+export const Content = ({ post, style }) => (
+  <View style={[styles.content, style]}>
     <ThemedText text={post.content} />
   </View>
 )
@@ -106,6 +113,8 @@ const Placeholder = () => null
 
 const BasicPost = ({ post, author, size = 35 }) => {
   const dispatch = useDispatch()
+  const { navigate } = useNavigation()
+
   const onReaction = useCallback(async (type) => {
     switch (type) {
       case REACTION_TYPES.LIKE:
@@ -121,11 +130,11 @@ const BasicPost = ({ post, author, size = 35 }) => {
         })
         break
       case REACTION_TYPES.COMMENT:
-        // await commentPost({ post: post.id, author: author.id })
+        navigate(routes.COMMENTS, { id: post.id })
         break
       default: break
     }
-  }, [author, post, dispatch])
+  }, [author, post, dispatch, navigate])
 
   if (!author) return <Placeholder />
   return (

@@ -36,6 +36,9 @@ import StoriesPage, {
 import CreatePostPage, {
   routeOptions as createPostRouteOptions,
 } from 'Kebetoo/src/packages/post/containers/create'
+import CommentsPage, {
+  routeOptions as commentsRouteOptions,
+} from 'Kebetoo/src/packages/post/containers/comments'
 
 import styles from './styles'
 import routes from './routes'
@@ -188,6 +191,11 @@ const AppNavigation = () => {
               options={createPostRouteOptions}
               component={CreatePostPage}
               name={routes.CREATE_POST}
+            />
+            <Stack.Screen
+              options={commentsRouteOptions}
+              component={CommentsPage}
+              name={routes.COMMENTS}
             />
           </>
         ) : (
