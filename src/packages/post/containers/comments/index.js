@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, {
+  useState, useEffect, useCallback, useRef,
+} from 'react'
 import { View, FlatList, TouchableOpacity } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
@@ -16,6 +18,7 @@ import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import colors from 'Kebetoo/src/theme/colors'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
+import { commentPost } from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 
@@ -33,13 +36,14 @@ export const SendButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-const CommentInput = ({ onChange, onSend }) => (
+const CommentInput = ({ onChange, onSend, inputRef }) => (
   <View style={styles.commentInputWrapper}>
     <View style={styles.flexible}>
       <TextInput
         fieldName="comment"
         placeholder="Add a comment"
         onValueChange={onChange}
+        ref={inputRef}
         textStyle={styles.textInputSize}
         wrapperStyle={[
           styles.textInputSize,
@@ -69,11 +73,13 @@ const Comments = () => {
   const author = useSelector((state) => state.postsReducer.authors)[post.author]
   const user = auth().currentUser
   const [authors, setAuthors] = useState({})
+  const [comment, setComment] = useState('')
+  const commentInput = useRef()
 
   useEffect(() => {
     const fetchAuthors = async () => {
       if (post.comments.length > 0) {
-        const ids = new Set(post.comments.map((comment) => comment.author))
+        const ids = new Set(post.comments.map((c) => c.author))
         const { docs } = await getUsers([...ids])
         const authorsData = {}
         docs.forEach((doc) => {
@@ -89,6 +95,19 @@ const Comments = () => {
 
     fetchAuthors()
   }, [post])
+
+  const onChangeText = useCallback((value) => {
+    setComment(value)
+  }, [setComment])
+
+  const onSend = useCallback(async () => {
+    await commentPost({
+      author: user.uid,
+      content: comment,
+      post: post.id,
+    })
+    commentInput.current.clear()
+  }, [comment, user, post])
 
   const renderComment = ({ item }) => (
     authors[item.author] ? (
@@ -147,7 +166,11 @@ const Comments = () => {
         ListHeaderComponent={ListHeader}
         contentContainerStyle={styles.flatlistContent}
       />
-      <CommentInput user={user} onChange={console.log} />
+      <CommentInput
+        onChange={onChangeText}
+        onSend={onSend}
+        inputRef={commentInput}
+      />
     </View>
   )
 }
