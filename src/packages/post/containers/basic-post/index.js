@@ -10,6 +10,7 @@ import Text from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
+import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
 
 import styles from './styles'
 
@@ -74,7 +75,13 @@ export const Reaction = ({
   onPress,
   color = colors.blue_dark,
 }) => (
-  <TouchableOpacity style={styles.reaction} onPress={onPress}>
+  <TouchableOpacity
+    style={styles.reaction}
+    onPress={onPress}
+    hitSlop={EdgeInsets.symmetric({
+      horizontal: 5, vertical: 25,
+    })}
+  >
     <Kebeticon color={color} style={styles.icon} size={18} name={iconName} />
     <ThemedText size="xs" bold text={count.toString()} />
   </TouchableOpacity>
