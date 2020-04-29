@@ -101,12 +101,14 @@ const Comments = () => {
   }, [setComment])
 
   const onSend = useCallback(async () => {
-    await commentPost({
-      author: user.uid,
-      content: comment,
-      post: post.id,
-    })
-    commentInput.current.clear()
+    if (comment.length > 0) {
+      await commentPost({
+        author: user.uid,
+        content: comment,
+        post: post.id,
+      })
+      commentInput.current.clear()
+    }
   }, [comment, user, post])
 
   const renderComment = ({ item }) => (
