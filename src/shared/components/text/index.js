@@ -42,4 +42,8 @@ const Text = ({
   </RNText>
 )
 
+export const ThemedText = (props) => (
+  <Text {...props} color="blue_dark" />
+)
+
 export default Text

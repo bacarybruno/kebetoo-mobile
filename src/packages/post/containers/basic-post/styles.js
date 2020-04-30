@@ -28,16 +28,4 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 8,
   },
-  reactions: {
-    flexDirection: 'row',
-  },
-  reaction: {
-    flexDirection: 'row',
-    minWidth: 35,
-    marginRight: 15,
-    alignItems: 'center',
-  },
-  icon: {
-    marginRight: 4,
-  },
 })

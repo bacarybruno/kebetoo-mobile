@@ -21,10 +21,13 @@ export default StyleSheet.create({
     paddingHorizontal,
     backgroundColor: colors.background,
   },
-  reactions: { flex: 1, justifyContent: 'flex-end' },
+  reactions: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
   flatlistContent: {
+    flexGrow: 1,
     backgroundColor: colors.background,
-    minHeight: '100%',
   },
   post: {
     width: '100%',
@@ -110,5 +113,14 @@ export default StyleSheet.create({
     margin: 3,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  noContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  loveIcon: {
+    paddingLeft: 10,
   },
 })
