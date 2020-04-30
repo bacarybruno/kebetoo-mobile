@@ -4,7 +4,7 @@ import {
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
-import { hasDisliked, hasLiked } from 'Kebetoo/src/packages/post/containers/basic-post'
+import { hasDisliked, hasLiked } from 'Kebetoo/src/packages/post/containers/reactions'
 
 import * as types from '../types'
 

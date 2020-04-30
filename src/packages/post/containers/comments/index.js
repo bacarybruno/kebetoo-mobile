@@ -1,5 +1,5 @@
 import React, {
-  useState, useEffect, useCallback, useRef,
+  useState, useEffect, useCallback, useRef, memo, useMemo,
 } from 'react'
 import { View, FlatList, TouchableOpacity } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
@@ -9,9 +9,8 @@ import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import moment from 'moment'
 
-import {
-  Content, Reactions as BaseReactions, Header,
-} from 'Kebetoo/src/packages/post/containers/basic-post'
+import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
+import BaseReactions from 'Kebetoo/src/packages/post/containers/reactions'
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import Text from 'Kebetoo/src/shared/components/text'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
@@ -37,7 +36,9 @@ export const SendButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-const CommentInput = ({ onChange, onSend, inputRef }) => (
+export const CommentInput = ({
+  onChange, onSend, inputRef, ...inputProps
+}) => (
   <View style={styles.commentInputWrapper}>
     <View style={styles.flexible}>
       <TextInput
@@ -50,18 +51,26 @@ const CommentInput = ({ onChange, onSend, inputRef }) => (
           styles.textInputSize,
           styles.textInputWrapper,
         ]}
+        {...inputProps}
       />
     </View>
     <SendButton onPress={onSend} />
   </View>
 )
 
-const Reactions = ({ post, author }) => (
+export const Reactions = ({ post, author, ...reactionProps }) => (
   <View style={styles.reactionsContainer}>
     <DraggableIndicator />
     <View style={styles.reactions}>
-      <BaseReactions post={post} author={author} />
+      <BaseReactions post={post} author={author} {...reactionProps} />
     </View>
+  </View>
+)
+
+export const NoContent = () => (
+  <View style={styles.noContent}>
+    <Text color="primary" size="header" text="No content yet" />
+    <Text text="Be the first to add a comment! 👇" />
   </View>
 )
 
@@ -77,10 +86,12 @@ const Comments = () => {
   const [comment, setComment] = useState('')
   const commentInput = useRef()
 
+  const { comments } = post
+
   useEffect(() => {
     const fetchAuthors = async () => {
-      if (post.comments.length > 0) {
-        const ids = new Set(post.comments.map((c) => c.author))
+      if (comments.length > 0) {
+        const ids = new Set(comments.map((c) => c.author))
         const { docs } = await getUsers([...ids])
         const authorsData = {}
         docs.forEach((doc) => {
@@ -95,11 +106,11 @@ const Comments = () => {
     }
 
     fetchAuthors()
-  }, [post])
+  }, [comments])
 
   const onChangeText = useCallback((value) => {
     setComment(value)
-  }, [setComment])
+  }, [])
 
   const onSend = useCallback(async () => {
     if (comment.length > 0) {
@@ -112,15 +123,11 @@ const Comments = () => {
     }
   }, [comment, user, post])
 
-  const renderComment = ({ item }) => (
+  const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      {authors[item.author] ? (
-        <Comment item={item} />
-      ) : (
-        <CommentPlaceholder />
-      )}
+      {authors[item.author] ? <Comment item={item} /> : <CommentPlaceholder />}
     </View>
-  )
+  ), [authors])
 
   const ListHeaderLeft = () => (
     <HeaderBackButton
@@ -146,15 +153,17 @@ const Comments = () => {
         <View style={styles.flexible}>
           <View style={styles.flexible}>
             <View style={{ flexDirection: 'row', ...styles.flexible }}>
-              <Text size="sm" text={authors[item.author].displayName} />
-              <Text text=" • " />
-              <Text size="sm" text={moment(item.updatedAt).fromNow()} />
+              <Text numberOfLines={1}>
+                {authors[item.author].displayName}
+                <Text size="sm" text=" • " />
+                <Text size="sm" text={`${moment(item.updatedAt).fromNow()}`} />
+              </Text>
             </View>
           </View>
           <Text text={item.content} />
         </View>
       </View>
-      <Ionicon name="ios-heart-empty" size={15} />
+      <Ionicon name="ios-heart-empty" size={15} style={styles.loveIcon} />
     </>
   )
 
@@ -162,7 +171,11 @@ const Comments = () => {
     <View style={styles.post}>
       <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
       <Content post={post} style={styles.content} />
-      <Reactions post={post} author={author} />
+      <Reactions
+        post={post}
+        author={author}
+        onComment={() => commentInput.current.focus()}
+      />
     </View>
   )
 
@@ -170,20 +183,24 @@ const Comments = () => {
 
   return (
     <View style={styles.wrapper}>
-      <FlatList
-        data={post.comments}
-        renderItem={renderComment}
-        keyExtractor={keyExtractor}
-        ListHeaderComponent={ListHeader}
-        contentContainerStyle={styles.flatlistContent}
-      />
+      <View style={styles.flexible}>
+        <FlatList
+          data={comments}
+          renderItem={renderComment}
+          keyExtractor={keyExtractor}
+          ListHeaderComponent={ListHeader}
+          ListEmptyComponent={NoContent}
+          contentContainerStyle={styles.flatlistContent}
+        />
+      </View>
       <CommentInput
         onChange={onChangeText}
         onSend={onSend}
         inputRef={commentInput}
+        autoFocus={post.comments.length === 0}
       />
     </View>
   )
 }
 
-export default Comments
+export default memo(Comments)
