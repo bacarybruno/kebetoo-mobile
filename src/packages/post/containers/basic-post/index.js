@@ -11,6 +11,7 @@ import Avatar from 'Kebetoo/src/shared/components/avatar'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
+import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
 
 import styles from './styles'
 
@@ -116,8 +117,6 @@ export const Reactions = ({ post, author, onReaction }) => {
   )
 }
 
-const Placeholder = () => null
-
 const BasicPost = ({ post, author, size = 35 }) => {
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
@@ -143,7 +142,7 @@ const BasicPost = ({ post, author, size = 35 }) => {
     }
   }, [author, post, dispatch, navigate])
 
-  if (!author) return <Placeholder />
+  if (!author) return <PostPlaceholder />
   return (
     <View style={styles.wrapper}>
       <Header post={post} author={author} size={size} />

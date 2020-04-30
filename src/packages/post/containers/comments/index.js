@@ -19,6 +19,7 @@ import Avatar from 'Kebetoo/src/shared/components/avatar'
 import colors from 'Kebetoo/src/theme/colors'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import { commentPost } from 'Kebetoo/src/shared/helpers/http'
+import CommentPlaceholder from 'Kebetoo/src/shared/components/placeholders/comments'
 
 import styles from './styles'
 
@@ -112,30 +113,13 @@ const Comments = () => {
   }, [comment, user, post])
 
   const renderComment = ({ item }) => (
-    authors[item.author] ? (
-      <View style={styles.comment}>
-        <View style={{ flexDirection: 'row', ...styles.flexible }}>
-          <View style={{ marginRight: 10 }}>
-            <Avatar
-              src={authors[item.author].photoURL}
-              text={authors[item.author].displayName}
-              size={35}
-            />
-          </View>
-          <View style={styles.flexible}>
-            <View style={styles.flexible}>
-              <View style={{ flexDirection: 'row', ...styles.flexible }}>
-                <Text size="sm" text={authors[item.author].displayName} />
-                <Text text=" • " />
-                <Text size="sm" text={moment(item.updatedAt).fromNow()} />
-              </View>
-            </View>
-            <Text text={item.content} />
-          </View>
-        </View>
-        <Ionicon name="ios-heart-empty" size={15} />
-      </View>
-    ) : null
+    <View style={styles.comment}>
+      {authors[item.author] ? (
+        <Comment item={item} />
+      ) : (
+        <CommentPlaceholder />
+      )}
+    </View>
   )
 
   const ListHeaderLeft = () => (
@@ -147,6 +131,31 @@ const Comments = () => {
         </View>
       )}
     />
+  )
+
+  const Comment = ({ item }) => (
+    <>
+      <View style={{ flexDirection: 'row', ...styles.flexible }}>
+        <View style={{ marginRight: 10 }}>
+          <Avatar
+            src={authors[item.author].photoURL}
+            text={authors[item.author].displayName}
+            size={35}
+          />
+        </View>
+        <View style={styles.flexible}>
+          <View style={styles.flexible}>
+            <View style={{ flexDirection: 'row', ...styles.flexible }}>
+              <Text size="sm" text={authors[item.author].displayName} />
+              <Text text=" • " />
+              <Text size="sm" text={moment(item.updatedAt).fromNow()} />
+            </View>
+          </View>
+          <Text text={item.content} />
+        </View>
+      </View>
+      <Ionicon name="ios-heart-empty" size={15} />
+    </>
   )
 
   const ListHeader = () => (
