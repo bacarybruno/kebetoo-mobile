@@ -31,7 +31,6 @@ const facebookLogin = async () => {
     result.data = data
   } catch (error) {
     result.error = error
-    console.log(error)
   }
   return Promise.resolve(result)
 }

@@ -48,7 +48,7 @@ const BasicPost = ({ post, author, size = 35 }) => (
     <View style={styles.wrapper}>
       <Header post={post} author={author} size={size} />
       <Content post={post} />
-      <Reactions post={post} author={author} />
+      <Reactions post={post} author={author.id} />
     </View>
   )
 )

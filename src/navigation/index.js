@@ -38,7 +38,7 @@ import CreatePostPage, {
 } from 'Kebetoo/src/packages/post/containers/create'
 import CommentsPage, {
   routeOptions as commentsRouteOptions,
-} from 'Kebetoo/src/packages/post/containers/comments'
+} from 'Kebetoo/src/packages/comments/containers'
 
 import styles from './styles'
 import routes from './routes'
@@ -169,7 +169,6 @@ export const TabPage = () => (
 const AppNavigation = () => {
   const initialUserState = auth().currentUser !== null
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
-
   useEffect(() => {
     const onAuthStateChanged = async (user) => {
       setIsLoggedIn(!!user)

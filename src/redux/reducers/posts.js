@@ -1,53 +1,159 @@
 /* eslint-disable no-case-declarations */
+
+import { combineReducers } from 'redux'
+
 import * as types from '../types'
 
 const initialState = {
   posts: [],
   authors: {},
-  refreshing: false,
+  comments: [],
+  likes: {},
+  dislikes: {},
 }
 
-const reducer = (state = initialState, action) => {
+const posts = (state = initialState.posts, action) => {
   switch (action.type) {
-    case types.CLEAR_POSTS:
-      return {
-        ...state,
-        posts: [],
-      }
     case types.API_FETCH_POSTS_SUCCESS:
       return {
         ...state,
-        posts: [
-          ...state.posts,
-          ...action.payload,
-        ],
+        ...action.payload,
       }
-    case types.API_FETCH_AUTHORS_SUCCESS:
+    case types.REPLACE_POSTS:
+      return action.payload
+    case types.LIKE_SUCCESS:
       return {
         ...state,
-        authors: { ...action.payload },
+        [action.payload.postId]: {
+          ...state[action.payload.postId],
+          likes: [
+            ...state[action.payload.postId].likes,
+            action.payload.like.id,
+          ],
+        },
       }
-    case types.API_REFRESH_POSTS_PENDING:
+    case types.DELETE_LIKE_SUCCESS:
       return {
         ...state,
-        refreshing: true,
+        [action.payload.postId]: {
+          ...state[action.payload.postId],
+          likes: [
+            ...state[action.payload.postId]
+              .likes.filter((like) => like !== action.payload.likeId),
+          ],
+        },
       }
-    case types.API_REFRESH_POSTS_SUCCESS:
+    case types.DISLIKE_SUCCESS:
       return {
         ...state,
-        refreshing: false,
+        [action.payload.postId]: {
+          ...state[action.payload.postId],
+          dislikes: [
+            ...state[action.payload.postId].dislikes,
+            action.payload.dislike.id,
+          ],
+        },
       }
-    case types.REPLACE_POST:
-      const posts = [...state.posts]
-      const index = posts.findIndex((post) => post.id === action.payload.id)
-      posts[index] = action.payload
+    case types.DELETE_DISLIKE_SUCCESS:
       return {
         ...state,
-        posts,
+        [action.payload.postId]: {
+          ...state[action.payload.postId],
+          dislikes: [
+            ...state[action.payload.postId]
+              .dislikes.filter((dislike) => dislike !== action.payload.dislikeId),
+          ],
+        },
       }
     default:
       return state
   }
 }
 
-export default reducer
+const likes = (state = initialState.likes, action) => {
+  switch (action.type) {
+    case types.REPLACE_POSTS:
+      return []
+    case types.API_FETCH_LIKES_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+      }
+    case types.LIKE_SUCCESS:
+      return {
+        ...state,
+        [action.payload.like.id]: {
+          ...action.payload.like,
+          post: action.payload.postId,
+        },
+      }
+    case types.DELETE_LIKE_SUCCESS:
+      return {
+        ...state,
+        [action.payload.likeId]: undefined,
+      }
+    default:
+      return state
+  }
+}
+
+const dislikes = (state = initialState.dislikes, action) => {
+  switch (action.type) {
+    case types.REPLACE_POSTS:
+      return []
+    case types.API_FETCH_DISLIKES_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+      }
+    case types.DISLIKE_SUCCESS:
+      return {
+        ...state,
+        [action.payload.dislike.id]: {
+          ...action.payload.dislike,
+          post: action.payload.postId,
+        },
+      }
+    case types.DELETE_DISLIKE_SUCCESS:
+      return {
+        ...state,
+        [action.payload.dislikeId]: undefined,
+      }
+    default:
+      return state
+  }
+}
+
+const comments = (state = initialState.comments, action) => {
+  switch (action.type) {
+    case types.REPLACE_POSTS:
+      return []
+    case types.API_FETCH_COMMENTS_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+      }
+    default:
+      return state
+  }
+}
+
+const authors = (state = initialState.authors, action) => {
+  switch (action.type) {
+    case types.API_FETCH_AUTHORS_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+      }
+    default:
+      return state
+  }
+}
+
+export default combineReducers({
+  posts,
+  likes,
+  dislikes,
+  comments,
+  authors,
+})
