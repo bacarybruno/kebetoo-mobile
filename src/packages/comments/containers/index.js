@@ -4,15 +4,15 @@ import React, {
 import { View, FlatList } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import Text from 'Kebetoo/src/shared/components/text'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
-import { commentPost } from 'Kebetoo/src/shared/helpers/http'
 import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
+import * as types from 'Kebetoo/src/redux/types'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
@@ -38,8 +38,9 @@ const Comments = () => {
   const [comment, setComment] = useState('')
   const commentInput = useRef()
   const normalizedPost = useSelector(postsSelector)[params.id]
-  const [post] = useState((value) => value || normalizedPost)
+  const [post, setPost] = useState((value) => value || normalizedPost)
   const author = useSelector(authorsSelector)[post.author]
+  const dispatch = useDispatch()
 
   const normalizedComments = useSelector(commentsSelector)
 
@@ -51,6 +52,12 @@ const Comments = () => {
   }, [normalizedComments, params.id])
 
   useEffect(() => {
+    if (normalizedPost.comments.length !== comments.length) {
+      setPost(normalizedPost)
+    }
+  }, [comments, normalizedPost])
+
+  useEffect(() => {
     const fetchAuthors = async () => {
       if (comments.length > 0) {
         const ids = [...new Set(comments.map((c) => c.author))]
@@ -58,17 +65,15 @@ const Comments = () => {
 
         if (newAuthors.length === 0) return
 
-
         const { docs } = await getUsers(newAuthors)
-        const authorsData = {}
         docs.forEach((doc) => {
           const { displayName: name, photoURL } = doc.data()
-          authorsData[doc.id] = {
+          authors[doc.id] = {
             displayName: name,
             photoURL,
           }
         })
-        setAuthors(authorsData)
+        setAuthors({ ...authors })
       }
     }
     fetchAuthors()
@@ -80,14 +85,17 @@ const Comments = () => {
 
   const onSend = useCallback(async () => {
     if (comment.length > 0) {
-      await commentPost({
-        author: user.uid,
-        content: comment,
-        post: params.id,
+      dispatch({
+        type: types.COMMENT_POST,
+        payload: {
+          author: user.uid,
+          content: comment,
+          post: params.id,
+        },
       })
       commentInput.current.clear()
     }
-  }, [comment, params.id, user.uid])
+  }, [comment, dispatch, params.id, user.uid])
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
