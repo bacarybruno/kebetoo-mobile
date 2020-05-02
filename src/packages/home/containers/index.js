@@ -1,7 +1,7 @@
 import React, {
   useEffect, useState, useCallback, memo, useMemo,
 } from 'react'
-import { View, FlatList, RefreshControl, Alert } from 'react-native'
+import { View, FlatList, RefreshControl } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
@@ -78,7 +78,7 @@ const HomePage = () => {
       imageSrc={user.photoURL}
       style={styles.header}
     />
-  ), [displayName])
+  ), [displayName, user.photoURL])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

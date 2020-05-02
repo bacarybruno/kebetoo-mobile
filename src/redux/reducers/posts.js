@@ -65,6 +65,17 @@ const posts = (state = initialState.posts, action) => {
           ],
         },
       }
+    case types.COMMENT_POST_SUCCESS:
+      return {
+        ...state,
+        [action.payload.post.id]: {
+          ...state[action.payload.post.id],
+          comments: [
+            ...state[action.payload.post.id].comments,
+            action.payload.id,
+          ],
+        },
+      }
     default:
       return state
   }
@@ -132,6 +143,14 @@ const comments = (state = initialState.comments, action) => {
       return {
         ...state,
         ...action.payload,
+      }
+    case types.COMMENT_POST_SUCCESS:
+      return {
+        ...state,
+        [action.payload.id]: {
+          ...action.payload,
+          post: action.payload.post.id,
+        },
       }
     default:
       return state

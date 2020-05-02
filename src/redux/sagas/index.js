@@ -143,11 +143,23 @@ function* toggleDislikePost(action) {
   }
 }
 
+function* commentPost(action) {
+  try {
+    const { author, post, content } = action.payload
+    const result = yield call(api.commentPost, { author, post, content })
+    yield put({ type: types.COMMENT_POST_SUCCESS, payload: result })
+  } catch (error) {
+    yield put({ type: types.COMMENT_POST_ERROR, error })
+  }
+}
+
 export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
     yield takeLeading(types.API_FETCH_AUTHORS, fetchAuthors),
     yield takeLeading(types.API_TOGGLE_LIKE_POST, toggleLikePost),
     yield takeLeading(types.API_TOGGLE_DISLIKE_POST, toggleDislikePost),
+    yield takeLeading(types.API_TOGGLE_DISLIKE_POST, toggleDislikePost),
+    yield takeLeading(types.COMMENT_POST, commentPost),
   ])
 }

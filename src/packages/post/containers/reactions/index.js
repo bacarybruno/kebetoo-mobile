@@ -49,17 +49,17 @@ export const hasDisliked = ({ dislikes, post, author }) => (
 export const Reaction = ({
   iconName, count, onPress, color = colors.blue_dark,
 }) => (
-    <TouchableOpacity
-      style={styles.reaction}
-      onPress={onPress}
-      hitSlop={EdgeInsets.symmetric({
-        horizontal: 5, vertical: 25,
-      })}
-    >
-      <Kebeticon color={color} style={styles.icon} size={18} name={iconName} />
-      <ThemedText size="xs" bold text={count.toString()} />
-    </TouchableOpacity>
-  )
+  <TouchableOpacity
+    style={styles.reaction}
+    onPress={onPress}
+    hitSlop={EdgeInsets.symmetric({
+      horizontal: 5, vertical: 25,
+    })}
+  >
+    <Kebeticon color={color} style={styles.icon} size={18} name={iconName} />
+    <ThemedText size="xs" bold text={count.toString()} />
+  </TouchableOpacity>
+)
 
 const Reactions = ({
   post, author, onComment,
@@ -79,6 +79,9 @@ const Reactions = ({
   const [postDislikesCount, setPostDislikesCount] = useState(
     (value) => value || post.dislikes.length,
   )
+  const [postCommentsCount, setPostCommentsCount] = useState(
+    (value) => value || post.comments.length,
+  )
 
   const { navigate, addListener: addNavigationListener } = useNavigation()
 
@@ -88,6 +91,7 @@ const Reactions = ({
       setDisliked(hasDisliked({ dislikes, post: updatedPost, author }))
       setPostLikesCount(updatedPost.likes.length)
       setPostDislikesCount(updatedPost.dislikes.length)
+      setPostCommentsCount(updatedPost.comments.length)
     })
     return unsusbcribeFocus
   }, [addNavigationListener, author, dislikes, likes, updatedPost])
@@ -162,7 +166,7 @@ const Reactions = ({
       />
       <Reaction
         iconName="comment"
-        count={post.comments.length}
+        count={postCommentsCount}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />
       <Reaction
