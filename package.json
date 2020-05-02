@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android:dev": "react-native run-android",
+    "android:dev": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:1337 tcp:1337 && react-native run-android",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
@@ -22,6 +22,7 @@
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
     "moment": "^2.24.0",
+    "normalizr": "^3.6.0",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-fbsdk": "^1.1.2",
