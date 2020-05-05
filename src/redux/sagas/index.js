@@ -159,7 +159,6 @@ export default function* root() {
     yield takeLeading(types.API_FETCH_AUTHORS, fetchAuthors),
     yield takeLeading(types.API_TOGGLE_LIKE_POST, toggleLikePost),
     yield takeLeading(types.API_TOGGLE_DISLIKE_POST, toggleDislikePost),
-    yield takeLeading(types.API_TOGGLE_DISLIKE_POST, toggleDislikePost),
     yield takeLeading(types.COMMENT_POST, commentPost),
   ])
 }
