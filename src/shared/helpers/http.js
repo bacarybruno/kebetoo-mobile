@@ -21,6 +21,10 @@ const request = {
 
 export const getPosts = () => request.get(`posts?_limit=${ITEMS_PER_PAGE}`)
 
+export const getUserPosts = (authorId) => request.get(
+  `posts?author=${authorId}&_sort=updatedAt:desc`
+)
+
 export const getPost = (id) => request.get(`posts/${id}`)
 
 export const getLatestsPosts = (page = 0) => request.get(

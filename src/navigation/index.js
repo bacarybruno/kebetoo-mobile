@@ -11,7 +11,7 @@ import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
 import Text from 'Kebetoo/src/shared/components/text'
-import NavBackButton from 'Kebetoo/src/shared/components/buttons/nav-back'
+import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OnboardingPage, {
   routeOptions as onboardingRouteOptions,
 } from 'Kebetoo/src/packages/onboarding/containers'
@@ -39,6 +39,9 @@ import CreatePostPage, {
 import CommentsPage, {
   routeOptions as commentsRouteOptions,
 } from 'Kebetoo/src/packages/comments/containers'
+import ManagePostsPage, {
+  routeOptions as managePostsRouteOptions,
+} from 'Kebetoo/src/packages/post/containers/manage'
 
 import styles from './styles'
 import routes from './routes'
@@ -49,7 +52,9 @@ const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
 const defaultScreenOptions = {
-  headerLeft: NavBackButton,
+  headerBackImage: ({ tintColor }) => (
+    <HeaderBack tintColor={tintColor} />
+  ),
   headerStyle: styles.headerStyle,
   headerTitleAlign: 'center',
   headerTitle: (props) => (
@@ -195,6 +200,11 @@ const AppNavigation = () => {
               options={commentsRouteOptions}
               component={CommentsPage}
               name={routes.COMMENTS}
+            />
+            <Stack.Screen
+              options={managePostsRouteOptions}
+              component={ManagePostsPage}
+              name={routes.MANAGE_POSTS}
             />
           </>
         ) : (

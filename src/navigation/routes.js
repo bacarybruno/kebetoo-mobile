@@ -11,6 +11,7 @@ const routes = {
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'route:custom:tabs_fab',
   COMMENTS: 'route:comments',
+  MANAGE_POSTS: 'route:manage_posts',
 }
 
 export default routes
