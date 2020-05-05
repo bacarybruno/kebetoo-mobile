@@ -6,7 +6,7 @@ import auth from '@react-native-firebase/auth'
 
 import Text from 'Kebetoo/src/shared/components/text'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
-import HeaderBack from 'Kebetoo/src/packages/post/components/header-back'
+import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import HeaderSave from 'Kebetoo/src/packages/post/components/header-save'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 import { createPost } from 'Kebetoo/src/shared/helpers/http'
@@ -16,7 +16,9 @@ import styles from './styles'
 export const routeOptions = {
   title: 'Create post',
   headerShown: true,
-  headerBackImage: ({ tintColor }) => <HeaderBack tintColor={tintColor} />,
+  headerBackImage: ({ tintColor }) => (
+    <HeaderBack.Close tintColor={tintColor} />
+  ),
   headerTitleAlign: 'left',
   headerStyle: styles.header,
   ...TransitionPresets.ModalSlideFromBottomIOS,

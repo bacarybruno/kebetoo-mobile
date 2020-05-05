@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
-import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
+import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import Text from 'Kebetoo/src/shared/components/text'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
@@ -106,10 +106,8 @@ const Comments = () => {
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
       onPress={goBack}
-      backImage={() => (
-        <View style={styles.backHandler}>
-          <Kebeticon name="chevron-left" size={20} />
-        </View>
+      backImage={({ tintColor }) => (
+        <HeaderBack tintColor={tintColor} />
       )}
     />
   ), [goBack])
