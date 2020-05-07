@@ -9,7 +9,7 @@ import auth from '@react-native-firebase/auth'
 
 import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
-import Text from 'Kebetoo/src/shared/components/text'
+import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
 import * as types from 'Kebetoo/src/redux/types'
@@ -21,11 +21,8 @@ import Comment from '../components/comment'
 
 export const routeOptions = {}
 
-export const NoContent = () => (
-  <View style={styles.noContent}>
-    <Text color="primary" size="header" text="No content yet" />
-    <Text text="Be the first to add a comment! 👇" />
-  </View>
+export const NoComments = () => (
+  <NoContent title="No content yet" text="Be the first to add a comment! 👇" />
 )
 
 // TODO: paginate comments
@@ -136,7 +133,7 @@ const Comments = () => {
           renderItem={renderComment}
           keyExtractor={keyExtractor}
           ListHeaderComponent={ListHeader}
-          ListEmptyComponent={NoContent}
+          ListEmptyComponent={NoComments}
           contentContainerStyle={styles.flatlistContent}
         />
       </View>

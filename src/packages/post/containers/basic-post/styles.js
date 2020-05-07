@@ -7,10 +7,15 @@ export default StyleSheet.create({
   wrapper: {
     marginBottom: 30,
   },
-  header: {
+  headerWrapper: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 8,
+  },
+  left: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   meta: {
     justifyContent: 'space-between',
@@ -27,5 +32,9 @@ export default StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     marginBottom: 8,
+  },
+  moreButton: {
+    width: 30,
+    alignItems: 'center',
   },
 })

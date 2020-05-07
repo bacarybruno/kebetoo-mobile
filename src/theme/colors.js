@@ -14,6 +14,7 @@ const colors = {
   purple: '#874FB1',
   blue_dark: '#322153',
   facebook: '#3b5998',
+  danger: '#d32f2f',
 }
 
 export const hexToRgb = (hex) => {

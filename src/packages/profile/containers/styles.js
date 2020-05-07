@@ -68,6 +68,8 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: metrics.marginHorizontal / 2,
+    paddingHorizontal: metrics.marginHorizontal,
   },
   iconWrapper: {
     width: 40,
@@ -83,12 +85,12 @@ export default StyleSheet.create({
   },
   sectionTitle: {
     marginBottom: 10,
+    paddingHorizontal: metrics.marginHorizontal,
   },
   iconButtonWrapper: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15,
     justifyContent: 'space-between',
   },
   scrollViewContent: {

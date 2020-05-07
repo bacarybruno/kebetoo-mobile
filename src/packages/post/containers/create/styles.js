@@ -17,6 +17,9 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     elevation: 0,
   },
+  headerSaveButton: {
+    marginHorizontal: metrics.marginHorizontal,
+  },
   textInput: {
     textAlignVertical: 'top',
   },

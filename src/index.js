@@ -3,6 +3,7 @@ import './config/strings'
 import './config/init'
 
 import React from 'react'
+import { ActionSheetProvider } from '@expo/react-native-action-sheet'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
@@ -14,7 +15,9 @@ const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <SafeAreaProvider>
-        <RootContainer />
+        <ActionSheetProvider>
+          <RootContainer />
+        </ActionSheetProvider>
       </SafeAreaProvider>
     </PersistGate>
   </Provider>

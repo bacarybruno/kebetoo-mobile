@@ -1,10 +1,11 @@
 import React, { useCallback } from 'react'
-import { View, TouchableOpacity, ScrollView } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Text from 'Kebetoo/src/shared/components/text'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import colors from 'Kebetoo/src/theme/colors'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import routes from 'Kebetoo/src/navigation/routes'
@@ -44,10 +45,10 @@ export const Stat = ({ title, value }) => (
 )
 
 export const IconButton = ({
-  icon, text, message, onPress, children,
+  icon, text, message, onPress, children, ...otherProps
 }) => (
     <View style={styles.iconButtonWrapper}>
-      <TouchableOpacity style={styles.iconButton} onPress={onPress}>
+      <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
         <View style={styles.iconWrapper}>
           <Ionicon style={styles.icon} name={icon} size={20} color={colors.primary} />
         </View>
@@ -55,7 +56,7 @@ export const IconButton = ({
           <Text text={text} />
           {message && <Text text={message} size="sm" opacity={0.35} />}
         </View>
-      </TouchableOpacity>
+      </Pressable>
       {children}
     </View>
   )
@@ -73,7 +74,7 @@ const ProfileSection = ({ managePosts }) => (
     <IconButton
       icon="md-list"
       text="Manage posts"
-      message="Edit or delete your posts"
+      message="View, edit or delete your posts"
       onPress={managePosts}
     />
   </View>
@@ -123,7 +124,7 @@ const ProfilePage = () => {
       <View style={styles.padding}>
         <Header profile={profile} />
       </View>
-      <ScrollView style={styles.padding} contentContainerStyle={styles.scrollViewContent}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <ProfileSection managePosts={managePosts} />
         <PreferencesSection />
         <AccountSection signOut={signOut} />

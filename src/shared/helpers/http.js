@@ -14,6 +14,14 @@ const request = {
     },
     body: JSON.stringify(body),
   }).then(parseJSON),
+  put: (path = '', body) => fetch(`${BASE_URL}/${path}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  }).then(parseJSON),
   delete: (path = '') => fetch(`${BASE_URL}/${path}`, {
     method: 'DELETE',
   }).then(parseJSON),
@@ -32,6 +40,10 @@ export const getLatestsPosts = (page = 0) => request.get(
 )
 
 export const createPost = ({ author, content }) => request.post('posts', { author, content })
+
+export const editPost = ({ id, content }) => request.put(`posts/${id}`, { content })
+
+export const deletePost = (id) => request.delete(`posts/${id}`)
 
 export const commentPost = ({ author, post, content }) => request.post(
   'comments',
