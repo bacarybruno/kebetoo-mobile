@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { View, ScrollView } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
@@ -9,6 +9,7 @@ import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import colors from 'Kebetoo/src/theme/colors'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import routes from 'Kebetoo/src/navigation/routes'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles, { imageSize } from './styles'
 
@@ -61,11 +62,11 @@ export const IconButton = ({
     </View>
   )
 
-const Stats = () => (
+const Stats = ({ postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.stats}>
-    <Stat value={100} title="posts" />
-    <Stat value={987} title="reactions" />
-    <Stat value={900} title="comments" />
+    <Stat value={postsCount} title="posts" />
+    <Stat value={reactionsCount} title="reactions" />
+    <Stat value={commentsCount} title="comments" />
   </View>
 )
 
@@ -98,14 +99,18 @@ const PreferencesSection = () => (
   </View>
 )
 
-const Header = ({ profile }) => (
+const Header = ({ profile, postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.header}>
     <Summary
       photoURL={profile.photoURL}
       displayName={profile.displayName}
       email={profile.email}
     />
-    <Stats />
+    <Stats
+      postsCount={postsCount}
+      reactionsCount={reactionsCount}
+      commentsCount={commentsCount}
+    />
   </View>
 )
 
@@ -113,16 +118,40 @@ const ProfilePage = () => {
   const profile = auth().currentUser
   const { navigate } = useNavigation()
 
+  const [postsCount, setPostsCount] = useState(0)
+  const [reactionsCount, setReactionsCount] = useState(0)
+  const [commentsCount, setCommentsCount] = useState(0)
+
   const signOut = useCallback(() => {
     auth().signOut()
   }, [])
+
+  useFocusEffect(
+    useCallback(() => {
+      api.getPostsCount(profile.uid)
+        .then(setPostsCount)
+      api.getCommentsCount(profile.uid)
+        .then(setCommentsCount)
+      Promise.all([
+        api.getLikesCount(profile.uid),
+        api.getDislikesCount(profile.uid)
+      ]).then((responses) => {
+        setReactionsCount(responses.reduce((a, b) => a + b))
+      })
+    }, [])
+  )
 
   const managePosts = () => navigate(routes.MANAGE_POSTS)
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.padding}>
-        <Header profile={profile} />
+        <Header
+          profile={profile}
+          postsCount={postsCount}
+          reactionsCount={reactionsCount}
+          commentsCount={commentsCount}
+        />
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <ProfileSection managePosts={managePosts} />

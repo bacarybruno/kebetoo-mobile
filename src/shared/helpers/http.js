@@ -56,3 +56,8 @@ export const deleteLike = (id) => request.delete(`likes/${id}`)
 
 export const dislikePost = ({ author, post }) => request.post('dislikes', { author, post })
 export const deleteDislike = (id) => request.delete(`dislikes/${id}`)
+
+export const getPostsCount = (author) => request.get(`posts/count?author=${author}`)
+export const getLikesCount = (author) => request.get(`likes/count?post.author=${author}`)
+export const getDislikesCount = (author) => request.get(`dislikes/count?post.author=${author}`)
+export const getCommentsCount = (author) => request.get(`comments/count?post.author=${author}`)
