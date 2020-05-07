@@ -2,7 +2,7 @@ import { Dimensions } from 'react-native'
 
 const { width, height } = Dimensions.get('window')
 
-const Theme = {
+const metrics = {
   marginHorizontal: 16,
   marginVertical: 24,
   screenWidth: width,
@@ -11,4 +11,4 @@ const Theme = {
   tabBarFullHeight: 80,
 }
 
-export default Theme
+export default metrics

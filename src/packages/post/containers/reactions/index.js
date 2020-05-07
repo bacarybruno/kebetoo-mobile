@@ -10,7 +10,7 @@ import colors from 'Kebetoo/src/theme/colors'
 import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
-import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
 import { likesSelector, dislikesSelector, postsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
@@ -47,22 +47,32 @@ export const hasDisliked = ({ dislikes, post, author }) => (
 )
 
 export const Reaction = ({
-  iconName, count, onPress, color = colors.blue_dark,
+  iconName, count, onPress, color = colors.blue_dark, disabled,
 }) => (
   <TouchableOpacity
     style={styles.reaction}
     onPress={onPress}
+    disabled={disabled}
     hitSlop={EdgeInsets.symmetric({
       horizontal: 5, vertical: 25,
     })}
   >
-    <Kebeticon color={color} style={styles.icon} size={18} name={iconName} />
-    <ThemedText size="xs" bold text={count.toString()} />
+    <Kebeticon
+      color={disabled ? colors.inactive : color}
+      style={styles.icon}
+      size={18}
+      name={iconName}
+    />
+    {disabled ? (
+      <Text color="inactive" size="xs" bold text={count.toString()} />
+    ) : (
+      <ThemedText size="xs" bold text={count.toString()} />
+    )}
   </TouchableOpacity>
 )
 
 const Reactions = ({
-  post, author, onComment,
+  post, author, onComment, disabled,
 }) => {
   const posts = useSelector(postsSelector)
   const likes = useSelector(likesSelector)
@@ -157,21 +167,25 @@ const Reactions = ({
       <Reaction
         iconName={liked ? 'like-fill' : 'like'}
         count={postLikesCount}
+        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
         iconName={disliked ? 'dislike-fill' : 'dislike'}
         count={postDislikesCount}
+        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
       />
       <Reaction
         iconName="comment"
         count={postCommentsCount}
+        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />
       <Reaction
         iconName="share"
         count={0}
+        disabled={disabled}
         onPress={() => { }}
       />
     </View>

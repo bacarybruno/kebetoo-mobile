@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android:dev": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:1337 tcp:1337 && react-native run-android",
+    "android:dev": "react-native run-android",
+    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:1337 tcp:1337",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
@@ -11,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@expo/react-native-action-sheet": "^3.6.0",
     "@react-native-community/async-storage": "^1.9.0",
     "@react-native-community/google-signin": "^4.0.0",
     "@react-native-community/masked-view": "^0.1.8",

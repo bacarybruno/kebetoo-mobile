@@ -1,7 +1,8 @@
 import React, {
-  useEffect, useState, useCallback, memo, useMemo,
+  useEffect, useState, useCallback, useMemo,
 } from 'react'
 import { View, FlatList, RefreshControl } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
@@ -29,30 +30,41 @@ const HomePage = () => {
   const savedDisplayName = useSelector(displayNameSelector)
   const displayName = user.displayName || savedDisplayName
 
+  const { addListener: addNavigationListener } = useNavigation()
+  
   useEffect(() => {
-    dispatch({ type: types.API_FETCH_POSTS, payload: page })
-  }, [dispatch, page])
+    const unsusbcribeFocus = addNavigationListener('focus', () => {
+      onRefresh()
+    })
+    return unsusbcribeFocus
+  }, [addNavigationListener])
 
   useEffect(() => {
-    if (page === 0 && refreshing) {
+    dispatch({ type: types.API_FETCH_POSTS, payload: page })
+  }, [dispatch, page, refreshing])
+
+  useEffect(() => {
+    if (page === 0) {
       setPosts(Object.values(normalizedPosts))
-      setRefreshing(false)
+      if (refreshing) setRefreshing(false)
     }
   }, [normalizedPosts, page, refreshing])
 
   useEffect(() => {
-    setPosts((value) => {
-      const currentPostsIds = value.map((post) => post.id)
-      const diff = Object
-        .keys(normalizedPosts)
-        .filter((postId) => currentPostsIds.indexOf(postId) === -1)
+    if (page > 0) {
+      setPosts((value) => {
+        const currentPostsIds = value.map((post) => post.id)
+        const diff = Object
+          .keys(normalizedPosts)
+          .filter((postId) => currentPostsIds.indexOf(postId) === -1)
 
-      if (diff.length === 0) return value
+        if (diff.length === 0) return value
 
-      const newPosts = diff.map((id) => normalizedPosts[id])
-      return value.concat(newPosts)
-    })
-  }, [normalizedPosts])
+        const newPosts = diff.map((id) => normalizedPosts[id])
+        return value.concat(newPosts)
+      })
+    }
+  }, [normalizedPosts, page])
 
   const onRefresh = useCallback(() => {
     setRefreshing(true)
@@ -105,4 +117,4 @@ const HomePage = () => {
   )
 }
 
-export default memo(HomePage)
+export default HomePage

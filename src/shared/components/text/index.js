@@ -15,7 +15,7 @@ export const fontSizes = {
   xl: 27,
 }
 const Text = ({
-  text,
+  text = '',
   children,
   size = 'md',
   bold = false,
@@ -23,6 +23,7 @@ const Text = ({
   color = 'black',
   opacity = 1,
   fontSize = null,
+  uppercase,
   ...props
 }) => (
   <RNText
@@ -38,7 +39,8 @@ const Text = ({
     ]}
     {...props}
   >
-    {text || children}
+    {uppercase ? text.toUpperCase() : text}
+    {children}
   </RNText>
 )
 
