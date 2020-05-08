@@ -1,13 +1,16 @@
-import React, { memo } from 'react'
+import React, { memo, useCallback } from 'react'
 import { View, TouchableOpacity, Platform } from 'react-native'
 import moment from 'moment'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useNavigation } from '@react-navigation/native'
 
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
 import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
+import routes from 'Kebetoo/src/navigation/routes'
 
 import styles from './styles'
 
@@ -58,14 +61,26 @@ export const Header = ({
   </View>
 )
 
-export const Content = ({ post, style }) => (
-  <View style={[styles.content, style]}>
+export const Content = ({ post, style, onPress, disabled }) => (
+  <Pressable
+    onPress={() => onPress(post)}
+    disabled={disabled || !onPress}
+    style={[styles.content, style]}
+  >
     <ThemedText text={post.content} />
-  </View>
+  </Pressable>
 )
 
 
-const BasicPost = ({ post, author, onOptions, disableReactions, size = 35 }) => (
+const BasicPost = ({ post, author, onOptions, disabled, size = 35 }) => {
+  const { navigate } = useNavigation()
+
+  const navigateToComments = useCallback(({ id }) => {
+    navigate(routes.COMMENTS, { id })
+  }, [])
+
+  if (!author) return <PostPlaceholder />
+  return  (
   !author ? <PostPlaceholder /> : (
     <View style={styles.wrapper}>
       <Header
@@ -73,10 +88,10 @@ const BasicPost = ({ post, author, onOptions, disableReactions, size = 35 }) => 
         author={author}
         size={size}
         onOptions={onOptions} />
-      <Content post={post} />
-      <Reactions post={post} author={author.id} disabled={disableReactions} />
+      <Content post={post} onPress={navigateToComments} disabled={disabled} />
+      <Reactions post={post} author={author.id} disabled={disabled} />
     </View>
   )
-)
+)}
 
 export default memo(BasicPost)

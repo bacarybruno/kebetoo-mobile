@@ -19,10 +19,12 @@ export default StyleSheet.create({
   },
   post: {
     width: '100%',
-    minHeight: metrics.screenHeight * 0.2,
     backgroundColor: colors.input,
     paddingTop: metrics.marginHorizontal,
     marginBottom: metrics.marginHorizontal,
+  },
+  postHeader: {
+    minHeight: metrics.screenHeight * 0.15,
   },
   content: {
     marginBottom: 0,

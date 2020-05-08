@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { View, ScrollView } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -10,6 +11,8 @@ import colors from 'Kebetoo/src/theme/colors'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import * as types from 'Kebetoo/src/redux/types'
+import { userStatsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles, { imageSize } from './styles'
 
@@ -122,6 +125,9 @@ const ProfilePage = () => {
   const [reactionsCount, setReactionsCount] = useState(0)
   const [commentsCount, setCommentsCount] = useState(0)
 
+  const stats = useSelector(userStatsSelector)
+  const dispatch = useDispatch()
+
   const signOut = useCallback(() => {
     auth().signOut()
   }, [])
@@ -129,14 +135,32 @@ const ProfilePage = () => {
   useFocusEffect(
     useCallback(() => {
       api.getPostsCount(profile.uid)
-        .then(setPostsCount)
+        .then((posts) => {
+          setPostsCount(posts)
+          dispatch({ type: types.SET_USER_STATS, payload: { posts } })
+        })
+        .catch(() => {
+          setPostsCount(stats.posts)
+        })
       api.getCommentsCount(profile.uid)
-        .then(setCommentsCount)
+        .then((comments) => {
+          setCommentsCount(comments)
+          dispatch({ type: types.SET_USER_STATS, payload: { comments } })
+        })
+        .catch(() => {
+          setCommentsCount(stats.comments)
+        })
       Promise.all([
         api.getLikesCount(profile.uid),
         api.getDislikesCount(profile.uid)
-      ]).then((responses) => {
-        setReactionsCount(responses.reduce((a, b) => a + b))
+      ])
+      .then((responses) => {
+        const reactions = responses.reduce((a, b) => a + b)
+        setReactionsCount(reactions)
+        dispatch({ type: types.SET_USER_STATS, payload: { reactions } })
+      })
+      .catch(() => {
+        setReactionsCount(stats.reactions)
       })
     }, [])
   )
