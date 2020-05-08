@@ -4,3 +4,4 @@ export const likesSelector = (state) => state.postsReducer.likes
 export const dislikesSelector = (state) => state.postsReducer.dislikes
 export const commentsSelector = (state) => state.postsReducer.comments
 export const displayNameSelector = (state) => state.userReducer.displayName
+export const userStatsSelector = (state) => state.userReducer.stats

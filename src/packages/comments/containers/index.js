@@ -113,8 +113,10 @@ const Comments = () => {
 
   const ListHeader = useCallback(() => (
     <View style={styles.post}>
-      <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
-      <Content post={post} style={styles.content} />
+      <View style={styles.postHeader}>
+        <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
+        <Content post={post} style={styles.content} />
+      </View>
       <Reactions
         post={post}
         author={author.id}
