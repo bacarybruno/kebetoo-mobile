@@ -3,14 +3,17 @@ import { View, TouchableOpacity, Platform } from 'react-native'
 import moment from 'moment'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
 
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
+import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
 import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import routes from 'Kebetoo/src/navigation/routes'
+import { postsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
 
@@ -74,14 +77,16 @@ export const Content = ({ post, style, onPress, disabled }) => (
 
 const BasicPost = ({ post, author, onOptions, disabled, size = 35 }) => {
   const { navigate } = useNavigation()
+  const posts = useSelector(postsSelector)
 
   const navigateToComments = useCallback(({ id }) => {
     navigate(routes.COMMENTS, { id })
   }, [])
 
   if (!author) return <PostPlaceholder />
-  return  (
-  !author ? <PostPlaceholder /> : (
+
+  const ReactionsComponent = posts[post.id] ? Reactions : ReactionsOnline
+  return (
     <View style={styles.wrapper}>
       <Header
         post={post}
@@ -89,9 +94,9 @@ const BasicPost = ({ post, author, onOptions, disabled, size = 35 }) => {
         size={size}
         onOptions={onOptions} />
       <Content post={post} onPress={navigateToComments} disabled={disabled} />
-      <Reactions post={post} author={author.id} disabled={disabled} />
+      <ReactionsComponent post={post} author={author.id} disabled={disabled} />
     </View>
   )
-)}
+}
 
 export default memo(BasicPost)

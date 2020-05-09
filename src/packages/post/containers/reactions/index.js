@@ -27,12 +27,11 @@ export const findLiked = ({ likes, post, author }) => post
 
 export const findCommented = ({ comments, post, author }) => post
   .comments
-  .find((like) => comments[like] && comments[like].author === author)
+  .find((comment) => comments[comment] && comments[comment].author === author)
 
 export const findDisliked = ({ dislikes, post, author }) => post
   .dislikes
   .find((dislike) => dislikes[dislike] && dislikes[dislike].author === author)
-
 
 export const hasLiked = ({ likes, post, author }) => (
   !!findLiked({ likes, post, author })
@@ -71,9 +70,7 @@ export const Reaction = ({
   </TouchableOpacity>
 )
 
-const Reactions = ({
-  post, author, onComment, disabled,
-}) => {
+const Reactions = ({ post, author, disabled }) => {
   const posts = useSelector(postsSelector)
   const likes = useSelector(likesSelector)
   const dislikes = useSelector(dislikesSelector)
@@ -104,7 +101,7 @@ const Reactions = ({
       setPostCommentsCount(updatedPost.comments.length)
     })
     return unsusbcribeFocus
-  }, [addNavigationListener, author, dislikes, likes, updatedPost])
+  }, [addNavigationListener, updatedPost, author, dislikes, likes ])
 
   const dispatch = useDispatch()
 
@@ -155,12 +152,11 @@ const Reactions = ({
           payload: { postId: post.id, author },
         })
       case REACTION_TYPES.COMMENT:
-        if (onComment) return onComment()
         return navigate(routes.COMMENTS, { id: post.id })
       default: break
     }
     return null
-  }, [toggleLike, dispatch, post.id, author, toggleDislike, onComment, navigate])
+  }, [toggleLike, dispatch, post.id, author, toggleDislike, navigate])
 
   return (
     <View style={styles.reactions}>
