@@ -166,7 +166,6 @@ const ManagePostsPage = () => {
       onOptions={() => showPostOptions(item)}
       author={userToAuthor(user)}
       post={item}
-      disabled
     />
   ), [])
 
