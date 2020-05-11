@@ -73,5 +73,7 @@
 		<string>Zocial.ttf</string>
 		<string>icomoon.ttf</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to your microphone</string>
 </dict>
 </plist>

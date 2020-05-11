@@ -1,5 +1,5 @@
 import React, {
-  useLayoutEffect, useState, useCallback, memo, useEffect,
+  useLayoutEffect, useState, useCallback, memo,
 } from 'react'
 import { View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
@@ -30,8 +30,10 @@ export const routeOptions = {
 
 export const actionTypes = {
   EDIT: 'edit',
-  CREATE: 'create'
+  CREATE: 'create',
 }
+
+const TEXT_MAX_LENGHT = 180
 
 export const PostTextMessage = ({ onChange, text }) => (
   <>
@@ -49,11 +51,9 @@ export const PostTextMessage = ({ onChange, text }) => (
     />
     <Text style={styles.textCount} size="tiny">
       {TEXT_MAX_LENGHT - text.length} characters
-  </Text>
+    </Text>
   </>
 )
-
-const TEXT_MAX_LENGHT = 180
 
 const CreatePostPage = () => {
   const { setOptions, goBack } = useNavigation()
@@ -62,7 +62,7 @@ const CreatePostPage = () => {
   const [text, setText] = useState(
     editMode
       ? params.payload.content
-      : ''
+      : '',
   )
 
   const audioRecorder = useAudioRecorder()
@@ -77,7 +77,7 @@ const CreatePostPage = () => {
     }
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
-  }, [text, goBack, params])
+  }, [editMode, params, goBack, text])
 
   useLayoutEffect(() => {
     setOptions({
@@ -89,9 +89,9 @@ const CreatePostPage = () => {
           style={styles.headerSaveButton}
         />
       ),
-      title: editMode ? 'Edit post' : 'Create post'
+      title: editMode ? 'Edit post' : 'Create post',
     })
-  }, [text, editMode])
+  }, [text, editMode, setOptions, onHeaderSavePress])
 
   return (
     <View style={styles.wrapper}>
@@ -111,12 +111,12 @@ const CreatePostPage = () => {
             <IconButton
               name="microphone"
               style={styles.iconButton}
-              activable={true}
               isActive={audioRecorder.isRecording}
               showText={audioRecorder.isRecording}
               onPressIn={audioRecorder.start}
               onPressOut={audioRecorder.stop}
               text={readableSeconds(audioRecorder.elapsedTime)}
+              activable
             />
           </View>
         )}

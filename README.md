@@ -2,6 +2,8 @@
 - https://github.com/react-native-community/google-signin/blob/master/docs/ios-guide.md
 - https://github.com/react-native-community/google-signin/blob/master/docs/android-guide.md
 - https://github.com/facebook/react-native-fbsdk
+- https://github.com/react-native-community/react-native-audio-toolkit/blob/master/docs/SETUP.md
+- https://github.com/react-native-community/react-native-permissions
 
 #Generating SHA1 (google)
 - Debug: keytool -list -v -keystore ./android/app/debug.keystore -alias androiddebugkey -storepass android -keypass android
