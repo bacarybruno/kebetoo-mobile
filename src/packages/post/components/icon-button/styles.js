@@ -1,15 +1,29 @@
 import { StyleSheet } from 'react-native'
 import colors from 'Kebetoo/src/theme/colors'
 
-const size = 40
+export const getDimensions = (size) => ({
+  width: size,
+  height: size,
+  borderRadius: size / 2,
+})
+
+export const getIconSize = (size) => size / 2.22
 
 export default StyleSheet.create({
   button: {
     backgroundColor: colors.input,
-    width: size,
-    height: size,
-    borderRadius: size / 2,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  activeButton: {
+    backgroundColor: colors.primary,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10,
   },
 })
