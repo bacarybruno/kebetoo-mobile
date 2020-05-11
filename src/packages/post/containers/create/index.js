@@ -1,4 +1,6 @@
-import React, { useLayoutEffect, useState, useCallback, memo } from 'react'
+import React, {
+  useLayoutEffect, useState, useCallback, memo, useEffect,
+} from 'react'
 import { View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
@@ -10,8 +12,10 @@ import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OutlinedButton from 'Kebetoo/src/shared/components/buttons/outlined'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 
 import styles from './styles'
+import useAudioRecorder from '../../hooks/audio-recorder'
 
 export const routeOptions = {
   title: 'Create post',
@@ -29,6 +33,26 @@ export const actionTypes = {
   CREATE: 'create'
 }
 
+export const PostTextMessage = ({ onChange, text }) => (
+  <>
+    <TextInput
+      placeholder="What's on your mind ?"
+      onValueChange={onChange}
+      returnKeyType="done"
+      numberOfLines={8}
+      textStyle={styles.textInput}
+      wrapperStyle={styles.textInputWrapper}
+      maxLength={TEXT_MAX_LENGHT}
+      defaultValue={text}
+      autoFocus
+      multiline
+    />
+    <Text style={styles.textCount} size="tiny">
+      {TEXT_MAX_LENGHT - text.length} characters
+  </Text>
+  </>
+)
+
 const TEXT_MAX_LENGHT = 180
 
 const CreatePostPage = () => {
@@ -40,6 +64,8 @@ const CreatePostPage = () => {
       ? params.payload.content
       : ''
   )
+
+  const audioRecorder = useAudioRecorder()
 
   const onHeaderSavePress = useCallback(async () => {
     const user = auth().currentUser
@@ -70,27 +96,28 @@ const CreatePostPage = () => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
-        <TextInput
-          placeholder="What's on your mind ?"
-          onValueChange={setText}
-          returnKeyType="done"
-          numberOfLines={8}
-          textStyle={styles.textInput}
-          wrapperStyle={styles.textInputWrapper}
-          maxLength={TEXT_MAX_LENGHT}
-          defaultValue={text}
-          autoFocus
-          multiline
-        />
-        <Text style={styles.textCount} size="tiny">
-          {TEXT_MAX_LENGHT - text.length} characters
-        </Text>
+        <PostTextMessage onChange={setText} text={text} />
         {!editMode && (
-          <View style={styles.buttonsContainer}>
-            <IconButton name="camera" style={styles.iconButton} onPress={() => { }} />
-            <IconButton name="microphone" style={styles.iconButton} onPress={() => { }} />
-            <IconButton name="photo" style={styles.iconButton} onPress={() => { }} />
-            <IconButton name="more-h" style={styles.iconButton} onPress={() => { }} />
+          <View style={styles.buttonsWrapper}>
+            <View style={styles.buttonsContainer}>
+              {!audioRecorder.isRecording && (
+                <>
+                  <IconButton name="camera" style={styles.iconButton} onPress={() => { }} />
+                  <IconButton name="photo" style={styles.iconButton} onPress={() => { }} />
+                  <IconButton name="more-h" style={styles.iconButton} onPress={() => { }} />
+                </>
+              )}
+            </View>
+            <IconButton
+              name="microphone"
+              style={styles.iconButton}
+              activable={true}
+              isActive={audioRecorder.isRecording}
+              showText={audioRecorder.isRecording}
+              onPressIn={audioRecorder.start}
+              onPressOut={audioRecorder.stop}
+              text={readableSeconds(audioRecorder.elapsedTime)}
+            />
           </View>
         )}
       </View>

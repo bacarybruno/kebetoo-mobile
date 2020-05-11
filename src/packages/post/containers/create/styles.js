@@ -31,10 +31,15 @@ export default StyleSheet.create({
   textCount: {
     marginTop: 8,
   },
-  buttonsContainer: {
+  buttonsWrapper: {
+    flexDirection: 'row', 
     flex: 1,
+    justifyContent: 'space-between',
     alignItems: 'flex-end',
+  },
+  buttonsContainer: {
     flexDirection: 'row',
+    flex: 1,
   },
   iconButton: {
     marginRight: metrics.marginHorizontal,
