@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import auth from '@react-native-firebase/auth'
+import RNBootSplash from 'react-native-bootsplash'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
@@ -174,13 +175,13 @@ export const TabPage = () => (
 const AppNavigation = () => {
   const initialUserState = auth().currentUser !== null
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
+
   useEffect(() => {
-    const onAuthStateChanged = async (user) => {
-      setIsLoggedIn(!!user)
-    }
+    RNBootSplash.hide({ duration: 250 })
+    const onAuthStateChanged = (user) => setIsLoggedIn(!!user)
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
     return subscriber
-  })
+  }, [])
 
   return (
     <NavigationContainer>
