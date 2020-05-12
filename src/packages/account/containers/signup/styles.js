@@ -20,10 +20,4 @@ export default StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'bottom',
   },
-  logo: {
-    height: 115,
-    width: 115,
-    alignSelf: 'center',
-    backgroundColor: 'grey',
-  },
 })

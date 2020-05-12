@@ -14,6 +14,7 @@ import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
 import { SET_DISPLAY_NAME } from 'Kebetoo/src/redux/types'
 import { createUser } from 'Kebetoo/src/shared/helpers/users'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
+import Logo from 'Kebetoo/src/shared/components/logo'
 
 import styles from './styles'
 
@@ -78,7 +79,7 @@ const SignUp = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.normalSignUp}>
-        {availableHeight > 480 && <View style={styles.logo} />}
+        {availableHeight > 480 && <Logo />}
         <TextInput
           placeholder="Full Name"
           fieldName="fullName"
