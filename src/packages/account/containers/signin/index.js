@@ -11,6 +11,7 @@ import SocialSignIn from 'Kebetoo/src/packages/account/components/social-signin'
 import metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
+import Logo from 'Kebetoo/src/shared/components/logo'
 
 import styles from './styles'
 
@@ -57,7 +58,7 @@ const SignIn = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.normalSignUp}>
-        {availableHeight > 480 && <View style={styles.logo} />}
+        {availableHeight > 480 && <Logo />}
         <TextInput
           placeholder="Email"
           fieldName="email"
