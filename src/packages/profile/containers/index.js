@@ -43,7 +43,7 @@ export const Summary = ({ photoURL, email, displayName }) => (
 
 export const Stat = ({ title, value }) => (
   <View style={styles.stat}>
-    <Text color="primary" bold text={value} />
+    <Text color="blue_dark" bold text={value} />
     <Text color="blue_dark" size="sm" text={title} opacity={0.35} />
   </View>
 )
@@ -51,19 +51,19 @@ export const Stat = ({ title, value }) => (
 export const IconButton = ({
   icon, text, message, onPress, children, ...otherProps
 }) => (
-    <View style={styles.iconButtonWrapper}>
-      <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
-        <View style={styles.iconWrapper}>
-          <Ionicon style={styles.icon} name={icon} size={20} color={colors.primary} />
-        </View>
-        <View>
-          <Text text={text} />
-          {message && <Text text={message} size="sm" opacity={0.35} />}
-        </View>
-      </Pressable>
-      {children}
-    </View>
-  )
+  <View style={styles.iconButtonWrapper}>
+    <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
+      <View style={styles.iconWrapper}>
+        <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
+      </View>
+      <View>
+        <Text text={text} />
+        {message && <Text text={message} size="sm" opacity={0.35} />}
+      </View>
+    </Pressable>
+    {children}
+  </View>
+)
 
 const Stats = ({ postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.stats}>
@@ -102,7 +102,9 @@ const PreferencesSection = () => (
   </View>
 )
 
-const Header = ({ profile, postsCount, reactionsCount, commentsCount }) => (
+const Header = ({
+  profile, postsCount, reactionsCount, commentsCount,
+}) => (
   <View style={styles.header}>
     <Summary
       photoURL={profile.photoURL}
@@ -152,17 +154,17 @@ const ProfilePage = () => {
         })
       Promise.all([
         api.getLikesCount(profile.uid),
-        api.getDislikesCount(profile.uid)
+        api.getDislikesCount(profile.uid),
       ])
-      .then((responses) => {
-        const reactions = responses.reduce((a, b) => a + b)
-        setReactionsCount(reactions)
-        dispatch({ type: types.SET_USER_STATS, payload: { reactions } })
-      })
-      .catch(() => {
-        setReactionsCount(stats.reactions)
-      })
-    }, [])
+        .then((responses) => {
+          const reactions = responses.reduce((a, b) => a + b)
+          setReactionsCount(reactions)
+          dispatch({ type: types.SET_USER_STATS, payload: { reactions } })
+        })
+        .catch(() => {
+          setReactionsCount(stats.reactions)
+        })
+    }, [dispatch, profile.uid, stats.comments, stats.posts, stats.reactions]),
   )
 
   const managePosts = () => navigate(routes.MANAGE_POSTS)
