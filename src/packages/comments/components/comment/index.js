@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import moment from 'moment'
+import dayjs from 'dayjs'
 
 import CommentPlaceholder from 'Kebetoo/src/shared/components/placeholders/comments'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -26,7 +26,7 @@ const Comment = ({ item, author }) => (
               <Text numberOfLines={1}>
                 {author.displayName}
                 <Text size="sm" text=" • " />
-                <Text size="sm" text={`${moment(item.updatedAt).fromNow()}`} />
+                <Text size="sm" text={`${dayjs(item.updatedAt).fromNow()}`} />
               </Text>
             </View>
           </View>

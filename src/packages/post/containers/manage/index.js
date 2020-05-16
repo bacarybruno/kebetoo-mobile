@@ -1,9 +1,13 @@
-import React, { memo, useEffect, useState, useCallback } from 'react'
-import { View, SectionList, Alert, YellowBox } from 'react-native'
+import React, {
+  memo, useEffect, useState, useCallback,
+} from 'react'
+import {
+  View, SectionList, Alert, YellowBox,
+} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import { useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
@@ -49,13 +53,13 @@ const ManagePostsPage = () => {
 
   const bottomSheetItems = [{
     title: 'Edit post',
-    icon: 'md-create'
+    icon: 'md-create',
   }, {
     title: 'Delete post',
-    icon: 'ios-trash'
+    icon: 'ios-trash',
   }, {
     title: 'Cancel',
-    icon: 'md-close'
+    icon: 'md-close',
   }]
 
   useEffect(() => {
@@ -65,18 +69,18 @@ const ManagePostsPage = () => {
       setLoading(false)
     }
     getPosts()
-  }, [])
+  }, [user.uid])
 
   useEffect(() => {
     const dateMap = {}
     posts.forEach((post) => {
-      const date = moment(post).format(dateFormat)
+      const date = dayjs(post.createdAt).format(dateFormat)
       if (!dateMap[date]) dateMap[date] = []
       dateMap[date].push(post)
     })
     const formattedPosts = Object.keys(dateMap).map((key) => ({
       title: key,
-      data: dateMap[key]
+      data: dateMap[key],
     }))
     setSortedPosts(formattedPosts)
   }, [posts])
@@ -84,23 +88,20 @@ const ManagePostsPage = () => {
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 
   const renderSectionHeader = useCallback(({ section }) => {
-    const { title } = section
     const outputDateFormat = 'MMMM YYYY'
     return (
       <View style={styles.sectionHeader}>
-        <Text size="header" text={moment(title, dateFormat).format(outputDateFormat)} />
+        <Text size="header" text={dayjs(section.title, dateFormat).format(outputDateFormat)} />
       </View>
     )
-  })
+  }, [])
 
   const onPostEdited = useCallback((editedPost) => {
     if (editedPost) {
-      setPosts((value) => {
-        return [
-          editedPost,
-          ...value.filter((v) => v.id !== editedPost.id),
-        ]
-      })
+      setPosts((value) => [
+        editedPost,
+        ...value.filter((v) => v.id !== editedPost.id),
+      ])
     }
   }, [])
 
@@ -117,7 +118,7 @@ const ManagePostsPage = () => {
       payload: post,
       onGoBack: onPostEdited,
     })
-  }, [])
+  }, [navigate, onPostEdited])
 
   const deletePost = useCallback((post) => {
     Alert.alert(
@@ -129,7 +130,7 @@ const ManagePostsPage = () => {
       ],
       { cancelable: false },
     )
-  }, [])
+  }, [confirmDeletePost])
 
   const showPostOptions = useCallback((post) => {
     const cancelButtonIndex = 2
@@ -153,7 +154,7 @@ const ManagePostsPage = () => {
         deletePost(post)
       }
     })
-  }, [])
+  }, [bottomSheetItems, deletePost, editPost, showActionSheetWithOptions])
 
   const userToAuthor = ({ displayName, uid, photoURL }) => ({
     displayName,
@@ -167,7 +168,7 @@ const ManagePostsPage = () => {
       author={userToAuthor(user)}
       post={item}
     />
-  ), [])
+  ), [showPostOptions, user])
 
   const renderNoPost = useCallback(() => !loading && (
     <NoPosts onPress={() => navigate(routes.CREATE_POST)} />

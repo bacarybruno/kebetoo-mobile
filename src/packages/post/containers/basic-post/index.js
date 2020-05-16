@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
 import { View, TouchableOpacity, Platform } from 'react-native'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
@@ -51,7 +51,7 @@ export const Header = ({
       <View style={[styles.meta, { height: size }]}>
         <ThemedText size="sm" text={author.displayName} />
         <View style={styles.smallMeta}>
-          <ThemedText size="xs" text={moment(post.createdAt).fromNow()} />
+          <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
           {isUpdated(post) && <Edited size="xs" />}
         </View>
       </View>
