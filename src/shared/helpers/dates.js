@@ -1,6 +1,6 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 
 export const readableSeconds = (value) => {
-  const date = moment().startOf('day').seconds(value)
+  const date = dayjs().startOf('day').second(value)
   return date.format('mm:ss')
 }
