@@ -1,12 +1,17 @@
 /* eslint-disable no-undef */
+import RNFetchBlob from 'rn-fetch-blob'
+
 const BASE_URL = 'http://localhost:1337'
 const ITEMS_PER_PAGE = 20
 
 const parseJSON = (res) => res.json()
 
+const getApiUrl = (path) => `${BASE_URL}/${path}`
+
 const request = {
-  get: (path = '') => fetch(`${BASE_URL}/${path}`).then(parseJSON),
-  post: (path = '', body) => fetch(`${BASE_URL}/${path}`, {
+  get: (path = '') => fetch(getApiUrl(path)).then(parseJSON),
+
+  post: (path = '', body) => fetch(getApiUrl(path), {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -14,7 +19,8 @@ const request = {
     },
     body: JSON.stringify(body),
   }).then(parseJSON),
-  put: (path = '', body) => fetch(`${BASE_URL}/${path}`, {
+
+  put: (path = '', body) => fetch(getApiUrl(path), {
     method: 'PUT',
     headers: {
       Accept: 'application/json',
@@ -22,15 +28,20 @@ const request = {
     },
     body: JSON.stringify(body),
   }).then(parseJSON),
-  delete: (path = '') => fetch(`${BASE_URL}/${path}`, {
+
+  delete: (path = '') => fetch(getApiUrl(path), {
     method: 'DELETE',
   }).then(parseJSON),
+
+  postFormData: (path = '', formdata) => RNFetchBlob.fetch('POST', getApiUrl(path), {
+    'Content-Type': 'multipart/form-data',
+  }, formdata).then(parseJSON),
 }
 
 export const getPosts = () => request.get(`posts?_limit=${ITEMS_PER_PAGE}`)
 
 export const getUserPosts = (authorId) => request.get(
-  `posts?author=${authorId}&_sort=updatedAt:desc`
+  `posts?author=${authorId}&_sort=updatedAt:desc`,
 )
 
 export const getPost = (id) => request.get(`posts/${id}`)
@@ -40,6 +51,19 @@ export const getLatestsPosts = (page = 0) => request.get(
 )
 
 export const createPost = ({ author, content }) => request.post('posts', { author, content })
+export const createPostWithAudio = ({ author, audio, content }) => {
+  const postData = {
+    name: 'data',
+    data: JSON.stringify({ content, author }),
+  }
+  const audioData = {
+    name: 'files.audio',
+    filename: audio.name,
+    type: 'audio/aac',
+    data: RNFetchBlob.wrap(audio.uri),
+  }
+  return request.postFormData('posts', [postData, audioData])
+}
 
 export const editPost = ({ id, content }) => request.put(`posts/${id}`, { content })
 
