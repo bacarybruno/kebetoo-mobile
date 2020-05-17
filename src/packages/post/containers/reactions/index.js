@@ -70,7 +70,9 @@ export const Reaction = ({
   </TouchableOpacity>
 )
 
-const Reactions = ({ post, author, disabled }) => {
+const Reactions = ({
+  post, author, disabled, onComment,
+}) => {
   const posts = useSelector(postsSelector)
   const likes = useSelector(likesSelector)
   const dislikes = useSelector(dislikesSelector)
@@ -152,11 +154,13 @@ const Reactions = ({ post, author, disabled }) => {
           payload: { postId: post.id, author },
         })
       case REACTION_TYPES.COMMENT:
-        return navigate(routes.COMMENTS, { id: post.id })
+        if (onComment) onComment()
+        else navigate(routes.COMMENTS, { id: post.id })
+        break
       default: break
     }
     return null
-  }, [toggleLike, dispatch, post.id, author, toggleDislike, navigate])
+  }, [toggleLike, dispatch, post.id, author, toggleDislike, onComment, navigate])
 
   return (
     <View style={styles.reactions}>

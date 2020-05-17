@@ -12,7 +12,9 @@ import styles from './styles'
 
 const Reactions = ({ post, author, ...reactionProps }) => {
   const posts = useSelector(postsSelector)
-  const ReactionsComponent = posts[post.id] ? ReactionsOffline : ReactionsOnline
+  const ReactionsComponent = posts[post.id] !== undefined
+    ? ReactionsOffline
+    : ReactionsOnline
   return (
     <View style={styles.reactionsContainer}>
       <DraggableIndicator />
