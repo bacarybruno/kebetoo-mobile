@@ -101,7 +101,7 @@ const Reactions = ({ post, author, disabled }) => {
       setPostCommentsCount(updatedPost.comments.length)
     })
     return unsusbcribeFocus
-  }, [addNavigationListener, updatedPost, author, dislikes, likes ])
+  }, [addNavigationListener, updatedPost, author, dislikes, likes])
 
   const dispatch = useDispatch()
 
