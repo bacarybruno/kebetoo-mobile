@@ -75,24 +75,28 @@ export const Content = ({ post, style, onPress, disabled }) => (
 )
 
 
-const BasicPost = ({ post, author, onOptions, disabled, size = 35 }) => {
+const BasicPost = ({
+  post, author, onOptions, disabled, size = 35,
+}) => {
   const { navigate } = useNavigation()
   const posts = useSelector(postsSelector)
 
   const navigateToComments = useCallback(({ id }) => {
     navigate(routes.COMMENTS, { id })
-  }, [])
+  }, [navigate])
 
   if (!author) return <PostPlaceholder />
 
   const ReactionsComponent = posts[post.id] ? Reactions : ReactionsOnline
+
   return (
     <View style={styles.wrapper}>
       <Header
         post={post}
         author={author}
         size={size}
-        onOptions={onOptions} />
+        onOptions={onOptions}
+      />
       <Content post={post} onPress={navigateToComments} disabled={disabled} />
       <ReactionsComponent post={post} author={author.id} disabled={disabled} />
     </View>

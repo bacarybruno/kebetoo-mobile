@@ -3,15 +3,29 @@ import {
 } from 'react'
 import { Recorder, Player } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
-import * as api from 'Kebetoo/src/shared/helpers/http'
 
+import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
 
 export const MAX_DURATION_IN_SECONDS = 30
 export const RECORD_NAME = 'kebetoo-record.aac'
-export const RECORD_MIME_TYPE = 'audio/aac'
-
-export const getUri = (filename = RECORD_NAME) => (
+export const RECORD_MIME_TYPE = 'audio/x-aac'
+export const RECORD_CONFIG = Object.freeze({
+  bitrate: 32000,
+  sampleRate: 22050,
+  channels: 1,
+  quality: 'min',
+})
+export const constructFileName = (time, duration) => (
+  `record_${time}_${duration}`
+)
+export const extractMetadataFromName = (name) => {
+  const [prefix, time, duration] = name.split('_')
+  return {
+    prefix, time, duration,
+  }
+}
+export const getRecordUri = (filename = RECORD_NAME) => (
   `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
 )
 
@@ -23,16 +37,27 @@ const useAudioRecorder = (maxDuration) => {
   const permissions = usePermissions()
   const [recorder, setRecorder] = useState(null)
 
+  const save = useCallback(async (author, content) => {
+    const fileUri = getRecordUri()
+    const time = Date.now()
+    const response = await api.createPostWithAudio({
+      author,
+      content,
+      audio: {
+        uri: fileUri,
+        mimeType: RECORD_MIME_TYPE,
+        name: constructFileName(time, elapsedTime),
+      },
+    })
+    await RNFetchBlob.fs.unlink(fileUri)
+    return response
+  }, [elapsedTime])
+
   const start = useCallback(async () => {
     const hasPermissions = await permissions.recordAudio()
     if (hasPermissions) {
       setElapsedTime(0)
-      setRecorder(new Recorder(RECORD_NAME, {
-        bitrate: 32000,
-        sampleRate: 32000,
-        channels: 1,
-        quality: 'min',
-      }).record())
+      setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).record())
       setIsRecording(true)
     }
   }, [permissions])
@@ -42,17 +67,6 @@ const useAudioRecorder = (maxDuration) => {
     if (recorder) {
       recorder.stop()
       new Player(RECORD_NAME).play()
-      const response = await api.createPostWithAudio({
-        author: 'RUCPMUzpttYRz43Qw29Xeg0Lk592',
-        content: 'Hello first audio from code',
-        audio: {
-          uri: getUri(),
-          type: RECORD_MIME_TYPE,
-          name: 'hello-world',
-        },
-      })
-      console.log('create post with audio success', response)
-      await RNFetchBlob.fs.unlink(getUri())
     }
   }, [recorder])
 
@@ -62,7 +76,7 @@ const useAudioRecorder = (maxDuration) => {
       intervalRef.current = setInterval(() => {
         const delta = Date.now() - timeStart
         setElapsedTime(Math.floor(delta / 1000))
-      }, 100)
+      }, 250)
     }
     return () => {
       clearInterval(intervalRef.current)
@@ -79,6 +93,7 @@ const useAudioRecorder = (maxDuration) => {
   return {
     start,
     stop,
+    save,
     isRecording,
     elapsedTime,
   }

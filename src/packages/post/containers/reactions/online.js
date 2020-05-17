@@ -8,7 +8,7 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import routes from 'Kebetoo/src/navigation/routes'
 
 import styles from './styles'
-import { Reaction, REACTION_TYPES } from './'
+import { Reaction, REACTION_TYPES } from '.'
 
 export const findLiked = ({ post, author }) => post
   .likes
@@ -49,7 +49,7 @@ const Reactions = ({
   const updatePost = useCallback(async () => {
     const updatedPost = await api.getPost(post.id)
     setPost(updatedPost)
-  }, [api, post.id])
+  }, [post.id])
 
   useEffect(() => {
     if (post.likes && post.dislikes && post.comments) {
@@ -64,8 +64,12 @@ const Reactions = ({
   useFocusEffect(
     useCallback(() => {
       updatePost()
-    }, [])
+    }, [updatePost]),
   )
+
+  useEffect(() => {
+    updatePost()
+  }, [liked, disliked, updatePost])
 
   const like = useCallback(() => {
     setLiked(true)
@@ -76,7 +80,7 @@ const Reactions = ({
         setLiked(false)
         setPostLikesCount((value) => value - 1)
       })
-  }, [api, post, author])
+  }, [post, author])
 
   const unlike = useCallback(() => {
     const { id } = findLiked({ post, author })
@@ -88,7 +92,7 @@ const Reactions = ({
         setLiked(true)
         setPostLikesCount((value) => value + 1)
       })
-  }, [api, post, author])
+  }, [post, author])
 
   const dislike = useCallback(() => {
     setDisliked(true)
@@ -99,7 +103,7 @@ const Reactions = ({
         setDisliked(false)
         setPostDislikesCount((value) => value - 1)
       })
-  }, [api, post, author])
+  }, [post, author])
 
   const undislike = useCallback(() => {
     const { id } = findDisliked({ post, author })
@@ -111,19 +115,19 @@ const Reactions = ({
         setDisliked(true)
         setPostDislikesCount((value) => value + 1)
       })
-  }, [api, post, author])
+  }, [post, author])
 
   const toggleLike = useCallback(() => {
     if (disliked) undislike()
     if (liked) unlike()
     else like()
-  }, [disliked, like, liked, undislike, unlike, api, post, author])
+  }, [disliked, like, liked, undislike, unlike])
 
   const toggleDislike = useCallback(() => {
     if (liked) unlike()
     if (disliked) undislike()
     else dislike()
-  }, [dislike, disliked, liked, undislike, unlike, api, post, author])
+  }, [dislike, disliked, liked, undislike, unlike])
 
   const onReaction = useCallback(async (type) => {
     switch (type) {
@@ -139,7 +143,7 @@ const Reactions = ({
       default: break
     }
     return null
-  }, [post, author, navigate, disliked, like, liked, undislike, unlike, api])
+  }, [toggleLike, toggleDislike, navigate, post.id])
 
   return (
     <View style={styles.reactions}>
