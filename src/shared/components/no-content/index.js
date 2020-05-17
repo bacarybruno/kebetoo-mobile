@@ -7,7 +7,7 @@ import styles from './styles'
 
 const NoContent = ({ title, text, children }) => (
   <View style={styles.noContent}>
-    {title && <Text color="primary" size="header" text={title} />}
+    {title && <Text color="secondary" size="header" text={title} />}
     {text && <Text text={text} />}
     {children}
   </View>

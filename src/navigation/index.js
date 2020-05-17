@@ -40,6 +40,9 @@ import CreatePostPage, {
 import CommentsPage, {
   routeOptions as commentsRouteOptions,
 } from 'Kebetoo/src/packages/comments/containers'
+import CommentsOnlinePage, {
+  routeOptions as commentsOnlineRouteOptions,
+} from 'Kebetoo/src/packages/comments/containers/online'
 import ManagePostsPage, {
   routeOptions as managePostsRouteOptions,
 } from 'Kebetoo/src/packages/post/containers/manage'
@@ -201,6 +204,11 @@ const AppNavigation = () => {
               options={commentsRouteOptions}
               component={CommentsPage}
               name={routes.COMMENTS}
+            />
+            <Stack.Screen
+              options={commentsOnlineRouteOptions}
+              component={CommentsOnlinePage}
+              name={routes.COMMENTS_ONLINE}
             />
             <Stack.Screen
               options={managePostsRouteOptions}

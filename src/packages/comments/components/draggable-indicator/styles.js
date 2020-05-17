@@ -9,7 +9,7 @@ export default StyleSheet.create({
     backgroundColor: 'transparent',
   },
   draggableIcon: {
-    width: 100,
+    width: 60,
     height: 5,
     borderRadius: 5,
     margin: 10,

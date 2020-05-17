@@ -35,7 +35,7 @@ export const hasDisliked = ({ post, author }) => (
 )
 
 const Reactions = ({
-  post: { id: postId }, author, disabled,
+  post: { id: postId }, author, disabled, onComment,
 }) => {
   const [post, setPost] = useState({ id: postId })
   const [liked, setLiked] = useState(false)
@@ -138,12 +138,13 @@ const Reactions = ({
         toggleDislike()
         break
       case REACTION_TYPES.COMMENT:
-        navigate(routes.COMMENTS, { id: post.id })
+        if (onComment) onComment()
+        else navigate(routes.COMMENTS_ONLINE, { post })
         break
       default: break
     }
     return null
-  }, [toggleLike, toggleDislike, navigate, post.id])
+  }, [toggleLike, toggleDislike, onComment, navigate, post])
 
   return (
     <View style={styles.reactions}>
