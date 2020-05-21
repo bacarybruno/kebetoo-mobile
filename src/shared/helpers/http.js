@@ -59,7 +59,7 @@ export const createPostWithAudio = ({ author, audio, content }) => {
   const audioData = {
     name: 'files.audio',
     filename: audio.name,
-    type: 'audio/aac',
+    type: audio.mimeType,
     data: RNFetchBlob.wrap(audio.uri),
   }
   return request.postFormData('posts', [postData, audioData])
