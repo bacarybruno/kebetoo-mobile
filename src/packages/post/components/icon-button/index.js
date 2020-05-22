@@ -15,8 +15,7 @@ const IconButton = ({
   onPress,
   name,
   style,
-  text = "",
-  showText = false,
+  text = '',
   size = 40,
   activable = false,
   isActive = false,
@@ -32,7 +31,7 @@ const IconButton = ({
         toValue: 1.8,
         bounciness: 20,
         speed: 20,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start()
     } else {
       animatedScale.setValue(1)
@@ -40,11 +39,9 @@ const IconButton = ({
   }, [activable, isActive, animatedScale])
 
   return (
-    <View
-    style={{ flexDirection: 'row', alignItems: 'center' }}
-    >
-      {!!text && showText && (
-        <Badge style={{ marginRight: 30 }} text={text} />
+    <View style={styles.wrapper}>
+      {!!text && isActive && (
+        <Badge style={styles.badge} text={text} />
       )}
       <TouchableOpacity
         onPress={onPress}
@@ -53,7 +50,7 @@ const IconButton = ({
           isActive
             ? edgeInsets.symmetric({
               vertical: metrics.screenHeight,
-              horizontal: metrics.screenWidth
+              horizontal: metrics.screenWidth,
             })
             : edgeInsets.all(20)
         }
@@ -62,7 +59,7 @@ const IconButton = ({
           isActive && styles.activeButton,
           getDimensions(size),
           scale(animatedScale),
-          style
+          style,
         ]}
         {...otherProps}
       >

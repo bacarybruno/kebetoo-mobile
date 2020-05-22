@@ -5,19 +5,32 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
 
-import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
-import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
+import TextContent from 'Kebetoo/src/packages/post/components/text-content'
+import AudioContent from 'Kebetoo/src/packages/post/components/audio-content'
+import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
+import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import { postsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
 
 const isUpdated = (post) => post.createdAt !== post.updatedAt
+
+const POST_TYPES = {
+  AUDIO: 'audio',
+  TEXT: 'text',
+}
+
+export const getPostType = (post) => {
+  if (post.audio && post.audio.url) {
+    return POST_TYPES.AUDIO
+  }
+  return POST_TYPES.TEXT
+}
 
 const Edited = ({ size }) => (
   <>
@@ -30,7 +43,7 @@ const MoreButton = ({ onPress }) => (
   <TouchableOpacity
     onPress={onPress}
     style={styles.moreButton}
-    hitSlop={EdgeInsets.all(50)}
+    hitSlop={edgeInsets.all(50)}
   >
     <Ionicon
       name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
@@ -64,19 +77,22 @@ export const Header = ({
   </View>
 )
 
-export const Content = ({ post, style, onPress, disabled }) => (
-  <Pressable
-    onPress={() => onPress(post)}
-    disabled={disabled || !onPress}
-    style={[styles.content, style]}
-  >
-    <ThemedText text={post.content} />
-  </Pressable>
-)
-
+export const Content = ({ post, ...otherProps }) => {
+  const postType = getPostType(post)
+  switch (postType) {
+    case POST_TYPES.AUDIO:
+      return (
+        <AudioContent post={post} {...otherProps} />
+      )
+    default:
+      return (
+        <TextContent post={post} {...otherProps} />
+      )
+  }
+}
 
 const BasicPost = ({
-  post, author, onOptions, disabled, size = 35,
+  post, author, onOptions, size = 35,
 }) => {
   const { navigate } = useNavigation()
   const posts = useSelector(postsSelector)
@@ -91,14 +107,9 @@ const BasicPost = ({
 
   return (
     <View style={styles.wrapper}>
-      <Header
-        post={post}
-        author={author}
-        size={size}
-        onOptions={onOptions}
-      />
-      <Content post={post} onPress={navigateToComments} disabled={disabled} />
-      <ReactionsComponent post={post} author={author.id} disabled={disabled} />
+      <Header post={post} author={author} size={size} onOptions={onOptions} />
+      <Content onPress={navigateToComments} post={post} />
+      <ReactionsComponent post={post} author={author.id} />
     </View>
   )
 }

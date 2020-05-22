@@ -32,10 +32,10 @@ export default StyleSheet.create({
     marginTop: 8,
   },
   buttonsWrapper: {
-    flexDirection: 'row', 
-    flex: 1,
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
+    marginTop: metrics.marginVertical,
   },
   buttonsContainer: {
     flexDirection: 'row',
@@ -43,5 +43,9 @@ export default StyleSheet.create({
   },
   iconButton: {
     marginRight: metrics.marginHorizontal,
+  },
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 })
