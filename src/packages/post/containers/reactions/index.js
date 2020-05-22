@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
-import EdgeInsets from 'Kebetoo/src/theme/edge-insets'
+import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
@@ -52,7 +52,7 @@ export const Reaction = ({
     style={styles.reaction}
     onPress={onPress}
     disabled={disabled}
-    hitSlop={EdgeInsets.symmetric({
+    hitSlop={edgeInsets.symmetric({
       horizontal: 5, vertical: 25,
     })}
   >

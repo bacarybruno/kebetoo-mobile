@@ -10,6 +10,10 @@ export const getDimensions = (size) => ({
 export const getIconSize = (size) => size / 2.22
 
 export default StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   button: {
     backgroundColor: colors.input,
     justifyContent: 'center',
@@ -25,5 +29,8 @@ export default StyleSheet.create({
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
     elevation: 10,
+  },
+  badge: {
+    marginRight: 30,
   },
 })

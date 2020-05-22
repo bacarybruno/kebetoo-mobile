@@ -5,6 +5,7 @@ const images = {
   google_icon: require('Kebetoo/assets/images/google.png'),
   bottom_tab_overlay: require('Kebetoo/assets/images/bottom-tab-overlay.png'),
   logo_full: require('Kebetoo/assets/images/logo-full.png'),
+  waves: require('Kebetoo/assets/images/waves.png'),
 }
 
 export default images

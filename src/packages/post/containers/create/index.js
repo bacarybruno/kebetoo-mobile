@@ -11,6 +11,7 @@ import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OutlinedButton from 'Kebetoo/src/shared/components/buttons/outlined'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
+import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 
@@ -64,7 +65,6 @@ const CreatePostPage = () => {
       ? params.payload.content
       : '',
   )
-
   const audioRecorder = useAudioRecorder()
 
   const onHeaderSavePress = useCallback(async () => {
@@ -72,12 +72,14 @@ const CreatePostPage = () => {
     let result
     if (editMode) {
       result = await api.editPost({ id: params.payload.id, content: text })
+    } else if (audioRecorder.hasRecording) {
+      result = await audioRecorder.save(user.uid, text)
     } else {
       result = await api.createPost({ author: user.uid, content: text })
     }
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
-  }, [editMode, params, goBack, text])
+  }, [editMode, audioRecorder, params, goBack, text])
 
   useLayoutEffect(() => {
     setOptions({
@@ -97,7 +99,15 @@ const CreatePostPage = () => {
     <View style={styles.wrapper}>
       <View style={styles.container}>
         <PostTextMessage onChange={setText} text={text} />
-        {!editMode && (
+        <View style={styles.preview}>
+          {audioRecorder.hasRecording && (
+            <AudioPlayer
+              source={audioRecorder.recordUri}
+              onDelete={audioRecorder.reset}
+            />
+          )}
+        </View>
+        {!editMode && !audioRecorder.hasRecording && (
           <View style={styles.buttonsWrapper}>
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && (
@@ -112,7 +122,6 @@ const CreatePostPage = () => {
               name="microphone"
               style={styles.iconButton}
               isActive={audioRecorder.isRecording}
-              showText={audioRecorder.isRecording}
               onPressIn={audioRecorder.start}
               onPressOut={audioRecorder.stop}
               text={readableSeconds(audioRecorder.elapsedTime)}

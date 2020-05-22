@@ -1,7 +1,7 @@
 import {
   useState, useEffect, useCallback, useRef,
 } from 'react'
-import { Recorder, Player } from '@react-native-community/audio-toolkit'
+import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
@@ -30,12 +30,13 @@ export const getRecordUri = (filename = RECORD_NAME) => (
 )
 
 const useAudioRecorder = (maxDuration) => {
-  const maxDurationInSeconds = maxDuration || MAX_DURATION_IN_SECONDS
   const [isRecording, setIsRecording] = useState(false)
+  const [hasRecording, setHasRecording] = useState(false)
   const [elapsedTime, setElapsedTime] = useState(0)
+  const [recorder, setRecorder] = useState(null)
   const intervalRef = useRef()
   const permissions = usePermissions()
-  const [recorder, setRecorder] = useState(null)
+  const maxDurationInSeconds = maxDuration || MAX_DURATION_IN_SECONDS
 
   const save = useCallback(async (author, content) => {
     const fileUri = getRecordUri()
@@ -49,6 +50,7 @@ const useAudioRecorder = (maxDuration) => {
         name: constructFileName(time, elapsedTime),
       },
     })
+    setHasRecording(false)
     await RNFetchBlob.fs.unlink(fileUri)
     return response
   }, [elapsedTime])
@@ -62,13 +64,20 @@ const useAudioRecorder = (maxDuration) => {
     }
   }, [permissions])
 
-  const stop = useCallback(async () => {
+  const stop = useCallback(() => {
     setIsRecording(false)
     if (recorder) {
       recorder.stop()
-      new Player(RECORD_NAME).play()
+      setHasRecording(true)
     }
   }, [recorder])
+
+  const reset = useCallback(async () => {
+    intervalRef.current = null
+    const fileUri = getRecordUri()
+    await RNFetchBlob.fs.unlink(fileUri)
+    setHasRecording(false)
+  }, [])
 
   useEffect(() => {
     if (isRecording && !intervalRef.current) {
@@ -94,8 +103,11 @@ const useAudioRecorder = (maxDuration) => {
     start,
     stop,
     save,
+    reset,
     isRecording,
+    hasRecording,
     elapsedTime,
+    recordUri: getRecordUri(),
   }
 }
 

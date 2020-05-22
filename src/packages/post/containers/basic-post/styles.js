@@ -25,14 +25,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  content: {
-    backgroundColor: colors.input,
-    minHeight: 52,
-    padding: metrics.marginHorizontal,
-    borderRadius: 5,
-    justifyContent: 'center',
-    marginBottom: 8,
-  },
   moreButton: {
     width: 30,
     alignItems: 'center',
