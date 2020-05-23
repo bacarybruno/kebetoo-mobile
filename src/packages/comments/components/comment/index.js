@@ -25,8 +25,8 @@ const Comment = ({ item, author }) => (
             <View style={{ flexDirection: 'row', ...styles.flexible }}>
               <Text numberOfLines={1}>
                 {author.displayName}
-                <Text size="sm" text=" • " />
-                <Text size="sm" text={`${dayjs(item.updatedAt).fromNow()}`} />
+                <Text size="xs" text=" • " />
+                <Text size="xs" text={`${dayjs(item.updatedAt).fromNow()}`} />
               </Text>
             </View>
           </View>

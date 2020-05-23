@@ -1,135 +1,73 @@
-/* eslint-disable no-case-declarations */
-
 import { combineReducers } from 'redux'
+
+import { deleteProperty, mergeObjects, mergeArrays } from 'Kebetoo/src/shared/helpers/object'
 
 import * as types from '../types'
 
 const initialState = {
   posts: [],
   authors: {},
-  comments: [],
-  likes: {},
-  dislikes: {},
+  reactions: {},
+  comments: {},
 }
 
 const posts = (state = initialState.posts, action) => {
   switch (action.type) {
     case types.API_FETCH_POSTS_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
+      return mergeObjects(state, action.payload)
     case types.REPLACE_POSTS:
       return action.payload
-    case types.LIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.postId]: {
-          ...state[action.payload.postId],
-          likes: [
-            ...state[action.payload.postId].likes,
-            action.payload.like.id,
-          ],
-        },
-      }
-    case types.DELETE_LIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.postId]: {
-          ...state[action.payload.postId],
-          likes: [
-            ...state[action.payload.postId]
-              .likes.filter((like) => like !== action.payload.likeId),
-          ],
-        },
-      }
-    case types.DISLIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.postId]: {
-          ...state[action.payload.postId],
-          dislikes: [
-            ...state[action.payload.postId].dislikes,
-            action.payload.dislike.id,
-          ],
-        },
-      }
-    case types.DELETE_DISLIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.postId]: {
-          ...state[action.payload.postId],
-          dislikes: [
-            ...state[action.payload.postId]
-              .dislikes.filter((dislike) => dislike !== action.payload.dislikeId),
-          ],
-        },
-      }
-    case types.COMMENT_POST_SUCCESS:
-      return {
-        ...state,
-        [action.payload.post.id]: {
-          ...state[action.payload.post.id],
-          comments: [
-            ...state[action.payload.post.id].comments,
+    case types.API_DELETE_REACTION_SUCCESS:
+      return mergeObjects(state, {
+        [action.payload.post]: mergeObjects(state[action.payload.post], {
+          reactions: state[action.payload.post]
+            .reactions
+            .filter((reactionId) => reactionId !== action.payload.reaction),
+        }),
+      })
+    case types.API_CREATE_REACTION_SUCCESS:
+      return mergeObjects(state, {
+        [action.payload.post.id]: mergeObjects(state[action.payload.post.id], {
+          reactions: mergeArrays(
+            state[action.payload.post.id].reactions,
             action.payload.id,
-          ],
-        },
-      }
+          ),
+        }),
+      })
+    case types.COMMENT_POST_SUCCESS:
+      return mergeObjects(state, {
+        [action.payload.post.id]: mergeObjects(state[action.payload.post.id], {
+          comments: mergeArrays(
+            state[action.payload.post.id].comments,
+            action.payload.id,
+          ),
+        }),
+      })
     default:
       return state
   }
 }
 
-const likes = (state = initialState.likes, action) => {
+const reactions = (state = initialState.reactions, action) => {
   switch (action.type) {
     case types.REPLACE_POSTS:
-      return []
-    case types.API_FETCH_LIKES_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
-    case types.LIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.like.id]: {
-          ...action.payload.like,
-          post: action.payload.postId,
-        },
-      }
-    case types.DELETE_LIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.likeId]: undefined,
-      }
-    default:
-      return state
-  }
-}
-
-const dislikes = (state = initialState.dislikes, action) => {
-  switch (action.type) {
-    case types.REPLACE_POSTS:
-      return []
-    case types.API_FETCH_DISLIKES_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
-    case types.DISLIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.dislike.id]: {
-          ...action.payload.dislike,
-          post: action.payload.postId,
-        },
-      }
-    case types.DELETE_DISLIKE_SUCCESS:
-      return {
-        ...state,
-        [action.payload.dislikeId]: undefined,
-      }
+      return {}
+    case types.API_FETCH_REACTIONS_SUCCESS:
+      return mergeObjects(state, action.payload)
+    case types.API_DELETE_REACTION_SUCCESS:
+      return deleteProperty(state, action.payload.reaction)
+    case types.API_CREATE_REACTION_SUCCESS:
+      return mergeObjects(state, {
+        [action.payload.id]: mergeObjects(action.payload, {
+          post: action.payload.post.id,
+        }),
+      })
+    case types.API_EDIT_REACTION_SUCCESS:
+      return mergeObjects(state, {
+        [action.payload.id]: mergeObjects(state[action.payload.id], {
+          type: action.payload.type,
+        }),
+      })
     default:
       return state
   }
@@ -140,18 +78,13 @@ const comments = (state = initialState.comments, action) => {
     case types.REPLACE_POSTS:
       return []
     case types.API_FETCH_COMMENTS_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
+      return mergeObjects(state, action.payload)
     case types.COMMENT_POST_SUCCESS:
-      return {
-        ...state,
-        [action.payload.id]: {
-          ...action.payload,
+      return mergeObjects(state, {
+        [action.payload.id]: mergeObjects(action.payload, {
           post: action.payload.post.id,
-        },
-      }
+        }),
+      })
     default:
       return state
   }
@@ -160,10 +93,7 @@ const comments = (state = initialState.comments, action) => {
 const authors = (state = initialState.authors, action) => {
   switch (action.type) {
     case types.API_FETCH_AUTHORS_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
+      return mergeObjects(state, action.payload)
     default:
       return state
   }
@@ -171,8 +101,7 @@ const authors = (state = initialState.authors, action) => {
 
 export default combineReducers({
   posts,
-  likes,
-  dislikes,
-  comments,
   authors,
+  comments,
+  reactions,
 })

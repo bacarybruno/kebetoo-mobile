@@ -152,12 +152,8 @@ const ProfilePage = () => {
         .catch(() => {
           setCommentsCount(stats.comments)
         })
-      Promise.all([
-        api.getLikesCount(profile.uid),
-        api.getDislikesCount(profile.uid),
-      ])
-        .then((responses) => {
-          const reactions = responses.reduce((a, b) => a + b)
+      api.getReactionsCount(profile.uid)
+        .then((reactions) => {
           setReactionsCount(reactions)
           dispatch({ type: types.SET_USER_STATS, payload: { reactions } })
         })

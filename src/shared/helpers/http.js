@@ -75,13 +75,12 @@ export const commentPost = ({ author, post, content }) => request.post(
 )
 export const deleteComment = (id) => request.delete(`comments/${id}`)
 
-export const likePost = ({ author, post }) => request.post('likes', { author, post })
-export const deleteLike = (id) => request.delete(`likes/${id}`)
-
-export const dislikePost = ({ author, post }) => request.post('dislikes', { author, post })
-export const deleteDislike = (id) => request.delete(`dislikes/${id}`)
+export const createReaction = (type, post, author) => (
+  request.post('reactions/', { type, post, author })
+)
+export const editReaction = (id, type) => request.put(`reactions/${id}`, { type })
+export const deleteReaction = (id) => request.delete(`reactions/${id}`)
 
 export const getPostsCount = (author) => request.get(`posts/count?author=${author}`)
-export const getLikesCount = (author) => request.get(`likes/count?post.author=${author}`)
-export const getDislikesCount = (author) => request.get(`dislikes/count?post.author=${author}`)
+export const getReactionsCount = (author) => request.get(`reactions/count?post.author=${author}`)
 export const getCommentsCount = (author) => request.get(`comments/count?post.author=${author}`)
