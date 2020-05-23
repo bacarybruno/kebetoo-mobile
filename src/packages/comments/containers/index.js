@@ -117,13 +117,9 @@ const Comments = () => {
         <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
         <Content post={post} style={styles.content} />
       </View>
-      <Reactions
-        post={post}
-        author={author.id}
-        onComment={onComment}
-      />
+      <Reactions post={post} author={user.uid} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, author, onComment, post])
+  ), [ListHeaderLeft, author, onComment, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

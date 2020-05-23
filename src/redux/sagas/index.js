@@ -1,18 +1,13 @@
 import {
-  takeLeading, call, put, all, select, fork,
+  takeLeading, call, put, all, select,
 } from 'redux-saga/effects'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
-import {
-  hasDisliked, hasLiked, findLiked, findDisliked,
-} from 'Kebetoo/src/packages/post/containers/reactions'
 
 import normalizeData from '../misc/normalizer'
 import * as types from '../types'
-import {
-  authorsSelector, likesSelector, dislikesSelector, postsSelector,
-} from '../selectors'
+import { authorsSelector, reactionsSelector } from '../selectors'
 
 function* fetchPosts(action) {
   try {
@@ -20,7 +15,7 @@ function* fetchPosts(action) {
     const normalizedData = yield call(normalizeData, data)
 
     const {
-      posts, authors, comments, likes, dislikes,
+      posts, authors, comments, reactions,
     } = normalizedData.entities
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
@@ -28,50 +23,17 @@ function* fetchPosts(action) {
       postActionType = types.REPLACE_POSTS
     }
 
-    const authorsIds = Object.keys(authors)
+    if (authors) {
+      const authorsIds = Object.keys(authors)
+      yield put({ type: types.API_FETCH_AUTHORS, payload: authorsIds })
+    }
 
-    yield put({ type: types.API_FETCH_AUTHORS, payload: authorsIds })
-    yield put({ type: postActionType, payload: posts })
-    yield put({ type: types.API_FETCH_COMMENTS_SUCCESS, payload: comments })
-    yield put({ type: types.API_FETCH_LIKES_SUCCESS, payload: likes })
-    yield put({ type: types.API_FETCH_DISLIKES_SUCCESS, payload: dislikes })
+    yield put({ type: postActionType, payload: posts || [] })
+    yield put({ type: types.API_FETCH_REACTIONS_SUCCESS, payload: reactions || [] })
+    yield put({ type: types.API_FETCH_COMMENTS_SUCCESS, payload: comments || [] })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, error })
   }
-}
-
-function* deleteLike(likes, post, author) {
-  const id = yield call(findLiked, { likes, post, author })
-  yield call(api.deleteLike, id)
-  yield put({
-    type: types.DELETE_LIKE_SUCCESS,
-    payload: { likeId: id, postId: post.id },
-  })
-}
-
-function* deleteDisLike(dislikes, post, author) {
-  const id = yield call(findDisliked, { dislikes, post, author })
-  yield call(api.deleteDislike, id)
-  yield put({
-    type: types.DELETE_DISLIKE_SUCCESS,
-    payload: { dislikeId: id, postId: post.id },
-  })
-}
-
-function* createLike(post, author) {
-  const like = yield call(api.likePost, { post: post.id, author })
-  yield put({
-    type: types.LIKE_SUCCESS,
-    payload: { postId: post.id, like },
-  })
-}
-
-function* createDislike(post, author) {
-  const dislike = yield call(api.dislikePost, { post: post.id, author })
-  yield put({
-    type: types.DISLIKE_SUCCESS,
-    payload: { postId: post.id, dislike },
-  })
 }
 
 function* fetchAuthors(action) {
@@ -94,52 +56,39 @@ function* fetchAuthors(action) {
   }
 }
 
-function* toggleLikePost(action) {
+function* handlePostReaction(action) {
   try {
-    const { postId, author } = action.payload
+    const { postId, author, type } = action.payload
+    const reactions = yield select(reactionsSelector)
 
-    const likes = yield select(likesSelector)
-    const dislikes = yield select(dislikesSelector)
-    const posts = yield select(postsSelector)
-    const post = posts[postId]
+    const userReaction = Object.values(reactions).find((reaction) => (
+      reaction.author === author && reaction.post === postId
+    ))
 
-    const liked = hasLiked({ likes, post, author })
-    const disliked = hasDisliked({ dislikes, post, author })
-
-    if (liked) {
-      yield fork(deleteLike, likes, post, author)
+    if (userReaction === undefined) {
+      const result = yield call(api.createReaction, type, postId, author)
+      yield put({
+        type: types.API_CREATE_REACTION_SUCCESS,
+        payload: result,
+      })
+    } else if (userReaction.type === type) {
+      yield call(api.deleteReaction, userReaction.id)
+      yield put({
+        type: types.API_DELETE_REACTION_SUCCESS,
+        payload: {
+          reaction: userReaction.id,
+          post: postId,
+        },
+      })
     } else {
-      if (disliked) {
-        yield fork(deleteDisLike, dislikes, post, author)
-      }
-      yield fork(createLike, post, author)
+      yield call(api.editReaction, userReaction.id, type)
+      yield put({
+        type: types.API_EDIT_REACTION_SUCCESS,
+        payload: { id: userReaction.id, type },
+      })
     }
   } catch (error) {
-    yield put({ type: types.API_TOGGLE_LIKE_DISLIKE_ERROR, error })
-  }
-}
-
-function* toggleDislikePost(action) {
-  try {
-    const { postId, author } = action.payload
-    const likes = yield select(likesSelector)
-    const dislikes = yield select(dislikesSelector)
-    const posts = yield select(postsSelector)
-    const post = posts[postId]
-
-    const liked = hasLiked({ likes, post, author })
-    const disliked = hasDisliked({ dislikes, post, author })
-
-    if (disliked) {
-      yield fork(deleteDisLike, dislikes, post, author)
-    } else {
-      if (liked) {
-        yield fork(deleteLike, likes, post, author)
-      }
-      yield fork(createDislike, post, author)
-    }
-  } catch (error) {
-    yield put({ type: types.API_TOGGLE_LIKE_DISLIKE_ERROR, error })
+    yield put({ type: types.API_REACT_POST_ERROR, error })
   }
 }
 
@@ -157,8 +106,7 @@ export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
     yield takeLeading(types.API_FETCH_AUTHORS, fetchAuthors),
-    yield takeLeading(types.API_TOGGLE_LIKE_POST, toggleLikePost),
-    yield takeLeading(types.API_TOGGLE_DISLIKE_POST, toggleDislikePost),
+    yield takeLeading(types.API_REACT_POST, handlePostReaction),
     yield takeLeading(types.COMMENT_POST, commentPost),
   ])
 }

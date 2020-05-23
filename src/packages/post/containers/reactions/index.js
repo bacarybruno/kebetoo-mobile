@@ -1,6 +1,4 @@
-import React, {
-  memo, useCallback, useState, useEffect,
-} from 'react'
+import React, { memo, useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
@@ -11,7 +9,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
-import { likesSelector, dislikesSelector, postsSelector } from 'Kebetoo/src/redux/selectors'
+import { reactionsSelector, postsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
 
@@ -20,30 +18,6 @@ export const REACTION_TYPES = {
   DISLIKE: 'dislike',
   COMMENT: 'comment',
 }
-
-export const findLiked = ({ likes, post, author }) => post
-  .likes
-  .find((like) => likes[like] && likes[like].author === author)
-
-export const findCommented = ({ comments, post, author }) => post
-  .comments
-  .find((comment) => comments[comment] && comments[comment].author === author)
-
-export const findDisliked = ({ dislikes, post, author }) => post
-  .dislikes
-  .find((dislike) => dislikes[dislike] && dislikes[dislike].author === author)
-
-export const hasLiked = ({ likes, post, author }) => (
-  !!findLiked({ likes, post, author })
-)
-
-export const hasCommented = ({ comments, post, author }) => (
-  !!findCommented({ comments, post, author })
-)
-
-export const hasDisliked = ({ dislikes, post, author }) => (
-  !!findDisliked({ dislikes, post, author })
-)
 
 export const Reaction = ({
   iconName, count, onPress, color = colors.blue_dark, disabled,
@@ -62,96 +36,41 @@ export const Reaction = ({
       size={18}
       name={iconName}
     />
-    {disabled ? (
-      <Text color="inactive" size="xs" bold text={count.toString()} />
-    ) : (
-      <ThemedText size="xs" bold text={count.toString()} />
-    )}
+    {disabled
+      ? (
+        <Text color="inactive" size="xs" bold text={count.toString()} />
+      ) : (
+        <ThemedText size="xs" bold text={count.toString()} />
+      )}
   </TouchableOpacity>
+)
+
+const countReactions = (reactions, post, type) => (
+  Object.values(reactions).filter((r) => r.type === type && r.post === post).length
 )
 
 const Reactions = ({
   post, author, disabled, onComment,
 }) => {
   const posts = useSelector(postsSelector)
-  const likes = useSelector(likesSelector)
-  const dislikes = useSelector(dislikesSelector)
+  const reactions = useSelector(reactionsSelector)
 
   const updatedPost = posts[post.id]
-
-  const [liked, setLiked] = useState(hasLiked({ likes, post, author }))
-  const [disliked, setDisliked] = useState(hasDisliked({ dislikes, post, author }))
-
-  const [postLikesCount, setPostLikesCount] = useState(
-    (value) => value || post.likes.length,
-  )
-  const [postDislikesCount, setPostDislikesCount] = useState(
-    (value) => value || post.dislikes.length,
-  )
-  const [postCommentsCount, setPostCommentsCount] = useState(
-    (value) => value || post.comments.length,
-  )
-
-  const { navigate, addListener: addNavigationListener } = useNavigation()
-
-  useEffect(() => {
-    const unsusbcribeFocus = addNavigationListener('focus', () => {
-      setLiked(hasLiked({ likes, post: updatedPost, author }))
-      setDisliked(hasDisliked({ dislikes, post: updatedPost, author }))
-      setPostLikesCount(updatedPost.likes.length)
-      setPostDislikesCount(updatedPost.dislikes.length)
-      setPostCommentsCount(updatedPost.comments.length)
-    })
-    return unsusbcribeFocus
-  }, [addNavigationListener, updatedPost, author, dislikes, likes])
-
   const dispatch = useDispatch()
 
-  const like = useCallback(() => {
-    setLiked(true)
-    setPostLikesCount((value) => value + 1)
-  }, [])
+  const userReaction = Object.values(reactions).find((r) => (
+    r.author === author && r.post === post.id
+  )) || {}
 
-  const unlike = useCallback(() => {
-    setLiked(false)
-    setPostLikesCount((value) => value - 1)
-  }, [])
-
-  const dislike = useCallback(() => {
-    setDisliked(true)
-    setPostDislikesCount((value) => value + 1)
-  }, [])
-
-  const undislike = useCallback(() => {
-    setDisliked(false)
-    setPostDislikesCount((value) => value - 1)
-  }, [])
-
-  const toggleLike = useCallback(() => {
-    if (disliked) undislike()
-    if (liked) unlike()
-    else like()
-  }, [disliked, like, liked, undislike, unlike])
-
-  const toggleDislike = useCallback(() => {
-    if (liked) unlike()
-    if (disliked) undislike()
-    else dislike()
-  }, [dislike, disliked, liked, undislike, unlike])
+  const { navigate } = useNavigation()
 
   const onReaction = useCallback(async (type) => {
     switch (type) {
       case REACTION_TYPES.LIKE:
-        toggleLike()
-        return dispatch({
-          type: types.API_TOGGLE_LIKE_POST,
-          payload: { postId: post.id, author },
-        })
       case REACTION_TYPES.DISLIKE:
-        toggleDislike()
         return dispatch({
-          type: types.API_TOGGLE_DISLIKE_POST,
-          payload: { postId: post.id, author },
+          type: types.API_REACT_POST,
+          payload: { type, author, postId: post.id },
         })
       case REACTION_TYPES.COMMENT:
         if (onComment) onComment()
@@ -160,25 +79,25 @@ const Reactions = ({
       default: break
     }
     return null
-  }, [toggleLike, dispatch, post.id, author, toggleDislike, onComment, navigate])
+  }, [dispatch, post.id, author, onComment, navigate])
 
   return (
     <View style={styles.reactions}>
       <Reaction
-        iconName={liked ? 'like-fill' : 'like'}
-        count={postLikesCount}
+        iconName={userReaction.type === REACTION_TYPES.LIKE ? 'like-fill' : 'like'}
+        count={countReactions(reactions, post.id, REACTION_TYPES.LIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
-        iconName={disliked ? 'dislike-fill' : 'dislike'}
-        count={postDislikesCount}
+        iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
+        count={countReactions(reactions, post.id, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
       />
       <Reaction
         iconName="comment"
-        count={postCommentsCount}
+        count={updatedPost.comments.length}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />

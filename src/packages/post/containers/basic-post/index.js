@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
+import auth from '@react-native-firebase/auth'
 
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
@@ -62,7 +63,7 @@ export const Header = ({
         <Avatar src={author.photoURL} text={author.displayName} size={size} />
       </View>
       <View style={[styles.meta, { height: size }]}>
-        <ThemedText size="sm" text={author.displayName} />
+        <ThemedText size="md" text={author.displayName} />
         <View style={styles.smallMeta}>
           <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
           {isUpdated(post) && <Edited size="xs" />}
@@ -94,6 +95,7 @@ export const Content = ({ post, ...otherProps }) => {
 const BasicPost = ({
   post, author, onOptions, size = 35,
 }) => {
+  const user = auth().currentUser
   const { navigate } = useNavigation()
   const posts = useSelector(postsSelector)
 
@@ -109,7 +111,7 @@ const BasicPost = ({
     <View style={styles.wrapper}>
       <Header post={post} author={author} size={size} onOptions={onOptions} />
       <Content onPress={navigateToComments} post={post} />
-      <ReactionsComponent post={post} author={author.id} />
+      <ReactionsComponent post={post} author={user.uid} />
     </View>
   )
 }
