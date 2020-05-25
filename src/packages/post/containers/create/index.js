@@ -73,7 +73,7 @@ const CreatePostPage = () => {
     if (editMode) {
       result = await api.editPost({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
-      result = await audioRecorder.save(user.uid, text)
+      result = await audioRecorder.savePost(user.uid, text)
     } else {
       result = await api.createPost({ author: user.uid, content: text })
     }
@@ -119,13 +119,13 @@ const CreatePostPage = () => {
               )}
             </View>
             <IconButton
+              activable
               name="microphone"
               style={styles.iconButton}
-              isActive={audioRecorder.isRecording}
               onPressIn={audioRecorder.start}
               onPressOut={audioRecorder.stop}
+              isActive={audioRecorder.isRecording}
               text={readableSeconds(audioRecorder.elapsedTime)}
-              activable
             />
           </View>
         )}

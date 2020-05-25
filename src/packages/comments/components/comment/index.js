@@ -6,8 +6,13 @@ import dayjs from 'dayjs'
 import CommentPlaceholder from 'Kebetoo/src/shared/components/placeholders/comments'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import Text from 'Kebetoo/src/shared/components/text'
+import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
+import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
+
+export const getAudioSource = (url) => `${BASE_URL}${url}`
+
 
 const Comment = ({ item, author }) => (
   author ? (
@@ -30,7 +35,12 @@ const Comment = ({ item, author }) => (
               </Text>
             </View>
           </View>
-          <Text text={item.content} />
+          {item.audio && item.audio.url !== null
+            ? (
+              <AudioPlayer style={styles.audio} source={getAudioSource(item.audio.url)} />
+            ) : (
+              <Text text={item.content} />
+            )}
         </View>
       </View>
       <Ionicon name="ios-heart-empty" size={15} style={styles.loveIcon} />

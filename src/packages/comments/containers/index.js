@@ -18,6 +18,7 @@ import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
+import useAudioRecorder from '../../post/hooks/audio-recorder'
 
 export const routeOptions = {}
 
@@ -28,6 +29,7 @@ export const NoComments = () => (
 // TODO: paginate comments
 const Comments = () => {
   const user = auth().currentUser
+  const audioRecorder = useAudioRecorder()
   const { params } = useRoute()
   const { goBack } = useNavigation()
   const [comments, setComments] = useState([])
@@ -81,7 +83,13 @@ const Comments = () => {
   }, [])
 
   const onSend = useCallback(async () => {
-    if (comment.length > 0) {
+    if (audioRecorder.hasRecording) {
+      const result = await audioRecorder.saveComment(post.id, user.uid)
+      dispatch({
+        type: types.COMMENT_POST_SUCCESS,
+        payload: result,
+      })
+    } else if (comment.length > 0) {
       dispatch({
         type: types.COMMENT_POST,
         payload: {
@@ -91,8 +99,9 @@ const Comments = () => {
         },
       })
       commentInput.current.clear()
+      setComment('')
     }
-  }, [comment, dispatch, params.id, user.uid])
+  }, [audioRecorder, comment, dispatch, params.id, post.id, user.uid])
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
@@ -136,9 +145,11 @@ const Comments = () => {
         />
       </View>
       <CommentInput
-        onChange={onChangeText}
         onSend={onSend}
+        value={comment}
+        onChange={onChangeText}
         inputRef={commentInput}
+        audioRecorder={audioRecorder}
       />
     </View>
   )

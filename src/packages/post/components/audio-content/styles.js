@@ -29,7 +29,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.inactive,
     marginLeft: metrics.marginHorizontal,
-    ...elevation
+    ...elevation,
   },
   audioWrapper: {
     backgroundColor: colors.input,
@@ -44,9 +44,14 @@ export default StyleSheet.create({
     position: 'absolute',
     backgroundColor: colors.inactive,
     opacity: 0.4,
-    height: 52,
+    height: '100%',
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
+  },
+  round: {
+    borderTopLeftRadius: 26,
+    borderBottomLeftRadius: 26,
+    borderRadius: 26,
   },
   wavesContainer: {
     alignItems: 'center',
