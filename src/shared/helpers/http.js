@@ -73,6 +73,19 @@ export const commentPost = ({ author, post, content }) => request.post(
   'comments',
   { author, post, content },
 )
+export const commentPostWithAudio = ({ author, audio, post }) => {
+  const commentData = {
+    name: 'data',
+    data: JSON.stringify({ author, post }),
+  }
+  const audioData = {
+    name: 'files.audio',
+    filename: audio.name,
+    type: audio.mimeType,
+    data: RNFetchBlob.wrap(audio.uri),
+  }
+  return request.postFormData('comments', [commentData, audioData])
+}
 export const deleteComment = (id) => request.delete(`comments/${id}`)
 
 export const createReaction = (type, post, author) => (

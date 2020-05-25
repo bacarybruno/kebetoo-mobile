@@ -21,6 +21,8 @@ const IconButton = ({
   isActive = false,
   color = colors.blue_dark,
   activeColor = colors.white,
+  defaultBgColor = colors.input,
+  defaultHitSlop = 20,
   ...otherProps
 }) => {
   const [animatedScale] = useState(new Animated.Value(1))
@@ -52,10 +54,11 @@ const IconButton = ({
               vertical: metrics.screenHeight,
               horizontal: metrics.screenWidth,
             })
-            : edgeInsets.all(20)
+            : edgeInsets.all(defaultHitSlop)
         }
         style={[
           styles.button,
+          { backgroundColor: defaultBgColor },
           isActive && styles.activeButton,
           getDimensions(size),
           scale(animatedScale),

@@ -38,12 +38,29 @@ const useAudioRecorder = (maxDuration) => {
   const permissions = usePermissions()
   const maxDurationInSeconds = maxDuration || MAX_DURATION_IN_SECONDS
 
-  const save = useCallback(async (author, content) => {
+  const savePost = useCallback(async (author, content) => {
     const fileUri = getRecordUri()
     const time = Date.now()
     const response = await api.createPostWithAudio({
       author,
       content,
+      audio: {
+        uri: fileUri,
+        mimeType: RECORD_MIME_TYPE,
+        name: constructFileName(time, elapsedTime),
+      },
+    })
+    setHasRecording(false)
+    await RNFetchBlob.fs.unlink(fileUri)
+    return response
+  }, [elapsedTime])
+
+  const saveComment = useCallback(async (post, author) => {
+    const fileUri = getRecordUri()
+    const time = Date.now()
+    const response = await api.commentPostWithAudio({
+      post,
+      author,
       audio: {
         uri: fileUri,
         mimeType: RECORD_MIME_TYPE,
@@ -102,7 +119,8 @@ const useAudioRecorder = (maxDuration) => {
   return {
     start,
     stop,
-    save,
+    savePost,
+    saveComment,
     reset,
     isRecording,
     hasRecording,

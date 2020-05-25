@@ -48,19 +48,29 @@ export const DeleteIconButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-export const AudioPlayer = ({ source, onDelete }) => {
+export const AudioPlayer = ({
+  source, onDelete, style, round,
+}) => {
   const [player] = useState(
     new Player(source, {
       autoDestroy: false,
     }),
   )
-  const [playerState, setPlayerState] = useState(player.state)
+  const [playerState, setPlayerState] = useState(null)
   const [progress, setProgress] = useState(0)
   const intervalRef = useRef()
 
   const updatePlayerState = useCallback(() => {
     setPlayerState(player.state)
-  }, [player.state])
+  }, [player])
+
+  useEffect(() => {
+    updatePlayerState()
+    return () => {
+      clearInterval(intervalRef.current)
+      player.destroy()
+    }
+  }, [player, updatePlayerState])
 
   useEffect(() => {
     player.on('ended', () => {
@@ -91,11 +101,11 @@ export const AudioPlayer = ({ source, onDelete }) => {
   }, [player, updatePlayerState])
 
   return (
-    <View style={styles.audioWrapper}>
+    <View style={[styles.audioWrapper, style, round && styles.round]}>
       {onDelete && (
         <DeleteIconButton onPress={onDelete} />
       )}
-      <View style={{ ...styles.progress, width: `${progress}%` }} />
+      <View style={[styles.progress, { width: `${progress}%` }, round && styles.round]} />
       <PlayButton state={playerState} onPress={onPlayPause} />
       <Waves />
     </View>

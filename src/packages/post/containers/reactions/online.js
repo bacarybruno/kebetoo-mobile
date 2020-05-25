@@ -6,7 +6,7 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import routes from 'Kebetoo/src/navigation/routes'
 
 import styles from './styles'
-import { Reaction, REACTION_TYPES } from '.'
+import { Reaction, REACTION_TYPES } from './index'
 
 const countReactions = (post, type) => (
   post.reactions.filter((r) => r.type === type && r.post === post.id).length
