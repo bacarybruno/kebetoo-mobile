@@ -13,7 +13,6 @@ import styles from './styles'
 
 export const getAudioSource = (url) => `${BASE_URL}${url}`
 
-
 const Comment = ({ item, author }) => (
   author ? (
     <>
@@ -31,13 +30,17 @@ const Comment = ({ item, author }) => (
               <Text numberOfLines={1}>
                 {author.displayName}
                 <Text size="xs" text=" • " />
-                <Text size="xs" text={`${dayjs(item.updatedAt).fromNow()}`} />
+                <Text size="xs" text={dayjs(item.updatedAt).fromNow()} />
               </Text>
             </View>
           </View>
           {item.audio && item.audio.url !== null
             ? (
-              <AudioPlayer style={styles.audio} source={getAudioSource(item.audio.url)} />
+              <AudioPlayer
+                round
+                style={styles.audio}
+                source={getAudioSource(item.audio.url)}
+              />
             ) : (
               <Text text={item.content} />
             )}

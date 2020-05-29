@@ -102,10 +102,8 @@ export const AudioPlayer = ({
 
   return (
     <View style={[styles.audioWrapper, style, round && styles.round]}>
-      {onDelete && (
-        <DeleteIconButton onPress={onDelete} />
-      )}
-      <View style={[styles.progress, { width: `${progress}%` }, round && styles.round]} />
+      {onDelete && <DeleteIconButton onPress={onDelete} />}
+      <View style={[styles.progress, round && styles.round, { width: `${progress}%` }]} />
       <PlayButton state={playerState} onPress={onPlayPause} />
       <Waves />
     </View>
