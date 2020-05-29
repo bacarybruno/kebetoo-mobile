@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 export default StyleSheet.create({
   button: {
@@ -18,6 +19,6 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.20,
     shadowRadius: 1.41,
-    elevation: 2,
+    ...elevation(2),
   },
 })

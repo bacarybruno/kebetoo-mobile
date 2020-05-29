@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 export default StyleSheet.create({
   wrapper: {
@@ -15,7 +16,7 @@ export default StyleSheet.create({
   },
   header: {
     backgroundColor: colors.white,
-    elevation: 0,
+    ...elevation(0),
   },
   headerSaveButton: {
     marginHorizontal: metrics.marginHorizontal,
@@ -47,5 +48,16 @@ export default StyleSheet.create({
   preview: {
     flex: 1,
     justifyContent: 'flex-end',
+  },
+  audioPlayer: {
+    borderRadius: 15,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 1.00,
+    ...elevation(1),
   },
 })

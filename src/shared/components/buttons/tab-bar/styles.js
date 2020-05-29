@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 const size = 56
 export default StyleSheet.create({
@@ -25,6 +26,6 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
-    elevation: 6,
+    ...elevation(6),
   },
 })

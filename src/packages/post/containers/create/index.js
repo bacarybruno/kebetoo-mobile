@@ -104,6 +104,7 @@ const CreatePostPage = () => {
             <AudioPlayer
               source={audioRecorder.recordUri}
               onDelete={audioRecorder.reset}
+              style={styles.audioPlayer}
             />
           )}
         </View>
