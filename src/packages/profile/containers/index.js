@@ -13,10 +13,11 @@ import routes from 'Kebetoo/src/navigation/routes'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import * as types from 'Kebetoo/src/redux/types'
 import { userStatsSelector } from 'Kebetoo/src/redux/selectors'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles, { imageSize } from './styles'
 
-export const routeOptions = { title: 'Profile' }
+export const routeOptions = { title: strings.tabs.profile }
 
 export const SectionTitle = ({ text }) => (
   <Text
@@ -57,7 +58,7 @@ export const IconButton = ({
         <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
       </View>
       <View>
-        <Text text={text} />
+        <Text numberOfLines={1} text={text} />
         {message && <Text text={message} size="sm" opacity={0.35} />}
       </View>
     </Pressable>
@@ -67,9 +68,9 @@ export const IconButton = ({
 
 const Stats = ({ postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.stats}>
-    <Stat value={postsCount} title="posts" />
-    <Stat value={reactionsCount} title="reactions" />
-    <Stat value={commentsCount} title="comments" />
+    <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
+    <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
+    <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
   </View>
 )
 
@@ -77,8 +78,8 @@ const ProfileSection = ({ managePosts }) => (
   <View style={styles.section}>
     <IconButton
       icon="md-list"
-      text="Manage posts"
-      message="View, edit or delete your posts"
+      text={strings.profile.manage_posts_title}
+      message={strings.profile.manage_posts_desc}
       onPress={managePosts}
     />
   </View>
@@ -86,19 +87,35 @@ const ProfileSection = ({ managePosts }) => (
 
 const AccountSection = ({ signOut }) => (
   <View style={styles.section}>
-    <SectionTitle text="Account" />
-    <IconButton icon="ios-at" text="Edit username" message="No username defined" />
-    <IconButton icon="md-create" text="Edit profile" />
-    <IconButton icon="ios-log-out" text="Sign out" onPress={signOut} />
+    <SectionTitle text={strings.profile.account} />
+    <IconButton
+      icon="ios-at"
+      text={strings.profile.edit_username}
+      message={strings.profile.no_username_defined}
+    />
+    <IconButton
+      icon="md-create"
+      text={strings.profile.edit_profile}
+    />
+    <IconButton
+      icon="ios-log-out"
+      text={strings.profile.signout}
+      onPress={signOut}
+    />
   </View>
 )
 
 const PreferencesSection = () => (
   <View style={styles.section}>
-    <SectionTitle text="Preferences" />
-    <IconButton icon="ios-color-palette" text="Dark Mode" />
-    <IconButton icon="ios-notifications" text="Notifications" />
-    <IconButton icon="ios-globe" text="Language" message="English" />
+    <SectionTitle text={strings.profile.preferences} />
+    <IconButton icon="ios-color-palette" text={strings.profile.dark_mode} />
+    <IconButton icon="ios-notifications" text={strings.profile.notifications} />
+    <IconButton
+      disabled
+      icon="ios-globe"
+      text={strings.profile.language}
+      message={strings.languages[strings.getLanguage()]}
+    />
   </View>
 )
 
@@ -183,4 +200,5 @@ const ProfilePage = () => {
     </View>
   )
 }
+
 export default ProfilePage

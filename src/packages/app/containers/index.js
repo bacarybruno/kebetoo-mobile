@@ -5,15 +5,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
 
 import AppNavigation from 'Kebetoo/src/navigation'
-import strings from 'Kebetoo/src/config/strings'
-import { SET_THEME, SET_LOCALE } from 'Kebetoo/src/redux/types'
+import { appSelector } from 'Kebetoo/src/redux/selectors'
+import { SET_THEME } from 'Kebetoo/src/redux/types'
 
 import styles from './styles'
 
 enableScreens()
 
 const RootContainer = () => {
-  const { theme, locale } = useSelector((state) => state.appReducer)
+  const { theme } = useSelector(appSelector)
   const defaultTheme = useColorScheme()
   const dispatch = useDispatch()
 
@@ -21,17 +21,7 @@ const RootContainer = () => {
     if (theme === null) {
       dispatch({ type: SET_THEME, payload: defaultTheme })
     }
-  })
-
-  useEffect(() => {
-    if (locale === null) {
-      const defaultLocale = strings.getInterfaceLanguage()
-      dispatch({ type: SET_LOCALE, payload: defaultLocale })
-      strings.setLanguage(defaultLocale)
-    } else {
-      strings.setLanguage(locale)
-    }
-  })
+  }, [defaultTheme, dispatch, theme])
 
   return (
     <SafeAreaView style={styles.wrapper}>

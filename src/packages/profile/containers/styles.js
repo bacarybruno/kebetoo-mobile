@@ -48,7 +48,7 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 16,
     flexDirection: 'row',
-    ...elevation,
+    ...elevation(2),
   },
   stat: {
     flex: 1,

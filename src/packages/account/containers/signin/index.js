@@ -12,10 +12,11 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import routes from 'Kebetoo/src/navigation/routes'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
 import Logo from 'Kebetoo/src/shared/components/logo'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { title: 'Sign in' }
+export const routeOptions = { title: strings.auth.signin }
 
 const SignIn = ({ navigation }) => {
   const schema = yup.object().shape({
@@ -60,7 +61,7 @@ const SignIn = ({ navigation }) => {
       <View style={styles.normalSignUp}>
         {availableHeight > 480 && <Logo />}
         <TextInput
-          placeholder="Email"
+          placeholder={strings.auth.email}
           fieldName="email"
           onValueChange={onChangeText}
           keyboardType="email-address"
@@ -69,25 +70,25 @@ const SignIn = ({ navigation }) => {
           returnKeyType="next"
         />
         <PasswordInput
-          placeholder="Password"
+          placeholder={strings.auth.password}
           fieldName="password"
           onValueChange={onChangeText}
           ref={passwordRef}
           returnKeyType="done"
         />
         <View>
-          <FullButton text="SIGN IN" onPress={onSubmit} />
+          <FullButton text={strings.auth.signup.toUpperCase()} onPress={onSubmit} />
           <Text
             style={styles.forgotPassword}
-            text="Forgot your password ?"
+            text={strings.auth.forgot_password}
             color="secondary"
           />
         </View>
       </View>
       {!keyboardShown && (
-        <SocialSignIn sectionText="Or sign in with">
+        <SocialSignIn sectionText={strings.auth.or_signin_with}>
           <Text style={styles.footerText} onPress={navigateToSignUp}>
-            Don't have an account ? <Text color="secondary" text="Sign up" />
+            {strings.auth.dont_have_account} <Text color="secondary" text={strings.auth.signup} />
           </Text>
         </SocialSignIn>
       )}
