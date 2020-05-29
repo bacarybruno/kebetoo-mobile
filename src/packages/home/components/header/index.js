@@ -1,8 +1,9 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import Text from 'Kebetoo/src/shared/components/text'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
@@ -11,11 +12,13 @@ export const routeOptions = { headerShown: false }
 const Header = ({ displayName, imageSrc, style }) => (
   <View style={[styles.header, style]}>
     <View style={styles.greetings}>
-      <Text size="lg">Hey {displayName.split(' ')[0]},</Text>
-      <Text text="what's new in Paris ?" />
+      <Text size="lg">
+        {strings.formatString(strings.home.welcome, displayName.split(' ')[0])},
+      </Text>
+      <Text text={strings.home.whats_new.toLowerCase()} />
     </View>
     <Avatar src={imageSrc} text={displayName} />
   </View>
 )
 
-export default memo(Header)
+export default Header

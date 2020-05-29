@@ -4,3 +4,4 @@ export const commentsSelector = (state) => state.postsReducer.comments
 export const userStatsSelector = (state) => state.userReducer.stats
 export const displayNameSelector = (state) => state.userReducer.displayName
 export const reactionsSelector = (state) => state.postsReducer.reactions
+export const appSelector = (state) => state.appReducer

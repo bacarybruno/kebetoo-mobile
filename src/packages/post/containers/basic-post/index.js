@@ -16,6 +16,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import { postsSelector } from 'Kebetoo/src/redux/selectors'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
@@ -36,7 +37,7 @@ export const getPostType = (post) => {
 const Edited = ({ size }) => (
   <>
     <ThemedText size={size} text=" • " />
-    <ThemedText size={size} text="Edited" />
+    <ThemedText size={size} text={strings.general.edited} />
   </>
 )
 

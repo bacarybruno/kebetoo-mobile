@@ -16,6 +16,7 @@ import Text from 'Kebetoo/src/shared/components/text'
 import colors from 'Kebetoo/src/theme/colors'
 import routes from 'Kebetoo/src/navigation/routes'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 import BasicPost from '../basic-post'
@@ -26,7 +27,7 @@ YellowBox.ignoreWarnings([
 ])
 
 export const routeOptions = {
-  title: 'Manage posts',
+  title: strings.profile.manage_posts_title,
   headerShown: true,
   headerBackImage: ({ tintColor }) => (
     <HeaderBack tintColor={tintColor} />
@@ -34,10 +35,8 @@ export const routeOptions = {
 }
 
 export const NoPosts = ({ onPress }) => (
-  <NoContent title="No posts yet">
-    <Text text="Take the leap and">
-      <Text color="secondary" text=" create your first post" onPress={onPress} />
-    </Text>
+  <NoContent title={strings.general.no_content}>
+    <Text color="secondary" text={strings.manage_posts.no_content} onPress={onPress} />
   </NoContent>
 )
 
@@ -52,13 +51,13 @@ const ManagePostsPage = () => {
   const dateFormat = 'YYYY-MM'
 
   const bottomSheetItems = [{
-    title: 'Edit post',
+    title: strings.manage_posts.edit_post,
     icon: 'md-create',
   }, {
-    title: 'Delete post',
+    title: strings.manage_posts.delete_post,
     icon: 'ios-trash',
   }, {
-    title: 'Cancel',
+    title: strings.general.cancel,
     icon: 'md-close',
   }]
 

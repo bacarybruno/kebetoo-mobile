@@ -13,6 +13,7 @@ import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
 import * as types from 'Kebetoo/src/redux/types'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
@@ -23,7 +24,7 @@ import useAudioRecorder from '../../post/hooks/audio-recorder'
 export const routeOptions = {}
 
 export const NoComments = () => (
-  <NoContent title="No content yet" text="Be the first to add a comment! 👇" />
+  <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
 
 // TODO: paginate comments

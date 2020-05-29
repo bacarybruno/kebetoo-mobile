@@ -8,6 +8,7 @@ import FullButton from 'Kebetoo/src/shared/components/buttons/full'
 import OnbordingSlide from 'Kebetoo/src/packages/onboarding/components'
 import routes from 'Kebetoo/src/navigation/routes'
 import images from 'Kebetoo/src/theme/images'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
@@ -15,21 +16,21 @@ export const routeOptions = { headerShown: false }
 
 export const slideItems = [{
   imageSrc: images.onboarding1,
-  title: 'Join Our Social Media',
-  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
+  title: strings.onboarding.screen_one_title,
+  description: strings.onboarding.screen_one_description,
 }, {
   imageSrc: images.onboarding2,
-  title: 'Create Your Account',
-  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
+  title: strings.onboarding.screen_two_title,
+  description: strings.onboarding.screen_two_description,
 }, {
   imageSrc: images.onboarding3,
-  title: 'Have a Fun With Your Friends',
-  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
+  title: strings.onboarding.screen_three_title,
+  description: strings.onboarding.screen_three_description,
 }]
 
 export const SkipButton = ({ onPress }) => (
   <TouchableOpacity style={styles.skipButton} onPress={onPress}>
-    <Text color="grey" text="Skip" />
+    <Text color="grey" text={strings.general.skip} />
   </TouchableOpacity>
 )
 
@@ -77,7 +78,7 @@ const OnboardingPage = ({ navigation }) => {
         </Swiper>
         <View style={styles.buttonWrapper}>
           {isLastSlideItem ? (
-            <FullButton text="Get Started" onPress={onGetStarted} />
+            <FullButton text={strings.general.get_started} onPress={onGetStarted} />
           ) : (
             <IconButton
               style={styles.nextButton}

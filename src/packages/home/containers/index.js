@@ -12,11 +12,12 @@ import colors from 'Kebetoo/src/theme/colors'
 import {
   postsSelector, authorsSelector, displayNameSelector,
 } from 'Kebetoo/src/redux/selectors'
+import strings from 'Kebetoo/src/config/strings'
 
 import Header from '../components/header'
 import styles from './styles'
 
-export const routeOptions = { title: 'Home' }
+export const routeOptions = { title: strings.tabs.home }
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -31,13 +32,22 @@ const HomePage = () => {
   const displayName = user.displayName || savedDisplayName
 
   const { addListener: addNavigationListener } = useNavigation()
-  
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true)
+    setPage(0)
+  }, [])
+
+  const onEndReached = useCallback(() => {
+    setPage((value) => value + 1)
+  }, [])
+
   useEffect(() => {
     const unsusbcribeFocus = addNavigationListener('focus', () => {
       onRefresh()
     })
     return unsusbcribeFocus
-  }, [addNavigationListener])
+  }, [addNavigationListener, onRefresh])
 
   useEffect(() => {
     dispatch({ type: types.API_FETCH_POSTS, payload: page })
@@ -65,15 +75,6 @@ const HomePage = () => {
       })
     }
   }, [normalizedPosts, page])
-
-  const onRefresh = useCallback(() => {
-    setRefreshing(true)
-    setPage(0)
-  }, [])
-
-  const onEndReached = useCallback(() => {
-    setPage((value) => value + 1)
-  }, [])
 
   const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
 

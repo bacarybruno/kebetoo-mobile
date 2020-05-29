@@ -14,12 +14,13 @@ import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 import useAudioRecorder from '../../hooks/audio-recorder'
 
 export const routeOptions = {
-  title: 'Create post',
+  title: strings.create_post.create_post,
   headerShown: true,
   headerBackImage: ({ tintColor }) => (
     <HeaderBack.Close tintColor={tintColor} />
@@ -39,7 +40,7 @@ const TEXT_MAX_LENGHT = 180
 export const PostTextMessage = ({ onChange, text }) => (
   <>
     <TextInput
-      placeholder="What's on your mind ?"
+      placeholder={strings.create_post.placeholder}
       onValueChange={onChange}
       returnKeyType="done"
       numberOfLines={8}
@@ -51,7 +52,7 @@ export const PostTextMessage = ({ onChange, text }) => (
       multiline
     />
     <Text style={styles.textCount} size="tiny">
-      {TEXT_MAX_LENGHT - text.length} characters
+      {strings.formatString(strings.create_post.characters, TEXT_MAX_LENGHT - text.length)}
     </Text>
   </>
 )
@@ -85,13 +86,13 @@ const CreatePostPage = () => {
     setOptions({
       headerRight: () => (
         <OutlinedButton
-          text={editMode ? 'EDIT' : 'POST'}
+          text={(editMode ? strings.general.edit : strings.general.post).toUpperCase()}
           disabled={text.length === 0}
           onPress={onHeaderSavePress}
           style={styles.headerSaveButton}
         />
       ),
-      title: editMode ? 'Edit post' : 'Create post',
+      title: editMode ? strings.create_post.edit_post : strings.create_post.create_post,
     })
   }, [text, editMode, setOptions, onHeaderSavePress])
 
