@@ -3,6 +3,7 @@ import {
 } from 'react'
 import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
+import dayjs from 'dayjs'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
@@ -11,8 +12,8 @@ export const MAX_DURATION_IN_SECONDS = 30
 export const RECORD_NAME = 'kebetoo-record.aac'
 export const RECORD_MIME_TYPE = 'audio/x-aac'
 export const RECORD_CONFIG = Object.freeze({
-  bitrate: 32000,
-  sampleRate: 22050,
+  bitrate: 20000,
+  sampleRate: 16000,
   channels: 1,
   quality: 'min',
 })
@@ -40,7 +41,7 @@ const useAudioRecorder = (maxDuration) => {
 
   const savePost = useCallback(async (author, content) => {
     const fileUri = getRecordUri()
-    const time = Date.now()
+    const time = dayjs().format('YYYYMMDD')
     const response = await api.createPostWithAudio({
       author,
       content,
