@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
+
 import colors from 'Kebetoo/src/theme/colors'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 export const getDimensions = (size) => ({
   width: size,
@@ -28,7 +30,7 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-    elevation: 10,
+    ...elevation(10),
   },
   badge: {
     marginRight: 30,

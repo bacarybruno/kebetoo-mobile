@@ -2,18 +2,9 @@ import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 export const imageSize = 90
-const elevation = {
-  shadowColor: colors.black,
-  shadowOffset: {
-    width: 0,
-    height: 1,
-  },
-  shadowOpacity: 0.22,
-  shadowRadius: 2.22,
-  elevation: 3,
-}
 
 export default StyleSheet.create({
   wrapper: {
@@ -41,7 +32,7 @@ export default StyleSheet.create({
     width: imageSize,
     height: imageSize,
     borderRadius: imageSize / 2,
-    ...elevation,
+    ...elevation(3),
   },
   photo: {
     width: '100%',

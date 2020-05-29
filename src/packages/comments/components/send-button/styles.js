@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
+import elevation from 'Kebetoo/src/theme/elevation'
 
 export const bottomBarSize = 45
 
@@ -13,15 +14,7 @@ const defaultButtonStyle = {
   marginLeft: 5,
   justifyContent: 'center',
   alignItems: 'center',
-  // elevation
-  shadowColor: colors.black,
-  shadowOffset: {
-    width: 0,
-    height: 1,
-  },
-  shadowOpacity: 0.22,
-  shadowRadius: 2.22,
-  elevation: 3,
+  ...elevation(2),
 }
 export default StyleSheet.create({
   send: {
