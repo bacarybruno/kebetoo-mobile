@@ -13,9 +13,9 @@ const Header = ({ displayName, imageSrc, style }) => (
   <View style={[styles.header, style]}>
     <View style={styles.greetings}>
       <Text size="lg">
-        {strings.formatString(strings.home.welcome, displayName.split(' ')[0])},
+        {strings.formatString(strings.home.welcome, displayName.split(' ')[0])}
       </Text>
-      <Text text={strings.home.whats_new.toLowerCase()} />
+      <Text text={strings.home.whats_new} />
     </View>
     <Avatar src={imageSrc} text={displayName} />
   </View>
