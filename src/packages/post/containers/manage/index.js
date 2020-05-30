@@ -16,6 +16,7 @@ import Text from 'Kebetoo/src/shared/components/text'
 import colors from 'Kebetoo/src/theme/colors'
 import routes from 'Kebetoo/src/navigation/routes'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
+import ActionButton from 'react-native-action-button'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
@@ -104,6 +105,15 @@ const ManagePostsPage = () => {
     }
   }, [])
 
+  const onPostCreated = useCallback((createdPost) => {
+    if (createdPost) {
+      setPosts((value) => [
+        createdPost,
+        ...value,
+      ])
+    }
+  }, [])
+
   const confirmDeletePost = useCallback(async (id) => {
     if (id) {
       await api.deletePost(id)
@@ -173,6 +183,12 @@ const ManagePostsPage = () => {
     <NoPosts onPress={() => navigate(routes.CREATE_POST)} />
   ), [navigate, loading])
 
+  const createPost = useCallback(() => {
+    navigate(routes.CREATE_POST, {
+      onGoBack: onPostCreated,
+    })
+  }, [navigate, onPostCreated])
+
   return (
     <View style={[styles.wrapper, sortedPosts.length === 0 && { paddingTop: 0 }]}>
       <SectionList
@@ -183,6 +199,12 @@ const ManagePostsPage = () => {
         ListEmptyComponent={renderNoPost}
         contentContainerStyle={styles.sectionListContent}
         renderItem={renderItem}
+      />
+      <ActionButton
+        buttonColor={colors.primary}
+        onPress={createPost}
+        buttonTextStyle={styles.fab}
+        fixNativeFeedbackRadius
       />
     </View>
   )
