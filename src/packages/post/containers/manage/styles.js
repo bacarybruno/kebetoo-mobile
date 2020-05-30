@@ -23,5 +23,8 @@ export default StyleSheet.create({
     flexGrow: 1,
     marginHorizontal: metrics.marginHorizontal,
     paddingBottom: metrics.marginVertical,
-  }
+  },
+  fab: {
+    fontSize: 30,
+  },
 })
