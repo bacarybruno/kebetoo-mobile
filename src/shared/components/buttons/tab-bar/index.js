@@ -1,14 +1,13 @@
 import React, { useCallback } from 'react'
-import { View, TouchableOpacity } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import ActionButton from 'react-native-action-button'
 
 import colors from 'Kebetoo/src/theme/colors'
 
-import styles from './styles'
+import styles, { size } from './styles'
 
-
-const TabBarAddButton = ({ route }) => {
+const TabBarActionButton = ({ route }) => {
   const { navigate } = useNavigation()
 
   const navigateToPage = useCallback(() => {
@@ -17,16 +16,18 @@ const TabBarAddButton = ({ route }) => {
 
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity
+      <ActionButton
+        position="center"
+        offsetY={0}
+        offsetX={0}
+        size={size}
         onPress={navigateToPage}
-        underlayColor={colors.black}
-        style={styles.container}
-        activeOpacity={0.6}
-      >
-        <Ionicon name="md-add" size={24} color={colors.white} />
-      </TouchableOpacity>
+        buttonColor={colors.primary}
+        buttonTextStyle={styles.fab}
+        fixNativeFeedbackRadius
+      />
     </View>
   )
 }
 
-export default TabBarAddButton
+export default TabBarActionButton

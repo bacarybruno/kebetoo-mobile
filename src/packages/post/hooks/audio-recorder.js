@@ -9,7 +9,7 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
 
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'kebetoo-record.aac'
+export const RECORD_NAME = 'PTT.aac'
 export const RECORD_MIME_TYPE = 'audio/x-aac'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 20000,
@@ -18,10 +18,10 @@ export const RECORD_CONFIG = Object.freeze({
   quality: 'min',
 })
 export const constructFileName = (time, duration) => (
-  `record_${time}_${duration}`
+  `PTT-${time}-${duration}`
 )
 export const extractMetadataFromName = (name) => {
-  const [prefix, time, duration] = name.split('_')
+  const [prefix, time, duration] = name.split('-')
   return {
     prefix, time, duration,
   }

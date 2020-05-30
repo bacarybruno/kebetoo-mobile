@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Image } from 'react-native'
+import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -131,11 +131,16 @@ export const OnboardingStack = () => (
 export const Empty = () => null
 
 export const TabBar = (props) => (
-  <>
+  <View>
     <Image source={images.bottom_tab_overlay} style={styles.bottomTabOverlay} />
-    <BottomTabBar {...props} />
-  </>
+    <View>
+      <TabBarAddButton route={routes.CREATE_POST} />
+      <BottomTabBar {...props} />
+    </View>
+  </View>
 )
+
+const Placeholder = () => <View style={{ flex: 1 }} />
 
 export const TabPage = () => (
   <Tab.Navigator
@@ -156,11 +161,7 @@ export const TabPage = () => (
     <Tab.Screen
       name={routes.TABS_FAB}
       component={Empty}
-      options={{
-        tabBarButton: () => (
-          <TabBarAddButton route={routes.CREATE_POST} />
-        ),
-      }}
+      options={{ tabBarButton: Placeholder }}
     />
     <Tab.Screen
       name={routes.SEARCH}
