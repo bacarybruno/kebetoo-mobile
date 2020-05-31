@@ -24,6 +24,7 @@ const Text = ({
   opacity = 1,
   fontSize = null,
   uppercase,
+  textDecorationLine = 'none',
   ...props
 }) => (
   <RNText
@@ -34,6 +35,7 @@ const Text = ({
         fontWeight: bold ? 'bold' : 'normal',
         color: colors[color],
         opacity,
+        textDecorationLine,
       },
       style,
     ]}

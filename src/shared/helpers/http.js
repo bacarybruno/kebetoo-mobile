@@ -64,6 +64,19 @@ export const createPostWithAudio = ({ author, audio, content }) => {
   }
   return request.postFormData('posts', [postData, audioData])
 }
+export const createPostWithImage = ({ author, image, content }) => {
+  const postData = {
+    name: 'data',
+    data: JSON.stringify({ content, author }),
+  }
+  const imageData = {
+    name: 'files.image',
+    filename: image.name,
+    type: image.mimeType,
+    data: RNFetchBlob.wrap(image.uri),
+  }
+  return request.postFormData('posts', [postData, imageData])
+}
 
 export const editPost = ({ id, content }) => request.put(`posts/${id}`, { content })
 
