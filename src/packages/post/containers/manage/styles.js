@@ -21,7 +21,7 @@ export default StyleSheet.create({
   sectionListContent: {
     marginTop: metrics.marginVertical,
     flexGrow: 1,
-    marginHorizontal: metrics.marginHorizontal,
+    paddingHorizontal: metrics.marginHorizontal,
     paddingBottom: metrics.marginVertical,
   },
   fab: {

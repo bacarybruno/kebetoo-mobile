@@ -58,7 +58,7 @@ const useAudioRecorder = (maxDuration) => {
 
   const saveComment = useCallback(async (post, author) => {
     const fileUri = getRecordUri()
-    const time = Date.now()
+    const time = dayjs().format('YYYYMMDD')
     const response = await api.commentPostWithAudio({
       post,
       author,

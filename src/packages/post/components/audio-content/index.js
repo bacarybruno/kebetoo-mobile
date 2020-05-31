@@ -15,7 +15,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 
 import styles from './styles'
 
-export const getAudioSource = (url) => `${BASE_URL}${url}`
+export const getSource = (url) => `${BASE_URL}${url}`
 
 const Waves = () => (
   <View style={styles.wavesContainer}>
@@ -112,7 +112,7 @@ export const AudioPlayer = ({
 const AudioContent = ({ post, style }) => (
   <View style={[styles.wrapper, style]}>
     <ThemedText style={styles.text} text={post.content} />
-    <AudioPlayer source={getAudioSource(post.audio.url)} />
+    <AudioPlayer source={getSource(post.audio.url)} />
   </View>
 )
 

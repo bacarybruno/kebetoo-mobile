@@ -17,6 +17,7 @@ import colors from 'Kebetoo/src/theme/colors'
 import routes from 'Kebetoo/src/navigation/routes'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import ActionButton from 'react-native-action-button'
+import Badge from 'Kebetoo/src/shared/components/badge'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
@@ -92,6 +93,7 @@ const ManagePostsPage = () => {
     return (
       <View style={styles.sectionHeader}>
         <Text size="header" text={dayjs(section.title, dateFormat).format(outputDateFormat)} />
+        <Badge text={section.data.length} />
       </View>
     )
   }, [])

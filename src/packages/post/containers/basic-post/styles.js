@@ -1,8 +1,5 @@
 import { StyleSheet } from 'react-native'
 
-import colors from 'Kebetoo/src/theme/colors'
-import metrics from 'Kebetoo/src/theme/metrics'
-
 export default StyleSheet.create({
   wrapper: {
     marginBottom: 30,

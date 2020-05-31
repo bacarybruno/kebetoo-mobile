@@ -44,6 +44,8 @@ const HomePage = () => {
 
   useEffect(() => {
     const unsusbcribeFocus = addNavigationListener('focus', () => {
+      // FIXME: this is freezing the UI.
+      // Keep this until web find a better refresh strategy
       onRefresh()
     })
     return unsusbcribeFocus

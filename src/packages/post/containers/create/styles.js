@@ -36,7 +36,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    marginTop: metrics.marginVertical,
+    marginTop: metrics.marginHorizontal,
   },
   buttonsContainer: {
     flexDirection: 'row',

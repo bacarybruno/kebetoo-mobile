@@ -125,7 +125,7 @@ const Comments = () => {
     <View style={styles.post}>
       <View style={styles.postHeader}>
         <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
-        <Content post={post} style={styles.content} />
+        <Content post={post} style={styles.content} mode="comments" />
       </View>
       <Reactions post={post} author={user.uid} onComment={onComment} />
     </View>

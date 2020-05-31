@@ -12,6 +12,7 @@ import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
 import TextContent from 'Kebetoo/src/packages/post/components/text-content'
 import AudioContent from 'Kebetoo/src/packages/post/components/audio-content'
+import ImageContent from 'Kebetoo/src/packages/post/components/image-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
@@ -24,12 +25,16 @@ const isUpdated = (post) => post.createdAt !== post.updatedAt
 
 const POST_TYPES = {
   AUDIO: 'audio',
+  IMAGE: 'image',
   TEXT: 'text',
 }
 
 export const getPostType = (post) => {
   if (post.audio && post.audio.url) {
     return POST_TYPES.AUDIO
+  }
+  if (post.image && post.image.url) {
+    return POST_TYPES.IMAGE
   }
   return POST_TYPES.TEXT
 }
@@ -83,13 +88,11 @@ export const Content = ({ post, ...otherProps }) => {
   const postType = getPostType(post)
   switch (postType) {
     case POST_TYPES.AUDIO:
-      return (
-        <AudioContent post={post} {...otherProps} />
-      )
+      return <AudioContent post={post} {...otherProps} />
+    case POST_TYPES.IMAGE:
+      return <ImageContent post={post} {...otherProps} />
     default:
-      return (
-        <TextContent post={post} {...otherProps} />
-      )
+      return <TextContent post={post} {...otherProps} />
   }
 }
 

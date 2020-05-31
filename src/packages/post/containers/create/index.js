@@ -12,12 +12,14 @@ import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OutlinedButton from 'Kebetoo/src/shared/components/buttons/outlined'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
+import { ImageViewer } from 'Kebetoo/src/packages/post/components/image-content'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 import useAudioRecorder from '../../hooks/audio-recorder'
+import useImagePicker from '../../hooks/image-picker'
 
 export const routeOptions = {
   title: strings.create_post.create_post,
@@ -57,6 +59,16 @@ export const PostTextMessage = ({ onChange, text }) => (
   </>
 )
 
+const Button = ({ name, onPress }) => (
+  <IconButton name={name} style={styles.iconButton} onPress={onPress} />
+)
+
+const ImagePreviewer = ({ uri, onDelete }) => (
+  <View style={{ width: '50%' }}>
+    <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+  </View>
+)
+
 const CreatePostPage = () => {
   const { setOptions, goBack } = useNavigation()
   const { params } = useRoute()
@@ -67,6 +79,7 @@ const CreatePostPage = () => {
       : '',
   )
   const audioRecorder = useAudioRecorder()
+  const imagePicker = useImagePicker()
 
   const onHeaderSavePress = useCallback(async () => {
     const user = auth().currentUser
@@ -75,12 +88,14 @@ const CreatePostPage = () => {
       result = await api.editPost({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
       result = await audioRecorder.savePost(user.uid, text)
+    } else if (imagePicker.hasFile) {
+      result = await imagePicker.savePost(user.uid, text)
     } else {
       result = await api.createPost({ author: user.uid, content: text })
     }
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
-  }, [editMode, audioRecorder, params, goBack, text])
+  }, [editMode, audioRecorder, imagePicker, params, goBack, text])
 
   useLayoutEffect(() => {
     setOptions({
@@ -108,15 +123,18 @@ const CreatePostPage = () => {
               style={styles.audioPlayer}
             />
           )}
+          {imagePicker.hasFile && (
+            <ImagePreviewer uri={imagePicker.file.uri} onDelete={imagePicker.reset} />
+          )}
         </View>
-        {!editMode && !audioRecorder.hasRecording && (
+        {!editMode && !audioRecorder.hasRecording && !imagePicker.hasFile && (
           <View style={styles.buttonsWrapper}>
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && (
                 <>
-                  <IconButton name="camera" style={styles.iconButton} onPress={() => { }} />
-                  <IconButton name="photo" style={styles.iconButton} onPress={() => { }} />
-                  <IconButton name="more-h" style={styles.iconButton} onPress={() => { }} />
+                  <Button name="camera" onPress={() => { }} />
+                  <Button name="photo" onPress={imagePicker.pickImage} />
+                  <Button name="more-h" onPress={() => { }} />
                 </>
               )}
             </View>
