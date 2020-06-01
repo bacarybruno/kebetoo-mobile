@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, TouchableOpacity, Image } from 'react-native'
+import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 
@@ -21,20 +22,32 @@ export const DeleteIconButton = ({ onPress }) => (
 )
 
 export const ImageViewer = ({
-  source, style, onDelete, borderRadius = 0,
+  source, style, onDelete, onPress, borderRadius = 0,
 }) => (
   <>
     <View style={[styles.imageWrapper, style]}>
-      <Image source={source} style={{ ...styles.image, borderRadius }} />
+      <ImageBackground source={source} style={{ ...styles.flex, borderRadius }}>
+        {onPress && <Pressable style={styles.flex} onPress={onPress} />}
+      </ImageBackground>
     </View>
     {onDelete && <DeleteIconButton onPress={onDelete} />}
   </>
 )
 
-const ImageContent = ({ post, style, mode }) => (
+const ImageContent = ({
+  post, style, mode, onPress,
+}) => (
   <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
-    <ThemedText numberOfLines={mode === 'comments' ? 2 : undefined} style={styles.text} text={post.content} />
-    <ImageViewer style={styles.imageViewer} source={getSource(post.image.url)} />
+    <ThemedText
+      numberOfLines={mode === 'comments' ? 1 : undefined}
+      style={styles.text}
+      text={post.content}
+    />
+    <ImageViewer
+      onPress={onPress}
+      style={styles.imageViewer}
+      source={getSource(post.image.url)}
+    />
   </View>
 )
 

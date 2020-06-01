@@ -6,10 +6,13 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
 import auth from '@react-native-firebase/auth'
 
-import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
+import {
+  Content, Header, getPostType, POST_TYPES,
+} from 'Kebetoo/src/packages/post/containers/basic-post'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import routes from 'Kebetoo/src/navigation/routes'
 
 import { NoComments } from './index'
 import CommentInput from '../components/comment-input'
@@ -25,7 +28,7 @@ const Comments = () => {
   const user = auth().currentUser
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
-  const { goBack } = useNavigation()
+  const { goBack, navigate } = useNavigation()
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState(post.comments)
@@ -33,25 +36,27 @@ const Comments = () => {
 
   useEffect(() => {
     const fetchAuthors = async () => {
+      let authorsToFetch = [post.author]
       if (comments.length > 0) {
-        const ids = [...new Set(comments.map((c) => c.author))]
-        const newAuthors = ids.filter((id) => !authors[id])
-
-        if (newAuthors.length === 0) return
-
-        const { docs } = await getUsers(newAuthors)
-        docs.forEach((doc) => {
-          const { displayName: name, photoURL } = doc.data()
-          authors[doc.id] = {
-            displayName: name,
-            photoURL,
-          }
-        })
-        setAuthors({ ...authors })
+        authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
       }
+      const ids = [...new Set(authorsToFetch)]
+      const newAuthors = ids.filter((id) => !authors[id])
+
+      if (newAuthors.length === 0) return
+
+      const { docs } = await getUsers(newAuthors)
+      docs.forEach((doc) => {
+        const { displayName: name, photoURL } = doc.data()
+        authors[doc.id] = {
+          displayName: name,
+          photoURL,
+        }
+      })
+      setAuthors({ ...authors })
     }
     fetchAuthors()
-  }, [comments, authors])
+  }, [comments, authors, post.author])
 
   const onChangeText = useCallback((value) => {
     setComment(value)
@@ -74,9 +79,11 @@ const Comments = () => {
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      <Comment author={authors[item.author]} item={item} />
+      {authors[post.author] && (
+        <Comment author={authors[item.author]} item={item} />
+      )}
     </View>
-  ), [authors])
+  ), [authors, post.author])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -89,19 +96,29 @@ const Comments = () => {
 
   const onComment = useCallback(() => commentInput.current.focus(), [])
 
+  const onCommentContentPress = useCallback(() => {
+    const type = getPostType(post)
+    if (type === POST_TYPES.IMAGE) {
+      navigate(routes.MODAL_IMAGE, post.image)
+      return false
+    }
+    return true
+  }, [navigate, post])
+
   const ListHeader = useCallback(() => (
     <View style={styles.post}>
       <View style={styles.postHeader}>
-        <Header Left={ListHeaderLeft} author={user} post={post} size={35} />
-        <Content post={post} style={styles.content} />
+        <Header Left={ListHeaderLeft} author={authors[post.author]} post={post} size={35} />
+        <Content
+          post={post}
+          style={styles.content}
+          mode="comments"
+          onPress={onCommentContentPress}
+        />
       </View>
-      <Reactions
-        post={post}
-        author={user.uid}
-        onComment={onComment}
-      />
+      <Reactions post={post} author={user.uid} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, onComment, post, user])
+  ), [ListHeaderLeft, authors, onComment, onCommentContentPress, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

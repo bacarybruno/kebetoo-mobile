@@ -7,13 +7,16 @@ import { HeaderBackButton } from '@react-navigation/stack'
 import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
-import { Content, Header } from 'Kebetoo/src/packages/post/containers/basic-post'
+import {
+  Content, Header, getPostType, POST_TYPES,
+} from 'Kebetoo/src/packages/post/containers/basic-post'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
 import * as types from 'Kebetoo/src/redux/types'
 import strings from 'Kebetoo/src/config/strings'
+import routes from 'Kebetoo/src/navigation/routes'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
@@ -32,15 +35,15 @@ const Comments = () => {
   const user = auth().currentUser
   const audioRecorder = useAudioRecorder()
   const { params } = useRoute()
-  const { goBack } = useNavigation()
+  const { goBack, navigate } = useNavigation()
   const [comments, setComments] = useState([])
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
   const commentInput = useRef()
   const normalizedPost = useSelector(postsSelector)[params.id]
   const [post, setPost] = useState((value) => value || normalizedPost)
-  const author = useSelector(authorsSelector)[post.author]
   const dispatch = useDispatch()
+  const author = useSelector(authorsSelector)[post.author]
 
   const normalizedComments = useSelector(commentsSelector)
 
@@ -59,25 +62,27 @@ const Comments = () => {
 
   useEffect(() => {
     const fetchAuthors = async () => {
+      let authorsToFetch = []
       if (comments.length > 0) {
-        const ids = [...new Set(comments.map((c) => c.author))]
-        const newAuthors = ids.filter((id) => !authors[id])
-
-        if (newAuthors.length === 0) return
-
-        const { docs } = await getUsers(newAuthors)
-        docs.forEach((doc) => {
-          const { displayName: name, photoURL } = doc.data()
-          authors[doc.id] = {
-            displayName: name,
-            photoURL,
-          }
-        })
-        setAuthors({ ...authors })
+        authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
       }
+      const ids = [...new Set(authorsToFetch)]
+      const newAuthors = ids.filter((id) => !authors[id])
+
+      if (newAuthors.length === 0) return
+
+      const { docs } = await getUsers(newAuthors)
+      docs.forEach((doc) => {
+        const { displayName: name, photoURL } = doc.data()
+        authors[doc.id] = {
+          displayName: name,
+          photoURL,
+        }
+      })
+      setAuthors({ ...authors })
     }
     fetchAuthors()
-  }, [comments, authors])
+  }, [comments, authors, post])
 
   const onChangeText = useCallback((value) => {
     setComment(value)
@@ -106,9 +111,9 @@ const Comments = () => {
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      <Comment author={authors[item.author]} item={item} />
+      <Comment author={author} item={item} />
     </View>
-  ), [authors])
+  ), [author])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -121,15 +126,29 @@ const Comments = () => {
 
   const onComment = useCallback(() => commentInput.current.focus(), [])
 
+  const onCommentContentPress = useCallback(() => {
+    const type = getPostType(post)
+    if (type === POST_TYPES.IMAGE) {
+      navigate(routes.MODAL_IMAGE, post.image)
+      return false
+    }
+    return true
+  }, [navigate, post])
+
   const ListHeader = useCallback(() => (
     <View style={styles.post}>
       <View style={styles.postHeader}>
         <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
-        <Content post={post} style={styles.content} mode="comments" />
+        <Content
+          post={post}
+          style={styles.content}
+          mode="comments"
+          onPress={onCommentContentPress}
+        />
       </View>
       <Reactions post={post} author={user.uid} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, author, onComment, post, user.uid])
+  ), [ListHeaderLeft, author, onComment, onCommentContentPress, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

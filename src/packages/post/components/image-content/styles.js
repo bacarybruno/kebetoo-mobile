@@ -21,7 +21,7 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
     aspectRatio: metrics.aspectRatio.feed,
   },
-  image: {
+  flex: {
     flex: 1,
   },
   deleteWrapper: {

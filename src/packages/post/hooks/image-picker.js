@@ -12,9 +12,7 @@ const PICTURE_CONFIG = Object.freeze({
   quality: 0.8,
   maxHeight: 800,
 })
-export const constructFileName = (time) => (
-  `IMG-${time}`
-)
+export const constructFileName = (time) => `IMG-${time}`
 
 const useFilePicker = () => {
   const [file, setFile] = useState(null)

@@ -7,7 +7,7 @@ import styles from './styles'
 
 const TextContent = ({ post, style, onPress }) => (
   <Pressable
-    onPress={() => onPress(post)}
+    onPress={onPress}
     disabled={!onPress}
     style={[styles.wrapper, style]}
   >

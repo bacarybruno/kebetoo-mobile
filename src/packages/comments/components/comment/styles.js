@@ -12,9 +12,7 @@ export default StyleSheet.create({
   },
   audio: {
     marginTop: 5,
-    height: 48,
+    height: 45,
     backgroundColor: colors.white_darken,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#E8E8E8',
   },
 })
