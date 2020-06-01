@@ -23,7 +23,7 @@ import styles from './styles'
 
 const isUpdated = (post) => post.createdAt !== post.updatedAt
 
-const POST_TYPES = {
+export const POST_TYPES = {
   AUDIO: 'audio',
   IMAGE: 'image',
   TEXT: 'text',
@@ -66,15 +66,19 @@ export const Header = ({
     <View style={styles.left}>
       <View style={{ flexDirection: 'row' }}>
         {Left && <Left />}
-        <Avatar src={author.photoURL} text={author.displayName} size={size} />
+        {author && (
+          <Avatar src={author.photoURL} text={author.displayName} size={size} />
+        )}
       </View>
-      <View style={[styles.meta, { height: size }]}>
-        <ThemedText size="md" text={author.displayName} />
-        <View style={styles.smallMeta}>
-          <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
-          {isUpdated(post) && <Edited size="xs" />}
+      {author && (
+        <View style={[styles.meta, { height: size }]}>
+          <ThemedText size="md" text={author.displayName} />
+          <View style={styles.smallMeta}>
+            <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
+            {isUpdated(post) && <Edited size="xs" />}
+          </View>
         </View>
-      </View>
+      )}
     </View>
     {onOptions && (
       <View style={styles.moreButton}>
@@ -103,9 +107,9 @@ const BasicPost = ({
   const { navigate } = useNavigation()
   const posts = useSelector(postsSelector)
 
-  const navigateToComments = useCallback(({ id }) => {
-    navigate(routes.COMMENTS, { id })
-  }, [navigate])
+  const navigateToComments = useCallback(() => {
+    navigate(routes.COMMENTS, { id: post.id })
+  }, [navigate, post.id])
 
   if (!author) return <PostPlaceholder />
 

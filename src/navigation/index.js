@@ -46,6 +46,9 @@ import CommentsOnlinePage, {
 import ManagePostsPage, {
   routeOptions as managePostsRouteOptions,
 } from 'Kebetoo/src/packages/post/containers/manage'
+import ImageModal, {
+  routeOptions as imageModalRouteOptions,
+} from 'Kebetoo/src/packages/modal/containers/image'
 
 import styles from './styles'
 import routes from './routes'
@@ -215,6 +218,11 @@ const AppNavigation = () => {
               options={managePostsRouteOptions}
               component={ManagePostsPage}
               name={routes.MANAGE_POSTS}
+            />
+            <Stack.Screen
+              options={imageModalRouteOptions}
+              component={ImageModal}
+              name={routes.MODAL_IMAGE}
             />
           </>
         ) : (

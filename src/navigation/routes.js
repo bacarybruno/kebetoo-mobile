@@ -13,6 +13,7 @@ const routes = {
   COMMENTS: 'route:comments',
   COMMENTS_ONLINE: 'route:comments_online',
   MANAGE_POSTS: 'route:manage_posts',
+  MODAL_IMAGE: 'route:modal:image',
 }
 
 export default routes

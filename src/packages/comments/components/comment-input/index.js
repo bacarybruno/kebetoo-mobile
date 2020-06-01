@@ -3,6 +3,7 @@ import { View } from 'react-native'
 
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
+import strings from 'Kebetoo/src/config/strings'
 
 import { SendButton, RecordButton } from '../send-button'
 import styles from './styles'
@@ -28,7 +29,7 @@ const CommentInput = ({
           <TextInput
             multiline
             fieldName="comment"
-            placeholder="Add a comment"
+            placeholder={strings.comments.add_comment}
             onValueChange={onChange}
             ref={inputRef}
             textStyle={styles.textInputSize}

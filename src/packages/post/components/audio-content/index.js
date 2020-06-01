@@ -10,6 +10,7 @@ import { Player, MediaStates } from '@react-native-community/audio-toolkit'
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
 import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 
@@ -49,7 +50,7 @@ export const DeleteIconButton = ({ onPress }) => (
 )
 
 export const AudioPlayer = ({
-  source, onDelete, style, round,
+  source, onDelete, style, round, onPress,
 }) => {
   const [player] = useState(
     new Player(source, {
@@ -100,19 +101,31 @@ export const AudioPlayer = ({
     })
   }, [player, updatePlayerState])
 
+  const onPressDelegate = useCallback(() => {
+    if (!onPress) return onPlayPause()
+    const bubbleEvent = onPress()
+    if (bubbleEvent) {
+      onPlayPause()
+    }
+    return true
+  }, [onPress, onPlayPause])
+
   return (
-    <View style={[styles.audioWrapper, style, round && styles.round]}>
+    <Pressable
+      onPress={onPressDelegate}
+      style={[styles.audioWrapper, style, round && styles.round]}
+    >
       {onDelete && <DeleteIconButton onPress={onDelete} />}
       <View style={[styles.progress, round && styles.round, { width: `${progress}%` }]} />
       <PlayButton state={playerState} onPress={onPlayPause} />
       <Waves />
-    </View>
+    </Pressable>
   )
 }
-const AudioContent = ({ post, style }) => (
+const AudioContent = ({ post, style, onPress }) => (
   <View style={[styles.wrapper, style]}>
     <ThemedText style={styles.text} text={post.content} />
-    <AudioPlayer source={getSource(post.audio.url)} />
+    <AudioPlayer onPress={onPress} source={getSource(post.audio.url)} />
   </View>
 )
 

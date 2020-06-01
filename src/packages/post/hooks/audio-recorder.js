@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
 
+export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
 export const RECORD_NAME = 'PTT.aac'
 export const RECORD_MIME_TYPE = 'audio/x-aac'
@@ -76,26 +77,31 @@ const useAudioRecorder = (maxDuration) => {
   const start = useCallback(async () => {
     const hasPermissions = await permissions.recordAudio()
     if (hasPermissions) {
-      setElapsedTime(0)
       setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).record())
       setIsRecording(true)
     }
   }, [permissions])
 
-  const stop = useCallback(() => {
-    setIsRecording(false)
-    if (recorder) {
-      recorder.stop()
-      setHasRecording(true)
-    }
-  }, [recorder])
-
   const reset = useCallback(async () => {
+    clearInterval(intervalRef.current)
     intervalRef.current = null
     const fileUri = getRecordUri()
     await RNFetchBlob.fs.unlink(fileUri)
     setHasRecording(false)
+    setElapsedTime(0)
   }, [])
+
+  const stop = useCallback(() => {
+    setIsRecording(false)
+    if (recorder) {
+      recorder.stop()
+      if (elapsedTime < MIN_DURATION_IN_SECONDS) {
+        reset()
+      } else {
+        setHasRecording(true)
+      }
+    }
+  }, [elapsedTime, recorder, reset])
 
   useEffect(() => {
     if (isRecording && !intervalRef.current) {

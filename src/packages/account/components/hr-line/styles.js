@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import colors from 'Kebetoo/src/theme/colors'
+
 const styles = StyleSheet.create({
   wrapper: {
     alignItems: 'center',
@@ -9,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: StyleSheet.hairlineWidth,
     height: StyleSheet.hairlineWidth,
-    borderColor: '#707070',
+    borderColor: colors.grey,
   },
   text: {
     marginHorizontal: 10,
