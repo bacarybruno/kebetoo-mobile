@@ -182,8 +182,6 @@ const ProfilePage = React.memo(() => {
 
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
-  console.log(profile)
-
   return (
     <View style={styles.wrapper}>
       <View style={styles.padding}>
