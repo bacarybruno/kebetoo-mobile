@@ -6,12 +6,14 @@ import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { title: strings.tabs.stories }
+const routeOptions = { title: strings.tabs.stories }
 
 const StoriesPage = () => (
   <View style={styles.wrapper}>
     <Text text="Hello Stories" />
   </View>
 )
+
+StoriesPage.routeOptions = routeOptions
 
 export default StoriesPage

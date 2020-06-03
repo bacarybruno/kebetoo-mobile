@@ -6,12 +6,14 @@ import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { title: strings.tabs.search }
+const routeOptions = { title: strings.tabs.search }
 
 const SearchPage = () => (
   <View style={styles.wrapper}>
     <Text text="Hello Search" />
   </View>
 )
+
+SearchPage.routeOptions = routeOptions
 
 export default SearchPage

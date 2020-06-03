@@ -19,9 +19,9 @@ import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { title: strings.auth.signup }
-
 const SignUp = ({ navigation }) => {
+  navigation.setOptions({ title: strings.auth.signup })
+
   const dispatch = useDispatch()
 
   const [infos, setInfos] = useState({
@@ -48,8 +48,12 @@ const SignUp = ({ navigation }) => {
     navigation.navigate(routes.SIGNIN)
   }, [navigation])
 
-  const focusInput = useCallback((ref) => () => {
-    ref.current.focus()
+  const focusEmail = useCallback(() => {
+    emailRef.current.focus()
+  }, [])
+
+  const focusPassword = useCallback(() => {
+    passwordRef.current.focus()
   }, [])
 
   const onSubmit = useCallback(async () => {
@@ -86,7 +90,7 @@ const SignUp = ({ navigation }) => {
           fieldName="fullName"
           onValueChange={onChangeText}
           ref={fullNameRef}
-          onSubmitEditing={focusInput(emailRef)}
+          onSubmitEditing={focusEmail}
           returnKeyType="next"
         />
         <TextInput
@@ -95,7 +99,7 @@ const SignUp = ({ navigation }) => {
           onValueChange={onChangeText}
           keyboardType="email-address"
           ref={emailRef}
-          onSubmitEditing={focusInput(passwordRef)}
+          onSubmitEditing={focusPassword}
           returnKeyType="next"
         />
         <PasswordInput

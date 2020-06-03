@@ -12,8 +12,6 @@ import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { headerShown: false }
-
 export const slideItems = [{
   imageSrc: images.onboarding1,
   title: strings.onboarding.screen_one_title,
@@ -35,6 +33,7 @@ export const SkipButton = ({ onPress }) => (
 )
 
 const OnboardingPage = ({ navigation }) => {
+  navigation.setOptions({ headerShown: false })
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
   const isLastSlideItem = slideItems.length - 1 === slideIndex

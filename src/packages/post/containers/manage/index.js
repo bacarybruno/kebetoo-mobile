@@ -5,7 +5,6 @@ import {
   View, SectionList, Alert, YellowBox,
 } from 'react-native'
 import auth from '@react-native-firebase/auth'
-import { useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
@@ -42,14 +41,16 @@ export const NoPosts = ({ onPress }) => (
   </NoContent>
 )
 
-const ManagePostsPage = () => {
+const ManagePostsPage = ({ navigation }) => {
+  navigation.setOptions(routeOptions)
+
   const user = auth().currentUser
   const [posts, setPosts] = useState([])
   const [sortedPosts, setSortedPosts] = useState([])
   const [loading, setLoading] = useState(true)
 
   const { showActionSheetWithOptions } = useActionSheet()
-  const { navigate } = useNavigation()
+  const { navigate } = navigation
   const dateFormat = 'YYYY-MM'
 
   const bottomSheetItems = [{
@@ -133,11 +134,11 @@ const ManagePostsPage = () => {
 
   const deletePost = useCallback((post) => {
     Alert.alert(
-      'Delete this post?',
-      'This post will be permanently deleted. You will not be able to restore it later.',
+      strings.manage_posts.delete_post_title,
+      strings.manage_posts.delete_post_warning,
       [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Confirm', style: 'destructive', onPress: () => confirmDeletePost(post.id) },
+        { text: strings.general.cancel, style: 'cancel' },
+        { text: strings.general.confirm, style: 'destructive', onPress: () => confirmDeletePost(post.id) },
       ],
       { cancelable: false },
     )

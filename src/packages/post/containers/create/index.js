@@ -2,7 +2,7 @@ import React, {
   useLayoutEffect, useState, useCallback, memo,
 } from 'react'
 import { View } from 'react-native'
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 import auth from '@react-native-firebase/auth'
 
@@ -39,6 +39,8 @@ export const actionTypes = {
 
 const TEXT_MAX_LENGHT = 180
 
+const noop = () => {}
+
 export const PostTextMessage = ({ onChange, text }) => (
   <>
     <TextInput
@@ -69,8 +71,10 @@ const ImagePreviewer = ({ uri, onDelete }) => (
   </View>
 )
 
-const CreatePostPage = () => {
-  const { setOptions, goBack } = useNavigation()
+const CreatePostPage = ({ navigation }) => {
+  const { setOptions, goBack } = navigation
+  setOptions(routeOptions)
+
   const { params } = useRoute()
   const editMode = params && params.action === actionTypes.EDIT
   const [text, setText] = useState(
@@ -132,9 +136,9 @@ const CreatePostPage = () => {
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && (
                 <>
-                  <Button name="camera" onPress={() => { }} />
+                  <Button name="camera" onPress={noop} />
                   <Button name="photo" onPress={imagePicker.pickImage} />
-                  <Button name="more-h" onPress={() => { }} />
+                  <Button name="more-h" onPress={noop} />
                 </>
               )}
             </View>
