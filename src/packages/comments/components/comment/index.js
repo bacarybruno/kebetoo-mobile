@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
@@ -18,11 +18,7 @@ const Comment = ({ item, author }) => (
     <>
       <View style={{ flexDirection: 'row', ...styles.flexible }}>
         <View style={{ marginRight: 10 }}>
-          <Avatar
-            src={author.photoURL}
-            text={author.displayName}
-            size={35}
-          />
+          <Avatar src={author.photoURL} text={author.displayName} size={35} />
         </View>
         <View style={styles.flexible}>
           <View style={styles.flexible}>
@@ -36,11 +32,7 @@ const Comment = ({ item, author }) => (
           </View>
           {item.audio && item.audio.url !== null
             ? (
-              <AudioPlayer
-                round
-                style={styles.audio}
-                source={getAudioSource(item.audio.url)}
-              />
+              <AudioPlayer round style={styles.audio} source={getAudioSource(item.audio.url)} />
             ) : (
               <Text text={item.content} />
             )}
@@ -51,4 +43,4 @@ const Comment = ({ item, author }) => (
   ) : <CommentPlaceholder />
 )
 
-export default memo(Comment)
+export default React.memo(Comment)

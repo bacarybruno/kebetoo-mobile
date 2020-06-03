@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler'
 import './config/strings'
 import './config/init'
+// import './config/wdyr'
 
 import React from 'react'
 import { ActionSheetProvider } from '@expo/react-native-action-sheet'

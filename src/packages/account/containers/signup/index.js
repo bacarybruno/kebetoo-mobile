@@ -59,8 +59,12 @@ const SignUp = ({ navigation }) => {
   const onSubmit = useCallback(async () => {
     try {
       await schema.validate(infos)
-      const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
       const displayName = infos.fullName
+      dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
+
+      const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
+      await user.updateProfile({ displayName, photoURL: null })
+      auth().currentUser = user
 
       await createUser({
         id: user.uid,
@@ -68,10 +72,6 @@ const SignUp = ({ navigation }) => {
         displayName,
         photoURL: null,
       })
-
-      dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
-      await user.updateProfile({ displayName, photoURL: null })
-      await auth().signInWithEmailAndPassword(infos.email, infos.password)
     } catch (e) {
       console.log(e)
     }

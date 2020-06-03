@@ -1,6 +1,4 @@
-import React, {
-  useLayoutEffect, useState, useCallback, memo,
-} from 'react'
+import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
@@ -158,4 +156,4 @@ const CreatePostPage = ({ navigation }) => {
   )
 }
 
-export default memo(CreatePostPage)
+export default React.memo(CreatePostPage)

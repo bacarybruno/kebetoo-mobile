@@ -129,4 +129,4 @@ const AudioContent = ({ post, style, onPress }) => (
   </View>
 )
 
-export default AudioContent
+export default React.memo(AudioContent)

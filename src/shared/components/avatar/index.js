@@ -31,4 +31,4 @@ const Avatar = ({ src, text, ...props }) => (
   src ? <ImageAvatar src={src} {...props} /> : <TextAvatar text={text} {...props} />
 )
 
-export default Avatar
+export default React.memo(Avatar)

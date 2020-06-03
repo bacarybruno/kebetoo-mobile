@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { View } from 'react-native'
 
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
@@ -62,4 +62,4 @@ const CommentInput = ({
   )
 }
 
-export default memo(CommentInput)
+export default React.memo(CommentInput)

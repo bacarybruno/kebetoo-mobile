@@ -19,7 +19,7 @@ import styles, { imageSize } from './styles'
 
 export const routeOptions = { title: strings.tabs.profile }
 
-export const SectionTitle = ({ text }) => (
+export const SectionTitle = React.memo(({ text }) => (
   <Text
     style={styles.sectionTitle}
     size="sm"
@@ -28,9 +28,9 @@ export const SectionTitle = ({ text }) => (
     text={text}
     bold
   />
-)
+))
 
-export const Summary = ({ photoURL, email, displayName }) => (
+export const Summary = React.memo(({ photoURL, email, displayName }) => (
   <View style={styles.summary}>
     <View style={styles.imageWrapper}>
       <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
@@ -40,16 +40,16 @@ export const Summary = ({ photoURL, email, displayName }) => (
       <Text size="md" color="blue_dark" text={email} />
     </View>
   </View>
-)
+))
 
-export const Stat = ({ title, value }) => (
+export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>
     <Text color="blue_dark" bold text={value} />
     <Text color="blue_dark" size="sm" text={title} opacity={0.35} />
   </View>
-)
+))
 
-export const IconButton = ({
+export const IconButton = React.memo(({
   icon, text, message, onPress, children, ...otherProps
 }) => (
   <View style={styles.iconButtonWrapper}>
@@ -64,17 +64,17 @@ export const IconButton = ({
     </Pressable>
     {children}
   </View>
-)
+))
 
-const Stats = ({ postsCount, reactionsCount, commentsCount }) => (
+const Stats = React.memo(({ postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.stats}>
     <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
     <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
     <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
   </View>
-)
+))
 
-const ProfileSection = ({ managePosts }) => (
+const ProfileSection = React.memo(({ managePosts }) => (
   <View style={styles.section}>
     <IconButton
       icon="md-list"
@@ -83,9 +83,9 @@ const ProfileSection = ({ managePosts }) => (
       onPress={managePosts}
     />
   </View>
-)
+))
 
-const AccountSection = ({ signOut }) => (
+const AccountSection = React.memo(({ signOut }) => (
   <View style={styles.section}>
     <SectionTitle text={strings.profile.account} />
     <IconButton
@@ -103,9 +103,9 @@ const AccountSection = ({ signOut }) => (
       onPress={signOut}
     />
   </View>
-)
+))
 
-const PreferencesSection = () => (
+const PreferencesSection = React.memo(() => (
   <View style={styles.section}>
     <SectionTitle text={strings.profile.preferences} />
     <IconButton icon="ios-color-palette" text={strings.profile.dark_mode} />
@@ -117,9 +117,9 @@ const PreferencesSection = () => (
       message={strings.languages[strings.getLanguage()]}
     />
   </View>
-)
+))
 
-const Header = ({
+const Header = React.memo(({
   profile, postsCount, reactionsCount, commentsCount,
 }) => (
   <View style={styles.header}>
@@ -134,9 +134,9 @@ const Header = ({
       commentsCount={commentsCount}
     />
   </View>
-)
+))
 
-const ProfilePage = () => {
+const ProfilePage = React.memo(() => {
   const profile = auth().currentUser
   const { navigate } = useNavigation()
 
@@ -180,7 +180,9 @@ const ProfilePage = () => {
     }, [dispatch, profile.uid, stats.comments, stats.posts, stats.reactions]),
   )
 
-  const managePosts = () => navigate(routes.MANAGE_POSTS)
+  const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
+
+  console.log(profile)
 
   return (
     <View style={styles.wrapper}>
@@ -199,7 +201,7 @@ const ProfilePage = () => {
       </ScrollView>
     </View>
   )
-}
+})
 
 ProfilePage.routeOptions = routeOptions
 

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { Image } from 'react-native'
 import images from 'Kebetoo/src/theme/images'
 
@@ -8,4 +8,4 @@ const Logo = () => (
   <Image style={styles.logo} source={images.logo_full} />
 )
 
-export default memo(Logo)
+export default React.memo(Logo)

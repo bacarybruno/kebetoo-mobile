@@ -15,4 +15,4 @@ const TextContent = ({ post, style, onPress }) => (
   </Pressable>
 )
 
-export default TextContent
+export default React.memo(TextContent)

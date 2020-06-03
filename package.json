@@ -55,6 +55,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/eslint-config": "^1.0.0",
+    "@welldone-software/why-did-you-render": "^4.2.5",
     "babel-jest": "^25.3.0",
     "eslint": "^5.16.0 || ^6.8.0",
     "eslint-config-airbnb": "^18.1.0",

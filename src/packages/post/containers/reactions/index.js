@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
@@ -9,7 +9,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
-import { reactionsSelector, postsSelector } from 'Kebetoo/src/redux/selectors'
+import { countPostComments, reactionsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
 
@@ -52,15 +52,15 @@ const countReactions = (reactions, post, type) => (
 const Reactions = ({
   post, author, disabled, onComment,
 }) => {
-  const posts = useSelector(postsSelector)
   const reactions = useSelector(reactionsSelector)
-
-  const updatedPost = posts[post.id]
+  const commentsCount = useSelector(countPostComments(post.id))
   const dispatch = useDispatch()
 
-  const userReaction = Object.values(reactions).find((r) => (
-    r.author === author && r.post === post.id
-  )) || {}
+  const findUserReaction = useCallback((reaction) => (
+    reaction.post === post.id && reaction.author === author
+  ), [author, post.id])
+
+  const userReaction = Object.values(reactions).find(findUserReaction) || {}
 
   const { navigate } = useNavigation()
 
@@ -97,7 +97,7 @@ const Reactions = ({
       />
       <Reaction
         iconName="comment"
-        count={updatedPost.comments.length}
+        count={commentsCount}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />
@@ -111,4 +111,4 @@ const Reactions = ({
   )
 }
 
-export default memo(Reactions)
+export default React.memo(Reactions)

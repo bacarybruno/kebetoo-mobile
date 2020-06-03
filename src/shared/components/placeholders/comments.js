@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import {
   Placeholder, PlaceholderMedia, PlaceholderLine, Fade,
 } from 'rn-placeholder'
@@ -19,4 +19,4 @@ const CommentPlaceholder = () => (
   </Placeholder>
 )
 
-export default memo(CommentPlaceholder)
+export default React.memo(CommentPlaceholder)

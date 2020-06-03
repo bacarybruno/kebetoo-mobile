@@ -12,9 +12,7 @@ export const chunkArray = (array, size) => {
 
 export const createUser = async ({
   id, displayName, email, photoURL,
-}) => usersCollection.doc(id).set({
-  displayName, email, photoURL,
-}, { merge: true })
+}) => usersCollection.doc(id).set({ displayName, email, photoURL }, { merge: true })
 
 export const getUsers = async (ids) => {
   const chunks = chunkArray(ids, 10)

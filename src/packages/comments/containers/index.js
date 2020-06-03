@@ -1,5 +1,5 @@
 import React, {
-  useState, useEffect, useCallback, useRef, memo, useMemo,
+  useState, useEffect, useCallback, useRef, useMemo,
 } from 'react'
 import { View, FlatList } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
@@ -173,4 +173,4 @@ const Comments = () => {
   )
 }
 
-export default memo(Comments)
+export default React.memo(Comments)

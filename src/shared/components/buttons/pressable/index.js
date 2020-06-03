@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import {
   Platform,
   TouchableNativeFeedback,
@@ -6,13 +6,13 @@ import {
   View,
 } from 'react-native'
 
-const CustomPressable= ({ children, ...otherProps }) => (
+const CustomPressable = ({ children, ...otherProps }) => (
   <TouchableOpacity {...otherProps}>{children}</TouchableOpacity>
 )
 
 CustomPressable.SelectableBackground = () => ({})
 CustomPressable.SelectableBackgroundBorderless = () => ({})
-CustomPressable.Ripple = (color, borderless) => ({})
+CustomPressable.Ripple = () => ({})
 
 const TouchableComponent = Platform.select({
   web: CustomPressable,
@@ -22,7 +22,7 @@ const TouchableComponent = Platform.select({
 const Pressable = ({ children, style, ...otherProps }) => {
   if (TouchableComponent === TouchableNativeFeedback) {
     return (
-      <TouchableComponent {...otherProps} style={{}}>
+      <TouchableComponent {...otherProps}>
         <View style={style}>{children}</View>
       </TouchableComponent>
     )
@@ -35,4 +35,4 @@ Pressable.SelectableBackground = TouchableComponent.SelectableBackground
 Pressable.SelectableBackgroundBorderless = TouchableComponent.SelectableBackgroundBorderless
 Pressable.Ripple = TouchableComponent.Ripple
 
-export default memo(Pressable)
+export default React.memo(Pressable)

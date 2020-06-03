@@ -51,4 +51,4 @@ const ImageContent = ({
   </View>
 )
 
-export default ImageContent
+export default React.memo(ImageContent)

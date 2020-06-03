@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 
 import Text from 'Kebetoo/src/shared/components/text'
@@ -13,4 +13,4 @@ const NoContent = ({ title, text, children }) => (
   </View>
 )
 
-export default memo(NoContent)
+export default React.memo(NoContent)

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import {
   Placeholder, PlaceholderMedia, PlaceholderLine, Fade,
@@ -44,4 +44,4 @@ const PostPlaceholder = () => (
   </>
 )
 
-export default memo(PostPlaceholder)
+export default React.memo(PostPlaceholder)

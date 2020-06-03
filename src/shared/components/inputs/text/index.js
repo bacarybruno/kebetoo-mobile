@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  memo,
-  forwardRef,
-} from 'react'
+import React, { useState, useCallback, forwardRef } from 'react'
 import { View, TextInput } from 'react-native'
 
 import styles, { placeholderColor } from '../styles'
@@ -38,4 +33,4 @@ const InputText = forwardRef((props, ref) => {
   )
 })
 
-export default memo(InputText)
+export default React.memo(InputText)

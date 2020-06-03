@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 
@@ -104,4 +104,4 @@ const Reactions = ({
   )
 }
 
-export default memo(Reactions)
+export default React.memo(Reactions)

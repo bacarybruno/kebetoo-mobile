@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 
 import styles from './styles'
@@ -9,4 +9,4 @@ const DraggableIndicator = () => (
   </View>
 )
 
-export default memo(DraggableIndicator)
+export default React.memo(DraggableIndicator)
