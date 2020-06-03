@@ -6,7 +6,7 @@ const initialState = {
     reactions: 0,
     comments: 0,
   },
-  displayName: null,
+  displayName: '',
 }
 
 const reducer = (state = initialState, action) => {

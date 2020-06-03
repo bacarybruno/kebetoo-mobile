@@ -26,4 +26,4 @@ const OutlinedButton = ({
   </Pressable>
 )
 
-export default OutlinedButton
+export default React.memo(OutlinedButton)

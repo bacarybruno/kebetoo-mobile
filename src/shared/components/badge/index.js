@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 
 import styles from './styles'
@@ -10,4 +10,4 @@ const Badge = ({ text, style }) => (
   </View>
 )
 
-export default memo(Badge)
+export default React.memo(Badge)

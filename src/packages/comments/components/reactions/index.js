@@ -1,20 +1,18 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import ReactionsOffline from 'Kebetoo/src/packages/post/containers/reactions'
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
-import { postsSelector } from 'Kebetoo/src/redux/selectors'
+import { postsExists } from 'Kebetoo/src/redux/selectors'
 
 import DraggableIndicator from '../draggable-indicator'
 
 import styles from './styles'
 
 const Reactions = ({ post, author, ...reactionProps }) => {
-  const posts = useSelector(postsSelector)
-  const ReactionsComponent = posts[post.id] !== undefined
-    ? ReactionsOffline
-    : ReactionsOnline
+  const postExists = useSelector(postsExists(post.id))
+  const ReactionsComponent = postExists ? ReactionsOffline : ReactionsOnline
   return (
     <View style={styles.reactionsContainer}>
       <DraggableIndicator />
@@ -25,4 +23,4 @@ const Reactions = ({ post, author, ...reactionProps }) => {
   )
 }
 
-export default memo(Reactions)
+export default React.memo(Reactions)

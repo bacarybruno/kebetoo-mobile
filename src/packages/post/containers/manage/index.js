@@ -1,6 +1,4 @@
-import React, {
-  memo, useEffect, useState, useCallback,
-} from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import {
   View, SectionList, Alert, YellowBox,
 } from 'react-native'
@@ -207,10 +205,12 @@ const ManagePostsPage = ({ navigation }) => {
         buttonColor={colors.primary}
         onPress={createPost}
         buttonTextStyle={styles.fab}
+        offsetX={16}
+        offsetY={16}
         fixNativeFeedbackRadius
       />
     </View>
   )
 }
 
-export default memo(ManagePostsPage)
+export default React.memo(ManagePostsPage)

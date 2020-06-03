@@ -10,6 +10,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginBottom: 8,
   },
+  headerContent: {
+    flexDirection: 'row',
+  },
   left: {
     flexDirection: 'row',
     justifyContent: 'space-between',

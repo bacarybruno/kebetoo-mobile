@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { View, TouchableOpacity, Platform } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -16,7 +16,7 @@ import ImageContent from 'Kebetoo/src/packages/post/components/image-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
-import { postsSelector } from 'Kebetoo/src/redux/selectors'
+import { postsExists } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
@@ -64,7 +64,7 @@ export const Header = ({
 }) => (
   <View style={styles.headerWrapper}>
     <View style={styles.left}>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={styles.headerContent}>
         {Left && <Left />}
         {author && (
           <Avatar src={author.photoURL} text={author.displayName} size={size} />
@@ -105,7 +105,7 @@ const BasicPost = ({
 }) => {
   const user = auth().currentUser
   const { navigate } = useNavigation()
-  const posts = useSelector(postsSelector)
+  const postExists = useSelector(postsExists(post.id))
 
   const navigateToComments = useCallback(() => {
     navigate(routes.COMMENTS, { id: post.id })
@@ -113,7 +113,7 @@ const BasicPost = ({
 
   if (!author) return <PostPlaceholder />
 
-  const ReactionsComponent = posts[post.id] ? Reactions : ReactionsOnline
+  const ReactionsComponent = postExists ? Reactions : ReactionsOnline
 
   return (
     <View style={styles.wrapper}>
@@ -124,4 +124,9 @@ const BasicPost = ({
   )
 }
 
-export default memo(BasicPost)
+const propsAreEqual = (prevProps, nextProps) => (
+  prevProps.post.updatedAt === nextProps.post.updatedAt
+  && prevProps.author && nextProps.author
+  && prevProps.author.id === nextProps.author.id
+)
+export default React.memo(BasicPost, propsAreEqual)

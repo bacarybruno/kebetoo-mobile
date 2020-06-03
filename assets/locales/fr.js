@@ -60,7 +60,7 @@ const locales = Object.freeze({
     edit_post: 'Modifier le post',
     delete_post: 'Supprimer le post',
     no_content: 'Créer votre premier post',
-    delete_post_title: 'Supprimer ce post?',
+    delete_post_title: 'Supprimer ce post ?',
     delete_post_warning: 'Ce post sera définitivement supprimé. Vous ne pourrez pas le restaurer ultérieurement.',
   },
   languages: {

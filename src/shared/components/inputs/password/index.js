@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  memo,
-  forwardRef,
-} from 'react'
+import React, { useState, useCallback, forwardRef } from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
@@ -48,4 +43,4 @@ const InputPassword = forwardRef((props, ref) => {
   )
 })
 
-export default memo(InputPassword)
+export default React.memo(InputPassword)

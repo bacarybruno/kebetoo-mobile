@@ -29,7 +29,7 @@ const HomePage = () => {
   const user = auth().currentUser
 
   const savedDisplayName = useSelector(displayNameSelector)
-  const displayName = user.displayName || savedDisplayName
+  const displayName = user.displayName || savedDisplayName || ''
 
   const { addListener: addNavigationListener } = useNavigation()
 
@@ -81,26 +81,15 @@ const HomePage = () => {
   const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
 
   const renderBasicPost = useCallback(({ item }) => (
-    <BasicPost
-      post={item}
-      author={authors[item.author]}
-    />
+    <BasicPost post={item} author={authors[item.author]} />
   ), [authors])
 
   const renderListHeader = useCallback(() => (
-    <Header
-      displayName={displayName}
-      imageSrc={user.photoURL}
-      style={styles.header}
-    />
+    <Header displayName={displayName} imageSrc={user.photoURL} style={styles.header} />
   ), [displayName, user.photoURL])
 
   const renderRefreshControl = useMemo(() => (
-    <RefreshControl
-      colors={[colors.primary]}
-      refreshing={refreshing}
-      onRefresh={onRefresh}
-    />
+    <RefreshControl colors={[colors.primary]} refreshing={refreshing} onRefresh={onRefresh} />
   ), [onRefresh, refreshing])
 
   return (
