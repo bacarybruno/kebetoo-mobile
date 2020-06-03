@@ -59,7 +59,7 @@ const locales = Object.freeze({
   manage_posts: {
     edit_post: 'Edit post',
     delete_post: 'Delete post',
-    no_content: 'Create your first post',
+    no_content: 'Create your first post! 👇',
     delete_post_title: 'Delete this post?',
     delete_post_warning: 'This post will be permanently deleted. You will not be able to restore it later.',
   },

@@ -33,10 +33,8 @@ export const routeOptions = {
   ),
 }
 
-export const NoPosts = ({ onPress }) => (
-  <NoContent title={strings.general.no_content}>
-    <Text color="secondary" text={strings.manage_posts.no_content} onPress={onPress} />
-  </NoContent>
+export const NoPosts = () => (
+  <NoContent title={strings.general.no_content} text={strings.manage_posts.no_content} />
 )
 
 const ManagePostsPage = ({ navigation }) => {
@@ -181,8 +179,8 @@ const ManagePostsPage = ({ navigation }) => {
   ), [showPostOptions, user])
 
   const renderNoPost = useCallback(() => !loading && (
-    <NoPosts onPress={() => navigate(routes.CREATE_POST)} />
-  ), [navigate, loading])
+    <NoPosts />
+  ), [loading])
 
   const createPost = useCallback(() => {
     navigate(routes.CREATE_POST, {
