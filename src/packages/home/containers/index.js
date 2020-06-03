@@ -17,7 +17,7 @@ import strings from 'Kebetoo/src/config/strings'
 import Header from '../components/header'
 import styles from './styles'
 
-export const routeOptions = { title: strings.tabs.home }
+const routeOptions = { title: strings.tabs.home }
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -119,5 +119,7 @@ const HomePage = () => {
     </View>
   )
 }
+
+HomePage.routeOptions = routeOptions
 
 export default HomePage

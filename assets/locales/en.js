@@ -8,6 +8,7 @@ const locales = Object.freeze({
     edited: 'Edited',
     post: 'Post',
     edit: 'Edit',
+    confirm: 'Confirm',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -59,6 +60,8 @@ const locales = Object.freeze({
     edit_post: 'Edit post',
     delete_post: 'Delete post',
     no_content: 'Create your first post',
+    delete_post_title: 'Delete this post?',
+    delete_post_warning: 'This post will be permanently deleted. You will not be able to restore it later.',
   },
   languages: {
     en: 'English',

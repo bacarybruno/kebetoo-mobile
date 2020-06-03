@@ -201,4 +201,6 @@ const ProfilePage = () => {
   )
 }
 
+ProfilePage.routeOptions = routeOptions
+
 export default ProfilePage

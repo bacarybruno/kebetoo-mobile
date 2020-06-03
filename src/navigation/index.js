@@ -13,42 +13,18 @@ import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
 import Text from 'Kebetoo/src/shared/components/text'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
-import OnboardingPage, {
-  routeOptions as onboardingRouteOptions,
-} from 'Kebetoo/src/packages/onboarding/containers'
-import SignUpPage, {
-  routeOptions as signUpRouteOptions,
-} from 'Kebetoo/src/packages/account/containers/signup'
-import SignInPage, {
-  routeOptions as signInRouteOptions,
-} from 'Kebetoo/src/packages/account/containers/signin'
-import HomePage, {
-  routeOptions as homeRouteOptions,
-} from 'Kebetoo/src/packages/home/containers'
-import ProfilePage, {
-  routeOptions as profileRouteOptions,
-} from 'Kebetoo/src/packages/profile/containers'
-import SearchPage, {
-  routeOptions as searchRouteOptions,
-} from 'Kebetoo/src/packages/search/containers'
-import StoriesPage, {
-  routeOptions as storiesRouteOptions,
-} from 'Kebetoo/src/packages/stories/containers'
-import CreatePostPage, {
-  routeOptions as createPostRouteOptions,
-} from 'Kebetoo/src/packages/post/containers/create'
-import CommentsPage, {
-  routeOptions as commentsRouteOptions,
-} from 'Kebetoo/src/packages/comments/containers'
-import CommentsOnlinePage, {
-  routeOptions as commentsOnlineRouteOptions,
-} from 'Kebetoo/src/packages/comments/containers/online'
-import ManagePostsPage, {
-  routeOptions as managePostsRouteOptions,
-} from 'Kebetoo/src/packages/post/containers/manage'
-import ImageModal, {
-  routeOptions as imageModalRouteOptions,
-} from 'Kebetoo/src/packages/modal/containers/image'
+import OnboardingPage from 'Kebetoo/src/packages/onboarding/containers'
+import SignUpPage from 'Kebetoo/src/packages/account/containers/signup'
+import SignInPage from 'Kebetoo/src/packages/account/containers/signin'
+import HomePage from 'Kebetoo/src/packages/home/containers'
+import ProfilePage from 'Kebetoo/src/packages/profile/containers'
+import SearchPage from 'Kebetoo/src/packages/search/containers'
+import StoriesPage from 'Kebetoo/src/packages/stories/containers'
+import CreatePostPage from 'Kebetoo/src/packages/post/containers/create'
+import CommentsPage from 'Kebetoo/src/packages/comments/containers'
+import CommentsOnlinePage from 'Kebetoo/src/packages/comments/containers/online'
+import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
+import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 
 import styles from './styles'
 import routes from './routes'
@@ -90,13 +66,13 @@ const defaultTabOptions = ({ route }) => ({
     let label
 
     if (route.name === routes.HOME) {
-      label = homeRouteOptions.title
+      label = HomePage.routeOptions.title
     } else if (route.name === routes.STORIES) {
-      label = storiesRouteOptions.title
+      label = StoriesPage.routeOptions.title
     } else if (route.name === routes.SEARCH) {
-      label = searchRouteOptions.title
+      label = SearchPage.routeOptions.title
     } else if (route.name === routes.PROFILE) {
-      label = profileRouteOptions.title
+      label = ProfilePage.routeOptions.title
     }
 
     return (
@@ -113,21 +89,9 @@ const defaultTabBarOptions = {
 
 export const OnboardingStack = () => (
   <Stack.Navigator screenOptions={defaultScreenOptions}>
-    <Stack.Screen
-      name={routes.ONBOARDING}
-      component={OnboardingPage}
-      options={onboardingRouteOptions}
-    />
-    <Stack.Screen
-      name={routes.SIGNUP}
-      component={SignUpPage}
-      options={signUpRouteOptions}
-    />
-    <Stack.Screen
-      name={routes.SIGNIN}
-      component={SignInPage}
-      options={signInRouteOptions}
-    />
+    <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />
+    <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />
+    <Stack.Screen name={routes.SIGNIN} component={SignInPage} />
   </Stack.Navigator>
 )
 
@@ -143,39 +107,17 @@ export const TabBar = (props) => (
   </View>
 )
 
-const Placeholder = () => <View style={{ flex: 1 }} />
-
 export const TabPage = () => (
   <Tab.Navigator
     screenOptions={defaultTabOptions}
     tabBarOptions={defaultTabBarOptions}
     tabBar={TabBar}
   >
-    <Tab.Screen
-      name={routes.HOME}
-      component={HomePage}
-      options={homeRouteOptions}
-    />
-    <Tab.Screen
-      name={routes.STORIES}
-      component={StoriesPage}
-      options={storiesRouteOptions}
-    />
-    <Tab.Screen
-      name={routes.TABS_FAB}
-      component={Empty}
-      options={{ tabBarButton: Placeholder }}
-    />
-    <Tab.Screen
-      name={routes.SEARCH}
-      component={SearchPage}
-      options={searchRouteOptions}
-    />
-    <Tab.Screen
-      name={routes.PROFILE}
-      component={ProfilePage}
-      options={profileRouteOptions}
-    />
+    <Tab.Screen name={routes.HOME} component={HomePage} />
+    <Tab.Screen name={routes.STORIES} component={StoriesPage} />
+    <Tab.Screen name={routes.TABS_FAB} component={Empty} />
+    <Tab.Screen name={routes.SEARCH} component={SearchPage} />
+    <Tab.Screen name={routes.PROFILE} component={ProfilePage} />
   </Tab.Navigator>
 )
 
@@ -195,35 +137,12 @@ const AppNavigation = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isLoggedIn ? (
           <>
-            <Stack.Screen
-              component={TabPage}
-              name={routes.HOME_NAV}
-            />
-            <Stack.Screen
-              options={createPostRouteOptions}
-              component={CreatePostPage}
-              name={routes.CREATE_POST}
-            />
-            <Stack.Screen
-              options={commentsRouteOptions}
-              component={CommentsPage}
-              name={routes.COMMENTS}
-            />
-            <Stack.Screen
-              options={commentsOnlineRouteOptions}
-              component={CommentsOnlinePage}
-              name={routes.COMMENTS_ONLINE}
-            />
-            <Stack.Screen
-              options={managePostsRouteOptions}
-              component={ManagePostsPage}
-              name={routes.MANAGE_POSTS}
-            />
-            <Stack.Screen
-              options={imageModalRouteOptions}
-              component={ImageModal}
-              name={routes.MODAL_IMAGE}
-            />
+            <Stack.Screen component={TabPage} name={routes.HOME_NAV} />
+            <Stack.Screen component={CreatePostPage} name={routes.CREATE_POST} />
+            <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />
+            <Stack.Screen component={CommentsOnlinePage} name={routes.COMMENTS_ONLINE} />
+            <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />
+            <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />
           </>
         ) : (
           <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />

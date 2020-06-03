@@ -16,9 +16,9 @@ import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 
-export const routeOptions = { title: strings.auth.signin }
-
 const SignIn = ({ navigation }) => {
+  navigation.setOptions({ title: strings.auth.signin })
+
   const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(8),
@@ -49,8 +49,8 @@ const SignIn = ({ navigation }) => {
     navigation.navigate(routes.SIGNUP)
   }, [navigation])
 
-  const focusInput = useCallback((ref) => () => {
-    ref.current.focus()
+  const focusPassword = useCallback(() => {
+    passwordRef.current.focus()
   }, [])
 
   const { keyboardShown, keyboardHeight } = useKeyboard()
@@ -66,7 +66,7 @@ const SignIn = ({ navigation }) => {
           onValueChange={onChangeText}
           keyboardType="email-address"
           ref={emailRef}
-          onSubmitEditing={focusInput(passwordRef)}
+          onSubmitEditing={focusPassword}
           returnKeyType="next"
         />
         <PasswordInput

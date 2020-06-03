@@ -21,8 +21,6 @@ import Comment from '../components/comment'
 import styles from './styles'
 import useAudioRecorder from '../../post/hooks/audio-recorder'
 
-export const routeOptions = {}
-
 // TODO: paginate comments
 const Comments = () => {
   const user = auth().currentUser

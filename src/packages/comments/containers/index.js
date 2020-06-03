@@ -24,8 +24,6 @@ import Reactions from '../components/reactions'
 import Comment from '../components/comment'
 import useAudioRecorder from '../../post/hooks/audio-recorder'
 
-export const routeOptions = {}
-
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )

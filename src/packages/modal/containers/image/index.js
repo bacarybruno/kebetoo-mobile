@@ -18,7 +18,9 @@ export const routeOptions = {
   ...TransitionPresets.ScaleFromCenterAndroid,
 }
 
-const ImageModal = () => {
+const ImageModal = ({ navigation }) => {
+  navigation.setOptions(routeOptions)
+
   const { params } = useRoute()
   const { url, width, height } = params
 
