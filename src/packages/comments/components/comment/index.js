@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
@@ -12,6 +12,7 @@ import { getPostType, POST_TYPES } from 'Kebetoo/src/packages/post/containers/ba
 import { REACTION_TYPES } from 'Kebetoo/src/packages/post/containers/reactions'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 
@@ -66,21 +67,48 @@ const Content = ({ item }) => {
   }
 }
 
-const Comment = ({
-  item, author, user, onReaction,
-}) => (
-  author ? (
-    <View style={styles.row}>
-      <View style={styles.avatarWrapper}>
-        <Avatar src={author.photoURL} text={author.displayName} size={35} />
+const Comment = ({ item, author, user }) => {
+  const [reactions, setReactions] = useState((value) => value || item.reactions)
+
+  const onReaction = useCallback(async (type) => {
+    const userReaction = reactions.find((r) => r.author === user)
+    if (userReaction === undefined) {
+      const result = await api.createCommentReaction(type, item.id, user)
+      setReactions((values) => {
+        values.push(result)
+        return [...values]
+      })
+    } else if (userReaction.type === type) {
+      await api.deleteReaction(userReaction.id)
+      setReactions((values) => {
+        const filteredReactions = values.filter((r) => r.id !== userReaction.id)
+        return [...filteredReactions]
+      })
+    } else {
+      await api.editReaction(userReaction.id, type)
+      setReactions((values) => {
+        const reaction = values.find((r) => r.id === userReaction.id)
+        reaction.type = type
+        values.map((v) => (v.id === item.id ? reaction : v))
+        return [...values]
+      })
+    }
+  }, [item.id, reactions, user])
+
+  return (
+    author ? (
+      <View style={styles.row}>
+        <View style={styles.avatarWrapper}>
+          <Avatar src={author.photoURL} text={author.displayName} size={35} />
+        </View>
+        <View style={styles.flexible}>
+          <Header displayName={author.displayName} updatedAt={item.updatedAt} />
+          <Content item={item} />
+          <Reactions reactions={reactions} user={user} onReaction={onReaction} />
+        </View>
       </View>
-      <View style={styles.flexible}>
-        <Header displayName={author.displayName} updatedAt={item.updatedAt} />
-        <Content item={item} />
-        <Reactions reactions={item.reactions} user={user} onReaction={onReaction} />
-      </View>
-    </View>
-  ) : <CommentPlaceholder />
-)
+    ) : <CommentPlaceholder />
+  )
+}
 
 export default React.memo(Comment)
