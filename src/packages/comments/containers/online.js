@@ -83,33 +83,6 @@ const Comments = () => {
     setComments((value) => [...value, result])
   }, [audioRecorder, comment, post.id, user.uid])
 
-  const onReaction = useCallback(async (type, com) => {
-    const userReaction = com.reactions.find((r) => r.author === user.uid)
-    if (userReaction === undefined) {
-      const result = await api.createCommentReaction(type, com.id, user.uid)
-      setComments((values) => {
-        values.find((v) => v.id === com.id).reactions.push(result)
-        return [...values]
-      })
-    } else if (userReaction.type === type) {
-      await api.deleteReaction(userReaction.id)
-      setComments((values) => {
-        const currentComment = values.find((v) => v.id === com.id)
-        currentComment.reactions = currentComment.reactions.filter((r) => r.id !== userReaction.id)
-        values.map((v) => (v.id === com.id ? currentComment : v))
-        return [...values]
-      })
-    } else {
-      await api.editReaction(userReaction.id, type)
-      setComments((values) => {
-        const currentComment = values.find((v) => v.id === com.id)
-        currentComment.reactions.find((r) => r.id === userReaction.id).type = type
-        values.map((v) => (v.id === com.id ? currentComment : v))
-        return [...values]
-      })
-    }
-  }, [user.uid])
-
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
       {authors[post.author] && (
@@ -117,11 +90,10 @@ const Comments = () => {
           item={item}
           user={user.uid}
           author={authors[item.author]}
-          onReaction={(type) => onReaction(type, item)}
         />
       )}
     </View>
-  ), [authors, onReaction, post.author, user.uid])
+  ), [authors, post.author, user.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -154,9 +126,14 @@ const Comments = () => {
           onPress={onCommentContentPress}
         />
       </View>
-      <Reactions post={post} author={user.uid} onComment={onComment} />
+      <Reactions
+        post={post}
+        author={user.uid}
+        comments={comments}
+        onComment={onComment}
+      />
     </View>
-  ), [ListHeaderLeft, authors, onComment, onCommentContentPress, post, user.uid])
+  ), [ListHeaderLeft, authors, comments, onComment, onCommentContentPress, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

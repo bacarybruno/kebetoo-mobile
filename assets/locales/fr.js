@@ -70,6 +70,7 @@ const locales = Object.freeze({
   comments: {
     no_content: 'Soyez le premier à ajouter un commentaire ! 👇',
     add_comment: 'Ajouter un commentaire',
+    people_reacted: '{0} ont réagi',
   },
   create_post: {
     create_post: 'Créer un post',
