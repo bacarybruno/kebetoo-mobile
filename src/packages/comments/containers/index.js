@@ -13,10 +13,11 @@ import {
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
-import { commentsSelector, postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
+import { postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
 import * as types from 'Kebetoo/src/redux/types'
 import strings from 'Kebetoo/src/config/strings'
 import routes from 'Kebetoo/src/navigation/routes'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
@@ -43,14 +44,13 @@ const Comments = () => {
   const dispatch = useDispatch()
   const author = useSelector(authorsSelector)[post.author]
 
-  const normalizedComments = useSelector(commentsSelector)
-
   useEffect(() => {
-    const coms = Object
-      .values(normalizedComments)
-      .filter((com) => com.post === params.id)
-    setComments(coms)
-  }, [normalizedComments, params.id])
+    const fetchComments = async () => {
+      const result = await api.getComments(params.id)
+      setComments(result)
+    }
+    fetchComments()
+  }, [params.id])
 
   useEffect(() => {
     if (normalizedPost.comments.length !== comments.length) {
@@ -93,25 +93,56 @@ const Comments = () => {
         type: types.COMMENT_POST_SUCCESS,
         payload: result,
       })
+      setComments((values) => [...values, result])
     } else if (comment.length > 0) {
+      const result = await api.commentPost({ author: user.uid, post: post.id, content: comment })
       dispatch({
-        type: types.COMMENT_POST,
-        payload: {
-          author: user.uid,
-          content: comment,
-          post: params.id,
-        },
+        type: types.COMMENT_POST_SUCCESS,
+        payload: result,
       })
+      setComments((values) => [...values, result])
       commentInput.current.clear()
       setComment('')
     }
-  }, [audioRecorder, comment, dispatch, params.id, post.id, user.uid])
+  }, [audioRecorder, comment, dispatch, post.id, user.uid])
+
+  const onReaction = useCallback(async (type, com) => {
+    const userReaction = com.reactions.find((r) => r.author === user.uid)
+    if (userReaction === undefined) {
+      const result = await api.createCommentReaction(type, com.id, user.uid)
+      setComments((values) => {
+        values.find((v) => v.id === com.id).reactions.push(result)
+        return [...values]
+      })
+    } else if (userReaction.type === type) {
+      await api.deleteReaction(userReaction.id)
+      setComments((values) => {
+        const currentComment = values.find((v) => v.id === com.id)
+        currentComment.reactions = currentComment.reactions.filter((r) => r.id !== userReaction.id)
+        values.map((v) => (v.id === com.id ? currentComment : v))
+        return [...values]
+      })
+    } else {
+      await api.editReaction(userReaction.id, type)
+      setComments((values) => {
+        const currentComment = values.find((v) => v.id === com.id)
+        currentComment.reactions.find((r) => r.id === userReaction.id).type = type
+        values.map((v) => (v.id === com.id ? currentComment : v))
+        return [...values]
+      })
+    }
+  }, [user.uid])
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      <Comment author={author} item={item} />
+      <Comment
+        item={item}
+        author={author}
+        user={user.uid}
+        onReaction={(type) => onReaction(type, item)}
+      />
     </View>
-  ), [author])
+  ), [author, onReaction, user])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton

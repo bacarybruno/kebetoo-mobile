@@ -46,6 +46,8 @@ export const getUserPosts = (authorId) => request.get(
 
 export const getPost = (id) => request.get(`posts/${id}`)
 
+export const getComments = (postId) => request.get(`comments?post.id=${postId}`)
+
 export const getLatestsPosts = (page = 0) => request.get(
   `posts?_sort=updatedAt:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
 )
@@ -103,6 +105,9 @@ export const deleteComment = (id) => request.delete(`comments/${id}`)
 
 export const createReaction = (type, post, author) => (
   request.post('reactions/', { type, post, author })
+)
+export const createCommentReaction = (type, comment, author) => (
+  request.post('reactions/', { type, comment, author })
 )
 export const editReaction = (id, type) => request.put(`reactions/${id}`, { type })
 export const deleteReaction = (id) => request.delete(`reactions/${id}`)

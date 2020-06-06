@@ -29,8 +29,16 @@ const Comments = () => {
   const { goBack, navigate } = useNavigation()
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState(post.comments)
+  const [comments, setComments] = useState([])
   const commentInput = useRef()
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const result = await api.getComments(post.id)
+      setComments(result)
+    }
+    fetchComments()
+  }, [post.id])
 
   useEffect(() => {
     const fetchAuthors = async () => {
@@ -75,13 +83,45 @@ const Comments = () => {
     setComments((value) => [...value, result])
   }, [audioRecorder, comment, post.id, user.uid])
 
+  const onReaction = useCallback(async (type, com) => {
+    const userReaction = com.reactions.find((r) => r.author === user.uid)
+    if (userReaction === undefined) {
+      const result = await api.createCommentReaction(type, com.id, user.uid)
+      setComments((values) => {
+        values.find((v) => v.id === com.id).reactions.push(result)
+        return [...values]
+      })
+    } else if (userReaction.type === type) {
+      await api.deleteReaction(userReaction.id)
+      setComments((values) => {
+        const currentComment = values.find((v) => v.id === com.id)
+        currentComment.reactions = currentComment.reactions.filter((r) => r.id !== userReaction.id)
+        values.map((v) => (v.id === com.id ? currentComment : v))
+        return [...values]
+      })
+    } else {
+      await api.editReaction(userReaction.id, type)
+      setComments((values) => {
+        const currentComment = values.find((v) => v.id === com.id)
+        currentComment.reactions.find((r) => r.id === userReaction.id).type = type
+        values.map((v) => (v.id === com.id ? currentComment : v))
+        return [...values]
+      })
+    }
+  }, [user.uid])
+
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
       {authors[post.author] && (
-        <Comment author={authors[item.author]} item={item} />
+        <Comment
+          item={item}
+          user={user.uid}
+          author={authors[item.author]}
+          onReaction={(type) => onReaction(type, item)}
+        />
       )}
     </View>
-  ), [authors, post.author])
+  ), [authors, onReaction, post.author, user.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
