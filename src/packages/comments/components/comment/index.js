@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 
@@ -69,6 +69,8 @@ const Content = ({ item }) => {
 
 const Comment = ({ item, author, user }) => {
   const [reactions, setReactions] = useState((value) => value || item.reactions)
+  const [lastPress, setLastPress] = useState(null)
+  const DOUBLE_PRESS_DELAY = 200
 
   const onReaction = useCallback(async (type) => {
     const userReaction = reactions.find((r) => r.author === user)
@@ -95,18 +97,31 @@ const Comment = ({ item, author, user }) => {
     }
   }, [item.id, reactions, user])
 
+  const onPress = useCallback(() => {
+    const now = new Date().getTime()
+    if (lastPress && (now - lastPress) < DOUBLE_PRESS_DELAY) {
+      setLastPress(null)
+      // double press
+      onReaction(REACTION_TYPES.LOVE)
+    } else {
+      setLastPress(now)
+    }
+  }, [lastPress, onReaction])
+
   return (
     author ? (
-      <View style={styles.row}>
-        <View style={styles.avatarWrapper}>
-          <Avatar src={author.photoURL} text={author.displayName} size={35} />
+      <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
+        <View style={styles.row}>
+          <View style={styles.avatarWrapper}>
+            <Avatar src={author.photoURL} text={author.displayName} size={35} />
+          </View>
+          <View style={styles.flexible}>
+            <Header displayName={author.displayName} updatedAt={item.updatedAt} />
+            <Content item={item} />
+            <Reactions reactions={reactions} user={user} onReaction={onReaction} />
+          </View>
         </View>
-        <View style={styles.flexible}>
-          <Header displayName={author.displayName} updatedAt={item.updatedAt} />
-          <Content item={item} />
-          <Reactions reactions={reactions} user={user} onReaction={onReaction} />
-        </View>
-      </View>
+      </TouchableWithoutFeedback>
     ) : <CommentPlaceholder />
   )
 }
