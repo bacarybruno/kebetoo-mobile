@@ -7,12 +7,26 @@ export default StyleSheet.create({
   flexible: {
     flex: 1,
   },
-  loveIcon: {
-    paddingLeft: 10,
-  },
   audio: {
     marginTop: 5,
     height: 45,
     backgroundColor: colors.white_darken,
+  },
+  reactionsWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+    justifyContent: 'flex-end',
+  },
+  reactionsButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  avatarWrapper: {
+    marginRight: 10,
   },
 })
