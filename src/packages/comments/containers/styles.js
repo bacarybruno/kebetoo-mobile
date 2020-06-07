@@ -21,7 +21,6 @@ export default StyleSheet.create({
     width: '100%',
     backgroundColor: colors.input,
     paddingTop: metrics.marginHorizontal,
-    marginBottom: metrics.marginHorizontal,
   },
   postHeader: {
     minHeight: metrics.screenHeight * 0.15,
@@ -42,7 +41,8 @@ export default StyleSheet.create({
   },
   comment: {
     marginHorizontal: paddingHorizontal,
-    paddingVertical: metrics.marginHorizontal,
+    paddingTop: metrics.marginHorizontal,
+    paddingBottom: metrics.marginHorizontal / 2,
     borderTopColor: 'rgba(0, 0, 0, 0.07)',
     borderTopWidth: 1,
     justifyContent: 'center',

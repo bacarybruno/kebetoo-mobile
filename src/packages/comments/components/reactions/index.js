@@ -91,7 +91,7 @@ const Reactions = ({
       <DraggableIndicator />
       <View style={styles.reactions}>
         <ReactionsComponent post={post} author={author} {...reactionProps} />
-        {comments.length > 0 && <Summary comments={comments} />}
+        {hasReactions && <Summary comments={comments} />}
       </View>
     </View>
   )
