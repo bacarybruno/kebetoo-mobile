@@ -5,9 +5,9 @@ import metrics from 'Kebetoo/src/theme/metrics'
 
 export const paddingHorizontal = metrics.marginHorizontal * 1.5
 export const borderRadiusSize = 35
-export const summaryHeight = 30
+export const summaryHeight = 35
 export const bottomBarSize = 45
-export const reactionsHeight = borderRadiusSize + 20
+export const reactionsHeight = borderRadiusSize + 30
 export const imgSize = 28
 
 export default StyleSheet.create({
@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   reactions: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   imgs: {
     flexDirection: 'row',
