@@ -55,6 +55,10 @@ const locales = Object.freeze({
     no_username_defined: 'Aucun nom d\'utilisateur défini',
     edit_profile: 'Modifier le profil',
     signout: 'Se déconnecter',
+    invite_fiend_title: 'Inviter un Ami',
+    share_title: 'Kebetoo',
+    share_url: 'https://kebetoo.com/download',
+    share_message: 'Téléchargez l\'application Kebetoo, le réseau social Africain!',
   },
   manage_posts: {
     edit_post: 'Modifier le post',
