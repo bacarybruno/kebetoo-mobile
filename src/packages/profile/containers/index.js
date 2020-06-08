@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import { View, ScrollView } from 'react-native'
+import {
+  View, ScrollView, Platform, Share,
+} from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
@@ -105,9 +107,14 @@ const AccountSection = React.memo(({ signOut }) => (
   </View>
 ))
 
-const PreferencesSection = React.memo(() => (
+const PreferencesSection = React.memo(({ shareApp }) => (
   <View style={styles.section}>
     <SectionTitle text={strings.profile.preferences} />
+    <IconButton
+      icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
+      text={strings.profile.invite_fiend_title}
+      onPress={shareApp}
+    />
     <IconButton icon="ios-color-palette" text={strings.profile.dark_mode} />
     <IconButton icon="ios-notifications" text={strings.profile.notifications} />
     <IconButton
@@ -180,6 +187,14 @@ const ProfilePage = React.memo(() => {
     }, [dispatch, profile.uid, stats.comments, stats.posts, stats.reactions]),
   )
 
+  const shareApp = useCallback(() => {
+    Share.share({
+      title: strings.profile.share_title,
+      url: strings.profile.share_url,
+      message: strings.profile.share_message,
+    })
+  }, [])
+
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
   return (
@@ -194,7 +209,7 @@ const ProfilePage = React.memo(() => {
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <ProfileSection managePosts={managePosts} />
-        <PreferencesSection />
+        <PreferencesSection shareApp={shareApp} />
         <AccountSection signOut={signOut} />
       </ScrollView>
     </View>
