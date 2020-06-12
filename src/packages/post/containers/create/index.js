@@ -14,6 +14,8 @@ import { ImageViewer } from 'Kebetoo/src/packages/post/components/image-content'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 import strings from 'Kebetoo/src/config/strings'
+import { getMediaType } from 'Kebetoo/src/shared/helpers/file'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 import styles from './styles'
 import useAudioRecorder from '../../hooks/audio-recorder'
@@ -37,24 +39,30 @@ export const actionTypes = {
 
 const TEXT_MAX_LENGHT = 180
 
-const noop = () => {}
+const noop = () => { }
 
-export const PostTextMessage = ({ onChange, text }) => (
+export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => (
   <>
     <TextInput
+      autoFocus
+      multiline
       placeholder={strings.create_post.placeholder}
       onValueChange={onChange}
       returnKeyType="done"
-      numberOfLines={8}
       textStyle={styles.textInput}
       wrapperStyle={styles.textInputWrapper}
       maxLength={TEXT_MAX_LENGHT}
       defaultValue={text}
-      autoFocus
-      multiline
+      numberOfLines={Math.min(
+        Math.floor(metrics.screenHeight / 75),
+        maxNumberOfLines,
+      )}
     />
     <Text style={styles.textCount} size="tiny">
-      {strings.formatString(strings.create_post.characters, TEXT_MAX_LENGHT - text.length)}
+      {strings.formatString(
+        strings.create_post.characters,
+        TEXT_MAX_LENGHT - text.length,
+      )}
     </Text>
   </>
 )
@@ -80,8 +88,9 @@ const CreatePostPage = ({ navigation }) => {
       ? params.payload.content
       : '',
   )
-  const audioRecorder = useAudioRecorder()
-  const imagePicker = useImagePicker()
+  const mediaType = getMediaType(params && params.file)
+  const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.file : undefined)
+  const imagePicker = useImagePicker(mediaType === 'image' ? params.file : undefined)
 
   const onHeaderSavePress = useCallback(async () => {
     const user = auth().currentUser

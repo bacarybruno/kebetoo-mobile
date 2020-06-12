@@ -7,11 +7,11 @@ import dayjs from 'dayjs'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
+import { getFileName, getMimeType } from 'Kebetoo/src/shared/helpers/file'
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
 export const RECORD_NAME = 'PTT.aac'
-export const RECORD_MIME_TYPE = 'audio/x-aac'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 20000,
   sampleRate: 16000,
@@ -31,48 +31,50 @@ export const getRecordUri = (filename = RECORD_NAME) => (
   `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
 )
 
-const useAudioRecorder = (maxDuration) => {
+const useAudioRecorder = (uri, maxDuration) => {
   const [isRecording, setIsRecording] = useState(false)
-  const [hasRecording, setHasRecording] = useState(false)
+  const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
   const [recorder, setRecorder] = useState(null)
   const intervalRef = useRef()
   const permissions = usePermissions()
   const maxDurationInSeconds = maxDuration || MAX_DURATION_IN_SECONDS
 
+  const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
+
   const savePost = useCallback(async (author, content) => {
-    const fileUri = getRecordUri()
+    const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     const response = await api.createPostWithAudio({
       author,
       content,
       audio: {
         uri: fileUri,
-        mimeType: RECORD_MIME_TYPE,
-        name: constructFileName(time, elapsedTime),
+        mimeType: getMimeType(fileUri),
+        name: uri ? getFileName(uri) : constructFileName(time, elapsedTime),
       },
     })
     setHasRecording(false)
     await RNFetchBlob.fs.unlink(fileUri)
     return response
-  }, [elapsedTime])
+  }, [elapsedTime, getFileUri, uri])
 
   const saveComment = useCallback(async (post, author) => {
-    const fileUri = getRecordUri()
+    const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     const response = await api.commentPostWithAudio({
       post,
       author,
       audio: {
         uri: fileUri,
-        mimeType: RECORD_MIME_TYPE,
+        mimeType: getMimeType(fileUri),
         name: constructFileName(time, elapsedTime),
       },
     })
     setHasRecording(false)
     await RNFetchBlob.fs.unlink(fileUri)
     return response
-  }, [elapsedTime])
+  }, [elapsedTime, getFileUri])
 
   const start = useCallback(async () => {
     const hasPermissions = await permissions.recordAudio()
@@ -85,21 +87,22 @@ const useAudioRecorder = (maxDuration) => {
   const reset = useCallback(async () => {
     clearInterval(intervalRef.current)
     intervalRef.current = null
-    const fileUri = getRecordUri()
+    const fileUri = getFileUri()
     await RNFetchBlob.fs.unlink(fileUri)
     setHasRecording(false)
     setElapsedTime(0)
-  }, [])
+  }, [getFileUri])
 
   const stop = useCallback(() => {
     setIsRecording(false)
     if (recorder) {
-      recorder.stop()
-      if (elapsedTime < MIN_DURATION_IN_SECONDS) {
-        reset()
-      } else {
-        setHasRecording(true)
-      }
+      recorder.stop(() => {
+        if (elapsedTime < MIN_DURATION_IN_SECONDS) {
+          reset()
+        } else {
+          setHasRecording(true)
+        }
+      })
     }
   }, [elapsedTime, recorder, reset])
 
@@ -132,7 +135,7 @@ const useAudioRecorder = (maxDuration) => {
     isRecording,
     hasRecording,
     elapsedTime,
-    recordUri: getRecordUri(),
+    recordUri: getFileUri(),
   }
 }
 

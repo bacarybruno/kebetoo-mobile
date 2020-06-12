@@ -6,6 +6,7 @@
 - https://github.com/react-native-community/react-native-permissions
 - https://github.com/zoontek/react-native-bootsplash
 - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+- https://github.com/ajith-ab/react-native-receive-sharing-intent
 
 #Generating SHA1 (google)
 - Debug: keytool -list -v -keystore ./android/app/debug.keystore -alias androiddebugkey -storepass android -keypass android
