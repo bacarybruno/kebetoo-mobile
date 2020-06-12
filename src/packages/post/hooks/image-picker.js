@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import ImagePicker from 'react-native-image-picker'
 import dayjs from 'dayjs'
 import RNFetchBlob from 'rn-fetch-blob'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import { getMimeType } from 'Kebetoo/src/shared/helpers/file'
 
 const PICTURE_CONFIG = Object.freeze({
   mediaType: 'photo',
@@ -14,7 +15,7 @@ const PICTURE_CONFIG = Object.freeze({
 })
 export const constructFileName = (time) => `IMG-${time}`
 
-const useFilePicker = () => {
+const useFilePicker = (uri) => {
   const [file, setFile] = useState(null)
   const pickImage = useCallback(() => {
     ImagePicker.launchImageLibrary(PICTURE_CONFIG, (res) => {
@@ -24,10 +25,23 @@ const useFilePicker = () => {
     })
   }, [])
 
+  useEffect(() => {
+    if (uri) {
+      setFile({
+        uri: uri.startsWith('file://') ? uri : `file://${uri}`,
+        path: uri,
+        type: getMimeType(uri),
+      })
+    }
+  }, [uri])
+
   const reset = useCallback(async () => {
     if (file) {
-      await RNFetchBlob.fs.unlink(file.path)
-      setFile(null)
+      try {
+        await RNFetchBlob.fs.unlink(file.path)
+      } finally {
+        setFile(null)
+      }
     }
   }, [file])
 

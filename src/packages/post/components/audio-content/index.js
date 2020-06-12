@@ -2,7 +2,7 @@ import React, {
   useState, useCallback, useEffect, useRef,
 } from 'react'
 import {
-  View, TouchableOpacity, Image, ActivityIndicator,
+  View, TouchableOpacity, Image, ActivityIndicator, Platform,
 } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { Player, MediaStates } from '@react-native-community/audio-toolkit'
@@ -49,6 +49,7 @@ export const DeleteIconButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
+// FIXME: app crash on some huawei devices. use react-native-sound
 export const AudioPlayer = ({
   source, onDelete, style, round, onPress,
 }) => {
@@ -60,6 +61,12 @@ export const AudioPlayer = ({
   const [playerState, setPlayerState] = useState(null)
   const [progress, setProgress] = useState(0)
   const intervalRef = useRef()
+
+  useEffect(() => {
+    if (player && Platform.OS === 'android') {
+      player.speed = 0.0
+    }
+  }, [player])
 
   const updatePlayerState = useCallback(() => {
     setPlayerState(player.state)
@@ -82,11 +89,20 @@ export const AudioPlayer = ({
     })
   }, [player, updatePlayerState])
 
-  const onPlayPause = useCallback(() => {
-    if (!player.isPrepared) {
+  const onPlayPause = useCallback(async () => {
+    if (!player.isPrepared && !player.isPlaying && !player.isPaused) {
       setPlayerState(MediaStates.PREPARING)
+      await new Promise((resolve, reject) => {
+        player.prepare((err) => {
+          if (err) reject(err)
+          else resolve()
+        })
+      })
     }
     player.playPause((err, paused) => {
+      if (player.speed < 1) {
+        player.speed = 1.0
+      }
       updatePlayerState()
       if (!intervalRef.current && !paused) {
         let lastTime = 0

@@ -1,10 +1,11 @@
 import React, {
   useEffect, useState, useCallback, useMemo,
 } from 'react'
-import { View, FlatList, RefreshControl } from 'react-native'
+import { View, FlatList, RefreshControl, AppState } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
+import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 
 import * as types from 'Kebetoo/src/redux/types'
 import BasicPost from 'Kebetoo/src/packages/post/containers/basic-post'
@@ -13,6 +14,10 @@ import {
   postsSelector, authorsSelector, displayNameSelector,
 } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
+import RealPathUtils from 'Kebetoo/src/shared/helpers/native-modules/real-path'
+import routes from 'Kebetoo/src/navigation/routes'
+import RNFetchBlob from 'rn-fetch-blob'
+import { getFileName } from 'Kebetoo/src/shared/helpers/file'
 
 import Header from '../components/header'
 import styles from './styles'
@@ -31,7 +36,33 @@ const HomePage = () => {
   const savedDisplayName = useSelector(displayNameSelector)
   const displayName = user.displayName || savedDisplayName || ''
 
-  const { addListener: addNavigationListener } = useNavigation()
+  const { addListener: addNavigationListener, navigate } = useNavigation()
+
+  const handleSharingIntent = useCallback(() => {
+    ReceiveSharingIntent.getReceivedFiles((files) => {
+      console.log(files)
+      // TODO: show loader, because it takes 4.5s on average
+      // or find a better way to get original sakh
+      ReceiveSharingIntent.clearReceivedFiles()
+      RealPathUtils.getOriginalFilePath(files[0].contentUri)
+        .then((file) => {
+          const filename = getFileName(file)
+          const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
+          RNFetchBlob.fs.cp(file, dest)
+            .then(() => navigate(routes.CREATE_POST, { file: dest }))
+            .catch(console.log)
+        })
+    }, () => { })
+  }, [navigate])
+
+  useEffect(() => {
+    handleSharingIntent()
+    AppState.addEventListener('change', (status) => {
+      if (status === 'active') {
+        handleSharingIntent()
+      }
+    })
+  }, [handleSharingIntent, navigate])
 
   const onRefresh = useCallback(() => {
     setRefreshing(true)

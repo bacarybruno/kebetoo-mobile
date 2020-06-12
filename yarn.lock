@@ -7159,6 +7159,11 @@ react-native-reanimated@^1.8.0:
   dependencies:
     fbjs "^1.0.0"
 
+react-native-receive-sharing-intent@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-receive-sharing-intent/-/react-native-receive-sharing-intent-1.0.3.tgz#16b6d95beea18a7fe00f26a6ecd83d209c98390d"
+  integrity sha512-LFn8SjTNMeiaRrdHUzQddgb6lSnsPJPsKjlGsuh0JG7GtRnxzS+qJQMhlX7vxRIXQU3bFw9vRbumflV8ZhRPlg==
+
 react-native-safe-area-context@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.7.3.tgz#ad6bd4abbabe195332c53810e4ce5851eb21aa2a"
