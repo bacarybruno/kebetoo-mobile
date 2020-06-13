@@ -7,7 +7,8 @@ import dayjs from 'dayjs'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { usePermissions } from 'Kebetoo/src/shared/hooks'
-import { getFileName, getMimeType } from 'Kebetoo/src/shared/helpers/file'
+import { getMimeType } from 'Kebetoo/src/shared/helpers/file'
+import Sound from 'react-native-sound'
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
@@ -45,13 +46,22 @@ const useAudioRecorder = (uri, maxDuration) => {
   const savePost = useCallback(async (author, content) => {
     const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
+    let duration = null
+    if (uri) {
+      duration = await new Promise((resolve, reject) => {
+        const sound = new Sound(uri, undefined, (err) => {
+          if (err) reject(err)
+          else resolve(Math.round(sound.getDuration()))
+        })
+      })
+    }
     const response = await api.createPostWithAudio({
       author,
       content,
       audio: {
         uri: fileUri,
         mimeType: getMimeType(fileUri),
-        name: uri ? getFileName(uri) : constructFileName(time, elapsedTime),
+        name: constructFileName(time, duration || elapsedTime),
       },
     })
     setHasRecording(false)

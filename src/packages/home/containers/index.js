@@ -53,7 +53,9 @@ const HomePage = () => {
             .then(() => navigate(routes.CREATE_POST, { file: dest }))
             .catch(console.log)
         })
-    }, () => { })
+    }, () => {
+      ReceiveSharingIntent.clearReceivedFiles()
+    })
   }, [navigate])
 
   useEffect(() => {

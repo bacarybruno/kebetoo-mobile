@@ -1,11 +1,10 @@
-import React, {
-  useState, useCallback, useEffect, useRef,
-} from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import {
-  View, TouchableOpacity, Image, ActivityIndicator, Platform,
+  View, TouchableOpacity, Image, ActivityIndicator,
 } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import { Player, MediaStates } from '@react-native-community/audio-toolkit'
+import { MediaStates } from '@react-native-community/audio-toolkit'
+import Player from 'react-native-sound'
 
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
@@ -15,6 +14,7 @@ import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 
 import styles from './styles'
+import { extractMetadataFromName } from '../../hooks/audio-recorder'
 
 export const getSource = (url) => `${BASE_URL}${url}`
 
@@ -51,71 +51,65 @@ export const DeleteIconButton = ({ onPress }) => (
 
 // FIXME: app crash on some huawei devices. use react-native-sound
 export const AudioPlayer = ({
-  source, onDelete, style, round, onPress,
+  name, source, onDelete, style, round, onPress,
 }) => {
-  const [player] = useState(
-    new Player(source, {
-      autoDestroy: false,
-    }),
-  )
-  const [playerState, setPlayerState] = useState(null)
+  const [player, setPlayer] = useState(null)
+  const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
-  const intervalRef = useRef()
+  const intervalRef = useRef(null)
 
-  useEffect(() => {
-    if (player && Platform.OS === 'android') {
-      player.speed = 0.0
+  const onEnd = useCallback((ended) => {
+    if (ended) {
+      setPlayerState(MediaStates.IDLE)
+      clearInterval(intervalRef.current)
+      setProgress(0)
+      setPlayer(null)
     }
-  }, [player])
+  }, [])
 
-  const updatePlayerState = useCallback(() => {
-    setPlayerState(player.state)
-  }, [player])
-
-  useEffect(() => {
-    updatePlayerState()
+  const handleInterval = useCallback((soundPlayer) => {
+    let totalTime = soundPlayer.getDuration()
+    console.log(totalTime)
+    if (totalTime < 0) {
+      const { duration } = extractMetadataFromName(name)
+      totalTime = parseInt(duration, 10)
+    }
+    if (!intervalRef.current) {
+      const intervalId = setInterval(() => {
+        soundPlayer.getCurrentTime((currentTime) => {
+          const currentProgress = (currentTime / totalTime) * 100
+          setProgress(currentProgress < 100 ? currentProgress : 0)
+        })
+      }, 1)
+      intervalRef.current = intervalId
+    }
     return () => {
       clearInterval(intervalRef.current)
-      player.destroy()
     }
-  }, [player, updatePlayerState])
-
-  useEffect(() => {
-    player.on('ended', () => {
-      updatePlayerState()
-      setProgress(0)
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
-    })
-  }, [player, updatePlayerState])
+  }, [])
 
   const onPlayPause = useCallback(async () => {
-    if (!player.isPrepared && !player.isPlaying && !player.isPaused) {
+    let playerInstance = null
+    if (!player || (player && !player.isLoaded())) {
       setPlayerState(MediaStates.PREPARING)
-      await new Promise((resolve, reject) => {
-        player.prepare((err) => {
+      playerInstance = await new Promise((resolve, reject) => {
+        const newPlayer = new Player(source, undefined, (err) => {
           if (err) reject(err)
-          else resolve()
+          else resolve(newPlayer)
         })
       })
+      setPlayer(playerInstance)
     }
-    player.playPause((err, paused) => {
-      if (player.speed < 1) {
-        player.speed = 1.0
-      }
-      updatePlayerState()
-      if (!intervalRef.current && !paused) {
-        let lastTime = 0
-        intervalRef.current = setInterval(() => {
-          const currentTime = Math.max(player.currentTime, lastTime)
-          const totalTime = Math.max(player.duration, 0)
-          const currentProgress = (currentTime / totalTime) * 100
-          lastTime = currentTime
-          setProgress(currentProgress)
-        }, 1)
-      }
-    })
-  }, [player, updatePlayerState])
+    const soundPlayer = player || playerInstance
+    if (soundPlayer.isPlaying()) {
+      soundPlayer.pause()
+      setPlayerState(MediaStates.PAUSED)
+    } else {
+      soundPlayer.play(onEnd)
+      handleInterval(soundPlayer)
+      setPlayerState(MediaStates.PLAYING)
+    }
+  }, [handleInterval, onEnd, player, source])
 
   const onPressDelegate = useCallback(() => {
     if (!onPress) return onPlayPause()
@@ -141,7 +135,7 @@ export const AudioPlayer = ({
 const AudioContent = ({ post, style, onPress }) => (
   <View style={[styles.wrapper, style]}>
     <ThemedText style={styles.text} text={post.content} />
-    <AudioPlayer onPress={onPress} source={getSource(post.audio.url)} />
+    <AudioPlayer onPress={onPress} source={getSource(post.audio.url)} name={post.audio.name} />
   </View>
 )
 
