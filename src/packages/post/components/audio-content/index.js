@@ -69,7 +69,6 @@ export const AudioPlayer = ({
 
   const handleInterval = useCallback((soundPlayer) => {
     let totalTime = soundPlayer.getDuration()
-    console.log(totalTime)
     if (totalTime < 0) {
       const { duration } = extractMetadataFromName(name)
       totalTime = parseInt(duration, 10)

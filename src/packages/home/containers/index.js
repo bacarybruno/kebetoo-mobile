@@ -45,14 +45,19 @@ const HomePage = () => {
       // TODO: show loader, because it takes 4.5s on average
       // or find a better way to get original sakh
       ReceiveSharingIntent.clearReceivedFiles()
-      RealPathUtils.getOriginalFilePath(files[0].contentUri)
-        .then((file) => {
-          const filename = getFileName(file)
-          const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
-          RNFetchBlob.fs.cp(file, dest)
-            .then(() => navigate(routes.CREATE_POST, { file: dest }))
-            .catch(console.log)
-        })
+      const sharedFile = files[0]
+      if (sharedFile.contentUri) {
+        RealPathUtils.getOriginalFilePath(sharedFile.contentUri)
+          .then((file) => {
+            const filename = getFileName(file)
+            const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
+            RNFetchBlob.fs.cp(file, dest)
+              .then(() => navigate(routes.CREATE_POST, { sharedFile: dest }))
+              .catch(console.log)
+          }).catch(() => {})
+      } else {
+        navigate(routes.CREATE_POST, { sharedText: sharedFile.text || sharedFile.weblink || '' })
+      }
     }, () => {
       ReceiveSharingIntent.clearReceivedFiles()
     })
