@@ -1,7 +1,9 @@
 import React, {
   useEffect, useState, useCallback, useMemo,
 } from 'react'
-import { View, FlatList, RefreshControl, AppState } from 'react-native'
+import {
+  View, FlatList, RefreshControl, AppState,
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
@@ -40,7 +42,6 @@ const HomePage = () => {
 
   const handleSharingIntent = useCallback(() => {
     ReceiveSharingIntent.getReceivedFiles((files) => {
-      console.log(files)
       // TODO: show loader, because it takes 4.5s on average
       // or find a better way to get original sakh
       ReceiveSharingIntent.clearReceivedFiles()
@@ -62,7 +63,7 @@ const HomePage = () => {
         handleSharingIntent()
       }
     })
-  }, [handleSharingIntent, navigate])
+  }, [handleSharingIntent])
 
   const onRefresh = useCallback(() => {
     setRefreshing(true)
@@ -76,7 +77,7 @@ const HomePage = () => {
   useEffect(() => {
     const unsusbcribeFocus = addNavigationListener('focus', () => {
       // FIXME: this is freezing the UI.
-      // Keep this until web find a better refresh strategy
+      // Keep this until we find a better refresh strategy
       onRefresh()
     })
     return unsusbcribeFocus
