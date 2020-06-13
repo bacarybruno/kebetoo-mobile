@@ -86,11 +86,11 @@ const CreatePostPage = ({ navigation }) => {
   const [text, setText] = useState(
     editMode
       ? params.payload.content
-      : '',
+      : (params && params.sharedText) || '',
   )
-  const mediaType = getMediaType(params && params.file)
-  const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.file : undefined)
-  const imagePicker = useImagePicker(mediaType === 'image' ? params.file : undefined)
+  const mediaType = getMediaType(params && params.sharedFile)
+  const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
+  const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
 
   const onHeaderSavePress = useCallback(async () => {
     const user = auth().currentUser
