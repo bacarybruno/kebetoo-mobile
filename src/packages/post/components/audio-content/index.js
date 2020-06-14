@@ -49,7 +49,6 @@ export const DeleteIconButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-// FIXME: app crash on some huawei devices. use react-native-sound
 export const AudioPlayer = ({
   name, source, onDelete, style, round, onPress,
 }) => {
@@ -62,6 +61,7 @@ export const AudioPlayer = ({
     if (ended) {
       setPlayerState(MediaStates.IDLE)
       clearInterval(intervalRef.current)
+      intervalRef.current = null
       setProgress(0)
       setPlayer(null)
     }
@@ -85,7 +85,7 @@ export const AudioPlayer = ({
     return () => {
       clearInterval(intervalRef.current)
     }
-  }, [])
+  }, [name])
 
   const onPlayPause = useCallback(async () => {
     let playerInstance = null
