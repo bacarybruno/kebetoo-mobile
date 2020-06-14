@@ -63,4 +63,9 @@ export default StyleSheet.create({
     borderRadius: 15,
     ...elevation(2),
   },
+  duration: {
+    position: 'absolute',
+    right: 5,
+    bottom: 2,
+  },
 })

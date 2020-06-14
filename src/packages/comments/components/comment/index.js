@@ -13,6 +13,7 @@ import { REACTION_TYPES } from 'Kebetoo/src/packages/post/containers/reactions'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import { extractMetadataFromName } from 'Kebetoo/src/packages/post/hooks/audio-recorder'
 
 import styles from './styles'
 
@@ -55,9 +56,9 @@ const Content = ({ item }) => {
     case POST_TYPES.AUDIO:
       return (
         <AudioPlayer
-          round
           style={styles.audio}
           source={getAudioSource(item.audio.url)}
+          duration={parseInt(extractMetadataFromName(item.audio.name).duration, 10)}
         />
       )
     case POST_TYPES.TEXT:
