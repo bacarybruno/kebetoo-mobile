@@ -27,9 +27,7 @@ export const Reaction = ({
     style={styles.reaction}
     onPress={onPress}
     disabled={disabled}
-    hitSlop={edgeInsets.symmetric({
-      horizontal: 5, vertical: 25,
-    })}
+    hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
   >
     <Kebeticon
       color={disabled ? colors.inactive : color}

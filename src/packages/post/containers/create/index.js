@@ -131,6 +131,7 @@ const CreatePostPage = ({ navigation }) => {
             <AudioPlayer
               source={audioRecorder.recordUri}
               onDelete={audioRecorder.reset}
+              duration={audioRecorder.elapsedTime}
               style={styles.audioPlayer}
             />
           )}

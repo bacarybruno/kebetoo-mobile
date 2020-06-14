@@ -8,10 +8,11 @@ import Player from 'react-native-sound'
 
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
-import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
+import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 
 import styles from './styles'
 import { extractMetadataFromName } from '../../hooks/audio-recorder'
@@ -50,7 +51,7 @@ export const DeleteIconButton = ({ onPress }) => (
 )
 
 export const AudioPlayer = ({
-  name, source, onDelete, style, round, onPress,
+  duration, source, onDelete, style, round, onPress,
 }) => {
   const [player, setPlayer] = useState(null)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
@@ -70,7 +71,6 @@ export const AudioPlayer = ({
   const handleInterval = useCallback((soundPlayer) => {
     let totalTime = soundPlayer.getDuration()
     if (totalTime < 0) {
-      const { duration } = extractMetadataFromName(name)
       totalTime = parseInt(duration, 10)
     }
     if (!intervalRef.current) {
@@ -85,7 +85,7 @@ export const AudioPlayer = ({
     return () => {
       clearInterval(intervalRef.current)
     }
-  }, [name])
+  }, [duration])
 
   const onPlayPause = useCallback(async () => {
     let playerInstance = null
@@ -128,13 +128,18 @@ export const AudioPlayer = ({
       <View style={[styles.progress, round && styles.round, { width: `${progress}%` }]} />
       <PlayButton state={playerState} onPress={onPlayPause} />
       <Waves />
+      <Text style={styles.duration} text={readableSeconds(duration)} opacity={0.35} size="xs" />
     </Pressable>
   )
 }
 const AudioContent = ({ post, style, onPress }) => (
   <View style={[styles.wrapper, style]}>
     <ThemedText style={styles.text} text={post.content} />
-    <AudioPlayer onPress={onPress} source={getSource(post.audio.url)} name={post.audio.name} />
+    <AudioPlayer
+      onPress={onPress}
+      source={getSource(post.audio.url)}
+      duration={parseInt(extractMetadataFromName(post.audio.name).duration, 10)}
+    />
   </View>
 )
 

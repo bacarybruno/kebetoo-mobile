@@ -47,7 +47,7 @@ const CommentInput = ({
             source={audioRecorder.recordUri}
             onDelete={audioRecorder.reset}
             style={styles.audioWrapper}
-            round
+            duration={audioRecorder.elapsedTime}
           />
         )}
       </View>
