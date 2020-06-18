@@ -16,6 +16,12 @@ export default StyleSheet.create({
     borderTopRightRadius: borderRadiusSize,
     paddingHorizontal,
     backgroundColor: colors.background,
+    borderTopColor: colors.border,
+    borderLeftColor: colors.border,
+    borderRightColor: colors.border,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopWidth: 1,
   },
   summary: {
     alignItems: 'center',
