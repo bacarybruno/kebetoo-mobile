@@ -46,6 +46,9 @@ const Comments = () => {
       if (comments.length > 0) {
         authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
       }
+      if (post.repost) {
+        authorsToFetch = authorsToFetch.concat(post.repost.author)
+      }
       const ids = [...new Set(authorsToFetch)]
       const newAuthors = ids.filter((id) => !authors[id])
 
@@ -62,7 +65,7 @@ const Comments = () => {
       setAuthors({ ...authors })
     }
     fetchAuthors()
-  }, [comments, authors, post.author])
+  }, [comments, authors, post])
 
   const onChangeText = useCallback((value) => {
     setComment(value)
@@ -86,11 +89,7 @@ const Comments = () => {
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
       {authors[post.author] && (
-        <Comment
-          item={item}
-          user={user.uid}
-          author={authors[item.author]}
-        />
+        <Comment item={item} user={user.uid} author={authors[item.author]} />
       )}
     </View>
   ), [authors, post.author, user.uid])
@@ -124,6 +123,11 @@ const Comments = () => {
           style={styles.content}
           mode="comments"
           onPress={onCommentContentPress}
+          originalAuthor={
+            post.repost
+              ? authors[post.repost.author]
+              : authors[post.author]
+          }
         />
       </View>
       <Reactions

@@ -22,7 +22,6 @@ import useAudioRecorder from '../../hooks/audio-recorder'
 import useImagePicker from '../../hooks/image-picker'
 
 export const routeOptions = {
-  title: strings.create_post.create_post,
   headerShown: true,
   headerBackImage: ({ tintColor }) => (
     <HeaderBack.Close tintColor={tintColor} />
@@ -35,6 +34,7 @@ export const routeOptions = {
 export const actionTypes = {
   EDIT: 'edit',
   CREATE: 'create',
+  SHARE: 'share',
 }
 
 const TEXT_MAX_LENGHT = 180
@@ -82,12 +82,13 @@ const CreatePostPage = ({ navigation }) => {
   setOptions(routeOptions)
 
   const { params } = useRoute()
-  const editMode = params && params.action === actionTypes.EDIT
-  const [text, setText] = useState(
+  const [editMode] = useState(params && params.action === actionTypes.EDIT)
+  const [shareMode] = useState(params && params.action === actionTypes.SHARE)
+  const [text, setText] = useState((value) => value || (
     editMode
       ? params.payload.content
-      : (params && params.sharedText) || '',
-  )
+      : (params && params.sharedText) || ''
+  ))
   const mediaType = getMediaType(params && params.sharedFile)
   const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
   const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
@@ -95,32 +96,53 @@ const CreatePostPage = ({ navigation }) => {
   const onHeaderSavePress = useCallback(async () => {
     const user = auth().currentUser
     let result
+    const repost = params && params.post ? params.post : undefined
     if (editMode) {
       result = await api.editPost({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
-      result = await audioRecorder.savePost(user.uid, text)
+      result = await audioRecorder.savePost(user.uid, text, repost)
     } else if (imagePicker.hasFile) {
-      result = await imagePicker.savePost(user.uid, text)
+      result = await imagePicker.savePost(user.uid, text, repost)
     } else {
-      result = await api.createPost({ author: user.uid, content: text })
+      result = await api.createPost({ author: user.uid, content: text, repost })
     }
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
   }, [editMode, audioRecorder, imagePicker, params, goBack, text])
 
+  const getHeaderMessages = useCallback(() => {
+    if (editMode) {
+      return {
+        post: strings.general.edit,
+        title: strings.create_post.edit_post,
+      }
+    }
+    if (shareMode) {
+      return {
+        post: strings.general.share,
+        title: strings.create_post.share_post,
+      }
+    }
+    return {
+      post: strings.general.post,
+      title: strings.create_post.create_post,
+    }
+  }, [editMode, shareMode])
+
   useLayoutEffect(() => {
+    const headerMessages = getHeaderMessages()
     setOptions({
       headerRight: () => (
         <OutlinedButton
-          text={(editMode ? strings.general.edit : strings.general.post).toUpperCase()}
+          text={headerMessages.post.toUpperCase()}
           disabled={text.length === 0}
           onPress={onHeaderSavePress}
           style={styles.headerSaveButton}
         />
       ),
-      title: editMode ? strings.create_post.edit_post : strings.create_post.create_post,
+      title: headerMessages.title,
     })
-  }, [text, editMode, setOptions, onHeaderSavePress])
+  }, [text, setOptions, onHeaderSavePress, getHeaderMessages])
 
   return (
     <View style={styles.wrapper}>
@@ -142,7 +164,7 @@ const CreatePostPage = ({ navigation }) => {
         {!editMode && !audioRecorder.hasRecording && !imagePicker.hasFile && (
           <View style={styles.buttonsWrapper}>
             <View style={styles.buttonsContainer}>
-              {!audioRecorder.isRecording && (
+              {!audioRecorder.isRecording && !shareMode && (
                 <>
                   <Button name="camera" onPress={noop} />
                   <Button name="photo" onPress={imagePicker.pickImage} />

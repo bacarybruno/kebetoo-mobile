@@ -4,13 +4,13 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import colors from 'Kebetoo/src/theme/colors'
 import { fontSizes } from 'Kebetoo/src/shared/components/text'
 
-export const placeholderColor = '#ACACAC'
+export const placeholderColor = colors.placeholder
 
 export default StyleSheet.create({
   wrapper: {
     backgroundColor: colors.input,
     minHeight: 48,
-    borderColor: '#E8E8E8',
+    borderColor: colors.border,
     borderRadius: 15,
     borderWidth: 1,
     paddingLeft: metrics.marginHorizontal,

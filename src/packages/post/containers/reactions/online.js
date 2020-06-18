@@ -7,6 +7,7 @@ import routes from 'Kebetoo/src/navigation/routes'
 
 import styles from './styles'
 import { Reaction, REACTION_TYPES } from './index'
+import { actionTypes } from '../create'
 
 const countReactions = (post, type) => (
   post.reactions.filter((r) => r.type === type && r.post === post.id).length
@@ -69,10 +70,18 @@ const Reactions = ({
         if (onComment) onComment()
         else navigate(routes.COMMENTS_ONLINE, { post })
         break
+      case REACTION_TYPES.SHARE:
+        if (post.author !== author) {
+          navigate(routes.CREATE_POST, {
+            action: actionTypes.SHARE,
+            post: post.repost ? post.repost.id : post.id,
+          })
+        }
+        break
       default: break
     }
     return null
-  }, [handlePostReaction, post, onComment, navigate])
+  }, [handlePostReaction, onComment, navigate, post, author])
 
   return (
     <View style={styles.reactions}>
@@ -96,9 +105,9 @@ const Reactions = ({
       />
       <Reaction
         iconName="share"
-        count={0}
+        count={post.reposts ? post.reposts.length : 0}
         disabled={disabled}
-        onPress={() => { }}
+        onPress={() => onReaction(REACTION_TYPES.SHARE)}
       />
     </View>
   )

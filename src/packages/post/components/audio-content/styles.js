@@ -5,9 +5,6 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import elevation from 'Kebetoo/src/theme/elevation'
 
 export default StyleSheet.create({
-  wrapper: {
-    marginBottom: 8,
-  },
   text: {
     marginBottom: 8,
   },
@@ -65,7 +62,7 @@ export default StyleSheet.create({
   },
   duration: {
     position: 'absolute',
-    right: 5,
+    right: 8,
     bottom: 2,
   },
 })

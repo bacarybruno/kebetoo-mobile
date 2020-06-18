@@ -45,7 +45,7 @@ const useFilePicker = (uri) => {
     }
   }, [file])
 
-  const savePost = useCallback(async (author, content) => {
+  const savePost = useCallback(async (author, content, repost) => {
     const time = dayjs().format('YYYYMMDD')
     const response = await api.createPostWithImage({
       author,
@@ -55,6 +55,7 @@ const useFilePicker = (uri) => {
         mimeType: file.type,
         name: constructFileName(time),
       },
+      repost,
     })
     await reset()
     return response

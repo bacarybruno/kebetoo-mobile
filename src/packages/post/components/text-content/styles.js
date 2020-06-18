@@ -10,6 +10,5 @@ export default StyleSheet.create({
     padding: metrics.marginHorizontal,
     borderRadius: 5,
     justifyContent: 'center',
-    marginBottom: 8,
   },
 })

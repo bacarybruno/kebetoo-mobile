@@ -52,11 +52,13 @@ export const getLatestsPosts = (page = 0) => request.get(
   `posts?_sort=updatedAt:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
 )
 
-export const createPost = ({ author, content }) => request.post('posts', { author, content })
-export const createPostWithAudio = ({ author, audio, content }) => {
+export const createPost = ({ author, content, repost }) => request.post('posts', { author, content, repost })
+export const createPostWithAudio = ({
+  author, audio, content, repost,
+}) => {
   const postData = {
     name: 'data',
-    data: JSON.stringify({ content, author }),
+    data: JSON.stringify({ content, author, repost }),
   }
   const audioData = {
     name: 'files.audio',
@@ -66,10 +68,12 @@ export const createPostWithAudio = ({ author, audio, content }) => {
   }
   return request.postFormData('posts', [postData, audioData])
 }
-export const createPostWithImage = ({ author, image, content }) => {
+export const createPostWithImage = ({
+  author, image, content, repost,
+}) => {
   const postData = {
     name: 'data',
-    data: JSON.stringify({ content, author }),
+    data: JSON.stringify({ content, author, repost }),
   }
   const imageData = {
     name: 'files.image',

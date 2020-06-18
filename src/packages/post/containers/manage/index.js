@@ -16,6 +16,7 @@ import NoContent from 'Kebetoo/src/shared/components/no-content'
 import ActionButton from 'react-native-action-button'
 import Badge from 'Kebetoo/src/shared/components/badge'
 import strings from 'Kebetoo/src/config/strings'
+import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 
 import styles from './styles'
 import BasicPost from '../basic-post'
@@ -42,6 +43,7 @@ const ManagePostsPage = ({ navigation }) => {
 
   const user = auth().currentUser
   const [posts, setPosts] = useState([])
+  const [authors, setAuthors] = useState({})
   const [sortedPosts, setSortedPosts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -70,6 +72,29 @@ const ManagePostsPage = ({ navigation }) => {
   }, [user.uid])
 
   useEffect(() => {
+    const fetchAuthors = async () => {
+      const data = {}
+      const authorsToFetch = []
+      for (let i = 0; i < posts.length; i += 1) {
+        const post = posts[i]
+        if (post.repost) {
+          authorsToFetch.push(post.repost.author)
+        }
+      }
+      if (authorsToFetch.length > 0) {
+        const ids = [...new Set(authorsToFetch)]
+        if (ids.length === 0) return
+        const { docs } = await getUsers(ids)
+        docs.forEach((doc) => {
+          const { displayName: name, photoURL } = doc.data()
+          data[doc.id] = {
+            displayName: name,
+            photoURL,
+          }
+        })
+        setAuthors(data)
+      }
+    }
     const dateMap = {}
     posts.forEach((post) => {
       const date = dayjs(post.createdAt).format(dateFormat)
@@ -81,6 +106,7 @@ const ManagePostsPage = ({ navigation }) => {
       data: dateMap[key],
     }))
     setSortedPosts(formattedPosts)
+    fetchAuthors()
   }, [posts])
 
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
@@ -174,9 +200,14 @@ const ManagePostsPage = ({ navigation }) => {
     <BasicPost
       onOptions={() => showPostOptions(item)}
       author={userToAuthor(user)}
+      originalAuthor={
+        item.repost
+          ? authors[item.repost.author]
+          : userToAuthor(user)
+      }
       post={item}
     />
-  ), [showPostOptions, user])
+  ), [authors, showPostOptions, user])
 
   const renderNoPost = useCallback(() => !loading && (
     <NoPosts />

@@ -8,6 +8,7 @@ const locales = Object.freeze({
     edited: 'Edited',
     post: 'Post',
     edit: 'Edit',
+    share: 'Share',
     confirm: 'Confirm',
   },
   onboarding: {
@@ -79,6 +80,7 @@ const locales = Object.freeze({
   create_post: {
     create_post: 'Create post',
     edit_post: 'Edit post',
+    share_post: 'Share post',
     publish: 'Post',
     placeholder: 'What\'s on your mind?',
     characters: '{0} characters',

@@ -36,11 +36,11 @@ const PlaceholderReactions = () => (
   </Placeholder>
 )
 
-const PostPlaceholder = () => (
+const PostPlaceholder = ({ withReactions }) => (
   <>
     <PlaceholderHeader />
     <PlaceholderContent />
-    <PlaceholderReactions />
+    {withReactions && <PlaceholderReactions />}
   </>
 )
 

@@ -6,9 +6,6 @@ import colors from 'Kebetoo/src/theme/colors'
 import { reactionsHeight } from 'Kebetoo/src/packages/comments/components/reactions/styles'
 
 export default StyleSheet.create({
-  wrapper: {
-    marginBottom: 8,
-  },
   commentMode: {
     marginBottom: -reactionsHeight,
   },

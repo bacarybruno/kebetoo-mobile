@@ -120,7 +120,15 @@ const HomePage = () => {
   const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
 
   const renderBasicPost = useCallback(({ item }) => (
-    <BasicPost post={item} author={authors[item.author]} />
+    <BasicPost
+      post={item}
+      author={authors[item.author]}
+      originalAuthor={
+        item.repost
+          ? authors[item.repost.author]
+          : authors[item.author]
+      }
+    />
   ), [authors])
 
   const renderListHeader = useCallback(() => (

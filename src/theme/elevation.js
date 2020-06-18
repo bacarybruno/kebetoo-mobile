@@ -1,5 +1,7 @@
 // https://github.com/ethercreative/react-native-shadow-generator
 
+import colors from "./colors"
+
 const penumbra = [
   '0px 1px 1px 0px',
   '0px 2px 2px 0px',
@@ -40,7 +42,7 @@ const interpolate = (i, a, b, a2, b2) => (
 const buildElevation = ({
   x = 0, y = 0, shadowOpacity = 0, shadowRadius = 0, elevation = 0,
 }) => ({
-  shadowColor: '#000000',
+  shadowColor: 'red',
   shadowOffset: { x, y },
   shadowOpacity,
   shadowRadius,

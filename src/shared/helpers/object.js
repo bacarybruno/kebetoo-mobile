@@ -1,7 +1,8 @@
-export const deleteProperty = (obj, property) => {
+export const deleteProperty = (baseObj, property) => {
   // eslint-disable-next-line no-param-reassign
+  const obj = { ...baseObj }
   delete obj[property]
-  return { ...obj }
+  return obj
 }
 
 export const mergeObjects = (part1, part2) => ({
