@@ -10,6 +10,9 @@ const post = new schema.Entity('posts', {
   author,
   reactions: [reaction],
   comments: [comment],
+  repost: {
+    author,
+  },
 })
 
 const posts = new schema.Array(post)

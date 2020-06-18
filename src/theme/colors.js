@@ -46,6 +46,8 @@ const colors = {
   facebook: '#3b5998',
   danger: '#d32f2f',
   heart: '#E74F65',
+  placeholder: '#ACACAC',
+  border: '#E8E8E8',
 }
 
 export const middleColor = rgbToHex(

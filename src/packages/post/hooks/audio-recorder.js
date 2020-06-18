@@ -43,7 +43,7 @@ const useAudioRecorder = (uri, maxDuration) => {
 
   const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
 
-  const savePost = useCallback(async (author, content) => {
+  const savePost = useCallback(async (author, content, repost) => {
     const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     let duration = null
@@ -63,6 +63,7 @@ const useAudioRecorder = (uri, maxDuration) => {
         mimeType: getMimeType(fileUri),
         name: constructFileName(time, duration || elapsedTime),
       },
+      repost,
     })
     setHasRecording(false)
     await RNFetchBlob.fs.unlink(fileUri)

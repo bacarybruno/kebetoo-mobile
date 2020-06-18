@@ -64,6 +64,9 @@ const Comments = () => {
       if (comments.length > 0) {
         authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
       }
+      if (post.repost) {
+        authorsToFetch = authorsToFetch.concat(post.repost.author)
+      }
       const ids = [...new Set(authorsToFetch)]
       const newAuthors = ids.filter((id) => !authors[id])
 
@@ -108,13 +111,9 @@ const Comments = () => {
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      <Comment
-        item={item}
-        author={author}
-        user={user.uid}
-      />
+      <Comment item={item} user={user.uid} author={author} />
     </View>
-  ), [author, user])
+  ), [author, user.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -145,6 +144,11 @@ const Comments = () => {
           style={styles.content}
           mode="comments"
           onPress={onCommentContentPress}
+          originalAuthor={
+            post.repost
+              ? authors[post.repost.author]
+              : authors[post.author]
+          }
         />
       </View>
       <Reactions
@@ -154,7 +158,7 @@ const Comments = () => {
         onComment={onComment}
       />
     </View>
-  ), [ListHeaderLeft, author, comments, onComment, onCommentContentPress, post, user.uid])
+  ), [ListHeaderLeft, author, authors, comments, onComment, onCommentContentPress, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

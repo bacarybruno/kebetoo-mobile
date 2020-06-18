@@ -12,12 +12,14 @@ import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
 import { countPostComments, reactionsSelector } from 'Kebetoo/src/redux/selectors'
 
 import styles from './styles'
+import { actionTypes } from '../create'
 
 export const REACTION_TYPES = {
   LIKE: 'like',
   DISLIKE: 'dislike',
   COMMENT: 'comment',
   LOVE: 'love',
+  SHARE: 'share',
 }
 
 export const Reaction = ({
@@ -75,10 +77,18 @@ const Reactions = ({
         if (onComment) onComment()
         else navigate(routes.COMMENTS, { id: post.id })
         break
+      case REACTION_TYPES.SHARE:
+        if (post.author !== author) {
+          navigate(routes.CREATE_POST, {
+            action: actionTypes.SHARE,
+            post: post.repost ? post.repost.id : post.id,
+          })
+        }
+        break
       default: break
     }
     return null
-  }, [dispatch, post.id, author, onComment, navigate])
+  }, [dispatch, author, post, onComment, navigate])
 
   return (
     <View style={styles.reactions}>
@@ -102,9 +112,9 @@ const Reactions = ({
       />
       <Reaction
         iconName="share"
-        count={0}
+        count={post.reposts ? post.reposts.length : 0}
         disabled={disabled}
-        onPress={() => { }}
+        onPress={() => onReaction(REACTION_TYPES.SHARE)}
       />
     </View>
   )

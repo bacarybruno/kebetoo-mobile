@@ -13,6 +13,7 @@ import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/onli
 import TextContent from 'Kebetoo/src/packages/post/components/text-content'
 import AudioContent from 'Kebetoo/src/packages/post/components/audio-content'
 import ImageContent from 'Kebetoo/src/packages/post/components/image-content'
+import RepostContent from 'Kebetoo/src/packages/post/components/repost-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
@@ -27,9 +28,13 @@ export const POST_TYPES = {
   AUDIO: 'audio',
   IMAGE: 'image',
   TEXT: 'text',
+  REPOST: 'repost',
 }
 
 export const getPostType = (post) => {
+  if (post.repost) {
+    return POST_TYPES.REPOST
+  }
   if (post.audio && post.audio.url) {
     return POST_TYPES.AUDIO
   }
@@ -95,13 +100,15 @@ export const Content = ({ post, ...otherProps }) => {
       return <AudioContent post={post} {...otherProps} />
     case POST_TYPES.IMAGE:
       return <ImageContent post={post} {...otherProps} />
+    case POST_TYPES.REPOST:
+      return <RepostContent post={post} {...otherProps} />
     default:
       return <TextContent post={post} {...otherProps} />
   }
 }
 
 const BasicPost = ({
-  post, author, onOptions, size = 35,
+  post, author, originalAuthor, onOptions, size = 35, isRepost, withReactions = true,
 }) => {
   const user = auth().currentUser
   const { navigate } = useNavigation()
@@ -111,21 +118,30 @@ const BasicPost = ({
     navigate(routes.COMMENTS, { id: post.id })
   }, [navigate, post.id])
 
-  if (!author) return <PostPlaceholder />
+  if (!author) return <PostPlaceholder withReactions={withReactions} />
 
   const ReactionsComponent = postExists ? Reactions : ReactionsOnline
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, isRepost && styles.noMargin]}>
       <Header post={post} author={author} size={size} onOptions={onOptions} />
-      <Content onPress={navigateToComments} post={post} />
-      <ReactionsComponent post={post} author={user.uid} />
+      <Content
+        onPress={isRepost ? null : navigateToComments}
+        originalAuthor={originalAuthor}
+        post={post}
+      />
+      {withReactions && (
+        <View style={styles.reactions}>
+          <ReactionsComponent post={post} author={user.uid} originalAuthor={originalAuthor} />
+        </View>
+      )}
     </View>
   )
 }
 
 const propsAreEqual = (prevProps, nextProps) => (
   prevProps.post.updatedAt === nextProps.post.updatedAt
+  && prevProps.withReactions && nextProps.withReactions
   && prevProps.author && nextProps.author
   && prevProps.author.id === nextProps.author.id
 )

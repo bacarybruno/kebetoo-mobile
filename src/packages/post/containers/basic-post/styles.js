@@ -4,6 +4,9 @@ export default StyleSheet.create({
   wrapper: {
     marginBottom: 30,
   },
+  noMargin: {
+    marginBottom: 0,
+  },
   headerWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -28,5 +31,8 @@ export default StyleSheet.create({
   moreButton: {
     width: 30,
     alignItems: 'center',
+  },
+  reactions: {
+    marginTop: 8,
   },
 })
