@@ -9,6 +9,11 @@ export default StyleSheet.create({
     minHeight: 52,
     padding: metrics.marginHorizontal,
     borderRadius: 5,
-    justifyContent: 'center',
+  },
+  repost: {
+    backgroundColor: colors.background,
+    minHeight: 0,
+    marginBottom: 0,
+    padding: 0,
   },
 })
