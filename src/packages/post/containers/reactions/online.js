@@ -71,7 +71,7 @@ const Reactions = ({
         else navigate(routes.COMMENTS_ONLINE, { post })
         break
       case REACTION_TYPES.SHARE:
-        if (post.author !== author) {
+        if (post.author !== author || (post.repost && post.repost.author !== author)) {
           navigate(routes.CREATE_POST, {
             action: actionTypes.SHARE,
             post: post.repost ? post.repost.id : post.id,
