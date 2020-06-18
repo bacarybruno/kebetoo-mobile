@@ -38,6 +38,17 @@ export const NoPosts = () => (
   <NoContent title={strings.general.no_content} text={strings.manage_posts.no_content} />
 )
 
+const bottomSheetItems = [{
+  title: strings.manage_posts.edit_post,
+  icon: 'md-create',
+}, {
+  title: strings.manage_posts.delete_post,
+  icon: 'ios-trash',
+}, {
+  title: strings.general.cancel,
+  icon: 'md-close',
+}]
+
 const ManagePostsPage = ({ navigation }) => {
   navigation.setOptions(routeOptions)
 
@@ -50,17 +61,6 @@ const ManagePostsPage = ({ navigation }) => {
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = navigation
   const dateFormat = 'YYYY-MM'
-
-  const bottomSheetItems = [{
-    title: strings.manage_posts.edit_post,
-    icon: 'md-create',
-  }, {
-    title: strings.manage_posts.delete_post,
-    icon: 'ios-trash',
-  }, {
-    title: strings.general.cancel,
-    icon: 'md-close',
-  }]
 
   useEffect(() => {
     const getPosts = async () => {
@@ -180,7 +180,7 @@ const ManagePostsPage = ({ navigation }) => {
       )),
       cancelButtonIndex,
       destructiveButtonIndex,
-      title: 'Actions',
+      title: strings.general.actions,
     }, (index) => {
       if (index === 0) {
         editPost(post)
@@ -188,7 +188,7 @@ const ManagePostsPage = ({ navigation }) => {
         deletePost(post)
       }
     })
-  }, [bottomSheetItems, deletePost, editPost, showActionSheetWithOptions])
+  }, [deletePost, editPost, showActionSheetWithOptions])
 
   const userToAuthor = ({ displayName, uid, photoURL }) => ({
     displayName,

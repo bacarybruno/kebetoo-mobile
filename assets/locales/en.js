@@ -10,6 +10,7 @@ const locales = Object.freeze({
     edit: 'Edit',
     share: 'Share',
     confirm: 'Confirm',
+    Actions: 'Actions',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -84,6 +85,10 @@ const locales = Object.freeze({
     publish: 'Post',
     placeholder: 'What\'s on your mind?',
     characters: '{0} characters',
+  },
+  reactions: {
+    share_now: 'Share now',
+    write_post: 'Edit and share',
   },
 })
 

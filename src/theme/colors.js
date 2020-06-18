@@ -30,10 +30,17 @@ export const middleHexColorsToRgb = (color1, color2) => {
   return [r, g, b]
 }
 
+const iconColors = {
+  like: '#004EEC',
+  dislike: '#0B1B77',
+  heart: '#E74F65',
+  reactions: '#50555C',
+}
+
 const colors = {
   primary: '#004EEC',
   secondary: '#00CEFC',
-  black: '#021526',
+  black: 'rgba(0, 0, 0, 0.8)',
   inactive: '#CECECE',
   white: '#FFFFFF',
   grey: '#707070',
@@ -45,9 +52,9 @@ const colors = {
   blue_dark: '#0B1B77',
   facebook: '#3b5998',
   danger: '#d32f2f',
-  heart: '#E74F65',
   placeholder: '#ACACAC',
   border: '#E8E8E8',
+  ...iconColors,
 }
 
 export const middleColor = rgbToHex(

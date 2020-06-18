@@ -24,6 +24,9 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     marginLeft: 5,
   },
+  repostMeta: {
+    justifyContent: 'center',
+  },
   smallMeta: {
     flexDirection: 'row',
     alignItems: 'center',

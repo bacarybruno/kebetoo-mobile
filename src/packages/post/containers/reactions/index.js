@@ -2,6 +2,8 @@ import React, { useCallback } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
+import { useActionSheet } from '@expo/react-native-action-sheet'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
@@ -10,6 +12,8 @@ import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
 import { countPostComments, reactionsSelector } from 'Kebetoo/src/redux/selectors'
+import strings from 'Kebetoo/src/config/strings'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 import { actionTypes } from '../create'
@@ -22,8 +26,19 @@ export const REACTION_TYPES = {
   SHARE: 'share',
 }
 
+export const bottomSheetItems = [{
+  title: strings.reactions.share_now,
+  icon: 'ios-share-alt',
+}, {
+  title: strings.reactions.write_post,
+  icon: 'ios-share',
+}, {
+  title: strings.general.cancel,
+  icon: 'md-close',
+}]
+
 export const Reaction = ({
-  iconName, count, onPress, color = colors.blue_dark, disabled,
+  iconName, count, onPress, disabled, color = 'reactions',
 }) => (
   <TouchableOpacity
     style={styles.reaction}
@@ -32,7 +47,7 @@ export const Reaction = ({
     hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
   >
     <Kebeticon
-      color={disabled ? colors.inactive : color}
+      color={colors[color]}
       style={styles.icon}
       size={18}
       name={iconName}
@@ -41,7 +56,7 @@ export const Reaction = ({
       ? (
         <Text color="inactive" size="xs" bold text={count.toString()} />
       ) : (
-        <ThemedText size="xs" bold text={count.toString()} />
+        <ThemedText size="xs" bold text={count.toString()} color={color} />
       )}
   </TouchableOpacity>
 )
@@ -57,13 +72,38 @@ const Reactions = ({
   const commentsCount = useSelector(countPostComments(post.id))
   const dispatch = useDispatch()
 
+  const { showActionSheetWithOptions } = useActionSheet()
+  const { navigate } = useNavigation()
+
   const findUserReaction = useCallback((reaction) => (
     reaction.post === post.id && reaction.author === author
   ), [author, post.id])
 
   const userReaction = Object.values(reactions).find(findUserReaction) || {}
 
-  const { navigate } = useNavigation()
+  const handlePostShare = useCallback(() => {
+    if (post.author !== author || (post.repost && post.repost.author !== author)) {
+      const repostId = post.repost ? post.repost.id : post.id
+      const cancelButtonIndex = 2
+      showActionSheetWithOptions({
+        options: bottomSheetItems.map((item) => item.title),
+        icons: bottomSheetItems.map((item) => (
+          <Ionicon name={item.icon} size={24} />
+        )),
+        cancelButtonIndex,
+        title: strings.general.share,
+      }, async (index) => {
+        if (index === 0) {
+          await api.createPost({ author, repost: repostId })
+        } else if (index === 1) {
+          navigate(routes.CREATE_POST, {
+            action: actionTypes.SHARE,
+            post: repostId,
+          })
+        }
+      })
+    }
+  }, [author, navigate, post, showActionSheetWithOptions])
 
   const onReaction = useCallback(async (type) => {
     switch (type) {
@@ -78,28 +118,25 @@ const Reactions = ({
         else navigate(routes.COMMENTS, { id: post.id })
         break
       case REACTION_TYPES.SHARE:
-        if (post.author !== author || (post.repost && post.repost.author !== author)) {
-          navigate(routes.CREATE_POST, {
-            action: actionTypes.SHARE,
-            post: post.repost ? post.repost.id : post.id,
-          })
-        }
+        handlePostShare()
         break
       default: break
     }
     return null
-  }, [dispatch, author, post, onComment, navigate])
+  }, [dispatch, author, post, onComment, navigate, handlePostShare])
 
   return (
     <View style={styles.reactions}>
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.LIKE ? 'like-fill' : 'like'}
+        color={userReaction.type === REACTION_TYPES.LIKE ? 'like' : undefined}
         count={countReactions(reactions, post.id, REACTION_TYPES.LIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
+        color={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike' : undefined}
         count={countReactions(reactions, post.id, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}

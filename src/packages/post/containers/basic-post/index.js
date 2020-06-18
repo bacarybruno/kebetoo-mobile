@@ -41,7 +41,10 @@ export const getPostType = (post) => {
   if (post.image && post.image.url) {
     return POST_TYPES.IMAGE
   }
-  return POST_TYPES.TEXT
+  if (post.content && post.content.length > 0) {
+    return POST_TYPES.TEXT
+  }
+  return null
 }
 
 const Edited = ({ size }) => (
@@ -65,33 +68,39 @@ const MoreButton = ({ onPress }) => (
 )
 
 export const Header = ({
-  post, author, size, onOptions, Left,
-}) => (
-  <View style={styles.headerWrapper}>
-    <View style={styles.left}>
-      <View style={styles.headerContent}>
-        {Left && <Left />}
+  post, isRepost, author, size, onOptions, Left,
+}) => {
+  let avatarSize = size
+  if (isRepost) avatarSize = fontSizes.lg
+  return (
+    <View style={styles.headerWrapper}>
+      <View style={styles.left}>
+        <View style={styles.headerContent}>
+          {Left && <Left />}
+          {author && (
+            <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
+          )}
+        </View>
         {author && (
-          <Avatar src={author.photoURL} text={author.displayName} size={size} />
+          <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
+            <ThemedText size={isRepost ? 'sm' : 'md'} text={author.displayName} />
+            {!isRepost && (
+              <View style={styles.smallMeta}>
+                <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
+                {isUpdated(post) && <Edited size="xs" />}
+              </View>
+            )}
+          </View>
         )}
       </View>
-      {author && (
-        <View style={[styles.meta, { height: size }]}>
-          <ThemedText size="md" text={author.displayName} />
-          <View style={styles.smallMeta}>
-            <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
-            {isUpdated(post) && <Edited size="xs" />}
-          </View>
+      {onOptions && (
+        <View style={styles.moreButton}>
+          <MoreButton onPress={() => onOptions(post.id)} />
         </View>
       )}
     </View>
-    {onOptions && (
-      <View style={styles.moreButton}>
-        <MoreButton onPress={() => onOptions(post.id)} />
-      </View>
-    )}
-  </View>
-)
+  )
+}
 
 export const Content = ({ post, ...otherProps }) => {
   const postType = getPostType(post)
@@ -102,13 +111,14 @@ export const Content = ({ post, ...otherProps }) => {
       return <ImageContent post={post} {...otherProps} />
     case POST_TYPES.REPOST:
       return <RepostContent post={post} {...otherProps} />
-    default:
+    case POST_TYPES.TEXT:
       return <TextContent post={post} {...otherProps} />
+    default: return null
   }
 }
 
 const BasicPost = ({
-  post, author, originalAuthor, onOptions, size = 35, isRepost, withReactions = true,
+  post, author, originalAuthor, onOptions, isRepost, size = 35, withReactions = true,
 }) => {
   const user = auth().currentUser
   const { navigate } = useNavigation()
@@ -124,7 +134,7 @@ const BasicPost = ({
 
   return (
     <View style={[styles.wrapper, isRepost && styles.noMargin]}>
-      <Header post={post} author={author} size={size} onOptions={onOptions} />
+      <Header isRepost={isRepost} post={post} author={author} size={size} onOptions={onOptions} />
       <Content
         onPress={isRepost ? null : navigateToComments}
         originalAuthor={originalAuthor}
