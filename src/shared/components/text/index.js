@@ -47,7 +47,7 @@ const Text = ({
 )
 
 export const ThemedText = (props) => (
-  <Text {...props} color="blue_dark" />
+  <Text color="black" {...props} />
 )
 
 export default Text

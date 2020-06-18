@@ -1,12 +1,15 @@
 import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
+import { useActionSheet } from '@expo/react-native-action-sheet'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import routes from 'Kebetoo/src/navigation/routes'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
-import { Reaction, REACTION_TYPES } from './index'
+import { Reaction, REACTION_TYPES, bottomSheetItems } from './index'
 import { actionTypes } from '../create'
 
 const countReactions = (post, type) => (
@@ -22,7 +25,9 @@ const Reactions = ({
     comments: [],
   })
 
+  const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = useNavigation()
+
   const userReaction = post.reactions.find((r) => (
     r.author === author && r.post === post.id
   )) || {}
@@ -60,6 +65,30 @@ const Reactions = ({
     setPost({ ...post })
   }, [post, author])
 
+  const handlePostShare = useCallback(() => {
+    if (post.author !== author || (post.repost && post.repost.author !== author)) {
+      const repostId = post.repost ? post.repost.id : post.id
+      const cancelButtonIndex = 2
+      showActionSheetWithOptions({
+        options: bottomSheetItems.map((item) => item.title),
+        icons: bottomSheetItems.map((item) => (
+          <Ionicon name={item.icon} size={24} />
+        )),
+        cancelButtonIndex,
+        title: strings.general.share,
+      }, async (index) => {
+        if (index === 0) {
+          await api.createPost({ author, repost: repostId })
+        } else if (index === 1) {
+          navigate(routes.CREATE_POST, {
+            action: actionTypes.SHARE,
+            post: repostId,
+          })
+        }
+      })
+    }
+  }, [author, navigate, post, showActionSheetWithOptions])
+
   const onReaction = useCallback(async (type) => {
     switch (type) {
       case REACTION_TYPES.LIKE:
@@ -71,28 +100,25 @@ const Reactions = ({
         else navigate(routes.COMMENTS_ONLINE, { post })
         break
       case REACTION_TYPES.SHARE:
-        if (post.author !== author || (post.repost && post.repost.author !== author)) {
-          navigate(routes.CREATE_POST, {
-            action: actionTypes.SHARE,
-            post: post.repost ? post.repost.id : post.id,
-          })
-        }
+        handlePostShare()
         break
       default: break
     }
     return null
-  }, [handlePostReaction, onComment, navigate, post, author])
+  }, [handlePostReaction, onComment, navigate, post, handlePostShare])
 
   return (
     <View style={styles.reactions}>
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.LIKE ? 'like-fill' : 'like'}
+        color={userReaction.type === REACTION_TYPES.LIKE ? 'like' : undefined}
         count={countReactions(post, REACTION_TYPES.LIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'like-fill' : 'like'}
+        color={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike' : undefined}
         count={countReactions(post, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
