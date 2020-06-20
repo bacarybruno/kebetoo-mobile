@@ -14,9 +14,7 @@ function* fetchPosts(action) {
     const data = yield call(api.getLatestsPosts, action.payload)
     const normalizedData = yield call(normalizeData, data)
 
-    const {
-      posts, authors, comments, reactions,
-    } = normalizedData.entities
+    const { posts, authors, reactions } = normalizedData.entities
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
     if (action.payload === 0) {
@@ -30,7 +28,6 @@ function* fetchPosts(action) {
 
     yield put({ type: postActionType, payload: posts || [] })
     yield put({ type: types.API_FETCH_REACTIONS_SUCCESS, payload: reactions || [] })
-    yield put({ type: types.API_FETCH_COMMENTS_SUCCESS, payload: comments || [] })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, error })
   }

@@ -4,14 +4,20 @@ import {
   Placeholder, PlaceholderMedia, PlaceholderLine, Fade,
 } from 'rn-placeholder'
 
-const PlaceholderAvatar = () => (
-  <PlaceholderMedia isRound style={{ marginRight: 10 }} />
+export const PlaceholderAvatar = ({ size }) => (
+  <PlaceholderMedia size={size} isRound style={{ marginRight: 10 }} />
 )
 
-const PlaceholderHeader = () => (
-  <Placeholder Animation={Fade} Left={PlaceholderAvatar} style={{ marginBottom: 8 }}>
-    <PlaceholderLine height={10} width={50} />
-    <PlaceholderLine height={10} width={30} />
+const createAvatar = (size) => (props) => (
+  <PlaceholderAvatar {...props} size={size} />
+)
+
+export const PlaceholderHeader = ({ avatarSize }) => (
+  <Placeholder Animation={Fade} Left={createAvatar(avatarSize)}>
+    <View style={{ height: avatarSize, marginBottom: 8 }}>
+      <PlaceholderLine height={10} width={50} />
+      <PlaceholderLine height={10} width={30} />
+    </View>
   </Placeholder>
 )
 
@@ -36,9 +42,9 @@ const PlaceholderReactions = () => (
   </Placeholder>
 )
 
-const PostPlaceholder = ({ withReactions }) => (
+const PostPlaceholder = ({ withReactions, avatarSize }) => (
   <>
-    <PlaceholderHeader />
+    <PlaceholderHeader avatarSize={avatarSize} />
     <PlaceholderContent />
     {withReactions && <PlaceholderReactions />}
   </>

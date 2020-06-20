@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import Avatar from 'Kebetoo/src/shared/components/avatar'
-import PostPlaceholder from 'Kebetoo/src/shared/components/placeholders/posts'
+import PostPlaceholder, { PlaceholderAvatar } from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
 import TextContent from 'Kebetoo/src/packages/post/components/text-content'
@@ -77,8 +77,10 @@ export const Header = ({
       <View style={styles.left}>
         <View style={styles.headerContent}>
           {Left && <Left />}
-          {author && (
+          {author ? (
             <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
+          ) : (
+            <PlaceholderAvatar size={avatarSize} />
           )}
         </View>
         {author && (
@@ -125,10 +127,10 @@ const BasicPost = ({
   const postExists = useSelector(postsExists(post.id))
 
   const navigateToComments = useCallback(() => {
-    navigate(routes.COMMENTS, { id: post.id })
-  }, [navigate, post.id])
+    navigate(routes.COMMENTS, { post })
+  }, [navigate, post])
 
-  if (!author) return <PostPlaceholder withReactions={withReactions} />
+  if (!author) return <PostPlaceholder withReactions={withReactions} avatarSize={size} />
 
   const ReactionsComponent = postExists ? Reactions : ReactionsOnline
 

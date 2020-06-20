@@ -4,12 +4,9 @@ export const author = new schema.Entity('authors')
 
 export const reaction = new schema.Entity('reactions')
 
-export const comment = new schema.Entity('comments')
-
 const post = new schema.Entity('posts', {
   author,
   reactions: [reaction],
-  comments: [comment],
   repost: {
     author,
   },

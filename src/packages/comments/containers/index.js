@@ -4,26 +4,23 @@ import React, {
 import { View, FlatList } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
-import { useSelector, useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import {
   Content, Header, getPostType, POST_TYPES,
 } from 'Kebetoo/src/packages/post/containers/basic-post'
+import useAudioRecorder from 'Kebetoo/src/packages/post/hooks/audio-recorder'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
-import { postsSelector, authorsSelector } from 'Kebetoo/src/redux/selectors'
-import * as types from 'Kebetoo/src/redux/types'
-import strings from 'Kebetoo/src/config/strings'
-import routes from 'Kebetoo/src/navigation/routes'
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import routes from 'Kebetoo/src/navigation/routes'
+import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
-import useAudioRecorder from '../../post/hooks/audio-recorder'
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
@@ -33,34 +30,16 @@ export const NoComments = () => (
 const Comments = () => {
   const user = auth().currentUser
   const audioRecorder = useAudioRecorder()
-  const { params } = useRoute()
+  const { params: { post } } = useRoute()
   const { goBack, navigate } = useNavigation()
-  const [comments, setComments] = useState([])
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
+  const [comments, setComments] = useState(post.comments)
   const commentInput = useRef()
-  const normalizedPost = useSelector(postsSelector)[params.id]
-  const [post, setPost] = useState((value) => value || normalizedPost)
-  const dispatch = useDispatch()
-  const author = useSelector(authorsSelector)[post.author]
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      const result = await api.getComments(params.id)
-      setComments(result)
-    }
-    fetchComments()
-  }, [params.id])
-
-  useEffect(() => {
-    if (normalizedPost.comments.length !== comments.length) {
-      setPost(normalizedPost)
-    }
-  }, [comments, normalizedPost])
 
   useEffect(() => {
     const fetchAuthors = async () => {
-      let authorsToFetch = []
+      let authorsToFetch = [post.author]
       if (comments.length > 0) {
         authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
       }
@@ -90,30 +69,27 @@ const Comments = () => {
   }, [])
 
   const onSend = useCallback(async () => {
+    let result
     if (audioRecorder.hasRecording) {
-      const result = await audioRecorder.saveComment(post.id, user.uid)
-      dispatch({
-        type: types.COMMENT_POST_SUCCESS,
-        payload: result,
-      })
-      setComments((values) => [...values, result])
+      result = await audioRecorder.saveComment(post.id, user.uid)
     } else if (comment.length > 0) {
-      const result = await api.commentPost({ author: user.uid, post: post.id, content: comment })
-      dispatch({
-        type: types.COMMENT_POST_SUCCESS,
-        payload: result,
+      result = await api.commentPost({
+        author: user.uid,
+        content: comment,
+        post: post.id,
       })
-      setComments((values) => [...values, result])
       commentInput.current.clear()
-      setComment('')
     }
-  }, [audioRecorder, comment, dispatch, post.id, user.uid])
+    setComments((value) => [...value, result])
+  }, [audioRecorder, comment, post.id, user.uid])
 
   const renderComment = useMemo(() => ({ item }) => (
     <View style={styles.comment}>
-      <Comment item={item} user={user.uid} author={author} />
+      {authors[item.author] && (
+        <Comment item={item} user={user.uid} author={authors[item.author]} />
+      )}
     </View>
-  ), [author, user.uid])
+  ), [authors, user.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -138,7 +114,7 @@ const Comments = () => {
   const ListHeader = useCallback(() => (
     <View style={styles.post}>
       <View style={styles.postHeader}>
-        <Header Left={ListHeaderLeft} author={author} post={post} size={35} />
+        <Header Left={ListHeaderLeft} author={authors[post.author]} post={post} size={35} />
         <Content
           post={post}
           style={styles.content}
@@ -158,7 +134,7 @@ const Comments = () => {
         onComment={onComment}
       />
     </View>
-  ), [ListHeaderLeft, author, authors, comments, onComment, onCommentContentPress, post, user.uid])
+  ), [ListHeaderLeft, authors, comments, onComment, onCommentContentPress, post, user.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 
@@ -175,11 +151,11 @@ const Comments = () => {
         />
       </View>
       <CommentInput
-        onSend={onSend}
-        value={comment}
         onChange={onChangeText}
+        onSend={onSend}
         inputRef={commentInput}
         audioRecorder={audioRecorder}
+        value={comment}
       />
     </View>
   )
