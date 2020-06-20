@@ -7,14 +7,14 @@ import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 
 import normalizeData from '../misc/normalizer'
 import * as types from '../types'
-import { authorsSelector, reactionsSelector } from '../selectors'
+import { authorsSelector } from '../selectors'
 
 function* fetchPosts(action) {
   try {
     const data = yield call(api.getLatestsPosts, action.payload)
     const normalizedData = yield call(normalizeData, data)
 
-    const { posts, authors, reactions } = normalizedData.entities
+    const { posts, authors } = normalizedData.entities
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
     if (action.payload === 0) {
@@ -27,7 +27,6 @@ function* fetchPosts(action) {
     }
 
     yield put({ type: postActionType, payload: posts || [] })
-    yield put({ type: types.API_FETCH_REACTIONS_SUCCESS, payload: reactions || [] })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, error })
   }
@@ -53,46 +52,9 @@ function* fetchAuthors(action) {
   }
 }
 
-function* handlePostReaction(action) {
-  try {
-    const { postId, author, type } = action.payload
-    const reactions = yield select(reactionsSelector)
-
-    const userReaction = Object.values(reactions).find((reaction) => (
-      reaction.author === author && reaction.post === postId
-    ))
-
-    if (userReaction === undefined) {
-      const result = yield call(api.createReaction, type, postId, author)
-      yield put({
-        type: types.API_CREATE_REACTION_SUCCESS,
-        payload: result,
-      })
-    } else if (userReaction.type === type) {
-      yield call(api.deleteReaction, userReaction.id)
-      yield put({
-        type: types.API_DELETE_REACTION_SUCCESS,
-        payload: {
-          reaction: userReaction.id,
-          post: postId,
-        },
-      })
-    } else {
-      yield call(api.editReaction, userReaction.id, type)
-      yield put({
-        type: types.API_EDIT_REACTION_SUCCESS,
-        payload: { id: userReaction.id, type },
-      })
-    }
-  } catch (error) {
-    yield put({ type: types.API_REACT_POST_ERROR, error })
-  }
-}
-
 export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
     yield takeLeading(types.API_FETCH_AUTHORS, fetchAuthors),
-    yield takeLeading(types.API_REACT_POST, handlePostReaction),
   ])
 }

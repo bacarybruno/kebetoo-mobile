@@ -35,24 +35,20 @@ export const ImageViewer = ({
 )
 
 const ImageContent = ({
-  post, style, mode, onPress,
+  content, url, style, mode, onPress,
 }) => (
   <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
     <ThemedText
       numberOfLines={mode === 'comments' ? 1 : undefined}
       style={styles.text}
-      text={post.content}
+      text={content}
     />
     <ImageViewer
       onPress={onPress}
       style={styles.imageViewer}
-      source={getSource(post.image.url)}
+      source={getSource(url)}
     />
   </View>
 )
 
-const propsAreEqual = (prevProps, nextProps) => (
-  prevProps.post.image.url === nextProps.post.image.url
-  && prevProps.post.content === nextProps.post.content
-)
-export default React.memo(ImageContent, propsAreEqual)
+export default React.memo(ImageContent)

@@ -7,18 +7,15 @@ import styles from './styles'
 import { POST_TYPES } from '../../containers/basic-post'
 
 const TextContent = ({
-  post, style, onPress, type,
+  content, style, onPress, type,
 }) => (
   <Pressable
     onPress={onPress}
     disabled={!onPress}
     style={[styles.wrapper, type === POST_TYPES.REPOST && styles.repost, style]}
   >
-    <ThemedText text={post.content} />
+    <ThemedText text={content} />
   </Pressable>
 )
 
-const propsAreEqual = (prevProps, nextProps) => (
-  prevProps.post.content === nextProps.post.content
-)
-export default React.memo(TextContent, propsAreEqual)
+export default React.memo(TextContent)

@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import { View, Image } from 'react-native'
-import { useSelector } from 'react-redux'
 
-import ReactionsOffline from 'Kebetoo/src/packages/post/containers/reactions'
-import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
-import { postsExists } from 'Kebetoo/src/redux/selectors'
+import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions'
 import Text from 'Kebetoo/src/shared/components/text'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import strings from 'Kebetoo/src/config/strings'
@@ -48,27 +45,27 @@ const Summary = React.memo(({ comments }) => {
     fetchAuthors()
   }, [comments, reactionsMap])
 
-  const commentators = Object.keys(reactionsMap)
-  if (commentators.length === 0) return null
+  const reactors = Object.keys(reactionsMap)
+  if (reactors.length === 0) return null
 
   // eslint-disable-next-line no-return-assign
-  const sortedCommentators = commentators.sort((a, b) => reactionsMap[b] = reactionsMap[a])
+  const sortedReactors = reactors.sort((a, b) => reactionsMap[b] - reactionsMap[a])
 
   return (
     <View style={styles.summary}>
       <View style={styles.imgs}>
-        {sortedCommentators[0] && (
+        {sortedReactors[0] && (
           <View style={styles.imgWrapper}>
-            <Image style={styles.img} source={{ uri: authors[sortedCommentators[0]] }} />
+            <Image style={styles.img} source={{ uri: authors[sortedReactors[0]] }} />
           </View>
         )}
-        {sortedCommentators[1] && (
+        {sortedReactors[1] && (
           <View style={[styles.imgWrapper, styles.img2Wrapper]}>
-            <Image style={styles.img} source={{ uri: authors[sortedCommentators[1]] }} />
+            <Image style={styles.img} source={{ uri: authors[sortedReactors[1]] }} />
           </View>
         )}
       </View>
-      <Text size="sm" text={strings.formatString(strings.comments.people_reacted, commentators.length)} />
+      <Text size="sm" text={strings.formatString(strings.comments.people_reacted, reactors.length)} />
     </View>
   )
 })
@@ -76,8 +73,6 @@ const Summary = React.memo(({ comments }) => {
 const Reactions = ({
   post, author, comments, ...reactionProps
 }) => {
-  const postExists = useSelector(postsExists(post.id))
-  const ReactionsComponent = postExists ? ReactionsOffline : ReactionsOnline
   const hasReactions = comments.flatMap((comment) => comment.reactions).length > 0
 
   const getContainerStyle = useMemo(() => () => {
@@ -90,7 +85,7 @@ const Reactions = ({
     <View style={getContainerStyle()}>
       <DraggableIndicator />
       <View style={styles.reactions}>
-        <ReactionsComponent post={post} author={author} comments={comments} {...reactionProps} />
+        <ReactionsOnline post={post} author={author} comments={comments} {...reactionProps} />
         {hasReactions && <Summary comments={comments} />}
       </View>
     </View>

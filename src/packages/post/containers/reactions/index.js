@@ -1,6 +1,5 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { View, TouchableOpacity } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -9,9 +8,7 @@ import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
-import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
-import { reactionsSelector } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 
@@ -61,28 +58,59 @@ export const Reaction = ({
   </TouchableOpacity>
 )
 
-const countReactions = (reactions, post, type) => (
-  Object.values(reactions).filter((r) => r.type === type && r.post === post).length
+const countReactions = (post, type) => (
+  post.reactions.filter((r) => r.type === type).length
 )
 
 const Reactions = ({
-  post, comments, author, disabled, onComment,
+  post: givenPost, author, comments, disabled, onComment,
 }) => {
-  const reactions = useSelector(reactionsSelector)
-  const dispatch = useDispatch()
+  const [post, setPost] = useState(givenPost)
+  const [dirty, setDirty] = useState(false)
 
   const { showActionSheetWithOptions } = useActionSheet()
-  const { navigate } = useNavigation()
+  const { navigate, addListener: addNavigationListener } = useNavigation()
 
-  const findUserReaction = useCallback((reaction) => (
-    reaction.post === post.id && reaction.author === author
-  ), [author, post.id])
+  const userReaction = post.reactions.find((r) => r.author === author) || {}
 
-  const userReaction = Object.values(reactions).find(findUserReaction) || {}
+  const updatePost = useCallback(async () => {
+    const updatedPost = await api.getPost(post.id)
+    setPost(updatedPost)
+    setDirty(false)
+  }, [post.id])
+
+  useEffect(() => {
+    const unsusbcribeFocus = addNavigationListener('focus', () => {
+      if (dirty) updatePost()
+    })
+    return unsusbcribeFocus
+  }, [addNavigationListener, dirty, updatePost])
+
+  const handlePostReaction = useCallback(async (type) => {
+    const reaction = post.reactions.find((r) => (
+      r.author === author && r.post === post.id
+    ))
+    if (reaction === undefined) {
+      const result = await api.createReaction(type, post.id, author)
+      result.post = result.post.id
+      post.reactions.push(result)
+    } else if (reaction.type === type) {
+      await api.deleteReaction(reaction.id)
+      post.reactions = post.reactions.filter((r) => r.id !== reaction.id)
+    } else {
+      const result = await api.editReaction(reaction.id, type)
+      result.post = result.post.id
+      post.reactions = [
+        ...post.reactions.filter((r) => r.id !== reaction.id),
+        result,
+      ]
+    }
+    setPost({ ...post })
+  }, [post, author])
 
   const handlePostShare = useCallback(() => {
-    if (post.author !== author || (post.repost && post.repost.author !== author)) {
-      const repostId = post.repost ? post.repost.id : post.id
+    if (post.author !== author || (post.repost?.author !== author)) {
+      const repostId = post.repost?.id || post.id
       const cancelButtonIndex = 2
       showActionSheetWithOptions({
         options: bottomSheetItems.map((item) => item.title),
@@ -108,13 +136,15 @@ const Reactions = ({
     switch (type) {
       case REACTION_TYPES.LIKE:
       case REACTION_TYPES.DISLIKE:
-        return dispatch({
-          type: types.API_REACT_POST,
-          payload: { type, author, postId: post.id },
-        })
+        handlePostReaction(type)
+        break
       case REACTION_TYPES.COMMENT:
-        if (onComment) onComment()
-        else navigate(routes.COMMENTS, { post })
+        if (onComment) {
+          onComment()
+        } else {
+          navigate(routes.COMMENTS, { post })
+          setDirty(true)
+        }
         break
       case REACTION_TYPES.SHARE:
         handlePostShare()
@@ -122,33 +152,33 @@ const Reactions = ({
       default: break
     }
     return null
-  }, [dispatch, author, post, onComment, navigate, handlePostShare])
+  }, [handlePostReaction, onComment, navigate, post, handlePostShare])
 
   return (
     <View style={styles.reactions}>
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.LIKE ? 'like-fill' : 'like'}
         color={userReaction.type === REACTION_TYPES.LIKE ? 'like' : undefined}
-        count={countReactions(reactions, post.id, REACTION_TYPES.LIKE)}
+        count={countReactions(post, REACTION_TYPES.LIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
-        iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
+        iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'like-fill' : 'like'}
         color={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike' : undefined}
-        count={countReactions(reactions, post.id, REACTION_TYPES.DISLIKE)}
+        count={countReactions(post, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
       />
       <Reaction
         iconName="comment"
-        count={comments ? comments.length : post.comments.length}
+        count={comments?.length || post.comments.length}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />
       <Reaction
         iconName="share"
-        count={post.reposts ? post.reposts.length : 0}
+        count={post.reposts?.length || 0}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.SHARE)}
       />

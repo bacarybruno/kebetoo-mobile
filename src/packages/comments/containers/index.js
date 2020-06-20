@@ -139,7 +139,7 @@ const Comments = () => {
     return true
   }, [navigate, post])
 
-  const ListHeader = useCallback(() => (
+  const ListHeader = useMemo(() => (
     <View style={styles.post}>
       <View style={styles.postHeader}>
         <Header Left={ListHeaderLeft} author={authors[post.author]} post={post} size={35} />

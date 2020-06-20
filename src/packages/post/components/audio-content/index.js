@@ -132,18 +132,17 @@ export const AudioPlayer = ({
     </Pressable>
   )
 }
-const AudioContent = ({ post, style, onPress }) => (
+const AudioContent = ({
+  content, audioName, audioUrl, style, onPress,
+}) => (
   <View style={[styles.wrapper, style]}>
-    <ThemedText style={styles.text} text={post.content} />
+    <ThemedText style={styles.text} text={content} />
     <AudioPlayer
       onPress={onPress}
-      source={getSource(post.audio.url)}
-      duration={parseInt(extractMetadataFromName(post.audio.name).duration, 10)}
+      source={getSource(audioUrl)}
+      duration={parseInt(extractMetadataFromName(audioName).duration, 10)}
     />
   </View>
 )
 
-const propsAreEqual = (prevProps, nextProps) => (
-  prevProps.post.audio.url === nextProps.post.audio.url
-)
-export default React.memo(AudioContent, propsAreEqual)
+export default React.memo(AudioContent)
