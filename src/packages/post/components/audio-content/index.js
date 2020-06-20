@@ -143,4 +143,7 @@ const AudioContent = ({ post, style, onPress }) => (
   </View>
 )
 
-export default React.memo(AudioContent)
+const propsAreEqual = (prevProps, nextProps) => (
+  prevProps.post.audio.url === nextProps.post.audio.url
+)
+export default React.memo(AudioContent, propsAreEqual)

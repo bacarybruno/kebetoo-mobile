@@ -33,11 +33,11 @@ const CommentInput = ({
             onValueChange={onChange}
             ref={inputRef}
             textStyle={styles.textInputSize}
-            wrapperStyle={[
-              styles.textInputSize,
-              styles.textInputWrapper,
-              { height: inputHeight },
-            ]}
+            wrapperStyle={{
+              ...styles.textInputSize,
+              ...styles.textInputWrapper,
+              height: inputHeight,
+            }}
             onContentSizeChange={updateInputHeight}
             {...inputProps}
           />
@@ -54,7 +54,11 @@ const CommentInput = ({
 
       {value.length === 0 && !audioRecorder.hasRecording
         ? (
-          <RecordButton audioRecorder={audioRecorder} />
+          <RecordButton
+            isRecording={audioRecorder.isRecording}
+            start={audioRecorder.start}
+            stop={audioRecorder.stop}
+          />
         ) : (
           <SendButton onPress={onSend} />
         )}

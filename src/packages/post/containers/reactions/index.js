@@ -66,7 +66,7 @@ const countReactions = (reactions, post, type) => (
 )
 
 const Reactions = ({
-  post, author, disabled, onComment,
+  post, comments, author, disabled, onComment,
 }) => {
   const reactions = useSelector(reactionsSelector)
   const dispatch = useDispatch()
@@ -142,7 +142,7 @@ const Reactions = ({
       />
       <Reaction
         iconName="comment"
-        count={post.comments.length}
+        count={comments ? comments.length : post.comments.length}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />

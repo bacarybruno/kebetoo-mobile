@@ -90,7 +90,7 @@ const Reactions = ({
     <View style={getContainerStyle()}>
       <DraggableIndicator />
       <View style={styles.reactions}>
-        <ReactionsComponent post={post} author={author} {...reactionProps} />
+        <ReactionsComponent post={post} author={author} comments={comments} {...reactionProps} />
         {hasReactions && <Summary comments={comments} />}
       </View>
     </View>

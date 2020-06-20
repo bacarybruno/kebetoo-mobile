@@ -7,7 +7,7 @@ import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 
 import styles from './styles'
 
-export const SendButton = ({ onPress }) => (
+export const SendButton = React.memo(({ onPress }) => (
   <TouchableOpacity style={styles.send} onPress={onPress}>
     <Ionicon
       style={styles.sendIcon}
@@ -16,9 +16,9 @@ export const SendButton = ({ onPress }) => (
       color={colors.white}
     />
   </TouchableOpacity>
-)
+))
 
-export const RecordButton = ({ audioRecorder }) => (
+export const RecordButton = React.memo(({ isRecording, start, stop }) => (
   <IconButton
     activable
     size={50}
@@ -26,9 +26,9 @@ export const RecordButton = ({ audioRecorder }) => (
     defaultHitSlop={0}
     color={colors.white}
     style={styles.recordButton}
-    onPressIn={audioRecorder.start}
-    onPressOut={audioRecorder.stop}
-    isActive={audioRecorder.isRecording}
+    onPressIn={start}
+    onPressOut={stop}
+    isActive={isRecording}
     defaultBgColor={colors.primary}
   />
-)
+))
