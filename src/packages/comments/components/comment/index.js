@@ -68,7 +68,9 @@ const Content = ({ item }) => {
   }
 }
 
-const Comment = ({ item, author, user }) => {
+const Comment = ({
+  item, displayName, photoURL, user,
+}) => {
   const [reactions, setReactions] = useState((value) => value || item.reactions)
   const [lastPress, setLastPress] = useState(null)
   const DOUBLE_PRESS_DELAY = 200
@@ -109,21 +111,21 @@ const Comment = ({ item, author, user }) => {
     }
   }, [lastPress, onReaction])
 
+  if (!displayName) return <CommentPlaceholder />
+
   return (
-    author ? (
-      <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
-        <View style={styles.row}>
-          <View style={styles.avatarWrapper}>
-            <Avatar src={author.photoURL} text={author.displayName} size={35} />
-          </View>
-          <View style={styles.flexible}>
-            <Header displayName={author.displayName} updatedAt={item.updatedAt} />
-            <Content item={item} />
-            <Reactions reactions={reactions} user={user} onReaction={onReaction} />
-          </View>
+    <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
+      <View style={styles.row}>
+        <View style={styles.avatarWrapper}>
+          <Avatar src={photoURL} text={displayName} size={35} />
         </View>
-      </TouchableWithoutFeedback>
-    ) : <CommentPlaceholder />
+        <View style={styles.flexible}>
+          <Header displayName={displayName} updatedAt={item.updatedAt} />
+          <Content item={item} />
+          <Reactions reactions={reactions} user={user} onReaction={onReaction} />
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
   )
 }
 

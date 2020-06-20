@@ -18,4 +18,7 @@ const TextContent = ({
   </Pressable>
 )
 
-export default React.memo(TextContent)
+const propsAreEqual = (prevProps, nextProps) => (
+  prevProps.post.content === nextProps.post.content
+)
+export default React.memo(TextContent, propsAreEqual)

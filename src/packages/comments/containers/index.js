@@ -34,7 +34,11 @@ const Comments = () => {
   const { goBack, navigate } = useNavigation()
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState([])
+  const [comments, setComments] = useState(post.comments.map((commentId) => ({
+    id: commentId,
+    author: '',
+    reactions: [],
+  })))
   const commentInput = useRef()
 
   useEffect(() => {
@@ -49,7 +53,11 @@ const Comments = () => {
     const fetchAuthors = async () => {
       let authorsToFetch = [post.author]
       if (comments.length > 0) {
-        authorsToFetch = authorsToFetch.concat(comments.map((c) => c.author))
+        authorsToFetch = authorsToFetch.concat(
+          comments
+            .filter((c) => c.author)
+            .map((c) => c.author),
+        )
       }
       if (post.repost) {
         authorsToFetch = authorsToFetch.concat(post.repost.author)
@@ -76,8 +84,13 @@ const Comments = () => {
     setComment(value)
   }, [])
 
+  const getAuthor = useCallback((authorId) => {
+    if (authors[authorId]) return authors[authorId]
+    return { displayName: null, photoURL: null }
+  }, [authors])
+
   const onSend = useCallback(async () => {
-    let result
+    let result = null
     if (audioRecorder.hasRecording) {
       result = await audioRecorder.saveComment(post.id, user.uid)
     } else if (comment.length > 0) {
@@ -87,17 +100,24 @@ const Comments = () => {
         post: post.id,
       })
       commentInput.current.clear()
+      setComment('')
     }
     setComments((value) => [...value, result])
   }, [audioRecorder, comment, post.id, user.uid])
 
-  const renderComment = useMemo(() => ({ item }) => (
-    <View style={styles.comment}>
-      {authors[item.author] && (
-        <Comment item={item} user={user.uid} author={authors[item.author]} />
-      )}
-    </View>
-  ), [authors, user.uid])
+  const renderComment = useMemo(() => ({ item }) => {
+    const commentAuthor = getAuthor(item.author)
+    return (
+      <View style={styles.comment}>
+        <Comment
+          item={item}
+          user={user.uid}
+          displayName={commentAuthor.displayName}
+          photoURL={commentAuthor.photoURL}
+        />
+      </View>
+    )
+  }, [getAuthor, user.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton

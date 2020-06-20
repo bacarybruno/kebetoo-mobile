@@ -51,4 +51,8 @@ const ImageContent = ({
   </View>
 )
 
-export default React.memo(ImageContent)
+const propsAreEqual = (prevProps, nextProps) => (
+  prevProps.post.image.url === nextProps.post.image.url
+  && prevProps.post.content === nextProps.post.content
+)
+export default React.memo(ImageContent, propsAreEqual)

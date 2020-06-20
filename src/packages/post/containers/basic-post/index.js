@@ -156,5 +156,6 @@ const propsAreEqual = (prevProps, nextProps) => (
   && prevProps.withReactions && nextProps.withReactions
   && prevProps.author && nextProps.author
   && prevProps.author.id === nextProps.author.id
+  && prevProps.post.comments.length === nextProps.post.comments.length
 )
 export default React.memo(BasicPost, propsAreEqual)
