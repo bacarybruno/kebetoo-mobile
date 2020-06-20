@@ -34,8 +34,16 @@ const Comments = () => {
   const { goBack, navigate } = useNavigation()
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState(post.comments)
+  const [comments, setComments] = useState([])
   const commentInput = useRef()
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const result = await api.getComments(post.id)
+      setComments(result)
+    }
+    fetchComments()
+  }, [post.id])
 
   useEffect(() => {
     const fetchAuthors = async () => {
