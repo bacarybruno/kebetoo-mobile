@@ -38,7 +38,7 @@ const HomePage = () => {
   const savedDisplayName = useSelector(displayNameSelector)
   const displayName = user.displayName || savedDisplayName || ''
 
-  const { addListener: addNavigationListener, navigate } = useNavigation()
+  const { navigate } = useNavigation()
 
   const handleSharingIntent = useCallback(() => {
     ReceiveSharingIntent.getReceivedFiles((files) => {
@@ -80,15 +80,6 @@ const HomePage = () => {
   const onEndReached = useCallback(() => {
     setPage((value) => value + 1)
   }, [])
-
-  useEffect(() => {
-    const unsusbcribeFocus = addNavigationListener('focus', () => {
-      // FIXME: this is freezing the UI.
-      // Keep this until we find a better refresh strategy
-      onRefresh()
-    })
-    return unsusbcribeFocus
-  }, [addNavigationListener, onRefresh])
 
   useEffect(() => {
     dispatch({ type: types.API_FETCH_POSTS, payload: page })

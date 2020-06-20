@@ -3,13 +3,11 @@ import { View, TouchableOpacity, Platform } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
-import { useSelector } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder, { PlaceholderAvatar } from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
-import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions/online'
 import TextContent from 'Kebetoo/src/packages/post/components/text-content'
 import AudioContent from 'Kebetoo/src/packages/post/components/audio-content'
 import ImageContent from 'Kebetoo/src/packages/post/components/image-content'
@@ -17,7 +15,6 @@ import RepostContent from 'Kebetoo/src/packages/post/components/repost-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
-import { postsExists } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
@@ -108,13 +105,20 @@ export const Content = ({ post, ...otherProps }) => {
   const postType = getPostType(post)
   switch (postType) {
     case POST_TYPES.AUDIO:
-      return <AudioContent post={post} {...otherProps} />
+      return (
+        <AudioContent
+          content={post.content}
+          audioName={post.audio.name}
+          audioUrl={post.audio.url}
+          {...otherProps}
+        />
+      )
     case POST_TYPES.IMAGE:
-      return <ImageContent post={post} {...otherProps} />
+      return <ImageContent content={post.content} url={post.image.url} {...otherProps} />
     case POST_TYPES.REPOST:
       return <RepostContent post={post} {...otherProps} />
     case POST_TYPES.TEXT:
-      return <TextContent post={post} {...otherProps} />
+      return <TextContent content={post.content} {...otherProps} />
     default: return null
   }
 }
@@ -124,15 +128,12 @@ const BasicPost = ({
 }) => {
   const user = auth().currentUser
   const { navigate } = useNavigation()
-  const postExists = useSelector(postsExists(post.id))
 
   const navigateToComments = useCallback(() => {
     navigate(routes.COMMENTS, { post })
   }, [navigate, post])
 
   if (!author) return <PostPlaceholder withReactions={withReactions} avatarSize={size} />
-
-  const ReactionsComponent = postExists ? Reactions : ReactionsOnline
 
   return (
     <View style={[styles.wrapper, isRepost && styles.noMargin]}>
@@ -144,7 +145,7 @@ const BasicPost = ({
       />
       {withReactions && (
         <View style={styles.reactions}>
-          <ReactionsComponent post={post} author={user.uid} originalAuthor={originalAuthor} />
+          <Reactions post={post} author={user.uid} originalAuthor={originalAuthor} />
         </View>
       )}
     </View>
