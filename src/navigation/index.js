@@ -22,7 +22,6 @@ import SearchPage from 'Kebetoo/src/packages/search/containers'
 import StoriesPage from 'Kebetoo/src/packages/stories/containers'
 import CreatePostPage from 'Kebetoo/src/packages/post/containers/create'
 import CommentsPage from 'Kebetoo/src/packages/comments/containers'
-import CommentsOnlinePage from 'Kebetoo/src/packages/comments/containers/online'
 import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
 import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 
@@ -140,7 +139,6 @@ const AppNavigation = () => {
             <Stack.Screen component={TabPage} name={routes.HOME_NAV} />
             <Stack.Screen component={CreatePostPage} name={routes.CREATE_POST} />
             <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />
-            <Stack.Screen component={CommentsOnlinePage} name={routes.COMMENTS_ONLINE} />
             <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />
             <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />
           </>

@@ -11,7 +11,3 @@ export const selectPostById = (postId) => (state) => {
 export const postsExists = (postId) => (state) => (
   selectPostById(postId)(state) !== undefined
 )
-export const countPostComments = (postId) => (state) => {
-  const post = selectPostById(postId)(state)
-  return post.comments.length
-}

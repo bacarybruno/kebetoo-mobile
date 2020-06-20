@@ -11,7 +11,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import * as types from 'Kebetoo/src/redux/types'
 import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
-import { countPostComments, reactionsSelector } from 'Kebetoo/src/redux/selectors'
+import { reactionsSelector } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 
@@ -69,7 +69,6 @@ const Reactions = ({
   post, author, disabled, onComment,
 }) => {
   const reactions = useSelector(reactionsSelector)
-  const commentsCount = useSelector(countPostComments(post.id))
   const dispatch = useDispatch()
 
   const { showActionSheetWithOptions } = useActionSheet()
@@ -115,7 +114,7 @@ const Reactions = ({
         })
       case REACTION_TYPES.COMMENT:
         if (onComment) onComment()
-        else navigate(routes.COMMENTS, { id: post.id })
+        else navigate(routes.COMMENTS, { post })
         break
       case REACTION_TYPES.SHARE:
         handlePostShare()
@@ -143,7 +142,7 @@ const Reactions = ({
       />
       <Reaction
         iconName="comment"
-        count={commentsCount}
+        count={post.comments.length}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
       />

@@ -97,7 +97,7 @@ const Reactions = ({
         break
       case REACTION_TYPES.COMMENT:
         if (onComment) onComment()
-        else navigate(routes.COMMENTS_ONLINE, { post })
+        else navigate(routes.COMMENTS, { post })
         break
       case REACTION_TYPES.SHARE:
         handlePostShare()

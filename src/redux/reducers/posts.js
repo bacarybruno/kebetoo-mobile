@@ -8,7 +8,6 @@ const initialState = {
   posts: [],
   authors: {},
   reactions: {},
-  comments: {},
 }
 
 const posts = (state = initialState.posts, action) => {
@@ -30,15 +29,6 @@ const posts = (state = initialState.posts, action) => {
         [action.payload.post.id]: mergeObjects(state[action.payload.post.id], {
           reactions: mergeArrays(
             state[action.payload.post.id].reactions,
-            action.payload.id,
-          ),
-        }),
-      })
-    case types.COMMENT_POST_SUCCESS:
-      return mergeObjects(state, {
-        [action.payload.post.id]: mergeObjects(state[action.payload.post.id], {
-          comments: mergeArrays(
-            state[action.payload.post.id].comments,
             action.payload.id,
           ),
         }),
@@ -73,23 +63,6 @@ const reactions = (state = initialState.reactions, action) => {
   }
 }
 
-const comments = (state = initialState.comments, action) => {
-  switch (action.type) {
-    case types.REPLACE_POSTS:
-      return []
-    case types.API_FETCH_COMMENTS_SUCCESS:
-      return mergeObjects(state, action.payload)
-    case types.COMMENT_POST_SUCCESS:
-      return mergeObjects(state, {
-        [action.payload.id]: mergeObjects(action.payload, {
-          post: action.payload.post.id,
-        }),
-      })
-    default:
-      return state
-  }
-}
-
 const authors = (state = initialState.authors, action) => {
   switch (action.type) {
     case types.API_FETCH_AUTHORS_SUCCESS:
@@ -102,6 +75,5 @@ const authors = (state = initialState.authors, action) => {
 export default combineReducers({
   posts,
   authors,
-  comments,
   reactions,
 })
