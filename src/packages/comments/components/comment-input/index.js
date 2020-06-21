@@ -9,7 +9,7 @@ import { SendButton, RecordButton } from '../send-button'
 import styles from './styles'
 
 const CommentInput = ({
-  onChange, onSend, inputRef, value, audioRecorder, ...inputProps
+  onChange, onSend, inputRef, value, audioRecorder, isLoading, ...inputProps
 }) => {
   const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight)
 
@@ -33,12 +33,13 @@ const CommentInput = ({
             onValueChange={onChange}
             ref={inputRef}
             textStyle={styles.textInputSize}
+            editable={!isLoading}
+            onContentSizeChange={updateInputHeight}
             wrapperStyle={{
               ...styles.textInputSize,
               ...styles.textInputWrapper,
               height: inputHeight,
             }}
-            onContentSizeChange={updateInputHeight}
             {...inputProps}
           />
         )}
@@ -60,7 +61,7 @@ const CommentInput = ({
             stop={audioRecorder.stop}
           />
         ) : (
-          <SendButton onPress={onSend} />
+          <SendButton onPress={onSend} isLoading={isLoading} />
         )}
     </View>
   )
