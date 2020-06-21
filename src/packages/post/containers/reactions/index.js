@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React, { useCallback, useState, useEffect } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
@@ -71,7 +72,9 @@ const Reactions = ({
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate, addListener: addNavigationListener } = useNavigation()
 
-  const userReaction = post.reactions.find((r) => r.author === author) || {}
+  const findUserReaction = useCallback((reaction) => reaction.author === author, [author])
+
+  const userReaction = post.reactions.find(findUserReaction) || {}
 
   const updatePost = useCallback(async () => {
     const updatedPost = await api.getPost(post.id)
@@ -86,27 +89,99 @@ const Reactions = ({
     return unsusbcribeFocus
   }, [addNavigationListener, dirty, updatePost])
 
-  const handlePostReaction = useCallback(async (type) => {
-    const reaction = post.reactions.find((r) => (
-      r.author === author && r.post === post.id
-    ))
-    if (reaction === undefined) {
-      const result = await api.createReaction(type, post.id, author)
-      result.post = result.post.id
-      post.reactions.push(result)
-    } else if (reaction.type === type) {
-      await api.deleteReaction(reaction.id)
-      post.reactions = post.reactions.filter((r) => r.id !== reaction.id)
-    } else {
-      const result = await api.editReaction(reaction.id, type)
-      result.post = result.post.id
-      post.reactions = [
-        ...post.reactions.filter((r) => r.id !== reaction.id),
-        result,
-      ]
+  const createReaction = useCallback(async (type) => {
+    // create random negative id
+    const optimisticId = parseInt(Math.random() * -1000000)
+
+    // display a reaction with expected value and a fake id
+    const optimisticPost = {
+      ...post,
+      reactions: [
+        ...post.reactions,
+        { id: optimisticId, type, author },
+      ],
     }
-    setPost({ ...post })
-  }, [post, author])
+    setPost(optimisticPost)
+
+    // create the post on the backend
+    api.createReaction(type, post.id, author)
+      .then((res) => {
+        // replace the fake reaction created with the new one
+        const result = res
+        result.post = result.post.id
+        optimisticPost.reactions = [
+          ...optimisticPost.reactions.filter((reaction) => reaction.id !== optimisticId),
+          result,
+        ]
+        // update post to trigger re-render
+        setPost({ ...optimisticPost })
+      }).catch(() => {
+        // rollback the operation
+        optimisticPost.reactions = optimisticPost.reactions.filter((r) => r.id !== optimisticId)
+        setPost({ ...optimisticPost })
+      })
+  }, [author, post])
+
+  const deleteReaction = useCallback(async (reactionId) => {
+    // don't do anything if reactionId is not a valid ID
+    if (parseInt(reactionId) < 0) return
+
+    // remove reaction from state
+    const optimisticPost = { ...post }
+    const deletedReaction = optimisticPost.reactions.find((r) => r.id === reactionId)
+    optimisticPost.reactions = optimisticPost.reactions.filter((r) => r.id !== reactionId)
+    setPost(optimisticPost)
+
+    // then remove it from the backend
+    api.deleteReaction(reactionId).catch(() => {
+      // operation failed => rollback the operation
+      optimisticPost.reactions = [
+        ...optimisticPost.reactions,
+        deletedReaction,
+      ]
+      setPost({ ...optimisticPost })
+    })
+  }, [post])
+
+  const editReaction = useCallback(async (type, reactionId) => {
+    // don't do anything if reactionId is not a valid ID
+    if (parseInt(reactionId) < 0) return
+
+    // find the reaction to edit and change the type
+    const optimisticPost = { ...post }
+    const editedReaction = optimisticPost.reactions.find((r) => r.id === reactionId)
+    const editedReactionBaseType = editReaction.type
+    editedReaction.type = type
+
+    // add the reaction in the state to trigger re-render
+    optimisticPost.reactions = [
+      ...optimisticPost.reactions.filter((r) => r.id !== reactionId),
+      editedReaction,
+    ]
+    setPost({ ...optimisticPost })
+
+    // then edit it from the backend
+    api.editReaction(reactionId, type).catch(() => {
+      // operation failed => rollback the operation
+      editedReaction.type = editedReactionBaseType
+      optimisticPost.reactions = [
+        ...optimisticPost.reactions.filter((r) => r.id !== reactionId),
+        editedReaction,
+      ]
+      setPost({ ...optimisticPost })
+    })
+  }, [post])
+
+  const handlePostReaction = useCallback(async (type) => {
+    const reaction = post.reactions.find(findUserReaction)
+    if (reaction === undefined) {
+      await createReaction(type)
+    } else if (reaction.type === type) {
+      await deleteReaction(reaction.id)
+    } else {
+      await editReaction(type, reaction.id)
+    }
+  }, [post.reactions, findUserReaction, createReaction, deleteReaction, editReaction])
 
   const handlePostShare = useCallback(() => {
     if (post.author !== author || (post.repost?.author !== author)) {
