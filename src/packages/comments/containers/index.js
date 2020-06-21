@@ -32,6 +32,7 @@ const Comments = () => {
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
   const { goBack, navigate } = useNavigation()
+  const [isLoading, setIsLoading] = useState(false)
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState(post.comments.map((commentId) => ({
@@ -40,6 +41,7 @@ const Comments = () => {
     reactions: [],
   })))
   const commentInput = useRef()
+  const scrollView = useRef()
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -91,6 +93,7 @@ const Comments = () => {
 
   const onSend = useCallback(async () => {
     let result = null
+    setIsLoading(true)
     if (audioRecorder.hasRecording) {
       result = await audioRecorder.saveComment(post.id, user.uid)
     } else if (comment.length > 0) {
@@ -103,6 +106,8 @@ const Comments = () => {
       setComment('')
     }
     setComments((value) => [...value, result])
+    setIsLoading(false)
+    setTimeout(() => scrollView.current.scrollToEnd(), 200)
   }, [audioRecorder, comment, post.id, user.uid])
 
   const renderComment = useMemo(() => ({ item }) => {
@@ -176,6 +181,7 @@ const Comments = () => {
           ListHeaderComponent={ListHeader}
           ListEmptyComponent={NoComments}
           contentContainerStyle={styles.flatlistContent}
+          ref={scrollView}
         />
       </View>
       <CommentInput
@@ -184,6 +190,7 @@ const Comments = () => {
         inputRef={commentInput}
         audioRecorder={audioRecorder}
         value={comment}
+        isLoading={isLoading}
       />
     </View>
   )
