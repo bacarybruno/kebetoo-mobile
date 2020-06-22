@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-undef */
 import React from 'react'
-import { render } from 'react-native-testing-library'
+import TestRenderer from 'react-test-renderer'
 
 // helper to setup unit tests
 // eslint-disable-next-line arrow-body-style
-export default setupTest = (WrappedComponent, renderFn = render) => {
+const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
   return (defaultProps = {}) => (additionalProps = {}) => {
     const propsWithArgs = {
       ...defaultProps,
@@ -15,3 +15,5 @@ export default setupTest = (WrappedComponent, renderFn = render) => {
     return { wrapper, props: propsWithArgs }
   }
 }
+
+export default setupTest

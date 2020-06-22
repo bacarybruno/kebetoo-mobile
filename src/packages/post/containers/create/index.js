@@ -9,17 +9,17 @@ import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OutlinedButton from 'Kebetoo/src/shared/components/buttons/outlined'
 import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
-import { AudioPlayer } from 'Kebetoo/src/packages/post/components/audio-content'
+import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
 import { ImageViewer } from 'Kebetoo/src/packages/post/components/image-content'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 import strings from 'Kebetoo/src/config/strings'
 import { getMediaType } from 'Kebetoo/src/shared/helpers/file'
 import metrics from 'Kebetoo/src/theme/metrics'
+import useAudioRecorder from 'Kebetoo/src/shared/hooks/audio-recorder'
+import useImagePicker from 'Kebetoo/src/packages/post/hooks/image-picker'
 
 import styles from './styles'
-import useAudioRecorder from '../../hooks/audio-recorder'
-import useImagePicker from '../../hooks/image-picker'
 
 export const routeOptions = {
   headerShown: true,
