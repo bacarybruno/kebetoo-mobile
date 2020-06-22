@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Text 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "Helvetica",
+      },
+      Object {
+        "color": "rgba(0, 0, 0, 0.8)",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "opacity": 1,
+        "textDecorationLine": "none",
+      },
+      Object {},
+    ]
+  }
+>
+  Hello World
+</Text>
+`;

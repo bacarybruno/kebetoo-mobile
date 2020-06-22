@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders HeaderBack 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 24,
+      "justifyContent": "center",
+      "margin": 3,
+      "width": 24,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "red",
+          "fontSize": 20,
+        },
+        undefined,
+        Object {
+          "fontFamily": "icomoon",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`renders HeaderClose 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 24,
+      "justifyContent": "center",
+      "margin": 3,
+      "width": 24,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "red",
+          "fontSize": 40,
+        },
+        undefined,
+        Object {
+          "fontFamily": "Ionicons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;

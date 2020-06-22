@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders OutlinedButton 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#008ef4",
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "minWidth": 64,
+        "paddingHorizontal": 16,
+      },
+      Object {
+        "backgroundColor": "red",
+        "color": "white",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "#008ef4",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    NEW
+  </Text>
+</View>
+`;
+
+exports[`renders disabled OutlinedButton 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#008ef4",
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "minWidth": 64,
+        "paddingHorizontal": 16,
+      },
+      Object {
+        "backgroundColor": "red",
+        "color": "white",
+      },
+      Object {
+        "borderColor": "#CECECE",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "#CECECE",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    NEW
+  </Text>
+</View>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders FullButton 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "red",
+      "borderRadius": 15,
+      "color": "white",
+      "elevation": 2,
+      "height": 48,
+      "justifyContent": "center",
+      "opacity": 1,
+      "shadowColor": "rgba(0, 0, 0, 0.8)",
+      "shadowOffset": Object {
+        "x": 0,
+        "y": 1,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 1.41,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    New
+  </Text>
+</View>
+`;
