@@ -1,9 +1,11 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
+  plugins: ['jest'],
   extends: [
     'airbnb',
-    'airbnb/hooks'
+    'airbnb/hooks',
+    'plugin:jest/recommended'
   ],
   rules: {
     'global-require': 0,
