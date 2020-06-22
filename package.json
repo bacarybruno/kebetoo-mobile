@@ -62,15 +62,23 @@
     "eslint": "^5.16.0 || ^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
     "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-testing-library": "^2.1.0",
     "react-test-renderer": "16.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "./src/config/jest-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
