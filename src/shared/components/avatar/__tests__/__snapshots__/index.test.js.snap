@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an Avatar with image 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 30,
+        "width": 30,
+      },
+      Object {
+        "height": 20,
+        "width": 20,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#008ef4",
+          "borderRadius": 15,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "borderRadius": 10,
+        },
+      ]
+    }
+    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+  />
+</View>
+`;
+
+exports[`renders an Avatar with text 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 30,
+        "width": 30,
+      },
+      Object {
+        "height": 20,
+        "width": 20,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#008ef4",
+          "borderRadius": 15,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "borderRadius": 10,
+        },
+        Object {
+          "backgroundColor": "#4dd0e1",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "bold",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+      B
+    </Text>
+  </View>
+</View>
+`;

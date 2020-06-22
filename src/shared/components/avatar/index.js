@@ -13,6 +13,7 @@ const backgroundColor = (text) => text && { backgroundColor: generateColor(text)
 export const ImageAvatar = ({ src, size }) => (
   <View style={[styles.wrapper, dimensions(size)]}>
     <Image
+      testID={`image-avatar-${src}`}
       style={[styles.content, borderRadius(size)]}
       source={{ uri: src }}
     />
