@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Logo 1`] = `
+<Image
+  source={
+    Object {
+      "testUri": "../../../assets/images/logo-full.png",
+    }
+  }
+  style={
+    Object {
+      "alignSelf": "center",
+      "height": 118,
+      "resizeMode": "contain",
+      "width": "80%",
+    }
+  }
+/>
+`;

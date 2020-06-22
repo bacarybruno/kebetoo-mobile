@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CommentPlaceholder 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "flexDirection": "row",
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#efefef",
+          "borderRadius": 20,
+          "height": 40,
+          "width": 40,
+        },
+        Object {
+          "marginRight": 10,
+        },
+        Object {
+          "overflow": "hidden",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dfdfdf",
+          "height": "100%",
+          "opacity": 0.5,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 2,
+            "height": 8,
+            "marginBottom": 8,
+            "width": "50%",
+          },
+          undefined,
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 2.5,
+            "height": 10,
+            "marginBottom": 10,
+            "width": "100%",
+          },
+          Object {
+            "marginBottom": 5,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 2.5,
+            "height": 10,
+            "marginBottom": 10,
+            "width": "100%",
+          },
+          undefined,
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 15,
+          "width": 15,
+        },
+        Object {
+          "marginLeft": 10,
+        },
+        Object {
+          "overflow": "hidden",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dfdfdf",
+          "height": "100%",
+          "opacity": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;

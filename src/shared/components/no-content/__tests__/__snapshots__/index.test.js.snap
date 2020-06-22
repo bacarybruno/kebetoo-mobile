@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders NoContent 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "#008ef4",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    Hello World!
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    Nothing here. Please leave!
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    child
+  </Text>
+</View>
+`;
