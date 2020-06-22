@@ -1,6 +1,8 @@
+import { Image } from 'react-native'
+
 import setupTest from 'Kebetoo/src/config/jest-setup'
 
-import Avatar from '../index'
+import Avatar, { TextAvatar } from '../index'
 
 const givenAvatar = setupTest(Avatar)({
   size: 20,
@@ -26,8 +28,7 @@ it('displays TextAvatar if no image source is provided', () => {
     text: 'Bruno Bodian',
     src: undefined,
   })
-  const firstLetter = props.text[0]
-  expect(wrapper.queryAllByText(firstLetter)).toHaveLength(1)
+  expect(wrapper.root.findByType(TextAvatar).props.text).toBe(props.text)
 })
 
 it('displays ImageAvatar if an image source is provided', () => {
@@ -36,6 +37,7 @@ it('displays ImageAvatar if an image source is provided', () => {
     src: 'https://avatars1.githubusercontent.com/u/14147533',
   })
   const firstLetter = props.text[0]
-  expect(wrapper.queryAllByTestId(`image-avatar-${props.src}`)).toHaveLength(1)
-  expect(wrapper.queryAllByText(firstLetter)).toHaveLength(0)
+  const imageAvatar = wrapper.root.findByType(Image)
+  expect(imageAvatar.props.source.uri).toBe(props.src)
+  expect(wrapper.root.findAllByProps({ text: firstLetter }).length).toBe(0)
 })

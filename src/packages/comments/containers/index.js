@@ -9,7 +9,7 @@ import auth from '@react-native-firebase/auth'
 import {
   Content, Header, getPostType, POST_TYPES,
 } from 'Kebetoo/src/packages/post/containers/basic-post'
-import useAudioRecorder from 'Kebetoo/src/packages/post/hooks/audio-recorder'
+import useAudioRecorder from 'Kebetoo/src/shared/hooks/audio-recorder'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
