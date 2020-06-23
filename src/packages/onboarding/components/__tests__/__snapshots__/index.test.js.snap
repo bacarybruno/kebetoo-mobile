@@ -9,7 +9,11 @@ exports[`renders Onboarding 1`] = `
   }
 >
   <Image
-    source="https://avatars1.githubusercontent.com/u/14147533"
+    source={
+      Object {
+        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+      }
+    }
     style={
       Object {
         "alignSelf": "center",
