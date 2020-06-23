@@ -4,6 +4,7 @@ const collection = jest.fn(() => ({
     update: jest.fn(() => Promise.resolve(true)),
     onSnapshot: jest.fn(() => Promise.resolve(true)),
     get: jest.fn(() => Promise.resolve(true)),
+    set: jest.fn(() => Promise.resolve(true)),
   })),
   where: jest.fn(() => ({
     get: jest.fn(() => Promise.resolve(true)),

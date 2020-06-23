@@ -44,7 +44,7 @@ exports[`renders HrLine 1`] = `
       ]
     }
   >
-    Sign up with
+    Or sign up with
   </Text>
   <View
     style={
