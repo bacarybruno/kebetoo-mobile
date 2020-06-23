@@ -5,7 +5,7 @@ import { mergeObjects } from 'Kebetoo/src/shared/helpers/object'
 import * as types from '../types'
 
 const initialState = {
-  posts: [],
+  posts: {},
   authors: {},
 }
 

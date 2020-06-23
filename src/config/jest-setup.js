@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-undef */
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
 
@@ -15,5 +14,28 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
     return { wrapper, props: propsWithArgs }
   }
 }
+
+/**
+ * Explicit mocks
+ * Create mocks here only if they can't be created on the __mocks__ folder
+ */
+
+jest.useFakeTimers()
+
+// react-navigation
+const mockedNavigate = jest.fn()
+jest.mock('@react-navigation/native', () => ({
+  ...jest.requireActual('@react-navigation/native'),
+  useNavigation: () => ({
+    navigate: mockedNavigate,
+  }),
+}))
+
+// react-native-screens
+jest.mock('react-native-screens', () => {
+  const Screens = jest.requireActual('react-native-screens')
+  Screens.enableScreens = () => {}
+  return Screens
+})
 
 export default setupTest
