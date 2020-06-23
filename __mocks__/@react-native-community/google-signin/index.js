@@ -1,36 +1,35 @@
-import { NativeModules } from 'react-native'
-
-jest.mock('@react-native-community/google-signin', () => {
-  const mockGoogleSignin = require.requireActual('@react-native-community/google-signin')
-
-  mockGoogleSignin.GoogleSignin.hasPlayServices = () => Promise.resolve(true)
-  mockGoogleSignin.GoogleSignin.configure = () => Promise.resolve()
-  mockGoogleSignin.GoogleSignin.currentUserAsync = () => {
-    return Promise.resolve({
-      name: 'name',
-      email: 'test@example.com',
-      // .... other user data
-    })
-  }
-
-  // ... and other functions you want to mock
-
-  return mockGoogleSignin
-})
-
-NativeModules.RNGoogleSignin = {
-  BUTTON_SIZE_ICON: 0,
-  BUTTON_SIZE_STANDARD: 0,
-  BUTTON_SIZE_WIDE: 0,
-  BUTTON_COLOR_AUTO: 0,
-  BUTTON_COLOR_LIGHT: 0,
-  BUTTON_COLOR_DARK: 0,
-  SIGN_IN_CANCELLED: '0',
-  IN_PROGRESS: '1',
-  PLAY_SERVICES_NOT_AVAILABLE: '2',
-  SIGN_IN_REQUIRED: '3',
-  configure: jest.fn(),
-  currentUserAsync: jest.fn(),
+const mockUserInfo = {
+  idToken: 'mockIdToken',
+  accessToken: null,
+  serverAuthCode: 'mockServerAuthCode',
+  scopes: [], // on iOS this is empty array if no additional scopes are defined
+  user: {
+    email: 'mockEmail',
+    id: 'mockId',
+    givenName: 'mockGivenName',
+    familyName: 'mockFamilyName',
+    photo: 'mockPhotoUrl',
+    name: 'mockFullName',
+  },
 }
 
-export { NativeModules }
+const GoogleSignin = {
+  configure: jest.fn(),
+  hasPlayServices: jest.fn(() => Promise.resolve(true)),
+  signIn: jest.fn(() => Promise.resolve(mockUserInfo)),
+  signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
+  revokeAccess: jest.fn(() => Promise.resolve(true)),
+  signOut: jest.fn(() => Promise.resolve(true)),
+}
+
+const GoogleSigninMock = {
+  GoogleSignin,
+}
+
+GoogleSigninMock.setGoogleSigninMockOptions = (options) => {
+  Object.keys(options).forEach((key) => {
+    GoogleSigninMock[key] = options[key]
+  })
+}
+
+module.exports = GoogleSigninMock

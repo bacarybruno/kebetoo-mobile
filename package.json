@@ -8,7 +8,7 @@
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
-    "test": "jest src --silent",
+    "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {

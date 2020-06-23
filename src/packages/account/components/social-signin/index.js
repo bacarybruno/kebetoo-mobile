@@ -5,12 +5,12 @@ import HrLine from 'Kebetoo/src/packages/account/components/hr-line'
 import googleLogin from 'Kebetoo/src/shared/helpers/google-login'
 import facebookLogin from 'Kebetoo/src/shared/helpers/facebook-login'
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
-
-import styles from './styles'
 import images from 'Kebetoo/src/theme/images'
 import colors from 'Kebetoo/src/theme/colors'
 
-const SocialSignIn = ({ sectionText, onSignIn = () => {}, children }) => {
+import styles from './styles'
+
+const SocialSignIn = ({ sectionText, children, onSignIn = () => {} }) => {
   const signInWithGoogle = useCallback(async () => {
     const result = await googleLogin()
     return onSignIn(result)
@@ -27,10 +27,10 @@ const SocialSignIn = ({ sectionText, onSignIn = () => {}, children }) => {
         <View style={styles.socialSignUpContent}>
           <HrLine text={sectionText} />
           <View style={styles.socialSignUpButtons}>
-            <TouchableOpacity onPress={signInWithFacebook}>
+            <TouchableOpacity testID="facebook-signin" onPress={signInWithFacebook}>
               <Kebeticon name="facebook" color={colors.facebook} size={33} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={signInWithGoogle}>
+            <TouchableOpacity testID="google-signin" onPress={signInWithGoogle}>
               <Image style={styles.googleIcon} source={images.google_icon} />
             </TouchableOpacity>
           </View>
