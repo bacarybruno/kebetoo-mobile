@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders HrLine 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      Object {
+        "backgroundColor": "red",
+        "color": "white",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#707070",
+        "borderWidth": 0.5,
+        "flex": 1,
+        "height": 0.5,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "marginHorizontal": 10,
+        },
+      ]
+    }
+  >
+    Sign up with
+  </Text>
+  <View
+    style={
+      Object {
+        "borderColor": "#707070",
+        "borderWidth": 0.5,
+        "flex": 1,
+        "height": 0.5,
+      }
+    }
+  />
+</View>
+`;

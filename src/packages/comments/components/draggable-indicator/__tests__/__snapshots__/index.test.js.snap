@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders DraggableIndicator 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "transparent",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#CECECE",
+        "borderRadius": 5,
+        "height": 5,
+        "margin": 10,
+        "width": 60,
+      }
+    }
+  />
+</View>
+`;

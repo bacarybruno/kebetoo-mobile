@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Onboarding 1`] = `
+<View
+  style={
+    Object {
+      "marginHorizontal": 16,
+    }
+  }
+>
+  <Image
+    source="https://avatars1.githubusercontent.com/u/14147533"
+    style={
+      Object {
+        "alignSelf": "center",
+        "height": 600.3000000000001,
+        "resizeMode": "contain",
+      }
+    }
+  />
+  <Text
+    adjustsFontSizeToFit={true}
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 27,
+          "fontWeight": "bold",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "marginTop": 93.38000000000001,
+          "maxHeight": 133.4,
+        },
+      ]
+    }
+  >
+    Kebetoo is gonna change the way your communicate
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "marginTop": 46.690000000000005,
+        },
+      ]
+    }
+  >
+    Just wait for it!
+  </Text>
+</View>
+`;
