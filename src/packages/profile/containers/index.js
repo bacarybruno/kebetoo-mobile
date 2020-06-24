@@ -147,11 +147,11 @@ const ProfilePage = React.memo(() => {
   const profile = auth().currentUser
   const { navigate } = useNavigation()
 
-  const [postsCount, setPostsCount] = useState(0)
-  const [reactionsCount, setReactionsCount] = useState(0)
-  const [commentsCount, setCommentsCount] = useState(0)
-
   const stats = useSelector(userStatsSelector)
+  const [postsCount, setPostsCount] = useState(stats.posts)
+  const [commentsCount, setCommentsCount] = useState(stats.comments)
+  const [reactionsCount, setReactionsCount] = useState(stats.reactions)
+
   const dispatch = useDispatch()
 
   const signOut = useCallback(() => {
@@ -160,31 +160,27 @@ const ProfilePage = React.memo(() => {
 
   useFocusEffect(
     useCallback(() => {
-      api.getPostsCount(profile.uid)
-        .then((posts) => {
-          setPostsCount(posts)
-          dispatch({ type: types.SET_USER_STATS, payload: { posts } })
+      const fetchStats = async () => {
+        // fetch latest stats
+        const [posts, comments, reactions] = await Promise.all([
+          api.getPostsCount(profile.uid),
+          api.getCommentsCount(profile.uid),
+          api.getReactionsCount(profile.uid),
+        ])
+
+        // update data in component
+        setPostsCount(posts)
+        setCommentsCount(comments)
+        setReactionsCount(reactions)
+
+        // store the data in redux
+        dispatch({
+          type: types.SET_USER_STATS,
+          payload: { posts, comments, reactions },
         })
-        .catch(() => {
-          setPostsCount(stats.posts)
-        })
-      api.getCommentsCount(profile.uid)
-        .then((comments) => {
-          setCommentsCount(comments)
-          dispatch({ type: types.SET_USER_STATS, payload: { comments } })
-        })
-        .catch(() => {
-          setCommentsCount(stats.comments)
-        })
-      api.getReactionsCount(profile.uid)
-        .then((reactions) => {
-          setReactionsCount(reactions)
-          dispatch({ type: types.SET_USER_STATS, payload: { reactions } })
-        })
-        .catch(() => {
-          setReactionsCount(stats.reactions)
-        })
-    }, [dispatch, profile.uid, stats.comments, stats.posts, stats.reactions]),
+      }
+      fetchStats()
+    }, [dispatch, profile.uid]),
   )
 
   const shareApp = useCallback(() => {

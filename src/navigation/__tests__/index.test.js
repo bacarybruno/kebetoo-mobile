@@ -1,5 +1,3 @@
-import React from 'react'
-import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import auth from '@react-native-firebase/auth'
 
@@ -16,13 +14,9 @@ const store = mockStore({
   userReducer: {},
 })
 
-const ConnectedAppNavigation = () => (
-  <Provider store={store}>
-    <AppNavigation />
-  </Provider>
-)
-
-const givenAppNavigation = setupTest(ConnectedAppNavigation)()
+const givenAppNavigation = setupTest(AppNavigation)({
+  store,
+})
 
 it('renders AppNavigation for authenticated user', () => {
   auth.setMockOptions({

@@ -1,7 +1,5 @@
-import React from 'react'
 import { render, fireEvent } from 'react-native-testing-library'
 import auth from '@react-native-firebase/auth'
-import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
@@ -20,17 +18,9 @@ const userInfos = {
 
 const mockStore = configureStore()
 const store = mockStore()
-const navigation = {
-  setOptions: jest.fn(),
-  navigate: jest.fn(),
-}
-const ConnectedSignUp = () => (
-  <Provider store={store}>
-    <SignUp navigation={navigation} />
-  </Provider>
-)
 
-const givenSignUp = setupTest(ConnectedSignUp, render)({
+const givenSignUp = setupTest(SignUp, render)({
+  store,
   navigation: {
     setOptions: jest.fn(),
     navigate: jest.fn(),
@@ -43,16 +33,16 @@ it('renders SignUp', () => {
 })
 
 test('screen title', () => {
-  givenSignUp()
-  expect(navigation.setOptions).toBeCalledTimes(1)
-  expect(navigation.setOptions).toBeCalledWith({ title: strings.auth.signup })
+  const { props } = givenSignUp()
+  expect(props.navigation.setOptions).toBeCalledTimes(1)
+  expect(props.navigation.setOptions).toBeCalledWith({ title: strings.auth.signup })
 })
 
 it('navigates to signin', () => {
-  const { wrapper } = givenSignUp()
+  const { wrapper, props } = givenSignUp()
   fireEvent.press(wrapper.getByText(strings.auth.signin))
-  expect(navigation.navigate).toBeCalledTimes(1)
-  expect(navigation.navigate).toBeCalledWith(routes.SIGNIN)
+  expect(props.navigation.navigate).toBeCalledTimes(1)
+  expect(props.navigation.navigate).toBeCalledWith(routes.SIGNIN)
 })
 
 describe('submit', () => {
