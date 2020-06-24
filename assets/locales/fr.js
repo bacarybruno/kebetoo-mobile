@@ -10,7 +10,6 @@ const locales = Object.freeze({
     edit: 'Editer',
     share: 'Partager',
     confirm: 'Confirmer',
-    Actions: 'Actions',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',

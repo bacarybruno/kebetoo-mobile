@@ -1773,6 +1773,7 @@ exports[`renders AppNavigation for unauthenticated user 1`] = `
                                               showsHorizontalScrollIndicator={false}
                                               showsPagination={true}
                                               showsVerticalScrollIndicator={false}
+                                              testID="swiper"
                                             >
                                               <View>
                                                 <View
@@ -2307,6 +2308,7 @@ exports[`renders AppNavigation for unauthenticated user 1`] = `
                                                   "width": 57,
                                                 }
                                               }
+                                              testID="next-button"
                                             >
                                               <Text
                                                 allowFontScaling={false}

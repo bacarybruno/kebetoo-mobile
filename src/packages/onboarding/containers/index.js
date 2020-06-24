@@ -65,6 +65,7 @@ const OnboardingPage = ({ navigation }) => {
           showsPagination={!isLastSlideItem}
           ref={swiperRef}
           scrollEnabled={false}
+          testID="swiper"
         >
           {slideItems.map((slideItem, index) => (
             <OnbordingSlide
@@ -83,6 +84,7 @@ const OnboardingPage = ({ navigation }) => {
               style={styles.nextButton}
               onPress={onSlideNext}
               iconName="ios-arrow-round-forward"
+              testID="next-button"
             />
           )}
         </View>
