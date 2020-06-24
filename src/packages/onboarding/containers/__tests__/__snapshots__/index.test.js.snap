@@ -1,0 +1,698 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Onboarding 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginVertical": 24,
+      }
+    }
+  >
+    <View
+      style={Object {}}
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignSelf": "flex-end",
+            "marginHorizontal": 16,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#707070",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Skip
+        </Text>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "flex": 1,
+            "position": "relative",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RCTScrollView
+        activeDotStyle={
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.8)",
+            "height": 8,
+            "width": 15,
+          }
+        }
+        automaticallyAdjustContentInsets={false}
+        autoplay={false}
+        autoplayDirection={true}
+        autoplayTimeout={2.5}
+        bounces={false}
+        contentContainerStyle={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "marginTop": 11,
+            },
+          ]
+        }
+        contentOffset={
+          Object {
+            "x": 0,
+          }
+        }
+        disableNextButton={false}
+        disablePrevButton={false}
+        dotStyle={
+          Object {
+            "backgroundColor": "#CECECE",
+            "height": 8,
+            "width": 8,
+          }
+        }
+        horizontal={true}
+        index={0}
+        loadMinimal={false}
+        loadMinimalSize={1}
+        loop={true}
+        onIndexChanged={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        paginationStyle={
+          Object {
+            "justifyContent": "flex-start",
+            "marginHorizontal": 16,
+          }
+        }
+        pagingEnabled={true}
+        removeClippedSubviews={true}
+        scrollEnabled={false}
+        scrollsToTop={false}
+        showsButtons={false}
+        showsHorizontalScrollIndicator={false}
+        showsPagination={true}
+        showsVerticalScrollIndicator={false}
+        testID="swiper"
+      >
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 16,
+                }
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/images/onboarding3.png",
+                  }
+                }
+                style={
+                  Object {
+                    "alignSelf": "center",
+                    "height": 600.3000000000001,
+                    "resizeMode": "contain",
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 27,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 93.38000000000001,
+                      "maxHeight": 133.4,
+                    },
+                  ]
+                }
+              >
+                Have a Fun With Your Friends
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 46.690000000000005,
+                    },
+                  ]
+                }
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 16,
+                }
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/images/onboarding1.png",
+                  }
+                }
+                style={
+                  Object {
+                    "alignSelf": "center",
+                    "height": 600.3000000000001,
+                    "resizeMode": "contain",
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 27,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 93.38000000000001,
+                      "maxHeight": 133.4,
+                    },
+                  ]
+                }
+              >
+                Join Our Social Media
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 46.690000000000005,
+                    },
+                  ]
+                }
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 16,
+                }
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/images/onboarding2.png",
+                  }
+                }
+                style={
+                  Object {
+                    "alignSelf": "center",
+                    "height": 600.3000000000001,
+                    "resizeMode": "contain",
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 27,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 93.38000000000001,
+                      "maxHeight": 133.4,
+                    },
+                  ]
+                }
+              >
+                Create Your Account
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 46.690000000000005,
+                    },
+                  ]
+                }
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 16,
+                }
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/images/onboarding3.png",
+                  }
+                }
+                style={
+                  Object {
+                    "alignSelf": "center",
+                    "height": 600.3000000000001,
+                    "resizeMode": "contain",
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 27,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 93.38000000000001,
+                      "maxHeight": 133.4,
+                    },
+                  ]
+                }
+              >
+                Have a Fun With Your Friends
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 46.690000000000005,
+                    },
+                  ]
+                }
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 16,
+                }
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/images/onboarding1.png",
+                  }
+                }
+                style={
+                  Object {
+                    "alignSelf": "center",
+                    "height": 600.3000000000001,
+                    "resizeMode": "contain",
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 27,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 93.38000000000001,
+                      "maxHeight": 133.4,
+                    },
+                  ]
+                }
+              >
+                Join Our Social Media
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "marginTop": 46.690000000000005,
+                    },
+                  ]
+                }
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+              </Text>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+      <View
+        pointerEvents="none"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "bottom": 25,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            },
+            Object {
+              "justifyContent": "flex-start",
+              "marginHorizontal": 16,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#007aff",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                "height": 8,
+                "width": 15,
+              },
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              Object {
+                "backgroundColor": "#CECECE",
+                "height": 8,
+                "width": 8,
+              },
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              Object {
+                "backgroundColor": "#CECECE",
+                "height": 8,
+                "width": 8,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 8,
+          "position": "absolute",
+          "right": 16,
+          "width": 718,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#008ef4",
+            "borderRadius": 15,
+            "bottom": 0,
+            "color": "#FFFFFF",
+            "elevation": 2,
+            "height": 48,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "width": 57,
+          }
+        }
+        testID="next-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#FFFFFF",
+              },
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

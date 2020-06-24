@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Onboarding 1`] = `
+exports[`renders OnboardingSlide 1`] = `
 <View
   style={
     Object {
@@ -43,7 +43,7 @@ exports[`renders Onboarding 1`] = `
       ]
     }
   >
-    Kebetoo is gonna change the way your communicate
+    Join Our Social Media
   </Text>
   <Text
     style={
@@ -64,7 +64,7 @@ exports[`renders Onboarding 1`] = `
       ]
     }
   >
-    Just wait for it!
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
   </Text>
 </View>
 `;

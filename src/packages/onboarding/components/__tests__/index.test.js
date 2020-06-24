@@ -1,13 +1,14 @@
 import setupTest from 'Kebetoo/src/config/jest-setup'
+import strings from 'Kebetoo/src/config/strings'
 
-import Onboarding from '../index'
+import OnboardingSlide from '../index'
 
-const givenOnboarding = setupTest(Onboarding)()
+const givenOnboardingSlide = setupTest(OnboardingSlide)()
 
-it('renders Onboarding', () => {
-  const { wrapper } = givenOnboarding({
-    slideTitle: 'Kebetoo is gonna change the way your communicate',
-    slideDescription: 'Just wait for it!',
+it('renders OnboardingSlide', () => {
+  const { wrapper } = givenOnboardingSlide({
+    slideTitle: strings.onboarding.screen_one_title,
+    slideDescription: strings.onboarding.screen_one_description,
     imageSrc: {
       uri: 'https://avatars1.githubusercontent.com/u/14147533',
     },
