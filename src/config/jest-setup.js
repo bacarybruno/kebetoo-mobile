@@ -24,10 +24,15 @@ jest.useFakeTimers()
 
 // react-navigation
 const mockedNavigate = jest.fn()
+const mockedSetOptions = jest.fn()
 jest.mock('@react-navigation/native', () => ({
   ...jest.requireActual('@react-navigation/native'),
   useNavigation: () => ({
     navigate: mockedNavigate,
+    setOptions: mockedSetOptions,
+  }),
+  useRoute: () => ({
+    params: {},
   }),
 }))
 
