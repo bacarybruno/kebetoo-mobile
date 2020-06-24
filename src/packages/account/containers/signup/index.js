@@ -80,7 +80,6 @@ const SignUp = ({ navigation }) => {
   const { keyboardShown, keyboardHeight } = useKeyboard()
   const availableHeight = metrics.screenHeight - keyboardHeight
 
-
   return (
     <View style={styles.wrapper}>
       <View style={styles.normalSignUp}>
