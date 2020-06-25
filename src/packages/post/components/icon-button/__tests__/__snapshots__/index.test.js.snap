@@ -149,7 +149,7 @@ exports[`renders activable IconButton 1`] = `
         "shadowRadius": 6.27,
         "transform": Array [
           Object {
-            "scale": 1,
+            "scale": 1.8,
           },
         ],
         "width": 40,
