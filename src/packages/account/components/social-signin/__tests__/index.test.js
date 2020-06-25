@@ -30,24 +30,33 @@ describe('sign in', () => {
     error: null,
   })
 
-  const testProvider = async (testID) => {
-    const { wrapper, props } = givenSocialSignin()
+  const testProvider = async (testID, onSignIn) => {
+    const { wrapper, props } = givenSocialSignin({
+      onSignIn,
+    })
     const signinButton = wrapper.root.findByProps({ testID })
     await act(async () => {
       await fireEvent.press(signinButton)
     })
-    return props.onSignIn
+    return props
   }
 
   test('with google', async () => {
-    const onSignIn = await testProvider('google-signin')
+    const onSignIn = jest.fn()
+    await testProvider('google-signin', onSignIn)
     expect(onSignIn).toBeCalledTimes(1)
     expect(onSignIn).toBeCalledWith(onSignInPayload)
   })
 
   test('with facebook', async () => {
-    const onSignIn = await testProvider('facebook-signin')
+    const onSignIn = jest.fn()
+    await testProvider('facebook-signin', onSignIn)
     expect(onSignIn).toBeCalledTimes(1)
     expect(onSignIn).toBeCalledWith(onSignInPayload)
+  })
+
+  test('without handler', async () => {
+    const props = await testProvider('facebook-signin', undefined)
+    expect(props.onSignIn).not.toBeDefined()
   })
 })
