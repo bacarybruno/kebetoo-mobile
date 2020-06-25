@@ -145,7 +145,7 @@ const BasicPost = ({
       />
       {withReactions && (
         <View style={styles.reactions}>
-          <Reactions post={post} author={user.uid} originalAuthor={originalAuthor} />
+          <Reactions post={post} author={user.uid} />
         </View>
       )}
     </View>

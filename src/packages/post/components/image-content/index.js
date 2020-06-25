@@ -22,10 +22,10 @@ export const DeleteIconButton = ({ onPress }) => (
 )
 
 export const ImageViewer = ({
-  source, style, onDelete, onPress, borderRadius = 0,
+  source, style, onDelete, onPress, borderRadius = 0, ...otherProps
 }) => (
   <>
-    <View style={[styles.imageWrapper, style]}>
+    <View style={[styles.imageWrapper, style]} {...otherProps}>
       <ImageBackground source={source} style={{ ...styles.flex, borderRadius }}>
         {onPress && <Pressable style={styles.flex} onPress={onPress} />}
       </ImageBackground>
@@ -47,6 +47,7 @@ const ImageContent = ({
       onPress={onPress}
       style={styles.imageViewer}
       source={getSource(url)}
+      testID="image-viewer"
     />
   </View>
 )
