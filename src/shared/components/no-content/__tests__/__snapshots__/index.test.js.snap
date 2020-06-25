@@ -27,7 +27,7 @@ exports[`renders NoContent 1`] = `
       ]
     }
   >
-    Hello World!
+    No content yet
   </Text>
   <Text
     style={
@@ -46,7 +46,7 @@ exports[`renders NoContent 1`] = `
       ]
     }
   >
-    Nothing here. Please leave!
+    Be the first to add a comment! 👇
   </Text>
   <Text
     style={
