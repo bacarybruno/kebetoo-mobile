@@ -26,6 +26,8 @@ it('renders activable IconButton', () => {
       text: readableSeconds(100),
     })
     wrapper = asyncWrapper
+    // run all timers to fulfill animations
+    jest.runAllTimers()
   })
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
