@@ -1,0 +1,7055 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component [audio]: renders BasicPost 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            5 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Fhgjjyjj
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F2F2F2",
+            "borderRadius": 5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 52,
+            "maxHeight": 52,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CECECE",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+            },
+            undefined,
+            Object {
+              "width": "0%",
+            },
+          ]
+        }
+        testID="progress"
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#CECECE",
+            "borderRadius": 15,
+            "elevation": 2,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 16,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "width": 30,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#0B1B77",
+                "fontSize": 20,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/images/waves.png",
+            }
+          }
+          style={
+            Object {
+              "resizeMode": "contain",
+              "width": "80%",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "opacity": 0.35,
+              "textDecorationLine": "none",
+            },
+            Object {
+              "bottom": 2,
+              "position": "absolute",
+              "right": 8,
+            },
+          ]
+        }
+      >
+        0:06
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [audio]: renders BasicPost with no author 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 17.5,
+            "height": 35,
+            "width": 35,
+          },
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 35,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "50%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "30%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#efefef",
+              "borderRadius": 13,
+              "height": 52,
+              "marginBottom": 52,
+              "width": "100%",
+            },
+            Object {
+              "borderRadius": 5,
+              "marginBottom": 8,
+            },
+            Object {
+              "overflow": "hidden",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dfdfdf",
+              "height": "100%",
+              "opacity": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 30,
+        },
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            5 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Fhgjjyjj
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F2F2F2",
+            "borderRadius": 5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 52,
+            "maxHeight": 52,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CECECE",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+            },
+            undefined,
+            Object {
+              "width": "0%",
+            },
+          ]
+        }
+        testID="progress"
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#CECECE",
+            "borderRadius": 15,
+            "elevation": 2,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 16,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "width": 30,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#0B1B77",
+                "fontSize": 20,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/images/waves.png",
+            }
+          }
+          style={
+            Object {
+              "resizeMode": "contain",
+              "width": "80%",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "opacity": 0.35,
+              "textDecorationLine": "none",
+            },
+            Object {
+              "bottom": 2,
+              "position": "absolute",
+              "right": 8,
+            },
+          ]
+        }
+      >
+        0:06
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            5 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Fhgjjyjj
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F2F2F2",
+            "borderRadius": 5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 52,
+            "maxHeight": 52,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CECECE",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+            },
+            undefined,
+            Object {
+              "width": "0%",
+            },
+          ]
+        }
+        testID="progress"
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#CECECE",
+            "borderRadius": 15,
+            "elevation": 2,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 16,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "width": 30,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#0B1B77",
+                "fontSize": 20,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/images/waves.png",
+            }
+          }
+          style={
+            Object {
+              "resizeMode": "contain",
+              "width": "80%",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "opacity": 0.35,
+              "textDecorationLine": "none",
+            },
+            Object {
+              "bottom": 2,
+              "position": "absolute",
+              "right": 8,
+            },
+          ]
+        }
+      >
+        0:06
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [image]: renders BasicPost 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        undefined,
+        false,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Voiture
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1.3333333333333333,
+            "backgroundColor": "#FFFFFF",
+            "width": "100%",
+          },
+          Object {
+            "marginLeft": -16,
+            "width": 750,
+          },
+        ]
+      }
+      testID="image-viewer"
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "borderRadius": 0,
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [image]: renders BasicPost with no author 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 17.5,
+            "height": 35,
+            "width": 35,
+          },
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 35,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "50%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "30%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#efefef",
+              "borderRadius": 13,
+              "height": 52,
+              "marginBottom": 52,
+              "width": "100%",
+            },
+            Object {
+              "borderRadius": 5,
+              "marginBottom": 8,
+            },
+            Object {
+              "overflow": "hidden",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dfdfdf",
+              "height": "100%",
+              "opacity": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 30,
+        },
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        undefined,
+        false,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Voiture
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1.3333333333333333,
+            "backgroundColor": "#FFFFFF",
+            "width": "100%",
+          },
+          Object {
+            "marginLeft": -16,
+            "width": 750,
+          },
+        ]
+      }
+      testID="image-viewer"
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "borderRadius": 0,
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [image]: renders BasicPost without reactions 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        undefined,
+        false,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Voiture
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1.3333333333333333,
+            "backgroundColor": "#FFFFFF",
+            "width": "100%",
+          },
+          Object {
+            "marginLeft": -16,
+            "width": 750,
+          },
+        ]
+      }
+      testID="image-viewer"
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "borderRadius": 0,
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [repost]: renders BasicPost 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "#E8E8E8",
+            "borderLeftWidth": 2,
+            "marginVertical": 8,
+            "minHeight": 52,
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              Object {
+                "marginBottom": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      },
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "jest://fake-image.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 12,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-jest://fake-image.png"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 24,
+                    },
+                    Object {
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 14,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F2F2F2",
+                  "borderRadius": 5,
+                  "minHeight": 52,
+                  "padding": 16,
+                },
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              I'll input the open-source RAM sensor, that should card the FTP protocol!
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [repost]: renders BasicPost with no author 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 17.5,
+            "height": 35,
+            "width": 35,
+          },
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 35,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "50%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "30%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#efefef",
+              "borderRadius": 13,
+              "height": 52,
+              "marginBottom": 52,
+              "width": "100%",
+            },
+            Object {
+              "borderRadius": 5,
+              "marginBottom": 8,
+            },
+            Object {
+              "overflow": "hidden",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dfdfdf",
+              "height": "100%",
+              "opacity": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 30,
+        },
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "#E8E8E8",
+            "borderLeftWidth": 2,
+            "marginVertical": 8,
+            "minHeight": 52,
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              Object {
+                "marginBottom": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      },
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "jest://fake-image.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 12,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-jest://fake-image.png"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 24,
+                    },
+                    Object {
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 14,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F2F2F2",
+                  "borderRadius": 5,
+                  "minHeight": 52,
+                  "padding": 16,
+                },
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              I'll input the open-source RAM sensor, that should card the FTP protocol!
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            Edited
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "#E8E8E8",
+            "borderLeftWidth": 2,
+            "marginVertical": 8,
+            "minHeight": 52,
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              Object {
+                "marginBottom": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      },
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "jest://fake-image.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 12,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-jest://fake-image.png"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 24,
+                    },
+                    Object {
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 14,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F2F2F2",
+                  "borderRadius": 5,
+                  "minHeight": 52,
+                  "padding": 16,
+                },
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              I'll input the open-source RAM sensor, that should card the FTP protocol!
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [text]: renders BasicPost 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F2F2F2",
+          "borderRadius": 5,
+          "minHeight": 52,
+          "padding": 16,
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      Use the online SMS system, then you can calculate the digital card!
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [text]: renders BasicPost with no author 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 17.5,
+            "height": 35,
+            "width": 35,
+          },
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 35,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "50%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "30%",
+              },
+              undefined,
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#efefef",
+              "borderRadius": 13,
+              "height": 52,
+              "marginBottom": 52,
+              "width": "100%",
+            },
+            Object {
+              "borderRadius": 5,
+              "marginBottom": 8,
+            },
+            Object {
+              "overflow": "hidden",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dfdfdf",
+              "height": "100%",
+              "opacity": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 30,
+        },
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F2F2F2",
+          "borderRadius": 5,
+          "minHeight": 52,
+          "padding": 16,
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      Use the online SMS system, then you can calculate the digital card!
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+              },
+              Object {
+                "marginRight": 4,
+              },
+              Object {
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [text]: renders BasicPost without reactions 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "jest://fake-image.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-jest://fake-image.png"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            7 days ago
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F2F2F2",
+          "borderRadius": 5,
+          "minHeight": 52,
+          "padding": 16,
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      Use the online SMS system, then you can calculate the digital card!
+    </Text>
+  </View>
+</View>
+`;

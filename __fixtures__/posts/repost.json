@@ -1,0 +1,31 @@
+{
+  "_id": "5eeb6ddd99d77d3becdf35d5",
+  "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+  "createdAt": "2020-06-18T13:36:29.730Z",
+  "updatedAt": "2020-06-18T13:36:29.735Z",
+  "__v": 0,
+  "repost": {
+    "_id": "5eeb6dd499d77d3becdf35d4",
+    "author": "EfAfuAw5xUR3qbZxjHfexqQlAD83",
+    "content": "I'll input the open-source RAM sensor, that should card the FTP protocol!",
+    "createdAt": "2020-06-18T13:36:20.260Z",
+    "updatedAt": "2020-06-18T13:36:20.260Z",
+    "__v": 0,
+    "id": "5eeb6dd499d77d3becdf35d4"
+  },
+  "comments": [],
+  "reactions": [
+    {
+      "type": "dislike",
+      "_id": "5eeb752499d77d3becdf35d8",
+      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "createdAt": "2020-06-18T14:07:32.234Z",
+      "updatedAt": "2020-06-18T14:25:45.097Z",
+      "__v": 0,
+      "post": "5eeb6ddd99d77d3becdf35d5",
+      "id": "5eeb752499d77d3becdf35d8"
+    }
+  ],
+  "reposts": [],
+  "id": "5eeb6ddd99d77d3becdf35d5"
+}

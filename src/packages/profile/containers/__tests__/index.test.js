@@ -54,7 +54,7 @@ describe('displays the right staat for', () => {
     resolvedValue: 1000,
   }]
   statsItems.forEach((item) => {
-    it(`${item.name}: when request is resolved`, async () => {
+    it(`[${item.name}]: when request is resolved`, async () => {
       api.getPostsCount = jest.fn().mockResolvedValue(item.resolvedValue)
       api.getCommentsCount = jest.fn().mockResolvedValue(item.resolvedValue)
       api.getReactionsCount = jest.fn().mockResolvedValue(item.resolvedValue)
@@ -65,7 +65,7 @@ describe('displays the right staat for', () => {
       })
       expect(wrapper.root.findByProps({ title: item.title }).props.value).toBe(item.resolvedValue)
     })
-    it(`${item.name}: when request fails`, async () => {
+    it(`[${item.name}]: when request fails`, async () => {
       api.getPostsCount = jest.fn().mockRejectedValue()
       api.getCommentsCount = jest.fn().mockRejectedValue()
       api.getReactionsCount = jest.fn().mockRejectedValue()

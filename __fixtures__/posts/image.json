@@ -1,0 +1,54 @@
+{
+  "_id": "5eeb805299d77d3becdf35e0",
+  "content": "Voiture",
+  "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+  "createdAt": "2020-06-18T14:55:14.492Z",
+  "updatedAt": "2020-06-18T14:55:14.614Z",
+  "__v": 0,
+  "image": {
+    "_id": "5eeb805299d77d3becdf35e1",
+    "name": "IMG-20200618",
+    "alternativeText": null,
+    "caption": null,
+    "hash": "IMG_20200618_0bd8b30d6a",
+    "ext": ".jpeg",
+    "mime": "image/jpeg",
+    "size": 69.19,
+    "width": 600,
+    "height": 800,
+    "url": "/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+    "formats": {
+      "thumbnail": {
+        "hash": "thumbnail_IMG_20200618_0bd8b30d6a",
+        "ext": ".jpeg",
+        "mime": "image/jpeg",
+        "width": 117,
+        "height": 156,
+        "size": 5,
+        "path": null,
+        "url": "/uploads/thumbnail_IMG_20200618_0bd8b30d6a.jpeg"
+      }
+    },
+    "provider": "local",
+    "related": ["5eeb805299d77d3becdf35e0"],
+    "createdAt": "2020-06-18T14:55:14.605Z",
+    "updatedAt": "2020-06-18T14:55:14.612Z",
+    "__v": 0,
+    "id": "5eeb805299d77d3becdf35e1"
+  },
+  "comments": [],
+  "reactions": [
+    {
+      "type": "dislike",
+      "_id": "5eee583e5d76173d0060f3e3",
+      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "createdAt": "2020-06-20T18:41:02.266Z",
+      "updatedAt": "2020-06-20T18:41:05.868Z",
+      "__v": 0,
+      "post": "5eeb805299d77d3becdf35e0",
+      "id": "5eee583e5d76173d0060f3e3"
+    }
+  ],
+  "reposts": [],
+  "id": "5eeb805299d77d3becdf35e0"
+}

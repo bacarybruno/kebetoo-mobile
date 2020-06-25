@@ -1,0 +1,81 @@
+{
+  "_id": "5eedd9a43acba504d4a1cfbb",
+  "content": "Fhgjjyjj",
+  "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+  "createdAt": "2020-06-20T09:40:52.790Z",
+  "updatedAt": "2020-06-20T09:40:52.841Z",
+  "__v": 0,
+  "audio": {
+    "_id": "5eedd9a43acba504d4a1cfbc",
+    "name": "PTT-20200620-6",
+    "alternativeText": null,
+    "caption": null,
+    "hash": "PTT_20200620_6_5e895bdeae",
+    "ext": ".mp3",
+    "mime": "audio/mp3",
+    "size": 13.24,
+    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+    "provider": "local",
+    "width": null,
+    "height": null,
+    "related": ["5eedd9a43acba504d4a1cfbb"],
+    "createdAt": "2020-06-20T09:40:52.832Z",
+    "updatedAt": "2020-06-20T09:40:52.839Z",
+    "__v": 0,
+    "id": "5eedd9a43acba504d4a1cfbc"
+  },
+  "comments": [
+    {
+      "_id": "5eedd9d43acba504d4a1cfbf",
+      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "content": "Fgyjj",
+      "createdAt": "2020-06-20T09:41:40.401Z",
+      "updatedAt": "2020-06-20T09:41:40.405Z",
+      "__v": 0,
+      "post": "5eedd9a43acba504d4a1cfbb",
+      "id": "5eedd9d43acba504d4a1cfbf"
+    },
+    {
+      "_id": "5eedd9e83acba504d4a1cfc0",
+      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "createdAt": "2020-06-20T09:42:00.149Z",
+      "updatedAt": "2020-06-20T09:42:00.179Z",
+      "__v": 0,
+      "post": "5eedd9a43acba504d4a1cfbb",
+      "audio": {
+        "_id": "5eedd9e83acba504d4a1cfc1",
+        "name": "PTT-20200620-3",
+        "alternativeText": null,
+        "caption": null,
+        "hash": "PTT_20200620_3_1669bbfc5d",
+        "ext": ".mp3",
+        "mime": "audio/mp3",
+        "size": 8.02,
+        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+        "provider": "local",
+        "width": null,
+        "height": null,
+        "related": ["5eedd9e83acba504d4a1cfc0"],
+        "createdAt": "2020-06-20T09:42:00.174Z",
+        "updatedAt": "2020-06-20T09:42:00.178Z",
+        "__v": 0,
+        "id": "5eedd9e83acba504d4a1cfc1"
+      },
+      "id": "5eedd9e83acba504d4a1cfc0"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "like",
+      "_id": "5eedf49b3acba504d4a1cfcf",
+      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "createdAt": "2020-06-20T11:35:55.591Z",
+      "updatedAt": "2020-06-20T17:45:39.642Z",
+      "__v": 0,
+      "post": "5eedd9a43acba504d4a1cfbb",
+      "id": "5eedf49b3acba504d4a1cfcf"
+    }
+  ],
+  "reposts": [],
+  "id": "5eedd9a43acba504d4a1cfbb"
+}

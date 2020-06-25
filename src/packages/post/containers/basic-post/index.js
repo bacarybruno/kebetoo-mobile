@@ -56,6 +56,7 @@ const MoreButton = ({ onPress }) => (
     onPress={onPress}
     style={styles.moreButton}
     hitSlop={edgeInsets.all(50)}
+    testID="more-button"
   >
     <Ionicon
       name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
@@ -139,7 +140,7 @@ const BasicPost = ({
     <View style={[styles.wrapper, isRepost && styles.noMargin]}>
       <Header isRepost={isRepost} post={post} author={author} size={size} onOptions={onOptions} />
       <Content
-        onPress={isRepost ? null : navigateToComments}
+        onPress={isRepost ? undefined : navigateToComments}
         originalAuthor={originalAuthor}
         post={post}
       />
