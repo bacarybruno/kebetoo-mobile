@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ImageContent 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F2F2F2",
+        "borderRadius": 5,
+        "minHeight": 52,
+        "padding": 16,
+      },
+      false,
+      Object {
+        "elevation": 3,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    test image
+  </Text>
+</View>
+`;
+
+exports[`renders ImageContent in repost mode 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F2F2F2",
+        "borderRadius": 5,
+        "minHeight": 52,
+        "padding": 16,
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "marginBottom": 0,
+        "minHeight": 0,
+        "padding": 0,
+      },
+      Object {
+        "elevation": 3,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {},
+      ]
+    }
+  >
+    test image
+  </Text>
+</View>
+`;

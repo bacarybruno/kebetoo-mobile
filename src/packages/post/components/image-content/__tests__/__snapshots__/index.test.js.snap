@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ImageContent 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "elevation": 3,
+      },
+      false,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "flex": 1,
+          "marginBottom": 8,
+        },
+      ]
+    }
+  >
+    test image
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "aspectRatio": 1.3333333333333333,
+          "backgroundColor": "#FFFFFF",
+          "width": "100%",
+        },
+        Object {
+          "marginLeft": -16,
+          "width": 750,
+        },
+      ]
+    }
+    testID="image-viewer"
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Object {
+          "borderRadius": 0,
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "jest://localhost:1337/fake-image.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders ImageContent on comments mode 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "elevation": 3,
+      },
+      Object {
+        "marginBottom": -65,
+      },
+    ]
+  }
+>
+  <Text
+    numberOfLines={1}
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "flex": 1,
+          "marginBottom": 8,
+        },
+      ]
+    }
+  >
+    test image
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "aspectRatio": 1.3333333333333333,
+          "backgroundColor": "#FFFFFF",
+          "width": "100%",
+        },
+        Object {
+          "marginLeft": -16,
+          "width": 750,
+        },
+      ]
+    }
+    testID="image-viewer"
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Object {
+          "borderRadius": 0,
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "jest://localhost:1337/fake-image.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

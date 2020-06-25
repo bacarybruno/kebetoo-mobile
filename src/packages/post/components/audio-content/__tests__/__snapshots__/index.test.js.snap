@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AudioContent 1`] = `
+<View
+  style={
+    Object {
+      "elevation": 3,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Helvetica",
+        },
+        Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 16,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "marginBottom": 8,
+        },
+      ]
+    }
+  >
+    test audio
+  </Text>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F2F2F2",
+          "borderRadius": 5,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 52,
+          "maxHeight": 52,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+    testID="player-wrapper"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#CECECE",
+            "borderBottomLeftRadius": 5,
+            "borderTopLeftRadius": 5,
+            "height": "100%",
+            "opacity": 0.4,
+            "position": "absolute",
+          },
+          undefined,
+          Object {
+            "width": "0%",
+          },
+        ]
+      }
+      testID="progress"
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#CECECE",
+          "borderRadius": 15,
+          "elevation": 2,
+          "height": 30,
+          "justifyContent": "center",
+          "marginLeft": 16,
+          "opacity": 1,
+          "shadowColor": "rgba(0, 0, 0, 0.8)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 1.41,
+          "width": 30,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#0B1B77",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/images/waves.png",
+          }
+        }
+        style={
+          Object {
+            "resizeMode": "contain",
+            "width": "80%",
+          }
+        }
+      />
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "opacity": 0.35,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "bottom": 2,
+            "position": "absolute",
+            "right": 8,
+          },
+        ]
+      }
+    >
+      0:10
+    </Text>
+  </View>
+</View>
+`;
