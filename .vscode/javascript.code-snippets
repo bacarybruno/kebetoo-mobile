@@ -1,0 +1,84 @@
+{
+	// Simple snippet to create jest structure
+	"Kebetoo jest snippet": {
+		"prefix": "test",
+		"body": [
+			"import setupTest from 'Kebetoo/src/config/jest-setup'\n",
+      "import ${1:ComponentName} from '../index'\n",
+      "const given$1 = setupTest($1)($2)\n",
+      "it('renders $1', () => {",
+      "\tconst { wrapper } = given$1()",
+      "\texpect(wrapper.toJSON()).toMatchSnapshot()",
+			"})\n",
+			"$0"
+		],
+		"description": "Jest boilerplate"
+	},
+	// Simple snippet to create memoized functional component
+	"Kebetoo react functional component snippet": {
+		"prefix": "memo",
+		"body": [
+			"import React from 'react'",
+			"import { View } from 'react-native'\n",
+      "import styles from './styles'\n",
+			"const ${1:ComponentName} = () => {",
+			"\treturn (",
+			"\t\t<View style={styles.wrapper}>",
+			"\t\t\t$0",
+			"\t\t</View>",
+			"\t)",
+			")\n",
+			"export default React.memo($1)\n"
+		],
+		"description": "React memoized functional component boilerplate"
+	},
+	// Simple snippet to create normal functional component
+	"Kebetoo react component snippet": {
+		"prefix": ["component", "cmp"],
+		"body": [
+			"import React from 'react'",
+			"import { View } from 'react-native'\n",
+      "import styles from './styles'\n",
+			"const ${1:ComponentName} = () => {",
+			"\treturn (",
+			"\t\t<View style={styles.wrapper}>",
+			"\t\t\t$0",
+			"\t\t</View>",
+			"\t)",
+			")\n",
+			"export default $1\n"
+		],
+		"description": "React simple functional component boilerplate"
+	},
+	// Simple snippet for useEffect
+	"Kebetoo react useEffect snippet": {
+		"prefix": "effect",
+		"body": [
+			"useEffect(() => {",
+			"\t$0",
+			"}, [])",
+		]
+	},
+	// Simple snippet for useCallback
+	"Kebetoo react useCallback snippet": {
+		"prefix": "callback",
+		"body": [
+			"const $1 = useCallback(() => {",
+			"\t$0",
+			"}, [])",
+		]
+	},
+	// Simple snippet to create stylesheet
+	"Kebetoo stylesheet snippet": {
+		"prefix": "styles",
+		"body": [
+			"import { StyleSheet } from 'react-native'\n",
+			"export default StyleSheet.create({",
+			"\twrapper: {",
+			"\t\tflex: 1,",
+			"\t},",
+			"})\n"
+		],
+		"description": "React stylesheet boilerplate"
+	}
+}
