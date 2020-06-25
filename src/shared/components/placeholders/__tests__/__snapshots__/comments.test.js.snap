@@ -4,7 +4,9 @@ exports[`renders CommentPlaceholder 1`] = `
 <View
   style={
     Array [
-      undefined,
+      Object {
+        "height": 60,
+      },
       Object {
         "flexDirection": "row",
         "width": "100%",
@@ -141,7 +143,9 @@ exports[`renders CommentPlaceholder 1`] = `
           "width": 15,
         },
         Object {
-          "marginLeft": 10,
+          "bottom": 0,
+          "position": "absolute",
+          "right": 0,
         },
         Object {
           "overflow": "hidden",
