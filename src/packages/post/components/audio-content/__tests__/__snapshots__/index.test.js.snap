@@ -111,20 +111,25 @@ exports[`renders AudioContent 1`] = `
         style={
           Array [
             Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
               "color": "#0B1B77",
               "fontSize": 20,
+              "fontWeight": "normal",
+              "opacity": 1,
+              "textDecorationLine": "none",
             },
-            undefined,
             Object {
+              "color": "#0B1B77",
               "fontFamily": "Ionicons",
               "fontStyle": "normal",
               "fontWeight": "normal",
             },
-            Object {},
           ]
         }
       >
-        
+        ionicon-ios-play
       </Text>
     </View>
     <View

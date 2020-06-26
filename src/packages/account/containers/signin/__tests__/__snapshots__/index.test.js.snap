@@ -129,22 +129,25 @@ exports[`renders Signin 1`] = `
           style={
             Array [
               Object {
-                "color": undefined,
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
                 "fontSize": 30,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
                 "color": "#ACACAC",
-              },
-              Object {
                 "fontFamily": "Ionicons",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
               },
-              Object {},
             ]
           }
         >
-          
+          ionicon-ios-eye
         </Text>
       </View>
     </View>
