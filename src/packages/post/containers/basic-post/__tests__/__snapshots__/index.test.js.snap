@@ -976,7 +976,9 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
       Object {
         "marginBottom": 30,
       },
-      false,
+      Object {
+        "marginBottom": 0,
+      },
     ]
   }
 >
@@ -1013,8 +1015,8 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "width": 30,
               },
               Object {
-                "height": 35,
-                "width": 35,
+                "height": 24,
+                "width": 24,
               },
             ]
           }
@@ -1030,7 +1032,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                   "justifyContent": "center",
                 },
                 Object {
-                  "borderRadius": 17.5,
+                  "borderRadius": 12,
                 },
                 Object {
                   "backgroundColor": "#9575cd",
@@ -1069,9 +1071,11 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               "marginLeft": 5,
             },
             Object {
-              "height": 35,
+              "height": 24,
             },
-            false,
+            Object {
+              "justifyContent": "center",
+            },
           ]
         }
       >
@@ -1083,7 +1087,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               Object {
                 "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
+                "fontSize": 14,
                 "fontWeight": "normal",
                 "opacity": 1,
                 "textDecorationLine": "none",
@@ -1094,72 +1098,6 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         >
           John Doe
         </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            5 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            Edited
-          </Text>
-        </View>
       </View>
     </View>
   </View>
@@ -2921,7 +2859,9 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
       Object {
         "marginBottom": 30,
       },
-      false,
+      Object {
+        "marginBottom": 0,
+      },
     ]
   }
 >
@@ -2958,8 +2898,8 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "width": 30,
               },
               Object {
-                "height": 35,
-                "width": 35,
+                "height": 24,
+                "width": 24,
               },
             ]
           }
@@ -2975,7 +2915,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                   "justifyContent": "center",
                 },
                 Object {
-                  "borderRadius": 17.5,
+                  "borderRadius": 12,
                 },
                 Object {
                   "backgroundColor": "#9575cd",
@@ -3014,9 +2954,11 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               "marginLeft": 5,
             },
             Object {
-              "height": 35,
+              "height": 24,
             },
-            false,
+            Object {
+              "justifyContent": "center",
+            },
           ]
         }
       >
@@ -3028,7 +2970,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               Object {
                 "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
+                "fontSize": 14,
                 "fontWeight": "normal",
                 "opacity": 1,
                 "textDecorationLine": "none",
@@ -3039,72 +2981,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         >
           John Doe
         </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            Edited
-          </Text>
-        </View>
       </View>
     </View>
   </View>
@@ -3185,22 +3061,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
             ]
-          }
-        />
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "flex": 1,
-            }
           }
         />
       </View>
@@ -4812,7 +4672,9 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
       Object {
         "marginBottom": 30,
       },
-      false,
+      Object {
+        "marginBottom": 0,
+      },
     ]
   }
 >
@@ -4849,8 +4711,8 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "width": 30,
               },
               Object {
-                "height": 35,
-                "width": 35,
+                "height": 24,
+                "width": 24,
               },
             ]
           }
@@ -4866,7 +4728,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                   "justifyContent": "center",
                 },
                 Object {
-                  "borderRadius": 17.5,
+                  "borderRadius": 12,
                 },
                 Object {
                   "backgroundColor": "#9575cd",
@@ -4905,9 +4767,11 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               "marginLeft": 5,
             },
             Object {
-              "height": 35,
+              "height": 24,
             },
-            false,
+            Object {
+              "justifyContent": "center",
+            },
           ]
         }
       >
@@ -4919,7 +4783,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               },
               Object {
                 "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
+                "fontSize": 14,
                 "fontWeight": "normal",
                 "opacity": 1,
                 "textDecorationLine": "none",
@@ -4930,72 +4794,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         >
           John Doe
         </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            Edited
-          </Text>
-        </View>
       </View>
     </View>
   </View>
@@ -5011,7 +4809,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
   >
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -6704,7 +6502,9 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
       Object {
         "marginBottom": 30,
       },
-      false,
+      Object {
+        "marginBottom": 0,
+      },
     ]
   }
 >
@@ -6741,8 +6541,8 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "width": 30,
               },
               Object {
-                "height": 35,
-                "width": 35,
+                "height": 24,
+                "width": 24,
               },
             ]
           }
@@ -6758,7 +6558,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                   "justifyContent": "center",
                 },
                 Object {
-                  "borderRadius": 17.5,
+                  "borderRadius": 12,
                 },
                 Object {
                   "backgroundColor": "#9575cd",
@@ -6797,9 +6597,11 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               "marginLeft": 5,
             },
             Object {
-              "height": 35,
+              "height": 24,
             },
-            false,
+            Object {
+              "justifyContent": "center",
+            },
           ]
         }
       >
@@ -6811,7 +6613,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               },
               Object {
                 "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
+                "fontSize": 14,
                 "fontWeight": "normal",
                 "opacity": 1,
                 "textDecorationLine": "none",
@@ -6822,40 +6624,12 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         >
           John Doe
         </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
-              ]
-            }
-          >
-            7 days ago
-          </Text>
-        </View>
       </View>
     </View>
   </View>
   <View
     accessible={true}
-    focusable={true}
+    focusable={false}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}

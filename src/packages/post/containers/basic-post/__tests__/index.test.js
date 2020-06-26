@@ -37,7 +37,7 @@ describe('renders component', () => {
     it(`[${postType}]: renders BasicPost with repost mode`, () => {
       const { wrapper } = givenBasicPost({
         post: posts[postType],
-        repost: true,
+        isRepost: true,
       })
       expect(wrapper.toJSON()).toMatchSnapshot()
     })
