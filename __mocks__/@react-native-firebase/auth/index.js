@@ -1,8 +1,7 @@
+import authors from 'Kebetoo/__fixtures__/authors'
+
 const user = {
-  email: 'mockEmail',
-  uid: 'mockUid',
-  displayName: 'mockDisplayName',
-  photoURL: 'https://avatars1.githubusercontent.com/u/14147533',
+  ...authors[0],
   updateProfile: jest.fn(),
 }
 

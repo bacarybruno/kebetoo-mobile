@@ -17,20 +17,25 @@ exports[`renders HeaderBack 1`] = `
     style={
       Array [
         Object {
-          "color": "red",
-          "fontSize": 20,
+          "fontFamily": "Helvetica",
         },
-        undefined,
         Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 20,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "color": "red",
           "fontFamily": "icomoon",
           "fontStyle": "normal",
           "fontWeight": "normal",
         },
-        Object {},
       ]
     }
   >
-    
+    kebeticon-chevron-left
   </Text>
 </View>
 `;

@@ -4,17 +4,13 @@ import { useNavigation } from '@react-navigation/native'
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import routes from 'Kebetoo/src/navigation/routes'
 import posts from 'Kebetoo/__fixtures__/posts'
+import authors from 'Kebetoo/__fixtures__/authors'
 
 import BasicPost, { Content } from '../index'
 
-const author = {
-  displayName: 'Bruno',
-  uid: 123,
-  photoURL: 'jest://fake-image.png',
-}
 const givenBasicPost = setupTest(BasicPost)({
-  author,
-  originalAuthor: author,
+  author: authors[1],
+  originalAuthor: authors[0],
   isRepost: false,
   size: 35,
   withReactions: true,

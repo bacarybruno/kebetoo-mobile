@@ -669,20 +669,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#008ef4",
                                             "fontSize": 24,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#008ef4",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-home
                                     </Text>
                                   </View>
                                   <View
@@ -708,20 +713,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#7A8FA6",
                                             "fontSize": 18,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#7A8FA6",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-home
                                     </Text>
                                   </View>
                                 </View>
@@ -805,20 +815,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#008ef4",
                                             "fontSize": 24,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#008ef4",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-stories
                                     </Text>
                                   </View>
                                   <View
@@ -844,20 +859,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#7A8FA6",
                                             "fontSize": 18,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#7A8FA6",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-stories
                                     </Text>
                                   </View>
                                 </View>
@@ -941,20 +961,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#008ef4",
                                             "fontSize": 24,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#008ef4",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-undefined
                                     </Text>
                                   </View>
                                   <View
@@ -980,20 +1005,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#7A8FA6",
                                             "fontSize": 18,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#7A8FA6",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-undefined
                                     </Text>
                                   </View>
                                 </View>
@@ -1077,20 +1107,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#008ef4",
                                             "fontSize": 24,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#008ef4",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-search
                                     </Text>
                                   </View>
                                   <View
@@ -1116,20 +1151,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#7A8FA6",
                                             "fontSize": 18,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#7A8FA6",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-search
                                     </Text>
                                   </View>
                                 </View>
@@ -1213,20 +1253,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#008ef4",
                                             "fontSize": 24,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#008ef4",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-user
                                     </Text>
                                   </View>
                                   <View
@@ -1252,20 +1297,25 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "fontFamily": "Helvetica",
+                                          },
+                                          Object {
                                             "color": "#7A8FA6",
                                             "fontSize": 18,
+                                            "fontWeight": "normal",
+                                            "opacity": 1,
+                                            "textDecorationLine": "none",
                                           },
-                                          undefined,
                                           Object {
+                                            "color": "#7A8FA6",
                                             "fontFamily": "icomoon",
                                             "fontStyle": "normal",
                                             "fontWeight": "normal",
                                           },
-                                          Object {},
                                         ]
                                       }
                                     >
-                                      
+                                      kebeticon-user
                                     </Text>
                                   </View>
                                 </View>

@@ -1,6 +1,7 @@
+import { Animated } from 'react-native'
+
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
-import { act } from 'react-test-renderer'
 
 import IconButton from '../index'
 
@@ -17,17 +18,26 @@ it('renders IconButton', () => {
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
-it('renders activable IconButton', () => {
-  let wrapper = null
-  act(() => {
-    const { wrapper: asyncWrapper } = givenIconButton({
+// TODO: find a better way to test this without having knowledge of implementation details
+// ie without relying on jest.spyOn(Animated, 'spring')
+describe('animation', () => {
+  beforeEach(jest.clearAllMocks)
+  it('animates IconButton if active', () => {
+    const animateSpring = jest.spyOn(Animated, 'spring')
+    givenIconButton({
       activable: true,
       isActive: true,
       text: readableSeconds(100),
     })
-    wrapper = asyncWrapper
-    // run all timers to fulfill animations
-    jest.runAllTimers()
+    expect(animateSpring).toBeCalledTimes(1)
   })
-  expect(wrapper.toJSON()).toMatchSnapshot()
+  it('doesnt animates IconButton if not active', () => {
+    const animateSpring = jest.spyOn(Animated, 'spring')
+    givenIconButton({
+      activable: true,
+      isActive: false,
+      text: readableSeconds(100),
+    })
+    expect(animateSpring).not.toBeCalled()
+  })
 })

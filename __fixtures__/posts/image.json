@@ -1,7 +1,7 @@
 {
   "_id": "5eeb805299d77d3becdf35e0",
   "content": "Voiture",
-  "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+  "author": "1",
   "createdAt": "2020-06-18T14:55:14.492Z",
   "updatedAt": "2020-06-18T14:55:14.614Z",
   "__v": 0,
@@ -41,7 +41,7 @@
     {
       "type": "dislike",
       "_id": "5eee583e5d76173d0060f3e3",
-      "author": "2hCTAHiYapeqnJwAliIwwqLpqDj1",
+      "author": "1",
       "createdAt": "2020-06-20T18:41:02.266Z",
       "updatedAt": "2020-06-20T18:41:05.868Z",
       "__v": 0,
