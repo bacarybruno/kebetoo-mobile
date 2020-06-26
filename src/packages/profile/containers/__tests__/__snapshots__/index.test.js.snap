@@ -114,7 +114,7 @@ exports[`renders Profile 1`] = `
               ]
             }
           >
-            mockDisplayName
+            Bruno Bodian
           </Text>
           <Text
             style={
@@ -133,7 +133,7 @@ exports[`renders Profile 1`] = `
               ]
             }
           >
-            mockEmail
+            bacarybruno@kebetoo.com
           </Text>
         </View>
       </View>

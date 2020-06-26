@@ -86,20 +86,25 @@ exports[`renders SocialSignin 1`] = `
             style={
               Array [
                 Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
                   "color": "#3b5998",
                   "fontSize": 33,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
                 },
-                undefined,
                 Object {
+                  "color": "#3b5998",
                   "fontFamily": "icomoon",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 },
-                Object {},
               ]
             }
           >
-            
+            kebeticon-facebook
           </Text>
         </View>
         <View

@@ -50,12 +50,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -68,10 +63,33 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -105,7 +123,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -390,22 +408,26 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#004EEC",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#004EEC",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -414,7 +436,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#004EEC",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -460,22 +482,26 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -530,22 +556,26 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -600,22 +630,26 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -980,12 +1014,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -998,10 +1027,33 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -1035,7 +1087,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -1320,22 +1372,26 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#004EEC",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#004EEC",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -1344,7 +1400,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#004EEC",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -1390,22 +1446,26 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -1460,22 +1520,26 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -1530,22 +1594,26 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -1622,12 +1690,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -1640,10 +1703,33 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -1677,7 +1763,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -1968,12 +2054,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -1986,10 +2067,33 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -2023,7 +2127,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -2239,22 +2343,26 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -2309,22 +2417,26 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#0B1B77",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#0B1B77",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -2333,7 +2445,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#0B1B77",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -2379,22 +2491,26 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -2449,22 +2565,26 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -2829,12 +2949,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -2847,10 +2962,33 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -2884,7 +3022,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -3100,22 +3238,26 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -3170,22 +3312,26 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#0B1B77",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#0B1B77",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -3194,7 +3340,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#0B1B77",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -3240,22 +3386,26 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -3310,22 +3460,26 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -3402,12 +3556,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -3420,10 +3569,33 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -3457,7 +3629,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -3679,12 +3851,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -3697,10 +3864,33 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -3734,7 +3924,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -3891,7 +4081,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   <Image
                     source={
                       Object {
-                        "uri": "jest://fake-image.png",
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
                       }
                     }
                     style={
@@ -3908,7 +4098,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                         },
                       ]
                     }
-                    testID="image-avatar-jest://fake-image.png"
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                   />
                 </View>
               </View>
@@ -3945,7 +4135,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                     ]
                   }
                 >
-                  Bruno
+                  Bruno Bodian
                 </Text>
               </View>
             </View>
@@ -4044,22 +4234,26 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -4114,22 +4308,26 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#0B1B77",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#0B1B77",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -4138,7 +4336,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#0B1B77",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -4184,22 +4382,26 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -4254,22 +4456,26 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -4634,12 +4840,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -4652,10 +4853,33 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -4689,7 +4913,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -4846,7 +5070,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                   <Image
                     source={
                       Object {
-                        "uri": "jest://fake-image.png",
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
                       }
                     }
                     style={
@@ -4863,7 +5087,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                         },
                       ]
                     }
-                    testID="image-avatar-jest://fake-image.png"
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                   />
                 </View>
               </View>
@@ -4900,7 +5124,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                     ]
                   }
                 >
-                  Bruno
+                  Bruno Bodian
                 </Text>
               </View>
             </View>
@@ -4999,22 +5223,26 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -5069,22 +5297,26 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
-                "color": "#50555C",
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#0B1B77",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#0B1B77",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like-fill
         </Text>
         <Text
           style={
@@ -5093,7 +5325,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "fontFamily": "Helvetica",
               },
               Object {
-                "color": "#50555C",
+                "color": "#0B1B77",
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "opacity": 1,
@@ -5139,22 +5371,26 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -5209,22 +5445,26 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -5301,12 +5541,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -5319,10 +5554,33 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -5356,7 +5614,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -5513,7 +5771,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   <Image
                     source={
                       Object {
-                        "uri": "jest://fake-image.png",
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
                       }
                     }
                     style={
@@ -5530,7 +5788,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                         },
                       ]
                     }
-                    testID="image-avatar-jest://fake-image.png"
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                   />
                 </View>
               </View>
@@ -5567,7 +5825,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                     ]
                   }
                 >
-                  Bruno
+                  Bruno Bodian
                 </Text>
               </View>
             </View>
@@ -5672,12 +5930,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -5690,10 +5943,33 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -5727,7 +6003,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -5850,22 +6126,26 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -5920,22 +6200,26 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -5990,22 +6274,26 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -6060,22 +6348,26 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -6440,12 +6732,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -6458,10 +6745,33 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -6495,7 +6805,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={
@@ -6618,22 +6928,26 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -6688,22 +7002,26 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-like
         </Text>
         <Text
           style={
@@ -6758,22 +7076,26 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-comment
         </Text>
         <Text
           style={
@@ -6828,22 +7150,26 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           style={
             Array [
               Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
                 "color": "#50555C",
                 "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
               },
               Object {
-                "marginRight": 4,
-              },
-              Object {
+                "color": "#50555C",
                 "fontFamily": "icomoon",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginRight": 4,
               },
-              Object {},
             ]
           }
         >
-          
+          kebeticon-share
         </Text>
         <Text
           style={
@@ -6920,12 +7246,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          <Image
-            source={
-              Object {
-                "uri": "jest://fake-image.png",
-              }
-            }
+          <View
             style={
               Array [
                 Object {
@@ -6938,10 +7259,33 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                 Object {
                   "borderRadius": 17.5,
                 },
+                Object {
+                  "backgroundColor": "#9575cd",
+                },
               ]
             }
-            testID="image-avatar-jest://fake-image.png"
-          />
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+              J
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -6975,7 +7319,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
             ]
           }
         >
-          Bruno
+          John Doe
         </Text>
         <View
           style={

@@ -2,6 +2,7 @@
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
+import MockDate from 'mockdate'
 
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
@@ -58,5 +59,8 @@ jest.mock('react-native-screens', () => {
   Screens.enableScreens = () => {}
   return Screens
 })
+
+// date
+MockDate.set(new Date(Date.parse('2020-06-25T13:30:00+02:00')))
 
 export default setupTest

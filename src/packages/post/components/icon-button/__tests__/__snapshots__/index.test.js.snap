@@ -50,131 +50,25 @@ exports[`renders IconButton 1`] = `
       style={
         Array [
           Object {
-            "color": "#0B1B77",
-            "fontSize": 18.018018018018015,
-          },
-          undefined,
-          Object {
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          Object {},
-        ]
-      }
-    >
-      
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`renders activable IconButton 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "flexDirection": "row",
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgba(0, 142, 244, 0.8)",
-          "borderRadius": 50,
-          "paddingHorizontal": 15,
-          "paddingVertical": 3,
-        },
-        Object {
-          "marginRight": 30,
-        },
-      ]
-    }
-  >
-    <Text
-      style={
-        Array [
-          Object {
             "fontFamily": "Helvetica",
           },
           Object {
-            "color": "#FFFFFF",
-            "fontSize": 14,
-            "fontWeight": "bold",
+            "color": "#0B1B77",
+            "fontSize": 18.018018018018015,
+            "fontWeight": "normal",
             "opacity": 1,
             "textDecorationLine": "none",
           },
-          Object {},
-        ]
-      }
-    >
-      1:40
-    </Text>
-  </View>
-  <View
-    accessible={true}
-    focusable={true}
-    hitSlop={
-      Object {
-        "bottom": 1334,
-        "left": 750,
-        "right": 750,
-        "top": 1334,
-      }
-    }
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#008ef4",
-        "borderRadius": 20,
-        "elevation": 5,
-        "height": 40,
-        "justifyContent": "center",
-        "opacity": 1,
-        "shadowColor": "rgba(0, 0, 0, 0.8)",
-        "shadowOffset": Object {
-          "x": 0,
-          "y": 5,
-        },
-        "shadowOpacity": 0.34,
-        "shadowRadius": 6.27,
-        "transform": Array [
           Object {
-            "scale": 1.8,
-          },
-        ],
-        "width": 40,
-      }
-    }
-  >
-    <Text
-      allowFontScaling={false}
-      style={
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 18.018018018018015,
-          },
-          undefined,
-          Object {
+            "color": "#0B1B77",
             "fontFamily": "icomoon",
             "fontStyle": "normal",
             "fontWeight": "normal",
           },
-          Object {},
         ]
       }
     >
-      
+      kebeticon-microphone
     </Text>
   </View>
 </View>
