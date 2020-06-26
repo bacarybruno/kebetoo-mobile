@@ -4,6 +4,7 @@ import setupTest from 'Kebetoo/src/config/jest-setup'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 
 import IconButton from '../index'
+import { act } from 'react-test-renderer'
 
 const givenIconButton = setupTest(IconButton)({
   onPress: jest.fn(),

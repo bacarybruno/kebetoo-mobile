@@ -1,15 +1,18 @@
+import authors from 'Kebetoo/__fixtures__/authors'
+
+const author = authors[0]
 const mockUserInfo = {
   idToken: 'mockIdToken',
   accessToken: null,
   serverAuthCode: 'mockServerAuthCode',
   scopes: [], // on iOS this is empty array if no additional scopes are defined
   user: {
-    email: 'mockEmail',
-    id: 'mockId',
-    givenName: 'mockGivenName',
-    familyName: 'mockFamilyName',
-    photo: 'mockPhotoUrl',
-    name: 'mockFullName',
+    email: author.email,
+    id: author.uid,
+    givenName: '',
+    familyName: '',
+    photo: author.photoURL,
+    name: author.displayName,
   },
 }
 
