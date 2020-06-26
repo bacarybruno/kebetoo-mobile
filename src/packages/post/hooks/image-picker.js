@@ -17,12 +17,15 @@ export const constructFileName = (time) => `IMG-${time}`
 
 const useFilePicker = (uri) => {
   const [file, setFile] = useState(null)
-  const pickImage = useCallback(() => {
-    ImagePicker.launchImageLibrary(PICTURE_CONFIG, (res) => {
-      if (res.uri) {
-        setFile(res)
-      }
+
+  const pickImage = useCallback(async () => {
+    const fileData = await new Promise((resolve) => {
+      ImagePicker.launchImageLibrary(PICTURE_CONFIG, (res) => {
+        if (res.uri) resolve(res)
+        else resolve(false)
+      })
     })
+    if (fileData) setFile(fileData)
   }, [])
 
   useEffect(() => {
