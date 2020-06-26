@@ -10,10 +10,11 @@ export default {
   },
   fs: {
     exists: existsMock,
+    unlink: jest.fn().mockReturnValue(true),
     dirs: {
-      MainBundleDir: () => { },
-      CacheDir: () => { },
-      DocumentDir: () => { },
+      MainBundleDir: 'jest://rnfs:MainBundleDir',
+      CacheDir: 'jest://rnfs:CacheDir',
+      DocumentDir: 'jest://rnfs:DocumentDir',
     },
   },
 }

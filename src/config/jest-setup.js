@@ -36,6 +36,7 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
  */
 
 jest.useFakeTimers()
+jest.setTimeout(30000)
 
 // react-navigation
 const mockedNavigate = jest.fn()

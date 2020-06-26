@@ -32,14 +32,23 @@ export const getRecordUri = (filename = RECORD_NAME) => (
   `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
 )
 
-const useAudioRecorder = (uri, maxDuration) => {
+/**
+ * Audio Recorder hook
+ * @param {String} uri a predefined audio uri
+ * @param {Number} minDuration the min duration of the recorded audio
+ * @param {Number} maxDuration the max duration of the recorded audio
+ */
+const useAudioRecorder = (
+  uri,
+  minDurationInSeconds = MIN_DURATION_IN_SECONDS,
+  maxDurationInSeconds = MAX_DURATION_IN_SECONDS,
+) => {
   const [isRecording, setIsRecording] = useState(false)
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
   const [recorder, setRecorder] = useState(null)
   const intervalRef = useRef()
   const permissions = usePermissions()
-  const maxDurationInSeconds = maxDuration || MAX_DURATION_IN_SECONDS
 
   const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
 
@@ -108,14 +117,14 @@ const useAudioRecorder = (uri, maxDuration) => {
     setIsRecording(false)
     if (recorder) {
       recorder.stop(() => {
-        if (elapsedTime < MIN_DURATION_IN_SECONDS) {
+        if (elapsedTime < minDurationInSeconds) {
           reset()
         } else {
           setHasRecording(true)
         }
       })
     }
-  }, [elapsedTime, recorder, reset])
+  }, [elapsedTime, minDurationInSeconds, recorder, reset])
 
   useEffect(() => {
     if (isRecording && !intervalRef.current) {
@@ -132,7 +141,7 @@ const useAudioRecorder = (uri, maxDuration) => {
   }, [isRecording, intervalRef])
 
   useEffect(() => {
-    if (elapsedTime === maxDurationInSeconds) {
+    if (elapsedTime >= maxDurationInSeconds) {
       setIsRecording(false)
     }
   }, [elapsedTime, maxDurationInSeconds])

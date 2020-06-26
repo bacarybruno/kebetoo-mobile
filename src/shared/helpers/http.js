@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import RNFetchBlob from 'rn-fetch-blob'
 
-export const BASE_URL = 'http://localhost:1337'
+export const BASE_URL = 'http://192.168.43.147:1337'
 const ITEMS_PER_PAGE = 20
 
 const parseJSON = (res) => res.json()
