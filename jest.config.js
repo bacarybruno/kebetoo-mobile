@@ -16,4 +16,10 @@ module.exports = {
     // node_modules\@react-navigation\stack\lib\commonjs\views\assets\back-icon.png
     'views/assets/[a-z](.+).png$': '<rootDir>/__mocks__/file-mock',
   },
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/__mocks__/',
+    '/__fixtures__/',
+    './src/shared/icons/',
+  ],
 }
