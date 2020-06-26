@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders RepostContent 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "elevation": 1,
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "borderColor": "#E8E8E8",
+          "borderLeftWidth": 2,
+          "marginVertical": 8,
+          "minHeight": 52,
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "marginBottom": 30,
+            },
+            Object {
+              "marginBottom": 0,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 8,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#008ef4",
+                        "borderRadius": 15,
+                        "flex": 1,
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "borderRadius": 12,
+                      },
+                    ]
+                  }
+                  testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "justifyContent": "space-between",
+                    "marginLeft": 5,
+                  },
+                  Object {
+                    "height": 24,
+                  },
+                  Object {
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                Bruno Bodian
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#F2F2F2",
+                "borderRadius": 5,
+                "minHeight": 52,
+                "padding": 16,
+              },
+              false,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.8)",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {},
+              ]
+            }
+          >
+            I'll input the open-source RAM sensor, that should card the FTP protocol!
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
