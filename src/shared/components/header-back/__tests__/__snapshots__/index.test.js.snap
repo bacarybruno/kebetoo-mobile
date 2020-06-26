@@ -57,20 +57,25 @@ exports[`renders HeaderClose 1`] = `
     style={
       Array [
         Object {
-          "color": "red",
-          "fontSize": 40,
+          "fontFamily": "Helvetica",
         },
-        undefined,
         Object {
+          "color": "rgba(0, 0, 0, 0.8)",
+          "fontSize": 40,
+          "fontWeight": "normal",
+          "opacity": 1,
+          "textDecorationLine": "none",
+        },
+        Object {
+          "color": "red",
           "fontFamily": "Ionicons",
           "fontStyle": "normal",
           "fontWeight": "normal",
         },
-        Object {},
       ]
     }
   >
-    
+    ionicon-ios-close
   </Text>
 </View>
 `;

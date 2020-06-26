@@ -368,20 +368,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-md-list
               </Text>
             </View>
             <View>
@@ -505,20 +510,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-happy
               </Text>
             </View>
             <View>
@@ -593,20 +603,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-color-palette
               </Text>
             </View>
             <View>
@@ -681,20 +696,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-notifications
               </Text>
             </View>
             <View>
@@ -769,20 +789,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-globe
               </Text>
             </View>
             <View>
@@ -906,20 +931,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-at
               </Text>
             </View>
             <View>
@@ -1013,20 +1043,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-md-create
               </Text>
             </View>
             <View>
@@ -1101,20 +1136,25 @@ exports[`renders Profile 1`] = `
                 style={
                   Array [
                     Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
                       "color": "#0B1B77",
                       "fontSize": 20,
+                      "fontWeight": "normal",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
                     },
-                    undefined,
                     Object {
+                      "color": "#0B1B77",
                       "fontFamily": "Ionicons",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
-                    Object {},
                   ]
                 }
               >
-                
+                ionicon-ios-log-out
               </Text>
             </View>
             <View>
