@@ -1,0 +1,3907 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Comments 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      ListHeaderComponent={
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FAFAFA",
+              "paddingTop": 16,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "minHeight": 200.1,
+              }
+            }
+          >
+            <Header
+              Left={[Function]}
+              author={
+                Object {
+                  "displayName": "Bruno Bodian",
+                  "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                }
+              }
+              post={
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbb",
+                  "audio": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbc",
+                    "alternativeText": null,
+                    "caption": null,
+                    "createdAt": "2020-06-20T09:40:52.832Z",
+                    "ext": ".mp3",
+                    "hash": "PTT_20200620_6_5e895bdeae",
+                    "height": null,
+                    "id": "5eedd9a43acba504d4a1cfbc",
+                    "mime": "audio/mp3",
+                    "name": "PTT-20200620-6",
+                    "provider": "local",
+                    "related": Array [
+                      "5eedd9a43acba504d4a1cfbb",
+                    ],
+                    "size": 13.24,
+                    "updatedAt": "2020-06-20T09:40:52.839Z",
+                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                    "width": null,
+                  },
+                  "author": "1",
+                  "comments": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9d43acba504d4a1cfbf",
+                      "author": "1",
+                      "content": "Fgyjj",
+                      "createdAt": "2020-06-20T09:41:40.401Z",
+                      "id": "5eedd9d43acba504d4a1cfbf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:41:40.405Z",
+                    },
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc0",
+                      "audio": Object {
+                        "__v": 0,
+                        "_id": "5eedd9e83acba504d4a1cfc1",
+                        "alternativeText": null,
+                        "caption": null,
+                        "createdAt": "2020-06-20T09:42:00.174Z",
+                        "ext": ".mp3",
+                        "hash": "PTT_20200620_3_1669bbfc5d",
+                        "height": null,
+                        "id": "5eedd9e83acba504d4a1cfc1",
+                        "mime": "audio/mp3",
+                        "name": "PTT-20200620-3",
+                        "provider": "local",
+                        "related": Array [
+                          "5eedd9e83acba504d4a1cfc0",
+                        ],
+                        "size": 8.02,
+                        "updatedAt": "2020-06-20T09:42:00.178Z",
+                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                        "width": null,
+                      },
+                      "author": "1",
+                      "createdAt": "2020-06-20T09:42:00.149Z",
+                      "id": "5eedd9e83acba504d4a1cfc0",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:42:00.179Z",
+                    },
+                  ],
+                  "content": "Fhgjjyjj",
+                  "createdAt": "2020-06-20T09:40:52.790Z",
+                  "id": "5eedd9a43acba504d4a1cfbb",
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedf49b3acba504d4a1cfcf",
+                      "author": "1",
+                      "createdAt": "2020-06-20T11:35:55.591Z",
+                      "id": "5eedf49b3acba504d4a1cfcf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "type": "like",
+                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                    },
+                  ],
+                  "reposts": Array [],
+                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                }
+              }
+              size={35}
+            />
+            <Content
+              mode="comments"
+              onPress={[Function]}
+              originalAuthor={
+                Object {
+                  "displayName": "Bruno Bodian",
+                  "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                }
+              }
+              post={
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbb",
+                  "audio": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbc",
+                    "alternativeText": null,
+                    "caption": null,
+                    "createdAt": "2020-06-20T09:40:52.832Z",
+                    "ext": ".mp3",
+                    "hash": "PTT_20200620_6_5e895bdeae",
+                    "height": null,
+                    "id": "5eedd9a43acba504d4a1cfbc",
+                    "mime": "audio/mp3",
+                    "name": "PTT-20200620-6",
+                    "provider": "local",
+                    "related": Array [
+                      "5eedd9a43acba504d4a1cfbb",
+                    ],
+                    "size": 13.24,
+                    "updatedAt": "2020-06-20T09:40:52.839Z",
+                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                    "width": null,
+                  },
+                  "author": "1",
+                  "comments": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9d43acba504d4a1cfbf",
+                      "author": "1",
+                      "content": "Fgyjj",
+                      "createdAt": "2020-06-20T09:41:40.401Z",
+                      "id": "5eedd9d43acba504d4a1cfbf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:41:40.405Z",
+                    },
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc0",
+                      "audio": Object {
+                        "__v": 0,
+                        "_id": "5eedd9e83acba504d4a1cfc1",
+                        "alternativeText": null,
+                        "caption": null,
+                        "createdAt": "2020-06-20T09:42:00.174Z",
+                        "ext": ".mp3",
+                        "hash": "PTT_20200620_3_1669bbfc5d",
+                        "height": null,
+                        "id": "5eedd9e83acba504d4a1cfc1",
+                        "mime": "audio/mp3",
+                        "name": "PTT-20200620-3",
+                        "provider": "local",
+                        "related": Array [
+                          "5eedd9e83acba504d4a1cfc0",
+                        ],
+                        "size": 8.02,
+                        "updatedAt": "2020-06-20T09:42:00.178Z",
+                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                        "width": null,
+                      },
+                      "author": "1",
+                      "createdAt": "2020-06-20T09:42:00.149Z",
+                      "id": "5eedd9e83acba504d4a1cfc0",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:42:00.179Z",
+                    },
+                  ],
+                  "content": "Fhgjjyjj",
+                  "createdAt": "2020-06-20T09:40:52.790Z",
+                  "id": "5eedd9a43acba504d4a1cfbb",
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedf49b3acba504d4a1cfcf",
+                      "author": "1",
+                      "createdAt": "2020-06-20T11:35:55.591Z",
+                      "id": "5eedf49b3acba504d4a1cfcf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "type": "like",
+                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                    },
+                  ],
+                  "reposts": Array [],
+                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                }
+              }
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 0,
+                  "marginBottom": 0,
+                  "padding": 16,
+                  "paddingTop": 0,
+                }
+              }
+            />
+          </View>
+          <Memo(Reactions)
+            author="1"
+            comments={
+              Array [
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9d43acba504d4a1cfbf",
+                  "author": "1",
+                  "content": "Fgyjj",
+                  "createdAt": "2020-06-20T09:41:40.401Z",
+                  "id": "5eedd9d43acba504d4a1cfbf",
+                  "post": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbb",
+                    "audio": Object {
+                      "__v": 0,
+                      "_id": "5eedd9a43acba504d4a1cfbc",
+                      "alternativeText": null,
+                      "caption": null,
+                      "createdAt": "2020-06-20T09:40:52.832Z",
+                      "ext": ".mp3",
+                      "hash": "PTT_20200620_6_5e895bdeae",
+                      "height": null,
+                      "id": "5eedd9a43acba504d4a1cfbc",
+                      "mime": "audio/mp3",
+                      "name": "PTT-20200620-6",
+                      "provider": "local",
+                      "related": Array [
+                        "5eedd9a43acba504d4a1cfbb",
+                      ],
+                      "size": 13.24,
+                      "updatedAt": "2020-06-20T09:40:52.839Z",
+                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                      "width": null,
+                    },
+                    "author": "1",
+                    "content": "Fhgjjyjj",
+                    "createdAt": "2020-06-20T09:40:52.790Z",
+                    "id": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:40:52.841Z",
+                  },
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eee1f963acba504d4a1cfd1",
+                      "author": "1",
+                      "comment": "5eedd9d43acba504d4a1cfbf",
+                      "createdAt": "2020-06-20T14:39:18.794Z",
+                      "id": "5eee1f963acba504d4a1cfd1",
+                      "type": "love",
+                      "updatedAt": "2020-06-20T14:39:18.807Z",
+                    },
+                  ],
+                  "updatedAt": "2020-06-20T09:41:40.405Z",
+                },
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9e83acba504d4a1cfc0",
+                  "audio": Object {
+                    "__v": 0,
+                    "_id": "5eedd9e83acba504d4a1cfc1",
+                    "alternativeText": null,
+                    "caption": null,
+                    "createdAt": "2020-06-20T09:42:00.174Z",
+                    "ext": ".mp3",
+                    "hash": "PTT_20200620_3_1669bbfc5d",
+                    "height": null,
+                    "id": "5eedd9e83acba504d4a1cfc1",
+                    "mime": "audio/mp3",
+                    "name": "PTT-20200620-3",
+                    "provider": "local",
+                    "related": Array [
+                      "5eedd9e83acba504d4a1cfc0",
+                    ],
+                    "size": 8.02,
+                    "updatedAt": "2020-06-20T09:42:00.178Z",
+                    "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                    "width": null,
+                  },
+                  "author": "1",
+                  "createdAt": "2020-06-20T09:42:00.149Z",
+                  "id": "5eedd9e83acba504d4a1cfc0",
+                  "post": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbb",
+                    "audio": Object {
+                      "__v": 0,
+                      "_id": "5eedd9a43acba504d4a1cfbc",
+                      "alternativeText": null,
+                      "caption": null,
+                      "createdAt": "2020-06-20T09:40:52.832Z",
+                      "ext": ".mp3",
+                      "hash": "PTT_20200620_6_5e895bdeae",
+                      "height": null,
+                      "id": "5eedd9a43acba504d4a1cfbc",
+                      "mime": "audio/mp3",
+                      "name": "PTT-20200620-6",
+                      "provider": "local",
+                      "related": Array [
+                        "5eedd9a43acba504d4a1cfbb",
+                      ],
+                      "size": 13.24,
+                      "updatedAt": "2020-06-20T09:40:52.839Z",
+                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                      "width": null,
+                    },
+                    "author": "1",
+                    "content": "Fhgjjyjj",
+                    "createdAt": "2020-06-20T09:40:52.790Z",
+                    "id": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:40:52.841Z",
+                  },
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eee1fa43acba504d4a1cfd2",
+                      "author": "1",
+                      "comment": "5eedd9e83acba504d4a1cfc0",
+                      "createdAt": "2020-06-20T14:39:32.870Z",
+                      "id": "5eee1fa43acba504d4a1cfd2",
+                      "type": "love",
+                      "updatedAt": "2020-06-20T14:39:32.878Z",
+                    },
+                  ],
+                  "updatedAt": "2020-06-20T09:42:00.179Z",
+                },
+              ]
+            }
+            onComment={[Function]}
+            post={
+              Object {
+                "__v": 0,
+                "_id": "5eedd9a43acba504d4a1cfbb",
+                "audio": Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbc",
+                  "alternativeText": null,
+                  "caption": null,
+                  "createdAt": "2020-06-20T09:40:52.832Z",
+                  "ext": ".mp3",
+                  "hash": "PTT_20200620_6_5e895bdeae",
+                  "height": null,
+                  "id": "5eedd9a43acba504d4a1cfbc",
+                  "mime": "audio/mp3",
+                  "name": "PTT-20200620-6",
+                  "provider": "local",
+                  "related": Array [
+                    "5eedd9a43acba504d4a1cfbb",
+                  ],
+                  "size": 13.24,
+                  "updatedAt": "2020-06-20T09:40:52.839Z",
+                  "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                  "width": null,
+                },
+                "author": "1",
+                "comments": Array [
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedd9d43acba504d4a1cfbf",
+                    "author": "1",
+                    "content": "Fgyjj",
+                    "createdAt": "2020-06-20T09:41:40.401Z",
+                    "id": "5eedd9d43acba504d4a1cfbf",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:41:40.405Z",
+                  },
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedd9e83acba504d4a1cfc0",
+                    "audio": Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc1",
+                      "alternativeText": null,
+                      "caption": null,
+                      "createdAt": "2020-06-20T09:42:00.174Z",
+                      "ext": ".mp3",
+                      "hash": "PTT_20200620_3_1669bbfc5d",
+                      "height": null,
+                      "id": "5eedd9e83acba504d4a1cfc1",
+                      "mime": "audio/mp3",
+                      "name": "PTT-20200620-3",
+                      "provider": "local",
+                      "related": Array [
+                        "5eedd9e83acba504d4a1cfc0",
+                      ],
+                      "size": 8.02,
+                      "updatedAt": "2020-06-20T09:42:00.178Z",
+                      "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                      "width": null,
+                    },
+                    "author": "1",
+                    "createdAt": "2020-06-20T09:42:00.149Z",
+                    "id": "5eedd9e83acba504d4a1cfc0",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:42:00.179Z",
+                  },
+                ],
+                "content": "Fhgjjyjj",
+                "createdAt": "2020-06-20T09:40:52.790Z",
+                "id": "5eedd9a43acba504d4a1cfbb",
+                "reactions": Array [
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedf49b3acba504d4a1cfcf",
+                    "author": "1",
+                    "createdAt": "2020-06-20T11:35:55.591Z",
+                    "id": "5eedf49b3acba504d4a1cfcf",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "type": "like",
+                    "updatedAt": "2020-06-20T17:45:39.642Z",
+                  },
+                ],
+                "reposts": Array [],
+                "updatedAt": "2020-06-20T09:40:52.841Z",
+              }
+            }
+          />
+        </View>
+      }
+      contentContainerStyle={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "flexGrow": 1,
+        }
+      }
+      data={
+        Array [
+          Object {
+            "__v": 0,
+            "_id": "5eedd9d43acba504d4a1cfbf",
+            "author": "1",
+            "content": "Fgyjj",
+            "createdAt": "2020-06-20T09:41:40.401Z",
+            "id": "5eedd9d43acba504d4a1cfbf",
+            "post": Object {
+              "__v": 0,
+              "_id": "5eedd9a43acba504d4a1cfbb",
+              "audio": Object {
+                "__v": 0,
+                "_id": "5eedd9a43acba504d4a1cfbc",
+                "alternativeText": null,
+                "caption": null,
+                "createdAt": "2020-06-20T09:40:52.832Z",
+                "ext": ".mp3",
+                "hash": "PTT_20200620_6_5e895bdeae",
+                "height": null,
+                "id": "5eedd9a43acba504d4a1cfbc",
+                "mime": "audio/mp3",
+                "name": "PTT-20200620-6",
+                "provider": "local",
+                "related": Array [
+                  "5eedd9a43acba504d4a1cfbb",
+                ],
+                "size": 13.24,
+                "updatedAt": "2020-06-20T09:40:52.839Z",
+                "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                "width": null,
+              },
+              "author": "1",
+              "content": "Fhgjjyjj",
+              "createdAt": "2020-06-20T09:40:52.790Z",
+              "id": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:40:52.841Z",
+            },
+            "reactions": Array [
+              Object {
+                "__v": 0,
+                "_id": "5eee1f963acba504d4a1cfd1",
+                "author": "1",
+                "comment": "5eedd9d43acba504d4a1cfbf",
+                "createdAt": "2020-06-20T14:39:18.794Z",
+                "id": "5eee1f963acba504d4a1cfd1",
+                "type": "love",
+                "updatedAt": "2020-06-20T14:39:18.807Z",
+              },
+            ],
+            "updatedAt": "2020-06-20T09:41:40.405Z",
+          },
+          Object {
+            "__v": 0,
+            "_id": "5eedd9e83acba504d4a1cfc0",
+            "audio": Object {
+              "__v": 0,
+              "_id": "5eedd9e83acba504d4a1cfc1",
+              "alternativeText": null,
+              "caption": null,
+              "createdAt": "2020-06-20T09:42:00.174Z",
+              "ext": ".mp3",
+              "hash": "PTT_20200620_3_1669bbfc5d",
+              "height": null,
+              "id": "5eedd9e83acba504d4a1cfc1",
+              "mime": "audio/mp3",
+              "name": "PTT-20200620-3",
+              "provider": "local",
+              "related": Array [
+                "5eedd9e83acba504d4a1cfc0",
+              ],
+              "size": 8.02,
+              "updatedAt": "2020-06-20T09:42:00.178Z",
+              "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+              "width": null,
+            },
+            "author": "1",
+            "createdAt": "2020-06-20T09:42:00.149Z",
+            "id": "5eedd9e83acba504d4a1cfc0",
+            "post": Object {
+              "__v": 0,
+              "_id": "5eedd9a43acba504d4a1cfbb",
+              "audio": Object {
+                "__v": 0,
+                "_id": "5eedd9a43acba504d4a1cfbc",
+                "alternativeText": null,
+                "caption": null,
+                "createdAt": "2020-06-20T09:40:52.832Z",
+                "ext": ".mp3",
+                "hash": "PTT_20200620_6_5e895bdeae",
+                "height": null,
+                "id": "5eedd9a43acba504d4a1cfbc",
+                "mime": "audio/mp3",
+                "name": "PTT-20200620-6",
+                "provider": "local",
+                "related": Array [
+                  "5eedd9a43acba504d4a1cfbb",
+                ],
+                "size": 13.24,
+                "updatedAt": "2020-06-20T09:40:52.839Z",
+                "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                "width": null,
+              },
+              "author": "1",
+              "content": "Fhgjjyjj",
+              "createdAt": "2020-06-20T09:40:52.790Z",
+              "id": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:40:52.841Z",
+            },
+            "reactions": Array [
+              Object {
+                "__v": 0,
+                "_id": "5eee1fa43acba504d4a1cfd2",
+                "author": "1",
+                "comment": "5eedd9e83acba504d4a1cfc0",
+                "createdAt": "2020-06-20T14:39:32.870Z",
+                "id": "5eee1fa43acba504d4a1cfd2",
+                "type": "love",
+                "updatedAt": "2020-06-20T14:39:32.878Z",
+              },
+            ],
+            "updatedAt": "2020-06-20T09:42:00.179Z",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FAFAFA",
+                "paddingTop": 16,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "minHeight": 200.1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "marginBottom": 8,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <RNGestureHandlerButton
+                      accessibilityComponentType="button"
+                      accessibilityLabel="Go back"
+                      accessibilityRole="button"
+                      accessibilityTraits="button"
+                      accessible={true}
+                      activeOpacity={0.3}
+                      borderless={true}
+                      collapsable={false}
+                      delayPressIn={0}
+                      disallowInterruption={true}
+                      onActiveStateChange={[Function]}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      onPress={[Function]}
+                      pressColor="rgba(0, 0, 0, .32)"
+                      style={
+                        Array [
+                          Object {
+                            "overflow": "hidden",
+                          },
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "opacity": 1,
+                          },
+                        ]
+                      }
+                      testID="header-back"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "height": 24,
+                            "justifyContent": "center",
+                            "margin": 3,
+                            "width": 24,
+                          }
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "fontFamily": "Helvetica",
+                              },
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.8)",
+                                "fontSize": 20,
+                                "fontWeight": "normal",
+                                "opacity": 1,
+                                "textDecorationLine": "none",
+                              },
+                              Object {
+                                "color": "rgb(0, 122, 255)",
+                                "fontFamily": "icomoon",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                            ]
+                          }
+                        >
+                          kebeticon-chevron-left
+                        </Text>
+                      </View>
+                      <View
+                        style={null}
+                      >
+                        <Text
+                          accessible={false}
+                          allowFontScaling={false}
+                          numberOfLines={1}
+                          style={
+                            Object {
+                              "color": "rgb(0, 122, 255)",
+                              "fontSize": 17,
+                              "letterSpacing": 0.35,
+                            }
+                          }
+                        >
+                          Back
+                        </Text>
+                      </View>
+                    </RNGestureHandlerButton>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "height": 30,
+                            "width": 30,
+                          },
+                          Object {
+                            "height": 35,
+                            "width": 35,
+                          },
+                        ]
+                      }
+                    >
+                      <Image
+                        source={
+                          Object {
+                            "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "#008ef4",
+                              "borderRadius": 15,
+                              "flex": 1,
+                              "justifyContent": "center",
+                            },
+                            Object {
+                              "borderRadius": 17.5,
+                            },
+                          ]
+                        }
+                        testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                      />
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "justifyContent": "space-between",
+                          "marginLeft": 5,
+                        },
+                        Object {
+                          "height": 35,
+                        },
+                        undefined,
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.8)",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      Bruno Bodian
+                    </Text>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "fontFamily": "Helvetica",
+                            },
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.8)",
+                              "fontSize": 12,
+                              "fontWeight": "normal",
+                              "opacity": 1,
+                              "textDecorationLine": "none",
+                            },
+                            Object {},
+                          ]
+                        }
+                      >
+                        5 days ago
+                      </Text>
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "fontFamily": "Helvetica",
+                            },
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.8)",
+                              "fontSize": 12,
+                              "fontWeight": "normal",
+                              "opacity": 1,
+                              "textDecorationLine": "none",
+                            },
+                            Object {},
+                          ]
+                        }
+                      >
+                         • 
+                      </Text>
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "fontFamily": "Helvetica",
+                            },
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.8)",
+                              "fontSize": 12,
+                              "fontWeight": "normal",
+                              "opacity": 1,
+                              "textDecorationLine": "none",
+                            },
+                            Object {},
+                          ]
+                        }
+                      >
+                        Edited
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 0,
+                    "marginBottom": 0,
+                    "padding": 16,
+                    "paddingTop": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "marginBottom": 8,
+                      },
+                    ]
+                  }
+                >
+                  Fhgjjyjj
+                </Text>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#F2F2F2",
+                        "borderRadius": 5,
+                        "flex": 1,
+                        "flexDirection": "row",
+                        "height": 52,
+                        "maxHeight": 52,
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                  testID="player-wrapper"
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "#CECECE",
+                          "borderBottomLeftRadius": 5,
+                          "borderTopLeftRadius": 5,
+                          "height": "100%",
+                          "opacity": 0.4,
+                          "position": "absolute",
+                        },
+                        undefined,
+                        Object {
+                          "width": "0%",
+                        },
+                      ]
+                    }
+                    testID="progress"
+                  />
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#CECECE",
+                        "borderRadius": 15,
+                        "elevation": 2,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "opacity": 1,
+                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 1,
+                        },
+                        "shadowOpacity": 0.2,
+                        "shadowRadius": 1.41,
+                        "width": 30,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontSize": 20,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontFamily": "Ionicons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                        ]
+                      }
+                    >
+                      ionicon-ios-play
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/waves.png",
+                        }
+                      }
+                      style={
+                        Object {
+                          "resizeMode": "contain",
+                          "width": "80%",
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 0.35,
+                          "textDecorationLine": "none",
+                        },
+                        Object {
+                          "bottom": 2,
+                          "position": "absolute",
+                          "right": 8,
+                        },
+                      ]
+                    }
+                  >
+                    0:06
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderLeftColor": "#E8E8E8",
+                  "borderLeftWidth": 1,
+                  "borderRightColor": "#E8E8E8",
+                  "borderRightWidth": 1,
+                  "borderTopColor": "#E8E8E8",
+                  "borderTopLeftRadius": 35,
+                  "borderTopRightRadius": 35,
+                  "borderTopWidth": 1,
+                  "height": 100,
+                  "paddingHorizontal": 24,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#CECECE",
+                      "borderRadius": 5,
+                      "height": 5,
+                      "margin": 10,
+                      "width": 60,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "space-evenly",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-like-fill
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      1
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-dislike
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-comment
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      2
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-share
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                        "marginRight": 5,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#FFFFFF",
+                          "borderRadius": 14,
+                          "height": 28,
+                          "padding": 2,
+                          "width": 28,
+                          "zIndex": 1,
+                        }
+                      }
+                    >
+                      <Image
+                        source={
+                          Object {
+                            "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                          }
+                        }
+                        style={
+                          Object {
+                            "backgroundColor": "#008ef4",
+                            "borderRadius": 14,
+                            "height": "100%",
+                            "width": "100%",
+                          }
+                        }
+                      />
+                    </View>
+                  </View>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 14,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginHorizontal": 24,
+                "paddingBottom": 8,
+                "paddingTop": 16,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginRight": 10,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    ellipsizeMode="middle"
+                    numberOfLines={1}
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 14,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                    Bruno Bodian
+                     • 
+                    5 days ago
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Fgyjj
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "flex-end",
+                      "marginTop": 5,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 30,
+                        "left": 30,
+                        "right": 30,
+                        "top": 30,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.8)",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      1 
+                    </Text>
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#E74F65",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#E74F65",
+                            "fontFamily": "Ionicons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                        ]
+                      }
+                    >
+                      ionicon-md-heart
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginHorizontal": 24,
+                "paddingBottom": 8,
+                "paddingTop": 16,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginRight": 10,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    ellipsizeMode="middle"
+                    numberOfLines={1}
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 14,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                    Bruno Bodian
+                     • 
+                    5 days ago
+                  </Text>
+                </View>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#F2F2F2",
+                        "borderRadius": 5,
+                        "flex": 1,
+                        "flexDirection": "row",
+                        "height": 52,
+                        "maxHeight": 52,
+                      },
+                      Object {
+                        "backgroundColor": "#FAFAFA",
+                        "height": 45,
+                        "marginTop": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="player-wrapper"
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "#CECECE",
+                          "borderBottomLeftRadius": 5,
+                          "borderTopLeftRadius": 5,
+                          "height": "100%",
+                          "opacity": 0.4,
+                          "position": "absolute",
+                        },
+                        undefined,
+                        Object {
+                          "width": "0%",
+                        },
+                      ]
+                    }
+                    testID="progress"
+                  />
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#CECECE",
+                        "borderRadius": 15,
+                        "elevation": 2,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "opacity": 1,
+                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 1,
+                        },
+                        "shadowOpacity": 0.2,
+                        "shadowRadius": 1.41,
+                        "width": 30,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontSize": 20,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontFamily": "Ionicons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                        ]
+                      }
+                    >
+                      ionicon-ios-play
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/waves.png",
+                        }
+                      }
+                      style={
+                        Object {
+                          "resizeMode": "contain",
+                          "width": "80%",
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 0.35,
+                          "textDecorationLine": "none",
+                        },
+                        Object {
+                          "bottom": 2,
+                          "position": "absolute",
+                          "right": 8,
+                        },
+                      ]
+                    }
+                  >
+                    0:03
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "flex-end",
+                      "marginTop": 5,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 30,
+                        "left": 30,
+                        "right": 30,
+                        "top": 30,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.8)",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      1 
+                    </Text>
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#E74F65",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#E74F65",
+                            "fontFamily": "Ionicons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                        ]
+                      }
+                    >
+                      ionicon-md-heart
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "row",
+        "paddingBottom": 10,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#F2F2F2",
+              "borderColor": "#E8E8E8",
+              "borderRadius": 15,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "paddingLeft": 16,
+            },
+            Object {
+              "backgroundColor": "#FAFAFA",
+              "borderRadius": 22.5,
+              "borderWidth": 0.5,
+              "elevation": 1,
+              "height": 45,
+              "minHeight": 45,
+              "shadowColor": "rgba(0, 0, 0, 0.8)",
+              "shadowOffset": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "shadowOpacity": 0.18,
+              "shadowRadius": 1,
+            },
+          ]
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          blurOnSubmit={false}
+          editable={true}
+          multiline={true}
+          onChangeText={[Function]}
+          onContentSizeChange={[Function]}
+          placeholder="Add a comment"
+          placeholderTextColor="#ACACAC"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "fontSize": 16,
+              },
+              Object {
+                "minHeight": 45,
+              },
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value={null}
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        hitSlop={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#008ef4",
+            "borderRadius": 22.5,
+            "elevation": 2,
+            "height": 45,
+            "justifyContent": "center",
+            "marginLeft": 5,
+            "maxHeight": 45,
+            "maxWidth": 45,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+            "width": 45,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 22.52252252252252,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#FFFFFF",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          kebeticon-microphone
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders Comments in loading state 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      ListHeaderComponent={
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FAFAFA",
+              "paddingTop": 16,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "minHeight": 200.1,
+              }
+            }
+          >
+            <Header
+              Left={[Function]}
+              post={
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbb",
+                  "audio": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbc",
+                    "alternativeText": null,
+                    "caption": null,
+                    "createdAt": "2020-06-20T09:40:52.832Z",
+                    "ext": ".mp3",
+                    "hash": "PTT_20200620_6_5e895bdeae",
+                    "height": null,
+                    "id": "5eedd9a43acba504d4a1cfbc",
+                    "mime": "audio/mp3",
+                    "name": "PTT-20200620-6",
+                    "provider": "local",
+                    "related": Array [
+                      "5eedd9a43acba504d4a1cfbb",
+                    ],
+                    "size": 13.24,
+                    "updatedAt": "2020-06-20T09:40:52.839Z",
+                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                    "width": null,
+                  },
+                  "author": "1",
+                  "comments": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9d43acba504d4a1cfbf",
+                      "author": "1",
+                      "content": "Fgyjj",
+                      "createdAt": "2020-06-20T09:41:40.401Z",
+                      "id": "5eedd9d43acba504d4a1cfbf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:41:40.405Z",
+                    },
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc0",
+                      "audio": Object {
+                        "__v": 0,
+                        "_id": "5eedd9e83acba504d4a1cfc1",
+                        "alternativeText": null,
+                        "caption": null,
+                        "createdAt": "2020-06-20T09:42:00.174Z",
+                        "ext": ".mp3",
+                        "hash": "PTT_20200620_3_1669bbfc5d",
+                        "height": null,
+                        "id": "5eedd9e83acba504d4a1cfc1",
+                        "mime": "audio/mp3",
+                        "name": "PTT-20200620-3",
+                        "provider": "local",
+                        "related": Array [
+                          "5eedd9e83acba504d4a1cfc0",
+                        ],
+                        "size": 8.02,
+                        "updatedAt": "2020-06-20T09:42:00.178Z",
+                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                        "width": null,
+                      },
+                      "author": "1",
+                      "createdAt": "2020-06-20T09:42:00.149Z",
+                      "id": "5eedd9e83acba504d4a1cfc0",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:42:00.179Z",
+                    },
+                  ],
+                  "content": "Fhgjjyjj",
+                  "createdAt": "2020-06-20T09:40:52.790Z",
+                  "id": "5eedd9a43acba504d4a1cfbb",
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedf49b3acba504d4a1cfcf",
+                      "author": "1",
+                      "createdAt": "2020-06-20T11:35:55.591Z",
+                      "id": "5eedf49b3acba504d4a1cfcf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "type": "like",
+                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                    },
+                  ],
+                  "reposts": Array [],
+                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                }
+              }
+              size={35}
+            />
+            <Content
+              mode="comments"
+              onPress={[Function]}
+              post={
+                Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbb",
+                  "audio": Object {
+                    "__v": 0,
+                    "_id": "5eedd9a43acba504d4a1cfbc",
+                    "alternativeText": null,
+                    "caption": null,
+                    "createdAt": "2020-06-20T09:40:52.832Z",
+                    "ext": ".mp3",
+                    "hash": "PTT_20200620_6_5e895bdeae",
+                    "height": null,
+                    "id": "5eedd9a43acba504d4a1cfbc",
+                    "mime": "audio/mp3",
+                    "name": "PTT-20200620-6",
+                    "provider": "local",
+                    "related": Array [
+                      "5eedd9a43acba504d4a1cfbb",
+                    ],
+                    "size": 13.24,
+                    "updatedAt": "2020-06-20T09:40:52.839Z",
+                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                    "width": null,
+                  },
+                  "author": "1",
+                  "comments": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9d43acba504d4a1cfbf",
+                      "author": "1",
+                      "content": "Fgyjj",
+                      "createdAt": "2020-06-20T09:41:40.401Z",
+                      "id": "5eedd9d43acba504d4a1cfbf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:41:40.405Z",
+                    },
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc0",
+                      "audio": Object {
+                        "__v": 0,
+                        "_id": "5eedd9e83acba504d4a1cfc1",
+                        "alternativeText": null,
+                        "caption": null,
+                        "createdAt": "2020-06-20T09:42:00.174Z",
+                        "ext": ".mp3",
+                        "hash": "PTT_20200620_3_1669bbfc5d",
+                        "height": null,
+                        "id": "5eedd9e83acba504d4a1cfc1",
+                        "mime": "audio/mp3",
+                        "name": "PTT-20200620-3",
+                        "provider": "local",
+                        "related": Array [
+                          "5eedd9e83acba504d4a1cfc0",
+                        ],
+                        "size": 8.02,
+                        "updatedAt": "2020-06-20T09:42:00.178Z",
+                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                        "width": null,
+                      },
+                      "author": "1",
+                      "createdAt": "2020-06-20T09:42:00.149Z",
+                      "id": "5eedd9e83acba504d4a1cfc0",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "updatedAt": "2020-06-20T09:42:00.179Z",
+                    },
+                  ],
+                  "content": "Fhgjjyjj",
+                  "createdAt": "2020-06-20T09:40:52.790Z",
+                  "id": "5eedd9a43acba504d4a1cfbb",
+                  "reactions": Array [
+                    Object {
+                      "__v": 0,
+                      "_id": "5eedf49b3acba504d4a1cfcf",
+                      "author": "1",
+                      "createdAt": "2020-06-20T11:35:55.591Z",
+                      "id": "5eedf49b3acba504d4a1cfcf",
+                      "post": "5eedd9a43acba504d4a1cfbb",
+                      "type": "like",
+                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                    },
+                  ],
+                  "reposts": Array [],
+                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                }
+              }
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 0,
+                  "marginBottom": 0,
+                  "padding": 16,
+                  "paddingTop": 0,
+                }
+              }
+            />
+          </View>
+          <Memo(Reactions)
+            author="1"
+            comments={
+              Array [
+                Object {
+                  "author": "",
+                  "id": Object {
+                    "__v": 0,
+                    "_id": "5eedd9d43acba504d4a1cfbf",
+                    "author": "1",
+                    "content": "Fgyjj",
+                    "createdAt": "2020-06-20T09:41:40.401Z",
+                    "id": "5eedd9d43acba504d4a1cfbf",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:41:40.405Z",
+                  },
+                  "reactions": Array [],
+                },
+                Object {
+                  "author": "",
+                  "id": Object {
+                    "__v": 0,
+                    "_id": "5eedd9e83acba504d4a1cfc0",
+                    "audio": Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc1",
+                      "alternativeText": null,
+                      "caption": null,
+                      "createdAt": "2020-06-20T09:42:00.174Z",
+                      "ext": ".mp3",
+                      "hash": "PTT_20200620_3_1669bbfc5d",
+                      "height": null,
+                      "id": "5eedd9e83acba504d4a1cfc1",
+                      "mime": "audio/mp3",
+                      "name": "PTT-20200620-3",
+                      "provider": "local",
+                      "related": Array [
+                        "5eedd9e83acba504d4a1cfc0",
+                      ],
+                      "size": 8.02,
+                      "updatedAt": "2020-06-20T09:42:00.178Z",
+                      "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                      "width": null,
+                    },
+                    "author": "1",
+                    "createdAt": "2020-06-20T09:42:00.149Z",
+                    "id": "5eedd9e83acba504d4a1cfc0",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:42:00.179Z",
+                  },
+                  "reactions": Array [],
+                },
+              ]
+            }
+            onComment={[Function]}
+            post={
+              Object {
+                "__v": 0,
+                "_id": "5eedd9a43acba504d4a1cfbb",
+                "audio": Object {
+                  "__v": 0,
+                  "_id": "5eedd9a43acba504d4a1cfbc",
+                  "alternativeText": null,
+                  "caption": null,
+                  "createdAt": "2020-06-20T09:40:52.832Z",
+                  "ext": ".mp3",
+                  "hash": "PTT_20200620_6_5e895bdeae",
+                  "height": null,
+                  "id": "5eedd9a43acba504d4a1cfbc",
+                  "mime": "audio/mp3",
+                  "name": "PTT-20200620-6",
+                  "provider": "local",
+                  "related": Array [
+                    "5eedd9a43acba504d4a1cfbb",
+                  ],
+                  "size": 13.24,
+                  "updatedAt": "2020-06-20T09:40:52.839Z",
+                  "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                  "width": null,
+                },
+                "author": "1",
+                "comments": Array [
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedd9d43acba504d4a1cfbf",
+                    "author": "1",
+                    "content": "Fgyjj",
+                    "createdAt": "2020-06-20T09:41:40.401Z",
+                    "id": "5eedd9d43acba504d4a1cfbf",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:41:40.405Z",
+                  },
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedd9e83acba504d4a1cfc0",
+                    "audio": Object {
+                      "__v": 0,
+                      "_id": "5eedd9e83acba504d4a1cfc1",
+                      "alternativeText": null,
+                      "caption": null,
+                      "createdAt": "2020-06-20T09:42:00.174Z",
+                      "ext": ".mp3",
+                      "hash": "PTT_20200620_3_1669bbfc5d",
+                      "height": null,
+                      "id": "5eedd9e83acba504d4a1cfc1",
+                      "mime": "audio/mp3",
+                      "name": "PTT-20200620-3",
+                      "provider": "local",
+                      "related": Array [
+                        "5eedd9e83acba504d4a1cfc0",
+                      ],
+                      "size": 8.02,
+                      "updatedAt": "2020-06-20T09:42:00.178Z",
+                      "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                      "width": null,
+                    },
+                    "author": "1",
+                    "createdAt": "2020-06-20T09:42:00.149Z",
+                    "id": "5eedd9e83acba504d4a1cfc0",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "updatedAt": "2020-06-20T09:42:00.179Z",
+                  },
+                ],
+                "content": "Fhgjjyjj",
+                "createdAt": "2020-06-20T09:40:52.790Z",
+                "id": "5eedd9a43acba504d4a1cfbb",
+                "reactions": Array [
+                  Object {
+                    "__v": 0,
+                    "_id": "5eedf49b3acba504d4a1cfcf",
+                    "author": "1",
+                    "createdAt": "2020-06-20T11:35:55.591Z",
+                    "id": "5eedf49b3acba504d4a1cfcf",
+                    "post": "5eedd9a43acba504d4a1cfbb",
+                    "type": "like",
+                    "updatedAt": "2020-06-20T17:45:39.642Z",
+                  },
+                ],
+                "reposts": Array [],
+                "updatedAt": "2020-06-20T09:40:52.841Z",
+              }
+            }
+          />
+        </View>
+      }
+      contentContainerStyle={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "flexGrow": 1,
+        }
+      }
+      data={
+        Array [
+          Object {
+            "author": "",
+            "id": Object {
+              "__v": 0,
+              "_id": "5eedd9d43acba504d4a1cfbf",
+              "author": "1",
+              "content": "Fgyjj",
+              "createdAt": "2020-06-20T09:41:40.401Z",
+              "id": "5eedd9d43acba504d4a1cfbf",
+              "post": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:41:40.405Z",
+            },
+            "reactions": Array [],
+          },
+          Object {
+            "author": "",
+            "id": Object {
+              "__v": 0,
+              "_id": "5eedd9e83acba504d4a1cfc0",
+              "audio": Object {
+                "__v": 0,
+                "_id": "5eedd9e83acba504d4a1cfc1",
+                "alternativeText": null,
+                "caption": null,
+                "createdAt": "2020-06-20T09:42:00.174Z",
+                "ext": ".mp3",
+                "hash": "PTT_20200620_3_1669bbfc5d",
+                "height": null,
+                "id": "5eedd9e83acba504d4a1cfc1",
+                "mime": "audio/mp3",
+                "name": "PTT-20200620-3",
+                "provider": "local",
+                "related": Array [
+                  "5eedd9e83acba504d4a1cfc0",
+                ],
+                "size": 8.02,
+                "updatedAt": "2020-06-20T09:42:00.178Z",
+                "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                "width": null,
+              },
+              "author": "1",
+              "createdAt": "2020-06-20T09:42:00.149Z",
+              "id": "5eedd9e83acba504d4a1cfc0",
+              "post": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:42:00.179Z",
+            },
+            "reactions": Array [],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FAFAFA",
+                "paddingTop": 16,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "minHeight": 200.1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "marginBottom": 8,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <RNGestureHandlerButton
+                      accessibilityComponentType="button"
+                      accessibilityLabel="Go back"
+                      accessibilityRole="button"
+                      accessibilityTraits="button"
+                      accessible={true}
+                      activeOpacity={0.3}
+                      borderless={true}
+                      collapsable={false}
+                      delayPressIn={0}
+                      disallowInterruption={true}
+                      onActiveStateChange={[Function]}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      onPress={[Function]}
+                      pressColor="rgba(0, 0, 0, .32)"
+                      style={
+                        Array [
+                          Object {
+                            "overflow": "hidden",
+                          },
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "opacity": 1,
+                          },
+                        ]
+                      }
+                      testID="header-back"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "height": 24,
+                            "justifyContent": "center",
+                            "margin": 3,
+                            "width": 24,
+                          }
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "fontFamily": "Helvetica",
+                              },
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.8)",
+                                "fontSize": 20,
+                                "fontWeight": "normal",
+                                "opacity": 1,
+                                "textDecorationLine": "none",
+                              },
+                              Object {
+                                "color": "rgb(0, 122, 255)",
+                                "fontFamily": "icomoon",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                            ]
+                          }
+                        >
+                          kebeticon-chevron-left
+                        </Text>
+                      </View>
+                      <View
+                        style={null}
+                      >
+                        <Text
+                          accessible={false}
+                          allowFontScaling={false}
+                          numberOfLines={1}
+                          style={
+                            Object {
+                              "color": "rgb(0, 122, 255)",
+                              "fontSize": 17,
+                              "letterSpacing": 0.35,
+                            }
+                          }
+                        >
+                          Back
+                        </Text>
+                      </View>
+                    </RNGestureHandlerButton>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "#efefef",
+                            "borderRadius": 17.5,
+                            "height": 35,
+                            "width": 35,
+                          },
+                          Object {
+                            "marginRight": 10,
+                          },
+                          Object {
+                            "overflow": "hidden",
+                          },
+                        ]
+                      }
+                    >
+                      <View
+                        style={Object {}}
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 0,
+                    "marginBottom": 0,
+                    "padding": 16,
+                    "paddingTop": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "marginBottom": 8,
+                      },
+                    ]
+                  }
+                >
+                  Fhgjjyjj
+                </Text>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#F2F2F2",
+                        "borderRadius": 5,
+                        "flex": 1,
+                        "flexDirection": "row",
+                        "height": 52,
+                        "maxHeight": 52,
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                  testID="player-wrapper"
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "#CECECE",
+                          "borderBottomLeftRadius": 5,
+                          "borderTopLeftRadius": 5,
+                          "height": "100%",
+                          "opacity": 0.4,
+                          "position": "absolute",
+                        },
+                        undefined,
+                        Object {
+                          "width": "0%",
+                        },
+                      ]
+                    }
+                    testID="progress"
+                  />
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#CECECE",
+                        "borderRadius": 15,
+                        "elevation": 2,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "opacity": 1,
+                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 1,
+                        },
+                        "shadowOpacity": 0.2,
+                        "shadowRadius": 1.41,
+                        "width": 30,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontSize": 20,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#0B1B77",
+                            "fontFamily": "Ionicons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                        ]
+                      }
+                    >
+                      ionicon-ios-play
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/waves.png",
+                        }
+                      }
+                      style={
+                        Object {
+                          "resizeMode": "contain",
+                          "width": "80%",
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 0.35,
+                          "textDecorationLine": "none",
+                        },
+                        Object {
+                          "bottom": 2,
+                          "position": "absolute",
+                          "right": 8,
+                        },
+                      ]
+                    }
+                  >
+                    0:06
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderLeftColor": "#E8E8E8",
+                  "borderLeftWidth": 1,
+                  "borderRightColor": "#E8E8E8",
+                  "borderRightWidth": 1,
+                  "borderTopColor": "#E8E8E8",
+                  "borderTopLeftRadius": 35,
+                  "borderTopRightRadius": 35,
+                  "borderTopWidth": 1,
+                  "height": 65,
+                  "paddingHorizontal": 24,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#CECECE",
+                      "borderRadius": 5,
+                      "height": 5,
+                      "margin": 10,
+                      "width": 60,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "space-evenly",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-like-fill
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#004EEC",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      1
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-dislike
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-comment
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      2
+                    </Text>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 5,
+                        "right": 5,
+                        "top": 10,
+                      }
+                    }
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "marginRight": 15,
+                        "minWidth": 35,
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 18,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontFamily": "icomoon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                            "marginRight": 4,
+                          },
+                        ]
+                      }
+                    >
+                      kebeticon-share
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#50555C",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginHorizontal": 24,
+                "paddingBottom": 8,
+                "paddingTop": 16,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                  },
+                  Object {
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 20,
+                      "height": 40,
+                      "width": 40,
+                    },
+                    Object {
+                      "marginRight": 10,
+                    },
+                    Object {
+                      "overflow": "hidden",
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#dfdfdf",
+                      "height": "100%",
+                      "opacity": 0.5,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2,
+                        "height": 8,
+                        "marginBottom": 8,
+                        "width": "50%",
+                      },
+                      undefined,
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      Object {
+                        "marginBottom": 5,
+                      },
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      undefined,
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 3,
+                      "height": 15,
+                      "width": 15,
+                    },
+                    Object {
+                      "bottom": 0,
+                      "position": "absolute",
+                      "right": 0,
+                    },
+                    Object {
+                      "overflow": "hidden",
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#dfdfdf",
+                      "height": "100%",
+                      "opacity": 0.5,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginHorizontal": 24,
+                "paddingBottom": 8,
+                "paddingTop": 16,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                  },
+                  Object {
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 20,
+                      "height": 40,
+                      "width": 40,
+                    },
+                    Object {
+                      "marginRight": 10,
+                    },
+                    Object {
+                      "overflow": "hidden",
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#dfdfdf",
+                      "height": "100%",
+                      "opacity": 0.5,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2,
+                        "height": 8,
+                        "marginBottom": 8,
+                        "width": "50%",
+                      },
+                      undefined,
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      Object {
+                        "marginBottom": 5,
+                      },
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      undefined,
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 3,
+                      "height": 15,
+                      "width": 15,
+                    },
+                    Object {
+                      "bottom": 0,
+                      "position": "absolute",
+                      "right": 0,
+                    },
+                    Object {
+                      "overflow": "hidden",
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#dfdfdf",
+                      "height": "100%",
+                      "opacity": 0.5,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "row",
+        "paddingBottom": 10,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#F2F2F2",
+              "borderColor": "#E8E8E8",
+              "borderRadius": 15,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "paddingLeft": 16,
+            },
+            Object {
+              "backgroundColor": "#FAFAFA",
+              "borderRadius": 22.5,
+              "borderWidth": 0.5,
+              "elevation": 1,
+              "height": 45,
+              "minHeight": 45,
+              "shadowColor": "rgba(0, 0, 0, 0.8)",
+              "shadowOffset": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "shadowOpacity": 0.18,
+              "shadowRadius": 1,
+            },
+          ]
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          blurOnSubmit={false}
+          editable={true}
+          multiline={true}
+          onChangeText={[Function]}
+          onContentSizeChange={[Function]}
+          placeholder="Add a comment"
+          placeholderTextColor="#ACACAC"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "fontSize": 16,
+              },
+              Object {
+                "minHeight": 45,
+              },
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value={null}
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        hitSlop={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#008ef4",
+            "borderRadius": 22.5,
+            "elevation": 2,
+            "height": 45,
+            "justifyContent": "center",
+            "marginLeft": 5,
+            "maxHeight": 45,
+            "maxWidth": 45,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+            "width": 45,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 22.52252252252252,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#FFFFFF",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          kebeticon-microphone
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

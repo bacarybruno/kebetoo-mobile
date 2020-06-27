@@ -102,12 +102,12 @@ const Comments = () => {
         content: comment,
         post: post.id,
       })
-      commentInput.current.clear()
+      commentInput.current?.clear()
       setComment('')
     }
     setComments((value) => [...value, result])
     setIsLoading(false)
-    setTimeout(() => scrollView.current.scrollToEnd(), 200)
+    setTimeout(() => scrollView.current?.scrollToEnd(), 200)
   }, [audioRecorder, comment, post.id, user.uid])
 
   const renderComment = useMemo(() => ({ item }) => {
@@ -133,7 +133,7 @@ const Comments = () => {
     />
   ), [goBack])
 
-  const onComment = useCallback(() => commentInput.current.focus(), [])
+  const onComment = useCallback(() => commentInput.current?.focus(), [])
 
   const onCommentContentPress = useCallback(() => {
     const type = getPostType(post)
