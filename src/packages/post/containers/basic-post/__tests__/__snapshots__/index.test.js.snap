@@ -13,12 +13,15 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -984,12 +987,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
@@ -1601,12 +1609,15 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -1970,12 +1981,15 @@ exports[`renders component [image]: renders BasicPost 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -2867,12 +2881,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
@@ -3394,12 +3413,15 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -3689,12 +3711,15 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -3893,13 +3918,16 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
     >
       <View
         style={
-          Object {
-            "borderColor": "#E8E8E8",
-            "borderLeftWidth": 2,
-            "marginVertical": 8,
-            "minHeight": 52,
-            "paddingLeft": 8,
-          }
+          Array [
+            Object {
+              "borderColor": "#E8E8E8",
+              "borderLeftWidth": 2,
+              "marginVertical": 8,
+              "minHeight": 52,
+              "paddingLeft": 8,
+            },
+            false,
+          ]
         }
       >
         <View
@@ -3916,12 +3944,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-                "marginBottom": 8,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
@@ -4680,12 +4713,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
@@ -4820,13 +4858,16 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
     >
       <View
         style={
-          Object {
-            "borderColor": "#E8E8E8",
-            "borderLeftWidth": 2,
-            "marginVertical": 8,
-            "minHeight": 52,
-            "paddingLeft": 8,
-          }
+          Array [
+            Object {
+              "borderColor": "#E8E8E8",
+              "borderLeftWidth": 2,
+              "marginVertical": 8,
+              "minHeight": 52,
+              "paddingLeft": 8,
+            },
+            false,
+          ]
         }
       >
         <View
@@ -4843,12 +4884,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-                "marginBottom": 8,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
@@ -5317,12 +5363,15 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -5521,13 +5570,16 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
     >
       <View
         style={
-          Object {
-            "borderColor": "#E8E8E8",
-            "borderLeftWidth": 2,
-            "marginVertical": 8,
-            "minHeight": 52,
-            "paddingLeft": 8,
-          }
+          Array [
+            Object {
+              "borderColor": "#E8E8E8",
+              "borderLeftWidth": 2,
+              "marginVertical": 8,
+              "minHeight": 52,
+              "paddingLeft": 8,
+            },
+            false,
+          ]
         }
       >
         <View
@@ -5544,12 +5596,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-                "marginBottom": 8,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
@@ -5706,12 +5763,15 @@ exports[`renders component [text]: renders BasicPost 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
@@ -6510,12 +6570,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
@@ -6998,12 +7063,15 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "marginBottom": 8,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View

@@ -14,4 +14,8 @@ export default StyleSheet.create({
     borderColor: colors.border,
     paddingLeft: metrics.marginHorizontal / 2,
   },
+  imageContent: {
+    paddingLeft: 0,
+    borderLeftWidth: 0,
+  },
 })

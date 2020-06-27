@@ -71,7 +71,7 @@ export const Header = ({
   let avatarSize = size
   if (isRepost) avatarSize = fontSizes.lg
   return (
-    <View style={styles.headerWrapper}>
+    <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
       <View style={styles.left}>
         <View style={styles.headerContent}>
           {Left && <Left />}

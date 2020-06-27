@@ -13,6 +13,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginBottom: 8,
   },
+  repostHeaderWrapper: {
+    marginBottom: 4,
+  },
   headerContent: {
     flexDirection: 'row',
   },
