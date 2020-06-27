@@ -61,7 +61,7 @@ const CommentInput = ({
             stop={audioRecorder.stop}
           />
         ) : (
-          <SendButton onPress={onSend} isLoading={isLoading} />
+          <SendButton onPress={onSend} isLoading={isLoading} testID="send-button" />
         )}
     </View>
   )
