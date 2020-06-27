@@ -7,8 +7,8 @@ import IconButton from 'Kebetoo/src/packages/post/components/icon-button'
 
 import styles from './styles'
 
-export const SendButton = React.memo(({ onPress, isLoading }) => (
-  <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress}>
+export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => (
+  <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress} {...otherProps}>
     {isLoading
       ? <ActivityIndicator size={25} color={colors.white} />
       : (

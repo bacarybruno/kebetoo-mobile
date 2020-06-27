@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CommentInput 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "paddingBottom": 10,
+      "paddingHorizontal": 16,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F2F2F2",
+            "borderColor": "#E8E8E8",
+            "borderRadius": 15,
+            "borderWidth": 1,
+            "minHeight": 48,
+            "paddingLeft": 16,
+          },
+          Object {
+            "backgroundColor": "#FAFAFA",
+            "borderRadius": 22.5,
+            "borderWidth": 0.5,
+            "elevation": 1,
+            "height": 45,
+            "minHeight": 45,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
+            },
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          },
+        ]
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        blurOnSubmit={false}
+        editable={true}
+        multiline={true}
+        onChangeText={[Function]}
+        onContentSizeChange={[Function]}
+        placeholder="Add a comment"
+        placeholderTextColor="#ACACAC"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "fontSize": 16,
+            },
+            Object {
+              "minHeight": 45,
+            },
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      hitSlop={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+        }
+      }
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#008ef4",
+          "borderRadius": 22.5,
+          "elevation": 2,
+          "height": 45,
+          "justifyContent": "center",
+          "marginLeft": 5,
+          "maxHeight": 45,
+          "maxWidth": 45,
+          "opacity": 1,
+          "shadowColor": "rgba(0, 0, 0, 0.8)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 1.41,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": 45,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 22.52252252252252,
+              "fontWeight": "normal",
+              "opacity": 1,
+              "textDecorationLine": "none",
+            },
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "icomoon",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        kebeticon-microphone
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders CommentInput with AudioPlayer 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "paddingBottom": 10,
+      "paddingHorizontal": 16,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F2F2F2",
+            "borderRadius": 5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 52,
+            "maxHeight": 52,
+          },
+          Object {
+            "backgroundColor": "#FAFAFA",
+            "borderColor": "#E8E8E8",
+            "borderWidth": 0.5,
+            "elevation": 1,
+            "marginRight": 10,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
+            },
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          },
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CECECE",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+            },
+            undefined,
+            Object {
+              "width": "0%",
+            },
+          ]
+        }
+        testID="progress"
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#CECECE",
+            "borderRadius": 15,
+            "elevation": 2,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 16,
+            "opacity": 1,
+            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 1,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 1.41,
+            "width": 30,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#0B1B77",
+                "fontSize": 20,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#0B1B77",
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          ionicon-ios-play
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/images/waves.png",
+            }
+          }
+          style={
+            Object {
+              "resizeMode": "contain",
+              "width": "80%",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "opacity": 0.35,
+              "textDecorationLine": "none",
+            },
+            Object {
+              "bottom": 2,
+              "position": "absolute",
+              "right": 8,
+            },
+          ]
+        }
+      >
+        0:00
+      </Text>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#008ef4",
+        "borderRadius": 22.5,
+        "elevation": 2,
+        "height": 45,
+        "justifyContent": "center",
+        "marginLeft": 5,
+        "maxHeight": 45,
+        "maxWidth": 45,
+        "opacity": 1,
+        "shadowColor": "rgba(0, 0, 0, 0.8)",
+        "shadowOffset": Object {
+          "x": 0,
+          "y": 1,
+        },
+        "shadowOpacity": 0.2,
+        "shadowRadius": 1.41,
+        "width": 45,
+      }
+    }
+    testID="send-button"
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 25,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "color": "#FFFFFF",
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "marginLeft": 5,
+          },
+        ]
+      }
+    >
+      ionicon-md-send
+    </Text>
+  </View>
+</View>
+`;
