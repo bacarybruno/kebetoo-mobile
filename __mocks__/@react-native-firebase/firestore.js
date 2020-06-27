@@ -1,6 +1,9 @@
 import authorsFixtures from 'Kebetoo/__fixtures__/authors'
 
-const authors = authorsFixtures.map((author) => ({ data: jest.fn().mockReturnValue(author) }))
+const authors = authorsFixtures.map((author) => ({
+  id: author.uid,
+  data: jest.fn().mockReturnValue({ ...author, id: author.uid }),
+}))
 
 const collection = jest.fn((name) => ({
   doc: jest.fn(() => ({

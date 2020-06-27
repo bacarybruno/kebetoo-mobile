@@ -74,7 +74,6 @@ const Reactions = ({
   post, author, comments, ...reactionProps
 }) => {
   const hasReactions = comments.flatMap((comment) => comment.reactions).length > 0
-
   const getContainerStyle = useMemo(() => () => {
     let height = reactionsHeight
     if (hasReactions) height += summaryHeight
