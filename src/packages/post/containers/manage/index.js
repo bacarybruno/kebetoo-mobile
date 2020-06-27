@@ -209,9 +209,7 @@ const ManagePostsPage = ({ navigation }) => {
     />
   ), [authors, showPostOptions, user])
 
-  const renderNoPost = useCallback(() => !loading && (
-    <NoPosts />
-  ), [loading])
+  const renderNoPost = useCallback(() => loading === false && <NoPosts />, [loading])
 
   const createPost = useCallback(() => {
     navigate(routes.CREATE_POST, {

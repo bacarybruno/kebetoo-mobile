@@ -1,14 +1,18 @@
-const collection = jest.fn(() => ({
+import authorsFixtures from 'Kebetoo/__fixtures__/authors'
+
+const authors = authorsFixtures.map((author) => ({ data: jest.fn().mockReturnValue(author) }))
+
+const collection = jest.fn((name) => ({
   doc: jest.fn(() => ({
     collection,
-    update: jest.fn(() => Promise.resolve(true)),
-    onSnapshot: jest.fn(() => Promise.resolve(true)),
-    get: jest.fn(() => Promise.resolve(true)),
-    set: jest.fn(() => Promise.resolve(true)),
+    update: jest.fn().mockResolvedValue(true),
+    onSnapshot: jest.fn().mockResolvedValue(true),
+    get: jest.fn().mockResolvedValue(true),
+    set: jest.fn().mockResolvedValue(true),
   })),
   where: jest.fn(() => ({
-    get: jest.fn(() => Promise.resolve(true)),
-    onSnapshot: jest.fn(() => Promise.resolve(true)),
+    get: jest.fn().mockResolvedValue(name === 'users' ? ({ docs: authors }) : []),
+    onSnapshot: jest.fn().mockResolvedValue(true),
   })),
 }))
 
@@ -18,6 +22,10 @@ const firestore = () => ({
 
 firestore.FieldValue = {
   serverTimestamp: jest.fn(),
+}
+
+firestore.FieldPath = {
+  documentId: jest.fn().mockReturnValue('rnfirebase.firestore.fieldpath.document-id'),
 }
 
 export default firestore
