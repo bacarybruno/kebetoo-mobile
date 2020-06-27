@@ -36,13 +36,14 @@ export const bottomSheetItems = [{
 }]
 
 export const Reaction = ({
-  iconName, count, onPress, disabled, color = 'reactions',
+  iconName, count, onPress, disabled, color = 'reactions', ...otherProps
 }) => (
   <TouchableOpacity
     style={styles.reaction}
     onPress={onPress}
     disabled={disabled}
     hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
+    {...otherProps}
   >
     <Kebeticon
       color={colors[color]}
@@ -103,7 +104,7 @@ const Reactions = ({
     }
     setPost(optimisticPost)
 
-    // create the post on the backend
+    // create the reaction on the backend
     api.createReaction(type, post.id, author)
       .then((res) => {
         // replace the fake reaction created with the new one
@@ -237,6 +238,7 @@ const Reactions = ({
         count={countReactions(post, REACTION_TYPES.LIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
+        testID="like-button"
       />
       <Reaction
         iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
@@ -244,18 +246,21 @@ const Reactions = ({
         count={countReactions(post, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
+        testID="dislike-button"
       />
       <Reaction
         iconName="comment"
         count={comments?.length || post.comments.length}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
+        testID="comment-button"
       />
       <Reaction
         iconName="share"
         count={post.reposts?.length || 0}
         disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.SHARE)}
+        testID="share-button"
       />
     </View>
   )
