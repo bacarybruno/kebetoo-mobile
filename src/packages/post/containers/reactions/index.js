@@ -239,7 +239,7 @@ const Reactions = ({
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
       />
       <Reaction
-        iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'like-fill' : 'like'}
+        iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
         color={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike' : undefined}
         count={countReactions(post, REACTION_TYPES.DISLIKE)}
         disabled={disabled}
