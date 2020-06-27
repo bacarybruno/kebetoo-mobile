@@ -1,9 +1,10 @@
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import { AudioPlayer } from 'Kebetoo/src/shared/components/audio-player'
 
-import CommentInput from '../index'
 import strings from 'Kebetoo/src/config/strings'
 import { act } from 'react-test-renderer'
+
+import CommentInput from '../index'
 
 const givenCommentInput = setupTest(CommentInput)({
   onChange: jest.fn(),
