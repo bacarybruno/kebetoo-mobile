@@ -1,12 +1,16 @@
 import posts from 'Kebetoo/__fixtures__/posts'
 import comments from 'Kebetoo/__fixtures__/comments'
 
+// eslint-disable-next-line radix
+const createRandomId = () => parseInt(Math.random() * 10000000).toString()
+
 export const BASE_URL = 'jest://localhost:1337'
 
 export const getPostsCount = jest.fn().mockResolvedValue(0)
 export const getReactionsCount = jest.fn().mockResolvedValue(0)
 export const getCommentsCount = jest.fn().mockResolvedValue(0)
 export const deletePost = jest.fn().mockResolvedValue(true)
+export const deleteReaction = jest.fn().mockResolvedValue(true)
 export const commentPost = jest.fn().mockImplementation((data) => Promise.resolve({
   author: data.author,
   content: data.content,
@@ -14,7 +18,7 @@ export const commentPost = jest.fn().mockImplementation((data) => Promise.resolv
     id: data.post,
   },
   reactions: [],
-  id: parseInt(Math.random() * 10000000).toString(),
+  id: createRandomId(),
 }))
 export const getUserPosts = jest.fn().mockImplementation((userId) => Promise.resolve(
   Object.values(posts).filter((post) => post.author === userId),
@@ -22,3 +26,23 @@ export const getUserPosts = jest.fn().mockImplementation((userId) => Promise.res
 export const getComments = jest.fn().mockImplementation((postId) => Promise.resolve(
   Object.values(comments).filter((comment) => comment.post.id === postId),
 ))
+export const createReaction = jest.fn().mockImplementation(
+  (type, postId, author) => (
+    Promise.resolve({
+      id: createRandomId(),
+      type,
+      author,
+      post: { id: postId },
+    })
+  ),
+)
+export const createCommentReaction = jest.fn().mockImplementation(
+  (type, commentId, author) => (
+    Promise.resolve({
+      id: createRandomId(),
+      type,
+      author,
+      comment: { id: commentId },
+    })
+  ),
+)

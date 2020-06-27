@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles sharing 1`] = `
+Array [
+  Object {
+    "cancelButtonIndex": 2,
+    "icons": Array [
+      <_default
+        name="ios-share-alt"
+        size={24}
+      />,
+      <_default
+        name="ios-share"
+        size={24}
+      />,
+      <_default
+        name="md-close"
+        size={24}
+      />,
+    ],
+    "options": Array [
+      "Share now",
+      "Edit and share",
+      "Cancel",
+    ],
+    "title": "Share",
+  },
+  [Function],
+]
+`;
+
+exports[`renders Reactions 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    hitSlop={
+      Object {
+        "bottom": 10,
+        "left": 5,
+        "right": 5,
+        "top": 10,
+      }
+    }
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginRight": 15,
+        "minWidth": 35,
+        "opacity": 1,
+      }
+    }
+    testID="like-button"
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 18,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "color": "#50555C",
+            "fontFamily": "icomoon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "marginRight": 4,
+          },
+        ]
+      }
+    >
+      kebeticon-like
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      0
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    hitSlop={
+      Object {
+        "bottom": 10,
+        "left": 5,
+        "right": 5,
+        "top": 10,
+      }
+    }
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginRight": 15,
+        "minWidth": 35,
+        "opacity": 1,
+      }
+    }
+    testID="dislike-button"
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 18,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "color": "#50555C",
+            "fontFamily": "icomoon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "marginRight": 4,
+          },
+        ]
+      }
+    >
+      kebeticon-dislike
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      0
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    hitSlop={
+      Object {
+        "bottom": 10,
+        "left": 5,
+        "right": 5,
+        "top": 10,
+      }
+    }
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginRight": 15,
+        "minWidth": 35,
+        "opacity": 1,
+      }
+    }
+    testID="comment-button"
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 18,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "color": "#50555C",
+            "fontFamily": "icomoon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "marginRight": 4,
+          },
+        ]
+      }
+    >
+      kebeticon-comment
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      0
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    hitSlop={
+      Object {
+        "bottom": 10,
+        "left": 5,
+        "right": 5,
+        "top": 10,
+      }
+    }
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginRight": 15,
+        "minWidth": 35,
+        "opacity": 1,
+      }
+    }
+    testID="share-button"
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 18,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "color": "#50555C",
+            "fontFamily": "icomoon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "marginRight": 4,
+          },
+        ]
+      }
+    >
+      kebeticon-share
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "#50555C",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      0
+    </Text>
+  </View>
+</View>
+`;

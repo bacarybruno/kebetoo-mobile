@@ -19,7 +19,7 @@ import styles from './styles'
 
 export const getAudioSource = (url) => `${BASE_URL}${url}`
 
-const Reactions = ({ onReaction, reactions, user }) => {
+export const Reactions = ({ onReaction, reactions, user }) => {
   const loved = reactions.find((reaction) => (
     reaction.author === user && reaction.type === REACTION_TYPES.LOVE
   ))
@@ -29,10 +29,12 @@ const Reactions = ({ onReaction, reactions, user }) => {
         style={styles.reactionsButton}
         onPress={() => onReaction(REACTION_TYPES.LOVE)}
         hitSlop={edgeInsets.all(30)}
+        testID="reaction-button"
       >
         <Text text={`${reactions.length} `} size="xs" bold />
         <Ionicon
           name={loved ? 'md-heart' : 'md-heart-empty'}
+          testID="reaction"
           color={loved ? colors.heart : undefined}
           size={fontSizes.md}
         />
@@ -75,6 +77,7 @@ const Comment = ({
   const [lastPress, setLastPress] = useState(null)
   const DOUBLE_PRESS_DELAY = 200
 
+  // TODO: optimistic ui update
   const onReaction = useCallback(async (type) => {
     const userReaction = reactions.find((r) => r.author === user)
     if (userReaction === undefined) {

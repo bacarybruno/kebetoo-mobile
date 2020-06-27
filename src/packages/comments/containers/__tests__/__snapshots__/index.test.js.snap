@@ -1150,6 +1150,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="like-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -1224,6 +1225,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="dislike-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -1298,6 +1300,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="comment-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -1372,6 +1375,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="share-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -1662,6 +1666,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="reaction-button"
                   >
                     <Text
                       style={
@@ -1704,6 +1709,7 @@ exports[`renders Comments 1`] = `
                           },
                         ]
                       }
+                      testID="reaction"
                     >
                       ionicon-md-heart
                     </Text>
@@ -2020,6 +2026,7 @@ exports[`renders Comments 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="reaction-button"
                   >
                     <Text
                       style={
@@ -2062,6 +2069,7 @@ exports[`renders Comments 1`] = `
                           },
                         ]
                       }
+                      testID="reaction"
                     >
                       ionicon-md-heart
                     </Text>
@@ -3107,6 +3115,7 @@ exports[`renders Comments in loading state 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="like-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -3181,6 +3190,7 @@ exports[`renders Comments in loading state 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="dislike-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -3255,6 +3265,7 @@ exports[`renders Comments in loading state 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="comment-button"
                   >
                     <Text
                       allowFontScaling={false}
@@ -3329,6 +3340,7 @@ exports[`renders Comments in loading state 1`] = `
                         "opacity": 1,
                       }
                     }
+                    testID="share-button"
                   >
                     <Text
                       allowFontScaling={false}

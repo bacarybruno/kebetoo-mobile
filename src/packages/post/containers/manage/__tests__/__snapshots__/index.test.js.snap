@@ -759,6 +759,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="like-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -833,6 +834,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="dislike-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -907,6 +909,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="comment-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -981,6 +984,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="share-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -1415,6 +1419,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="like-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -1489,6 +1494,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="dislike-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -1563,6 +1569,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="comment-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -1637,6 +1644,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="share-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -2191,6 +2199,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="like-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -2265,6 +2274,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="dislike-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -2339,6 +2349,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="comment-button"
               >
                 <Text
                   allowFontScaling={false}
@@ -2413,6 +2424,7 @@ exports[`renders ManagePost 1`] = `
                     "opacity": 1,
                   }
                 }
+                testID="share-button"
               >
                 <Text
                   allowFontScaling={false}

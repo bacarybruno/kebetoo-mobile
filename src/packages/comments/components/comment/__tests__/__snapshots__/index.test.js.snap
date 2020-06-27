@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Comment 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginRight": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "height": 35,
+            "width": 35,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://avatars1.githubusercontent.com/u/14147533",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#008ef4",
+              "borderRadius": 15,
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            Object {
+              "borderRadius": 17.5,
+            },
+          ]
+        }
+        testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="middle"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "opacity": 1,
+              "textDecorationLine": "none",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+        Bruno Bodian
+         • 
+        5 days ago
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {},
+        ]
+      }
+    >
+      Fgyjj
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "marginTop": 5,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 30,
+            "left": 30,
+            "right": 30,
+            "top": 30,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "opacity": 1,
+          }
+        }
+        testID="reaction-button"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0 
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.8)",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": undefined,
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+          testID="reaction"
+        >
+          ionicon-md-heart-empty
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
