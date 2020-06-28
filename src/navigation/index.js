@@ -32,9 +32,12 @@ enableScreens()
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
+
 const createPage = (page, key) => React.cloneElement(page, { key })
 
-// Onboarding section
+const EmptyPage = () => null
+
+// Screen options
 const defaultScreenOptions = {
   headerBackImage: ({ tintColor }) => (
     <HeaderBack tintColor={tintColor} />
@@ -45,59 +48,38 @@ const defaultScreenOptions = {
     <Text size="header" bold {...props} />
   ),
 }
-export const onboardingPages = [
-  <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />,
-  <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />,
-  <Stack.Screen name={routes.SIGNIN} component={SignInPage} />,
-]
-export const OnboardingStack = () => (
-  <Stack.Navigator screenOptions={defaultScreenOptions}>
-    {onboardingPages.map(createPage)}
-  </Stack.Navigator>
-)
 
-// Tabs section
-const EmptyPage = () => null
-const defaultTabOptions = ({ route }) => ({
-  tabBarIcon: ({ focused, color }) => {
-    let iconName
-    const size = focused ? 24 : 18
-
-    if (route.name === routes.HOME) {
-      iconName = 'home'
-    } else if (route.name === routes.STORIES) {
-      iconName = 'stories'
-    } else if (route.name === routes.SEARCH) {
-      iconName = 'search'
-    } else if (route.name === routes.PROFILE) {
-      iconName = 'user'
-    }
-
-    return <Kebeticon name={iconName} size={size} color={color} />
-  },
-  tabBarLabel: ({ focused, color }) => {
-    let label
-
-    if (route.name === routes.HOME) {
-      label = HomePage.routeOptions.title
-    } else if (route.name === routes.STORIES) {
-      label = StoriesPage.routeOptions.title
-    } else if (route.name === routes.SEARCH) {
-      label = SearchPage.routeOptions.title
-    } else if (route.name === routes.PROFILE) {
-      label = ProfilePage.routeOptions.title
-    }
-
-    return (
-      <Text text={label} bold={focused} style={{ color }} size="xs" />
-    )
-  },
-})
 const defaultTabBarOptions = {
   activeTintColor: colors.primary,
   inactiveTintColor: colors.icon,
   style: styles.tabBar,
 }
+
+const defaultTabOptions = ({ route }) => ({
+  tabBarIcon: ({ focused, color }) => {
+    const iconNames = {
+      [routes.HOME]: 'home',
+      [routes.STORIES]: 'stories',
+      [routes.SEARCH]: 'search',
+      [routes.PROFILE]: 'user',
+    }
+    const size = focused ? 24 : 18
+    return <Kebeticon name={iconNames[route.name]} size={size} color={color} />
+  },
+  tabBarLabel: ({ focused, color }) => {
+    const labels = {
+      [routes.HOME]: HomePage.routeOptions.title,
+      [routes.STORIES]: StoriesPage.routeOptions.title,
+      [routes.SEARCH]: SearchPage.routeOptions.title,
+      [routes.PROFILE]: ProfilePage.routeOptions.title,
+    }
+    return (
+      <Text text={labels[route.name]} bold={focused} style={{ color }} size="xs" />
+    )
+  },
+})
+
+// Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
   <Tab.Screen name={routes.STORIES} component={StoriesPage} />,
@@ -105,6 +87,7 @@ export const tabPages = [
   <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
   <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
 ]
+
 export const TabBar = (props) => (
   <View>
     <Image source={images.bottom_tab_overlay} style={styles.bottomTabOverlay} />
@@ -114,6 +97,7 @@ export const TabBar = (props) => (
     </View>
   </View>
 )
+
 export const TabPage = () => (
   <Tab.Navigator
     screenOptions={defaultTabOptions}
@@ -124,10 +108,22 @@ export const TabPage = () => (
   </Tab.Navigator>
 )
 
-// Main Section
+export const onboardingPages = [
+  <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />,
+  <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />,
+  <Stack.Screen name={routes.SIGNIN} component={SignInPage} />,
+]
+
+export const OnboardingStack = () => (
+  <Stack.Navigator screenOptions={defaultScreenOptions}>
+    {onboardingPages.map(createPage)}
+  </Stack.Navigator>
+)
+
 export const notLoggedInPages = [
   <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />,
 ]
+
 export const loggedInPages = [
   <Stack.Screen component={TabPage} name={routes.HOME_NAV} />,
   <Stack.Screen component={CreatePostPage} name={routes.CREATE_POST} />,
@@ -135,6 +131,8 @@ export const loggedInPages = [
   <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />,
   <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />,
 ]
+
+// Main Section
 const AppNavigation = () => {
   const initialUserState = auth().currentUser !== null
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
