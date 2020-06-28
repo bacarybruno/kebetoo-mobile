@@ -69,6 +69,7 @@ exports[`renders Badge 1`] = `
           "width": 30,
         },
         undefined,
+        undefined,
       ]
     }
   >

@@ -1,14 +1,26 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import { View, Image } from 'react-native'
+import { View } from 'react-native'
 
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions'
 import Text from 'Kebetoo/src/shared/components/text'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import strings from 'Kebetoo/src/config/strings'
+import Avatar from 'Kebetoo/src/shared/components/avatar'
 
 import DraggableIndicator from '../draggable-indicator'
 
 import styles, { reactionsHeight, summaryHeight } from './styles'
+
+export const SummaryAuthor = ({ author }) => {
+  if (!author) return <View style={styles.img} />
+  return (
+    <Avatar
+      src={author.photoURL}
+      text={author.displayName}
+      style={styles.img}
+    />
+  )
+}
 
 const Summary = React.memo(({ comments }) => {
   const [authors, setAuthors] = useState({})
@@ -36,8 +48,11 @@ const Summary = React.memo(({ comments }) => {
         if (ids.length === 0) return
         const { docs } = await getUsers(ids)
         docs.forEach((doc) => {
-          const { photoURL } = doc.data()
-          data[doc.id] = photoURL
+          const { photoURL, displayName } = doc.data()
+          data[doc.id] = {
+            displayName,
+            photoURL,
+          }
         })
         setAuthors(data)
       }
@@ -56,12 +71,12 @@ const Summary = React.memo(({ comments }) => {
       <View style={styles.imgs}>
         {sortedReactors[0] && (
           <View style={styles.imgWrapper}>
-            <Image style={styles.img} source={{ uri: authors[sortedReactors[0]] }} />
+            <SummaryAuthor author={authors[sortedReactors[0]]} />
           </View>
         )}
         {sortedReactors[1] && (
           <View style={[styles.imgWrapper, styles.img2Wrapper]}>
-            <Image style={styles.img} source={{ uri: authors[sortedReactors[1]] }} />
+            <SummaryAuthor author={authors[sortedReactors[1]]} />
           </View>
         )}
       </View>

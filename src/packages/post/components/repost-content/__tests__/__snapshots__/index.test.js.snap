@@ -91,6 +91,7 @@ exports[`renders RepostContent 1`] = `
                       "height": 24,
                       "width": 24,
                     },
+                    undefined,
                   ]
                 }
               >

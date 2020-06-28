@@ -12,6 +12,7 @@ exports[`renders an Avatar with image 1`] = `
         "height": 20,
         "width": 20,
       },
+      undefined,
     ]
   }
 >
@@ -52,6 +53,7 @@ exports[`renders an Avatar with text 1`] = `
         "height": 20,
         "width": 20,
       },
+      undefined,
     ]
   }
 >
