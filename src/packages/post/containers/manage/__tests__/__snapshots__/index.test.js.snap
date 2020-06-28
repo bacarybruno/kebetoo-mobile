@@ -355,6 +355,7 @@ exports[`renders ManagePost 1`] = `
                         "height": 35,
                         "width": 35,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -1089,6 +1090,7 @@ exports[`renders ManagePost 1`] = `
                         "height": 35,
                         "width": 35,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -1749,6 +1751,7 @@ exports[`renders ManagePost 1`] = `
                         "height": 35,
                         "width": 35,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -2028,6 +2031,7 @@ exports[`renders ManagePost 1`] = `
                                 "height": 24,
                                 "width": 24,
                               },
+                              undefined,
                             ]
                           }
                         >

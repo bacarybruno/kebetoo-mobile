@@ -36,6 +36,7 @@ exports[`renders Comment 1`] = `
             "height": 35,
             "width": 35,
           },
+          undefined,
         ]
       }
     >

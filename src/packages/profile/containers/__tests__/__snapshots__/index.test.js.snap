@@ -60,6 +60,7 @@ exports[`renders Profile 1`] = `
                   "height": 90,
                   "width": 90,
                 },
+                undefined,
               ]
             }
           >

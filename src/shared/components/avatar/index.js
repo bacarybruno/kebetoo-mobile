@@ -10,8 +10,8 @@ const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
 const backgroundColor = (text) => text && { backgroundColor: generateColor(text) }
 
-export const ImageAvatar = ({ src, size }) => (
-  <View style={[styles.wrapper, dimensions(size)]}>
+export const ImageAvatar = ({ src, size, style }) => (
+  <View style={[styles.wrapper, dimensions(size), style]}>
     <Image
       testID={`image-avatar-${src}`}
       style={[styles.content, borderRadius(size)]}
@@ -20,8 +20,10 @@ export const ImageAvatar = ({ src, size }) => (
   </View>
 )
 
-export const TextAvatar = ({ text, size, fontSize }) => (
-  <View style={[styles.wrapper, dimensions(size)]}>
+export const TextAvatar = ({
+  text, size, fontSize, style,
+}) => (
+  <View style={[styles.wrapper, dimensions(size), style]}>
     <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
       <Text color="white" size="md" bold fontSize={fontSize}>{text[0].toUpperCase()}</Text>
     </View>

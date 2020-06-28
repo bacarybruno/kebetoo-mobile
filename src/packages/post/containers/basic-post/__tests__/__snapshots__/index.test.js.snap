@@ -50,6 +50,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -1030,6 +1031,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "height": 24,
                 "width": 24,
               },
+              undefined,
             ]
           }
         >
@@ -1654,6 +1656,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -2026,6 +2029,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -2932,6 +2936,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "height": 24,
                 "width": 24,
               },
+              undefined,
             ]
           }
         >
@@ -3466,6 +3471,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -3764,6 +3770,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -3999,6 +4006,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                         "height": 24,
                         "width": 24,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -4772,6 +4780,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "height": 24,
                 "width": 24,
               },
+              undefined,
             ]
           }
         >
@@ -4943,6 +4952,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                         "height": 24,
                         "width": 24,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -5424,6 +5434,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -5659,6 +5670,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                         "height": 24,
                         "width": 24,
                       },
+                      undefined,
                     ]
                   }
                 >
@@ -5824,6 +5836,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >
@@ -6637,6 +6650,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "height": 24,
                 "width": 24,
               },
+              undefined,
             ]
           }
         >
@@ -7132,6 +7146,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                 "height": 35,
                 "width": 35,
               },
+              undefined,
             ]
           }
         >

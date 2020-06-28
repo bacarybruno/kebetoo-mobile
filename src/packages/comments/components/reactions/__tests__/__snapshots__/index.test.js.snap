@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CommentReactions 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderLeftColor": "#E8E8E8",
+      "borderLeftWidth": 1,
+      "borderRightColor": "#E8E8E8",
+      "borderRightWidth": 1,
+      "borderTopColor": "#E8E8E8",
+      "borderTopLeftRadius": 35,
+      "borderTopRightRadius": 35,
+      "borderTopWidth": 1,
+      "height": 100,
+      "paddingHorizontal": 24,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#CECECE",
+          "borderRadius": 5,
+          "height": 5,
+          "margin": 10,
+          "width": 60,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-evenly",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="like-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#50555C",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "marginRight": 4,
+              },
+            ]
+          }
+        >
+          kebeticon-like
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="dislike-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#50555C",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "marginRight": 4,
+              },
+            ]
+          }
+        >
+          kebeticon-dislike
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="comment-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#50555C",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "marginRight": 4,
+              },
+            ]
+          }
+        >
+          kebeticon-comment
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="share-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {
+                "color": "#50555C",
+                "fontFamily": "icomoon",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "marginRight": 4,
+              },
+            ]
+          }
+        >
+          kebeticon-share
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "Helvetica",
+              },
+              Object {
+                "color": "#50555C",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "opacity": 1,
+                "textDecorationLine": "none",
+              },
+              Object {},
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "marginRight": 5,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 14,
+              "height": 28,
+              "padding": 2,
+              "width": 28,
+              "zIndex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                undefined,
+                Object {
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 14,
+                  "height": "100%",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#008ef4",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 14,
+                "height": 28,
+                "padding": 2,
+                "width": 28,
+                "zIndex": 1,
+              },
+              Object {
+                "marginLeft": -11.2,
+                "zIndex": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                undefined,
+                Object {
+                  "backgroundColor": "#008ef4",
+                  "borderRadius": 14,
+                  "height": "100%",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#008ef4",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                  Object {
+                    "backgroundColor": "#9575cd",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "opacity": 1,
+                      "textDecorationLine": "none",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+                J
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Helvetica",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.8)",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "opacity": 1,
+              "textDecorationLine": "none",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;

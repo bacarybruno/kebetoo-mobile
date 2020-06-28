@@ -343,6 +343,7 @@ exports[`renders AppNavigation for authenticated user 1`] = `
                                                 "width": 30,
                                               },
                                               undefined,
+                                              undefined,
                                             ]
                                           }
                                         >
