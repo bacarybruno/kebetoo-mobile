@@ -11,6 +11,7 @@ export const getReactionsCount = jest.fn().mockResolvedValue(0)
 export const getCommentsCount = jest.fn().mockResolvedValue(0)
 export const deletePost = jest.fn().mockResolvedValue(true)
 export const deleteReaction = jest.fn().mockResolvedValue(true)
+export const editReaction = jest.fn().mockResolvedValue(true)
 export const commentPost = jest.fn().mockImplementation((data) => Promise.resolve({
   author: data.author,
   content: data.content,
