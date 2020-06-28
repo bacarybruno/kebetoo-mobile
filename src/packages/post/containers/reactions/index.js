@@ -151,7 +151,7 @@ const Reactions = ({
     // find the reaction to edit and change the type
     const optimisticPost = { ...post }
     const editedReaction = optimisticPost.reactions.find((r) => r.id === reactionId)
-    const editedReactionBaseType = editReaction.type
+    const editedReactionBaseType = editedReaction.type
     editedReaction.type = type
 
     // add the reaction in the state to trigger re-render

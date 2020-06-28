@@ -92,23 +92,25 @@ const Comment = ({
         const filteredReactions = values.filter((r) => r.id !== userReaction.id)
         return [...filteredReactions]
       })
-    } else {
-      await api.editReaction(userReaction.id, type)
-      setReactions((values) => {
-        const reaction = values.find((r) => r.id === userReaction.id)
-        reaction.type = type
-        values.map((v) => (v.id === item.id ? reaction : v))
-        return [...values]
-      })
     }
+    // Will be used when we'll have many reactions for comments
+    // else {
+    //   await api.editReaction(userReaction.id, type)
+    //   setReactions((values) => {
+    //     const reaction = values.find((r) => r.id === userReaction.id)
+    //     reaction.type = type
+    //     values.map((v) => (v.id === item.id ? reaction : v))
+    //     return [...values]
+    //   })
+    // }
   }, [item.id, reactions, user])
 
-  const onPress = useCallback(() => {
+  const onPress = useCallback(async () => {
     const now = new Date().getTime()
     if (lastPress && (now - lastPress) < DOUBLE_PRESS_DELAY) {
       setLastPress(null)
       // double press
-      onReaction(REACTION_TYPES.LOVE)
+      await onReaction(REACTION_TYPES.LOVE)
     } else {
       setLastPress(now)
     }
