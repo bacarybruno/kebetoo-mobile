@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CreatePost 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "paddingBottom": 24,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F2F2F2",
+            "borderColor": "#E8E8E8",
+            "borderRadius": 15,
+            "borderWidth": 1,
+            "minHeight": 48,
+            "paddingLeft": 16,
+          },
+          Object {
+            "backgroundColor": "#F2F2F2",
+            "marginTop": 8,
+            "paddingRight": 16,
+          },
+        ]
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        autoFocus={true}
+        blurOnSubmit={false}
+        defaultValue=""
+        maxLength={180}
+        multiline={true}
+        numberOfLines={8}
+        onChangeText={[Function]}
+        placeholder="What's on your mind?"
+        placeholderTextColor="#ACACAC"
+        rejectResponderTermination={true}
+        returnKeyType="done"
+        style={
+          Array [
+            Object {
+              "fontSize": 16,
+            },
+            Object {
+              "textAlignVertical": "top",
+            },
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Helvetica",
+          },
+          Object {
+            "color": "rgba(0, 0, 0, 0.8)",
+            "fontSize": 10,
+            "fontWeight": "normal",
+            "opacity": 1,
+            "textDecorationLine": "none",
+          },
+          Object {
+            "marginTop": 8,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "flex-end",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginTop": 16,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 20,
+                "left": 20,
+                "right": 20,
+                "top": 20,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#F2F2F2",
+                "borderRadius": 20,
+                "height": 40,
+                "justifyContent": "center",
+                "marginRight": 16,
+                "opacity": 1,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": 40,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontSize": 18.018018018018015,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "icomoon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }
+            >
+              kebeticon-camera
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 20,
+                "left": 20,
+                "right": 20,
+                "top": 20,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#F2F2F2",
+                "borderRadius": 20,
+                "height": 40,
+                "justifyContent": "center",
+                "marginRight": 16,
+                "opacity": 1,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": 40,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontSize": 18.018018018018015,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "icomoon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }
+            >
+              kebeticon-photo
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 20,
+                "left": 20,
+                "right": 20,
+                "top": 20,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#F2F2F2",
+                "borderRadius": 20,
+                "height": 40,
+                "justifyContent": "center",
+                "marginRight": 16,
+                "opacity": 1,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": 40,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontSize": 18.018018018018015,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "icomoon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }
+            >
+              kebeticon-more-h
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 20,
+              "top": 20,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F2F2F2",
+              "borderRadius": 20,
+              "height": 40,
+              "justifyContent": "center",
+              "marginRight": 16,
+              "opacity": 1,
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+              "width": 40,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "Helvetica",
+                },
+                Object {
+                  "color": "#0B1B77",
+                  "fontSize": 18.018018018018015,
+                  "fontWeight": "normal",
+                  "opacity": 1,
+                  "textDecorationLine": "none",
+                },
+                Object {
+                  "color": "#0B1B77",
+                  "fontFamily": "icomoon",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+              ]
+            }
+          >
+            kebeticon-microphone
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

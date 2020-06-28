@@ -9,7 +9,7 @@
       "it('renders $1', () => {",
       "\tconst { wrapper } = given$1()",
       "\texpect(wrapper.toJSON()).toMatchSnapshot()",
-			"})\n",
+			"})",
 			"$0"
 		],
 		"description": "Jest boilerplate"
