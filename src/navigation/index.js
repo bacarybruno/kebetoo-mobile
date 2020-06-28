@@ -32,7 +32,9 @@ enableScreens()
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
+const createPage = (page, key) => React.cloneElement(page, { key })
 
+// Onboarding section
 const defaultScreenOptions = {
   headerBackImage: ({ tintColor }) => (
     <HeaderBack tintColor={tintColor} />
@@ -43,7 +45,19 @@ const defaultScreenOptions = {
     <Text size="header" bold {...props} />
   ),
 }
+export const onboardingPages = [
+  <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />,
+  <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />,
+  <Stack.Screen name={routes.SIGNIN} component={SignInPage} />,
+]
+export const OnboardingStack = () => (
+  <Stack.Navigator screenOptions={defaultScreenOptions}>
+    {onboardingPages.map(createPage)}
+  </Stack.Navigator>
+)
 
+// Tabs section
+const EmptyPage = () => null
 const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     let iconName
@@ -79,23 +93,18 @@ const defaultTabOptions = ({ route }) => ({
     )
   },
 })
-
 const defaultTabBarOptions = {
   activeTintColor: colors.primary,
   inactiveTintColor: colors.icon,
   style: styles.tabBar,
 }
-
-export const OnboardingStack = () => (
-  <Stack.Navigator screenOptions={defaultScreenOptions}>
-    <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />
-    <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />
-    <Stack.Screen name={routes.SIGNIN} component={SignInPage} />
-  </Stack.Navigator>
-)
-
-export const Empty = () => null
-
+export const tabPages = [
+  <Tab.Screen name={routes.HOME} component={HomePage} />,
+  <Tab.Screen name={routes.STORIES} component={StoriesPage} />,
+  <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
+  <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
+  <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
+]
 export const TabBar = (props) => (
   <View>
     <Image source={images.bottom_tab_overlay} style={styles.bottomTabOverlay} />
@@ -105,21 +114,27 @@ export const TabBar = (props) => (
     </View>
   </View>
 )
-
 export const TabPage = () => (
   <Tab.Navigator
     screenOptions={defaultTabOptions}
     tabBarOptions={defaultTabBarOptions}
     tabBar={TabBar}
   >
-    <Tab.Screen name={routes.HOME} component={HomePage} />
-    <Tab.Screen name={routes.STORIES} component={StoriesPage} />
-    <Tab.Screen name={routes.TABS_FAB} component={Empty} />
-    <Tab.Screen name={routes.SEARCH} component={SearchPage} />
-    <Tab.Screen name={routes.PROFILE} component={ProfilePage} />
+    {tabPages.map(createPage)}
   </Tab.Navigator>
 )
 
+// Main Section
+export const notLoggedInPages = [
+  <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />,
+]
+export const loggedInPages = [
+  <Stack.Screen component={TabPage} name={routes.HOME_NAV} />,
+  <Stack.Screen component={CreatePostPage} name={routes.CREATE_POST} />,
+  <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />,
+  <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />,
+  <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />,
+]
 const AppNavigation = () => {
   const initialUserState = auth().currentUser !== null
   const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
@@ -134,17 +149,8 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isLoggedIn ? (
-          <>
-            <Stack.Screen component={TabPage} name={routes.HOME_NAV} />
-            <Stack.Screen component={CreatePostPage} name={routes.CREATE_POST} />
-            <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />
-            <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />
-            <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />
-          </>
-        ) : (
-          <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />
-        )}
+        {isLoggedIn && loggedInPages.map(createPage)}
+        {!isLoggedIn && notLoggedInPages.map(createPage)}
       </Stack.Navigator>
     </NavigationContainer>
   )

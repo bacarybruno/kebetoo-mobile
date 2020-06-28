@@ -1,0 +1,2868 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders HomePage 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListHeaderComponent={[Function]}
+    contentContainerStyle={
+      Object {
+        "paddingBottom": 30,
+        "paddingHorizontal": 16,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "__v": 0,
+          "_id": "5eedd9a43acba504d4a1cfbb",
+          "audio": Object {
+            "__v": 0,
+            "_id": "5eedd9a43acba504d4a1cfbc",
+            "alternativeText": null,
+            "caption": null,
+            "createdAt": "2020-06-20T09:40:52.832Z",
+            "ext": ".mp3",
+            "hash": "PTT_20200620_6_5e895bdeae",
+            "height": null,
+            "id": "5eedd9a43acba504d4a1cfbc",
+            "mime": "audio/mp3",
+            "name": "PTT-20200620-6",
+            "provider": "local",
+            "related": Array [
+              "5eedd9a43acba504d4a1cfbb",
+            ],
+            "size": 13.24,
+            "updatedAt": "2020-06-20T09:40:52.839Z",
+            "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+            "width": null,
+          },
+          "author": "1",
+          "comments": Array [
+            Object {
+              "__v": 0,
+              "_id": "5eedd9d43acba504d4a1cfbf",
+              "author": "1",
+              "content": "Fgyjj",
+              "createdAt": "2020-06-20T09:41:40.401Z",
+              "id": "5eedd9d43acba504d4a1cfbf",
+              "post": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:41:40.405Z",
+            },
+            Object {
+              "__v": 0,
+              "_id": "5eedd9e83acba504d4a1cfc0",
+              "audio": Object {
+                "__v": 0,
+                "_id": "5eedd9e83acba504d4a1cfc1",
+                "alternativeText": null,
+                "caption": null,
+                "createdAt": "2020-06-20T09:42:00.174Z",
+                "ext": ".mp3",
+                "hash": "PTT_20200620_3_1669bbfc5d",
+                "height": null,
+                "id": "5eedd9e83acba504d4a1cfc1",
+                "mime": "audio/mp3",
+                "name": "PTT-20200620-3",
+                "provider": "local",
+                "related": Array [
+                  "5eedd9e83acba504d4a1cfc0",
+                ],
+                "size": 8.02,
+                "updatedAt": "2020-06-20T09:42:00.178Z",
+                "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                "width": null,
+              },
+              "author": "1",
+              "createdAt": "2020-06-20T09:42:00.149Z",
+              "id": "5eedd9e83acba504d4a1cfc0",
+              "post": "5eedd9a43acba504d4a1cfbb",
+              "updatedAt": "2020-06-20T09:42:00.179Z",
+            },
+          ],
+          "content": "Fhgjjyjj",
+          "createdAt": "2020-06-20T09:40:52.790Z",
+          "id": "5eedd9a43acba504d4a1cfbb",
+          "reactions": Array [
+            Object {
+              "__v": 0,
+              "_id": "5eedf49b3acba504d4a1cfcf",
+              "author": "1",
+              "createdAt": "2020-06-20T11:35:55.591Z",
+              "id": "5eedf49b3acba504d4a1cfcf",
+              "post": "5eedd9a43acba504d4a1cfbb",
+              "type": "like",
+              "updatedAt": "2020-06-20T17:45:39.642Z",
+            },
+          ],
+          "reposts": Array [],
+          "updatedAt": "2020-06-20T09:40:52.841Z",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5eeb805299d77d3becdf35e0",
+          "author": "1",
+          "comments": Array [],
+          "content": "Voiture",
+          "createdAt": "2020-06-18T14:55:14.492Z",
+          "id": "5eeb805299d77d3becdf35e0",
+          "image": Object {
+            "__v": 0,
+            "_id": "5eeb805299d77d3becdf35e1",
+            "alternativeText": null,
+            "caption": null,
+            "createdAt": "2020-06-18T14:55:14.605Z",
+            "ext": ".jpeg",
+            "formats": Object {
+              "thumbnail": Object {
+                "ext": ".jpeg",
+                "hash": "thumbnail_IMG_20200618_0bd8b30d6a",
+                "height": 156,
+                "mime": "image/jpeg",
+                "path": null,
+                "size": 5,
+                "url": "/uploads/thumbnail_IMG_20200618_0bd8b30d6a.jpeg",
+                "width": 117,
+              },
+            },
+            "hash": "IMG_20200618_0bd8b30d6a",
+            "height": 800,
+            "id": "5eeb805299d77d3becdf35e1",
+            "mime": "image/jpeg",
+            "name": "IMG-20200618",
+            "provider": "local",
+            "related": Array [
+              "5eeb805299d77d3becdf35e0",
+            ],
+            "size": 69.19,
+            "updatedAt": "2020-06-18T14:55:14.612Z",
+            "url": "/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+            "width": 600,
+          },
+          "reactions": Array [
+            Object {
+              "__v": 0,
+              "_id": "5eee583e5d76173d0060f3e3",
+              "author": "1",
+              "createdAt": "2020-06-20T18:41:02.266Z",
+              "id": "5eee583e5d76173d0060f3e3",
+              "post": "5eeb805299d77d3becdf35e0",
+              "type": "dislike",
+              "updatedAt": "2020-06-20T18:41:05.868Z",
+            },
+          ],
+          "reposts": Array [],
+          "updatedAt": "2020-06-18T14:55:14.614Z",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5eeb6dd499d77d3becdf35d3",
+          "author": "2",
+          "comments": Array [],
+          "content": "Use the online SMS system, then you can calculate the digital card!",
+          "createdAt": "2020-06-18T13:36:20.235Z",
+          "id": "5eeb6dd499d77d3becdf35d3",
+          "reactions": Array [],
+          "reposts": Array [],
+          "updatedAt": "2020-06-18T13:36:20.235Z",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5eeb6ddd99d77d3becdf35d5",
+          "author": "1",
+          "comments": Array [],
+          "createdAt": "2020-06-18T13:36:29.730Z",
+          "id": "5eeb6ddd99d77d3becdf35d5",
+          "reactions": Array [
+            Object {
+              "__v": 0,
+              "_id": "5eeb752499d77d3becdf35d8",
+              "author": "1",
+              "createdAt": "2020-06-18T14:07:32.234Z",
+              "id": "5eeb752499d77d3becdf35d8",
+              "post": "5eeb6ddd99d77d3becdf35d5",
+              "type": "dislike",
+              "updatedAt": "2020-06-18T14:25:45.097Z",
+            },
+          ],
+          "repost": Object {
+            "__v": 0,
+            "_id": "5eeb6dd499d77d3becdf35d4",
+            "author": "2",
+            "content": "I'll input the open-source RAM sensor, that should card the FTP protocol!",
+            "createdAt": "2020-06-18T13:36:20.260Z",
+            "id": "5eeb6dd499d77d3becdf35d4",
+            "updatedAt": "2020-06-18T13:36:20.260Z",
+          },
+          "reposts": Array [],
+          "updatedAt": "2020-06-18T13:36:29.735Z",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        colors={
+          Array [
+            "#008ef4",
+          ]
+        }
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={true}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": 60,
+              },
+              Object {
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 24,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              What's new in Paris?
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#008ef4",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 35,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno Bodian
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    5 days ago
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                     • 
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    Edited
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {
+                    "marginBottom": 8,
+                  },
+                ]
+              }
+            >
+              Fhgjjyjj
+            </Text>
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F2F2F2",
+                    "borderRadius": 5,
+                    "flex": 1,
+                    "flexDirection": "row",
+                    "height": 52,
+                    "maxHeight": 52,
+                  },
+                  undefined,
+                  undefined,
+                ]
+              }
+              testID="player-wrapper"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#CECECE",
+                      "borderBottomLeftRadius": 5,
+                      "borderTopLeftRadius": 5,
+                      "height": "100%",
+                      "opacity": 0.4,
+                      "position": "absolute",
+                    },
+                    undefined,
+                    Object {
+                      "width": "0%",
+                    },
+                  ]
+                }
+                testID="progress"
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#CECECE",
+                    "borderRadius": 15,
+                    "elevation": 2,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginLeft": 16,
+                    "opacity": 1,
+                    "shadowColor": "rgba(0, 0, 0, 0.8)",
+                    "shadowOffset": Object {
+                      "x": 0,
+                      "y": 1,
+                    },
+                    "shadowOpacity": 0.2,
+                    "shadowRadius": 1.41,
+                    "width": 30,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontSize": 20,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontFamily": "Ionicons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                    ]
+                  }
+                >
+                  ionicon-ios-play
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../assets/images/waves.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "resizeMode": "contain",
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontFamily": "Helvetica",
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.8)",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "opacity": 0.35,
+                      "textDecorationLine": "none",
+                    },
+                    Object {
+                      "bottom": 2,
+                      "position": "absolute",
+                      "right": 8,
+                    },
+                  ]
+                }
+              >
+                0:06
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="like-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#004EEC",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#004EEC",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-like-fill
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#004EEC",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  1
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="dislike-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-dislike
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="comment-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-comment
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  2
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="share-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-share
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 35,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno Bodian
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    7 days ago
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                     • 
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    Edited
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                undefined,
+                undefined,
+                false,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {
+                    "flex": 1,
+                    "marginBottom": 8,
+                  },
+                ]
+              }
+            >
+              Voiture
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "aspectRatio": 1.3333333333333333,
+                    "backgroundColor": "#FFFFFF",
+                    "width": "100%",
+                  },
+                  Object {
+                    "marginLeft": -16,
+                    "width": 750,
+                  },
+                ]
+              }
+              testID="image-viewer"
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "borderRadius": 0,
+                    "flex": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="like-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-like
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="dislike-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-dislike-fill
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  1
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="comment-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-comment
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="share-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-share
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                        Object {
+                          "backgroundColor": "#9575cd",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "#FFFFFF",
+                            "fontSize": 16,
+                            "fontWeight": "bold",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                      J
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 35,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  John Doe
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    7 days ago
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F2F2F2",
+                  "borderRadius": 5,
+                  "minHeight": 52,
+                  "padding": 16,
+                },
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "Helvetica",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.8)",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "opacity": 1,
+                    "textDecorationLine": "none",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Use the online SMS system, then you can calculate the digital card!
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="like-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-like
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="dislike-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-dislike
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="comment-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-comment
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="share-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-share
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginBottom": 30,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginBottom": 8,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "height": 30,
+                        "width": 30,
+                      },
+                      Object {
+                        "height": 35,
+                        "width": 35,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#008ef4",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 17.5,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "space-between",
+                      "marginLeft": 5,
+                    },
+                    Object {
+                      "height": 35,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.8)",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Bruno Bodian
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    7 days ago
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                     • 
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "Helvetica",
+                        },
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.8)",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "opacity": 1,
+                          "textDecorationLine": "none",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    Edited
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#E8E8E8",
+                      "borderLeftWidth": 2,
+                      "marginVertical": 8,
+                      "minHeight": 52,
+                      "paddingLeft": 8,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "marginBottom": 30,
+                      },
+                      Object {
+                        "marginBottom": 0,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "space-between",
+                          "marginBottom": 8,
+                        },
+                        Object {
+                          "marginBottom": 4,
+                        },
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flexDirection": "row",
+                          "justifyContent": "space-between",
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "height": 30,
+                                "width": 30,
+                              },
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "backgroundColor": "#008ef4",
+                                  "borderRadius": 15,
+                                  "flex": 1,
+                                  "justifyContent": "center",
+                                },
+                                Object {
+                                  "borderRadius": 12,
+                                },
+                                Object {
+                                  "backgroundColor": "#9575cd",
+                                },
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "fontFamily": "Helvetica",
+                                  },
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 16,
+                                    "fontWeight": "bold",
+                                    "opacity": 1,
+                                    "textDecorationLine": "none",
+                                  },
+                                  Object {},
+                                ]
+                              }
+                            >
+                              
+                              J
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "justifyContent": "space-between",
+                              "marginLeft": 5,
+                            },
+                            Object {
+                              "height": 24,
+                            },
+                            Object {
+                              "justifyContent": "center",
+                            },
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {
+                                "fontFamily": "Helvetica",
+                              },
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.8)",
+                                "fontSize": 14,
+                                "fontWeight": "normal",
+                                "opacity": 1,
+                                "textDecorationLine": "none",
+                              },
+                              Object {},
+                            ]
+                          }
+                        >
+                          John Doe
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    accessible={true}
+                    focusable={false}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "#F2F2F2",
+                          "borderRadius": 5,
+                          "minHeight": 52,
+                          "padding": 16,
+                        },
+                        false,
+                        undefined,
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "fontFamily": "Helvetica",
+                          },
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.8)",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "opacity": 1,
+                            "textDecorationLine": "none",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      I'll input the open-source RAM sensor, that should card the FTP protocol!
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="like-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-like
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="dislike-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-dislike-fill
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#0B1B77",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  1
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="comment-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-comment
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 5,
+                    "right": 5,
+                    "top": 10,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginRight": 15,
+                    "minWidth": 35,
+                    "opacity": 1,
+                  }
+                }
+                testID="share-button"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontFamily": "icomoon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  kebeticon-share
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "Helvetica",
+                      },
+                      Object {
+                        "color": "#50555C",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "opacity": 1,
+                        "textDecorationLine": "none",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  0
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
