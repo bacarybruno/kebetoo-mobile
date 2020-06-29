@@ -1,5 +1,6 @@
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
+import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import posts from 'Kebetoo/__fixtures__/posts'
@@ -37,4 +38,10 @@ it('renders HomePage', () => {
     wrapper = asyncWrapper
   })
   expect(wrapper.toJSON()).toMatchSnapshot()
+})
+
+it('search for shared file', () => {
+  givenHomePage()
+  expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(1)
+  expect(ReceiveSharingIntent.clearReceivedFiles).toBeCalledTimes(1)
 })

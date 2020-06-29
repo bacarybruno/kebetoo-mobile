@@ -42,9 +42,6 @@ const HomePage = () => {
 
   const handleSharingIntent = useCallback(() => {
     ReceiveSharingIntent.getReceivedFiles((files) => {
-      // TODO: show loader, because it takes 4.5s on average
-      // or find a better way to get original sakh
-      ReceiveSharingIntent.clearReceivedFiles()
       const sharedFile = files[0]
       if (sharedFile.contentUri) {
         RealPathUtils.getOriginalFilePath(sharedFile.contentUri)
@@ -54,13 +51,14 @@ const HomePage = () => {
             RNFetchBlob.fs.cp(file, dest)
               .then(() => navigate(routes.CREATE_POST, { sharedFile: dest }))
               .catch(console.log)
-          }).catch(() => {})
+          }).catch(console.log)
       } else {
-        navigate(routes.CREATE_POST, { sharedText: sharedFile.text || sharedFile.weblink || '' })
+        navigate(routes.CREATE_POST, {
+          sharedText: sharedFile.text || sharedFile.weblink || '',
+        })
       }
-    }, () => {
-      ReceiveSharingIntent.clearReceivedFiles()
-    })
+    }, () => {})
+    ReceiveSharingIntent.clearReceivedFiles()
   }, [navigate])
 
   useEffect(() => {

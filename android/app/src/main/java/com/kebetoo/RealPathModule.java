@@ -167,6 +167,11 @@ class RealPathUtil {
                 } else {
                     final int indexDisplayName = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME);
                     String fileName = cursor.getString(indexDisplayName);
+                    if (fileName == null) {
+                        String mimeType = context.getContentResolver().getType(uri);
+                        String extension = mimeType.split(";")[0].split("/")[1];
+                        fileName = "kebetoo-shared" + "." + extension;
+                    }
                     File fileWritten = writeToFile(context, fileName, uri);
                     return fileWritten.getAbsolutePath();
                 }

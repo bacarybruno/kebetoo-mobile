@@ -46,6 +46,7 @@ export const DeleteIconButton = ({ onPress }) => (
   </TouchableOpacity>
 )
 
+// TODO: cleanup on component unmount
 export const AudioPlayer = ({
   duration, source, onDelete, style, round, onPress, player: instance,
 }) => {
