@@ -1,25 +1,62 @@
-#Useful links
-- https://github.com/react-native-community/google-signin/blob/master/docs/ios-guide.md
-- https://github.com/react-native-community/google-signin/blob/master/docs/android-guide.md
-- https://github.com/facebook/react-native-fbsdk
-- https://github.com/react-native-community/react-native-audio-toolkit/blob/master/docs/SETUP.md
-- https://github.com/react-native-community/react-native-permissions
-- https://github.com/zoontek/react-native-bootsplash
-- https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
-- https://github.com/ajith-ab/react-native-receive-sharing-intent
+# Kebetoo
+[![Code Style](https://badgen.net/badge/code%20style/airbnb/fd5c63)](https://github.com/airbnb/javascript)
 
-#Generating SHA1 (google)
-- Debug: keytool -list -v -keystore ./android/app/debug.keystore -alias androiddebugkey -storepass android -keypass android
-- Release: keytool -list -v -keystore {keystore_name} -alias {alias_name}
+A microblogging app for the African community.
+Built with React Native.
 
-#Generating hash (fb)
-- Debug: keytool -exportcert -alias androiddebugkey -keystore ./android/debug.keystore | openssl sha1 -binary | openssl base64
+# Key features
 
-#Firebase
-- https://rnfirebase.io/
+- Create posts different content types : text, audio, images
+- Comment posts with text and audio
+- Share text, images and audios from others apps to Kebetoo
 
-#Optimize vector-icons to use only desired icons
-- Refs: https://github.com/oblador/react-native-vector-icons/blob/master/README.md#android
-- Android: (DONE)
-- iOS: remove undesired icon from resources and UIAppFonts 
-- Or use only a ionic icon package and fite a way to use custom icons
+You can also:
+- React to a post (like, dislike, share) or comment (love)
+- See the stats of your posts
+- Enable Dark mode
+- ... and much more !
+
+# Roadmap
+This project is under active development. A public roadmap will be available soon.
+For now, the product backlog is hosted on the [project section](https://github.com/bacarybruno/kebetoo-mobile/projects/1).
+
+# Installation
+Kebetoo requires [Node.js](https://nodejs.org/) and [React Native](http://reactnative.dev) to run.
+This installation guide will focus on android.
+
+### Steps
+Install the dependencies and devDependencies of the [server app](https://github.com/bacarybruno/kebetoo-mobile) and start the server.
+
+```sh
+$ mongod
+$ cd kebetoo-strapi-app
+$ yarn install
+$ yarn develop
+
+```
+Ensure that you have plugged your android device and enableed usb debugging.
+Install the dependencies and devDependencies of the [client app](https://github.com/bacarybruno/kebetoo-mobile) and start the client.
+
+```sh
+$ cd kebetoo-mobile
+$ yarn install
+$ yarn start
+$ yarn android:tcp
+$ yarn android:dev
+```
+
+### Development
+Want to contribute? Great, create a fork a the project and start hacking!
+Ensuite that the coverage of your code is under 80%. That's the minimum required for this project.
+
+Here are the instructions related to tests.
+
+#### Run tests
+```sh
+$ yarn test src
+```
+
+#### Generate coverage report
+```sh
+$ yarn coverage
+```

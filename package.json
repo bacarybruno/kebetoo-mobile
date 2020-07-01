@@ -9,7 +9,9 @@
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "yarn test src --coverage",
+    "codecov": "yarn coverage && bash <(curl -s https://codecov.io/bash) -t @.cc_token"
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.6.0",
