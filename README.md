@@ -65,4 +65,4 @@ $ yarn coverage
 ```
 
 ### Other informations
-Useful infos can be found in the [documentation](https://github.com/bacarybruno/kebetoo-strapi-app/blob/develop/docs.md).
+Useful infos can be found in the [documentation](https://github.com/bacarybruno/kebetoo-mobile/blob/develop/docs.md).
