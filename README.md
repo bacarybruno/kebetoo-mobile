@@ -1,5 +1,5 @@
 # Kebetoo
-[![Code Style](https://badgen.net/badge/code%20style/airbnb/fd5c63)](https://github.com/airbnb/javascript)
+[![Code Style](https://badgen.net/badge/code%20style/airbnb/fd5c63)](https://github.com/airbnb/javascript) [![codecov](https://codecov.io/gh/bacarybruno/kebetoo-mobile/branch/develop/graph/badge.svg?token=FHQ0ZB0KEQ)](https://codecov.io/gh/bacarybruno/kebetoo-mobile) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bacarybruno/kebetoo-mobile)
 
 A microblogging app for the African community.
 Built with React Native.
@@ -34,7 +34,7 @@ $ yarn install
 $ yarn develop
 
 ```
-Ensure that you have plugged your android device and enableed usb debugging.
+Ensure that you have plugged your android device and enabled usb debugging.
 Install the dependencies and devDependencies of the [client app](https://github.com/bacarybruno/kebetoo-mobile) and start the client.
 
 ```sh
@@ -45,7 +45,10 @@ $ yarn android:tcp
 $ yarn android:dev
 ```
 
-### Development
+Once the app is open, toggle developer options and change bundle location to `localhost:1148`.
+And the reload the app.
+
+### Contrubuting
 Want to contribute? Great, create a fork a the project and start hacking!
 Ensuite that the coverage of your code is under 80%. That's the minimum required for this project.
 
@@ -60,3 +63,6 @@ $ yarn test src
 ```sh
 $ yarn coverage
 ```
+
+### Other informations
+Useful infos can be found in the [documentation](https://github.com/bacarybruno/kebetoo-strapi-app/blob/develop/docs.md).
