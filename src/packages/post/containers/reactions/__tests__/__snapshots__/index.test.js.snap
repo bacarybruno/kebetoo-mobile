@@ -95,19 +95,17 @@ exports[`renders Reactions 1`] = `
             "letterSpacing": 0,
             "lineHeight": 16,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "600",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -172,19 +170,17 @@ exports[`renders Reactions 1`] = `
             "letterSpacing": 0,
             "lineHeight": 16,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "600",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -249,19 +245,17 @@ exports[`renders Reactions 1`] = `
             "letterSpacing": 0,
             "lineHeight": 16,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "600",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -326,19 +320,17 @@ exports[`renders Reactions 1`] = `
             "letterSpacing": 0,
             "lineHeight": 16,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "600",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          undefined,
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+            undefined,
+          ],
         ]
       }
     >

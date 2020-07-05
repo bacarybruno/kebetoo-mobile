@@ -4,7 +4,7 @@ import { Image, View } from 'react-native'
 import generateColor from 'Kebetoo/src/shared/helpers/color-generator'
 
 import styles from './styles'
-import Typography, { types } from '../typography'
+import Typography, { types, weights } from '../typography'
 
 const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
@@ -23,7 +23,7 @@ export const ImageAvatar = ({ src, size, style }) => (
 export const TextAvatar = ({ text, size, style }) => (
   <View style={[styles.wrapper, dimensions(size), style]}>
     <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
-      <Typography type={types.headline4} text={text[0].toUpperCase()} bold color="white" />
+      <Typography type={types.headline4} text={text[0].toUpperCase()} systemWeight={weights.bold} color="white" />
     </View>
   </View>
 )

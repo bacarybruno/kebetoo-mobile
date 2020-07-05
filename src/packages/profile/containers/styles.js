@@ -62,6 +62,9 @@ export default StyleSheet.create({
     paddingVertical: metrics.marginHorizontal / 2,
     paddingHorizontal: metrics.marginHorizontal,
   },
+  iconButtonTitle: {
+    marginBottom: 2,
+  },
   iconWrapper: {
     width: 40,
     height: 40,

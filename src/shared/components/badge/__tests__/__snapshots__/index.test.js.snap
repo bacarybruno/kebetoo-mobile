@@ -32,17 +32,17 @@ exports[`renders Badge 1`] = `
           "lineHeight": 20,
         },
         false,
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "600",
-        },
-        undefined,
-        undefined,
-        undefined,
-        Object {
-          "color": "#FFFFFF",
-        },
+        Array [
+          Object {
+            "color": "#FFFFFF",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "700",
+          },
+          undefined,
+        ],
       ]
     }
   >

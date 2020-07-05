@@ -129,21 +129,21 @@ exports[`renders AudioPlayer 1`] = `
           "letterSpacing": 0,
           "lineHeight": 16,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        Object {
-          "bottom": 2,
-          "position": "absolute",
-          "right": 8,
-        },
-        Object {
-          "color": "rgba(0,0,0,0.54)",
-        },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "bottom": 2,
+            "position": "absolute",
+            "right": 8,
+          },
+        ],
       ]
     }
   >
@@ -336,21 +336,21 @@ exports[`renders AudioPlayer with delete icon 1`] = `
           "letterSpacing": 0,
           "lineHeight": 16,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        Object {
-          "bottom": 2,
-          "position": "absolute",
-          "right": 8,
-        },
-        Object {
-          "color": "rgba(0,0,0,0.54)",
-        },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "bottom": 2,
+            "position": "absolute",
+            "right": 8,
+          },
+        ],
       ]
     }
   >
@@ -496,21 +496,21 @@ exports[`renders round AudioPlayer 1`] = `
           "letterSpacing": 0,
           "lineHeight": 16,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        Object {
-          "bottom": 2,
-          "position": "absolute",
-          "right": 8,
-        },
-        Object {
-          "color": "rgba(0,0,0,0.54)",
-        },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "bottom": 2,
+            "position": "absolute",
+            "right": 8,
+          },
+        ],
       ]
     }
   >

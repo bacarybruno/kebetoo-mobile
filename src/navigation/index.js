@@ -26,7 +26,7 @@ import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 
 import styles from './styles'
 import routes from './routes'
-import Typography, { types } from '../shared/components/typography'
+import Typography, { types, weights } from '../shared/components/typography'
 
 enableScreens()
 
@@ -71,7 +71,12 @@ const defaultTabOptions = ({ route }) => ({
       [routes.PROFILE]: ProfilePage.routeOptions.title,
     }
     return (
-      <Typography type={types.caption} text={labels[route.name]} bold={focused} style={{ color }} />
+      <Typography
+        type={types.caption}
+        text={labels[route.name]}
+        systemWeight={focused ? weights.bold : undefined}
+        style={{ color }}
+      />
     )
   },
 })

@@ -77,6 +77,7 @@ exports[`renders Comment 1`] = `
           "alignItems": "center",
           "flex": 1,
           "flexDirection": "row",
+          "marginBottom": 2,
         }
       }
     >
@@ -95,15 +96,17 @@ exports[`renders Comment 1`] = `
               "lineHeight": 20,
             },
             false,
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
           ]
         }
       >
@@ -124,15 +127,17 @@ exports[`renders Comment 1`] = `
               "lineHeight": 20,
             },
             false,
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
           ]
         }
       >
@@ -153,17 +158,17 @@ exports[`renders Comment 1`] = `
               "letterSpacing": 0,
               "lineHeight": 16,
             },
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            undefined,
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-            },
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
           ]
         }
       >
@@ -182,8 +187,17 @@ exports[`renders Comment 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -241,19 +255,49 @@ exports[`renders Comment 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              false,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
-          0 
+          0
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+           
         </Text>
         <Text
           allowFontScaling={false}

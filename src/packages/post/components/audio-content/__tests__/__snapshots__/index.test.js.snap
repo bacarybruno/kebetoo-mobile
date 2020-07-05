@@ -20,10 +20,19 @@ exports[`renders AudioContent 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        Object {
-          "marginBottom": 8,
-        },
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "marginBottom": 8,
+          },
+        ],
       ]
     }
   >
@@ -157,21 +166,21 @@ exports[`renders AudioContent 1`] = `
             "letterSpacing": 0,
             "lineHeight": 16,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "400",
-          },
-          Object {
-            "bottom": 2,
-            "position": "absolute",
-            "right": 8,
-          },
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "bottom": 2,
+              "position": "absolute",
+              "right": 8,
+            },
+          ],
         ]
       }
     >

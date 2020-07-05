@@ -150,15 +150,17 @@ exports[`renders RepostContent 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -202,8 +204,17 @@ exports[`renders RepostContent 1`] = `
                   "letterSpacing": -0.24,
                   "lineHeight": 20,
                 },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >

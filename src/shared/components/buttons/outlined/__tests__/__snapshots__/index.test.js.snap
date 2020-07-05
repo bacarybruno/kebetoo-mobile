@@ -43,15 +43,17 @@ exports[`renders OutlinedButton 1`] = `
           "letterSpacing": -0.32,
           "lineHeight": 21,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "600",
-        },
-        undefined,
-        Object {
-          "color": "#007AFF",
-        },
+        Array [
+          Object {
+            "color": "#007AFF",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+        ],
       ]
     }
   >
@@ -105,15 +107,17 @@ exports[`renders disabled OutlinedButton 1`] = `
           "letterSpacing": -0.32,
           "lineHeight": 21,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "600",
-        },
-        undefined,
-        Object {
-          "color": "#D1D1D6",
-        },
+        Array [
+          Object {
+            "color": "#D1D1D6",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+        ],
       ]
     }
   >

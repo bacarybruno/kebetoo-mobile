@@ -7,7 +7,9 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Typography, { types as typos } from 'Kebetoo/src/shared/components/typography'
+import Typography, {
+  types as typos, colors as systemColors, weights,
+} from 'Kebetoo/src/shared/components/typography'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import colors from 'Kebetoo/src/theme/colors'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -22,7 +24,13 @@ import styles, { imageSize } from './styles'
 export const routeOptions = { title: strings.tabs.profile }
 
 export const SectionTitle = React.memo(({ text }) => (
-  <Typography text={text} bold style={styles.sectionTitle} type={typos.headline5} tertiary />
+  <Typography
+    text={text}
+    systemWeight={weights.bold}
+    style={styles.sectionTitle}
+    type={typos.headline5}
+    systemColor={systemColors.tertiary}
+  />
 ))
 
 export const Summary = React.memo(({ photoURL, email, displayName }) => (
@@ -39,8 +47,8 @@ export const Summary = React.memo(({ photoURL, email, displayName }) => (
 
 export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>
-    <Typography type={typos.headline4} text={value} bold />
-    <Typography type={typos.headline6} text={title} />
+    <Typography type={typos.headline4} text={value} systemWeight={weights.bold} color="primary" />
+    <Typography type={typos.headline6} text={title} systemColor={systemColors.tertiary} />
   </View>
 ))
 
@@ -53,8 +61,8 @@ export const IconButton = React.memo(({
         <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
       </View>
       <View>
-        <Typography type={typos.headline5} text={text} />
-        <Typography type={typos.headline5} text={message} tertiary />
+        <Typography type={typos.headline5} text={text} style={styles.iconButtonTitle} />
+        <Typography type={typos.headline5} text={message} systemColor={systemColors.tertiary} />
       </View>
     </Pressable>
     {children}
