@@ -70,7 +70,7 @@ exports[`renders Reactions 1`] = `
       allowFontScaling={false}
       style={
         Object {
-          "color": "#50555C",
+          "color": "rgba(0,0,0,0.54)",
           "fontFamily": "icomoon",
           "fontSize": 18,
           "fontStyle": "normal",
@@ -106,7 +106,7 @@ exports[`renders Reactions 1`] = `
           },
           undefined,
           Object {
-            "color": "#50555C",
+            "color": "rgba(0,0,0,0.54)",
           },
         ]
       }
@@ -147,7 +147,7 @@ exports[`renders Reactions 1`] = `
       allowFontScaling={false}
       style={
         Object {
-          "color": "#50555C",
+          "color": "rgba(0,0,0,0.54)",
           "fontFamily": "icomoon",
           "fontSize": 18,
           "fontStyle": "normal",
@@ -183,7 +183,7 @@ exports[`renders Reactions 1`] = `
           },
           undefined,
           Object {
-            "color": "#50555C",
+            "color": "rgba(0,0,0,0.54)",
           },
         ]
       }
@@ -224,7 +224,7 @@ exports[`renders Reactions 1`] = `
       allowFontScaling={false}
       style={
         Object {
-          "color": "#50555C",
+          "color": "rgba(0,0,0,0.54)",
           "fontFamily": "icomoon",
           "fontSize": 18,
           "fontStyle": "normal",
@@ -260,7 +260,7 @@ exports[`renders Reactions 1`] = `
           },
           undefined,
           Object {
-            "color": "#50555C",
+            "color": "rgba(0,0,0,0.54)",
           },
         ]
       }
@@ -301,7 +301,7 @@ exports[`renders Reactions 1`] = `
       allowFontScaling={false}
       style={
         Object {
-          "color": "#50555C",
+          "color": "rgba(0,0,0,0.54)",
           "fontFamily": "icomoon",
           "fontSize": 18,
           "fontStyle": "normal",
@@ -337,7 +337,7 @@ exports[`renders Reactions 1`] = `
           },
           undefined,
           Object {
-            "color": "#50555C",
+            "color": "rgba(0,0,0,0.54)",
           },
         ]
       }

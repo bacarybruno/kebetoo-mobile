@@ -40,7 +40,7 @@ exports[`renders SignUp 1`] = `
         Array [
           Object {
             "backgroundColor": "#F2F2F2",
-            "borderColor": "#E8E8E8",
+            "borderColor": "#E5E5EA",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
@@ -76,7 +76,7 @@ exports[`renders SignUp 1`] = `
         Array [
           Object {
             "backgroundColor": "#F2F2F2",
-            "borderColor": "#E8E8E8",
+            "borderColor": "#E5E5EA",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
@@ -112,7 +112,7 @@ exports[`renders SignUp 1`] = `
       style={
         Object {
           "backgroundColor": "#F2F2F2",
-          "borderColor": "#E8E8E8",
+          "borderColor": "#E5E5EA",
           "borderRadius": 15,
           "borderWidth": 1,
           "minHeight": 48,
@@ -188,14 +188,14 @@ exports[`renders SignUp 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#008ef4",
+          "backgroundColor": "#007AFF",
           "borderRadius": 15,
           "color": "#FFFFFF",
           "elevation": 2,
           "height": 48,
           "justifyContent": "center",
           "opacity": 1,
-          "shadowColor": "rgba(0, 0, 0, 0.8)",
+          "shadowColor": "#000000",
           "shadowOffset": Object {
             "x": 0,
             "y": 1,
@@ -269,7 +269,7 @@ exports[`renders SignUp 1`] = `
           <View
             style={
               Object {
-                "borderColor": "#707070",
+                "borderColor": "#8E8E93",
                 "borderWidth": 0.5,
                 "flex": 1,
                 "height": 0.5,
@@ -305,7 +305,7 @@ exports[`renders SignUp 1`] = `
           <View
             style={
               Object {
-                "borderColor": "#707070",
+                "borderColor": "#8E8E93",
                 "borderWidth": 0.5,
                 "flex": 1,
                 "height": 0.5,
@@ -464,7 +464,7 @@ exports[`renders SignUp 1`] = `
               },
               undefined,
               Object {
-                "color": "#008ef4",
+                "color": "#007AFF",
               },
             ]
           }

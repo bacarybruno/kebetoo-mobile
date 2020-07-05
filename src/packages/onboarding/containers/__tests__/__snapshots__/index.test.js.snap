@@ -80,7 +80,7 @@ exports[`renders Onboarding 1`] = `
       <RCTScrollView
         activeDotStyle={
           Object {
-            "backgroundColor": "rgba(0, 0, 0, 0.8)",
+            "backgroundColor": "#000000",
             "height": 8,
             "width": 15,
           }
@@ -109,7 +109,7 @@ exports[`renders Onboarding 1`] = `
         disablePrevButton={false}
         dotStyle={
           Object {
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "height": 8,
             "width": 8,
           }
@@ -618,7 +618,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                "backgroundColor": "#000000",
                 "height": 8,
                 "width": 15,
               },
@@ -639,7 +639,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "#CECECE",
+                "backgroundColor": "#D1D1D6",
                 "height": 8,
                 "width": 8,
               },
@@ -660,7 +660,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "#CECECE",
+                "backgroundColor": "#D1D1D6",
                 "height": 8,
                 "width": 8,
               },
@@ -692,7 +692,7 @@ exports[`renders Onboarding 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#008ef4",
+            "backgroundColor": "#007AFF",
             "borderRadius": 15,
             "bottom": 0,
             "color": "#FFFFFF",
@@ -702,7 +702,7 @@ exports[`renders Onboarding 1`] = `
             "opacity": 1,
             "position": "absolute",
             "right": 0,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,

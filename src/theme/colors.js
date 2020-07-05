@@ -1,11 +1,13 @@
 /* eslint-disable no-bitwise */
 
-const componentToHex = (c) => {
-  const hex = c.toString(16);
-  return hex.length === 1 ? `0${hex}` : hex
-}
+import { iOSColors, materialColors } from 'react-native-typography'
 
-const rgbToHex = (r, g, b) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
+// const componentToHex = (c) => {
+//   const hex = c.toString(16);
+//   return hex.length === 1 ? `0${hex}` : hex
+// }
+
+// const rgbToHex = (r, g, b) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
 
 export const hexToRgb = (hex) => {
   const sanitizedHex = hex.replace('#', '')
@@ -31,37 +33,34 @@ export const middleHexColorsToRgb = (color1, color2) => {
 }
 
 const iconColors = {
-  like: '#004EEC',
+  like: iOSColors.blue,
   dislike: '#0B1B77',
-  heart: '#E74F65',
-  reactions: '#50555C',
+  heart: iOSColors.pink,
+  reactions: materialColors.blackSecondary,
 }
 
 const colors = {
-  primary: '#004EEC',
-  secondary: '#00CEFC',
-  black: 'rgba(0, 0, 0, 0.8)',
-  inactive: '#CECECE',
-  white: '#FFFFFF',
-  grey: '#707070',
-  background: '#FFFFFF',
+  primary: iOSColors.blue,
+  secondary: iOSColors.blue,
+  black: iOSColors.black,
+  inactive: iOSColors.lightGray2,
+  white: iOSColors.white,
+  grey: iOSColors.gray,
+  background: iOSColors.white,
   input: '#F2F2F2',
   white_darken: '#FAFAFA',
   icon: '#7A8FA6',
-  purple: '#874FB1',
+  purple: iOSColors.purple,
   blue_dark: '#0B1B77',
   facebook: '#3b5998',
-  danger: '#d32f2f',
+  danger: iOSColors.red,
   placeholder: '#ACACAC',
-  border: '#E8E8E8',
+  border: iOSColors.lightGray,
   ...iconColors,
 }
 
-export const middleColor = rgbToHex(
-  ...middleHexColorsToRgb(colors.primary, colors.secondary),
-)
-
-colors.primary = middleColor
-colors.secondary = middleColor
+// export const middleColor = rgbToHex(
+//   ...middleHexColorsToRgb(colors.primary, colors.secondary),
+// )
 
 export default colors

@@ -25,7 +25,7 @@ exports[`renders CommentInput 1`] = `
         Array [
           Object {
             "backgroundColor": "#F2F2F2",
-            "borderColor": "#E8E8E8",
+            "borderColor": "#E5E5EA",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
@@ -38,7 +38,7 @@ exports[`renders CommentInput 1`] = `
             "elevation": 1,
             "height": 45,
             "minHeight": 45,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 0,
@@ -103,7 +103,7 @@ exports[`renders CommentInput 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#008ef4",
+          "backgroundColor": "#007AFF",
           "borderRadius": 22.5,
           "elevation": 2,
           "height": 45,
@@ -112,7 +112,7 @@ exports[`renders CommentInput 1`] = `
           "maxHeight": 45,
           "maxWidth": 45,
           "opacity": 1,
-          "shadowColor": "rgba(0, 0, 0, 0.8)",
+          "shadowColor": "#000000",
           "shadowOffset": Object {
             "x": 0,
             "y": 1,
@@ -193,7 +193,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
             "borderWidth": 0.5,
             "elevation": 1,
             "marginRight": 10,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 0,
@@ -210,7 +210,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#CECECE",
+              "backgroundColor": "#D1D1D6",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -238,14 +238,14 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -342,7 +342,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#008ef4",
+        "backgroundColor": "#007AFF",
         "borderRadius": 22.5,
         "elevation": 2,
         "height": 45,
@@ -351,7 +351,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
         "maxHeight": 45,
         "maxWidth": 45,
         "opacity": 1,
-        "shadowColor": "rgba(0, 0, 0, 0.8)",
+        "shadowColor": "#000000",
         "shadowOffset": Object {
           "x": 0,
           "y": 1,
