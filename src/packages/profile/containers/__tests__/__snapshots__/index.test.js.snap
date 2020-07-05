@@ -113,15 +113,17 @@ exports[`renders Profile 1`] = `
                 false,
                 false,
                 false,
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -139,8 +141,17 @@ exports[`renders Profile 1`] = `
                   "letterSpacing": -0.408,
                   "lineHeight": 22,
                 },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -193,17 +204,17 @@ exports[`renders Profile 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.38)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -234,17 +245,17 @@ exports[`renders Profile 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.38)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -275,17 +286,17 @@ exports[`renders Profile 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.38)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -383,15 +394,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -412,17 +427,17 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "rgba(0,0,0,0.38)",
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -454,20 +469,20 @@ exports[`renders Profile 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              Object {
-                "marginBottom": 10,
-                "paddingHorizontal": 16,
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.38)",
-              },
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.38)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "marginBottom": 10,
+                  "paddingHorizontal": 16,
+                },
+              ],
             ]
           }
         >
@@ -546,15 +561,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -636,15 +655,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -726,15 +749,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -816,15 +843,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -845,17 +876,17 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "rgba(0,0,0,0.38)",
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -887,20 +918,20 @@ exports[`renders Profile 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              Object {
-                "marginBottom": 10,
-                "paddingHorizontal": 16,
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.38)",
-              },
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.38)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "marginBottom": 10,
+                  "paddingHorizontal": 16,
+                },
+              ],
             ]
           }
         >
@@ -979,15 +1010,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -1008,17 +1043,17 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "rgba(0,0,0,0.38)",
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -1100,15 +1135,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >
@@ -1190,15 +1229,19 @@ exports[`renders Profile 1`] = `
                       "lineHeight": 20,
                     },
                     false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "marginBottom": 2,
+                      },
+                    ],
                   ]
                 }
               >

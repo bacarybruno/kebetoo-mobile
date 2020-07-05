@@ -803,15 +803,17 @@ exports[`renders Comments 1`] = `
                             "lineHeight": 20,
                           },
                           false,
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -840,17 +842,17 @@ exports[`renders Comments 1`] = `
                               "letterSpacing": 0,
                               "lineHeight": 16,
                             },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                            Object {
-                              "color": "rgba(0,0,0,0.54)",
-                            },
-                            undefined,
-                            undefined,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.54)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
                           ]
                         }
                       >
@@ -871,17 +873,17 @@ exports[`renders Comments 1`] = `
                               "letterSpacing": 0,
                               "lineHeight": 16,
                             },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                            Object {
-                              "color": "rgba(0,0,0,0.54)",
-                            },
-                            undefined,
-                            undefined,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.54)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
                           ]
                         }
                       >
@@ -902,17 +904,17 @@ exports[`renders Comments 1`] = `
                               "letterSpacing": 0,
                               "lineHeight": 16,
                             },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                            Object {
-                              "color": "rgba(0,0,0,0.54)",
-                            },
-                            undefined,
-                            undefined,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.54)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
                           ]
                         }
                       >
@@ -945,10 +947,19 @@ exports[`renders Comments 1`] = `
                         "letterSpacing": -0.24,
                         "lineHeight": 20,
                       },
-                      Object {
-                        "marginBottom": 8,
-                      },
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        Object {
+                          "marginBottom": 8,
+                        },
+                      ],
                     ]
                   }
                 >
@@ -1082,21 +1093,21 @@ exports[`renders Comments 1`] = `
                           "letterSpacing": 0,
                           "lineHeight": 16,
                         },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "bottom": 2,
-                          "position": "absolute",
-                          "right": 8,
-                        },
-                        Object {
-                          "color": "rgba(0,0,0,0.54)",
-                        },
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          Object {
+                            "bottom": 2,
+                            "position": "absolute",
+                            "right": 8,
+                          },
+                        ],
                       ]
                     }
                   >
@@ -1216,19 +1227,17 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "#007AFF",
-                          },
+                          Array [
+                            Object {
+                              "color": "#007AFF",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -1293,19 +1302,17 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -1370,19 +1377,17 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -1447,19 +1452,17 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -1601,17 +1604,17 @@ exports[`renders Comments 1`] = `
                                 },
                                 false,
                                 false,
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "600",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                Object {
-                                  "color": "#FFFFFF",
-                                },
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "700",
+                                  },
+                                  undefined,
+                                ],
                               ]
                             }
                           >
@@ -1719,6 +1722,7 @@ exports[`renders Comments 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
+                      "marginBottom": 2,
                     }
                   }
                 >
@@ -1737,15 +1741,17 @@ exports[`renders Comments 1`] = `
                           "lineHeight": 20,
                         },
                         false,
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -1766,15 +1772,17 @@ exports[`renders Comments 1`] = `
                           "lineHeight": 20,
                         },
                         false,
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -1795,17 +1803,17 @@ exports[`renders Comments 1`] = `
                           "letterSpacing": 0,
                           "lineHeight": 16,
                         },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        Object {
-                          "color": "rgba(0,0,0,0.54)",
-                        },
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -1824,8 +1832,17 @@ exports[`renders Comments 1`] = `
                         "letterSpacing": -0.24,
                         "lineHeight": 20,
                       },
-                      undefined,
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        undefined,
+                      ],
                     ]
                   }
                 >
@@ -1883,19 +1900,49 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          false,
-                          undefined,
-                          undefined,
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
-                      1 
+                      1
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 15,
+                            "fontWeight": "400",
+                            "letterSpacing": -0.24,
+                            "lineHeight": 20,
+                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                       
                     </Text>
                     <Text
                       allowFontScaling={false}
@@ -2009,6 +2056,7 @@ exports[`renders Comments 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
+                      "marginBottom": 2,
                     }
                   }
                 >
@@ -2027,15 +2075,17 @@ exports[`renders Comments 1`] = `
                           "lineHeight": 20,
                         },
                         false,
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -2056,15 +2106,17 @@ exports[`renders Comments 1`] = `
                           "lineHeight": 20,
                         },
                         false,
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -2085,17 +2137,17 @@ exports[`renders Comments 1`] = `
                           "letterSpacing": 0,
                           "lineHeight": 16,
                         },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        undefined,
-                        Object {
-                          "color": "rgba(0,0,0,0.54)",
-                        },
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
                       ]
                     }
                   >
@@ -2234,21 +2286,21 @@ exports[`renders Comments 1`] = `
                           "letterSpacing": 0,
                           "lineHeight": 16,
                         },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "bottom": 2,
-                          "position": "absolute",
-                          "right": 8,
-                        },
-                        Object {
-                          "color": "rgba(0,0,0,0.54)",
-                        },
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          Object {
+                            "bottom": 2,
+                            "position": "absolute",
+                            "right": 8,
+                          },
+                        ],
                       ]
                     }
                   >
@@ -2307,19 +2359,49 @@ exports[`renders Comments 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          false,
-                          undefined,
-                          undefined,
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
-                      1 
+                      1
+                    </Text>
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 15,
+                            "fontWeight": "400",
+                            "letterSpacing": -0.24,
+                            "lineHeight": 20,
+                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                       
                     </Text>
                     <Text
                       allowFontScaling={false}
@@ -3112,10 +3194,19 @@ exports[`renders Comments in loading state 1`] = `
                         "letterSpacing": -0.24,
                         "lineHeight": 20,
                       },
-                      Object {
-                        "marginBottom": 8,
-                      },
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        Object {
+                          "marginBottom": 8,
+                        },
+                      ],
                     ]
                   }
                 >
@@ -3249,21 +3340,21 @@ exports[`renders Comments in loading state 1`] = `
                           "letterSpacing": 0,
                           "lineHeight": 16,
                         },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "bottom": 2,
-                          "position": "absolute",
-                          "right": 8,
-                        },
-                        Object {
-                          "color": "rgba(0,0,0,0.54)",
-                        },
-                        undefined,
-                        undefined,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          Object {
+                            "bottom": 2,
+                            "position": "absolute",
+                            "right": 8,
+                          },
+                        ],
                       ]
                     }
                   >
@@ -3383,19 +3474,17 @@ exports[`renders Comments in loading state 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "#007AFF",
-                          },
+                          Array [
+                            Object {
+                              "color": "#007AFF",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -3460,19 +3549,17 @@ exports[`renders Comments in loading state 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -3537,19 +3624,17 @@ exports[`renders Comments in loading state 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
@@ -3614,19 +3699,17 @@ exports[`renders Comments in loading state 1`] = `
                             "letterSpacing": 0,
                             "lineHeight": 16,
                           },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "600",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
-                          undefined,
-                          Object {
-                            "color": "rgba(0,0,0,0.54)",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "700",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >

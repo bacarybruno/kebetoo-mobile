@@ -5,7 +5,24 @@ import {
   human, systemWeights, material, materialColors,
 } from 'react-native-typography'
 
-import colors from 'Kebetoo/src/theme/colors'
+import themeColors from 'Kebetoo/src/theme/colors'
+
+export const weights = {
+  thin: 'thin',
+  light: 'light',
+  regular: 'regular',
+  semibold: 'semibold',
+  bold: 'bold',
+}
+
+export const colors = {
+  primary: 'blackPrimary',
+  secondary: 'blackSecondary',
+  tertiary: 'blackTertiary',
+  whitePrimary: 'whitePrimary',
+  whiteSecondary: 'whiteSecondary',
+  whiteTertiary: 'whiteTertiary',
+}
 
 export const fontSizes = {
   tiny: 10,
@@ -34,7 +51,7 @@ export const types = {
 }
 
 const Headline = ({
-  children, style, color, bold, tertiary, secondary, size, ...otherProps
+  children, style, size, ...otherProps
 }) => (
   <Text
     style={[
@@ -42,11 +59,7 @@ const Headline = ({
       size === 4 && human.headline,
       size === 5 && human.subhead,
       size === 6 && human.caption1,
-      bold ? systemWeights.semibold : systemWeights.regular,
       style,
-      secondary && { color: materialColors.blackSecondary },
-      tertiary && { color: materialColors.blackTertiary },
-      color && { color: colors[color] },
     ]}
     {...otherProps}
   >
@@ -54,111 +67,117 @@ const Headline = ({
   </Text>
 )
 
-const Subheading = ({
-  children, style, color, ...otherProps
-}) => (
-  <Text style={[human.body, style, color && { color: colors[color] }]} {...otherProps}>
+const Subheading = ({ children, style, ...otherProps }) => (
+  <Text style={[human.body, style]} {...otherProps}>
     {children}
   </Text>
 )
 
-const Button = ({
-  children, style, color, ...otherProps
-}) => (
-  <Text
-    style={[
-      human.calloutWhite,
-      systemWeights.semibold,
-      style,
-      color && { color: colors[color] },
-    ]}
-    {...otherProps}
-  >
+const Button = ({ children, style, ...otherProps }) => (
+  <Text style={[human.calloutWhite, style]} {...otherProps}>
     {children}
   </Text>
 )
 
-const Separator = ({
-  children, style, color, ...otherProps
-}) => (
-  <Text
-    style={[
-      material.body2,
-      systemWeights.regular,
-      style,
-      color && { color: colors[color] },
-    ]}
-    {...otherProps}
-  >
+const Separator = ({ children, style, ...otherProps }) => (
+  <Text style={[material.body2, style]} {...otherProps}>
     {children}
   </Text>
 )
 
 const TextButton = ({
-  children, style, light, color, onPress, ...otherProps
+  children, style, onPress, ...otherProps
 }) => (
-  <Text
-    style={[
-      human.callout,
-      light ? systemWeights.light : systemWeights.regular,
-      style,
-      color && { color: colors[color] },
-    ]}
-    onPress={onPress}
-    {...otherProps}
-  >
+  <Text style={[human.callout, style]} onPress={onPress} {...otherProps}>
     {children}
   </Text>
 )
 
-const Body = ({
-  children, style, color, ...otherProps
-}) => (
-  <Text style={[human.subhead, style, color && { color: colors[color] }]} {...otherProps}>
+const Body = ({ children, style, ...otherProps }) => (
+  <Text style={[human.subhead, style]} {...otherProps}>
     {children}
   </Text>
 )
 
-const Caption = ({
-  children, style, color, ...otherProps
-}) => (
-  <Text style={[human.caption1, style, color && { color: colors[color] }]} {...otherProps}>
+const Caption = ({ children, style, ...otherProps }) => (
+  <Text style={[human.caption1, style]} {...otherProps}>
     {children}
   </Text>
 )
 
-const createTypography = (text, style, color, onPress, otherProps) => (Cmp, props) => (
-  <Cmp style={style} color={color} onPress={onPress} {...props} {...otherProps}>{text}</Cmp>
-)
+const createTypography = (text, style, color, onPress, defaultProps) => (Component, props) => {
+  const { systemWeight = weights.regular, systemColor = colors.primary, ...textProps } = {
+    ...props,
+    ...defaultProps,
+  }
+  return (
+    <Component
+      style={[
+        { color: color ? themeColors[color] : materialColors[systemColor] },
+        systemWeights[systemWeight],
+        style,
+      ]}
+      onPress={onPress}
+      {...textProps}
+    >
+      {text}
+    </Component>
+  )
+}
 
 const Typography = ({
   type, text, style, color, onPress, ...otherProps
 }) => {
   if (!text) return null
+
   const typography = createTypography(text, style, color, onPress, otherProps)
+
   switch (type) {
     case types.headline1:
-      return typography(Headline, { size: 1 })
+      return typography(Headline, {
+        size: 1,
+        systemWeight: weights.semibold,
+      })
     case types.headline2:
-      return typography(Headline, { size: 2 })
+      return typography(Headline, {
+        size: 2,
+        systemWeight: weights.semibold,
+      })
     case types.headline3:
-      return typography(Headline, { size: 3 })
+      return typography(Headline, {
+        size: 3,
+        systemWeight: weights.semibold,
+      })
     case types.headline4:
-      return typography(Headline, { size: 4, bold: false })
+      return typography(Headline, {
+        size: 4,
+      })
     case types.headline5:
-      return typography(Headline, { size: 5, bold: false })
+      return typography(Headline, {
+        size: 5,
+      })
     case types.headline6:
-      return typography(Headline, { size: 6, bold: false, secondary: true })
+      return typography(Headline, {
+        size: 6,
+        systemColor: colors.secondary,
+      })
     case types.subheading:
       return typography(Subheading)
     case types.button:
-      return typography(Button)
+      return typography(Button, {
+        systemColor: colors.whitePrimary,
+        systemWeight: weights.semibold,
+      })
     case types.separator:
-      return typography(Separator)
+      return typography(Separator, {
+        systemWeight: weights.regular,
+      })
     case types.textButton:
       return typography(TextButton)
     case types.textButtonLight:
-      return typography(TextButton, { light: true })
+      return typography(TextButton, {
+        systemWeight: weights.light,
+      })
     case types.body:
       return typography(Body)
     case types.caption:

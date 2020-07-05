@@ -183,13 +183,17 @@ exports[`renders Signin 1`] = `
                 "letterSpacing": -0.32,
                 "lineHeight": 21,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(255,255,255,1)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -208,18 +212,20 @@ exports[`renders Signin 1`] = `
               "letterSpacing": -0.32,
               "lineHeight": 21,
             },
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            Object {
-              "marginTop": 10,
-              "textAlign": "right",
-            },
-            Object {
-              "color": "#007AFF",
-            },
+            Array [
+              Object {
+                "color": "#007AFF",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "marginTop": 10,
+                "textAlign": "right",
+              },
+            ],
           ]
         }
       >
@@ -283,15 +289,19 @@ exports[`renders Signin 1`] = `
                   "letterSpacing": -0.154,
                   "lineHeight": 24,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                Object {
-                  "marginHorizontal": 10,
-                },
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "marginHorizontal": 10,
+                  },
+                ],
               ]
             }
           >
@@ -403,13 +413,17 @@ exports[`renders Signin 1`] = `
                 "letterSpacing": -0.32,
                 "lineHeight": 21,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "300",
-              },
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "300",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -427,13 +441,17 @@ exports[`renders Signin 1`] = `
                 "letterSpacing": -0.32,
                 "lineHeight": 21,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "300",
-              },
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "300",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -452,15 +470,17 @@ exports[`renders Signin 1`] = `
                 "letterSpacing": -0.32,
                 "lineHeight": 21,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              Object {
-                "color": "#007AFF",
-              },
+              Array [
+                Object {
+                  "color": "#007AFF",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >

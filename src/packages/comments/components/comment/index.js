@@ -5,7 +5,9 @@ import dayjs from 'dayjs'
 
 import CommentPlaceholder from 'Kebetoo/src/shared/components/placeholders/comments'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
-import Typography, { types, fontSizes } from 'Kebetoo/src/shared/components/typography'
+import Typography, {
+  types, fontSizes, weights, colors as systemColors,
+} from 'Kebetoo/src/shared/components/typography'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import { getPostType, POST_TYPES } from 'Kebetoo/src/packages/post/containers/basic-post'
 import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
@@ -31,7 +33,13 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         hitSlop={edgeInsets.all(30)}
         testID="reaction-button"
       >
-        <Typography type={types.headline6} bold text={`${reactions.length} `} secondary={false} />
+        <Typography
+          type={types.headline6}
+          systemWeight={weights.bold}
+          text={reactions.length.toString()}
+          systemColor={systemColors.primary}
+        />
+        <Typography type={types.body} text=" " />
         <Ionicon
           name={loved ? 'md-heart' : 'md-heart-empty'}
           testID="reaction"
@@ -44,7 +52,7 @@ export const Reactions = ({ onReaction, reactions, user }) => {
 }
 
 const Header = ({ displayName, updatedAt }) => (
-  <View style={{ ...styles.row, alignItems: 'center' }}>
+  <View style={{ ...styles.row, alignItems: 'center', marginBottom: 2 }}>
     <Typography type={types.headline5} text={displayName} />
     <Typography type={types.headline5} text=" • " />
     <Typography type={types.headline6} text={dayjs(updatedAt).fromNow()} />

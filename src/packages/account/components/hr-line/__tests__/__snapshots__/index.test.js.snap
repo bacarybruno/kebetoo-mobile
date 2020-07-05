@@ -37,15 +37,19 @@ exports[`renders HrLine 1`] = `
           "letterSpacing": -0.154,
           "lineHeight": 24,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        Object {
-          "marginHorizontal": 10,
-        },
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "marginHorizontal": 10,
+          },
+        ],
       ]
     }
   >

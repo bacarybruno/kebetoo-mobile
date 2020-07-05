@@ -23,6 +23,7 @@ exports[`renders OnboardingSlide 1`] = `
     }
   />
   <Text
+    bold={true}
     style={
       Array [
         Object {
@@ -37,17 +38,19 @@ exports[`renders OnboardingSlide 1`] = `
         false,
         false,
         false,
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "600",
-        },
-        Object {
-          "marginTop": 93.38000000000001,
-        },
-        undefined,
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          Object {
+            "marginTop": 93.38000000000001,
+          },
+        ],
       ]
     }
   >
@@ -65,10 +68,19 @@ exports[`renders OnboardingSlide 1`] = `
           "letterSpacing": -0.408,
           "lineHeight": 22,
         },
-        Object {
-          "marginTop": 46.690000000000005,
-        },
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "marginTop": 46.690000000000005,
+          },
+        ],
       ]
     }
   >

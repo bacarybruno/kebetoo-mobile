@@ -38,8 +38,17 @@ exports[`renders ImageContent 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          undefined,
+        ],
       ]
     }
   >
@@ -91,8 +100,17 @@ exports[`renders ImageContent in repost mode 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          undefined,
+        ],
       ]
     }
   >

@@ -25,17 +25,17 @@ exports[`renders NoContent 1`] = `
         false,
         false,
         false,
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        undefined,
-        undefined,
-        undefined,
-        Object {
-          "color": "#007AFF",
-        },
+        Array [
+          Object {
+            "color": "#007AFF",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+        ],
       ]
     }
   >
@@ -56,15 +56,17 @@ exports[`renders NoContent 1`] = `
         },
         false,
         false,
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "400",
-        },
-        undefined,
-        undefined,
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          undefined,
+        ],
       ]
     }
   >
@@ -82,8 +84,17 @@ exports[`renders NoContent 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          undefined,
+        ],
       ]
     }
   >

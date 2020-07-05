@@ -44,13 +44,17 @@ exports[`renders FullButton 1`] = `
           "letterSpacing": -0.32,
           "lineHeight": 21,
         },
-        Object {
-          "backgroundColor": "transparent",
-          "fontFamily": "System",
-          "fontWeight": "600",
-        },
-        undefined,
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(255,255,255,1)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+        ],
       ]
     }
   >

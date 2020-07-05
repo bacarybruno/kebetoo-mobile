@@ -24,11 +24,20 @@ exports[`renders ImageContent 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        Object {
-          "flex": 1,
-          "marginBottom": 8,
-        },
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+          },
+        ],
       ]
     }
   >
@@ -130,11 +139,20 @@ exports[`renders ImageContent on comments mode 1`] = `
           "letterSpacing": -0.24,
           "lineHeight": 20,
         },
-        Object {
-          "flex": 1,
-          "marginBottom": 8,
-        },
-        undefined,
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+          },
+        ],
       ]
     }
   >

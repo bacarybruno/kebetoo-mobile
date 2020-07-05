@@ -88,17 +88,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -136,15 +136,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -173,17 +175,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -204,17 +206,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -235,17 +237,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -268,10 +270,19 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -405,21 +416,21 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               "letterSpacing": 0,
               "lineHeight": 16,
             },
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            Object {
-              "bottom": 2,
-              "position": "absolute",
-              "right": 8,
-            },
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-            },
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "bottom": 2,
+                "position": "absolute",
+                "right": 8,
+              },
+            ],
           ]
         }
       >
@@ -499,19 +510,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#007AFF",
-              },
+              Array [
+                Object {
+                  "color": "#007AFF",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -576,19 +585,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -653,19 +660,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -730,19 +735,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1134,17 +1137,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -1184,15 +1187,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1214,10 +1219,19 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -1351,21 +1365,21 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               "letterSpacing": 0,
               "lineHeight": 16,
             },
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            Object {
-              "bottom": 2,
-              "position": "absolute",
-              "right": 8,
-            },
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-            },
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "bottom": 2,
+                "position": "absolute",
+                "right": 8,
+              },
+            ],
           ]
         }
       >
@@ -1445,19 +1459,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#007AFF",
-              },
+              Array [
+                Object {
+                  "color": "#007AFF",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1522,19 +1534,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1599,19 +1609,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1676,19 +1684,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1788,17 +1794,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -1836,15 +1842,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -1873,17 +1881,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -1904,17 +1912,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -1935,17 +1943,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -1968,10 +1976,19 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -2105,21 +2122,21 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
               "letterSpacing": 0,
               "lineHeight": 16,
             },
-            Object {
-              "backgroundColor": "transparent",
-              "fontFamily": "System",
-              "fontWeight": "400",
-            },
-            Object {
-              "bottom": 2,
-              "position": "absolute",
-              "right": 8,
-            },
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-            },
-            undefined,
-            undefined,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "bottom": 2,
+                "position": "absolute",
+                "right": 8,
+              },
+            ],
           ]
         }
       >
@@ -2218,17 +2235,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -2266,15 +2283,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -2303,17 +2322,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -2334,17 +2353,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -2365,17 +2384,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -2406,11 +2425,20 @@ exports[`renders component [image]: renders BasicPost 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "flex": 1,
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "flex": 1,
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -2555,19 +2583,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -2632,19 +2658,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#0B1B77",
-              },
+              Array [
+                Object {
+                  "color": "#0B1B77",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -2709,19 +2733,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -2786,19 +2808,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3190,17 +3210,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -3240,15 +3260,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3278,11 +3300,20 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "flex": 1,
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "flex": 1,
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -3411,19 +3442,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3488,19 +3517,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#0B1B77",
-              },
+              Array [
+                Object {
+                  "color": "#0B1B77",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3565,19 +3592,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3642,19 +3667,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3754,17 +3777,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -3802,15 +3825,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -3839,17 +3864,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -3870,17 +3895,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -3901,17 +3926,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -3942,11 +3967,20 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          Object {
-            "flex": 1,
-            "marginBottom": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "flex": 1,
+              "marginBottom": 8,
+            },
+          ],
         ]
       }
     >
@@ -4110,17 +4144,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -4158,15 +4192,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -4195,17 +4231,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -4226,17 +4262,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -4257,17 +4293,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -4424,15 +4460,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                         "lineHeight": 20,
                       },
                       false,
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        undefined,
+                      ],
                     ]
                   }
                 >
@@ -4476,8 +4514,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                     "letterSpacing": -0.24,
                     "lineHeight": 20,
                   },
-                  undefined,
-                  undefined,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -4560,19 +4607,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -4637,19 +4682,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#0B1B77",
-              },
+              Array [
+                Object {
+                  "color": "#0B1B77",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -4714,19 +4757,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -4791,19 +4832,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5195,17 +5234,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -5245,15 +5284,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5409,15 +5450,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                         "lineHeight": 20,
                       },
                       false,
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        undefined,
+                      ],
                     ]
                   }
                 >
@@ -5461,8 +5504,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                     "letterSpacing": -0.24,
                     "lineHeight": 20,
                   },
-                  undefined,
-                  undefined,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -5545,19 +5597,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5622,19 +5672,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "#0B1B77",
-              },
+              Array [
+                Object {
+                  "color": "#0B1B77",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5699,19 +5747,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5776,19 +5822,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5888,17 +5932,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -5936,15 +5980,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -5973,17 +6019,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -6004,17 +6050,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -6035,17 +6081,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -6202,15 +6248,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                         "lineHeight": 20,
                       },
                       false,
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        undefined,
+                      ],
                     ]
                   }
                 >
@@ -6254,8 +6302,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                     "letterSpacing": -0.24,
                     "lineHeight": 20,
                   },
-                  undefined,
-                  undefined,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -6357,17 +6414,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -6405,15 +6462,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -6442,17 +6501,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -6497,8 +6556,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -6577,19 +6645,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -6654,19 +6720,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -6731,19 +6795,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -6808,19 +6870,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7212,17 +7272,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -7262,15 +7322,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7314,8 +7376,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
         ]
       }
     >
@@ -7394,19 +7465,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7471,19 +7540,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7548,19 +7615,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7625,19 +7690,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 "letterSpacing": 0,
                 "lineHeight": 16,
               },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
-              undefined,
-              Object {
-                "color": "rgba(0,0,0,0.54)",
-              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7737,17 +7800,17 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   },
                   false,
                   false,
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "#FFFFFF",
-                  },
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -7785,15 +7848,17 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                 "lineHeight": 20,
               },
               false,
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
             ]
           }
         >
@@ -7822,17 +7887,17 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   "letterSpacing": 0,
                   "lineHeight": 16,
                 },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                undefined,
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                undefined,
-                undefined,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
@@ -7877,8 +7942,17 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
             "letterSpacing": -0.24,
             "lineHeight": 20,
           },
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
         ]
       }
     >

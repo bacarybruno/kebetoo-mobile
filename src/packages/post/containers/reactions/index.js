@@ -9,7 +9,7 @@ import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
+import Typography, { types, weights } from 'Kebetoo/src/shared/components/typography'
 import strings from 'Kebetoo/src/config/strings'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 
@@ -50,7 +50,12 @@ export const Reaction = ({
       size={18}
       name={iconName}
     />
-    <Typography type={types.headline6} bold text={count.toString()} color={color} />
+    <Typography
+      type={types.headline6}
+      systemWeight={weights.bold}
+      text={count.toString()}
+      color={color}
+    />
   </TouchableOpacity>
 )
 
