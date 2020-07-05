@@ -4,7 +4,7 @@
 A microblogging app for the African community.
 Built with React Native.
 
-# Key features
+## Key features
 
 - Create posts different content types : text, audio, images
 - Comment posts with text and audio
@@ -16,11 +16,11 @@ You can also:
 - Enable Dark mode
 - ... and much more !
 
-# Roadmap
+## Roadmap
 This project is under active development. A public roadmap will be available soon.
 For now, the product backlog is hosted on the [project section](https://github.com/bacarybruno/kebetoo-mobile/projects/1).
 
-# Installation
+## Installation
 Kebetoo requires [Node.js](https://nodejs.org/) and [React Native](http://reactnative.dev) to run.
 This installation guide will focus on android.
 
@@ -48,7 +48,7 @@ $ yarn android:dev
 Once the app is open, toggle developer options and change bundle location to `localhost:1148`.
 And the reload the app.
 
-### Contrubuting
+### Contributing
 Want to contribute? Great, create a fork a the project and start hacking!
 Ensuite that the coverage of your code is under 80%. That's the minimum required for this project.
 
@@ -64,5 +64,5 @@ $ yarn test src
 $ yarn coverage
 ```
 
-### Other informations
-Useful infos can be found in the [documentation](https://github.com/bacarybruno/kebetoo-mobile/blob/develop/docs.md).
+## Other informations
+Useful informations can be found in the [documentation](https://github.com/bacarybruno/kebetoo-mobile/blob/develop/docs.md).
