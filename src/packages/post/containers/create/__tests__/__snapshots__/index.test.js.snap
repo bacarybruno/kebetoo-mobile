@@ -23,7 +23,7 @@ exports[`renders CreatePost 1`] = `
         Array [
           Object {
             "backgroundColor": "#F2F2F2",
-            "borderColor": "#E8E8E8",
+            "borderColor": "#E5E5EA",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,

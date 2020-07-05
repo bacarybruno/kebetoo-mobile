@@ -15,7 +15,7 @@ exports[`renders OutlinedButton 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "borderColor": "#008ef4",
+        "borderColor": "#007AFF",
         "borderRadius": 3,
         "borderWidth": 1,
         "height": 36,
@@ -50,7 +50,7 @@ exports[`renders OutlinedButton 1`] = `
         },
         undefined,
         Object {
-          "color": "#008ef4",
+          "color": "#007AFF",
         },
       ]
     }
@@ -75,7 +75,7 @@ exports[`renders disabled OutlinedButton 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "borderColor": "#008ef4",
+        "borderColor": "#007AFF",
         "borderRadius": 3,
         "borderWidth": 1,
         "height": 36,
@@ -88,7 +88,7 @@ exports[`renders disabled OutlinedButton 1`] = `
         "color": "white",
       },
       Object {
-        "borderColor": "#CECECE",
+        "borderColor": "#D1D1D6",
       },
     ]
   }
@@ -112,7 +112,7 @@ exports[`renders disabled OutlinedButton 1`] = `
         },
         undefined,
         Object {
-          "color": "#CECECE",
+          "color": "#D1D1D6",
         },
       ]
     }

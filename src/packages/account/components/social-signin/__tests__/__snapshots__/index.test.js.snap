@@ -38,7 +38,7 @@ exports[`renders SocialSignin 1`] = `
         <View
           style={
             Object {
-              "borderColor": "#707070",
+              "borderColor": "#8E8E93",
               "borderWidth": 0.5,
               "flex": 1,
               "height": 0.5,
@@ -48,7 +48,7 @@ exports[`renders SocialSignin 1`] = `
         <View
           style={
             Object {
-              "borderColor": "#707070",
+              "borderColor": "#8E8E93",
               "borderWidth": 0.5,
               "flex": 1,
               "height": 0.5,

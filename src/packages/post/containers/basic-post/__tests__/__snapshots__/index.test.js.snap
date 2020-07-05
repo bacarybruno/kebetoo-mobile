@@ -59,7 +59,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -308,7 +308,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#CECECE",
+              "backgroundColor": "#D1D1D6",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -336,14 +336,14 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -474,7 +474,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#004EEC",
+              "color": "#007AFF",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -510,7 +510,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#004EEC",
+                "color": "#007AFF",
               },
             ]
           }
@@ -551,7 +551,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -587,7 +587,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -628,7 +628,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -664,7 +664,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -705,7 +705,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -741,7 +741,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -1105,7 +1105,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -1254,7 +1254,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#CECECE",
+              "backgroundColor": "#D1D1D6",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -1282,14 +1282,14 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -1420,7 +1420,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#004EEC",
+              "color": "#007AFF",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -1456,7 +1456,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#004EEC",
+                "color": "#007AFF",
               },
             ]
           }
@@ -1497,7 +1497,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -1533,7 +1533,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -1574,7 +1574,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -1610,7 +1610,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -1651,7 +1651,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -1687,7 +1687,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -1759,7 +1759,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -2008,7 +2008,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#CECECE",
+              "backgroundColor": "#D1D1D6",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -2036,14 +2036,14 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -2189,7 +2189,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -2530,7 +2530,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -2566,7 +2566,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -2684,7 +2684,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -2720,7 +2720,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -2761,7 +2761,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -2797,7 +2797,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -3161,7 +3161,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -3386,7 +3386,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -3422,7 +3422,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -3540,7 +3540,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -3576,7 +3576,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -3617,7 +3617,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -3653,7 +3653,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -3725,7 +3725,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -4081,7 +4081,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -4302,7 +4302,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E8E8E8",
+              "borderColor": "#E5E5EA",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -4379,7 +4379,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#008ef4",
+                          "backgroundColor": "#007AFF",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -4535,7 +4535,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -4571,7 +4571,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -4689,7 +4689,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -4725,7 +4725,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -4766,7 +4766,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -4802,7 +4802,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -5166,7 +5166,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -5287,7 +5287,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E8E8E8",
+              "borderColor": "#E5E5EA",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -5364,7 +5364,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#008ef4",
+                          "backgroundColor": "#007AFF",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -5520,7 +5520,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -5556,7 +5556,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -5674,7 +5674,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -5710,7 +5710,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -5751,7 +5751,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -5787,7 +5787,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -5859,7 +5859,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -6080,7 +6080,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E8E8E8",
+              "borderColor": "#E5E5EA",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -6157,7 +6157,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#008ef4",
+                          "backgroundColor": "#007AFF",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -6328,7 +6328,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -6552,7 +6552,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -6588,7 +6588,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -6629,7 +6629,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -6665,7 +6665,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -6706,7 +6706,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -6742,7 +6742,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -6783,7 +6783,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -6819,7 +6819,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -7183,7 +7183,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -7369,7 +7369,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -7405,7 +7405,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -7446,7 +7446,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -7482,7 +7482,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -7523,7 +7523,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -7559,7 +7559,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -7600,7 +7600,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#50555C",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -7636,7 +7636,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               },
               undefined,
               Object {
-                "color": "#50555C",
+                "color": "rgba(0,0,0,0.54)",
               },
             ]
           }
@@ -7708,7 +7708,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#008ef4",
+                  "backgroundColor": "#007AFF",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",

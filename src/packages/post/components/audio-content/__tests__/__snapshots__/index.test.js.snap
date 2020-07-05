@@ -60,7 +60,7 @@ exports[`renders AudioContent 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#CECECE",
+            "backgroundColor": "#D1D1D6",
             "borderBottomLeftRadius": 5,
             "borderTopLeftRadius": 5,
             "height": "100%",
@@ -88,14 +88,14 @@ exports[`renders AudioContent 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#CECECE",
+          "backgroundColor": "#D1D1D6",
           "borderRadius": 15,
           "elevation": 2,
           "height": 30,
           "justifyContent": "center",
           "marginLeft": 16,
           "opacity": 1,
-          "shadowColor": "rgba(0, 0, 0, 0.8)",
+          "shadowColor": "#000000",
           "shadowOffset": Object {
             "x": 0,
             "y": 1,

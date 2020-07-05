@@ -34,7 +34,7 @@ exports[`renders NoContent 1`] = `
         undefined,
         undefined,
         Object {
-          "color": "#008ef4",
+          "color": "#007AFF",
         },
       ]
     }

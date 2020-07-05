@@ -760,7 +760,7 @@ exports[`renders Comments 1`] = `
                           Array [
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#008ef4",
+                              "backgroundColor": "#007AFF",
                               "borderRadius": 15,
                               "flex": 1,
                               "justifyContent": "center",
@@ -985,7 +985,7 @@ exports[`renders Comments 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#CECECE",
+                          "backgroundColor": "#D1D1D6",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -1013,14 +1013,14 @@ exports[`renders Comments 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#CECECE",
+                        "backgroundColor": "#D1D1D6",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowColor": "#000000",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -1109,11 +1109,11 @@ exports[`renders Comments 1`] = `
               style={
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderLeftColor": "#E8E8E8",
+                  "borderLeftColor": "#E5E5EA",
                   "borderLeftWidth": 1,
-                  "borderRightColor": "#E8E8E8",
+                  "borderRightColor": "#E5E5EA",
                   "borderRightWidth": 1,
-                  "borderTopColor": "#E8E8E8",
+                  "borderTopColor": "#E5E5EA",
                   "borderTopLeftRadius": 35,
                   "borderTopRightRadius": 35,
                   "borderTopWidth": 1,
@@ -1134,7 +1134,7 @@ exports[`renders Comments 1`] = `
                 <View
                   style={
                     Object {
-                      "backgroundColor": "#CECECE",
+                      "backgroundColor": "#D1D1D6",
                       "borderRadius": 5,
                       "height": 5,
                       "margin": 10,
@@ -1191,7 +1191,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#004EEC",
+                          "color": "#007AFF",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -1227,7 +1227,7 @@ exports[`renders Comments 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#004EEC",
+                            "color": "#007AFF",
                           },
                         ]
                       }
@@ -1268,7 +1268,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -1304,7 +1304,7 @@ exports[`renders Comments 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -1345,7 +1345,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -1381,7 +1381,7 @@ exports[`renders Comments 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -1422,7 +1422,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -1458,7 +1458,7 @@ exports[`renders Comments 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -1504,7 +1504,7 @@ exports[`renders Comments 1`] = `
                             },
                             undefined,
                             Object {
-                              "backgroundColor": "#008ef4",
+                              "backgroundColor": "#007AFF",
                               "borderRadius": 14,
                               "height": "100%",
                               "width": "100%",
@@ -1522,7 +1522,7 @@ exports[`renders Comments 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#008ef4",
+                                "backgroundColor": "#007AFF",
                                 "borderRadius": 15,
                                 "flex": 1,
                                 "justifyContent": "center",
@@ -1561,7 +1561,7 @@ exports[`renders Comments 1`] = `
                             },
                             undefined,
                             Object {
-                              "backgroundColor": "#008ef4",
+                              "backgroundColor": "#007AFF",
                               "borderRadius": 14,
                               "height": "100%",
                               "width": "100%",
@@ -1574,7 +1574,7 @@ exports[`renders Comments 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#008ef4",
+                                "backgroundColor": "#007AFF",
                                 "borderRadius": 15,
                                 "flex": 1,
                                 "justifyContent": "center",
@@ -1692,7 +1692,7 @@ exports[`renders Comments 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#008ef4",
+                          "backgroundColor": "#007AFF",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -1901,7 +1901,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#E74F65",
+                          "color": "#FF2D55",
                           "fontFamily": "Ionicons",
                           "fontSize": 16,
                           "fontStyle": "normal",
@@ -1982,7 +1982,7 @@ exports[`renders Comments 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#008ef4",
+                          "backgroundColor": "#007AFF",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -2137,7 +2137,7 @@ exports[`renders Comments 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#CECECE",
+                          "backgroundColor": "#D1D1D6",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -2165,14 +2165,14 @@ exports[`renders Comments 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#CECECE",
+                        "backgroundColor": "#D1D1D6",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowColor": "#000000",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -2367,7 +2367,7 @@ exports[`renders Comments 1`] = `
           Array [
             Object {
               "backgroundColor": "#F2F2F2",
-              "borderColor": "#E8E8E8",
+              "borderColor": "#E5E5EA",
               "borderRadius": 15,
               "borderWidth": 1,
               "minHeight": 48,
@@ -2380,7 +2380,7 @@ exports[`renders Comments 1`] = `
               "elevation": 1,
               "height": 45,
               "minHeight": 45,
-              "shadowColor": "rgba(0, 0, 0, 0.8)",
+              "shadowColor": "#000000",
               "shadowOffset": Object {
                 "x": 0,
                 "y": 0,
@@ -2445,7 +2445,7 @@ exports[`renders Comments 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#008ef4",
+            "backgroundColor": "#007AFF",
             "borderRadius": 22.5,
             "elevation": 2,
             "height": 45,
@@ -2454,7 +2454,7 @@ exports[`renders Comments 1`] = `
             "maxHeight": 45,
             "maxWidth": 45,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -3152,7 +3152,7 @@ exports[`renders Comments in loading state 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#CECECE",
+                          "backgroundColor": "#D1D1D6",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -3180,14 +3180,14 @@ exports[`renders Comments in loading state 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#CECECE",
+                        "backgroundColor": "#D1D1D6",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "rgba(0, 0, 0, 0.8)",
+                        "shadowColor": "#000000",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -3276,11 +3276,11 @@ exports[`renders Comments in loading state 1`] = `
               style={
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderLeftColor": "#E8E8E8",
+                  "borderLeftColor": "#E5E5EA",
                   "borderLeftWidth": 1,
-                  "borderRightColor": "#E8E8E8",
+                  "borderRightColor": "#E5E5EA",
                   "borderRightWidth": 1,
-                  "borderTopColor": "#E8E8E8",
+                  "borderTopColor": "#E5E5EA",
                   "borderTopLeftRadius": 35,
                   "borderTopRightRadius": 35,
                   "borderTopWidth": 1,
@@ -3301,7 +3301,7 @@ exports[`renders Comments in loading state 1`] = `
                 <View
                   style={
                     Object {
-                      "backgroundColor": "#CECECE",
+                      "backgroundColor": "#D1D1D6",
                       "borderRadius": 5,
                       "height": 5,
                       "margin": 10,
@@ -3358,7 +3358,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#004EEC",
+                          "color": "#007AFF",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3394,7 +3394,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#004EEC",
+                            "color": "#007AFF",
                           },
                         ]
                       }
@@ -3435,7 +3435,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3471,7 +3471,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -3512,7 +3512,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3548,7 +3548,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -3589,7 +3589,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#50555C",
+                          "color": "rgba(0,0,0,0.54)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3625,7 +3625,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           undefined,
                           Object {
-                            "color": "#50555C",
+                            "color": "rgba(0,0,0,0.54)",
                           },
                         ]
                       }
@@ -4029,7 +4029,7 @@ exports[`renders Comments in loading state 1`] = `
           Array [
             Object {
               "backgroundColor": "#F2F2F2",
-              "borderColor": "#E8E8E8",
+              "borderColor": "#E5E5EA",
               "borderRadius": 15,
               "borderWidth": 1,
               "minHeight": 48,
@@ -4042,7 +4042,7 @@ exports[`renders Comments in loading state 1`] = `
               "elevation": 1,
               "height": 45,
               "minHeight": 45,
-              "shadowColor": "rgba(0, 0, 0, 0.8)",
+              "shadowColor": "#000000",
               "shadowOffset": Object {
                 "x": 0,
                 "y": 0,
@@ -4107,7 +4107,7 @@ exports[`renders Comments in loading state 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#008ef4",
+            "backgroundColor": "#007AFF",
             "borderRadius": 22.5,
             "elevation": 2,
             "height": 45,
@@ -4116,7 +4116,7 @@ exports[`renders Comments in loading state 1`] = `
             "maxHeight": 45,
             "maxWidth": 45,
             "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 0.8)",
+            "shadowColor": "#000000",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,

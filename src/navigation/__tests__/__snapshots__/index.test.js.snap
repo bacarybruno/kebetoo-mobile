@@ -255,7 +255,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <RefreshControlMock
                                       colors={
                                         Array [
-                                          "#008ef4",
+                                          "#007AFF",
                                         ]
                                       }
                                       onRefresh={[Function]}
@@ -333,7 +333,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               Array [
                                                 Object {
                                                   "alignItems": "center",
-                                                  "backgroundColor": "#008ef4",
+                                                  "backgroundColor": "#007AFF",
                                                   "borderRadius": 15,
                                                   "flex": 1,
                                                   "justifyContent": "center",
@@ -526,7 +526,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <View
                                       style={
                                         Object {
-                                          "backgroundColor": "rgba(0, 142, 244, 1)",
+                                          "backgroundColor": "rgba(0, 122, 255, 1)",
                                           "borderRadius": 28,
                                           "height": 56,
                                           "width": 56,
@@ -585,7 +585,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 "paddingBottom": 10,
                                 "paddingHorizontal": 0,
                                 "right": 0,
-                                "shadowColor": "rgba(0, 0, 0, 0.8)",
+                                "shadowColor": "#000000",
                                 "shadowOffset": Object {
                                   "x": 0,
                                   "y": 0,
@@ -661,7 +661,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       allowFontScaling={false}
                                       style={
                                         Object {
-                                          "color": "#008ef4",
+                                          "color": "#007AFF",
                                           "fontFamily": "icomoon",
                                           "fontSize": 24,
                                           "fontStyle": "normal",
@@ -718,7 +718,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         "lineHeight": 16,
                                       },
                                       Object {
-                                        "color": "#008ef4",
+                                        "color": "#007AFF",
                                       },
                                       undefined,
                                     ]
@@ -784,7 +784,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       allowFontScaling={false}
                                       style={
                                         Object {
-                                          "color": "#008ef4",
+                                          "color": "#007AFF",
                                           "fontFamily": "icomoon",
                                           "fontSize": 24,
                                           "fontStyle": "normal",
@@ -907,7 +907,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       allowFontScaling={false}
                                       style={
                                         Object {
-                                          "color": "#008ef4",
+                                          "color": "#007AFF",
                                           "fontFamily": "icomoon",
                                           "fontSize": 24,
                                           "fontStyle": "normal",
@@ -1008,7 +1008,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       allowFontScaling={false}
                                       style={
                                         Object {
-                                          "color": "#008ef4",
+                                          "color": "#007AFF",
                                           "fontFamily": "icomoon",
                                           "fontSize": 24,
                                           "fontStyle": "normal",
@@ -1131,7 +1131,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       allowFontScaling={false}
                                       style={
                                         Object {
-                                          "color": "#008ef4",
+                                          "color": "#007AFF",
                                           "fontFamily": "icomoon",
                                           "fontSize": 24,
                                           "fontStyle": "normal",
@@ -1627,7 +1627,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             <RCTScrollView
                                               activeDotStyle={
                                                 Object {
-                                                  "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                                                  "backgroundColor": "#000000",
                                                   "height": 8,
                                                   "width": 15,
                                                 }
@@ -1656,7 +1656,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                               disablePrevButton={false}
                                               dotStyle={
                                                 Object {
-                                                  "backgroundColor": "#CECECE",
+                                                  "backgroundColor": "#D1D1D6",
                                                   "height": 8,
                                                   "width": 8,
                                                 }
@@ -2165,7 +2165,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       "width": 8,
                                                     },
                                                     Object {
-                                                      "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                                                      "backgroundColor": "#000000",
                                                       "height": 8,
                                                       "width": 15,
                                                     },
@@ -2186,7 +2186,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       "width": 8,
                                                     },
                                                     Object {
-                                                      "backgroundColor": "#CECECE",
+                                                      "backgroundColor": "#D1D1D6",
                                                       "height": 8,
                                                       "width": 8,
                                                     },
@@ -2207,7 +2207,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       "width": 8,
                                                     },
                                                     Object {
-                                                      "backgroundColor": "#CECECE",
+                                                      "backgroundColor": "#D1D1D6",
                                                       "height": 8,
                                                       "width": 8,
                                                     },
@@ -2239,7 +2239,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                               style={
                                                 Object {
                                                   "alignItems": "center",
-                                                  "backgroundColor": "#008ef4",
+                                                  "backgroundColor": "#007AFF",
                                                   "borderRadius": 15,
                                                   "bottom": 0,
                                                   "color": "#FFFFFF",
@@ -2249,7 +2249,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                   "opacity": 1,
                                                   "position": "absolute",
                                                   "right": 0,
-                                                  "shadowColor": "rgba(0, 0, 0, 0.8)",
+                                                  "shadowColor": "#000000",
                                                   "shadowOffset": Object {
                                                     "x": 0,
                                                     "y": 1,
@@ -2578,7 +2578,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                           <RCTScrollView
                             activeDotStyle={
                               Object {
-                                "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                                "backgroundColor": "#000000",
                                 "height": 8,
                                 "width": 15,
                               }
@@ -2607,7 +2607,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                             disablePrevButton={false}
                             dotStyle={
                               Object {
-                                "backgroundColor": "#CECECE",
+                                "backgroundColor": "#D1D1D6",
                                 "height": 8,
                                 "width": 8,
                               }
@@ -3116,7 +3116,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     "width": 8,
                                   },
                                   Object {
-                                    "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                                    "backgroundColor": "#000000",
                                     "height": 8,
                                     "width": 15,
                                   },
@@ -3137,7 +3137,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     "width": 8,
                                   },
                                   Object {
-                                    "backgroundColor": "#CECECE",
+                                    "backgroundColor": "#D1D1D6",
                                     "height": 8,
                                     "width": 8,
                                   },
@@ -3158,7 +3158,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     "width": 8,
                                   },
                                   Object {
-                                    "backgroundColor": "#CECECE",
+                                    "backgroundColor": "#D1D1D6",
                                     "height": 8,
                                     "width": 8,
                                   },
@@ -3190,7 +3190,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#008ef4",
+                                "backgroundColor": "#007AFF",
                                 "borderRadius": 15,
                                 "bottom": 0,
                                 "color": "#FFFFFF",
@@ -3200,7 +3200,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 "opacity": 1,
                                 "position": "absolute",
                                 "right": 0,
-                                "shadowColor": "rgba(0, 0, 0, 0.8)",
+                                "shadowColor": "#000000",
                                 "shadowOffset": Object {
                                   "x": 0,
                                   "y": 1,
@@ -3362,7 +3362,7 @@ exports[`tabs renders TabNavigation 1`] = `
                   <RefreshControlMock
                     colors={
                       Array [
-                        "#008ef4",
+                        "#007AFF",
                       ]
                     }
                     onRefresh={[Function]}
@@ -3445,7 +3445,7 @@ exports[`tabs renders TabNavigation 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#008ef4",
+                                "backgroundColor": "#007AFF",
                                 "borderRadius": 15,
                                 "flex": 1,
                                 "justifyContent": "center",
@@ -3604,7 +3604,7 @@ exports[`tabs renders TabNavigation 1`] = `
                   <View
                     style={
                       Object {
-                        "backgroundColor": "rgba(0, 142, 244, 1)",
+                        "backgroundColor": "rgba(0, 122, 255, 1)",
                         "borderRadius": 28,
                         "height": 56,
                         "width": 56,
@@ -3663,7 +3663,7 @@ exports[`tabs renders TabNavigation 1`] = `
               "paddingBottom": 10,
               "paddingHorizontal": 0,
               "right": 0,
-              "shadowColor": "rgba(0, 0, 0, 0.8)",
+              "shadowColor": "#000000",
               "shadowOffset": Object {
                 "x": 0,
                 "y": 0,
@@ -3739,7 +3739,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     allowFontScaling={false}
                     style={
                       Object {
-                        "color": "#008ef4",
+                        "color": "#007AFF",
                         "fontFamily": "icomoon",
                         "fontSize": 24,
                         "fontStyle": "normal",
@@ -3796,7 +3796,7 @@ exports[`tabs renders TabNavigation 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "color": "#008ef4",
+                      "color": "#007AFF",
                     },
                     undefined,
                   ]
@@ -3862,7 +3862,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     allowFontScaling={false}
                     style={
                       Object {
-                        "color": "#008ef4",
+                        "color": "#007AFF",
                         "fontFamily": "icomoon",
                         "fontSize": 24,
                         "fontStyle": "normal",
@@ -3985,7 +3985,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     allowFontScaling={false}
                     style={
                       Object {
-                        "color": "#008ef4",
+                        "color": "#007AFF",
                         "fontFamily": "icomoon",
                         "fontSize": 24,
                         "fontStyle": "normal",
@@ -4086,7 +4086,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     allowFontScaling={false}
                     style={
                       Object {
-                        "color": "#008ef4",
+                        "color": "#007AFF",
                         "fontFamily": "icomoon",
                         "fontSize": 24,
                         "fontStyle": "normal",
@@ -4209,7 +4209,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     allowFontScaling={false}
                     style={
                       Object {
-                        "color": "#008ef4",
+                        "color": "#007AFF",
                         "fontFamily": "icomoon",
                         "fontSize": 24,
                         "fontStyle": "normal",
