@@ -23,14 +23,14 @@ export const hexToRgba = (hex, opacity) => {
   return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }
 
-export const middleHexColorsToRgb = (color1, color2) => {
-  const [r1, g1, b1] = hexToRgb(color1)
-  const [r2, g2, b2] = hexToRgb(color2)
-  const r = (r1 + r2) / 2
-  const g = (g1 + g2) / 2
-  const b = (b1 + b2) / 2
-  return [r, g, b]
-}
+// export const middleHexColorsToRgb = (color1, color2) => {
+//   const [r1, g1, b1] = hexToRgb(color1)
+//   const [r2, g2, b2] = hexToRgb(color2)
+//   const r = (r1 + r2) / 2
+//   const g = (g1 + g2) / 2
+//   const b = (b1 + b2) / 2
+//   return [r, g, b]
+// }
 
 const iconColors = {
   like: iOSColors.blue,
