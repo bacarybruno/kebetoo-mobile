@@ -5,6 +5,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 
+import Typography, { types, fontSizes } from 'Kebetoo/src/shared/components/typography'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder, { PlaceholderAvatar } from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
@@ -14,7 +15,6 @@ import ImageContent from 'Kebetoo/src/packages/post/components/image-content'
 import RepostContent from 'Kebetoo/src/packages/post/components/repost-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
-import { ThemedText, fontSizes } from 'Kebetoo/src/shared/components/text'
 import strings from 'Kebetoo/src/config/strings'
 
 import styles from './styles'
@@ -44,10 +44,10 @@ export const getPostType = (post) => {
   return null
 }
 
-const Edited = ({ size }) => (
+const Edited = () => (
   <>
-    <ThemedText size={size} text=" • " />
-    <ThemedText size={size} text={strings.general.edited} />
+    <Typography text=" • " type={types.headline6} />
+    <Typography text={strings.general.edited} type={types.headline6} />
   </>
 )
 
@@ -83,11 +83,11 @@ export const Header = ({
         </View>
         {author && (
           <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
-            <ThemedText size={isRepost ? 'sm' : 'md'} text={author.displayName} />
+            <Typography text={author.displayName} type={types.headline5} />
             {!isRepost && (
               <View style={styles.smallMeta}>
-                <ThemedText size="xs" text={dayjs(post.createdAt).fromNow()} />
-                {isUpdated(post) && <Edited size="xs" />}
+                <Typography text={dayjs(post.createdAt).fromNow()} type={types.headline6} />
+                {isUpdated(post) && <Edited />}
               </View>
             )}
           </View>

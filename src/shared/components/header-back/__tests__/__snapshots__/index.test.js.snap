@@ -15,28 +15,16 @@ exports[`renders HeaderBack 1`] = `
   <Text
     allowFontScaling={false}
     style={
-      Array [
-        Object {
-          "fontFamily": "Helvetica",
-        },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 20,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {
-          "color": "red",
-          "fontFamily": "icomoon",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
+      Object {
+        "color": "red",
+        "fontFamily": "icomoon",
+        "fontSize": 20,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      }
     }
-  >
-    kebeticon-chevron-left
-  </Text>
+    text="kebeticon-chevron-left"
+  />
 </View>
 `;
 
@@ -55,27 +43,15 @@ exports[`renders HeaderClose 1`] = `
   <Text
     allowFontScaling={false}
     style={
-      Array [
-        Object {
-          "fontFamily": "Helvetica",
-        },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 40,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {
-          "color": "red",
-          "fontFamily": "Ionicons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
+      Object {
+        "color": "red",
+        "fontFamily": "Ionicons",
+        "fontSize": 40,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      }
     }
-  >
-    ionicon-ios-close
-  </Text>
+    text="ionicon-ios-close"
+  />
 </View>
 `;

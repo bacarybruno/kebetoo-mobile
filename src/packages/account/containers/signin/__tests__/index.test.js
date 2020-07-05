@@ -43,7 +43,7 @@ describe('submit', () => {
   const getElements = (wrapper) => ({
     emailInput: wrapper.getByPlaceholder(strings.auth.email),
     passwordInput: wrapper.getByPlaceholder(strings.auth.password),
-    signInButton: wrapper.getByText(strings.auth.signup.toUpperCase()),
+    signInButton: wrapper.getByText(strings.auth.signin.toUpperCase()),
   })
   it('throws error if infos are not valid', async () => {
     const { wrapper } = givenSignIn()

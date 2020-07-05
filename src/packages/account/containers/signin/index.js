@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import * as yup from 'yup'
 import auth from '@react-native-firebase/auth'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
@@ -77,19 +77,22 @@ const SignIn = ({ navigation }) => {
           returnKeyType="done"
         />
         <View>
-          <FullButton text={strings.auth.signup.toUpperCase()} onPress={onSubmit} />
-          <Text
-            style={styles.forgotPassword}
-            text={strings.auth.forgot_password}
+          <FullButton text={strings.auth.signin.toUpperCase()} onPress={onSubmit} />
+          <Typography
             color="secondary"
+            style={styles.forgotPassword}
+            type={types.textButton}
+            text={strings.auth.forgot_password}
           />
         </View>
       </View>
       {!keyboardShown && (
         <SocialSignIn sectionText={strings.auth.or_signin_with}>
-          <Text style={styles.footerText} onPress={navigateToSignUp}>
-            {strings.auth.dont_have_account} <Text color="secondary" text={strings.auth.signup} />
-          </Text>
+          <View style={styles.footerText}>
+            <Typography type={types.textButtonLight} text={strings.auth.dont_have_account} />
+            <Typography type={types.textButtonLight} text=" " />
+            <Typography onPress={navigateToSignUp} color="secondary" type={types.textButton} text={strings.auth.signup} />
+          </View>
         </SocialSignIn>
       )}
     </View>

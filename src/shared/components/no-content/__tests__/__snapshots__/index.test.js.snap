@@ -14,16 +14,28 @@ exports[`renders NoContent 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 20,
+          "fontWeight": "400",
+          "letterSpacing": 0.361328,
+          "lineHeight": 25,
         },
+        false,
+        false,
+        false,
+        Object {
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
+        },
+        undefined,
+        undefined,
+        undefined,
         Object {
           "color": "#008ef4",
-          "fontSize": 20,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
         },
-        Object {},
       ]
     }
   >
@@ -32,17 +44,27 @@ exports[`renders NoContent 1`] = `
   <Text
     style={
       Array [
+        false,
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "600",
+          "letterSpacing": -0.408,
+          "lineHeight": 22,
         },
+        false,
+        false,
         Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
         },
-        Object {},
+        undefined,
+        undefined,
+        undefined,
+        undefined,
       ]
     }
   >
@@ -52,16 +74,16 @@ exports[`renders NoContent 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+          "letterSpacing": -0.24,
+          "lineHeight": 20,
         },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >

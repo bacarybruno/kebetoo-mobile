@@ -42,16 +42,21 @@ exports[`renders Onboarding 1`] = `
           style={
             Array [
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
               },
               Object {
-                "color": "#707070",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "300",
               },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
@@ -170,23 +175,31 @@ exports[`renders Onboarding 1`] = `
                 }
               />
               <Text
-                adjustsFontSizeToFit={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
                     },
+                    false,
+                    false,
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 27,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
                     },
                     Object {
                       "marginTop": 93.38000000000001,
-                      "maxHeight": 133.4,
                     },
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -196,18 +209,18 @@ exports[`renders Onboarding 1`] = `
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
                     },
                     Object {
                       "marginTop": 46.690000000000005,
                     },
+                    undefined,
                   ]
                 }
               >
@@ -250,23 +263,31 @@ exports[`renders Onboarding 1`] = `
                 }
               />
               <Text
-                adjustsFontSizeToFit={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
                     },
+                    false,
+                    false,
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 27,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
                     },
                     Object {
                       "marginTop": 93.38000000000001,
-                      "maxHeight": 133.4,
                     },
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -276,18 +297,18 @@ exports[`renders Onboarding 1`] = `
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
                     },
                     Object {
                       "marginTop": 46.690000000000005,
                     },
+                    undefined,
                   ]
                 }
               >
@@ -330,23 +351,31 @@ exports[`renders Onboarding 1`] = `
                 }
               />
               <Text
-                adjustsFontSizeToFit={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
                     },
+                    false,
+                    false,
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 27,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
                     },
                     Object {
                       "marginTop": 93.38000000000001,
-                      "maxHeight": 133.4,
                     },
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -356,18 +385,18 @@ exports[`renders Onboarding 1`] = `
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
                     },
                     Object {
                       "marginTop": 46.690000000000005,
                     },
+                    undefined,
                   ]
                 }
               >
@@ -410,23 +439,31 @@ exports[`renders Onboarding 1`] = `
                 }
               />
               <Text
-                adjustsFontSizeToFit={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
                     },
+                    false,
+                    false,
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 27,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
                     },
                     Object {
                       "marginTop": 93.38000000000001,
-                      "maxHeight": 133.4,
                     },
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -436,18 +473,18 @@ exports[`renders Onboarding 1`] = `
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
                     },
                     Object {
                       "marginTop": 46.690000000000005,
                     },
+                    undefined,
                   ]
                 }
               >
@@ -490,23 +527,31 @@ exports[`renders Onboarding 1`] = `
                 }
               />
               <Text
-                adjustsFontSizeToFit={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
                     },
+                    false,
+                    false,
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 27,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
                     },
                     Object {
                       "marginTop": 93.38000000000001,
-                      "maxHeight": 133.4,
                     },
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -516,18 +561,18 @@ exports[`renders Onboarding 1`] = `
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
                     },
                     Object {
                       "marginTop": 46.690000000000005,
                     },
+                    undefined,
                   ]
                 }
               >
@@ -672,28 +717,16 @@ exports[`renders Onboarding 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 30,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#FFFFFF",
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Ionicons",
+              "fontSize": 30,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-        >
-          ionicon-ios-arrow-round-forward
-        </Text>
+          text="ionicon-ios-arrow-round-forward"
+        />
       </View>
     </View>
   </View>

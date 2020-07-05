@@ -1,10 +1,10 @@
 import React from 'react'
 
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
+import { POST_TYPES } from 'Kebetoo/src/packages/post/containers/basic-post'
 
 import styles from './styles'
-import { POST_TYPES } from '../../containers/basic-post'
 
 const TextContent = ({
   content, style, onPress, type,
@@ -14,7 +14,7 @@ const TextContent = ({
     disabled={!onPress}
     style={[styles.wrapper, type === POST_TYPES.REPOST && styles.repost, style]}
   >
-    <ThemedText text={content} />
+    <Typography type={types.body} text={content} />
   </Pressable>
 )
 

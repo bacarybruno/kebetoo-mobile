@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
-import { fontSizes } from 'Kebetoo/src/shared/components/text'
+import { fontSizes } from 'Kebetoo/src/shared/components/typography'
 
 export const paginationBottom = metrics.marginVertical
 export const dotHeight = 8

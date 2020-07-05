@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import { useDispatch } from 'react-redux'
 import auth from '@react-native-firebase/auth'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import PasswordInput from 'Kebetoo/src/shared/components/inputs/password'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
@@ -112,9 +112,11 @@ const SignUp = ({ navigation }) => {
       </View>
       {!keyboardShown && (
         <SocialSignIn sectionText={strings.auth.or_signin_with}>
-          <Text style={styles.footerText} onPress={navigateToSignIn}>
-            {strings.auth.have_account} <Text color="secondary" text={strings.auth.signin} />
-          </Text>
+          <View style={styles.footerText}>
+            <Typography type={types.textButtonLight} text={strings.auth.have_account} />
+            <Typography type={types.textButtonLight} text=" " />
+            <Typography color="secondary" onPress={navigateToSignIn} type={types.textButton} text={strings.auth.signin} />
+          </View>
         </SocialSignIn>
       )}
     </View>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Image, View } from 'react-native'
 
-import Text from 'Kebetoo/src/shared/components/text'
-
 import generateColor from 'Kebetoo/src/shared/helpers/color-generator'
+
 import styles from './styles'
+import Typography, { types } from '../typography'
 
 const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
@@ -20,12 +20,10 @@ export const ImageAvatar = ({ src, size, style }) => (
   </View>
 )
 
-export const TextAvatar = ({
-  text, size, fontSize, style,
-}) => (
+export const TextAvatar = ({ text, size, style }) => (
   <View style={[styles.wrapper, dimensions(size), style]}>
     <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
-      <Text color="white" size="md" bold fontSize={fontSize}>{text[0].toUpperCase()}</Text>
+      <Typography type={types.headline4} text={text[0].toUpperCase()} bold color="white" />
     </View>
   </View>
 )

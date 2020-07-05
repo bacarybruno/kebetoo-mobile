@@ -14,7 +14,7 @@ exports[`renders ImageContent 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#F2F2F2",
+        "backgroundColor": "#FAFAFA",
         "borderRadius": 5,
         "minHeight": 52,
         "padding": 16,
@@ -30,16 +30,16 @@ exports[`renders ImageContent 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+          "letterSpacing": -0.24,
+          "lineHeight": 20,
         },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >
@@ -62,7 +62,7 @@ exports[`renders ImageContent in repost mode 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#F2F2F2",
+        "backgroundColor": "#FAFAFA",
         "borderRadius": 5,
         "minHeight": 52,
         "padding": 16,
@@ -83,16 +83,16 @@ exports[`renders ImageContent in repost mode 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+          "letterSpacing": -0.24,
+          "lineHeight": 20,
         },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >

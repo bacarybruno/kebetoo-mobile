@@ -127,28 +127,16 @@ exports[`renders Signin 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 30,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#ACACAC",
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": "#ACACAC",
+              "fontFamily": "Ionicons",
+              "fontSize": 30,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-        >
-          ionicon-ios-eye
-        </Text>
+          text="ionicon-ios-eye"
+        />
       </View>
     </View>
     <View>
@@ -187,38 +175,50 @@ exports[`renders Signin 1`] = `
           style={
             Array [
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#FFFFFF",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
               },
               Object {
-                "color": "#FFFFFF",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
               },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
-          SIGN UP
+          SIGN IN
         </Text>
       </View>
       <Text
         style={
           Array [
             Object {
-              "fontFamily": "Helvetica",
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
             },
             Object {
-              "color": "#008ef4",
-              "fontSize": 16,
-              "fontWeight": "normal",
-              "opacity": 1,
-              "textDecorationLine": "none",
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
             },
             Object {
               "marginTop": 10,
               "textAlign": "right",
+            },
+            Object {
+              "color": "#008ef4",
             },
           ]
         }
@@ -275,18 +275,23 @@ exports[`renders Signin 1`] = `
             style={
               Array [
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "rgba(0,0,0,0.87)",
+                  "fontFamily": "System",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": -0.154,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
-                  "fontSize": 14,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
                 },
                 Object {
                   "marginHorizontal": 10,
                 },
+                undefined,
               ]
             }
           >
@@ -331,28 +336,16 @@ exports[`renders Signin 1`] = `
             <Text
               allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "fontFamily": "Helvetica",
-                  },
-                  Object {
-                    "color": "#3b5998",
-                    "fontSize": 33,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {
-                    "color": "#3b5998",
-                    "fontFamily": "icomoon",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                ]
+                Object {
+                  "color": "#3b5998",
+                  "fontFamily": "icomoon",
+                  "fontSize": 33,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-            >
-              kebeticon-facebook
-            </Text>
+              text="kebeticon-facebook"
+            />
           </View>
           <View
             accessible={true}
@@ -388,51 +381,92 @@ exports[`renders Signin 1`] = `
           </View>
         </View>
       </View>
-      <Text
-        onPress={[Function]}
+      <View
         style={
-          Array [
-            Object {
-              "fontFamily": "Helvetica",
-            },
-            Object {
-              "color": "rgba(0, 0, 0, 0.8)",
-              "fontSize": 16,
-              "fontWeight": "normal",
-              "opacity": 1,
-              "textDecorationLine": "none",
-            },
-            Object {
-              "flex": 1,
-              "textAlign": "center",
-              "textAlignVertical": "bottom",
-            },
-          ]
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
         }
       >
-        
-        Don't have an account?
-         
         <Text
           style={
             Array [
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
               },
               Object {
-                "color": "#008ef4",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "300",
               },
-              Object {},
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          Don't have an account?
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "300",
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        >
+           
+        </Text>
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+              Object {
+                "color": "#008ef4",
+              },
             ]
           }
         >
           Sign up
         </Text>
-      </Text>
+      </View>
     </View>
   </View>
 </View>

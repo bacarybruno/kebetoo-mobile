@@ -35,20 +35,27 @@ exports[`renders OutlinedButton 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#FFFFFF",
+          "fontFamily": "System",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "letterSpacing": -0.32,
+          "lineHeight": 21,
         },
         Object {
-          "color": "#008ef4",
-          "fontSize": 14,
-          "fontWeight": "bold",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "600",
         },
-        Object {},
+        undefined,
+        Object {
+          "color": "#008ef4",
+        },
       ]
     }
   >
-    NEW
+    New
   </Text>
 </View>
 `;
@@ -90,20 +97,27 @@ exports[`renders disabled OutlinedButton 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#FFFFFF",
+          "fontFamily": "System",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "letterSpacing": -0.32,
+          "lineHeight": 21,
         },
         Object {
-          "color": "#CECECE",
-          "fontSize": 14,
-          "fontWeight": "bold",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "600",
         },
-        Object {},
+        undefined,
+        Object {
+          "color": "#CECECE",
+        },
       ]
     }
   >
-    NEW
+    New
   </Text>
 </View>
 `;

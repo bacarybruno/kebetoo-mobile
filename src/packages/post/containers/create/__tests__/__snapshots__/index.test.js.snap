@@ -64,27 +64,6 @@ exports[`renders CreatePost 1`] = `
         value={null}
       />
     </View>
-    <Text
-      style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 10,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "marginTop": 8,
-          },
-        ]
-      }
-    >
-      
-    </Text>
     <View
       style={
         Object {
@@ -158,28 +137,16 @@ exports[`renders CreatePost 1`] = `
             <Text
               allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "fontFamily": "Helvetica",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontSize": 18.018018018018015,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                ]
+                Object {
+                  "color": "#0B1B77",
+                  "fontFamily": "icomoon",
+                  "fontSize": 18.018018018018015,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-            >
-              kebeticon-camera
-            </Text>
+              text="kebeticon-camera"
+            />
           </View>
         </View>
         <View
@@ -229,28 +196,16 @@ exports[`renders CreatePost 1`] = `
             <Text
               allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "fontFamily": "Helvetica",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontSize": 18.018018018018015,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                ]
+                Object {
+                  "color": "#0B1B77",
+                  "fontFamily": "icomoon",
+                  "fontSize": 18.018018018018015,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-            >
-              kebeticon-photo
-            </Text>
+              text="kebeticon-photo"
+            />
           </View>
         </View>
         <View
@@ -300,28 +255,16 @@ exports[`renders CreatePost 1`] = `
             <Text
               allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "fontFamily": "Helvetica",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontSize": 18.018018018018015,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                ]
+                Object {
+                  "color": "#0B1B77",
+                  "fontFamily": "icomoon",
+                  "fontSize": 18.018018018018015,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-            >
-              kebeticon-more-h
-            </Text>
+              text="kebeticon-more-h"
+            />
           </View>
         </View>
       </View>
@@ -372,28 +315,16 @@ exports[`renders CreatePost 1`] = `
           <Text
             allowFontScaling={false}
             style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "#0B1B77",
-                  "fontSize": 18.018018018018015,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {
-                  "color": "#0B1B77",
-                  "fontFamily": "icomoon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-              ]
+              Object {
+                "color": "#0B1B77",
+                "fontFamily": "icomoon",
+                "fontSize": 18.018018018018015,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              }
             }
-          >
-            kebeticon-microphone
-          </Text>
+            text="kebeticon-microphone"
+          />
         </View>
       </View>
     </View>

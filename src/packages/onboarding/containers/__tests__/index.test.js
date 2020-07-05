@@ -69,17 +69,17 @@ describe('submit button', () => {
       // but onLayout is not being called on unit tests
       fireEvent(swiper, 'onIndexChanged', i)
       if (i < slideItems.length - 1) {
-        expect(wrapper.queryByText(strings.general.get_started)).toBeNull()
+        expect(wrapper.queryByText(strings.general.get_started.toUpperCase())).toBeNull()
       }
     }
-    expect(wrapper.queryByText(strings.general.get_started)).not.toBeNull()
+    expect(wrapper.queryByText(strings.general.get_started.toUpperCase())).not.toBeNull()
   })
 
   it('navigates to signup on submit', () => {
     const { wrapper, props } = givenOnboarding()
     const swiper = wrapper.getByTestId('swiper')
     fireEvent(swiper, 'onIndexChanged', slideItems.length - 1)
-    fireEvent.press(wrapper.getByText(strings.general.get_started))
+    fireEvent.press(wrapper.getByText(strings.general.get_started.toUpperCase()))
     expect(props.navigation.navigate).toBeCalledTimes(1)
     expect(props.navigation.navigate).toBeCalledWith(routes.SIGNUP)
   })

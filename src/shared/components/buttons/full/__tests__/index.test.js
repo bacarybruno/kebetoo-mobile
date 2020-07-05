@@ -17,6 +17,6 @@ it('renders FullButton', () => {
 
 it('handles button press', () => {
   const { wrapper, props } = givenFullButton()
-  fireEvent.press(wrapper.getByText(props.text))
+  fireEvent.press(wrapper.getByText(props.text.toUpperCase()))
   expect(props.onPress).toBeCalledTimes(1)
 })

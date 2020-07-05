@@ -69,43 +69,45 @@ exports[`renders Reactions 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#50555C",
-            "fontSize": 18,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#50555C",
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-            "marginRight": 4,
-          },
-        ]
+        Object {
+          "color": "#50555C",
+          "fontFamily": "icomoon",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "marginRight": 4,
+        }
       }
-    >
-      kebeticon-like
-    </Text>
+      text="kebeticon-like"
+    />
     <Text
       style={
         Array [
+          false,
+          false,
+          false,
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
           },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          undefined,
           Object {
             "color": "#50555C",
-            "fontSize": 12,
-            "fontWeight": "bold",
-            "opacity": 1,
-            "textDecorationLine": "none",
           },
-          Object {},
         ]
       }
     >
@@ -144,43 +146,45 @@ exports[`renders Reactions 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#50555C",
-            "fontSize": 18,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#50555C",
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-            "marginRight": 4,
-          },
-        ]
+        Object {
+          "color": "#50555C",
+          "fontFamily": "icomoon",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "marginRight": 4,
+        }
       }
-    >
-      kebeticon-dislike
-    </Text>
+      text="kebeticon-dislike"
+    />
     <Text
       style={
         Array [
+          false,
+          false,
+          false,
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
           },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          undefined,
           Object {
             "color": "#50555C",
-            "fontSize": 12,
-            "fontWeight": "bold",
-            "opacity": 1,
-            "textDecorationLine": "none",
           },
-          Object {},
         ]
       }
     >
@@ -219,43 +223,45 @@ exports[`renders Reactions 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#50555C",
-            "fontSize": 18,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#50555C",
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-            "marginRight": 4,
-          },
-        ]
+        Object {
+          "color": "#50555C",
+          "fontFamily": "icomoon",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "marginRight": 4,
+        }
       }
-    >
-      kebeticon-comment
-    </Text>
+      text="kebeticon-comment"
+    />
     <Text
       style={
         Array [
+          false,
+          false,
+          false,
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
           },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          undefined,
           Object {
             "color": "#50555C",
-            "fontSize": 12,
-            "fontWeight": "bold",
-            "opacity": 1,
-            "textDecorationLine": "none",
           },
-          Object {},
         ]
       }
     >
@@ -294,43 +300,45 @@ exports[`renders Reactions 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#50555C",
-            "fontSize": 18,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#50555C",
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-            "marginRight": 4,
-          },
-        ]
+        Object {
+          "color": "#50555C",
+          "fontFamily": "icomoon",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "marginRight": 4,
+        }
       }
-    >
-      kebeticon-share
-    </Text>
+      text="kebeticon-share"
+    />
     <Text
       style={
         Array [
+          false,
+          false,
+          false,
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
           },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          undefined,
           Object {
             "color": "#50555C",
-            "fontSize": 12,
-            "fontWeight": "bold",
-            "opacity": 1,
-            "textDecorationLine": "none",
           },
-          Object {},
         ]
       }
     >

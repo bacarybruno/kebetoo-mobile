@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 
 import styles from './styles'
 
@@ -12,7 +12,7 @@ const FullButton = ({
   ...rest
 }) => (
   <TouchableOpacity style={[styles.button, style]} onPress={onPress} {...rest}>
-    <Text color="white" text={text} />
+    <Typography type={types.button} text={text.toUpperCase()} />
   </TouchableOpacity>
 )
 

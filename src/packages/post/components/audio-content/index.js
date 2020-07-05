@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
 import { extractMetadataFromName } from 'Kebetoo/src/shared/hooks/audio-recorder'
@@ -14,7 +14,7 @@ const AudioContent = ({
   content, audioName, audioUrl, style, onPress,
 }) => (
   <View style={style}>
-    <ThemedText style={styles.text} text={content} />
+    <Typography type={types.body} text={content} style={styles.text} />
     <AudioPlayer
       onPress={onPress}
       source={getSource(audioUrl)}
