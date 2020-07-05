@@ -5,14 +5,14 @@ import auth from '@react-native-firebase/auth'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import strings from 'Kebetoo/src/config/strings'
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 
 import SocialSignin from '../index'
 
 const givenSocialSignin = setupTest(SocialSignin)({
   text: strings.auth.or_signin_with,
   onSignIn: jest.fn(),
-  children: <Text text={strings.auth.dont_have_account} />,
+  children: <Typography text={strings.auth.dont_have_account} type={types.textButton} />,
 })
 
 it('renders SocialSignin', () => {

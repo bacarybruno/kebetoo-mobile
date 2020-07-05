@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 import auth from '@react-native-firebase/auth'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OutlinedButton from 'Kebetoo/src/shared/components/buttons/outlined'
@@ -58,12 +58,14 @@ export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => (
         maxNumberOfLines,
       )}
     />
-    <Text style={styles.textCount} size="tiny">
-      {strings.formatString(
+    <Typography
+      style={styles.textCount}
+      type={types.headline6}
+      text={strings.formatString(
         strings.create_post.characters,
         TEXT_MAX_LENGHT - text.length,
       )}
-    </Text>
+    />
   </>
 )
 

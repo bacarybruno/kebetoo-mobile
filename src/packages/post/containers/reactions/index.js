@@ -9,7 +9,7 @@ import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
-import Text, { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import strings from 'Kebetoo/src/config/strings'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 
@@ -36,12 +36,11 @@ export const bottomSheetItems = [{
 }]
 
 export const Reaction = ({
-  iconName, count, onPress, disabled, color = 'reactions', ...otherProps
+  iconName, count, onPress, color = 'reactions', ...otherProps
 }) => (
   <TouchableOpacity
     style={styles.reaction}
     onPress={onPress}
-    disabled={disabled}
     hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
     {...otherProps}
   >
@@ -51,12 +50,7 @@ export const Reaction = ({
       size={18}
       name={iconName}
     />
-    {disabled
-      ? (
-        <Text color="inactive" size="xs" bold text={count.toString()} />
-      ) : (
-        <ThemedText size="xs" bold text={count.toString()} color={color} />
-      )}
+    <Typography type={types.headline6} bold text={count.toString()} color={color} />
   </TouchableOpacity>
 )
 
@@ -65,7 +59,7 @@ const countReactions = (post, type) => (
 )
 
 const Reactions = ({
-  post: givenPost, author, comments, disabled, onComment,
+  post: givenPost, author, comments, onComment,
 }) => {
   const [post, setPost] = useState(givenPost)
   const [dirty, setDirty] = useState(false)
@@ -236,7 +230,6 @@ const Reactions = ({
         iconName={userReaction.type === REACTION_TYPES.LIKE ? 'like-fill' : 'like'}
         color={userReaction.type === REACTION_TYPES.LIKE ? 'like' : undefined}
         count={countReactions(post, REACTION_TYPES.LIKE)}
-        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.LIKE)}
         testID="like-button"
       />
@@ -244,21 +237,18 @@ const Reactions = ({
         iconName={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike-fill' : 'dislike'}
         color={userReaction.type === REACTION_TYPES.DISLIKE ? 'dislike' : undefined}
         count={countReactions(post, REACTION_TYPES.DISLIKE)}
-        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.DISLIKE)}
         testID="dislike-button"
       />
       <Reaction
         iconName="comment"
         count={comments?.length || post.comments.length}
-        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.COMMENT)}
         testID="comment-button"
       />
       <Reaction
         iconName="share"
         count={post.reposts?.length || 0}
-        disabled={disabled}
         onPress={() => onReaction(REACTION_TYPES.SHARE)}
         testID="share-button"
       />

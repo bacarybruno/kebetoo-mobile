@@ -74,33 +74,99 @@ exports[`renders Comment 1`] = `
     <View
       style={
         Object {
+          "alignItems": "center",
           "flex": 1,
           "flexDirection": "row",
         }
       }
     >
       <Text
-        ellipsizeMode="middle"
-        numberOfLines={1}
         style={
           Array [
+            false,
+            false,
             Object {
-              "fontFamily": "Helvetica",
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
             },
+            false,
             Object {
-              "color": "rgba(0, 0, 0, 0.8)",
-              "fontSize": 14,
-              "fontWeight": "normal",
-              "opacity": 1,
-              "textDecorationLine": "none",
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
             },
-            Object {},
+            undefined,
+            undefined,
+            undefined,
+            undefined,
           ]
         }
       >
-        
         Bruno Bodian
+      </Text>
+      <Text
+        style={
+          Array [
+            false,
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
          • 
+      </Text>
+      <Text
+        style={
+          Array [
+            false,
+            false,
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 16,
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
         5 days ago
       </Text>
     </View>
@@ -108,16 +174,16 @@ exports[`renders Comment 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >
@@ -163,17 +229,27 @@ exports[`renders Comment 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "rgba(0, 0, 0, 0.8)",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
                 "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
-              Object {},
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              false,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -182,29 +258,16 @@ exports[`renders Comment 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": undefined,
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": undefined,
+              "fontFamily": "Ionicons",
+              "fontSize": 16,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-          testID="reaction"
-        >
-          ionicon-md-heart-empty
-        </Text>
+          text="ionicon-md-heart-empty"
+        />
       </View>
     </View>
   </View>

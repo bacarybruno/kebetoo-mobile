@@ -9,11 +9,11 @@ import Player from 'react-native-sound'
 import images from 'Kebetoo/src/theme/images'
 import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
-import Text from 'Kebetoo/src/shared/components/text'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
 
 import styles from './styles'
+import Typography, { types } from '../typography'
 
 const Waves = () => (
   <View style={styles.wavesContainer}>
@@ -126,7 +126,7 @@ export const AudioPlayer = ({
       <View testID="progress" style={[styles.progress, round && styles.round, { width: `${progress}%` }]} />
       <PlayButton state={playerState} onPress={onPlayPause} />
       <Waves />
-      <Text style={styles.duration} text={readableSeconds(duration)} opacity={0.35} size="xs" />
+      <Typography type={types.headline6} text={readableSeconds(duration)} style={styles.duration} />
     </Pressable>
   )
 }

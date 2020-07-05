@@ -26,35 +26,16 @@ exports[`renders Badge 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "letterSpacing": -0.408,
+            "lineHeight": 22,
           },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 24,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
-        ]
-      }
-    >
-      
-    </Text>
-    <Text
-      style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >

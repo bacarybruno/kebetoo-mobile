@@ -36,20 +36,25 @@ exports[`renders FullButton 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#FFFFFF",
+          "fontFamily": "System",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "letterSpacing": -0.32,
+          "lineHeight": 21,
         },
         Object {
-          "color": "#FFFFFF",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "600",
         },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >
-    New
+    NEW
   </Text>
 </View>
 `;

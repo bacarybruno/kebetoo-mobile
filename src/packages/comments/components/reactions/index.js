@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react'
 import { View } from 'react-native'
 
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions'
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import strings from 'Kebetoo/src/config/strings'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -80,7 +80,12 @@ const Summary = React.memo(({ comments }) => {
           </View>
         )}
       </View>
-      <Text size="sm" text={strings.formatString(strings.comments.people_reacted, reactors.length)} />
+      <Typography
+        type={types.headline5}
+        text={strings.formatString(
+          strings.comments.people_reacted, reactors.length,
+        )}
+      />
     </View>
   )
 })

@@ -48,28 +48,16 @@ exports[`renders IconButton 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontSize": 18.018018018018015,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontFamily": "icomoon",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "color": "#0B1B77",
+          "fontFamily": "icomoon",
+          "fontSize": 18.018018018018015,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        }
       }
-    >
-      kebeticon-microphone
-    </Text>
+      text="kebeticon-microphone"
+    />
   </View>
 </View>
 `;

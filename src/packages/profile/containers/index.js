@@ -7,7 +7,7 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types as typos } from 'Kebetoo/src/shared/components/typography'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import colors from 'Kebetoo/src/theme/colors'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -22,14 +22,7 @@ import styles, { imageSize } from './styles'
 export const routeOptions = { title: strings.tabs.profile }
 
 export const SectionTitle = React.memo(({ text }) => (
-  <Text
-    style={styles.sectionTitle}
-    size="sm"
-    color="blue_dark"
-    opacity={0.35}
-    text={text}
-    bold
-  />
+  <Typography text={text} bold style={styles.sectionTitle} type={typos.headline5} tertiary />
 ))
 
 export const Summary = React.memo(({ photoURL, email, displayName }) => (
@@ -38,16 +31,16 @@ export const Summary = React.memo(({ photoURL, email, displayName }) => (
       <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
     </View>
     <View style={styles.summaryText}>
-      <Text size="lg" color="blue_dark" text={displayName} />
-      <Text size="md" color="blue_dark" text={email} />
+      <Typography type={typos.headline1} text={displayName} />
+      <Typography type={typos.subheading} text={email} />
     </View>
   </View>
 ))
 
 export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>
-    <Text color="blue_dark" bold text={value} />
-    <Text color="blue_dark" size="sm" text={title} opacity={0.35} />
+    <Typography type={typos.headline4} text={value} bold />
+    <Typography type={typos.headline6} text={title} />
   </View>
 ))
 
@@ -60,8 +53,8 @@ export const IconButton = React.memo(({
         <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
       </View>
       <View>
-        <Text numberOfLines={1} text={text} />
-        {message && <Text text={message} size="sm" opacity={0.35} />}
+        <Typography type={typos.headline5} text={text} />
+        <Typography type={typos.headline5} text={message} tertiary />
       </View>
     </Pressable>
     {children}

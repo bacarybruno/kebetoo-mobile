@@ -84,28 +84,16 @@ exports[`renders SocialSignin 1`] = `
           <Text
             allowFontScaling={false}
             style={
-              Array [
-                Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "#3b5998",
-                  "fontSize": 33,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {
-                  "color": "#3b5998",
-                  "fontFamily": "icomoon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-              ]
+              Object {
+                "color": "#3b5998",
+                "fontFamily": "icomoon",
+                "fontSize": 33,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              }
             }
-          >
-            kebeticon-facebook
-          </Text>
+            text="kebeticon-facebook"
+          />
         </View>
         <View
           accessible={true}
@@ -145,16 +133,21 @@ exports[`renders SocialSignin 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": -0.32,
+            "lineHeight": 21,
           },
           Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "400",
           },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >

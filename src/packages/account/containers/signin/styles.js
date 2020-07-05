@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+
 import colors from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
 
@@ -16,8 +17,9 @@ export default StyleSheet.create({
   },
   footerText: {
     flex: 1,
-    textAlign: 'center',
-    textAlignVertical: 'bottom',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
   forgotPassword: {
     textAlign: 'right',

@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 
 import CommentPlaceholder from 'Kebetoo/src/shared/components/placeholders/comments'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
-import Text, { fontSizes } from 'Kebetoo/src/shared/components/text'
+import Typography, { types, fontSizes } from 'Kebetoo/src/shared/components/typography'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
 import { getPostType, POST_TYPES } from 'Kebetoo/src/packages/post/containers/basic-post'
 import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
@@ -31,7 +31,7 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         hitSlop={edgeInsets.all(30)}
         testID="reaction-button"
       >
-        <Text text={`${reactions.length} `} size="xs" bold />
+        <Typography type={types.headline6} bold text={`${reactions.length} `} secondary={false} />
         <Ionicon
           name={loved ? 'md-heart' : 'md-heart-empty'}
           testID="reaction"
@@ -44,12 +44,10 @@ export const Reactions = ({ onReaction, reactions, user }) => {
 }
 
 const Header = ({ displayName, updatedAt }) => (
-  <View style={styles.row}>
-    <Text numberOfLines={1} size="sm" ellipsizeMode="middle">
-      {displayName}
-      {' • '}
-      {dayjs(updatedAt).fromNow()}
-    </Text>
+  <View style={{ ...styles.row, alignItems: 'center' }}>
+    <Typography type={types.headline5} text={displayName} />
+    <Typography type={types.headline5} text=" • " />
+    <Typography type={types.headline6} text={dayjs(updatedAt).fromNow()} />
   </View>
 )
 
@@ -64,7 +62,7 @@ const Content = ({ item }) => {
         />
       )
     case POST_TYPES.TEXT:
-      return <Text text={item.content} />
+      return <Typography type={types.body} text={item.content} />
     default:
       return null
   }
@@ -93,7 +91,7 @@ const Comment = ({
         return [...filteredReactions]
       })
     }
-    // Will be used when we'll have many reactions for comments
+    // // Will be used when we'll have many reactions for comments
     // else {
     //   await api.editReaction(userReaction.id, type)
     //   setReactions((values) => {

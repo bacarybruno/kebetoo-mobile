@@ -11,7 +11,6 @@ import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
 import colors from 'Kebetoo/src/theme/colors'
 import images from 'Kebetoo/src/theme/images'
-import Text from 'Kebetoo/src/shared/components/text'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import OnboardingPage from 'Kebetoo/src/packages/onboarding/containers'
 import SignUpPage from 'Kebetoo/src/packages/account/containers/signup'
@@ -27,6 +26,7 @@ import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 
 import styles from './styles'
 import routes from './routes'
+import Typography, { types } from '../shared/components/typography'
 
 enableScreens()
 
@@ -44,9 +44,6 @@ const defaultScreenOptions = {
   ),
   headerStyle: styles.headerStyle,
   headerTitleAlign: 'center',
-  headerTitle: (props) => (
-    <Text size="header" bold {...props} />
-  ),
 }
 
 const defaultTabBarOptions = {
@@ -74,7 +71,7 @@ const defaultTabOptions = ({ route }) => ({
       [routes.PROFILE]: ProfilePage.routeOptions.title,
     }
     return (
-      <Text text={labels[route.name]} bold={focused} style={{ color }} size="xs" />
+      <Typography type={types.caption} text={labels[route.name]} bold={focused} style={{ color }} />
     )
   },
 })

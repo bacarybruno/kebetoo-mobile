@@ -16,19 +16,19 @@ exports[`renders ImageContent 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
-        },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+          "letterSpacing": -0.24,
+          "lineHeight": 20,
         },
         Object {
           "flex": 1,
           "marginBottom": 8,
         },
+        undefined,
       ]
     }
   >
@@ -122,19 +122,19 @@ exports[`renders ImageContent on comments mode 1`] = `
     style={
       Array [
         Object {
-          "fontFamily": "Helvetica",
-        },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 16,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+          "letterSpacing": -0.24,
+          "lineHeight": 20,
         },
         Object {
           "flex": 1,
           "marginBottom": 8,
         },
+        undefined,
       ]
     }
   >

@@ -81,28 +81,16 @@ exports[`renders AudioPlayer 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontSize": 20,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontFamily": "Ionicons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "color": "#0B1B77",
+          "fontFamily": "Ionicons",
+          "fontSize": 20,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        }
       }
-    >
-      ionicon-ios-play
-    </Text>
+      text="ionicon-ios-play"
+    />
   </View>
   <View
     style={
@@ -129,21 +117,33 @@ exports[`renders AudioPlayer 1`] = `
   <Text
     style={
       Array [
+        false,
+        false,
+        false,
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "letterSpacing": 0,
+          "lineHeight": 16,
         },
         Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 12,
-          "fontWeight": "normal",
-          "opacity": 0.35,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
         },
         Object {
           "bottom": 2,
           "position": "absolute",
           "right": 8,
         },
+        Object {
+          "color": "rgba(0,0,0,0.54)",
+        },
+        undefined,
+        undefined,
       ]
     }
   >
@@ -224,28 +224,16 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 20,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": undefined,
-            "fontFamily": "Ionicons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "color": undefined,
+          "fontFamily": "Ionicons",
+          "fontSize": 20,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        }
       }
-    >
-      ionicon-ios-close
-    </Text>
+      text="ionicon-ios-close"
+    />
   </View>
   <View
     style={
@@ -300,28 +288,16 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontSize": 20,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontFamily": "Ionicons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "color": "#0B1B77",
+          "fontFamily": "Ionicons",
+          "fontSize": 20,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        }
       }
-    >
-      ionicon-ios-play
-    </Text>
+      text="ionicon-ios-play"
+    />
   </View>
   <View
     style={
@@ -348,21 +324,33 @@ exports[`renders AudioPlayer with delete icon 1`] = `
   <Text
     style={
       Array [
+        false,
+        false,
+        false,
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "letterSpacing": 0,
+          "lineHeight": 16,
         },
         Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 12,
-          "fontWeight": "normal",
-          "opacity": 0.35,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
         },
         Object {
           "bottom": 2,
           "position": "absolute",
           "right": 8,
         },
+        Object {
+          "color": "rgba(0,0,0,0.54)",
+        },
+        undefined,
+        undefined,
       ]
     }
   >
@@ -460,28 +448,16 @@ exports[`renders round AudioPlayer 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Array [
-          Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontSize": 20,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {
-            "color": "#0B1B77",
-            "fontFamily": "Ionicons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "color": "#0B1B77",
+          "fontFamily": "Ionicons",
+          "fontSize": 20,
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        }
       }
-    >
-      ionicon-ios-play
-    </Text>
+      text="ionicon-ios-play"
+    />
   </View>
   <View
     style={
@@ -508,21 +484,33 @@ exports[`renders round AudioPlayer 1`] = `
   <Text
     style={
       Array [
+        false,
+        false,
+        false,
         Object {
-          "fontFamily": "Helvetica",
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "letterSpacing": 0,
+          "lineHeight": 16,
         },
         Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 12,
-          "fontWeight": "normal",
-          "opacity": 0.35,
-          "textDecorationLine": "none",
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
         },
         Object {
           "bottom": 2,
           "position": "absolute",
           "right": 8,
         },
+        Object {
+          "color": "rgba(0,0,0,0.54)",
+        },
+        undefined,
+        undefined,
       ]
     }
   >

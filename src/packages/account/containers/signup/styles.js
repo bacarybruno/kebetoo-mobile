@@ -17,7 +17,8 @@ export default StyleSheet.create({
   },
   footerText: {
     flex: 1,
-    textAlign: 'center',
-    textAlignVertical: 'bottom',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
 })

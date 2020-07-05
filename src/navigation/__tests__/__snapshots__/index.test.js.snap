@@ -300,35 +300,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             style={
                                               Array [
                                                 Object {
-                                                  "fontFamily": "Helvetica",
+                                                  "backgroundColor": "transparent",
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
                                                 },
-                                                Object {
-                                                  "color": "rgba(0, 0, 0, 0.8)",
-                                                  "fontSize": 24,
-                                                  "fontWeight": "normal",
-                                                  "opacity": 1,
-                                                  "textDecorationLine": "none",
-                                                },
-                                                Object {},
-                                              ]
-                                            }
-                                          >
-                                            
-                                          </Text>
-                                          <Text
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "fontFamily": "Helvetica",
-                                                },
-                                                Object {
-                                                  "color": "rgba(0, 0, 0, 0.8)",
-                                                  "fontSize": 16,
-                                                  "fontWeight": "normal",
-                                                  "opacity": 1,
-                                                  "textDecorationLine": "none",
-                                                },
-                                                Object {},
+                                                undefined,
+                                                undefined,
                                               ]
                                             }
                                           >
@@ -367,21 +348,32 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             <Text
                                               style={
                                                 Array [
+                                                  false,
                                                   Object {
-                                                    "fontFamily": "Helvetica",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "600",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
                                                   },
+                                                  false,
+                                                  false,
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "600",
+                                                  },
+                                                  undefined,
+                                                  undefined,
+                                                  undefined,
                                                   Object {
                                                     "color": "#FFFFFF",
-                                                    "fontSize": 16,
-                                                    "fontWeight": "bold",
-                                                    "opacity": 1,
-                                                    "textDecorationLine": "none",
                                                   },
-                                                  Object {},
                                                 ]
                                               }
                                             >
-                                              
                                               B
                                             </Text>
                                           </View>
@@ -668,28 +660,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontSize": 24,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#008ef4",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-home
-                                    </Text>
+                                      text="kebeticon-home"
+                                    />
                                   </View>
                                   <View
                                     style={
@@ -712,46 +692,35 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontSize": 18,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-home
-                                    </Text>
+                                      text="kebeticon-home"
+                                    />
                                   </View>
                                 </View>
                                 <Text
+                                  bold={true}
                                   style={
                                     Array [
                                       Object {
-                                        "fontFamily": "Helvetica",
-                                      },
-                                      Object {
-                                        "color": "rgba(0, 0, 0, 0.8)",
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
                                         "fontSize": 12,
-                                        "fontWeight": "bold",
-                                        "opacity": 1,
-                                        "textDecorationLine": "none",
+                                        "fontWeight": "400",
+                                        "letterSpacing": 0,
+                                        "lineHeight": 16,
                                       },
                                       Object {
                                         "color": "#008ef4",
                                       },
+                                      undefined,
                                     ]
                                   }
                                 >
@@ -814,28 +783,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontSize": 24,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#008ef4",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-stories
-                                    </Text>
+                                      text="kebeticon-stories"
+                                    />
                                   </View>
                                   <View
                                     style={
@@ -858,46 +815,35 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontSize": 18,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-stories
-                                    </Text>
+                                      text="kebeticon-stories"
+                                    />
                                   </View>
                                 </View>
                                 <Text
+                                  bold={false}
                                   style={
                                     Array [
                                       Object {
-                                        "fontFamily": "Helvetica",
-                                      },
-                                      Object {
-                                        "color": "rgba(0, 0, 0, 0.8)",
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
                                         "fontSize": 12,
-                                        "fontWeight": "normal",
-                                        "opacity": 1,
-                                        "textDecorationLine": "none",
+                                        "fontWeight": "400",
+                                        "letterSpacing": 0,
+                                        "lineHeight": 16,
                                       },
                                       Object {
                                         "color": "#7A8FA6",
                                       },
+                                      undefined,
                                     ]
                                   }
                                 >
@@ -960,28 +906,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontSize": 24,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#008ef4",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-undefined
-                                    </Text>
+                                      text="kebeticon-undefined"
+                                    />
                                   </View>
                                   <View
                                     style={
@@ -1004,51 +938,18 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontSize": 18,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-undefined
-                                    </Text>
+                                      text="kebeticon-undefined"
+                                    />
                                   </View>
                                 </View>
-                                <Text
-                                  style={
-                                    Array [
-                                      Object {
-                                        "fontFamily": "Helvetica",
-                                      },
-                                      Object {
-                                        "color": "rgba(0, 0, 0, 0.8)",
-                                        "fontSize": 12,
-                                        "fontWeight": "normal",
-                                        "opacity": 1,
-                                        "textDecorationLine": "none",
-                                      },
-                                      Object {
-                                        "color": "#7A8FA6",
-                                      },
-                                    ]
-                                  }
-                                >
-                                  
-                                </Text>
                               </View>
                               <View
                                 accessibilityRole="button"
@@ -1106,28 +1007,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontSize": 24,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#008ef4",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-search
-                                    </Text>
+                                      text="kebeticon-search"
+                                    />
                                   </View>
                                   <View
                                     style={
@@ -1150,46 +1039,35 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontSize": 18,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-search
-                                    </Text>
+                                      text="kebeticon-search"
+                                    />
                                   </View>
                                 </View>
                                 <Text
+                                  bold={false}
                                   style={
                                     Array [
                                       Object {
-                                        "fontFamily": "Helvetica",
-                                      },
-                                      Object {
-                                        "color": "rgba(0, 0, 0, 0.8)",
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
                                         "fontSize": 12,
-                                        "fontWeight": "normal",
-                                        "opacity": 1,
-                                        "textDecorationLine": "none",
+                                        "fontWeight": "400",
+                                        "letterSpacing": 0,
+                                        "lineHeight": 16,
                                       },
                                       Object {
                                         "color": "#7A8FA6",
                                       },
+                                      undefined,
                                     ]
                                   }
                                 >
@@ -1252,28 +1130,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontSize": 24,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#008ef4",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#008ef4",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-user
-                                    </Text>
+                                      text="kebeticon-user"
+                                    />
                                   </View>
                                   <View
                                     style={
@@ -1296,46 +1162,35 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     <Text
                                       allowFontScaling={false}
                                       style={
-                                        Array [
-                                          Object {
-                                            "fontFamily": "Helvetica",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontSize": 18,
-                                            "fontWeight": "normal",
-                                            "opacity": 1,
-                                            "textDecorationLine": "none",
-                                          },
-                                          Object {
-                                            "color": "#7A8FA6",
-                                            "fontFamily": "icomoon",
-                                            "fontStyle": "normal",
-                                            "fontWeight": "normal",
-                                          },
-                                        ]
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
                                       }
-                                    >
-                                      kebeticon-user
-                                    </Text>
+                                      text="kebeticon-user"
+                                    />
                                   </View>
                                 </View>
                                 <Text
+                                  bold={false}
                                   style={
                                     Array [
                                       Object {
-                                        "fontFamily": "Helvetica",
-                                      },
-                                      Object {
-                                        "color": "rgba(0, 0, 0, 0.8)",
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
                                         "fontSize": 12,
-                                        "fontWeight": "normal",
-                                        "opacity": 1,
-                                        "textDecorationLine": "none",
+                                        "fontWeight": "400",
+                                        "letterSpacing": 0,
+                                        "lineHeight": 16,
                                       },
                                       Object {
                                         "color": "#7A8FA6",
                                       },
+                                      undefined,
                                     ]
                                   }
                                 >
@@ -1734,16 +1589,21 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                 style={
                                                   Array [
                                                     Object {
-                                                      "fontFamily": "Helvetica",
+                                                      "backgroundColor": "transparent",
+                                                      "color": "#000000",
+                                                      "fontFamily": "System",
+                                                      "fontSize": 16,
+                                                      "fontWeight": "400",
+                                                      "letterSpacing": -0.32,
+                                                      "lineHeight": 21,
                                                     },
                                                     Object {
-                                                      "color": "#707070",
-                                                      "fontSize": 16,
-                                                      "fontWeight": "normal",
-                                                      "opacity": 1,
-                                                      "textDecorationLine": "none",
+                                                      "backgroundColor": "transparent",
+                                                      "fontFamily": "System",
+                                                      "fontWeight": "300",
                                                     },
-                                                    Object {},
+                                                    undefined,
+                                                    undefined,
                                                   ]
                                                 }
                                               >
@@ -1862,23 +1722,31 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       }
                                                     />
                                                     <Text
-                                                      adjustsFontSizeToFit={true}
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 28,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": 0.355469,
+                                                            "lineHeight": 34,
                                                           },
+                                                          false,
+                                                          false,
+                                                          false,
                                                           Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 27,
-                                                            "fontWeight": "bold",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "fontFamily": "System",
+                                                            "fontWeight": "600",
                                                           },
                                                           Object {
                                                             "marginTop": 93.38000000000001,
-                                                            "maxHeight": 133.4,
                                                           },
+                                                          undefined,
+                                                          undefined,
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -1888,18 +1756,18 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
-                                                          },
-                                                          Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 16,
-                                                            "fontWeight": "normal",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 17,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": -0.408,
+                                                            "lineHeight": 22,
                                                           },
                                                           Object {
                                                             "marginTop": 46.690000000000005,
                                                           },
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -1942,23 +1810,31 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       }
                                                     />
                                                     <Text
-                                                      adjustsFontSizeToFit={true}
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 28,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": 0.355469,
+                                                            "lineHeight": 34,
                                                           },
+                                                          false,
+                                                          false,
+                                                          false,
                                                           Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 27,
-                                                            "fontWeight": "bold",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "fontFamily": "System",
+                                                            "fontWeight": "600",
                                                           },
                                                           Object {
                                                             "marginTop": 93.38000000000001,
-                                                            "maxHeight": 133.4,
                                                           },
+                                                          undefined,
+                                                          undefined,
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -1968,18 +1844,18 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
-                                                          },
-                                                          Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 16,
-                                                            "fontWeight": "normal",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 17,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": -0.408,
+                                                            "lineHeight": 22,
                                                           },
                                                           Object {
                                                             "marginTop": 46.690000000000005,
                                                           },
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2022,23 +1898,31 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       }
                                                     />
                                                     <Text
-                                                      adjustsFontSizeToFit={true}
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 28,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": 0.355469,
+                                                            "lineHeight": 34,
                                                           },
+                                                          false,
+                                                          false,
+                                                          false,
                                                           Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 27,
-                                                            "fontWeight": "bold",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "fontFamily": "System",
+                                                            "fontWeight": "600",
                                                           },
                                                           Object {
                                                             "marginTop": 93.38000000000001,
-                                                            "maxHeight": 133.4,
                                                           },
+                                                          undefined,
+                                                          undefined,
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2048,18 +1932,18 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
-                                                          },
-                                                          Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 16,
-                                                            "fontWeight": "normal",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 17,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": -0.408,
+                                                            "lineHeight": 22,
                                                           },
                                                           Object {
                                                             "marginTop": 46.690000000000005,
                                                           },
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2102,23 +1986,31 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       }
                                                     />
                                                     <Text
-                                                      adjustsFontSizeToFit={true}
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 28,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": 0.355469,
+                                                            "lineHeight": 34,
                                                           },
+                                                          false,
+                                                          false,
+                                                          false,
                                                           Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 27,
-                                                            "fontWeight": "bold",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "fontFamily": "System",
+                                                            "fontWeight": "600",
                                                           },
                                                           Object {
                                                             "marginTop": 93.38000000000001,
-                                                            "maxHeight": 133.4,
                                                           },
+                                                          undefined,
+                                                          undefined,
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2128,18 +2020,18 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
-                                                          },
-                                                          Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 16,
-                                                            "fontWeight": "normal",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 17,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": -0.408,
+                                                            "lineHeight": 22,
                                                           },
                                                           Object {
                                                             "marginTop": 46.690000000000005,
                                                           },
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2182,23 +2074,31 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       }
                                                     />
                                                     <Text
-                                                      adjustsFontSizeToFit={true}
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 28,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": 0.355469,
+                                                            "lineHeight": 34,
                                                           },
+                                                          false,
+                                                          false,
+                                                          false,
                                                           Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 27,
-                                                            "fontWeight": "bold",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "fontFamily": "System",
+                                                            "fontWeight": "600",
                                                           },
                                                           Object {
                                                             "marginTop": 93.38000000000001,
-                                                            "maxHeight": 133.4,
                                                           },
+                                                          undefined,
+                                                          undefined,
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2208,18 +2108,18 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                       style={
                                                         Array [
                                                           Object {
-                                                            "fontFamily": "Helvetica",
-                                                          },
-                                                          Object {
-                                                            "color": "rgba(0, 0, 0, 0.8)",
-                                                            "fontSize": 16,
-                                                            "fontWeight": "normal",
-                                                            "opacity": 1,
-                                                            "textDecorationLine": "none",
+                                                            "backgroundColor": "transparent",
+                                                            "color": "#000000",
+                                                            "fontFamily": "System",
+                                                            "fontSize": 17,
+                                                            "fontWeight": "400",
+                                                            "letterSpacing": -0.408,
+                                                            "lineHeight": 22,
                                                           },
                                                           Object {
                                                             "marginTop": 46.690000000000005,
                                                           },
+                                                          undefined,
                                                         ]
                                                       }
                                                     >
@@ -2364,28 +2264,16 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                               <Text
                                                 allowFontScaling={false}
                                                 style={
-                                                  Array [
-                                                    Object {
-                                                      "fontFamily": "Helvetica",
-                                                    },
-                                                    Object {
-                                                      "color": "rgba(0, 0, 0, 0.8)",
-                                                      "fontSize": 30,
-                                                      "fontWeight": "normal",
-                                                      "opacity": 1,
-                                                      "textDecorationLine": "none",
-                                                    },
-                                                    Object {
-                                                      "color": "#FFFFFF",
-                                                      "fontFamily": "Ionicons",
-                                                      "fontStyle": "normal",
-                                                      "fontWeight": "normal",
-                                                    },
-                                                  ]
+                                                  Object {
+                                                    "color": "#FFFFFF",
+                                                    "fontFamily": "Ionicons",
+                                                    "fontSize": 30,
+                                                    "fontStyle": "normal",
+                                                    "fontWeight": "normal",
+                                                  }
                                                 }
-                                              >
-                                                ionicon-ios-arrow-round-forward
-                                              </Text>
+                                                text="ionicon-ios-arrow-round-forward"
+                                              />
                                             </View>
                                           </View>
                                         </View>
@@ -2652,16 +2540,21 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "fontFamily": "Helvetica",
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 16,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.32,
+                                    "lineHeight": 21,
                                   },
                                   Object {
-                                    "color": "#707070",
-                                    "fontSize": 16,
-                                    "fontWeight": "normal",
-                                    "opacity": 1,
-                                    "textDecorationLine": "none",
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "300",
                                   },
-                                  Object {},
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -2780,23 +2673,31 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     }
                                   />
                                   <Text
-                                    adjustsFontSizeToFit={true}
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 28,
+                                          "fontWeight": "400",
+                                          "letterSpacing": 0.355469,
+                                          "lineHeight": 34,
                                         },
+                                        false,
+                                        false,
+                                        false,
                                         Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 27,
-                                          "fontWeight": "bold",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "marginTop": 93.38000000000001,
-                                          "maxHeight": 133.4,
                                         },
+                                        undefined,
+                                        undefined,
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -2806,18 +2707,18 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 16,
-                                          "fontWeight": "normal",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
                                         },
                                         Object {
                                           "marginTop": 46.690000000000005,
                                         },
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -2860,23 +2761,31 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     }
                                   />
                                   <Text
-                                    adjustsFontSizeToFit={true}
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 28,
+                                          "fontWeight": "400",
+                                          "letterSpacing": 0.355469,
+                                          "lineHeight": 34,
                                         },
+                                        false,
+                                        false,
+                                        false,
                                         Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 27,
-                                          "fontWeight": "bold",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "marginTop": 93.38000000000001,
-                                          "maxHeight": 133.4,
                                         },
+                                        undefined,
+                                        undefined,
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -2886,18 +2795,18 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 16,
-                                          "fontWeight": "normal",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
                                         },
                                         Object {
                                           "marginTop": 46.690000000000005,
                                         },
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -2940,23 +2849,31 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     }
                                   />
                                   <Text
-                                    adjustsFontSizeToFit={true}
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 28,
+                                          "fontWeight": "400",
+                                          "letterSpacing": 0.355469,
+                                          "lineHeight": 34,
                                         },
+                                        false,
+                                        false,
+                                        false,
                                         Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 27,
-                                          "fontWeight": "bold",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "marginTop": 93.38000000000001,
-                                          "maxHeight": 133.4,
                                         },
+                                        undefined,
+                                        undefined,
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -2966,18 +2883,18 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 16,
-                                          "fontWeight": "normal",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
                                         },
                                         Object {
                                           "marginTop": 46.690000000000005,
                                         },
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -3020,23 +2937,31 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     }
                                   />
                                   <Text
-                                    adjustsFontSizeToFit={true}
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 28,
+                                          "fontWeight": "400",
+                                          "letterSpacing": 0.355469,
+                                          "lineHeight": 34,
                                         },
+                                        false,
+                                        false,
+                                        false,
                                         Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 27,
-                                          "fontWeight": "bold",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "marginTop": 93.38000000000001,
-                                          "maxHeight": 133.4,
                                         },
+                                        undefined,
+                                        undefined,
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -3046,18 +2971,18 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 16,
-                                          "fontWeight": "normal",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
                                         },
                                         Object {
                                           "marginTop": 46.690000000000005,
                                         },
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -3100,23 +3025,31 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     }
                                   />
                                   <Text
-                                    adjustsFontSizeToFit={true}
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 28,
+                                          "fontWeight": "400",
+                                          "letterSpacing": 0.355469,
+                                          "lineHeight": 34,
                                         },
+                                        false,
+                                        false,
+                                        false,
                                         Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 27,
-                                          "fontWeight": "bold",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "marginTop": 93.38000000000001,
-                                          "maxHeight": 133.4,
                                         },
+                                        undefined,
+                                        undefined,
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -3126,18 +3059,18 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     style={
                                       Array [
                                         Object {
-                                          "fontFamily": "Helvetica",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 0.8)",
-                                          "fontSize": 16,
-                                          "fontWeight": "normal",
-                                          "opacity": 1,
-                                          "textDecorationLine": "none",
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
                                         },
                                         Object {
                                           "marginTop": 46.690000000000005,
                                         },
+                                        undefined,
                                       ]
                                     }
                                   >
@@ -3282,28 +3215,16 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                             <Text
                               allowFontScaling={false}
                               style={
-                                Array [
-                                  Object {
-                                    "fontFamily": "Helvetica",
-                                  },
-                                  Object {
-                                    "color": "rgba(0, 0, 0, 0.8)",
-                                    "fontSize": 30,
-                                    "fontWeight": "normal",
-                                    "opacity": 1,
-                                    "textDecorationLine": "none",
-                                  },
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "fontFamily": "Ionicons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                ]
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontFamily": "Ionicons",
+                                  "fontSize": 30,
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                }
                               }
-                            >
-                              ionicon-ios-arrow-round-forward
-                            </Text>
+                              text="ionicon-ios-arrow-round-forward"
+                            />
                           </View>
                         </View>
                       </View>
@@ -3486,35 +3407,16 @@ exports[`tabs renders TabNavigation 1`] = `
                           style={
                             Array [
                               Object {
-                                "fontFamily": "Helvetica",
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontSize": 17,
+                                "fontWeight": "400",
+                                "letterSpacing": -0.408,
+                                "lineHeight": 22,
                               },
-                              Object {
-                                "color": "rgba(0, 0, 0, 0.8)",
-                                "fontSize": 24,
-                                "fontWeight": "normal",
-                                "opacity": 1,
-                                "textDecorationLine": "none",
-                              },
-                              Object {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "fontFamily": "Helvetica",
-                              },
-                              Object {
-                                "color": "rgba(0, 0, 0, 0.8)",
-                                "fontSize": 16,
-                                "fontWeight": "normal",
-                                "opacity": 1,
-                                "textDecorationLine": "none",
-                              },
-                              Object {},
+                              undefined,
+                              undefined,
                             ]
                           }
                         >
@@ -3836,28 +3738,16 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontSize": 24,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#008ef4",
+                        "fontFamily": "icomoon",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-home
-                  </Text>
+                    text="kebeticon-home"
+                  />
                 </View>
                 <View
                   style={
@@ -3880,46 +3770,35 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontSize": 18,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#7A8FA6",
+                        "fontFamily": "icomoon",
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-home
-                  </Text>
+                    text="kebeticon-home"
+                  />
                 </View>
               </View>
               <Text
+                bold={true}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
                       "fontSize": 12,
-                      "fontWeight": "bold",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
                     },
                     Object {
                       "color": "#008ef4",
                     },
+                    undefined,
                   ]
                 }
               >
@@ -3982,28 +3861,16 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontSize": 24,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#008ef4",
+                        "fontFamily": "icomoon",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-stories
-                  </Text>
+                    text="kebeticon-stories"
+                  />
                 </View>
                 <View
                   style={
@@ -4026,46 +3893,35 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontSize": 18,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#7A8FA6",
+                        "fontFamily": "icomoon",
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-stories
-                  </Text>
+                    text="kebeticon-stories"
+                  />
                 </View>
               </View>
               <Text
+                bold={false}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
                       "fontSize": 12,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
                     },
                     Object {
                       "color": "#7A8FA6",
                     },
+                    undefined,
                   ]
                 }
               >
@@ -4128,28 +3984,16 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontSize": 24,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#008ef4",
+                        "fontFamily": "icomoon",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-undefined
-                  </Text>
+                    text="kebeticon-undefined"
+                  />
                 </View>
                 <View
                   style={
@@ -4172,51 +4016,18 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontSize": 18,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#7A8FA6",
+                        "fontFamily": "icomoon",
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-undefined
-                  </Text>
+                    text="kebeticon-undefined"
+                  />
                 </View>
               </View>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#7A8FA6",
-                    },
-                  ]
-                }
-              >
-                
-              </Text>
             </View>
             <View
               accessibilityRole="button"
@@ -4274,28 +4085,16 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontSize": 24,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#008ef4",
+                        "fontFamily": "icomoon",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-search
-                  </Text>
+                    text="kebeticon-search"
+                  />
                 </View>
                 <View
                   style={
@@ -4318,46 +4117,35 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontSize": 18,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#7A8FA6",
+                        "fontFamily": "icomoon",
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-search
-                  </Text>
+                    text="kebeticon-search"
+                  />
                 </View>
               </View>
               <Text
+                bold={false}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
                       "fontSize": 12,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
                     },
                     Object {
                       "color": "#7A8FA6",
                     },
+                    undefined,
                   ]
                 }
               >
@@ -4420,28 +4208,16 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontSize": 24,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#008ef4",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#008ef4",
+                        "fontFamily": "icomoon",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-user
-                  </Text>
+                    text="kebeticon-user"
+                  />
                 </View>
                 <View
                   style={
@@ -4464,46 +4240,35 @@ exports[`tabs renders TabNavigation 1`] = `
                   <Text
                     allowFontScaling={false}
                     style={
-                      Array [
-                        Object {
-                          "fontFamily": "Helvetica",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontSize": 18,
-                          "fontWeight": "normal",
-                          "opacity": 1,
-                          "textDecorationLine": "none",
-                        },
-                        Object {
-                          "color": "#7A8FA6",
-                          "fontFamily": "icomoon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                      ]
+                      Object {
+                        "color": "#7A8FA6",
+                        "fontFamily": "icomoon",
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
                     }
-                  >
-                    kebeticon-user
-                  </Text>
+                    text="kebeticon-user"
+                  />
                 </View>
               </View>
               <Text
+                bold={false}
                 style={
                   Array [
                     Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
                       "fontSize": 12,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
                     },
                     Object {
                       "color": "#7A8FA6",
                     },
+                    undefined,
                   ]
                 }
               >

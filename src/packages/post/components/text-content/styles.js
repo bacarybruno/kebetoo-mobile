@@ -5,7 +5,7 @@ import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   wrapper: {
-    backgroundColor: colors.input,
+    backgroundColor: colors.white_darken,
     minHeight: 52,
     padding: metrics.marginHorizontal,
     borderRadius: 5,

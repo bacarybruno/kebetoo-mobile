@@ -79,21 +79,32 @@ exports[`renders an Avatar with text 1`] = `
     <Text
       style={
         Array [
+          false,
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 17,
+            "fontWeight": "600",
+            "letterSpacing": -0.408,
+            "lineHeight": 22,
           },
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+          undefined,
+          undefined,
           Object {
             "color": "#FFFFFF",
-            "fontSize": 20,
-            "fontWeight": "bold",
-            "opacity": 1,
-            "textDecorationLine": "none",
           },
-          Object {},
         ]
       }
     >
-      
       B
     </Text>
   </View>

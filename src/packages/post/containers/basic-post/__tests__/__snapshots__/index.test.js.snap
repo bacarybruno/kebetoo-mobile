@@ -76,21 +76,32 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -113,17 +124,27 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -140,17 +161,29 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -159,17 +192,29 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -178,17 +223,29 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -203,18 +260,18 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -300,28 +357,16 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 20,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "Ionicons",
+              "fontSize": 20,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-        >
-          ionicon-ios-play
-        </Text>
+          text="ionicon-ios-play"
+        />
       </View>
       <View
         style={
@@ -348,21 +393,33 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
       <Text
         style={
           Array [
+            false,
+            false,
+            false,
             Object {
-              "fontFamily": "Helvetica",
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 16,
             },
             Object {
-              "color": "rgba(0, 0, 0, 0.8)",
-              "fontSize": 12,
-              "fontWeight": "normal",
-              "opacity": 0.35,
-              "textDecorationLine": "none",
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
             },
             Object {
               "bottom": 2,
               "position": "absolute",
               "right": 8,
             },
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            undefined,
+            undefined,
           ]
         }
       >
@@ -416,43 +473,45 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#004EEC",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#004EEC",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#004EEC",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like-fill
-        </Text>
+          text="kebeticon-like-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#004EEC",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -491,43 +550,45 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike
-        </Text>
+          text="kebeticon-dislike"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -566,43 +627,45 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -641,43 +704,45 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -1057,21 +1122,32 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -1096,17 +1172,27 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 14,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -1120,18 +1206,18 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -1217,28 +1303,16 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 20,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "Ionicons",
+              "fontSize": 20,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-        >
-          ionicon-ios-play
-        </Text>
+          text="ionicon-ios-play"
+        />
       </View>
       <View
         style={
@@ -1265,21 +1339,33 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
       <Text
         style={
           Array [
+            false,
+            false,
+            false,
             Object {
-              "fontFamily": "Helvetica",
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 16,
             },
             Object {
-              "color": "rgba(0, 0, 0, 0.8)",
-              "fontSize": 12,
-              "fontWeight": "normal",
-              "opacity": 0.35,
-              "textDecorationLine": "none",
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
             },
             Object {
               "bottom": 2,
               "position": "absolute",
               "right": 8,
             },
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            undefined,
+            undefined,
           ]
         }
       >
@@ -1333,43 +1419,45 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#004EEC",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#004EEC",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#004EEC",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like-fill
-        </Text>
+          text="kebeticon-like-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#004EEC",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -1408,43 +1496,45 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike
-        </Text>
+          text="kebeticon-dislike"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -1483,43 +1573,45 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -1558,43 +1650,45 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -1682,21 +1776,32 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -1719,17 +1824,27 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -1746,17 +1861,29 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -1765,17 +1892,29 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -1784,17 +1923,29 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -1809,18 +1960,18 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -1906,28 +2057,16 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 20,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "Ionicons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "Ionicons",
+              "fontSize": 20,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
           }
-        >
-          ionicon-ios-play
-        </Text>
+          text="ionicon-ios-play"
+        />
       </View>
       <View
         style={
@@ -1954,21 +2093,33 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
       <Text
         style={
           Array [
+            false,
+            false,
+            false,
             Object {
-              "fontFamily": "Helvetica",
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 16,
             },
             Object {
-              "color": "rgba(0, 0, 0, 0.8)",
-              "fontSize": 12,
-              "fontWeight": "normal",
-              "opacity": 0.35,
-              "textDecorationLine": "none",
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
             },
             Object {
               "bottom": 2,
               "position": "absolute",
               "right": 8,
             },
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            undefined,
+            undefined,
           ]
         }
       >
@@ -2055,21 +2206,32 @@ exports[`renders component [image]: renders BasicPost 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -2092,17 +2254,27 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -2119,17 +2291,29 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -2138,17 +2322,29 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -2157,17 +2353,29 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -2190,19 +2398,19 @@ exports[`renders component [image]: renders BasicPost 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "flex": 1,
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -2321,43 +2529,45 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -2396,43 +2606,45 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike-fill
-        </Text>
+          text="kebeticon-dislike-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#0B1B77",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -2471,43 +2683,45 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -2546,43 +2760,45 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -2962,21 +3178,32 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -3001,17 +3228,27 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 14,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -3033,19 +3270,19 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "flex": 1,
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -3148,43 +3385,45 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -3223,43 +3462,45 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike-fill
-        </Text>
+          text="kebeticon-dislike-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#0B1B77",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -3298,43 +3539,45 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -3373,43 +3616,45 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -3497,21 +3742,32 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -3534,17 +3790,27 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -3561,17 +3827,29 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3580,17 +3858,29 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3599,17 +3889,29 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3632,19 +3934,19 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
-          },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
           Object {
             "flex": 1,
             "marginBottom": 8,
           },
+          undefined,
         ]
       }
     >
@@ -3796,21 +4098,32 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -3833,17 +4146,27 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -3860,17 +4183,29 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3879,17 +4214,29 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3898,17 +4245,29 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -4053,17 +4412,27 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 <Text
                   style={
                     Array [
+                      false,
+                      false,
                       Object {
-                        "fontFamily": "Helvetica",
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.24,
+                        "lineHeight": 20,
                       },
+                      false,
                       Object {
-                        "color": "rgba(0, 0, 0, 0.8)",
-                        "fontSize": 14,
-                        "fontWeight": "normal",
-                        "opacity": 1,
-                        "textDecorationLine": "none",
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
                       },
-                      Object {},
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -4085,7 +4454,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "#F2F2F2",
+                  "backgroundColor": "#FAFAFA",
                   "borderRadius": 5,
                   "minHeight": 52,
                   "padding": 16,
@@ -4099,16 +4468,16 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               style={
                 Array [
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
                   },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.8)",
-                    "fontSize": 16,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {},
+                  undefined,
+                  undefined,
                 ]
               }
             >
@@ -4165,43 +4534,45 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -4240,43 +4611,45 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike-fill
-        </Text>
+          text="kebeticon-dislike-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#0B1B77",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -4315,43 +4688,45 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -4390,43 +4765,45 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -4806,21 +5183,32 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -4845,17 +5233,27 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 14,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -4999,17 +5397,27 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 <Text
                   style={
                     Array [
+                      false,
+                      false,
                       Object {
-                        "fontFamily": "Helvetica",
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.24,
+                        "lineHeight": 20,
                       },
+                      false,
                       Object {
-                        "color": "rgba(0, 0, 0, 0.8)",
-                        "fontSize": 14,
-                        "fontWeight": "normal",
-                        "opacity": 1,
-                        "textDecorationLine": "none",
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
                       },
-                      Object {},
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -5031,7 +5439,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "#F2F2F2",
+                  "backgroundColor": "#FAFAFA",
                   "borderRadius": 5,
                   "minHeight": 52,
                   "padding": 16,
@@ -5045,16 +5453,16 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               style={
                 Array [
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
                   },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.8)",
-                    "fontSize": 16,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {},
+                  undefined,
+                  undefined,
                 ]
               }
             >
@@ -5111,43 +5519,45 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -5186,43 +5596,45 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#0B1B77",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#0B1B77",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike-fill
-        </Text>
+          text="kebeticon-dislike-fill"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#0B1B77",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -5261,43 +5673,45 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -5336,43 +5750,45 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -5460,21 +5876,32 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -5497,17 +5924,27 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -5524,17 +5961,29 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -5543,17 +5992,29 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -5562,17 +6023,29 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -5717,17 +6190,27 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                 <Text
                   style={
                     Array [
+                      false,
+                      false,
                       Object {
-                        "fontFamily": "Helvetica",
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.24,
+                        "lineHeight": 20,
                       },
+                      false,
                       Object {
-                        "color": "rgba(0, 0, 0, 0.8)",
-                        "fontSize": 14,
-                        "fontWeight": "normal",
-                        "opacity": 1,
-                        "textDecorationLine": "none",
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
                       },
-                      Object {},
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -5749,7 +6232,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "#F2F2F2",
+                  "backgroundColor": "#FAFAFA",
                   "borderRadius": 5,
                   "minHeight": 52,
                   "padding": 16,
@@ -5763,16 +6246,16 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
               style={
                 Array [
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
                   },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.8)",
-                    "fontSize": 16,
-                    "fontWeight": "normal",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
-                  },
-                  Object {},
+                  undefined,
+                  undefined,
                 ]
               }
             >
@@ -5862,21 +6345,32 @@ exports[`renders component [text]: renders BasicPost 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -5899,17 +6393,27 @@ exports[`renders component [text]: renders BasicPost 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -5926,17 +6430,29 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -5959,7 +6475,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#F2F2F2",
+          "backgroundColor": "#FAFAFA",
           "borderRadius": 5,
           "minHeight": 52,
           "padding": 16,
@@ -5973,16 +6489,16 @@ exports[`renders component [text]: renders BasicPost 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >
@@ -6035,43 +6551,45 @@ exports[`renders component [text]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6110,43 +6628,45 @@ exports[`renders component [text]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike
-        </Text>
+          text="kebeticon-dislike"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6185,43 +6705,45 @@ exports[`renders component [text]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6260,43 +6782,45 @@ exports[`renders component [text]: renders BasicPost 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6676,21 +7200,32 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -6715,17 +7250,27 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 14,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -6747,7 +7292,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#F2F2F2",
+          "backgroundColor": "#FAFAFA",
           "borderRadius": 5,
           "minHeight": 52,
           "padding": 16,
@@ -6761,16 +7306,16 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >
@@ -6823,43 +7368,45 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-like
-        </Text>
+          text="kebeticon-like"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6898,43 +7445,45 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-dislike
-        </Text>
+          text="kebeticon-dislike"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -6973,43 +7522,45 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-comment
-        </Text>
+          text="kebeticon-comment"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -7048,43 +7599,45 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
         <Text
           allowFontScaling={false}
           style={
-            Array [
-              Object {
-                "fontFamily": "Helvetica",
-              },
-              Object {
-                "color": "#50555C",
-                "fontSize": 18,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
-              },
-              Object {
-                "color": "#50555C",
-                "fontFamily": "icomoon",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "marginRight": 4,
-              },
-            ]
+            Object {
+              "color": "#50555C",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
           }
-        >
-          kebeticon-share
-        </Text>
+          text="kebeticon-share"
+        />
         <Text
           style={
             Array [
+              false,
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              undefined,
               Object {
                 "color": "#50555C",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "opacity": 1,
-                "textDecorationLine": "none",
               },
-              Object {},
             ]
           }
         >
@@ -7172,21 +7725,32 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
             <Text
               style={
                 Array [
+                  false,
                   Object {
-                    "fontFamily": "Helvetica",
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
                   },
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "opacity": 1,
-                    "textDecorationLine": "none",
                   },
-                  Object {},
                 ]
               }
             >
-              
               J
             </Text>
           </View>
@@ -7209,17 +7773,27 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "rgba(0, 0, 0, 0.8)",
-                "fontSize": 16,
-                "fontWeight": "normal",
-                "opacity": 1,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -7236,17 +7810,29 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
-                },
-                Object {
-                  "color": "rgba(0, 0, 0, 0.8)",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
                   "fontSize": 12,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
-                Object {},
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                undefined,
+                undefined,
               ]
             }
           >
@@ -7269,7 +7855,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#F2F2F2",
+          "backgroundColor": "#FAFAFA",
           "borderRadius": 5,
           "minHeight": 52,
           "padding": 16,
@@ -7283,16 +7869,16 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
       style={
         Array [
           Object {
-            "fontFamily": "Helvetica",
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
           },
-          Object {
-            "color": "rgba(0, 0, 0, 0.8)",
-            "fontSize": 16,
-            "fontWeight": "normal",
-            "opacity": 1,
-            "textDecorationLine": "none",
-          },
-          Object {},
+          undefined,
+          undefined,
         ]
       }
     >

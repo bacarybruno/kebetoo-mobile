@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { ThemedText } from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
@@ -38,11 +38,7 @@ const ImageContent = ({
   content, url, style, mode, onPress,
 }) => (
   <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
-    <ThemedText
-      numberOfLines={mode === 'comments' ? 1 : undefined}
-      style={styles.text}
-      text={content}
-    />
+    <Typography type={types.body} text={content} style={styles.text} numberOfLines={mode === 'comments' ? 1 : undefined} />
     <ImageViewer
       onPress={onPress}
       style={styles.imageViewer}

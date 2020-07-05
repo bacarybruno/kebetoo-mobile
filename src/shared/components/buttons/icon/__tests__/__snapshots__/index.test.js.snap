@@ -35,27 +35,15 @@ exports[`renders IconButton 1`] = `
   <Text
     allowFontScaling={false}
     style={
-      Array [
-        Object {
-          "fontFamily": "Helvetica",
-        },
-        Object {
-          "color": "rgba(0, 0, 0, 0.8)",
-          "fontSize": 30,
-          "fontWeight": "normal",
-          "opacity": 1,
-          "textDecorationLine": "none",
-        },
-        Object {
-          "color": "#FFFFFF",
-          "fontFamily": "Ionicons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
+      Object {
+        "color": "#FFFFFF",
+        "fontFamily": "Ionicons",
+        "fontSize": 30,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      }
     }
-  >
-    ionicon-md-woman
-  </Text>
+    text="ionicon-md-woman"
+  />
 </View>
 `;

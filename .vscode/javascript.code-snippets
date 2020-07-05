@@ -39,13 +39,13 @@
 			"import React from 'react'",
 			"import { View } from 'react-native'\n",
       "import styles from './styles'\n",
-			"const ${1:ComponentName} = () => {",
+			"const ${1:ComponentName} = ($2) => {",
 			"\treturn (",
 			"\t\t<View style={styles.wrapper}>",
 			"\t\t\t$0",
 			"\t\t</View>",
 			"\t)",
-			")\n",
+			"}\n",
 			"export default $1\n"
 		],
 		"description": "React simple functional component boilerplate"

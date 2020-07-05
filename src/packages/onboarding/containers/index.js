@@ -2,7 +2,7 @@ import React, { useCallback, useState, useRef } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
 
-import Text from 'Kebetoo/src/shared/components/text'
+import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import IconButton from 'Kebetoo/src/shared/components/buttons/icon'
 import FullButton from 'Kebetoo/src/shared/components/buttons/full'
 import OnbordingSlide from 'Kebetoo/src/packages/onboarding/components'
@@ -28,7 +28,7 @@ export const slideItems = [{
 
 export const SkipButton = ({ onPress }) => (
   <TouchableOpacity style={styles.skipButton} onPress={onPress}>
-    <Text color="grey" text={strings.general.skip} />
+    <Typography type={types.textButtonLight} text={strings.general.skip} />
   </TouchableOpacity>
 )
 

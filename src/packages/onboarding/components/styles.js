@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
   title: {
     marginTop: metrics.screenHeight * 0.07,
-    maxHeight: metrics.screenHeight * 0.1,
+    // maxHeight: metrics.screenHeight * 0.1,
   },
   description: {
     marginTop: metrics.screenHeight * 0.035,

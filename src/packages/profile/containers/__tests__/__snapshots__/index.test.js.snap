@@ -102,16 +102,26 @@ exports[`renders Profile 1`] = `
             style={
               Array [
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 28,
+                  "fontWeight": "400",
+                  "letterSpacing": 0.355469,
+                  "lineHeight": 34,
                 },
+                false,
+                false,
+                false,
                 Object {
-                  "color": "#0B1B77",
-                  "fontSize": 24,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
                 },
-                Object {},
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -121,16 +131,16 @@ exports[`renders Profile 1`] = `
             style={
               Array [
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.408,
+                  "lineHeight": 22,
                 },
-                Object {
-                  "color": "#0B1B77",
-                  "fontSize": 16,
-                  "fontWeight": "normal",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
-                },
-                Object {},
+                undefined,
+                undefined,
               ]
             }
           >
@@ -171,36 +181,29 @@ exports[`renders Profile 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
                 Object {
-                  "color": "#0B1B77",
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
                 },
-                Object {},
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
+                undefined,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "color": "rgba(0,0,0,0.54)",
                 },
-                Object {
-                  "color": "#0B1B77",
-                  "fontSize": 14,
-                  "fontWeight": "normal",
-                  "opacity": 0.35,
-                  "textDecorationLine": "none",
-                },
-                Object {},
+                undefined,
+                undefined,
               ]
             }
           >
@@ -219,36 +222,29 @@ exports[`renders Profile 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
                 Object {
-                  "color": "#0B1B77",
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
                 },
-                Object {},
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
+                undefined,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "color": "rgba(0,0,0,0.54)",
                 },
-                Object {
-                  "color": "#0B1B77",
-                  "fontSize": 14,
-                  "fontWeight": "normal",
-                  "opacity": 0.35,
-                  "textDecorationLine": "none",
-                },
-                Object {},
+                undefined,
+                undefined,
               ]
             }
           >
@@ -267,36 +263,29 @@ exports[`renders Profile 1`] = `
           <Text
             style={
               Array [
+                false,
+                false,
+                false,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
                 },
                 Object {
-                  "color": "#0B1B77",
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                  "opacity": 1,
-                  "textDecorationLine": "none",
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
                 },
-                Object {},
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
+                undefined,
                 Object {
-                  "fontFamily": "Helvetica",
+                  "color": "rgba(0,0,0,0.54)",
                 },
-                Object {
-                  "color": "#0B1B77",
-                  "fontSize": 14,
-                  "fontWeight": "normal",
-                  "opacity": 0.35,
-                  "textDecorationLine": "none",
-                },
-                Object {},
+                undefined,
+                undefined,
               ]
             }
           >
@@ -367,45 +356,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-md-list
-              </Text>
+                text="ionicon-md-list"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -414,17 +400,29 @@ exports[`renders Profile 1`] = `
               <Text
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 14,
-                      "fontWeight": "normal",
-                      "opacity": 0.35,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "rgba(0,0,0,0.38)",
+                    },
+                    undefined,
                   ]
                 }
               >
@@ -444,20 +442,32 @@ exports[`renders Profile 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "#0B1B77",
-                "fontSize": 14,
-                "fontWeight": "bold",
-                "opacity": 0.35,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
               },
               Object {
                 "marginBottom": 10,
                 "paddingHorizontal": 16,
               },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.38)",
+              },
+              undefined,
             ]
           }
         >
@@ -509,45 +519,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-happy
-              </Text>
+                text="ionicon-ios-happy"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -602,45 +609,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-color-palette
-              </Text>
+                text="ionicon-ios-color-palette"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -695,45 +699,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-notifications
-              </Text>
+                text="ionicon-ios-notifications"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -788,45 +789,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-globe
-              </Text>
+                text="ionicon-ios-globe"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -835,17 +833,29 @@ exports[`renders Profile 1`] = `
               <Text
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 14,
-                      "fontWeight": "normal",
-                      "opacity": 0.35,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "rgba(0,0,0,0.38)",
+                    },
+                    undefined,
                   ]
                 }
               >
@@ -865,20 +875,32 @@ exports[`renders Profile 1`] = `
         <Text
           style={
             Array [
+              false,
+              false,
               Object {
-                "fontFamily": "Helvetica",
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Object {
-                "color": "#0B1B77",
-                "fontSize": 14,
-                "fontWeight": "bold",
-                "opacity": 0.35,
-                "textDecorationLine": "none",
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
               },
               Object {
                 "marginBottom": 10,
                 "paddingHorizontal": 16,
               },
+              undefined,
+              Object {
+                "color": "rgba(0,0,0,0.38)",
+              },
+              undefined,
             ]
           }
         >
@@ -930,45 +952,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-at
-              </Text>
+                text="ionicon-ios-at"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -977,17 +996,29 @@ exports[`renders Profile 1`] = `
               <Text
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 14,
-                      "fontWeight": "normal",
-                      "opacity": 0.35,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "rgba(0,0,0,0.38)",
+                    },
+                    undefined,
                   ]
                 }
               >
@@ -1042,45 +1073,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-md-create
-              </Text>
+                text="ionicon-md-create"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
@@ -1135,45 +1163,42 @@ exports[`renders Profile 1`] = `
               <Text
                 allowFontScaling={false}
                 style={
-                  Array [
-                    Object {
-                      "fontFamily": "Helvetica",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontSize": 20,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
-                    },
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
+                  Object {
+                    "color": "#0B1B77",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
                 }
-              >
-                ionicon-ios-log-out
-              </Text>
+                text="ionicon-ios-log-out"
+              />
             </View>
             <View>
               <Text
-                numberOfLines={1}
                 style={
                   Array [
+                    false,
+                    false,
                     Object {
-                      "fontFamily": "Helvetica",
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
                     },
+                    false,
                     Object {
-                      "color": "rgba(0, 0, 0, 0.8)",
-                      "fontSize": 16,
-                      "fontWeight": "normal",
-                      "opacity": 1,
-                      "textDecorationLine": "none",
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
                     },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
