@@ -116,7 +116,12 @@ const PreferencesSection = React.memo(({ shareApp }) => (
       text={strings.profile.invite_fiend_title}
       onPress={shareApp}
     />
-    <IconButton icon="ios-color-palette" text={strings.profile.dark_mode} />
+    <IconButton
+      disabled
+      icon="ios-color-palette"
+      text={strings.profile.dark_mode}
+      message={strings.general.system_default}
+    />
     <IconButton icon="ios-notifications" text={strings.profile.notifications} />
     <IconButton
       disabled

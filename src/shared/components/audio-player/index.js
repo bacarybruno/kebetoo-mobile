@@ -29,7 +29,7 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => (
       ) : (
         <Ionicon
           name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
-          size={20}
+          size={22}
           color={colors.blue_dark}
         />
       )}
@@ -42,7 +42,7 @@ export const DeleteIconButton = ({ onPress }) => (
     onPress={onPress}
     hitSlop={edgeInsets.all(50)}
   >
-    <Ionicon name="ios-close" size={20} />
+    <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
   </TouchableOpacity>
 )
 

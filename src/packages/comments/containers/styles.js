@@ -19,7 +19,7 @@ export default StyleSheet.create({
   },
   post: {
     width: '100%',
-    backgroundColor: colors.white_darken,
+    backgroundColor: colors.backgroundSecondary,
     paddingTop: metrics.marginHorizontal,
   },
   postHeader: {

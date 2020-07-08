@@ -13,7 +13,7 @@ export const routeOptions = {
   title: '',
   headerShown: true,
   headerBackImage: () => (
-    <HeaderBack tintColor={colors.white} />
+    <HeaderBack tintColor={colors.textPrimary} />
   ),
   headerTransparent: true,
   ...TransitionPresets.ScaleFromCenterAndroid,

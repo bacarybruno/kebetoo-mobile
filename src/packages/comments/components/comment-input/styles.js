@@ -29,7 +29,7 @@ export default StyleSheet.create({
   audioWrapper: {
     marginRight: 10,
     backgroundColor: colors.white_darken,
-    borderColor: '#E8E8E8',
+    borderColor: colors.border,
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),
   },

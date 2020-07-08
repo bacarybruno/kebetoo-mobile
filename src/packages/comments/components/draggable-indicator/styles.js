@@ -13,6 +13,6 @@ export default StyleSheet.create({
     height: 5,
     borderRadius: 5,
     margin: 10,
-    backgroundColor: colors.inactive,
+    backgroundColor: colors.border,
   },
 })

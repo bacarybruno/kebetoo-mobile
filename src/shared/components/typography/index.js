@@ -1,9 +1,7 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-import {
-  human, systemWeights, material, materialColors,
-} from 'react-native-typography'
+import { human, systemWeights, material } from 'react-native-typography'
 
 import themeColors from 'Kebetoo/src/theme/colors'
 
@@ -16,12 +14,9 @@ export const weights = {
 }
 
 export const colors = {
-  primary: 'blackPrimary',
-  secondary: 'blackSecondary',
-  tertiary: 'blackTertiary',
-  whitePrimary: 'whitePrimary',
-  whiteSecondary: 'whiteSecondary',
-  whiteTertiary: 'whiteTertiary',
+  primary: 'textPrimary',
+  secondary: 'textSecondary',
+  tertiary: 'textTertiary',
 }
 
 export const fontSizes = {
@@ -113,7 +108,7 @@ const createTypography = (text, style, color, onPress, defaultProps) => (Compone
   return (
     <Component
       style={[
-        { color: color ? themeColors[color] : materialColors[systemColor] },
+        { color: color ? themeColors[color] : themeColors[systemColor] },
         systemWeights[systemWeight],
         style,
       ]}
@@ -128,7 +123,7 @@ const createTypography = (text, style, color, onPress, defaultProps) => (Compone
 const Typography = ({
   type, text, style, color, onPress, ...otherProps
 }) => {
-  if (!text) return null
+  if (text === null || text === undefined) return null
 
   const typography = createTypography(text, style, color, onPress, otherProps)
 
@@ -165,7 +160,7 @@ const Typography = ({
       return typography(Subheading)
     case types.button:
       return typography(Button, {
-        systemColor: colors.whitePrimary,
+        systemColor: 'white',
         systemWeight: weights.semibold,
       })
     case types.separator:

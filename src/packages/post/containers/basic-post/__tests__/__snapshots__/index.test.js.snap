@@ -59,7 +59,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -90,7 +90,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -143,7 +143,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -302,7 +302,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#F2F2F2",
+            "backgroundColor": "#FAFAFA",
             "borderRadius": 5,
             "flex": 1,
             "flexDirection": "row",
@@ -319,7 +319,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#D1D1D6",
+              "backgroundColor": "rgba(255, 255, 255, 255)",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -347,14 +347,14 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#D1D1D6",
+            "backgroundColor": "rgba(242, 242, 247, 255)",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -371,7 +371,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             Object {
               "color": "#0B1B77",
               "fontFamily": "Ionicons",
-              "fontSize": 20,
+              "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
             }
@@ -485,7 +485,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#007AFF",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -512,7 +512,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
               },
               Array [
                 Object {
-                  "color": "#007AFF",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -780,6 +780,7 @@ Array [
             "width": 35,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -823,7 +824,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -850,7 +853,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -899,6 +904,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },
@@ -958,6 +964,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -967,7 +974,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -981,6 +994,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -990,7 +1004,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -1004,6 +1024,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -1013,7 +1034,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -1027,6 +1054,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -1036,7 +1064,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
       </View>
@@ -1108,7 +1142,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -1139,7 +1173,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -1194,7 +1228,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -1251,7 +1285,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#F2F2F2",
+            "backgroundColor": "#FAFAFA",
             "borderRadius": 5,
             "flex": 1,
             "flexDirection": "row",
@@ -1268,7 +1302,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#D1D1D6",
+              "backgroundColor": "rgba(255, 255, 255, 255)",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -1296,14 +1330,14 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#D1D1D6",
+            "backgroundColor": "rgba(242, 242, 247, 255)",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -1320,7 +1354,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             Object {
               "color": "#0B1B77",
               "fontFamily": "Ionicons",
-              "fontSize": 20,
+              "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
             }
@@ -1434,7 +1468,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#007AFF",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -1461,7 +1495,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
               },
               Array [
                 Object {
-                  "color": "#007AFF",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -1765,7 +1799,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -1796,7 +1830,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -1849,7 +1883,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -2008,7 +2042,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#F2F2F2",
+            "backgroundColor": "#FAFAFA",
             "borderRadius": 5,
             "flex": 1,
             "flexDirection": "row",
@@ -2025,7 +2059,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#D1D1D6",
+              "backgroundColor": "rgba(255, 255, 255, 255)",
               "borderBottomLeftRadius": 5,
               "borderTopLeftRadius": 5,
               "height": "100%",
@@ -2053,14 +2087,14 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#D1D1D6",
+            "backgroundColor": "rgba(242, 242, 247, 255)",
             "borderRadius": 15,
             "elevation": 2,
             "height": 30,
             "justifyContent": "center",
             "marginLeft": 16,
             "opacity": 1,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -2077,7 +2111,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             Object {
               "color": "#0B1B77",
               "fontFamily": "Ionicons",
-              "fontSize": 20,
+              "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
             }
@@ -2206,7 +2240,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -2237,7 +2271,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -2290,7 +2324,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -2449,7 +2483,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         Array [
           Object {
             "aspectRatio": 1.3333333333333333,
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "rgba(255, 255, 255, 255)",
             "width": "100%",
           },
           Object {
@@ -2633,7 +2667,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#0B1B77",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -2660,7 +2694,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
               },
               Array [
                 Object {
-                  "color": "#0B1B77",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -2853,6 +2887,7 @@ Array [
             "width": 35,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -2896,7 +2931,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -2923,7 +2960,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -2972,6 +3011,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },
@@ -3031,6 +3071,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -3040,7 +3081,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -3054,6 +3101,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -3063,7 +3111,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -3077,6 +3131,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -3086,7 +3141,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -3100,6 +3161,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -3109,7 +3171,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
       </View>
@@ -3181,7 +3249,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -3212,7 +3280,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -3267,7 +3335,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -3324,7 +3392,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         Array [
           Object {
             "aspectRatio": 1.3333333333333333,
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "rgba(255, 255, 255, 255)",
             "width": "100%",
           },
           Object {
@@ -3492,7 +3560,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#0B1B77",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -3519,7 +3587,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
               },
               Array [
                 Object {
-                  "color": "#0B1B77",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -3748,7 +3816,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -3779,7 +3847,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -3832,7 +3900,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -3991,7 +4059,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
         Array [
           Object {
             "aspectRatio": 1.3333333333333333,
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "rgba(255, 255, 255, 255)",
             "width": "100%",
           },
           Object {
@@ -4115,7 +4183,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -4146,7 +4214,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -4199,7 +4267,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -4338,7 +4406,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E5E5EA",
+              "borderColor": "rgba(229, 229, 234, 255)",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -4415,7 +4483,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -4467,7 +4535,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -4657,7 +4725,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#0B1B77",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -4684,7 +4752,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
               },
               Array [
                 Object {
-                  "color": "#0B1B77",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -4877,6 +4945,7 @@ Array [
             "width": 35,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -4920,7 +4989,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -4947,7 +5018,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -4996,6 +5069,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },
@@ -5055,6 +5129,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -5064,7 +5139,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -5078,6 +5159,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -5087,7 +5169,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -5101,6 +5189,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -5110,7 +5199,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -5124,6 +5219,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -5133,7 +5229,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
       </View>
@@ -5205,7 +5307,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -5236,7 +5338,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -5291,7 +5393,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -5328,7 +5430,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E5E5EA",
+              "borderColor": "rgba(229, 229, 234, 255)",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -5405,7 +5507,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -5457,7 +5559,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -5647,7 +5749,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#0B1B77",
+              "color": "rgba(0, 122, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 18,
               "fontStyle": "normal",
@@ -5674,7 +5776,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
               },
               Array [
                 Object {
-                  "color": "#0B1B77",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -5903,7 +6005,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -5934,7 +6036,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -5987,7 +6089,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -6126,7 +6228,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#E5E5EA",
+              "borderColor": "rgba(229, 229, 234, 255)",
               "borderLeftWidth": 2,
               "marginVertical": 8,
               "minHeight": 52,
@@ -6203,7 +6305,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -6255,7 +6357,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -6385,7 +6487,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -6416,7 +6518,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -6469,7 +6571,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -6915,6 +7017,7 @@ Array [
             "width": 35,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -6958,7 +7061,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -6985,7 +7090,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -7034,6 +7141,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },
@@ -7093,6 +7201,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -7102,7 +7211,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -7116,6 +7231,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -7125,7 +7241,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -7139,6 +7261,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -7148,7 +7271,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -7162,6 +7291,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -7171,7 +7301,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
       </View>
@@ -7243,7 +7379,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -7274,7 +7410,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -7329,7 +7465,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
@@ -7771,7 +7907,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#007AFF",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 15,
                   "flex": 1,
                   "justifyContent": "center",
@@ -7802,7 +7938,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "#FFFFFF",
+                      "color": "rgba(255, 255, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -7855,7 +7991,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],

@@ -1,27 +1,97 @@
+/* eslint-disable prefer-template */
 /* eslint-disable no-bitwise */
 
-import { iOSColors, materialColors } from 'react-native-typography'
+import { Appearance } from 'react-native'
 
-// const componentToHex = (c) => {
-//   const hex = c.toString(16);
-//   return hex.length === 1 ? `0${hex}` : hex
+import iosColors from './ios-colors'
+import mdColors from './md-colors'
+
+const colorScheme = Appearance.getColorScheme()
+
+const componentToHex = (c) => {
+  const hex = c.toString(16)
+  return hex.length === 1 ? `0${hex}` : hex
+}
+
+export const rgbaToHex = (rgba) => {
+  const rgb = rgba.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+)/i)
+  return (rgb && rgb.length === 4) ? '#'
+    + componentToHex(parseInt(rgb[1], 10)).slice(-2)
+    + componentToHex(parseInt(rgb[2], 10)).slice(-2)
+    + componentToHex(parseInt(rgb[3], 10)).slice(-2) : rgba
+}
+
+const customColors = {
+  blue_dark: {
+    light: '#0B1B77',
+    dark: iosColors.systemGrey.light,
+  },
+  backgroundSecondary: {
+    light: '#FAFAFA',
+    dark: iosColors.secondarySystemBackground[colorScheme],
+  },
+  inactive: {
+    light: iosColors.systemGrey3[colorScheme],
+    dark: iosColors.inactiveGrey[colorScheme],
+  },
+}
+
+const iconColors = {
+  like: iosColors.systemBlue[colorScheme],
+  dislike: iosColors.systemBlue[colorScheme],
+  heart: iosColors.systemPink[colorScheme],
+  reactions: mdColors.textSecondary[colorScheme],
+  facebook: '#3b5998',
+  icon: '#7A8FA6',
+}
+
+const textColors = {
+  textPrimary: mdColors.textPrimary[colorScheme],
+  textSecondary: mdColors.textSecondary[colorScheme],
+  textTertiary: mdColors.textTertiary[colorScheme],
+}
+
+const colors = {
+  background: iosColors.systemBackground[colorScheme],
+  backgroundSecondary: customColors.backgroundSecondary[colorScheme],
+  backgroundTertiary: iosColors.tertiarySystemBackground[colorScheme],
+
+  primary: iosColors.systemBlue[colorScheme],
+  secondary: iosColors.systemBlue[colorScheme],
+
+  black: iosColors.black,
+  white: iosColors.white,
+  purple: iosColors.systemPurple[colorScheme],
+  danger: iosColors.systemRed[colorScheme],
+  white_darken: iosColors.secondarySystemBackground[colorScheme],
+  blue_dark: customColors.blue_dark[colorScheme],
+
+  inactive: customColors.inactive[colorScheme],
+  placeholder: iosColors.systemGrey2[colorScheme],
+  border: iosColors.systemGrey5[colorScheme],
+  link: iosColors.link[colorScheme],
+
+  ...iconColors,
+  ...textColors,
+}
+
+// export const rgbToHex = (r, g, b) => (
+//   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
+// )
+
+// export const hexToRgb = (hex) => {
+//   const sanitizedHex = hex.replace('#', '')
+//   const bigint = parseInt(sanitizedHex, 16)
+//   const r = (bigint >> 16) & 255
+//   const g = (bigint >> 8) & 255
+//   const b = bigint & 255
+//   return [r, g, b]
 // }
 
-// const rgbToHex = (r, g, b) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
-
-export const hexToRgb = (hex) => {
-  const sanitizedHex = hex.replace('#', '')
-  const bigint = parseInt(sanitizedHex, 16)
-  const r = (bigint >> 16) & 255
-  const g = (bigint >> 8) & 255
-  const b = bigint & 255
-  return [r, g, b]
-}
-
-export const hexToRgba = (hex, opacity) => {
-  const [r, g, b] = hexToRgb(hex)
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`
-}
+// export const hexToRgba = (hex, opacity) => {
+//   const [r, g, b] = hexToRgb(hex)
+//   return `rgba(${r}, ${g}, ${b}, ${opacity})`
+// }
 
 // export const middleHexColorsToRgb = (color1, color2) => {
 //   const [r1, g1, b1] = hexToRgb(color1)
@@ -31,33 +101,6 @@ export const hexToRgba = (hex, opacity) => {
 //   const b = (b1 + b2) / 2
 //   return [r, g, b]
 // }
-
-const iconColors = {
-  like: iOSColors.blue,
-  dislike: '#0B1B77',
-  heart: iOSColors.pink,
-  reactions: materialColors.blackSecondary,
-}
-
-const colors = {
-  primary: iOSColors.blue,
-  secondary: iOSColors.blue,
-  black: iOSColors.black,
-  inactive: iOSColors.lightGray2,
-  white: iOSColors.white,
-  grey: iOSColors.gray,
-  background: iOSColors.white,
-  input: '#F2F2F2',
-  white_darken: '#FAFAFA',
-  icon: '#7A8FA6',
-  purple: iOSColors.purple,
-  blue_dark: '#0B1B77',
-  facebook: '#3b5998',
-  danger: iOSColors.red,
-  placeholder: '#ACACAC',
-  border: iOSColors.lightGray,
-  ...iconColors,
-}
 
 // export const middleColor = rgbToHex(
 //   ...middleHexColorsToRgb(colors.primary, colors.secondary),

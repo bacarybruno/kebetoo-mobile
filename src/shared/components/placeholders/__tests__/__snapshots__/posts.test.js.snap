@@ -23,6 +23,7 @@ Array [
             "width": 20,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -66,7 +67,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -93,7 +96,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -142,6 +147,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },
@@ -201,6 +207,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -210,7 +217,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -224,6 +237,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -233,7 +247,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -247,6 +267,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -256,7 +277,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
         <View
@@ -270,6 +297,7 @@ Array [
                 "width": "15%",
               },
               Object {
+                "backgroundColor": undefined,
                 "marginRight": 10,
               },
               Object {
@@ -279,7 +307,13 @@ Array [
           }
         >
           <View
-            style={null}
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
           />
         </View>
       </View>
@@ -311,6 +345,7 @@ Array [
             "width": 20,
           },
           Object {
+            "backgroundColor": undefined,
             "marginRight": 10,
           },
           Object {
@@ -354,7 +389,9 @@ Array [
                 "marginBottom": 10,
                 "width": "50%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -381,7 +418,9 @@ Array [
                 "marginBottom": 10,
                 "width": "30%",
               },
-              undefined,
+              Object {
+                "backgroundColor": undefined,
+              },
               Object {
                 "overflow": "hidden",
               },
@@ -430,6 +469,7 @@ Array [
               "width": "100%",
             },
             Object {
+              "backgroundColor": undefined,
               "borderRadius": 5,
               "marginBottom": 8,
             },

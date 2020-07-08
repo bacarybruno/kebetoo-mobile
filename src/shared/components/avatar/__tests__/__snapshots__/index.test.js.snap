@@ -26,7 +26,7 @@ exports[`renders an Avatar with image 1`] = `
       Array [
         Object {
           "alignItems": "center",
-          "backgroundColor": "#007AFF",
+          "backgroundColor": "rgba(0, 122, 255, 255)",
           "borderRadius": 15,
           "flex": 1,
           "justifyContent": "center",
@@ -62,7 +62,7 @@ exports[`renders an Avatar with text 1`] = `
       Array [
         Object {
           "alignItems": "center",
-          "backgroundColor": "#007AFF",
+          "backgroundColor": "rgba(0, 122, 255, 255)",
           "borderRadius": 15,
           "flex": 1,
           "justifyContent": "center",
@@ -93,7 +93,7 @@ exports[`renders an Avatar with text 1`] = `
           false,
           Array [
             Object {
-              "color": "#FFFFFF",
+              "color": "rgba(255, 255, 255, 255)",
             },
             Object {
               "backgroundColor": "transparent",

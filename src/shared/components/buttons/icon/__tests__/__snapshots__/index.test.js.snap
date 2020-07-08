@@ -21,7 +21,7 @@ exports[`renders IconButton 1`] = `
       "height": 48,
       "justifyContent": "center",
       "opacity": 1,
-      "shadowColor": "#000000",
+      "shadowColor": "rgba(0, 0, 0, 255)",
       "shadowOffset": Object {
         "x": 0,
         "y": 1,
@@ -36,7 +36,7 @@ exports[`renders IconButton 1`] = `
     allowFontScaling={false}
     style={
       Object {
-        "color": "#FFFFFF",
+        "color": "rgba(255, 255, 255, 255)",
         "fontFamily": "Ionicons",
         "fontSize": 30,
         "fontStyle": "normal",

@@ -17,7 +17,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: colors.input,
+    backgroundColor: colors.backgroundSecondary,
     justifyContent: 'center',
     alignItems: 'center',
   },

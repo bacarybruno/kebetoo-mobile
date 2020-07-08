@@ -6,7 +6,7 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
-import colors from 'Kebetoo/src/theme/colors'
+import colors, { rgbaToHex } from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import Typography, { types, weights } from 'Kebetoo/src/shared/components/typography'
@@ -44,18 +44,8 @@ export const Reaction = ({
     hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
     {...otherProps}
   >
-    <Kebeticon
-      color={colors[color]}
-      style={styles.icon}
-      size={18}
-      name={iconName}
-    />
-    <Typography
-      type={types.headline6}
-      systemWeight={weights.bold}
-      text={count.toString()}
-      color={color}
-    />
+    <Kebeticon color={colors[color]} style={styles.icon} size={18} name={iconName} />
+    <Typography type={types.headline6} systemWeight={weights.bold} text={count} color={color} />
   </TouchableOpacity>
 )
 
@@ -190,10 +180,13 @@ const Reactions = ({
       showActionSheetWithOptions({
         options: bottomSheetItems.map((item) => item.title),
         icons: bottomSheetItems.map((item) => (
-          <Ionicon name={item.icon} size={24} />
+          <Ionicon name={item.icon} size={24} color={colors.textPrimary} />
         )),
         cancelButtonIndex,
         title: strings.general.share,
+        textStyle: { color: colors.textPrimary },
+        titleTextStyle: { color: colors.textSecondary },
+        containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
       }, async (index) => {
         if (index === 0) {
           await api.createPost({ author, repost: repostId })

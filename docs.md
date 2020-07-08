@@ -5,6 +5,7 @@
 - https://github.com/react-native-community/react-native-audio-toolkit/blob/master/docs/SETUP.md
 - https://github.com/react-native-community/react-native-permissions
 - https://github.com/zoontek/react-native-bootsplash
+- https://github.com/zoontek/react-native-bootsplash/issues/73
 - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
 - https://github.com/ajith-ab/react-native-receive-sharing-intent
 

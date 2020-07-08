@@ -21,7 +21,7 @@ const IconButton = ({
   isActive = false,
   color = colors.blue_dark,
   activeColor = colors.white,
-  defaultBgColor = colors.input,
+  defaultBgColor = colors.backgroundSecondary,
   defaultHitSlop = 20,
   ...otherProps
 }) => {

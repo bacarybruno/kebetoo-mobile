@@ -16,6 +16,7 @@ import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import routes from 'Kebetoo/src/navigation/routes'
 import strings from 'Kebetoo/src/config/strings'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
@@ -127,8 +128,8 @@ const Comments = () => {
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
       onPress={goBack}
-      backImage={({ tintColor }) => (
-        <HeaderBack tintColor={tintColor} />
+      backImage={() => (
+        <HeaderBack tintColor={colors.textPrimary} />
       )}
     />
   ), [goBack])

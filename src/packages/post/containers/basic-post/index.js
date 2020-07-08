@@ -5,7 +5,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 
-import Typography, { types, fontSizes } from 'Kebetoo/src/shared/components/typography'
+import Typography, { types, fontSizes, weights } from 'Kebetoo/src/shared/components/typography'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 import PostPlaceholder, { PlaceholderAvatar } from 'Kebetoo/src/shared/components/placeholders/posts'
 import Reactions from 'Kebetoo/src/packages/post/containers/reactions'
@@ -16,6 +16,7 @@ import RepostContent from 'Kebetoo/src/packages/post/components/repost-content'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import strings from 'Kebetoo/src/config/strings'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
@@ -61,6 +62,7 @@ const MoreButton = ({ onPress }) => (
     <Ionicon
       name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
       size={fontSizes.lg}
+      color={colors.textTertiary}
     />
   </TouchableOpacity>
 )
@@ -83,7 +85,11 @@ export const Header = ({
         </View>
         {author && (
           <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
-            <Typography text={author.displayName} type={types.headline5} />
+            <Typography
+              text={author.displayName}
+              type={types.headline5}
+              systemWeight={weights.semibold}
+            />
             {!isRepost && (
               <View style={styles.smallMeta}>
                 <Typography text={dayjs(post.createdAt).fromNow()} type={types.headline6} />

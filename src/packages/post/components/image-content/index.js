@@ -6,6 +6,7 @@ import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
@@ -17,7 +18,7 @@ export const DeleteIconButton = ({ onPress }) => (
     onPress={onPress}
     hitSlop={edgeInsets.all(50)}
   >
-    <Ionicon name="ios-close" size={25} />
+    <Ionicon name="ios-close" size={25} color={colors.textPrimary} />
   </TouchableOpacity>
 )
 

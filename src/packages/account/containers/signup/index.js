@@ -115,7 +115,7 @@ const SignUp = ({ navigation }) => {
           <View style={styles.footerText}>
             <Typography type={types.textButtonLight} text={strings.auth.have_account} />
             <Typography type={types.textButtonLight} text=" " />
-            <Typography color="secondary" onPress={navigateToSignIn} type={types.textButton} text={strings.auth.signin} />
+            <Typography color="link" onPress={navigateToSignIn} type={types.textButton} text={strings.auth.signin} />
           </View>
         </SocialSignIn>
       )}

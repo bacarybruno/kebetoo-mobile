@@ -48,7 +48,7 @@ exports[`renders ImageContent 1`] = `
       Array [
         Object {
           "aspectRatio": 1.3333333333333333,
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "width": "100%",
         },
         Object {
@@ -163,7 +163,7 @@ exports[`renders ImageContent on comments mode 1`] = `
       Array [
         Object {
           "aspectRatio": 1.3333333333333333,
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "width": "100%",
         },
         Object {

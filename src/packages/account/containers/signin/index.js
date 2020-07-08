@@ -79,7 +79,7 @@ const SignIn = ({ navigation }) => {
         <View>
           <FullButton text={strings.auth.signin.toUpperCase()} onPress={onSubmit} />
           <Typography
-            color="secondary"
+            color="link"
             style={styles.forgotPassword}
             type={types.textButton}
             text={strings.auth.forgot_password}
@@ -91,7 +91,7 @@ const SignIn = ({ navigation }) => {
           <View style={styles.footerText}>
             <Typography type={types.textButtonLight} text={strings.auth.dont_have_account} />
             <Typography type={types.textButtonLight} text=" " />
-            <Typography onPress={navigateToSignUp} color="secondary" type={types.textButton} text={strings.auth.signup} />
+            <Typography onPress={navigateToSignUp} color="link" type={types.textButton} text={strings.auth.signup} />
           </View>
         </SocialSignIn>
       )}

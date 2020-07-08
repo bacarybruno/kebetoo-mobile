@@ -18,16 +18,17 @@ import { getMediaType } from 'Kebetoo/src/shared/helpers/file'
 import metrics from 'Kebetoo/src/theme/metrics'
 import useAudioRecorder from 'Kebetoo/src/shared/hooks/audio-recorder'
 import useImagePicker from 'Kebetoo/src/packages/post/hooks/image-picker'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
 export const routeOptions = {
   headerShown: true,
-  headerBackImage: ({ tintColor }) => (
-    <HeaderBack.Close tintColor={tintColor} />
+  headerBackImage: () => (
+    <HeaderBack.Close tintColor={colors.textPrimary} />
   ),
-  headerTitleAlign: 'left',
   headerStyle: styles.header,
+  headerTitleStyle: { color: colors.textPrimary },
   ...TransitionPresets.ModalSlideFromBottomIOS,
 }
 

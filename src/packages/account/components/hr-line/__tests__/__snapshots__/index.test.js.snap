@@ -18,7 +18,7 @@ exports[`renders HrLine 1`] = `
   <View
     style={
       Object {
-        "borderColor": "#8E8E93",
+        "borderColor": "rgba(229, 229, 234, 255)",
         "borderWidth": 0.5,
         "flex": 1,
         "height": 0.5,
@@ -58,7 +58,7 @@ exports[`renders HrLine 1`] = `
   <View
     style={
       Object {
-        "borderColor": "#8E8E93",
+        "borderColor": "rgba(229, 229, 234, 255)",
         "borderWidth": 0.5,
         "flex": 1,
         "height": 0.5,
