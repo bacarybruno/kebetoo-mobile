@@ -36,7 +36,7 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         <Typography
           type={types.headline6}
           systemWeight={weights.bold}
-          text={reactions.length.toString()}
+          text={reactions.length}
           systemColor={systemColors.primary}
         />
         <Typography type={types.body} text=" " />

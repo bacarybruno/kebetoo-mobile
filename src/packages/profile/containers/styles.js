@@ -45,10 +45,10 @@ export default StyleSheet.create({
     alignSelf: 'center',
     height: 68,
     marginTop: 27,
-    backgroundColor: colors.white,
+    backgroundColor: colors.backgroundSecondary,
     borderRadius: 16,
     flexDirection: 'row',
-    ...elevation(2),
+    ...elevation(1),
   },
   stat: {
     flex: 1,
@@ -71,7 +71,7 @@ export default StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.input,
+    backgroundColor: colors.backgroundSecondary,
     marginRight: 20,
   },
   section: {

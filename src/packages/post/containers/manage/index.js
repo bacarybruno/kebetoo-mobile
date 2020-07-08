@@ -10,7 +10,7 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import colors from 'Kebetoo/src/theme/colors'
+import colors, { rgbaToHex } from 'Kebetoo/src/theme/colors'
 import routes from 'Kebetoo/src/navigation/routes'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
 import ActionButton from 'react-native-action-button'
@@ -29,8 +29,10 @@ YellowBox.ignoreWarnings([
 export const routeOptions = {
   title: strings.profile.manage_posts_title,
   headerShown: true,
-  headerBackImage: ({ tintColor }) => (
-    <HeaderBack tintColor={tintColor} />
+  headerStyle: { backgroundColor: colors.background },
+  headerTitleStyle: { color: colors.textPrimary },
+  headerBackImage: () => (
+    <HeaderBack tintColor={colors.textPrimary} />
   ),
 }
 
@@ -178,12 +180,15 @@ const ManagePostsPage = ({ navigation }) => {
         <Ionicon
           name={item.icon}
           size={24}
-          style={index === destructiveButtonIndex && { color: colors.danger }}
+          color={index === destructiveButtonIndex ? colors.danger : colors.textPrimary}
         />
       )),
       cancelButtonIndex,
       destructiveButtonIndex,
       title: strings.general.actions,
+      textStyle: { color: colors.textPrimary },
+      titleTextStyle: { color: colors.textSecondary },
+      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
     }, (index) => {
       if (index === 0) {
         editPost(post)

@@ -15,7 +15,7 @@ exports[`renders AudioPlayer 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "backgroundColor": "#F2F2F2",
+        "backgroundColor": "#FAFAFA",
         "borderRadius": 5,
         "flex": 1,
         "flexDirection": "row",
@@ -32,7 +32,7 @@ exports[`renders AudioPlayer 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#D1D1D6",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "borderBottomLeftRadius": 5,
           "borderTopLeftRadius": 5,
           "height": "100%",
@@ -60,14 +60,14 @@ exports[`renders AudioPlayer 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#D1D1D6",
+        "backgroundColor": "rgba(242, 242, 247, 255)",
         "borderRadius": 15,
         "elevation": 2,
         "height": 30,
         "justifyContent": "center",
         "marginLeft": 16,
         "opacity": 1,
-        "shadowColor": "#000000",
+        "shadowColor": "rgba(0, 0, 0, 255)",
         "shadowOffset": Object {
           "x": 0,
           "y": 1,
@@ -84,7 +84,7 @@ exports[`renders AudioPlayer 1`] = `
         Object {
           "color": "#0B1B77",
           "fontFamily": "Ionicons",
-          "fontSize": 20,
+          "fontSize": 22,
           "fontStyle": "normal",
           "fontWeight": "normal",
         }
@@ -167,7 +167,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "backgroundColor": "#F2F2F2",
+        "backgroundColor": "#FAFAFA",
         "borderRadius": 5,
         "flex": 1,
         "flexDirection": "row",
@@ -201,7 +201,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#D1D1D6",
+        "backgroundColor": "rgba(255, 255, 255, 255)",
         "borderRadius": 15,
         "elevation": 2,
         "height": 20,
@@ -209,7 +209,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
         "opacity": 1,
         "position": "absolute",
         "right": -5,
-        "shadowColor": "#000000",
+        "shadowColor": "rgba(0, 0, 0, 255)",
         "shadowOffset": Object {
           "x": 0,
           "y": 1,
@@ -225,7 +225,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
       allowFontScaling={false}
       style={
         Object {
-          "color": undefined,
+          "color": "rgba(0,0,0,0.87)",
           "fontFamily": "Ionicons",
           "fontSize": 20,
           "fontStyle": "normal",
@@ -239,7 +239,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#D1D1D6",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "borderBottomLeftRadius": 5,
           "borderTopLeftRadius": 5,
           "height": "100%",
@@ -267,14 +267,14 @@ exports[`renders AudioPlayer with delete icon 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#D1D1D6",
+        "backgroundColor": "rgba(242, 242, 247, 255)",
         "borderRadius": 15,
         "elevation": 2,
         "height": 30,
         "justifyContent": "center",
         "marginLeft": 16,
         "opacity": 1,
-        "shadowColor": "#000000",
+        "shadowColor": "rgba(0, 0, 0, 255)",
         "shadowOffset": Object {
           "x": 0,
           "y": 1,
@@ -291,7 +291,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
         Object {
           "color": "#0B1B77",
           "fontFamily": "Ionicons",
-          "fontSize": 20,
+          "fontSize": 22,
           "fontStyle": "normal",
           "fontWeight": "normal",
         }
@@ -374,7 +374,7 @@ exports[`renders round AudioPlayer 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "backgroundColor": "#F2F2F2",
+        "backgroundColor": "#FAFAFA",
         "borderRadius": 5,
         "flex": 1,
         "flexDirection": "row",
@@ -395,7 +395,7 @@ exports[`renders round AudioPlayer 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#D1D1D6",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "borderBottomLeftRadius": 5,
           "borderTopLeftRadius": 5,
           "height": "100%",
@@ -427,14 +427,14 @@ exports[`renders round AudioPlayer 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#D1D1D6",
+        "backgroundColor": "rgba(242, 242, 247, 255)",
         "borderRadius": 15,
         "elevation": 2,
         "height": 30,
         "justifyContent": "center",
         "marginLeft": 16,
         "opacity": 1,
-        "shadowColor": "#000000",
+        "shadowColor": "rgba(0, 0, 0, 255)",
         "shadowOffset": Object {
           "x": 0,
           "y": 1,
@@ -451,7 +451,7 @@ exports[`renders round AudioPlayer 1`] = `
         Object {
           "color": "#0B1B77",
           "fontFamily": "Ionicons",
-          "fontSize": 20,
+          "fontSize": 22,
           "fontStyle": "normal",
           "fontWeight": "normal",
         }

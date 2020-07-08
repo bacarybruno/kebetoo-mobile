@@ -39,11 +39,12 @@ const EmptyPage = () => null
 
 // Screen options
 const defaultScreenOptions = {
-  headerBackImage: ({ tintColor }) => (
-    <HeaderBack tintColor={tintColor} />
+  headerBackImage: () => (
+    <HeaderBack tintColor={colors.textPrimary} />
   ),
   headerStyle: styles.headerStyle,
   headerTitleAlign: 'center',
+  headerTitleStyle: { color: colors.textPrimary },
 }
 
 const defaultTabBarOptions = {

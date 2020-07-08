@@ -27,7 +27,7 @@ exports[`renders NoContent 1`] = `
         false,
         Array [
           Object {
-            "color": "#007AFF",
+            "color": "rgba(0, 122, 255, 255)",
           },
           Object {
             "backgroundColor": "transparent",

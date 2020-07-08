@@ -27,7 +27,7 @@ export default StyleSheet.create({
   activeDotStyle: {
     width: 15,
     height: dotHeight,
-    backgroundColor: colors.black,
+    backgroundColor: colors.textPrimary,
   },
   paginationStyle: {
     marginHorizontal: metrics.marginHorizontal,
@@ -53,6 +53,6 @@ export default StyleSheet.create({
   },
   skipText: {
     fontSize: fontSizes.md,
-    color: colors.grey,
+    color: colors.border,
   },
 })

@@ -4,7 +4,7 @@ exports[`renders CreatePost 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "rgba(255, 255, 255, 255)",
       "flex": 1,
       "paddingBottom": 24,
     }
@@ -22,15 +22,15 @@ exports[`renders CreatePost 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#F2F2F2",
-            "borderColor": "#E5E5EA",
+            "backgroundColor": "#FAFAFA",
+            "borderColor": "rgba(229, 229, 234, 255)",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
             "paddingLeft": 16,
           },
           Object {
-            "backgroundColor": "#F2F2F2",
+            "backgroundColor": "#FAFAFA",
             "marginTop": 8,
             "paddingRight": 16,
           },
@@ -47,12 +47,13 @@ exports[`renders CreatePost 1`] = `
         numberOfLines={8}
         onChangeText={[Function]}
         placeholder="What's on your mind?"
-        placeholderTextColor="#ACACAC"
+        placeholderTextColor="rgba(174, 174, 178, 255)"
         rejectResponderTermination={true}
         returnKeyType="done"
         style={
           Array [
             Object {
+              "color": "rgba(0,0,0,0.87)",
               "fontSize": 16,
             },
             Object {
@@ -119,7 +120,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#F2F2F2",
+                "backgroundColor": "#FAFAFA",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -178,7 +179,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#F2F2F2",
+                "backgroundColor": "#FAFAFA",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -237,7 +238,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#F2F2F2",
+                "backgroundColor": "#FAFAFA",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -297,7 +298,7 @@ exports[`renders CreatePost 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#F2F2F2",
+              "backgroundColor": "#FAFAFA",
               "borderRadius": 20,
               "height": 40,
               "justifyContent": "center",

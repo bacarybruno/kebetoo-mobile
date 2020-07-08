@@ -2,7 +2,7 @@ import React, {
   useEffect, useState, useCallback, useMemo,
 } from 'react'
 import {
-  View, FlatList, RefreshControl, AppState,
+  View, FlatList, RefreshControl, AppState, Platform,
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
@@ -26,6 +26,11 @@ import styles from './styles'
 
 const routeOptions = { title: strings.tabs.home }
 
+const getSharedFile = () => new Promise((resolve, reject) => {
+  ReceiveSharingIntent.getReceivedFiles(resolve, reject)
+  ReceiveSharingIntent.clearReceivedFiles()
+})
+
 const HomePage = () => {
   const dispatch = useDispatch()
   const normalizedPosts = useSelector(postsSelector)
@@ -40,25 +45,28 @@ const HomePage = () => {
 
   const { navigate } = useNavigation()
 
-  const handleSharingIntent = useCallback(() => {
-    ReceiveSharingIntent.getReceivedFiles((files) => {
+  const handleSharingIntent = useCallback(async () => {
+    try {
+      const files = await getSharedFile()
       const sharedFile = files[0]
-      if (sharedFile.contentUri) {
-        RealPathUtils.getOriginalFilePath(sharedFile.contentUri)
-          .then((file) => {
-            const filename = getFileName(file)
-            const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
-            RNFetchBlob.fs.cp(file, dest)
-              .then(() => navigate(routes.CREATE_POST, { sharedFile: dest }))
-              .catch(console.log)
-          }).catch(console.log)
+      let sharedFileContentUri = sharedFile.contentUri
+      if (sharedFileContentUri) {
+        if (Platform.OS === 'android') {
+          const file = await RealPathUtils.getOriginalFilePath(sharedFileContentUri)
+          const filename = getFileName(file)
+          const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
+          await RNFetchBlob.fs.cp(file, dest)
+          sharedFileContentUri = dest
+        }
+        navigate(routes.CREATE_POST, { sharedFile: sharedFileContentUri })
       } else {
         navigate(routes.CREATE_POST, {
           sharedText: sharedFile.text || sharedFile.weblink || '',
         })
       }
-    }, () => {})
-    ReceiveSharingIntent.clearReceivedFiles()
+    } catch (error) {
+      console.log('An error occured', error)
+    }
   }, [navigate])
 
   useEffect(() => {
@@ -125,7 +133,12 @@ const HomePage = () => {
   ), [displayName, user.photoURL])
 
   const renderRefreshControl = useMemo(() => (
-    <RefreshControl colors={[colors.primary]} refreshing={refreshing} onRefresh={onRefresh} />
+    <RefreshControl
+      progressBackgroundColor={colors.backgroundSecondary}
+      colors={[colors.primary]}
+      refreshing={refreshing}
+      onRefresh={onRefresh}
+    />
   ), [onRefresh, refreshing])
 
   return (

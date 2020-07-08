@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: StyleSheet.hairlineWidth,
     height: StyleSheet.hairlineWidth,
-    borderColor: colors.grey,
+    borderColor: colors.border,
   },
   text: {
     marginHorizontal: 10,

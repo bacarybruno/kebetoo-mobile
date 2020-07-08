@@ -4,7 +4,7 @@ exports[`renders Onboarding 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "rgba(255, 255, 255, 255)",
       "flex": 1,
     }
   }
@@ -84,7 +84,7 @@ exports[`renders Onboarding 1`] = `
       <RCTScrollView
         activeDotStyle={
           Object {
-            "backgroundColor": "#000000",
+            "backgroundColor": "rgba(0,0,0,0.87)",
             "height": 8,
             "width": 15,
           }
@@ -113,7 +113,7 @@ exports[`renders Onboarding 1`] = `
         disablePrevButton={false}
         dotStyle={
           Object {
-            "backgroundColor": "#D1D1D6",
+            "backgroundColor": "rgba(199, 199, 204, 255)",
             "height": 8,
             "width": 8,
           }
@@ -682,7 +682,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "#000000",
+                "backgroundColor": "rgba(0,0,0,0.87)",
                 "height": 8,
                 "width": 15,
               },
@@ -703,7 +703,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "#D1D1D6",
+                "backgroundColor": "rgba(199, 199, 204, 255)",
                 "height": 8,
                 "width": 8,
               },
@@ -724,7 +724,7 @@ exports[`renders Onboarding 1`] = `
                 "width": 8,
               },
               Object {
-                "backgroundColor": "#D1D1D6",
+                "backgroundColor": "rgba(199, 199, 204, 255)",
                 "height": 8,
                 "width": 8,
               },
@@ -756,17 +756,17 @@ exports[`renders Onboarding 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#007AFF",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
             "borderRadius": 15,
             "bottom": 0,
-            "color": "#FFFFFF",
+            "color": "rgba(255, 255, 255, 255)",
             "elevation": 2,
             "height": 48,
             "justifyContent": "center",
             "opacity": 1,
             "position": "absolute",
             "right": 0,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -782,7 +782,7 @@ exports[`renders Onboarding 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "rgba(255, 255, 255, 255)",
               "fontFamily": "Ionicons",
               "fontSize": 30,
               "fontStyle": "normal",

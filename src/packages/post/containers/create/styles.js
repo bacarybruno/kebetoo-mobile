@@ -7,7 +7,7 @@ import elevation from 'Kebetoo/src/theme/elevation'
 export default StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
     paddingBottom: metrics.marginVertical,
   },
   container: {
@@ -15,7 +15,7 @@ export default StyleSheet.create({
     marginHorizontal: metrics.marginHorizontal,
   },
   header: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
     ...elevation(0),
   },
   headerSaveButton: {
@@ -26,7 +26,7 @@ export default StyleSheet.create({
   },
   textInputWrapper: {
     marginTop: 8,
-    backgroundColor: colors.input,
+    backgroundColor: colors.backgroundSecondary,
     paddingRight: metrics.marginHorizontal,
   },
   textCount: {

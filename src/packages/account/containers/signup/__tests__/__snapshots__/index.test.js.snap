@@ -4,7 +4,7 @@ exports[`renders SignUp 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "rgba(255, 255, 255, 255)",
       "flex": 1,
       "paddingHorizontal": 16,
       "paddingVertical": 24,
@@ -39,8 +39,8 @@ exports[`renders SignUp 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#F2F2F2",
-            "borderColor": "#E5E5EA",
+            "backgroundColor": "#FAFAFA",
+            "borderColor": "rgba(229, 229, 234, 255)",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
@@ -56,12 +56,13 @@ exports[`renders SignUp 1`] = `
         onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholder="Full Name"
-        placeholderTextColor="#ACACAC"
+        placeholderTextColor="rgba(174, 174, 178, 255)"
         rejectResponderTermination={true}
         returnKeyType="next"
         style={
           Array [
             Object {
+              "color": "rgba(0,0,0,0.87)",
               "fontSize": 16,
             },
             undefined,
@@ -75,8 +76,8 @@ exports[`renders SignUp 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#F2F2F2",
-            "borderColor": "#E5E5EA",
+            "backgroundColor": "#FAFAFA",
+            "borderColor": "rgba(229, 229, 234, 255)",
             "borderRadius": 15,
             "borderWidth": 1,
             "minHeight": 48,
@@ -93,12 +94,13 @@ exports[`renders SignUp 1`] = `
         onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholder="Email"
-        placeholderTextColor="#ACACAC"
+        placeholderTextColor="rgba(174, 174, 178, 255)"
         rejectResponderTermination={true}
         returnKeyType="next"
         style={
           Array [
             Object {
+              "color": "rgba(0,0,0,0.87)",
               "fontSize": 16,
             },
             undefined,
@@ -111,8 +113,8 @@ exports[`renders SignUp 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#F2F2F2",
-          "borderColor": "#E5E5EA",
+          "backgroundColor": "#FAFAFA",
+          "borderColor": "rgba(229, 229, 234, 255)",
           "borderRadius": 15,
           "borderWidth": 1,
           "minHeight": 48,
@@ -126,12 +128,13 @@ exports[`renders SignUp 1`] = `
         onChangeText={[Function]}
         onValueChange={[Function]}
         placeholder="Password"
-        placeholderTextColor="#ACACAC"
+        placeholderTextColor="rgba(174, 174, 178, 255)"
         rejectResponderTermination={true}
         returnKeyType="done"
         secureTextEntry={true}
         style={
           Object {
+            "color": "rgba(0,0,0,0.87)",
             "fontSize": 16,
           }
         }
@@ -164,7 +167,7 @@ exports[`renders SignUp 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#ACACAC",
+              "color": "rgba(174, 174, 178, 255)",
               "fontFamily": "Ionicons",
               "fontSize": 30,
               "fontStyle": "normal",
@@ -188,14 +191,14 @@ exports[`renders SignUp 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#007AFF",
+          "backgroundColor": "rgba(0, 122, 255, 255)",
           "borderRadius": 15,
-          "color": "#FFFFFF",
+          "color": "rgba(255, 255, 255, 255)",
           "elevation": 2,
           "height": 48,
           "justifyContent": "center",
           "opacity": 1,
-          "shadowColor": "#000000",
+          "shadowColor": "rgba(0, 0, 0, 255)",
           "shadowOffset": Object {
             "x": 0,
             "y": 1,
@@ -220,7 +223,7 @@ exports[`renders SignUp 1`] = `
             },
             Array [
               Object {
-                "color": "rgba(255,255,255,1)",
+                "color": "rgba(255, 255, 255, 255)",
               },
               Object {
                 "backgroundColor": "transparent",
@@ -273,7 +276,7 @@ exports[`renders SignUp 1`] = `
           <View
             style={
               Object {
-                "borderColor": "#8E8E93",
+                "borderColor": "rgba(229, 229, 234, 255)",
                 "borderWidth": 0.5,
                 "flex": 1,
                 "height": 0.5,
@@ -313,7 +316,7 @@ exports[`renders SignUp 1`] = `
           <View
             style={
               Object {
-                "borderColor": "#8E8E93",
+                "borderColor": "rgba(229, 229, 234, 255)",
                 "borderWidth": 0.5,
                 "flex": 1,
                 "height": 0.5,
@@ -475,7 +478,7 @@ exports[`renders SignUp 1`] = `
               },
               Array [
                 Object {
-                  "color": "#007AFF",
+                  "color": "rgba(0, 122, 255, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",

@@ -13,7 +13,7 @@ exports[`renders DraggableIndicator 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#D1D1D6",
+        "backgroundColor": "rgba(229, 229, 234, 255)",
         "borderRadius": 5,
         "height": 5,
         "margin": 10,

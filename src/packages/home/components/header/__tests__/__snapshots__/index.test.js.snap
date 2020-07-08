@@ -73,7 +73,7 @@ exports[`renders Badge 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#007AFF",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
             "borderRadius": 15,
             "flex": 1,
             "justifyContent": "center",

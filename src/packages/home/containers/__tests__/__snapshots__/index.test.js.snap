@@ -4,7 +4,7 @@ exports[`renders HomePage 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "rgba(255, 255, 255, 255)",
       "flex": 1,
     }
   }
@@ -224,10 +224,11 @@ exports[`renders HomePage 1`] = `
       <RefreshControlMock
         colors={
           Array [
-            "#007AFF",
+            "rgba(0, 122, 255, 255)",
           ]
         }
         onRefresh={[Function]}
+        progressBackgroundColor="#FAFAFA"
         refreshing={false}
       />
     }
@@ -316,7 +317,7 @@ exports[`renders HomePage 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "#007AFF",
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
                     "borderRadius": 15,
                     "flex": 1,
                     "justifyContent": "center",
@@ -396,7 +397,7 @@ exports[`renders HomePage 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -446,7 +447,7 @@ exports[`renders HomePage 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -605,7 +606,7 @@ exports[`renders HomePage 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "#F2F2F2",
+                    "backgroundColor": "#FAFAFA",
                     "borderRadius": 5,
                     "flex": 1,
                     "flexDirection": "row",
@@ -622,7 +623,7 @@ exports[`renders HomePage 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "#D1D1D6",
+                      "backgroundColor": "rgba(255, 255, 255, 255)",
                       "borderBottomLeftRadius": 5,
                       "borderTopLeftRadius": 5,
                       "height": "100%",
@@ -650,14 +651,14 @@ exports[`renders HomePage 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "#D1D1D6",
+                    "backgroundColor": "rgba(242, 242, 247, 255)",
                     "borderRadius": 15,
                     "elevation": 2,
                     "height": 30,
                     "justifyContent": "center",
                     "marginLeft": 16,
                     "opacity": 1,
-                    "shadowColor": "#000000",
+                    "shadowColor": "rgba(0, 0, 0, 255)",
                     "shadowOffset": Object {
                       "x": 0,
                       "y": 1,
@@ -674,7 +675,7 @@ exports[`renders HomePage 1`] = `
                     Object {
                       "color": "#0B1B77",
                       "fontFamily": "Ionicons",
-                      "fontSize": 20,
+                      "fontSize": 22,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
@@ -788,7 +789,7 @@ exports[`renders HomePage 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "#007AFF",
+                      "color": "rgba(0, 122, 255, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -815,7 +816,7 @@ exports[`renders HomePage 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "#007AFF",
+                          "color": "rgba(0, 122, 255, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -1126,7 +1127,7 @@ exports[`renders HomePage 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -1176,7 +1177,7 @@ exports[`renders HomePage 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -1335,7 +1336,7 @@ exports[`renders HomePage 1`] = `
                 Array [
                   Object {
                     "aspectRatio": 1.3333333333333333,
-                    "backgroundColor": "#FFFFFF",
+                    "backgroundColor": "rgba(255, 255, 255, 255)",
                     "width": "100%",
                   },
                   Object {
@@ -1519,7 +1520,7 @@ exports[`renders HomePage 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "#0B1B77",
+                      "color": "rgba(0, 122, 255, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -1546,7 +1547,7 @@ exports[`renders HomePage 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "#0B1B77",
+                          "color": "rgba(0, 122, 255, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -1777,7 +1778,7 @@ exports[`renders HomePage 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -1808,7 +1809,7 @@ exports[`renders HomePage 1`] = `
                           false,
                           Array [
                             Object {
-                              "color": "#FFFFFF",
+                              "color": "rgba(255, 255, 255, 255)",
                             },
                             Object {
                               "backgroundColor": "transparent",
@@ -1861,7 +1862,7 @@ exports[`renders HomePage 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -2350,7 +2351,7 @@ exports[`renders HomePage 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -2400,7 +2401,7 @@ exports[`renders HomePage 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "fontFamily": "System",
-                          "fontWeight": "400",
+                          "fontWeight": "600",
                         },
                         undefined,
                       ],
@@ -2539,7 +2540,7 @@ exports[`renders HomePage 1`] = `
                 style={
                   Array [
                     Object {
-                      "borderColor": "#E5E5EA",
+                      "borderColor": "rgba(229, 229, 234, 255)",
                       "borderLeftWidth": 2,
                       "marginVertical": 8,
                       "minHeight": 52,
@@ -2611,7 +2612,7 @@ exports[`renders HomePage 1`] = `
                               Array [
                                 Object {
                                   "alignItems": "center",
-                                  "backgroundColor": "#007AFF",
+                                  "backgroundColor": "rgba(0, 122, 255, 255)",
                                   "borderRadius": 15,
                                   "flex": 1,
                                   "justifyContent": "center",
@@ -2642,7 +2643,7 @@ exports[`renders HomePage 1`] = `
                                   false,
                                   Array [
                                     Object {
-                                      "color": "#FFFFFF",
+                                      "color": "rgba(255, 255, 255, 255)",
                                     },
                                     Object {
                                       "backgroundColor": "transparent",
@@ -2697,7 +2698,7 @@ exports[`renders HomePage 1`] = `
                                 Object {
                                   "backgroundColor": "transparent",
                                   "fontFamily": "System",
-                                  "fontWeight": "400",
+                                  "fontWeight": "600",
                                 },
                                 undefined,
                               ],
@@ -2887,7 +2888,7 @@ exports[`renders HomePage 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "#0B1B77",
+                      "color": "rgba(0, 122, 255, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -2914,7 +2915,7 @@ exports[`renders HomePage 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "#0B1B77",
+                          "color": "rgba(0, 122, 255, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",

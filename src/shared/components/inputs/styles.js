@@ -9,7 +9,7 @@ export const placeholderColor = colors.placeholder
 
 export default StyleSheet.create({
   wrapper: {
-    backgroundColor: colors.input,
+    backgroundColor: colors.backgroundSecondary,
     minHeight: 48,
     borderColor: colors.border,
     borderRadius: 15,
@@ -18,6 +18,7 @@ export default StyleSheet.create({
   },
   textInput: {
     fontSize: fontSizes.md,
+    color: colors.textPrimary,
   },
   iconWrapper: {
     height: 48,

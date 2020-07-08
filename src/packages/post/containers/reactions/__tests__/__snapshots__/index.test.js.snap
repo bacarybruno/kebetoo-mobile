@@ -4,16 +4,22 @@ exports[`handles sharing 1`] = `
 Array [
   Object {
     "cancelButtonIndex": 2,
+    "containerStyle": Object {
+      "backgroundColor": "#FAFAFA",
+    },
     "icons": Array [
       <_default
+        color="rgba(0,0,0,0.87)"
         name="ios-share-alt"
         size={24}
       />,
       <_default
+        color="rgba(0,0,0,0.87)"
         name="ios-share"
         size={24}
       />,
       <_default
+        color="rgba(0,0,0,0.87)"
         name="md-close"
         size={24}
       />,
@@ -23,7 +29,13 @@ Array [
       "Edit and share",
       "Cancel",
     ],
+    "textStyle": Object {
+      "color": "rgba(0,0,0,0.87)",
+    },
     "title": "Share",
+    "titleTextStyle": Object {
+      "color": "rgba(0,0,0,0.54)",
+    },
   },
   [Function],
 ]

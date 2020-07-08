@@ -459,7 +459,7 @@ exports[`renders Comments 1`] = `
       }
       contentContainerStyle={
         Object {
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "flexGrow": 1,
         }
       }
@@ -706,7 +706,7 @@ exports[`renders Comments 1`] = `
                           allowFontScaling={false}
                           style={
                             Object {
-                              "color": "rgb(0, 122, 255)",
+                              "color": "rgba(0,0,0,0.87)",
                               "fontFamily": "icomoon",
                               "fontSize": 20,
                               "fontStyle": "normal",
@@ -760,7 +760,7 @@ exports[`renders Comments 1`] = `
                           Array [
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#007AFF",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
                               "borderRadius": 15,
                               "flex": 1,
                               "justifyContent": "center",
@@ -810,7 +810,7 @@ exports[`renders Comments 1`] = `
                             Object {
                               "backgroundColor": "transparent",
                               "fontFamily": "System",
-                              "fontWeight": "400",
+                              "fontWeight": "600",
                             },
                             undefined,
                           ],
@@ -979,14 +979,24 @@ exports[`renders Comments 1`] = `
                     Array [
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#F2F2F2",
+                        "backgroundColor": "#FAFAFA",
                         "borderRadius": 5,
                         "flex": 1,
                         "flexDirection": "row",
                         "height": 52,
                         "maxHeight": 52,
                       },
-                      undefined,
+                      Object {
+                        "backgroundColor": "rgba(255, 255, 255, 255)",
+                        "elevation": 1,
+                        "shadowColor": "rgba(0, 0, 0, 255)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "shadowOpacity": 0.18,
+                        "shadowRadius": 1,
+                      },
                       undefined,
                     ]
                   }
@@ -996,7 +1006,7 @@ exports[`renders Comments 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#D1D1D6",
+                          "backgroundColor": "rgba(255, 255, 255, 255)",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -1024,14 +1034,14 @@ exports[`renders Comments 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#D1D1D6",
+                        "backgroundColor": "rgba(242, 242, 247, 255)",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "#000000",
+                        "shadowColor": "rgba(0, 0, 0, 255)",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -1048,7 +1058,7 @@ exports[`renders Comments 1`] = `
                         Object {
                           "color": "#0B1B77",
                           "fontFamily": "Ionicons",
-                          "fontSize": 20,
+                          "fontSize": 22,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
                         }
@@ -1119,12 +1129,12 @@ exports[`renders Comments 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#FFFFFF",
-                  "borderLeftColor": "#E5E5EA",
+                  "backgroundColor": "rgba(255, 255, 255, 255)",
+                  "borderLeftColor": "rgba(229, 229, 234, 255)",
                   "borderLeftWidth": 1,
-                  "borderRightColor": "#E5E5EA",
+                  "borderRightColor": "rgba(229, 229, 234, 255)",
                   "borderRightWidth": 1,
-                  "borderTopColor": "#E5E5EA",
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
                   "borderTopLeftRadius": 35,
                   "borderTopRightRadius": 35,
                   "borderTopWidth": 1,
@@ -1145,7 +1155,7 @@ exports[`renders Comments 1`] = `
                 <View
                   style={
                     Object {
-                      "backgroundColor": "#D1D1D6",
+                      "backgroundColor": "rgba(229, 229, 234, 255)",
                       "borderRadius": 5,
                       "height": 5,
                       "margin": 10,
@@ -1202,7 +1212,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#007AFF",
+                          "color": "rgba(0, 122, 255, 255)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -1229,7 +1239,7 @@ exports[`renders Comments 1`] = `
                           },
                           Array [
                             Object {
-                              "color": "#007AFF",
+                              "color": "rgba(0, 122, 255, 255)",
                             },
                             Object {
                               "backgroundColor": "transparent",
@@ -1489,7 +1499,7 @@ exports[`renders Comments 1`] = `
                     <View
                       style={
                         Object {
-                          "backgroundColor": "#FFFFFF",
+                          "backgroundColor": "rgba(255, 255, 255, 255)",
                           "borderRadius": 14,
                           "height": 28,
                           "padding": 2,
@@ -1507,7 +1517,7 @@ exports[`renders Comments 1`] = `
                             },
                             undefined,
                             Object {
-                              "backgroundColor": "#007AFF",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
                               "borderRadius": 14,
                               "height": "100%",
                               "width": "100%",
@@ -1525,7 +1535,7 @@ exports[`renders Comments 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#007AFF",
+                                "backgroundColor": "rgba(0, 122, 255, 255)",
                                 "borderRadius": 15,
                                 "flex": 1,
                                 "justifyContent": "center",
@@ -1541,7 +1551,7 @@ exports[`renders Comments 1`] = `
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "#FFFFFF",
+                            "backgroundColor": "rgba(255, 255, 255, 255)",
                             "borderRadius": 14,
                             "height": 28,
                             "padding": 2,
@@ -1564,7 +1574,7 @@ exports[`renders Comments 1`] = `
                             },
                             undefined,
                             Object {
-                              "backgroundColor": "#007AFF",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
                               "borderRadius": 14,
                               "height": "100%",
                               "width": "100%",
@@ -1577,7 +1587,7 @@ exports[`renders Comments 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#007AFF",
+                                "backgroundColor": "rgba(0, 122, 255, 255)",
                                 "borderRadius": 15,
                                 "flex": 1,
                                 "justifyContent": "center",
@@ -1606,7 +1616,7 @@ exports[`renders Comments 1`] = `
                                 false,
                                 Array [
                                   Object {
-                                    "color": "#FFFFFF",
+                                    "color": "rgba(255, 255, 255, 255)",
                                   },
                                   Object {
                                     "backgroundColor": "transparent",
@@ -1695,7 +1705,7 @@ exports[`renders Comments 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -1948,7 +1958,7 @@ exports[`renders Comments 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#FF2D55",
+                          "color": "rgba(255, 45, 85, 255)",
                           "fontFamily": "Ionicons",
                           "fontSize": 16,
                           "fontStyle": "normal",
@@ -2029,7 +2039,7 @@ exports[`renders Comments 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#007AFF",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
                           "borderRadius": 15,
                           "flex": 1,
                           "justifyContent": "center",
@@ -2168,7 +2178,7 @@ exports[`renders Comments 1`] = `
                     Array [
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#F2F2F2",
+                        "backgroundColor": "#FAFAFA",
                         "borderRadius": 5,
                         "flex": 1,
                         "flexDirection": "row",
@@ -2176,7 +2186,7 @@ exports[`renders Comments 1`] = `
                         "maxHeight": 52,
                       },
                       Object {
-                        "backgroundColor": "#FAFAFA",
+                        "backgroundColor": "rgba(242, 242, 247, 255)",
                         "height": 45,
                         "marginTop": 5,
                       },
@@ -2189,7 +2199,7 @@ exports[`renders Comments 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#D1D1D6",
+                          "backgroundColor": "rgba(255, 255, 255, 255)",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -2217,14 +2227,14 @@ exports[`renders Comments 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#D1D1D6",
+                        "backgroundColor": "rgba(242, 242, 247, 255)",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "#000000",
+                        "shadowColor": "rgba(0, 0, 0, 255)",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -2241,7 +2251,7 @@ exports[`renders Comments 1`] = `
                         Object {
                           "color": "#0B1B77",
                           "fontFamily": "Ionicons",
-                          "fontSize": 20,
+                          "fontSize": 22,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
                         }
@@ -2429,7 +2439,7 @@ exports[`renders Comments 1`] = `
     style={
       Object {
         "alignItems": "flex-end",
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "rgba(255, 255, 255, 255)",
         "flexDirection": "row",
         "paddingBottom": 10,
         "paddingHorizontal": 16,
@@ -2448,21 +2458,21 @@ exports[`renders Comments 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#F2F2F2",
-              "borderColor": "#E5E5EA",
+              "backgroundColor": "#FAFAFA",
+              "borderColor": "rgba(229, 229, 234, 255)",
               "borderRadius": 15,
               "borderWidth": 1,
               "minHeight": 48,
               "paddingLeft": 16,
             },
             Object {
-              "backgroundColor": "#FAFAFA",
+              "backgroundColor": "rgba(242, 242, 247, 255)",
               "borderRadius": 22.5,
               "borderWidth": 0.5,
               "elevation": 1,
               "height": 45,
               "minHeight": 45,
-              "shadowColor": "#000000",
+              "shadowColor": "rgba(0, 0, 0, 255)",
               "shadowOffset": Object {
                 "x": 0,
                 "y": 0,
@@ -2481,11 +2491,12 @@ exports[`renders Comments 1`] = `
           onChangeText={[Function]}
           onContentSizeChange={[Function]}
           placeholder="Add a comment"
-          placeholderTextColor="#ACACAC"
+          placeholderTextColor="rgba(174, 174, 178, 255)"
           rejectResponderTermination={true}
           style={
             Array [
               Object {
+                "color": "rgba(0,0,0,0.87)",
                 "fontSize": 16,
               },
               Object {
@@ -2527,7 +2538,7 @@ exports[`renders Comments 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#007AFF",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
             "borderRadius": 22.5,
             "elevation": 2,
             "height": 45,
@@ -2536,7 +2547,7 @@ exports[`renders Comments 1`] = `
             "maxHeight": 45,
             "maxWidth": 45,
             "opacity": 1,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -2556,7 +2567,7 @@ exports[`renders Comments 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "rgba(255, 255, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 22.52252252252252,
               "fontStyle": "normal",
@@ -2944,7 +2955,7 @@ exports[`renders Comments in loading state 1`] = `
       }
       contentContainerStyle={
         Object {
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "rgba(255, 255, 255, 255)",
           "flexGrow": 1,
         }
       }
@@ -3117,7 +3128,7 @@ exports[`renders Comments in loading state 1`] = `
                           allowFontScaling={false}
                           style={
                             Object {
-                              "color": "rgb(0, 122, 255)",
+                              "color": "rgba(0,0,0,0.87)",
                               "fontFamily": "icomoon",
                               "fontSize": 20,
                               "fontStyle": "normal",
@@ -3156,6 +3167,7 @@ exports[`renders Comments in loading state 1`] = `
                             "width": 35,
                           },
                           Object {
+                            "backgroundColor": undefined,
                             "marginRight": 10,
                           },
                           Object {
@@ -3226,14 +3238,24 @@ exports[`renders Comments in loading state 1`] = `
                     Array [
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#F2F2F2",
+                        "backgroundColor": "#FAFAFA",
                         "borderRadius": 5,
                         "flex": 1,
                         "flexDirection": "row",
                         "height": 52,
                         "maxHeight": 52,
                       },
-                      undefined,
+                      Object {
+                        "backgroundColor": "rgba(255, 255, 255, 255)",
+                        "elevation": 1,
+                        "shadowColor": "rgba(0, 0, 0, 255)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "shadowOpacity": 0.18,
+                        "shadowRadius": 1,
+                      },
                       undefined,
                     ]
                   }
@@ -3243,7 +3265,7 @@ exports[`renders Comments in loading state 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#D1D1D6",
+                          "backgroundColor": "rgba(255, 255, 255, 255)",
                           "borderBottomLeftRadius": 5,
                           "borderTopLeftRadius": 5,
                           "height": "100%",
@@ -3271,14 +3293,14 @@ exports[`renders Comments in loading state 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#D1D1D6",
+                        "backgroundColor": "rgba(242, 242, 247, 255)",
                         "borderRadius": 15,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
                         "marginLeft": 16,
                         "opacity": 1,
-                        "shadowColor": "#000000",
+                        "shadowColor": "rgba(0, 0, 0, 255)",
                         "shadowOffset": Object {
                           "x": 0,
                           "y": 1,
@@ -3295,7 +3317,7 @@ exports[`renders Comments in loading state 1`] = `
                         Object {
                           "color": "#0B1B77",
                           "fontFamily": "Ionicons",
-                          "fontSize": 20,
+                          "fontSize": 22,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
                         }
@@ -3366,12 +3388,12 @@ exports[`renders Comments in loading state 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#FFFFFF",
-                  "borderLeftColor": "#E5E5EA",
+                  "backgroundColor": "rgba(255, 255, 255, 255)",
+                  "borderLeftColor": "rgba(229, 229, 234, 255)",
                   "borderLeftWidth": 1,
-                  "borderRightColor": "#E5E5EA",
+                  "borderRightColor": "rgba(229, 229, 234, 255)",
                   "borderRightWidth": 1,
-                  "borderTopColor": "#E5E5EA",
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
                   "borderTopLeftRadius": 35,
                   "borderTopRightRadius": 35,
                   "borderTopWidth": 1,
@@ -3392,7 +3414,7 @@ exports[`renders Comments in loading state 1`] = `
                 <View
                   style={
                     Object {
-                      "backgroundColor": "#D1D1D6",
+                      "backgroundColor": "rgba(229, 229, 234, 255)",
                       "borderRadius": 5,
                       "height": 5,
                       "margin": 10,
@@ -3449,7 +3471,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "#007AFF",
+                          "color": "rgba(0, 122, 255, 255)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3476,7 +3498,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           Array [
                             Object {
-                              "color": "#007AFF",
+                              "color": "rgba(0, 122, 255, 255)",
                             },
                             Object {
                               "backgroundColor": "transparent",
@@ -3760,9 +3782,14 @@ exports[`renders Comments in loading state 1`] = `
                       "height": 40,
                       "width": 40,
                     },
-                    Object {
-                      "marginRight": 10,
-                    },
+                    Array [
+                      Object {
+                        "marginRight": 10,
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
+                    ],
                     Object {
                       "overflow": "hidden",
                     },
@@ -3796,35 +3823,8 @@ exports[`renders Comments in loading state 1`] = `
                         "marginBottom": 8,
                         "width": "50%",
                       },
-                      undefined,
                       Object {
-                        "overflow": "hidden",
-                      },
-                    ]
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "#dfdfdf",
-                        "height": "100%",
-                        "opacity": 0.5,
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "#efefef",
-                        "borderRadius": 2.5,
-                        "height": 10,
-                        "marginBottom": 10,
-                        "width": "100%",
-                      },
-                      Object {
-                        "marginBottom": 5,
+                        "backgroundColor": undefined,
                       },
                       Object {
                         "overflow": "hidden",
@@ -3852,7 +3852,43 @@ exports[`renders Comments in loading state 1`] = `
                         "marginBottom": 10,
                         "width": "100%",
                       },
-                      undefined,
+                      Array [
+                        Object {
+                          "backgroundColor": undefined,
+                        },
+                        Object {
+                          "marginBottom": 5,
+                        },
+                      ],
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
                       Object {
                         "overflow": "hidden",
                       },
@@ -3879,11 +3915,16 @@ exports[`renders Comments in loading state 1`] = `
                       "height": 15,
                       "width": 15,
                     },
-                    Object {
-                      "bottom": 0,
-                      "position": "absolute",
-                      "right": 0,
-                    },
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "position": "absolute",
+                        "right": 0,
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
+                    ],
                     Object {
                       "overflow": "hidden",
                     },
@@ -3942,9 +3983,14 @@ exports[`renders Comments in loading state 1`] = `
                       "height": 40,
                       "width": 40,
                     },
-                    Object {
-                      "marginRight": 10,
-                    },
+                    Array [
+                      Object {
+                        "marginRight": 10,
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
+                    ],
                     Object {
                       "overflow": "hidden",
                     },
@@ -3978,35 +4024,8 @@ exports[`renders Comments in loading state 1`] = `
                         "marginBottom": 8,
                         "width": "50%",
                       },
-                      undefined,
                       Object {
-                        "overflow": "hidden",
-                      },
-                    ]
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "#dfdfdf",
-                        "height": "100%",
-                        "opacity": 0.5,
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "#efefef",
-                        "borderRadius": 2.5,
-                        "height": 10,
-                        "marginBottom": 10,
-                        "width": "100%",
-                      },
-                      Object {
-                        "marginBottom": 5,
+                        "backgroundColor": undefined,
                       },
                       Object {
                         "overflow": "hidden",
@@ -4034,7 +4053,43 @@ exports[`renders Comments in loading state 1`] = `
                         "marginBottom": 10,
                         "width": "100%",
                       },
-                      undefined,
+                      Array [
+                        Object {
+                          "backgroundColor": undefined,
+                        },
+                        Object {
+                          "marginBottom": 5,
+                        },
+                      ],
+                      Object {
+                        "overflow": "hidden",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#dfdfdf",
+                        "height": "100%",
+                        "opacity": 0.5,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 2.5,
+                        "height": 10,
+                        "marginBottom": 10,
+                        "width": "100%",
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
                       Object {
                         "overflow": "hidden",
                       },
@@ -4061,11 +4116,16 @@ exports[`renders Comments in loading state 1`] = `
                       "height": 15,
                       "width": 15,
                     },
-                    Object {
-                      "bottom": 0,
-                      "position": "absolute",
-                      "right": 0,
-                    },
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "position": "absolute",
+                        "right": 0,
+                      },
+                      Object {
+                        "backgroundColor": undefined,
+                      },
+                    ],
                     Object {
                       "overflow": "hidden",
                     },
@@ -4092,7 +4152,7 @@ exports[`renders Comments in loading state 1`] = `
     style={
       Object {
         "alignItems": "flex-end",
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "rgba(255, 255, 255, 255)",
         "flexDirection": "row",
         "paddingBottom": 10,
         "paddingHorizontal": 16,
@@ -4111,21 +4171,21 @@ exports[`renders Comments in loading state 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#F2F2F2",
-              "borderColor": "#E5E5EA",
+              "backgroundColor": "#FAFAFA",
+              "borderColor": "rgba(229, 229, 234, 255)",
               "borderRadius": 15,
               "borderWidth": 1,
               "minHeight": 48,
               "paddingLeft": 16,
             },
             Object {
-              "backgroundColor": "#FAFAFA",
+              "backgroundColor": "rgba(242, 242, 247, 255)",
               "borderRadius": 22.5,
               "borderWidth": 0.5,
               "elevation": 1,
               "height": 45,
               "minHeight": 45,
-              "shadowColor": "#000000",
+              "shadowColor": "rgba(0, 0, 0, 255)",
               "shadowOffset": Object {
                 "x": 0,
                 "y": 0,
@@ -4144,11 +4204,12 @@ exports[`renders Comments in loading state 1`] = `
           onChangeText={[Function]}
           onContentSizeChange={[Function]}
           placeholder="Add a comment"
-          placeholderTextColor="#ACACAC"
+          placeholderTextColor="rgba(174, 174, 178, 255)"
           rejectResponderTermination={true}
           style={
             Array [
               Object {
+                "color": "rgba(0,0,0,0.87)",
                 "fontSize": 16,
               },
               Object {
@@ -4190,7 +4251,7 @@ exports[`renders Comments in loading state 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#007AFF",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
             "borderRadius": 22.5,
             "elevation": 2,
             "height": 45,
@@ -4199,7 +4260,7 @@ exports[`renders Comments in loading state 1`] = `
             "maxHeight": 45,
             "maxWidth": 45,
             "opacity": 1,
-            "shadowColor": "#000000",
+            "shadowColor": "rgba(0, 0, 0, 255)",
             "shadowOffset": Object {
               "x": 0,
               "y": 1,
@@ -4219,7 +4280,7 @@ exports[`renders Comments in loading state 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "rgba(255, 255, 255, 255)",
               "fontFamily": "icomoon",
               "fontSize": 22.52252252252252,
               "fontStyle": "normal",

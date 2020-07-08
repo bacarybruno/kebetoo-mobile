@@ -23,9 +23,14 @@ exports[`renders CommentPlaceholder 1`] = `
           "height": 40,
           "width": 40,
         },
-        Object {
-          "marginRight": 10,
-        },
+        Array [
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "backgroundColor": undefined,
+          },
+        ],
         Object {
           "overflow": "hidden",
         },
@@ -59,35 +64,8 @@ exports[`renders CommentPlaceholder 1`] = `
             "marginBottom": 8,
             "width": "50%",
           },
-          undefined,
           Object {
-            "overflow": "hidden",
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dfdfdf",
-            "height": "100%",
-            "opacity": 0.5,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#efefef",
-            "borderRadius": 2.5,
-            "height": 10,
-            "marginBottom": 10,
-            "width": "100%",
-          },
-          Object {
-            "marginBottom": 5,
+            "backgroundColor": undefined,
           },
           Object {
             "overflow": "hidden",
@@ -115,7 +93,43 @@ exports[`renders CommentPlaceholder 1`] = `
             "marginBottom": 10,
             "width": "100%",
           },
-          undefined,
+          Array [
+            Object {
+              "backgroundColor": undefined,
+            },
+            Object {
+              "marginBottom": 5,
+            },
+          ],
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 2.5,
+            "height": 10,
+            "marginBottom": 10,
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": undefined,
+          },
           Object {
             "overflow": "hidden",
           },
@@ -142,11 +156,16 @@ exports[`renders CommentPlaceholder 1`] = `
           "height": 15,
           "width": 15,
         },
-        Object {
-          "bottom": 0,
-          "position": "absolute",
-          "right": 0,
-        },
+        Array [
+          Object {
+            "bottom": 0,
+            "position": "absolute",
+            "right": 0,
+          },
+          Object {
+            "backgroundColor": undefined,
+          },
+        ],
         Object {
           "overflow": "hidden",
         },
