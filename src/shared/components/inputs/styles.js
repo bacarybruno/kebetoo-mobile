@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native'
+import { human } from 'react-native-typography'
 
 import metrics from 'Kebetoo/src/theme/metrics'
 import colors from 'Kebetoo/src/theme/colors'
-
-import { fontSizes } from '../typography'
 
 export const placeholderColor = colors.placeholder
 
@@ -15,10 +14,12 @@ export default StyleSheet.create({
     borderRadius: 15,
     borderWidth: 1,
     paddingLeft: metrics.marginHorizontal,
+    flexDirection: 'row',
   },
   textInput: {
-    fontSize: fontSizes.md,
+    ...human.callout,
     color: colors.textPrimary,
+    flex: 1,
   },
   iconWrapper: {
     height: 48,

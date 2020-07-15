@@ -3,6 +3,7 @@ import React from 'react'
 import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import MockDate from 'mockdate'
+import 'react-native-gesture-handler/jestSetup'
 
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
@@ -53,6 +54,15 @@ jest.mock('@react-navigation/native', () => ({
   }),
   useFocusEffect: (cb) => cb()
 }))
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock')
+
+  // The mock for `call` immediately calls the callback which is incorrect
+  // So we override it with a no-op
+  Reanimated.default.call = () => {}
+
+  return Reanimated
+})
 
 // react-native-screens
 jest.mock('react-native-screens', () => {

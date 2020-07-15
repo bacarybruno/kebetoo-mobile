@@ -13,6 +13,7 @@ import routes from 'Kebetoo/src/navigation/routes'
 import { useKeyboard } from 'Kebetoo/src/shared/hooks'
 import Logo from 'Kebetoo/src/shared/components/logo'
 import strings from 'Kebetoo/src/config/strings'
+import { createUser } from 'Kebetoo/src/shared/helpers/users'
 
 import styles from './styles'
 
@@ -39,7 +40,8 @@ const SignIn = ({ navigation }) => {
   const onSubmit = useCallback(async () => {
     try {
       await schema.validate(infos)
-      await auth().signInWithEmailAndPassword(infos.email, infos.password)
+      const { user } = await auth().signInWithEmailAndPassword(infos.email, infos.password)
+      await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
     } catch (e) {
       console.log(e)
     }

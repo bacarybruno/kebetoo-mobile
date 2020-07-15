@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
-import auth from '@react-native-firebase/auth'
 
 import Typography, { types } from 'Kebetoo/src/shared/components/typography'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
@@ -19,6 +18,7 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import useAudioRecorder from 'Kebetoo/src/shared/hooks/audio-recorder'
 import useImagePicker from 'Kebetoo/src/packages/post/hooks/image-picker'
 import colors from 'Kebetoo/src/theme/colors'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles from './styles'
 
@@ -84,6 +84,8 @@ const CreatePostPage = ({ navigation }) => {
   const { setOptions, goBack } = navigation
   setOptions(routeOptions)
 
+  const { profile } = useUser()
+
   const { params } = useRoute()
   const [editMode] = useState(params && params.action === actionTypes.EDIT)
   const [shareMode] = useState(params && params.action === actionTypes.SHARE)
@@ -97,21 +99,20 @@ const CreatePostPage = ({ navigation }) => {
   const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
 
   const onHeaderSavePress = useCallback(async () => {
-    const user = auth().currentUser
     let result
     const repost = params && params.post ? params.post : undefined
     if (editMode) {
       result = await api.editPost({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
-      result = await audioRecorder.savePost(user.uid, text, repost)
+      result = await audioRecorder.savePost(profile.uid, text, repost)
     } else if (imagePicker.hasFile) {
-      result = await imagePicker.savePost(user.uid, text, repost)
+      result = await imagePicker.savePost(profile.uid, text, repost)
     } else {
-      result = await api.createPost({ author: user.uid, content: text, repost })
+      result = await api.createPost({ content: text, repost, author: profile.uid })
     }
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
-  }, [editMode, audioRecorder, imagePicker, params, goBack, text])
+  }, [editMode, audioRecorder, imagePicker, params, goBack, text, profile.uid])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {

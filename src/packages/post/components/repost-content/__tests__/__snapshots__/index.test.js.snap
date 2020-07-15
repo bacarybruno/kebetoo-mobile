@@ -182,13 +182,15 @@ exports[`renders RepostContent 1`] = `
           style={
             Array [
               Object {
-                "backgroundColor": "#FAFAFA",
+                "backgroundColor": "#F5F5F5",
                 "borderRadius": 5,
                 "minHeight": 52,
                 "padding": 16,
               },
               false,
               undefined,
+              false,
+              false,
             ]
           }
         >

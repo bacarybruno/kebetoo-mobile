@@ -37,18 +37,14 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => (
 )
 
 export const DeleteIconButton = ({ onPress }) => (
-  <TouchableOpacity
-    style={styles.deleteWrapper}
-    onPress={onPress}
-    hitSlop={edgeInsets.all(50)}
-  >
+  <TouchableOpacity style={styles.deleteWrapper} onPress={onPress} hitSlop={edgeInsets.all(50)}>
     <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
   </TouchableOpacity>
 )
 
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
-  duration, source, onDelete, style, round, onPress, player: instance,
+  duration, source, onDelete, round, onPress, player: instance, style = {},
 }) => {
   const [player, setPlayer] = useState(instance)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
@@ -77,6 +73,7 @@ export const AudioPlayer = ({
           setProgress(currentProgress < 100 ? currentProgress : 0)
         })
       }, 1)
+
       intervalRef.current = intervalId
     }
     return () => {
@@ -116,18 +113,25 @@ export const AudioPlayer = ({
     return true
   }, [onPress, onPlayPause])
 
+  const readableDuration = readableSeconds(duration)
+  const { height, ...pressableStyle } = style
   return (
-    <Pressable
-      onPress={onPressDelegate}
-      style={[styles.audioWrapper, style, round && styles.round]}
-      testID="player-wrapper"
-    >
+    <View style={[styles.audio, height && { height }]}>
+      <Pressable
+        foreground
+        onPress={onPressDelegate}
+        style={[styles.audioWrapper, pressableStyle, round && styles.round]}
+        testID="player-wrapper"
+      >
+        <View style={styles.audioContent}>
+          <View testID="progress" style={{ ...styles.progress, width: `${progress}%` }} />
+          <PlayButton state={playerState} onPress={onPlayPause} />
+          <Waves />
+          <Typography type={types.headline6} text={readableDuration} style={styles.duration} />
+        </View>
+      </Pressable>
       {onDelete && <DeleteIconButton onPress={onDelete} />}
-      <View testID="progress" style={[styles.progress, round && styles.round, { width: `${progress}%` }]} />
-      <PlayButton state={playerState} onPress={onPlayPause} />
-      <Waves />
-      <Typography type={types.headline6} text={readableSeconds(duration)} style={styles.duration} />
-    </Pressable>
+    </View>
   )
 }
 

@@ -4,7 +4,6 @@ import {
 } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
-import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Typography, {
@@ -18,6 +17,8 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import * as types from 'Kebetoo/src/redux/types'
 import { userStatsSelector } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
+import { getUserId } from 'Kebetoo/src/shared/helpers/users'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles, { imageSize } from './styles'
 
@@ -33,14 +34,14 @@ export const SectionTitle = React.memo(({ text }) => (
   />
 ))
 
-export const Summary = React.memo(({ photoURL, email, displayName }) => (
+export const Summary = React.memo(({ photoURL, info, displayName }) => (
   <View style={styles.summary}>
     <View style={styles.imageWrapper}>
       <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
     </View>
     <View style={styles.summaryText}>
       <Typography type={typos.headline1} text={displayName} />
-      <Typography type={typos.subheading} text={email} />
+      <Typography type={typos.subheading} systemColor={systemColors.secondary} text={info} />
     </View>
   </View>
 ))
@@ -69,11 +70,11 @@ export const IconButton = React.memo(({
   </View>
 ))
 
-const Stats = React.memo(({ postsCount, reactionsCount, commentsCount }) => (
+export const Stats = React.memo(({ postsCount, reactionsCount, commentsCount }) => (
   <View style={styles.stats}>
     <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
-    <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
     <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
+    <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
   </View>
 ))
 
@@ -132,14 +133,14 @@ const PreferencesSection = React.memo(({ shareApp }) => (
   </View>
 ))
 
-const Header = React.memo(({
+export const Header = React.memo(({
   profile, postsCount, reactionsCount, commentsCount,
 }) => (
   <View style={styles.header}>
     <Summary
       photoURL={profile.photoURL}
       displayName={profile.displayName}
-      email={profile.email}
+      info={profile.email}
     />
     <Stats
       postsCount={postsCount}
@@ -150,7 +151,7 @@ const Header = React.memo(({
 ))
 
 const ProfilePage = React.memo(() => {
-  const profile = auth().currentUser
+  const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
 
   const stats = useSelector(userStatsSelector)
@@ -160,18 +161,15 @@ const ProfilePage = React.memo(() => {
 
   const dispatch = useDispatch()
 
-  const signOut = useCallback(() => {
-    auth().signOut()
-  }, [])
-
   useFocusEffect(
     useCallback(() => {
       const fetchStats = async () => {
         // fetch latest stats
+        const userId = await getUserId()
         const [posts, comments, reactions] = await Promise.all([
-          api.getPostsCount(profile.uid),
-          api.getCommentsCount(profile.uid),
-          api.getReactionsCount(profile.uid),
+          api.getPostsCount(userId),
+          api.getCommentsCount(userId),
+          api.getReactionsCount(userId),
         ])
 
         // update data in component
@@ -186,7 +184,7 @@ const ProfilePage = React.memo(() => {
         })
       }
       fetchStats()
-    }, [dispatch, profile.uid]),
+    }, [dispatch]),
   )
 
   const shareApp = useCallback(() => {

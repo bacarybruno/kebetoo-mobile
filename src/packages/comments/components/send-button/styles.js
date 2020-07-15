@@ -16,6 +16,7 @@ const defaultButtonStyle = {
   alignItems: 'center',
   ...elevation(2),
 }
+
 export default StyleSheet.create({
   send: {
     ...defaultButtonStyle,

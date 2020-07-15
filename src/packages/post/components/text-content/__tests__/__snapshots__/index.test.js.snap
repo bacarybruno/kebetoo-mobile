@@ -14,7 +14,7 @@ exports[`renders ImageContent 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#FAFAFA",
+        "backgroundColor": "#F5F5F5",
         "borderRadius": 5,
         "minHeight": 52,
         "padding": 16,
@@ -23,6 +23,8 @@ exports[`renders ImageContent 1`] = `
       Object {
         "elevation": 3,
       },
+      false,
+      false,
     ]
   }
 >
@@ -71,7 +73,7 @@ exports[`renders ImageContent in repost mode 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#FAFAFA",
+        "backgroundColor": "#F5F5F5",
         "borderRadius": 5,
         "minHeight": 52,
         "padding": 16,
@@ -85,6 +87,8 @@ exports[`renders ImageContent in repost mode 1`] = `
       Object {
         "elevation": 3,
       },
+      false,
+      false,
     ]
   }
 >

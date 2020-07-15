@@ -36,7 +36,7 @@ describe('player states', () => {
   it('shows default state on render', () => {
     const { wrapper } = givenAudioPlayer()
     expect(wrapper.root.findByProps({ text: readableSeconds(0) })).toBeTruthy()
-    expect(wrapper.root.findByProps({ testID: 'progress' }).props.style).toContainEqual({ width: '0%' })
+    expect(wrapper.root.findByProps({ testID: 'progress' }).props.style).toMatchObject({ width: '0%' })
     expect(wrapper.root.findByType(Ionicon).props.name).toBe('ios-play')
   })
   it('initialize player', () => {

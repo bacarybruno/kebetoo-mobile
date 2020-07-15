@@ -25,7 +25,7 @@ it('renders CommentReactions', async () => {
 })
 
 describe('comment authors', () => {
-  it('renders 1 comment authors summary', async () => {
+  it('renders 1 comment reactors summary', async () => {
     let wrapper
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenCommentReactions({
@@ -35,7 +35,7 @@ describe('comment authors', () => {
     })
     expect(wrapper.root.findAllByType(SummaryAuthor).length).toBe(1)
   })
-  it('renders 2 comment authors summary', async () => {
+  it('renders 2 comment reactors summary', async () => {
     let wrapper
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenCommentReactions({
@@ -45,7 +45,7 @@ describe('comment authors', () => {
     })
     expect(wrapper.root.findAllByType(SummaryAuthor).length).toBe(2)
   })
-  it('renders no comment authors summary if comments is empty', async () => {
+  it('renders no comment reactors summary if comments is empty', async () => {
     let wrapper
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenCommentReactions({
@@ -55,7 +55,7 @@ describe('comment authors', () => {
     })
     expect(wrapper.root.findAllByType(SummaryAuthor).length).toBe(0)
   })
-  it('renders no comment authors summary if comments reactions are empty', async () => {
+  it('renders no comment reactors summary if comments reactions are empty', async () => {
     let wrapper
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenCommentReactions({

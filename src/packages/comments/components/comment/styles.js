@@ -10,17 +10,17 @@ export default StyleSheet.create({
   audio: {
     marginTop: 5,
     height: 45,
-    backgroundColor: colors.white_darken,
+    backgroundColor: colors.backgroundSecondary,
   },
   reactionsWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 5,
     justifyContent: 'flex-end',
   },
   reactionsButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 5,
   },
   row: {
     flex: 1,

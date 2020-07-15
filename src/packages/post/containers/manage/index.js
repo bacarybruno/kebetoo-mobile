@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react'
 import {
   View, SectionList, Alert, YellowBox,
 } from 'react-native'
-import auth from '@react-native-firebase/auth'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
@@ -16,7 +15,8 @@ import NoContent from 'Kebetoo/src/shared/components/no-content'
 import ActionButton from 'react-native-action-button'
 import Badge from 'Kebetoo/src/shared/components/badge'
 import strings from 'Kebetoo/src/config/strings'
-import { getUsers } from 'Kebetoo/src/shared/helpers/users'
+import usePosts from 'Kebetoo/src/shared/hooks/posts'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles from './styles'
 import BasicPost from '../basic-post'
@@ -54,11 +54,13 @@ const bottomSheetItems = [{
 const ManagePostsPage = ({ navigation }) => {
   navigation.setOptions(routeOptions)
 
-  const user = auth().currentUser
+  const { profile } = useUser()
   const [posts, setPosts] = useState([])
   const [authors, setAuthors] = useState({})
   const [sortedPosts, setSortedPosts] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const { getRepostAuthors } = usePosts()
 
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = navigation
@@ -66,50 +68,36 @@ const ManagePostsPage = ({ navigation }) => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const userPosts = await api.getUserPosts(user.uid)
-      setPosts(userPosts)
-      setLoading(false)
+      if (profile.uid) {
+        const userPosts = await api.getUserPosts(profile.uid)
+        setPosts(userPosts)
+        setLoading(false)
+      }
     }
     getPosts()
-  }, [user.uid])
+  }, [profile.uid])
 
   useEffect(() => {
-    const fetchAuthors = async () => {
-      const data = {}
-      const authorsToFetch = []
-      for (let i = 0; i < posts.length; i += 1) {
-        const post = posts[i]
-        if (post.repost) {
-          authorsToFetch.push(post.repost.author)
-        }
-      }
-      if (authorsToFetch.length > 0) {
-        const ids = [...new Set(authorsToFetch)]
-        if (ids.length === 0) return
-        const { docs } = await getUsers(ids)
-        docs.forEach((doc) => {
-          const { displayName: name, photoURL } = doc.data()
-          data[doc.id] = {
-            displayName: name,
-            photoURL,
-          }
-        })
-        setAuthors(data)
-      }
+    const fetchRepostAuthors = async () => {
+      const data = await getRepostAuthors(posts)
+      setAuthors(data)
     }
-    const dateMap = {}
-    posts.forEach((post) => {
-      const date = dayjs(post.createdAt).format(dateFormat)
-      if (!dateMap[date]) dateMap[date] = []
-      dateMap[date].push(post)
-    })
-    const formattedPosts = Object.keys(dateMap).map((key) => ({
-      title: key,
-      data: dateMap[key],
-    }))
-    setSortedPosts(formattedPosts)
-    fetchAuthors()
-  }, [posts])
+    const formatPosts = () => {
+      const dateMap = {}
+      posts.forEach((post) => {
+        const date = dayjs(post.createdAt).format(dateFormat)
+        if (!dateMap[date]) dateMap[date] = []
+        dateMap[date].push(post)
+      })
+      const formattedPosts = Object.keys(dateMap).map((key) => ({
+        title: key,
+        data: dateMap[key],
+      }))
+      setSortedPosts(formattedPosts)
+    }
+    formatPosts()
+    fetchRepostAuthors()
+  }, [posts, getRepostAuthors])
 
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 
@@ -207,15 +195,15 @@ const ManagePostsPage = ({ navigation }) => {
   const renderItem = useCallback(({ item }) => (
     <BasicPost
       onOptions={() => showPostOptions(item)}
-      author={userToAuthor(user)}
+      author={userToAuthor(profile)}
       originalAuthor={
         item.repost
           ? authors[item.repost.author]
-          : userToAuthor(user)
+          : userToAuthor(profile)
       }
       post={item}
     />
-  ), [authors, showPostOptions, user])
+  ), [authors, showPostOptions, profile])
 
   const renderNoPost = useCallback(() => loading === false && <NoPosts />, [loading])
 

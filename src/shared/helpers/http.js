@@ -8,29 +8,29 @@ const parseJSON = (res) => res.json()
 
 const getApiUrl = (path) => `${BASE_URL}/${path}`
 
+const jsonHeaders = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+}
+
 const request = {
   get: (path = '') => fetch(getApiUrl(path)).then(parseJSON),
 
   post: (path = '', body) => fetch(getApiUrl(path), {
     method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
+    headers: jsonHeaders,
     body: JSON.stringify(body),
   }).then(parseJSON),
 
   put: (path = '', body) => fetch(getApiUrl(path), {
     method: 'PUT',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
+    headers: jsonHeaders,
     body: JSON.stringify(body),
   }).then(parseJSON),
 
   delete: (path = '') => fetch(getApiUrl(path), {
     method: 'DELETE',
+    headers: jsonHeaders,
   }).then(parseJSON),
 
   postFormData: (path = '', formdata) => RNFetchBlob.fetch('POST', getApiUrl(path), {
@@ -41,7 +41,7 @@ const request = {
 export const getPosts = () => request.get(`posts?_limit=${ITEMS_PER_PAGE}`)
 
 export const getUserPosts = (authorId) => request.get(
-  `posts?author=${authorId}&_sort=updatedAt:desc`,
+  `posts?author.id=${authorId}&_sort=updatedAt:desc`,
 )
 
 export const getPost = (id) => request.get(`posts/${id}`)
@@ -52,9 +52,9 @@ export const getLatestsPosts = (page = 0) => request.get(
   `posts?_sort=updatedAt:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
 )
 
-export const createPost = ({ author, content, repost }) => request.post('posts', { author, content, repost })
-export const createPostWithAudio = ({
-  author, audio, content, repost,
+export const createPost = async ({ author, content, repost }) => request.post('posts', { author, content, repost })
+export const createPostWithAudio = async ({
+  audio, content, repost, author,
 }) => {
   const postData = {
     name: 'data',
@@ -68,8 +68,8 @@ export const createPostWithAudio = ({
   }
   return request.postFormData('posts', [postData, audioData])
 }
-export const createPostWithImage = ({
-  author, image, content, repost,
+export const createPostWithImage = async ({
+  image, content, repost, author,
 }) => {
   const postData = {
     name: 'data',
@@ -116,6 +116,17 @@ export const createCommentReaction = (type, comment, author) => (
 export const editReaction = (id, type) => request.put(`reactions/${id}`, { type })
 export const deleteReaction = (id) => request.delete(`reactions/${id}`)
 
-export const getPostsCount = (author) => request.get(`posts/count?author=${author}`)
+export const getPostsCount = (author) => request.get(`posts/count?author.id=${author}`)
 export const getReactionsCount = (author) => request.get(`reactions/count?post.author=${author}`)
 export const getCommentsCount = (author) => request.get(`comments/count?post.author=${author}`)
+
+export const searchPosts = (searchQuery) => request.get(`posts?content_contains=${searchQuery}&_limit=30`)
+export const searchUsers = (searchQuery) => request.get(`authors?displayName_contains=${searchQuery}&_limit=30`)
+
+export const createAuthor = ({ id, displayName, photoURL }) => request.post('authors', { uid: id, displayName, photoURL })
+export const getAuthorByUid = (uid) => request.get(`authors?uid=${uid}`)
+export const getAuthorById = (id) => request.get(`authors/${id}`)
+export const getAuthors = (ids) => {
+  const queryString = ids.map((id) => `id_eq=${id}`).join('&')
+  return request.get(`authors?${queryString}`)
+}

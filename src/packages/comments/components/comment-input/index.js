@@ -44,12 +44,15 @@ const CommentInput = ({
           />
         )}
         {audioRecorder.hasRecording && (
-          <AudioPlayer
-            source={audioRecorder.recordUri}
-            onDelete={audioRecorder.reset}
-            style={styles.audioWrapper}
-            duration={audioRecorder.elapsedTime}
-          />
+          <View style={styles.audioWrapper}>
+            <AudioPlayer
+              source={audioRecorder.recordUri}
+              onDelete={audioRecorder.reset}
+              style={styles.audioPlayer}
+              duration={audioRecorder.elapsedTime}
+              round
+            />
+          </View>
         )}
       </View>
 

@@ -19,14 +19,10 @@ const facebookLogin = async () => {
     const { profile } = additionalUserInfo
     const { id: profileId } = profile
 
-    await createUser({
-      id: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: getFacebookPicture(profileId),
-    })
+    const photoURL = getFacebookPicture(profileId)
+    await createUser({ id: user.uid, displayName: user.displayName, photoURL })
 
-    user.updateProfile({ photoURL: getFacebookPicture(profileId) })
+    user.updateProfile({ photoURL })
 
     result.data = data
   } catch (error) {

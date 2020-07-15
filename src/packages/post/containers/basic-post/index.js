@@ -3,7 +3,6 @@ import { View, TouchableOpacity, Platform } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
-import auth from '@react-native-firebase/auth'
 
 import Typography, { types, fontSizes, weights } from 'Kebetoo/src/shared/components/typography'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
@@ -17,6 +16,7 @@ import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import routes from 'Kebetoo/src/navigation/routes'
 import strings from 'Kebetoo/src/config/strings'
 import colors from 'Kebetoo/src/theme/colors'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles from './styles'
 
@@ -131,10 +131,11 @@ export const Content = ({ post, ...otherProps }) => {
 }
 
 const BasicPost = ({
-  post, author, originalAuthor, onOptions, isRepost, size = 35, withReactions = true,
+  post, author, originalAuthor, onOptions, isRepost, mode, size = 35, withReactions = true,
 }) => {
-  const user = auth().currentUser
   const { navigate } = useNavigation()
+
+  const { profile } = useUser()
 
   const navigateToComments = useCallback(() => {
     navigate(routes.COMMENTS, { post })
@@ -149,10 +150,12 @@ const BasicPost = ({
         onPress={isRepost ? undefined : navigateToComments}
         originalAuthor={originalAuthor}
         post={post}
+        isRepost={isRepost}
+        mode={mode}
       />
       {withReactions && (
         <View style={styles.reactions}>
-          <Reactions post={post} author={user.uid} />
+          <Reactions post={post} author={profile.uid} />
         </View>
       )}
     </View>

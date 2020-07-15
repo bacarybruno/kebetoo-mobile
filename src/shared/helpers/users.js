@@ -1,6 +1,6 @@
-import firestore from '@react-native-firebase/firestore'
+import AsyncStorage from '@react-native-community/async-storage'
 
-export const usersCollection = firestore().collection('users')
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 export const chunkArray = (array, size) => {
   const results = []
@@ -10,18 +10,28 @@ export const chunkArray = (array, size) => {
   return results
 }
 
-export const createUser = async ({
-  id, displayName, email, photoURL,
-}) => usersCollection.doc(id).set({ displayName, email, photoURL }, { merge: true })
+export const setUserId = async (uid) => AsyncStorage.setItem('uid', uid)
 
-export const getUsers = async (ids) => {
-  const chunks = chunkArray(ids, 10)
-  const promises = await Promise.all((chunks).map((chunk) => usersCollection.where(
-    firestore.FieldPath.documentId(),
-    'in',
-    chunk,
-  ).get()))
-  return {
-    docs: promises.flatMap((promise) => promise.docs),
-  }
+export const getUserId = async () => AsyncStorage.getItem('uid')
+
+export const clearUserAttributes = async () => AsyncStorage.multiRemove(['uid'])
+
+const getUser = async (uid) => {
+  const [author] = await api.getAuthorByUid(uid)
+  return author
 }
+
+export const createUser = async ({ id, displayName, photoURL }) => {
+  const existingAuthor = await getUser(id)
+  let authorId
+  if (existingAuthor) {
+    authorId = existingAuthor.id
+  } else {
+    const createdAuthor = await api.createAuthor({ id, displayName, photoURL })
+    authorId = createdAuthor.id
+  }
+  await setUserId(authorId)
+  return authorId
+}
+
+export const getUsers = (ids) => api.getAuthors(ids)

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
-import auth from '@react-native-firebase/auth'
 import RNBootSplash from 'react-native-bootsplash'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
@@ -23,10 +22,12 @@ import CreatePostPage from 'Kebetoo/src/packages/post/containers/create'
 import CommentsPage from 'Kebetoo/src/packages/comments/containers'
 import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
 import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
+import UserProfilePage from 'Kebetoo/src/packages/profile/containers/user'
 
 import styles from './styles'
 import routes from './routes'
 import Typography, { types, weights } from '../shared/components/typography'
+import useUser from '../shared/hooks/user'
 
 enableScreens()
 
@@ -133,18 +134,15 @@ export const loggedInPages = [
   <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />,
   <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />,
   <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />,
+  <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
 ]
 
 // Main Section
 const AppNavigation = () => {
-  const initialUserState = auth().currentUser !== null
-  const [isLoggedIn, setIsLoggedIn] = useState(initialUserState)
+  const { isLoggedIn } = useUser()
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })
-    const onAuthStateChanged = (user) => setIsLoggedIn(!!user)
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
-    return subscriber
   }, [])
 
   return (

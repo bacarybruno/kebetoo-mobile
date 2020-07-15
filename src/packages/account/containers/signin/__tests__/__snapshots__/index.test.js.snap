@@ -39,10 +39,11 @@ exports[`renders Signin 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#FAFAFA",
+            "backgroundColor": "#F5F5F5",
             "borderColor": "rgba(229, 229, 234, 255)",
             "borderRadius": 15,
             "borderWidth": 1,
+            "flexDirection": "row",
             "minHeight": 48,
             "paddingLeft": 16,
           },
@@ -63,8 +64,14 @@ exports[`renders Signin 1`] = `
         style={
           Array [
             Object {
+              "backgroundColor": "transparent",
               "color": "rgba(0,0,0,0.87)",
+              "flex": 1,
+              "fontFamily": "System",
               "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
             },
             undefined,
           ]
@@ -76,10 +83,11 @@ exports[`renders Signin 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#FAFAFA",
+          "backgroundColor": "#F5F5F5",
           "borderColor": "rgba(229, 229, 234, 255)",
           "borderRadius": 15,
           "borderWidth": 1,
+          "flexDirection": "row",
           "minHeight": 48,
           "paddingLeft": 16,
         }
@@ -97,8 +105,14 @@ exports[`renders Signin 1`] = `
         secureTextEntry={true}
         style={
           Object {
+            "backgroundColor": "transparent",
             "color": "rgba(0,0,0,0.87)",
+            "flex": 1,
+            "fontFamily": "System",
             "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": -0.32,
+            "lineHeight": 21,
           }
         }
         underlineColorAndroid="transparent"

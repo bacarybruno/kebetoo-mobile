@@ -90,6 +90,19 @@ const locales = Object.freeze({
     share_now: 'Partager maintenant',
     write_post: 'Editer et partager',
   },
+  search: {
+    placeholder: 'Rechercher...',
+    posts_tab: 'Posts',
+    users_tab: 'Utilisateurs',
+    results: 'Resultats',
+    recent_searches: 'Recherches récentes',
+    clear_all: 'Tout effacer',
+    no_result: 'Aucun résultat trouvé pour le terme de recherche "{0}"',
+  },
+  user_profile: {
+    profile: 'Profil',
+    joined_in: 'A rejoint en {0}',
+  },
 })
 
 export default locales

@@ -17,6 +17,7 @@ export const colors = {
   primary: 'textPrimary',
   secondary: 'textSecondary',
   tertiary: 'textTertiary',
+  link: 'link',
 }
 
 export const fontSizes = {
@@ -121,7 +122,7 @@ const createTypography = (text, style, color, onPress, defaultProps) => (Compone
 }
 
 const Typography = ({
-  type, text, style, color, onPress, ...otherProps
+  type = types.body, text, style, color, onPress, ...otherProps
 }) => {
   if (text === null || text === undefined) return null
 

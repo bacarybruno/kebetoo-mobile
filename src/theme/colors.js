@@ -27,7 +27,7 @@ const customColors = {
     dark: iosColors.systemGrey.light,
   },
   backgroundSecondary: {
-    light: '#FAFAFA',
+    light: '#F5F5F5',
     dark: iosColors.secondarySystemBackground[colorScheme],
   },
   inactive: {
@@ -38,7 +38,7 @@ const customColors = {
 
 const iconColors = {
   like: iosColors.systemBlue[colorScheme],
-  dislike: iosColors.systemBlue[colorScheme],
+  dislike: iosColors.systemRed[colorScheme],
   heart: iosColors.systemPink[colorScheme],
   reactions: mdColors.textSecondary[colorScheme],
   facebook: '#3b5998',
@@ -63,7 +63,6 @@ const colors = {
   white: iosColors.white,
   purple: iosColors.systemPurple[colorScheme],
   danger: iosColors.systemRed[colorScheme],
-  white_darken: iosColors.secondarySystemBackground[colorScheme],
   blue_dark: customColors.blue_dark[colorScheme],
 
   inactive: customColors.inactive[colorScheme],
