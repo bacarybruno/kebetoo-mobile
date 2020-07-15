@@ -99,6 +99,7 @@ const Reactions = ({
         // replace the fake reaction created with the new one
         const result = res
         result.post = result.post.id
+        result.author = result.author.id
         optimisticPost.reactions = [
           ...optimisticPost.reactions.filter((reaction) => reaction.id !== optimisticId),
           result,
@@ -174,30 +175,30 @@ const Reactions = ({
   }, [post.reactions, findUserReaction, createReaction, deleteReaction, editReaction])
 
   const handlePostShare = useCallback(() => {
-    if (post.author !== author || (post.repost?.author !== author)) {
-      const repostId = post.repost?.id || post.id
-      const cancelButtonIndex = 2
-      showActionSheetWithOptions({
-        options: bottomSheetItems.map((item) => item.title),
-        icons: bottomSheetItems.map((item) => (
-          <Ionicon name={item.icon} size={24} color={colors.textPrimary} />
-        )),
-        cancelButtonIndex,
-        title: strings.general.share,
-        textStyle: { color: colors.textPrimary },
-        titleTextStyle: { color: colors.textSecondary },
-        containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-      }, async (index) => {
-        if (index === 0) {
-          await api.createPost({ author, repost: repostId })
-        } else if (index === 1) {
-          navigate(routes.CREATE_POST, {
-            action: actionTypes.SHARE,
-            post: repostId,
-          })
-        }
-      })
-    }
+    if (post.author.id === author) return
+    // if ((post.repost?.author === author) === true) return
+    const repostId = post.repost?.id || post.id
+    const cancelButtonIndex = 2
+    showActionSheetWithOptions({
+      options: bottomSheetItems.map((item) => item.title),
+      icons: bottomSheetItems.map((item) => (
+        <Ionicon name={item.icon} size={24} color={colors.textPrimary} />
+      )),
+      cancelButtonIndex,
+      title: strings.general.share,
+      textStyle: { color: colors.textPrimary },
+      titleTextStyle: { color: colors.textSecondary },
+      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
+    }, async (index) => {
+      if (index === 0) {
+        await api.createPost({ author, repost: repostId })
+      } else if (index === 1) {
+        navigate(routes.CREATE_POST, {
+          action: actionTypes.SHARE,
+          post: repostId,
+        })
+      }
+    })
   }, [author, navigate, post, showActionSheetWithOptions])
 
   const onReaction = useCallback(async (type) => {

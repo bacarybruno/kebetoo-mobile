@@ -385,42 +385,14 @@ exports[`renders CommentReactions 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "height": 30,
-                  "width": 30,
-                },
-                undefined,
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 14,
-                  "height": "100%",
-                  "width": "100%",
-                },
-              ]
+              Object {
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 14,
+                "height": "100%",
+                "width": "100%",
+              }
             }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                    "borderRadius": 15,
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                  undefined,
-                ]
-              }
-              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-            />
-          </View>
+          />
         </View>
         <View
           style={
@@ -442,71 +414,14 @@ exports[`renders CommentReactions 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "height": 30,
-                  "width": 30,
-                },
-                undefined,
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 14,
-                  "height": "100%",
-                  "width": "100%",
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                    "borderRadius": 15,
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                  undefined,
-                  Object {
-                    "backgroundColor": "#9575cd",
-                  },
-                ]
+              Object {
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 14,
+                "height": "100%",
+                "width": "100%",
               }
-            >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(255, 255, 255, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "700",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                J
-              </Text>
-            </View>
-          </View>
+            }
+          />
         </View>
       </View>
     </View>

@@ -1,7 +1,12 @@
 {
   "_id": "5eeb805299d77d3becdf35e0",
   "content": "Voiture",
-  "author": "1",
+  "author": {
+    "id": "1",
+    "email": "bacarybruno@kebetoo.com",
+    "displayName": "Bruno Bodian",
+    "photoURL": "https://avatars1.githubusercontent.com/u/14147533"
+  },
   "createdAt": "2020-06-18T14:55:14.492Z",
   "updatedAt": "2020-06-18T14:55:14.614Z",
   "__v": 0,

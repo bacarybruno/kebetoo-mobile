@@ -66,12 +66,7 @@ const SignUp = ({ navigation }) => {
       await user.updateProfile({ displayName, photoURL: null })
       auth().currentUser = user
 
-      await createUser({
-        id: user.uid,
-        email: user.email,
-        displayName,
-        photoURL: null,
-      })
+      await createUser({ id: user.uid, displayName, photoURL: null })
     } catch (e) {
       console.log(e)
     }

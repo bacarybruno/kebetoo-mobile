@@ -4,7 +4,6 @@ import React, {
 import { View, FlatList } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
-import auth from '@react-native-firebase/auth'
 
 import {
   Content, Header, getPostType, POST_TYPES,
@@ -12,12 +11,12 @@ import {
 import useAudioRecorder from 'Kebetoo/src/shared/hooks/audio-recorder'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
-import { getUsers } from 'Kebetoo/src/shared/helpers/users'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import routes from 'Kebetoo/src/navigation/routes'
 import strings from 'Kebetoo/src/config/strings'
 import colors from 'Kebetoo/src/theme/colors'
-
+import usePosts from 'Kebetoo/src/shared/hooks/posts'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
@@ -29,20 +28,27 @@ export const NoComments = () => (
 
 // TODO: paginate comments
 const Comments = () => {
-  const user = auth().currentUser
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
   const { goBack, navigate } = useNavigation()
   const [isLoading, setIsLoading] = useState(false)
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState(post.comments.map((commentId) => ({
-    id: commentId,
-    author: '',
+  const [comments, setComments] = useState(post.comments.map((c) => ({
+    id: c.id,
+    author: {
+      id: c.author,
+      displayName: ' ',
+      photoURL: null,
+    },
     reactions: [],
   })))
+
+  const { profile } = useUser()
   const commentInput = useRef()
   const scrollView = useRef()
+
+  const { getRepostAuthors } = usePosts()
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -53,53 +59,25 @@ const Comments = () => {
   }, [post.id])
 
   useEffect(() => {
-    const fetchAuthors = async () => {
-      let authorsToFetch = [post.author]
-      if (comments.length > 0) {
-        authorsToFetch = authorsToFetch.concat(
-          comments
-            .filter((c) => c.author)
-            .map((c) => c.author),
-        )
-      }
-      if (post.repost) {
-        authorsToFetch = authorsToFetch.concat(post.repost.author)
-      }
-      const ids = [...new Set(authorsToFetch)]
-      const newAuthors = ids.filter((id) => !authors[id])
-
-      if (newAuthors.length === 0) return
-
-      const { docs } = await getUsers(newAuthors)
-      docs.forEach((doc) => {
-        const { displayName: name, photoURL } = doc.data()
-        authors[doc.id] = {
-          displayName: name,
-          photoURL,
-        }
-      })
-      setAuthors({ ...authors })
+    const fetchRepostAuthors = async () => {
+      const data = await getRepostAuthors(post)
+      setAuthors(data)
     }
-    fetchAuthors()
-  }, [comments, authors, post])
+    fetchRepostAuthors()
+  }, [post, getRepostAuthors])
 
   const onChangeText = useCallback((value) => {
     setComment(value)
   }, [])
 
-  const getAuthor = useCallback((authorId) => {
-    if (authors[authorId]) return authors[authorId]
-    return { displayName: null, photoURL: null }
-  }, [authors])
-
   const onSend = useCallback(async () => {
     let result = null
     setIsLoading(true)
     if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, user.uid)
+      result = await audioRecorder.saveComment(post.id, profile.uid)
     } else if (comment.length > 0) {
       result = await api.commentPost({
-        author: user.uid,
+        author: profile.uid,
         content: comment,
         post: post.id,
       })
@@ -109,21 +87,20 @@ const Comments = () => {
     setComments((value) => [...value, result])
     setIsLoading(false)
     setTimeout(() => scrollView.current?.scrollToEnd(), 200)
-  }, [audioRecorder, comment, post.id, user.uid])
+  }, [audioRecorder, comment, post.id, profile.uid])
 
   const renderComment = useMemo(() => ({ item }) => {
-    const commentAuthor = getAuthor(item.author)
+    if (!item.author) console.log('##############', item)
     return (
       <View style={styles.comment}>
         <Comment
           item={item}
-          user={user.uid}
-          displayName={commentAuthor.displayName}
-          photoURL={commentAuthor.photoURL}
+          user={profile.uid}
+          displayName={item.author.displayName}
+          photoURL={item.author.photoURL}
         />
       </View>
-    )
-  }, [getAuthor, user.uid])
+  )}, [profile.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -148,7 +125,7 @@ const Comments = () => {
   const ListHeader = useMemo(() => (
     <View style={styles.post}>
       <View style={styles.postHeader}>
-        <Header Left={ListHeaderLeft} author={authors[post.author]} post={post} size={35} />
+        <Header Left={ListHeaderLeft} author={post.author} post={post} size={35} />
         <Content
           post={post}
           style={styles.content}
@@ -157,18 +134,13 @@ const Comments = () => {
           originalAuthor={
             post.repost
               ? authors[post.repost.author]
-              : authors[post.author]
+              : post.author
           }
         />
       </View>
-      <Reactions
-        post={post}
-        author={user.uid}
-        comments={comments}
-        onComment={onComment}
-      />
+      <Reactions post={post} author={profile.uid} comments={comments} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, authors, comments, onComment, onCommentContentPress, post, user.uid])
+  ), [ListHeaderLeft, authors, comments, onComment, onCommentContentPress, post, profile.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

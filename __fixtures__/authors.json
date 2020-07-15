@@ -1,9 +1,11 @@
 [{
+  "id": "1",
   "uid": "1",
   "email": "bacarybruno@kebetoo.com",
   "displayName": "Bruno Bodian",
   "photoURL": "https://avatars1.githubusercontent.com/u/14147533"
 }, {
+  "id": "2",
   "uid": "2",
   "email": "johndoe@kebetoo.com",
   "displayName": "John Doe",

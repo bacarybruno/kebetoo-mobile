@@ -6,20 +6,19 @@ import {
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
-import auth from '@react-native-firebase/auth'
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 
 import * as types from 'Kebetoo/src/redux/types'
 import BasicPost from 'Kebetoo/src/packages/post/containers/basic-post'
 import colors from 'Kebetoo/src/theme/colors'
-import {
-  postsSelector, authorsSelector, displayNameSelector,
-} from 'Kebetoo/src/redux/selectors'
+import { postsSelector, displayNameSelector } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
 import RealPathUtils from 'Kebetoo/src/shared/helpers/native-modules/real-path'
 import routes from 'Kebetoo/src/navigation/routes'
 import RNFetchBlob from 'rn-fetch-blob'
 import { getFileName } from 'Kebetoo/src/shared/helpers/file'
+import usePosts from 'Kebetoo/src/shared/hooks/posts'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import Header from '../components/header'
 import styles from './styles'
@@ -33,15 +32,14 @@ const getSharedFile = () => new Promise((resolve, reject) => {
 
 const HomePage = () => {
   const dispatch = useDispatch()
-  const normalizedPosts = useSelector(postsSelector)
-  const [posts, setPosts] = useState([])
-  const authors = useSelector(authorsSelector)
+  const posts = useSelector(postsSelector) || []
   const [refreshing, setRefreshing] = useState(false)
   const [page, setPage] = useState(0)
-  const user = auth().currentUser
+  const [authors, setAuthors] = useState({})
 
+  const { profile } = useUser()
   const savedDisplayName = useSelector(displayNameSelector)
-  const displayName = user.displayName || savedDisplayName || ''
+  const { getRepostAuthors } = usePosts()
 
   const { navigate } = useNavigation()
 
@@ -93,44 +91,39 @@ const HomePage = () => {
 
   useEffect(() => {
     if (page === 0) {
-      setPosts(Object.values(normalizedPosts))
       if (refreshing) setRefreshing(false)
     }
-  }, [normalizedPosts, page, refreshing])
+  }, [page, refreshing])
 
   useEffect(() => {
-    if (page > 0) {
-      setPosts((value) => {
-        const currentPostsIds = value.map((post) => post.id)
-        const diff = Object
-          .keys(normalizedPosts)
-          .filter((postId) => currentPostsIds.indexOf(postId) === -1)
-
-        if (diff.length === 0) return value
-
-        const newPosts = diff.map((id) => normalizedPosts[id])
-        return value.concat(newPosts)
-      })
+    const fetchRepostAuthors = async () => {
+      const data = await getRepostAuthors(posts)
+      setAuthors(data)
     }
-  }, [normalizedPosts, page])
+    fetchRepostAuthors()
+  }, [posts, getRepostAuthors])
 
   const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
       post={item}
-      author={authors[item.author]}
+      author={item.author}
       originalAuthor={
         item.repost
           ? authors[item.repost.author]
-          : authors[item.author]
+          : item.author
       }
     />
   ), [authors])
 
   const renderListHeader = useCallback(() => (
-    <Header displayName={displayName} imageSrc={user.photoURL} style={styles.header} />
-  ), [displayName, user.photoURL])
+    <Header
+      displayName={savedDisplayName || profile.displayName}
+      imageSrc={profile.photoURL}
+      style={styles.header}
+    />
+  ), [profile, savedDisplayName])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

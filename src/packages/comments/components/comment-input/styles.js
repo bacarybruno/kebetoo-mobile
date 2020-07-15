@@ -22,13 +22,16 @@ export default StyleSheet.create({
   },
   textInputWrapper: {
     borderRadius: bottomBarSize / 2,
-    backgroundColor: colors.white_darken,
+    backgroundColor: colors.backgroundSecondary,
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),
   },
   audioWrapper: {
-    marginRight: 10,
-    backgroundColor: colors.white_darken,
+    marginRight: 4,
+    flex: 1,
+  },
+  audioPlayer: {
+    backgroundColor: colors.backgroundSecondary,
     borderColor: colors.border,
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),

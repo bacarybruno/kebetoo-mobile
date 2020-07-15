@@ -30,7 +30,7 @@ exports[`renders IconButton 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#FAFAFA",
+        "backgroundColor": "#F5F5F5",
         "borderRadius": 20,
         "elevation": 5,
         "height": 40,

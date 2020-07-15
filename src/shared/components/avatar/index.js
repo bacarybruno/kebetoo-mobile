@@ -1,10 +1,11 @@
 import React from 'react'
-import { Image, View } from 'react-native'
+import { Image, View, Text } from 'react-native'
+import { systemWeights } from 'react-native-typography'
 
 import generateColor from 'Kebetoo/src/shared/helpers/color-generator'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
-import Typography, { types, weights } from '../typography'
 
 const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
@@ -20,10 +21,16 @@ export const ImageAvatar = ({ src, size, style }) => (
   </View>
 )
 
-export const TextAvatar = ({ text, size, style }) => (
+export const TextAvatar = ({
+  text, size, style, fontSize,
+}) => (
   <View style={[styles.wrapper, dimensions(size), style]}>
     <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
-      <Typography type={types.headline4} text={text[0].toUpperCase()} systemWeight={weights.bold} color="white" />
+      <Text
+        style={{ fontSize, ...systemWeights.semibold, color: colors.white }}
+      >
+        {text[0].toUpperCase()}
+      </Text>
     </View>
   </View>
 )

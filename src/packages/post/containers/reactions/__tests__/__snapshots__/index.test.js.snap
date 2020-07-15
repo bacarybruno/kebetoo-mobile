@@ -5,7 +5,7 @@ Array [
   Object {
     "cancelButtonIndex": 2,
     "containerStyle": Object {
-      "backgroundColor": "#FAFAFA",
+      "backgroundColor": "#F5F5F5",
     },
     "icons": Array [
       <_default

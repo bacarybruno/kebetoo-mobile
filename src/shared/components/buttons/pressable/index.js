@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
+import colors from 'Kebetoo/src/theme/colors'
 
 const CustomPressable = ({ children, ...otherProps }) => (
   <TouchableOpacity {...otherProps}>{children}</TouchableOpacity>
@@ -19,10 +20,13 @@ const TouchableComponent = Platform.select({
   default: Platform.Version <= 20 ? CustomPressable : TouchableNativeFeedback,
 })
 
-const Pressable = ({ children, style, ...otherProps }) => {
+const Pressable = ({
+  children, style, borderless, foreground, ...otherProps
+}) => {
   if (TouchableComponent === TouchableNativeFeedback) {
+    const rippleBackground = TouchableNativeFeedback.Ripple(colors.placeholder, borderless)
     return (
-      <TouchableComponent {...otherProps}>
+      <TouchableComponent {...otherProps} useForeground={foreground} background={rippleBackground}>
         <View style={style}>{children}</View>
       </TouchableComponent>
     )
@@ -30,9 +34,5 @@ const Pressable = ({ children, style, ...otherProps }) => {
 
   return <TouchableComponent style={style} {...otherProps}>{children}</TouchableComponent>
 }
-
-Pressable.SelectableBackground = TouchableComponent.SelectableBackground
-Pressable.SelectableBackgroundBorderless = TouchableComponent.SelectableBackgroundBorderless
-Pressable.Ripple = TouchableComponent.Ripple
 
 export default React.memo(Pressable)

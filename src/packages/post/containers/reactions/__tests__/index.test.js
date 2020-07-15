@@ -134,7 +134,9 @@ describe('optimistic ui update rejection', () => {
         Promise.resolve({
           id: parseInt(Math.random() * 1000000),
           type,
-          author,
+          author: {
+            id: author,
+          },
           post: { id: postId },
         })
       ),

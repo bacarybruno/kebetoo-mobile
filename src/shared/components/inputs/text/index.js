@@ -9,6 +9,8 @@ const InputText = forwardRef((props, ref) => {
     fieldName,
     wrapperStyle,
     textStyle,
+    Left,
+    Right,
     ...otherProps
   } = props
   const [value, setValue] = useState(null)
@@ -20,6 +22,7 @@ const InputText = forwardRef((props, ref) => {
 
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
+      {Left && <Left />}
       <TextInput
         style={[styles.textInput, textStyle]}
         value={value}
@@ -29,6 +32,7 @@ const InputText = forwardRef((props, ref) => {
         blurOnSubmit={false}
         {...otherProps}
       />
+      {Right && <Right />}
     </View>
   )
 })

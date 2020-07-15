@@ -209,7 +209,6 @@ exports[`renders Comment 1`] = `
           "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "flex-end",
-          "marginTop": 5,
         }
       }
     >
@@ -235,7 +234,7 @@ exports[`renders Comment 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "opacity": 1,
+            "paddingVertical": 5,
           }
         }
         testID="reaction-button"
@@ -303,7 +302,7 @@ exports[`renders Comment 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": undefined,
+              "color": "rgba(0,0,0,0.87)",
               "fontFamily": "Ionicons",
               "fontSize": 16,
               "fontStyle": "normal",

@@ -143,7 +143,7 @@ exports[`renders Profile 1`] = `
                 },
                 Array [
                   Object {
-                    "color": "rgba(0,0,0,0.87)",
+                    "color": "rgba(0,0,0,0.54)",
                   },
                   Object {
                     "backgroundColor": "transparent",
@@ -163,7 +163,7 @@ exports[`renders Profile 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "backgroundColor": "#FAFAFA",
+            "backgroundColor": "#F5F5F5",
             "borderRadius": 16,
             "elevation": 1,
             "flexDirection": "row",
@@ -321,7 +321,7 @@ exports[`renders Profile 1`] = `
               ]
             }
           >
-            reactions
+            comments
           </Text>
         </View>
         <View
@@ -393,7 +393,7 @@ exports[`renders Profile 1`] = `
               ]
             }
           >
-            comments
+            reactions
           </Text>
         </View>
       </View>
@@ -448,7 +448,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -615,7 +615,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -709,7 +709,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -834,7 +834,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -928,7 +928,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -1095,7 +1095,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -1220,7 +1220,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",
@@ -1314,7 +1314,7 @@ exports[`renders Profile 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#FAFAFA",
+                  "backgroundColor": "#F5F5F5",
                   "borderRadius": 20,
                   "height": 40,
                   "justifyContent": "center",

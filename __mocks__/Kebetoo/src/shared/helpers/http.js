@@ -1,4 +1,5 @@
-import posts from 'Kebetoo/__fixtures__/posts'
+import { postsList } from 'Kebetoo/__fixtures__/posts'
+import authors from 'Kebetoo/__fixtures__/authors'
 import comments from 'Kebetoo/__fixtures__/comments'
 
 // eslint-disable-next-line radix
@@ -12,8 +13,15 @@ export const getCommentsCount = jest.fn().mockResolvedValue(0)
 export const deletePost = jest.fn().mockResolvedValue(true)
 export const deleteReaction = jest.fn().mockResolvedValue(true)
 export const editReaction = jest.fn().mockResolvedValue(true)
+export const getUsers = jest.fn().mockResolvedValue(authors)
+export const getAuthorByUid = jest.fn()
+  .mockImplementation((uid) => authors.filter((author) => author.uid === uid))
 export const commentPost = jest.fn().mockImplementation((data) => Promise.resolve({
-  author: data.author,
+  author: {
+    id: data.author,
+    displayName: ' ',
+    photoURL: null,
+  },
   content: data.content,
   post: {
     id: data.post,
@@ -22,17 +30,19 @@ export const commentPost = jest.fn().mockImplementation((data) => Promise.resolv
   id: createRandomId(),
 }))
 export const getUserPosts = jest.fn().mockImplementation((userId) => Promise.resolve(
-  Object.values(posts).filter((post) => post.author === userId),
+  postsList.filter((post) => post.author.id === userId),
 ))
 export const getComments = jest.fn().mockImplementation((postId) => Promise.resolve(
-  Object.values(comments).filter((comment) => comment.post.id === postId),
+  comments.filter((comment) => comment.post.id === postId),
 ))
 export const createReaction = jest.fn().mockImplementation(
   (type, postId, author) => (
     Promise.resolve({
       id: createRandomId(),
       type,
-      author,
+      author: {
+        id: author,
+      },
       post: { id: postId },
     })
   ),
@@ -42,7 +52,9 @@ export const createCommentReaction = jest.fn().mockImplementation(
     Promise.resolve({
       id: createRandomId(),
       type,
-      author,
+      author: {
+        id: author,
+      },
       comment: { id: commentId },
     })
   ),

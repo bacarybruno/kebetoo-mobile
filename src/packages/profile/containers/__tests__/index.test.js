@@ -35,7 +35,7 @@ it('renders Profile', async () => {
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
-describe('displays the right staat for', () => {
+describe('displays the right stats for', () => {
   const { stats } = store.getState().userReducer
   const statsItems = [{
     name: 'posts',

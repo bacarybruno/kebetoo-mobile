@@ -22,15 +22,16 @@ exports[`renders CreatePost 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "#FAFAFA",
+            "backgroundColor": "#F5F5F5",
             "borderColor": "rgba(229, 229, 234, 255)",
             "borderRadius": 15,
             "borderWidth": 1,
+            "flexDirection": "row",
             "minHeight": 48,
             "paddingLeft": 16,
           },
           Object {
-            "backgroundColor": "#FAFAFA",
+            "backgroundColor": "#F5F5F5",
             "marginTop": 8,
             "paddingRight": 16,
           },
@@ -53,8 +54,14 @@ exports[`renders CreatePost 1`] = `
         style={
           Array [
             Object {
+              "backgroundColor": "transparent",
               "color": "rgba(0,0,0,0.87)",
+              "flex": 1,
+              "fontFamily": "System",
               "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
             },
             Object {
               "textAlignVertical": "top",
@@ -120,7 +127,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#FAFAFA",
+                "backgroundColor": "#F5F5F5",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -179,7 +186,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#FAFAFA",
+                "backgroundColor": "#F5F5F5",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -238,7 +245,7 @@ exports[`renders CreatePost 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#FAFAFA",
+                "backgroundColor": "#F5F5F5",
                 "borderRadius": 20,
                 "height": 40,
                 "justifyContent": "center",
@@ -298,7 +305,7 @@ exports[`renders CreatePost 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#FAFAFA",
+              "backgroundColor": "#F5F5F5",
               "borderRadius": 20,
               "height": 40,
               "justifyContent": "center",

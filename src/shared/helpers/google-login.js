@@ -15,12 +15,7 @@ const googleLogin = async () => {
 
     const { user } = data
 
-    await createUser({
-      id: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-    })
+    await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
 
     result.data = data
   } catch (error) {

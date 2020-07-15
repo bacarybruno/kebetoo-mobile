@@ -51,7 +51,12 @@ exports[`renders ManagePost 1`] = `
                 "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
                 "width": null,
               },
-              "author": "1",
+              "author": Object {
+                "displayName": "Bruno Bodian",
+                "email": "bacarybruno@kebetoo.com",
+                "id": "1",
+                "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+              },
               "comments": Array [
                 Object {
                   "__v": 0,
@@ -115,7 +120,12 @@ exports[`renders ManagePost 1`] = `
             Object {
               "__v": 0,
               "_id": "5eeb805299d77d3becdf35e0",
-              "author": "1",
+              "author": Object {
+                "displayName": "Bruno Bodian",
+                "email": "bacarybruno@kebetoo.com",
+                "id": "1",
+                "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+              },
               "comments": Array [],
               "content": "Voiture",
               "createdAt": "2020-06-18T14:55:14.492Z",
@@ -171,7 +181,12 @@ exports[`renders ManagePost 1`] = `
             Object {
               "__v": 0,
               "_id": "5eeb6ddd99d77d3becdf35d5",
-              "author": "1",
+              "author": Object {
+                "displayName": "Bruno Bodian",
+                "email": "bacarybruno@kebetoo.com",
+                "id": "1",
+                "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+              },
               "comments": Array [],
               "createdAt": "2020-06-18T13:36:29.730Z",
               "id": "5eeb6ddd99d77d3becdf35d5",
@@ -639,51 +654,17 @@ exports[`renders ManagePost 1`] = `
               Fhgjjyjj
             </Text>
             <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FAFAFA",
-                    "borderRadius": 5,
                     "flex": 1,
-                    "flexDirection": "row",
                     "height": 52,
                     "maxHeight": 52,
                   },
                   undefined,
-                  undefined,
                 ]
               }
-              testID="player-wrapper"
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "rgba(255, 255, 255, 255)",
-                      "borderBottomLeftRadius": 5,
-                      "borderTopLeftRadius": 5,
-                      "height": "100%",
-                      "opacity": 0.4,
-                      "position": "absolute",
-                    },
-                    undefined,
-                    Object {
-                      "width": "0%",
-                    },
-                  ]
-                }
-                testID="progress"
-              />
               <View
                 accessible={true}
                 focusable={true}
@@ -695,97 +676,146 @@ exports[`renders ManagePost 1`] = `
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "rgba(242, 242, 247, 255)",
-                    "borderRadius": 15,
-                    "elevation": 2,
-                    "height": 30,
-                    "justifyContent": "center",
-                    "marginLeft": 16,
-                    "opacity": 1,
-                    "shadowColor": "rgba(0, 0, 0, 255)",
-                    "shadowOffset": Object {
-                      "x": 0,
-                      "y": 1,
-                    },
-                    "shadowOpacity": 0.2,
-                    "shadowRadius": 1.41,
-                    "width": 30,
-                  }
-                }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "#0B1B77",
-                      "fontFamily": "Ionicons",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="ionicon-ios-play"
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "flex": 1,
-                  }
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "testUri": "../../../assets/images/waves.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "resizeMode": "contain",
-                      "width": "80%",
-                    }
-                  }
-                />
-              </View>
-              <Text
-                style={
                   Array [
-                    false,
-                    false,
-                    false,
                     Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 12,
-                      "fontWeight": "400",
-                      "letterSpacing": 0,
-                      "lineHeight": 16,
+                      "backgroundColor": "#F5F5F5",
+                      "borderRadius": 5,
+                      "flex": 1,
+                      "overflow": "hidden",
                     },
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.54)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "bottom": 2,
-                        "position": "absolute",
-                        "right": 8,
-                      },
-                    ],
+                    Object {},
+                    undefined,
                   ]
                 }
+                testID="player-wrapper"
               >
-                0:06
-              </Text>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(199, 199, 204, 255)",
+                        "borderBottomLeftRadius": 5,
+                        "borderTopLeftRadius": 5,
+                        "height": "100%",
+                        "opacity": 0.4,
+                        "position": "absolute",
+                        "width": "0%",
+                      }
+                    }
+                    testID="progress"
+                  />
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#F5F5F5",
+                        "borderRadius": 15,
+                        "elevation": 2,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "opacity": 1,
+                        "shadowColor": "rgba(0, 0, 0, 255)",
+                        "shadowOffset": Object {
+                          "x": 0,
+                          "y": 1,
+                        },
+                        "shadowOpacity": 0.2,
+                        "shadowRadius": 1.41,
+                        "width": 30,
+                      }
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Object {
+                          "color": "#0B1B77",
+                          "fontFamily": "Ionicons",
+                          "fontSize": 22,
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        }
+                      }
+                      text="ionicon-ios-play"
+                    />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/waves.png",
+                        }
+                      }
+                      style={
+                        Object {
+                          "resizeMode": "contain",
+                          "width": "80%",
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Array [
+                        false,
+                        false,
+                        false,
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0,
+                          "lineHeight": 16,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.54)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          Object {
+                            "bottom": 2,
+                            "position": "absolute",
+                            "right": 8,
+                          },
+                        ],
+                      ]
+                    }
+                  >
+                    0:06
+                  </Text>
+                </View>
+              </View>
             </View>
           </View>
           <View
@@ -1616,7 +1646,7 @@ exports[`renders ManagePost 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "rgba(0, 122, 255, 255)",
+                      "color": "rgba(255, 59, 48, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -1643,7 +1673,7 @@ exports[`renders ManagePost 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "rgba(0, 122, 255, 255)",
+                          "color": "rgba(255, 59, 48, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -2131,11 +2161,10 @@ exports[`renders ManagePost 1`] = `
                 <View
                   style={
                     Array [
+                      undefined,
                       Object {
-                        "marginBottom": 30,
-                      },
-                      Object {
-                        "marginBottom": 0,
+                        "flexDirection": "row",
+                        "width": "100%",
                       },
                     ]
                   }
@@ -2144,13 +2173,17 @@ exports[`renders ManagePost 1`] = `
                     style={
                       Array [
                         Object {
-                          "alignItems": "center",
-                          "flexDirection": "row",
-                          "justifyContent": "space-between",
-                          "marginBottom": 8,
+                          "backgroundColor": "#efefef",
+                          "borderRadius": 17.5,
+                          "height": 35,
+                          "width": 35,
                         },
                         Object {
-                          "marginBottom": 4,
+                          "backgroundColor": undefined,
+                          "marginRight": 10,
+                        },
+                        Object {
+                          "overflow": "hidden",
                         },
                       ]
                     }
@@ -2158,187 +2191,138 @@ exports[`renders ManagePost 1`] = `
                     <View
                       style={
                         Object {
-                          "flexDirection": "row",
-                          "justifyContent": "space-between",
+                          "backgroundColor": "#dfdfdf",
+                          "height": "100%",
+                          "opacity": 0.5,
+                        }
+                      }
+                    />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "height": 35,
+                          "marginBottom": 8,
                         }
                       }
                     >
                       <View
                         style={
-                          Object {
-                            "flexDirection": "row",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "height": 30,
-                                "width": 30,
-                              },
-                              Object {
-                                "height": 24,
-                                "width": 24,
-                              },
-                              undefined,
-                            ]
-                          }
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                                  "borderRadius": 15,
-                                  "flex": 1,
-                                  "justifyContent": "center",
-                                },
-                                Object {
-                                  "borderRadius": 12,
-                                },
-                                Object {
-                                  "backgroundColor": "#9575cd",
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  false,
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 17,
-                                    "fontWeight": "600",
-                                    "letterSpacing": -0.408,
-                                    "lineHeight": 22,
-                                  },
-                                  false,
-                                  false,
-                                  Array [
-                                    Object {
-                                      "color": "rgba(255, 255, 255, 255)",
-                                    },
-                                    Object {
-                                      "backgroundColor": "transparent",
-                                      "fontFamily": "System",
-                                      "fontWeight": "700",
-                                    },
-                                    undefined,
-                                  ],
-                                ]
-                              }
-                            >
-                              J
-                            </Text>
-                          </View>
-                        </View>
-                      </View>
-                      <View
-                        style={
                           Array [
                             Object {
-                              "justifyContent": "space-between",
-                              "marginLeft": 5,
+                              "backgroundColor": "#efefef",
+                              "borderRadius": 2.5,
+                              "height": 10,
+                              "marginBottom": 10,
+                              "width": "50%",
                             },
                             Object {
-                              "height": 24,
+                              "backgroundColor": undefined,
                             },
                             Object {
-                              "justifyContent": "center",
+                              "overflow": "hidden",
                             },
                           ]
                         }
                       >
-                        <Text
+                        <View
                           style={
-                            Array [
-                              false,
-                              false,
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 15,
-                                "fontWeight": "400",
-                                "letterSpacing": -0.24,
-                                "lineHeight": 20,
-                              },
-                              false,
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "600",
-                                },
-                                undefined,
-                              ],
-                            ]
+                            Object {
+                              "backgroundColor": "#dfdfdf",
+                              "height": "100%",
+                              "opacity": 0.5,
+                            }
                           }
-                        >
-                          John Doe
-                        </Text>
+                        />
+                      </View>
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "#efefef",
+                              "borderRadius": 2.5,
+                              "height": 10,
+                              "marginBottom": 10,
+                              "width": "30%",
+                            },
+                            Object {
+                              "backgroundColor": undefined,
+                            },
+                            Object {
+                              "overflow": "hidden",
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#dfdfdf",
+                              "height": "100%",
+                              "opacity": 0.5,
+                            }
+                          }
+                        />
                       </View>
                     </View>
                   </View>
+                </View>
+                <View
+                  style={
+                    Array [
+                      undefined,
+                      Object {
+                        "flexDirection": "row",
+                        "width": "100%",
+                      },
+                    ]
+                  }
+                >
                   <View
-                    accessible={true}
-                    focusable={false}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "backgroundColor": "#FAFAFA",
-                          "borderRadius": 5,
-                          "minHeight": 52,
-                          "padding": 16,
-                        },
-                        false,
-                        undefined,
-                      ]
+                      Object {
+                        "flex": 1,
+                      }
                     }
                   >
-                    <Text
+                    <View
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.24,
-                            "lineHeight": 20,
+                            "backgroundColor": "#efefef",
+                            "borderRadius": 13,
+                            "height": 52,
+                            "marginBottom": 52,
+                            "width": "100%",
                           },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "backgroundColor": undefined,
+                            "borderRadius": 5,
+                            "marginBottom": 8,
+                          },
+                          Object {
+                            "overflow": "hidden",
+                          },
                         ]
                       }
                     >
-                      I'll input the open-source RAM sensor, that should card the FTP protocol!
-                    </Text>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#dfdfdf",
+                            "height": "100%",
+                            "opacity": 0.5,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -2466,7 +2450,7 @@ exports[`renders ManagePost 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "rgba(0, 122, 255, 255)",
+                      "color": "rgba(255, 59, 48, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -2493,7 +2477,7 @@ exports[`renders ManagePost 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "rgba(0, 122, 255, 255)",
+                          "color": "rgba(255, 59, 48, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",

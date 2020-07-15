@@ -50,6 +50,11 @@
 		],
 		"description": "React simple functional component boilerplate"
 	},
+	// Simple snippet for useState
+	"Kebetoo react useState snippet": {
+		"prefix": "state",
+		"body": ["const [$1, set$2] = useState($3)", "$0"]
+	},
 	// Simple snippet for useEffect
 	"Kebetoo react useEffect snippet": {
 		"prefix": "effect",
@@ -73,9 +78,14 @@
 		"prefix": "styles",
 		"body": [
 			"import { StyleSheet } from 'react-native'\n",
+			"import colors from 'Kebetoo/src/theme/colors'",
+			"import metrics from 'Kebetoo/src/theme/metrics'\n",
 			"export default StyleSheet.create({",
 			"\twrapper: {",
 			"\t\tflex: 1,",
+			"\t\tbackgroundColor: colors.background,",
+			"\t\tpaddingHorizontal: metrics.marginHorizontal,",
+			"\t\tpaddingVertical: metrics.marginVertical,",
 			"\t},",
 			"})\n"
 		],

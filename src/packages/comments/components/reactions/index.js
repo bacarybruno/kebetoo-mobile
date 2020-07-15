@@ -3,7 +3,7 @@ import { View } from 'react-native'
 
 import ReactionsOnline from 'Kebetoo/src/packages/post/containers/reactions'
 import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import { getUsers } from 'Kebetoo/src/shared/helpers/users'
+import usePosts from 'Kebetoo/src/shared/hooks/posts'
 import strings from 'Kebetoo/src/config/strings'
 import Avatar from 'Kebetoo/src/shared/components/avatar'
 
@@ -14,17 +14,15 @@ import styles, { reactionsHeight, summaryHeight } from './styles'
 export const SummaryAuthor = ({ author }) => {
   if (!author) return <View style={styles.img} />
   return (
-    <Avatar
-      src={author.photoURL}
-      text={author.displayName}
-      style={styles.img}
-    />
+    <Avatar src={author.photoURL} text={author.displayName} style={styles.img} />
   )
 }
 
 const Summary = React.memo(({ comments }) => {
   const [authors, setAuthors] = useState({})
   const [reactionsMap, setReactionsMap] = useState({})
+
+  const { getAuthors } = usePosts()
 
   useEffect(() => {
     const reactionsMapData = {}
@@ -41,24 +39,12 @@ const Summary = React.memo(({ comments }) => {
 
   useEffect(() => {
     const fetchAuthors = async () => {
-      const data = {}
       const authorsToFetch = Object.keys(reactionsMap)
-      if (authorsToFetch.length > 0) {
-        const ids = [...new Set(authorsToFetch)]
-        if (ids.length === 0) return
-        const { docs } = await getUsers(ids)
-        docs.forEach((doc) => {
-          const { photoURL, displayName } = doc.data()
-          data[doc.id] = {
-            displayName,
-            photoURL,
-          }
-        })
-        setAuthors(data)
-      }
+      const data = await getAuthors(authorsToFetch)
+      setAuthors(data)
     }
     fetchAuthors()
-  }, [comments, reactionsMap])
+  }, [getAuthors, reactionsMap])
 
   const reactors = Object.keys(reactionsMap)
   if (reactors.length === 0) return null

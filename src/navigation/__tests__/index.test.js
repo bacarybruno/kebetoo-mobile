@@ -9,6 +9,7 @@ import setupTest from 'Kebetoo/src/config/jest-setup'
 import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,
 } from '../index'
+import { act } from 'react-test-renderer'
 
 const mockStore = configureStore()
 const store = mockStore({
@@ -65,31 +66,37 @@ describe('onboarding', () => {
 })
 
 describe('app navigation', () => {
-  it('renders AppNavigation for authenticated user', () => {
+  it('renders AppNavigation for authenticated user', async () => {
     auth.setMockOptions({
       currentUser: {
         displayName: 'Bruno Bodian',
       },
     })
-    const { wrapper } = givenAppNavigation()
+    let wrapper
+    await act(async () => {
+      const { wrapper: asyncWrapper } = await givenAppNavigation()
+      wrapper = asyncWrapper
+    })
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
   it('has 5 pages for authenticated users', () => {
-    expect(loggedInPages.length).toBe(5)
+    expect(loggedInPages.length).toBe(6)
   })
 
   it('has 1 page for unauthenticated users', () => {
     expect(notLoggedInPages.length).toBe(1)
   })
 
-  it('renders AppNavigation for unauthenticated user', () => {
+  it('renders AppNavigation for unauthenticated user', async () => {
     auth.setMockOptions({
       currentUser: null,
     })
-    const { wrapper } = givenAppNavigation()
+    let wrapper
+    await act(async () => {
+      const { wrapper: asyncWrapper } = await givenAppNavigation()
+      wrapper = asyncWrapper
+    })
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
-
-
 })

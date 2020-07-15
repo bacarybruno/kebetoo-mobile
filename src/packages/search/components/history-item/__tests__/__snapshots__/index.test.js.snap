@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders HistoryItem 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "flex": 1,
+      "height": "100%",
+      "justifyContent": "center",
+      "paddingHorizontal": 16,
+    }
+  }
+  testID="history-item"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(229, 229, 234, 255)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 17,
+            "fontWeight": "600",
+            "letterSpacing": -0.408,
+            "lineHeight": 22,
+          },
+          false,
+          false,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      John Doe
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      hitSlop={
+        Object {
+          "bottom": 50,
+          "left": 50,
+          "right": 50,
+          "top": 50,
+        }
+      }
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5F5F5",
+          "borderRadius": 11,
+          "height": 22,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 22,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontFamily": "Ionicons",
+            "fontSize": 25,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-ios-close"
+      />
+    </View>
+  </View>
+</View>
+`;

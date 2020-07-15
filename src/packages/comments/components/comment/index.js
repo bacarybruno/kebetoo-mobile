@@ -16,6 +16,7 @@ import colors from 'Kebetoo/src/theme/colors'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import { extractMetadataFromName } from 'Kebetoo/src/shared/hooks/audio-recorder'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 
 import styles from './styles'
 
@@ -27,7 +28,9 @@ export const Reactions = ({ onReaction, reactions, user }) => {
   ))
   return (
     <View style={styles.reactionsWrapper}>
-      <TouchableOpacity
+      <Pressable
+        borderless
+        foreground
         style={styles.reactionsButton}
         onPress={() => onReaction(REACTION_TYPES.LOVE)}
         hitSlop={edgeInsets.all(30)}
@@ -43,10 +46,10 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         <Ionicon
           name={loved ? 'md-heart' : 'md-heart-empty'}
           testID="reaction"
-          color={loved ? colors.heart : undefined}
+          color={loved ? colors.heart : colors.textPrimary}
           size={fontSizes.md}
         />
-      </TouchableOpacity>
+      </Pressable>
     </View>
   )
 }
@@ -88,6 +91,7 @@ const Comment = ({
     const userReaction = reactions.find((r) => r.author === user)
     if (userReaction === undefined) {
       const result = await api.createCommentReaction(type, item.id, user)
+      result.author = result.author.id
       setReactions((values) => {
         values.push(result)
         return [...values]
