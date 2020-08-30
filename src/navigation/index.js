@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import RNBootSplash from 'react-native-bootsplash'
+import messaging from '@react-native-firebase/messaging'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
@@ -140,6 +141,43 @@ export const loggedInPages = [
 // Main Section
 const AppNavigation = () => {
   const { isLoggedIn } = useUser()
+
+  const handleNotification = useCallback((remoteMessage) => {
+    if (remoteMessage !== null) {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+        remoteMessage.data,
+      )
+    }
+  }, [])
+
+  const handleInitialNotification = useCallback((remoteMessage) => {
+    if (remoteMessage !== null) {
+      console.log(
+        'Notification caused app to open from quit state:',
+        remoteMessage.notification,
+        remoteMessage.data,
+      )
+    }
+  }, [])
+
+  const handleForegroundNotification = useCallback((remoteMessage) => {
+    if (remoteMessage !== null) {
+      console.log(
+        'Notification caused app to open from foreground state:',
+        remoteMessage.notification,
+        remoteMessage.data,
+      )
+    }
+  }, [])
+
+  useEffect(() => {
+    messaging().onNotificationOpenedApp(handleNotification)
+    messaging().getInitialNotification().then(handleInitialNotification)
+    const unsubscribeForegroundNotification = messaging().onMessage(handleForegroundNotification)
+    return unsubscribeForegroundNotification
+  }, [handleInitialNotification, handleNotification, handleForegroundNotification])
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })

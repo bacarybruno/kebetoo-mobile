@@ -59,16 +59,6 @@ export default class RNFirebase {
     }
   })
 
-  static messaging = jest.fn(() => {
-    return {
-      hasPermission: jest.fn(() => Promise.resolve(true)),
-      subscribeToTopic: jest.fn(),
-      unsubscribeFromTopic: jest.fn(),
-      requestPermission: jest.fn(() => Promise.resolve(true)),
-      getToken: jest.fn(() => Promise.resolve('RN-Firebase-Token'))
-    }
-  })
-
   static storage = jest.fn(() => {
     return {
       ref: jest.fn(() => {
