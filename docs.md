@@ -18,6 +18,8 @@
 
 # Firebase
 - https://rnfirebase.io/
+- iOS setup: https://rnfirebase.io/messaging/usage/ios-setup
+- Headless notification: https://rnfirebase.io/messaging/usage
 
 # Optimize vector-icons to use only desired icons
 - Refs: https://github.com/oblador/react-native-vector-icons/blob/master/README.md#android
