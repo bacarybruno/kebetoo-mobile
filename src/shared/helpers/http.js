@@ -126,6 +126,7 @@ export const searchUsers = (searchQuery) => request.get(`authors?displayName_con
 export const createAuthor = ({ id, displayName, photoURL }) => request.post('authors', { uid: id, displayName, photoURL })
 export const getAuthorByUid = (uid) => request.get(`authors?uid=${uid}`)
 export const getAuthorById = (id) => request.get(`authors/${id}`)
+export const updateAuthor = (id, data) => request.put(`authors/${id}`, data)
 export const getAuthors = (ids) => {
   const queryString = ids.map((id) => `id_eq=${id}`).join('&')
   return request.get(`authors?${queryString}`)

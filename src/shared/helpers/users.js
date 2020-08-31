@@ -16,7 +16,7 @@ export const getUserId = async () => AsyncStorage.getItem('uid')
 
 export const clearUserAttributes = async () => AsyncStorage.multiRemove(['uid'])
 
-const getUser = async (uid) => {
+export const getUser = async (uid) => {
   const [author] = await api.getAuthorByUid(uid)
   return author
 }

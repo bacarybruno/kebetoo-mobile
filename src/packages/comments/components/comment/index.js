@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
+import { View, TouchableWithoutFeedback } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 
