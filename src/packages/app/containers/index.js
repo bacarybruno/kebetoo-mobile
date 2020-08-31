@@ -35,7 +35,7 @@ const RootContainer = () => {
 
   useEffect(() => {
     const setupNotifications = async () => {
-      const hasPermissions = permissions.notifications()
+      const hasPermissions = await permissions.notifications()
       const alreadyRegistered = messaging().isDeviceRegisteredForRemoteMessages
       if (hasPermissions && !alreadyRegistered) {
         await messaging().registerDeviceForRemoteMessages()

@@ -24,6 +24,7 @@ import CommentsPage from 'Kebetoo/src/packages/comments/containers'
 import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
 import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 import UserProfilePage from 'Kebetoo/src/packages/profile/containers/user'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 import routes from './routes'
@@ -140,7 +141,7 @@ export const loggedInPages = [
 
 // Main Section
 const AppNavigation = () => {
-  const { isLoggedIn } = useUser()
+  const { isLoggedIn, profile } = useUser()
 
   const handleNotification = useCallback((remoteMessage) => {
     if (remoteMessage !== null) {
@@ -178,6 +179,22 @@ const AppNavigation = () => {
     const unsubscribeForegroundNotification = messaging().onMessage(handleForegroundNotification)
     return unsubscribeForegroundNotification
   }, [handleInitialNotification, handleNotification, handleForegroundNotification])
+
+  useEffect(() => {
+    const updateUserNotificationId = async () => {
+      if (isLoggedIn && profile.uid) {
+        const notificationToken = await messaging().getToken()
+        api.updateAuthor(profile.uid, { notificationToken })
+      }
+    }
+
+    updateUserNotificationId()
+
+    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
+      api.updateAuthor(profile.uid, { notificationToken })
+    })
+    return unsubscribeTokenRefresh
+  }, [isLoggedIn, profile])
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })

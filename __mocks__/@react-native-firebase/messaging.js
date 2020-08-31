@@ -5,6 +5,7 @@ const messaging = () => ({
   requestPermission: jest.fn(() => Promise.resolve(true)),
   getToken: jest.fn(() => Promise.resolve('RN-Firebase-Token')),
   onNotificationOpenedApp: jest.fn(),
+  onTokenRefresh: jest.fn(),
   getInitialNotification: jest.fn().mockResolvedValue({}),
   onMessage: jest.fn(),
 })

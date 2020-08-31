@@ -17,7 +17,6 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import * as types from 'Kebetoo/src/redux/types'
 import { userStatsSelector } from 'Kebetoo/src/redux/selectors'
 import strings from 'Kebetoo/src/config/strings'
-import { getUserId } from 'Kebetoo/src/shared/helpers/users'
 import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles, { imageSize } from './styles'
@@ -165,26 +164,28 @@ const ProfilePage = React.memo(() => {
     useCallback(() => {
       const fetchStats = async () => {
         // fetch latest stats
-        const userId = await getUserId()
-        const [posts, comments, reactions] = await Promise.all([
-          api.getPostsCount(userId),
-          api.getCommentsCount(userId),
-          api.getReactionsCount(userId),
-        ])
+        const userId = profile.uid
+        if (userId) {
+          const [posts, comments, reactions] = await Promise.all([
+            api.getPostsCount(userId),
+            api.getCommentsCount(userId),
+            api.getReactionsCount(userId),
+          ])
 
-        // update data in component
-        setPostsCount(posts)
-        setCommentsCount(comments)
-        setReactionsCount(reactions)
+          // update data in component
+          setPostsCount(posts)
+          setCommentsCount(comments)
+          setReactionsCount(reactions)
 
-        // store the data in redux
-        dispatch({
-          type: types.SET_USER_STATS,
-          payload: { posts, comments, reactions },
-        })
+          // store the data in redux
+          dispatch({
+            type: types.SET_USER_STATS,
+            payload: { posts, comments, reactions },
+          })
+        }
       }
       fetchStats()
-    }, [dispatch]),
+    }, [dispatch, profile.uid]),
   )
 
   const shareApp = useCallback(() => {

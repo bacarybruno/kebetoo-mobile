@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
 
-import { getUserId } from '../helpers/users'
+import { getUserId, getUser, setUserId } from '../helpers/users'
 
+// TODO: find out why this hook is looping
 const useUser = () => {
   const authenticatedUser = auth().currentUser
   const [isLoggedIn, setIsLoggedIn] = useState(authenticatedUser !== null)
@@ -25,12 +26,25 @@ const useUser = () => {
   }, [authenticatedUser])
 
   useEffect(() => {
+    const refreshUserId = async () => {
+      if (!profile.uid && authenticatedUser?.uid) {
+        const user = await getUser(authenticatedUser.uid)
+        await setUserId(user.id)
+        setProfile((profileState) => ({ ...profileState, uid: user.id }))
+      }
+    }
+    refreshUserId()
+  }, [authenticatedUser, profile.uid])
+
+  useEffect(() => {
     const onAuthStateChanged = (user) => setIsLoggedIn(!!user)
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
     return subscriber
   }, [])
 
-  const signOut = useCallback(() => auth().signOut(), [])
+  const signOut = useCallback(() => {
+    auth().signOut()
+  }, [])
 
   return {
     profile,
