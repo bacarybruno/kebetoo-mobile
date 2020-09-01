@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
 import changeNavigationBarColor from 'react-native-navigation-bar-color'
 import messaging from '@react-native-firebase/messaging'
+import PushNotification from 'react-native-push-notification'
+import AsyncStorage from '@react-native-community/async-storage'
 
 import AppNavigation from 'Kebetoo/src/navigation'
 import { appSelector } from 'Kebetoo/src/redux/selectors'
@@ -41,7 +43,25 @@ const RootContainer = () => {
         await messaging().registerDeviceForRemoteMessages()
       }
     }
+
+    const handleBackgroundNotifications = async () => {
+      // save background notifications in redux
+      // with a status of "unread"
+      // const bgNotifications = JSON.parse(
+      //   await AsyncStorage.getItem('backgroundNotifications')
+      // ) || []
+      // bgNotifications.forEach((notification) => {
+      //   dispatch({ type: types.ADD_NOTIFICATION, payload: notification })
+      // })
+
+      // remove background notifications
+      await AsyncStorage.removeItem('backgroundNotifications')
+      // reset badge number
+      PushNotification.setApplicationIconBadgeNumber(0)
+    }
+
     setupNotifications()
+    handleBackgroundNotifications()
   }, [permissions])
 
   return (
