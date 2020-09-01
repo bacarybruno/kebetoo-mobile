@@ -37,6 +37,7 @@
     "react-native-localization": "^2.1.6",
     "react-native-navigation-bar-color": "^2.0.1",
     "react-native-permissions": "^2.1.4",
+    "react-native-push-notification": "^5.1.0",
     "react-native-reanimated": "^1.8.0",
     "react-native-receive-sharing-intent": "^1.0.3",
     "react-native-safe-area-context": "^0.7.3",
