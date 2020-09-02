@@ -1,11 +1,10 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import RNBootSplash from 'react-native-bootsplash'
-import messaging from '@react-native-firebase/messaging'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
@@ -24,7 +23,6 @@ import CommentsPage from 'Kebetoo/src/packages/comments/containers'
 import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
 import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 import UserProfilePage from 'Kebetoo/src/packages/profile/containers/user'
-import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 import routes from './routes'
@@ -141,60 +139,7 @@ export const loggedInPages = [
 
 // Main Section
 const AppNavigation = () => {
-  const { isLoggedIn, profile } = useUser()
-
-  const handleNotification = useCallback((remoteMessage) => {
-    if (remoteMessage !== null) {
-      console.log(
-        'Notification caused app to open from background state:',
-        remoteMessage.notification,
-        remoteMessage.data,
-      )
-    }
-  }, [])
-
-  const handleInitialNotification = useCallback((remoteMessage) => {
-    if (remoteMessage !== null) {
-      console.log(
-        'Notification caused app to open from quit state:',
-        remoteMessage.notification,
-        remoteMessage.data,
-      )
-    }
-  }, [])
-
-  const handleForegroundNotification = useCallback((remoteMessage) => {
-    if (remoteMessage !== null) {
-      console.log(
-        'Notification caused app to open from foreground state:',
-        remoteMessage.notification,
-        remoteMessage.data,
-      )
-    }
-  }, [])
-
-  useEffect(() => {
-    messaging().onNotificationOpenedApp(handleNotification)
-    messaging().getInitialNotification().then(handleInitialNotification)
-    const unsubscribeForegroundNotification = messaging().onMessage(handleForegroundNotification)
-    return unsubscribeForegroundNotification
-  }, [handleInitialNotification, handleNotification, handleForegroundNotification])
-
-  useEffect(() => {
-    const updateUserNotificationId = async () => {
-      if (isLoggedIn && profile.uid) {
-        const notificationToken = await messaging().getToken()
-        api.updateAuthor(profile.uid, { notificationToken })
-      }
-    }
-
-    updateUserNotificationId()
-
-    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
-      api.updateAuthor(profile.uid, { notificationToken })
-    })
-    return unsubscribeTokenRefresh
-  }, [isLoggedIn, profile])
+  const { isLoggedIn } = useUser()
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })
