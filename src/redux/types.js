@@ -13,10 +13,14 @@ export const ADD_USER_HISTORY = 'user:add_user_history'
 export const REMOVE_USER_HISTORY = 'user:remove_user_history'
 export const CLEAR_USER_HISTORY = 'user:clear_user_history'
 
-// -- post reducers --
+// -- post reducer --
 export const API_FETCH_POSTS = 'sagas:api_fetch_posts'
 export const API_FETCH_POSTS_SUCCESS = 'sagas:api_fetch_posts_success'
 export const API_FETCH_POSTS_ERROR = 'sagas:api_fetch_posts_error'
 export const API_REACT_POST = 'sagas:api_react_post'
 export const API_REACT_POST_ERROR = 'sagas:api_react_post_error'
 export const REPLACE_POSTS = 'sagas:replace_posts'
+
+// -- notifications reducer --
+export const ADD_NOTIFICATION = 'notifications:add_notification'
+export const UPDATE_NOTIFICATION_STATUS = 'notifications:update_notification_status'
