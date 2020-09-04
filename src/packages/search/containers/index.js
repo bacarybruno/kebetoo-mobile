@@ -86,7 +86,7 @@ const SearchPage = () => {
         ? (
           <Header
             text=""
-            title="Search"
+            title={strings.search.search}
             displayName={profile.displayName}
             imageSrc={profile.photoURL}
             Right={() => <SearchIcon onPress={onShowSearchbar} />}

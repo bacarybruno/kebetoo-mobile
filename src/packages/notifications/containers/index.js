@@ -58,11 +58,11 @@ const NotificationsPage = () => {
     const name = payload.author.displayName
     switch (message.data.type) {
       case NOTIFICATION_TYPES.COMMENT:
-        return { name, message: strings.notifications.COMMENTED_POST }
+        return { name, message: strings.notifications.commented_post }
       case NOTIFICATION_TYPES.COMMENT_REACTION:
-        return { name, message: strings.notifications.REACTED_COMMENT }
+        return { name, message: strings.notifications.reacted_comment }
       case NOTIFICATION_TYPES.POST_REACTION:
-        return { name, message: strings.notifications.REACTED_POST }
+        return { name, message: strings.notifications.reacted_post }
       default:
         return null
     }
@@ -132,14 +132,14 @@ const NotificationsPage = () => {
         loading={isLoading}
       />
       <Section
-        title={strings.notifications.RECENT}
+        title={strings.notifications.recent}
         items={newItems}
         renderItem={(item, index) => (
           renderNotification({ item, index, onPress: onNotificationOpen })
         )}
       />
       <Section
-        title={strings.notifications.ALREADY_SEEN}
+        title={strings.notifications.already_seen}
         items={seenItems}
         renderItem={(item, index) => (
           renderNotification({ item, index, onPress: onNotificationOpen })
