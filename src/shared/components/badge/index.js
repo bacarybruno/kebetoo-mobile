@@ -1,12 +1,22 @@
 import React from 'react'
 import { View } from 'react-native'
+import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 import Typography, { types, weights } from '../typography'
 
-const Badge = ({ text, style }) => (
-  <View style={[styles.wrapper, style]}>
-    <Typography type={types.headline5} text={text} color="white" systemWeight={weights.bold} />
+const getBackgroundColor = (primary) => ({
+  backgroundColor: primary ? colors.primary : colors.secondary,
+})
+
+const Badge = ({ text, style, primary }) => (
+  <View style={[styles.wrapper, getBackgroundColor(primary), style]}>
+    <Typography
+      type={types.headline5}
+      text={text}
+      color={primary ? 'white' : 'primary'}
+      systemWeight={weights.bold}
+    />
   </View>
 )
 
