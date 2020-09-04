@@ -26,6 +26,16 @@ export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
 
+const mapComments = (comment) => ({
+  id: comment.id,
+  author: {
+    id: comment.author,
+    displayName: ' ',
+    photoURL: null,
+  },
+  reactions: [],
+})
+
 // TODO: paginate comments
 const Comments = () => {
   const audioRecorder = useAudioRecorder()
@@ -34,15 +44,9 @@ const Comments = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState(post.comments.map((c) => ({
-    id: c.id,
-    author: {
-      id: c.author,
-      displayName: ' ',
-      photoURL: null,
-    },
-    reactions: [],
-  })))
+  const [comments, setComments] = useState(
+    post.comments ? post.comments.map(mapComments) : [],
+  )
 
   const { profile } = useUser()
   const commentInput = useRef()
@@ -90,7 +94,7 @@ const Comments = () => {
   }, [audioRecorder, comment, post.id, profile.uid])
 
   const renderComment = useMemo(() => ({ item }) => {
-    if (!item.author) console.log('##############', item)
+    if (!item.author) return null
     return (
       <View style={styles.comment}>
         <Comment
@@ -100,7 +104,8 @@ const Comments = () => {
           photoURL={item.author.photoURL}
         />
       </View>
-  )}, [profile.uid])
+    )
+  }, [profile.uid])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton

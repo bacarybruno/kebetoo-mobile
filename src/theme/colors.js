@@ -34,6 +34,10 @@ const customColors = {
     light: iosColors.systemGrey3[colorScheme],
     dark: iosColors.inactiveGrey[colorScheme],
   },
+  secondary: {
+    light: '#F0F6FE',
+    dark: iosColors.secondarySystemBackground[colorScheme],
+  },
 }
 
 const iconColors = {
@@ -57,7 +61,7 @@ const colors = {
   backgroundTertiary: iosColors.tertiarySystemBackground[colorScheme],
 
   primary: iosColors.systemBlue[colorScheme],
-  secondary: iosColors.systemBlue[colorScheme],
+  secondary: customColors.secondary[colorScheme],
 
   black: iosColors.black,
   white: iosColors.white,

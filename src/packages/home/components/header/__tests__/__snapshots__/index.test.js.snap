@@ -22,6 +22,25 @@ exports[`renders Badge 1`] = `
       }
     }
   >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <ActivityIndicator
+        animating={false}
+        color="rgba(0, 122, 255, 255)"
+        hidesWhenStopped={true}
+        size="small"
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      />
+    </View>
     <Text
       style={
         Array [

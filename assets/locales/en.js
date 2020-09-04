@@ -35,6 +35,7 @@ const locales = Object.freeze({
   tabs: {
     home: 'Home',
     stories: 'Stories',
+    notifications: 'Notifications',
     search: 'Search',
     profile: 'Profile',
   },
@@ -101,7 +102,14 @@ const locales = Object.freeze({
   },
   user_profile: {
     profile: 'Profile',
-    joined_in: 'Join in {0}',
+    joined_in: 'Joined on {0}',
+  },
+  notifications: {
+    COMMENTED_POST: 'commented your post',
+    REACTED_COMMENT: 'reacted on your comment',
+    REACTED_POST: 'reacted on your post',
+    RECENT: 'Recent',
+    ALREADY_SEEN: 'Already seen',
   },
 })
 

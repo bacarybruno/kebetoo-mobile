@@ -1,23 +1,25 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-
 import configureStore from 'redux-mock-store'
 import auth from '@react-native-firebase/auth'
+import { act } from 'react-test-renderer'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
 
 import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,
 } from '../index'
-import { act } from 'react-test-renderer'
 
 const mockStore = configureStore()
 const store = mockStore({
   postsReducer: {
-    posts: {},
-    authors: {},
+    posts: [],
+    authors: [],
   },
-  userReducer: {},
+  notificationsReducer: {
+    notifications: [],
+  },
+  userReducer: [],
 })
 
 const givenAppNavigation = setupTest(AppNavigation)({
@@ -72,11 +74,7 @@ describe('app navigation', () => {
         displayName: 'Bruno Bodian',
       },
     })
-    let wrapper
-    await act(async () => {
-      const { wrapper: asyncWrapper } = await givenAppNavigation()
-      wrapper = asyncWrapper
-    })
+    const { wrapper } = await givenAppNavigation()
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 

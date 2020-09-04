@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import RNBootSplash from 'react-native-bootsplash'
+import messaging from '@react-native-firebase/messaging'
+import PushNotification from 'react-native-push-notification'
+import AsyncStorage from '@react-native-community/async-storage'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
 import TabBarAddButton from 'Kebetoo/src/shared/components/buttons/tab-bar'
@@ -15,19 +19,21 @@ import OnboardingPage from 'Kebetoo/src/packages/onboarding/containers'
 import SignUpPage from 'Kebetoo/src/packages/account/containers/signup'
 import SignInPage from 'Kebetoo/src/packages/account/containers/signin'
 import HomePage from 'Kebetoo/src/packages/home/containers'
+import NotificationsPage from 'Kebetoo/src/packages/notifications/containers'
 import ProfilePage from 'Kebetoo/src/packages/profile/containers'
 import SearchPage from 'Kebetoo/src/packages/search/containers'
-import StoriesPage from 'Kebetoo/src/packages/stories/containers'
 import CreatePostPage from 'Kebetoo/src/packages/post/containers/create'
 import CommentsPage from 'Kebetoo/src/packages/comments/containers'
 import ManagePostsPage from 'Kebetoo/src/packages/post/containers/manage'
 import ImageModal from 'Kebetoo/src/packages/modal/containers/image'
 import UserProfilePage from 'Kebetoo/src/packages/profile/containers/user'
+import * as api from 'Kebetoo/src/shared/helpers/http'
 
 import styles from './styles'
 import routes from './routes'
 import Typography, { types, weights } from '../shared/components/typography'
 import useUser from '../shared/hooks/user'
+import { useNotifications } from '../shared/hooks'
 
 enableScreens()
 
@@ -58,17 +64,20 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
-      [routes.STORIES]: 'stories',
+      [routes.NOTIFICATIONS]: 'ios-notifications-outline',
       [routes.SEARCH]: 'search',
       [routes.PROFILE]: 'user',
     }
     const size = focused ? 24 : 18
-    return <Kebeticon name={iconNames[route.name]} size={size} color={color} />
+    const iconName = iconNames[route.name]
+    return iconName === 'ios-notifications-outline'
+      ? <Ionicon name={iconName} size={size * 1.5} color={color} />
+      : <Kebeticon name={iconName} size={size} color={color} />
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {
       [routes.HOME]: HomePage.routeOptions.title,
-      [routes.STORIES]: StoriesPage.routeOptions.title,
+      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
       [routes.SEARCH]: SearchPage.routeOptions.title,
       [routes.PROFILE]: ProfilePage.routeOptions.title,
     }
@@ -86,7 +95,7 @@ const defaultTabOptions = ({ route }) => ({
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Tab.Screen name={routes.STORIES} component={StoriesPage} />,
+  <Tab.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
   <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
   <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
@@ -139,11 +148,71 @@ export const loggedInPages = [
 
 // Main Section
 const AppNavigation = () => {
-  const { isLoggedIn } = useUser()
+  const { isLoggedIn, profile } = useUser()
+  const { persistNotification } = useNotifications()
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })
   }, [])
+
+  const handleNotification = useCallback((remoteMessage) => {
+    if (remoteMessage !== null) {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+        remoteMessage.data,
+      )
+    }
+  }, [])
+
+  const handleInitialNotification = useCallback((remoteMessage) => {
+    if (remoteMessage !== null) {
+      console.log(
+        'Notification caused app to open from quit state:',
+        remoteMessage.notification,
+        remoteMessage.data,
+      )
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleBackgroundNotifications = async () => {
+      // save background notifications in redux
+      // with a default status of "new"
+      const bgNotifications = JSON.parse(await AsyncStorage.getItem('backgroundNotifications')) || []
+      bgNotifications.forEach(persistNotification)
+
+      // remove background notifications
+      await AsyncStorage.removeItem('backgroundNotifications')
+      // reset badge number
+      PushNotification.setApplicationIconBadgeNumber(0)
+    }
+
+    handleBackgroundNotifications()
+  }, [persistNotification])
+
+  useEffect(() => {
+    const updateUserNotificationId = async () => {
+      const deviceRegistered = messaging().isDeviceRegisteredForRemoteMessages
+      if (isLoggedIn && profile.uid && deviceRegistered) {
+        const notificationToken = await messaging().getToken()
+        api.updateAuthor(profile.uid, { notificationToken })
+      }
+    }
+
+    updateUserNotificationId()
+    messaging().onNotificationOpenedApp(handleNotification)
+    messaging().getInitialNotification().then(handleInitialNotification)
+    const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
+    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
+      api.updateAuthor(profile.uid, { notificationToken })
+    })
+
+    return () => {
+      unsubscribeForegroundNotification()
+      unsubscribeTokenRefresh()
+    }
+  }, [isLoggedIn, profile.uid, handleInitialNotification, handleNotification, persistNotification])
 
   return (
     <NavigationContainer>

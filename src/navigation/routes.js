@@ -7,6 +7,7 @@ const routes = {
   HOME: 'route:home',
   PROFILE: 'route:profile',
   SEARCH: 'route:search',
+  NOTIFICATIONS: 'route:notifications',
   STORIES: 'route:stories',
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'route:tabs_fab',

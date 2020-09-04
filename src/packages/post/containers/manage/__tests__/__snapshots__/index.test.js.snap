@@ -298,10 +298,12 @@ exports[`renders ManagePost 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
                   "borderRadius": 50,
                   "paddingHorizontal": 15,
                   "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "#F0F6FE",
                 },
                 undefined,
               ]
@@ -324,7 +326,7 @@ exports[`renders ManagePost 1`] = `
                   false,
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0, 122, 255, 255)",
                     },
                     Object {
                       "backgroundColor": "transparent",
