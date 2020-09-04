@@ -92,6 +92,7 @@ const locales = Object.freeze({
     write_post: 'Edit and share',
   },
   search: {
+    search: 'Search',
     placeholder: 'Search...',
     posts_tab: 'Posts',
     users_tab: 'Users',
@@ -105,11 +106,11 @@ const locales = Object.freeze({
     joined_in: 'Joined on {0}',
   },
   notifications: {
-    COMMENTED_POST: 'commented your post',
-    REACTED_COMMENT: 'reacted on your comment',
-    REACTED_POST: 'reacted on your post',
-    RECENT: 'Recent',
-    ALREADY_SEEN: 'Already seen',
+    commented_post: 'commented your post',
+    reacted_comment: 'reacted on your comment',
+    reacted_post: 'reacted on your post',
+    recent: 'Recent',
+    already_seen: 'Already seen',
   },
 })
 
