@@ -52,6 +52,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
           onClose={[Function]}
           onGestureBegin={[Function]}
           onGestureCanceled={[Function]}
+          onGestureEnd={[Function]}
           onOpen={[Function]}
           onTransitionStart={[Function]}
           pointerEvents="box-none"
@@ -631,6 +632,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                             >
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": true,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -765,6 +771,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               </View>
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": false,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -899,6 +910,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               </View>
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": false,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -1003,6 +1019,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               </View>
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": false,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -1137,6 +1158,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               </View>
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": false,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -1354,6 +1380,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
           onClose={[Function]}
           onGestureBegin={[Function]}
           onGestureCanceled={[Function]}
+          onGestureEnd={[Function]}
           onOpen={[Function]}
           onTransitionStart={[Function]}
           pointerEvents="box-none"
@@ -1515,6 +1542,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                             onClose={[Function]}
                             onGestureBegin={[Function]}
                             onGestureCanceled={[Function]}
+                            onGestureEnd={[Function]}
                             onOpen={[Function]}
                             onTransitionStart={[Function]}
                             pointerEvents="box-none"
@@ -2532,6 +2560,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
           onClose={[Function]}
           onGestureBegin={[Function]}
           onGestureCanceled={[Function]}
+          onGestureEnd={[Function]}
           onOpen={[Function]}
           onTransitionStart={[Function]}
           pointerEvents="box-none"
@@ -3942,6 +3971,11 @@ exports[`tabs renders TabNavigation 1`] = `
           >
             <View
               accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "selected": true,
+                }
+              }
               accessible={true}
               focusable={true}
               onClick={[Function]}
@@ -4076,6 +4110,11 @@ exports[`tabs renders TabNavigation 1`] = `
             </View>
             <View
               accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "selected": false,
+                }
+              }
               accessible={true}
               focusable={true}
               onClick={[Function]}
@@ -4210,6 +4249,11 @@ exports[`tabs renders TabNavigation 1`] = `
             </View>
             <View
               accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "selected": false,
+                }
+              }
               accessible={true}
               focusable={true}
               onClick={[Function]}
@@ -4314,6 +4358,11 @@ exports[`tabs renders TabNavigation 1`] = `
             </View>
             <View
               accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "selected": false,
+                }
+              }
               accessible={true}
               focusable={true}
               onClick={[Function]}
@@ -4448,6 +4497,11 @@ exports[`tabs renders TabNavigation 1`] = `
             </View>
             <View
               accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "selected": false,
+                }
+              }
               accessible={true}
               focusable={true}
               onClick={[Function]}
