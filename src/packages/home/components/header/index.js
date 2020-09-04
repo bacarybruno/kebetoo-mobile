@@ -11,12 +11,13 @@ import styles from './styles'
 export const routeOptions = { headerShown: false }
 
 const Header = ({
-  displayName,
+  displayName = ' ',
   imageSrc,
   style,
   title = strings.formatString(strings.home.welcome, displayName.split(' ')[0]),
   text = strings.home.whats_new,
   loading = false,
+  Right,
 }) => (
   <View style={[styles.header, style]}>
     <View style={styles.greetings}>
@@ -26,6 +27,7 @@ const Header = ({
       </View>
       {text.length > 0 && <Typography text={text} type={types.subheading} />}
     </View>
+    {Right && <Right />}
     <Avatar src={imageSrc} text={displayName} />
   </View>
 )
