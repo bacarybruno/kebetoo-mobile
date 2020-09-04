@@ -13,20 +13,12 @@ exports[`renders SearchPage 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#F5F5F5",
-          "borderColor": "rgba(229, 229, 234, 255)",
-          "borderRadius": 15,
-          "borderWidth": 1,
+          "alignItems": "center",
           "flexDirection": "row",
-          "minHeight": 48,
-          "paddingLeft": 16,
+          "height": 60,
         },
         Object {
-          "backgroundColor": "#F5F5F5",
-          "borderColor": "transparent",
-          "borderRadius": 8,
-          "margin": 10,
-          "paddingLeft": 0,
+          "marginHorizontal": 16,
         },
       ]
     }
@@ -34,9 +26,85 @@ exports[`renders SearchPage 1`] = `
     <View
       style={
         Object {
+          "flex": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 22,
+                "fontWeight": "400",
+                "letterSpacing": 0.34375,
+                "lineHeight": 28,
+              },
+              false,
+              false,
+              false,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Search
+        </Text>
+        <ActivityIndicator
+          animating={false}
+          color="rgba(0, 122, 255, 255)"
+          hidesWhenStopped={true}
+          size="small"
+          style={
+            Object {
+              "marginLeft": 8,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      hitSlop={
+        Object {
+          "bottom": 15,
+          "left": 15,
+          "right": 15,
+          "top": 15,
+        }
+      }
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
           "alignItems": "center",
           "justifyContent": "center",
-          "width": 60,
+          "opacity": 1,
+          "width": 50,
         }
       }
     >
@@ -54,84 +122,48 @@ exports[`renders SearchPage 1`] = `
         text="ionicon-ios-search"
       />
     </View>
-    <TextInput
-      allowFontScaling={true}
-      blurOnSubmit={false}
-      onChangeText={[Function]}
-      placeholder="Search..."
-      placeholderTextColor="rgba(174, 174, 178, 255)"
-      rejectResponderTermination={true}
-      returnKeyType="search"
+    <View
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "color": "rgba(0,0,0,0.87)",
-            "flex": 1,
-            "fontFamily": "System",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "letterSpacing": -0.32,
-            "lineHeight": 21,
+            "height": 30,
+            "width": 30,
           },
-          Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontFamily": "System",
-            "fontSize": 18,
-            "fontWeight": "400",
-          },
+          undefined,
+          undefined,
         ]
-      }
-      underlineColorAndroid="transparent"
-      value={null}
-    />
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "justifyContent": "center",
-          "width": 50,
-        }
       }
     >
       <View
-        accessible={true}
-        focusable={true}
-        hitSlop={
-          Object {
-            "bottom": 15,
-            "left": 15,
-            "right": 15,
-            "top": 15,
-          }
-        }
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
-          Object {
-            "opacity": 1,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 122, 255, 255)",
+              "borderRadius": 15,
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            undefined,
+            Object {
+              "backgroundColor": "#a1887f",
+            },
+          ]
         }
       >
         <Text
-          allowFontScaling={false}
           style={
             Object {
-              "color": "rgba(0,0,0,0.87)",
-              "fontFamily": "Ionicons",
-              "fontSize": 36,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
+              "backgroundColor": "transparent",
+              "color": "rgba(255, 255, 255, 255)",
+              "fontFamily": "System",
+              "fontSize": undefined,
+              "fontWeight": "600",
             }
           }
-          text="ionicon-ios-close"
-        />
+        >
+           
+        </Text>
       </View>
     </View>
   </View>

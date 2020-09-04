@@ -8,6 +8,9 @@ import strings from 'Kebetoo/src/config/strings'
 import TextInput from 'Kebetoo/src/shared/components/inputs/text'
 import useDebounce from 'Kebetoo/src/shared/hooks/debounce'
 import edgeInsets from 'Kebetoo/src/theme/edge-insets'
+import Header from 'Kebetoo/src/packages/home/components/header'
+import metrics from 'Kebetoo/src/theme/metrics'
+import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles from './styles'
 import Posts from './posts'
@@ -24,10 +27,14 @@ const tabBarOptions = {
   labelStyle: styles.label,
 }
 
-const SearchIcon = () => (
-  <View style={styles.searchIcon}>
+const SearchIcon = ({ onPress }) => (
+  <TouchableOpacity
+    style={styles.searchIcon}
+    onPress={onPress}
+    hitSlop={edgeInsets.all(15)}
+  >
     <Ionicon name="ios-search" size={23} color={colors.textPrimary} />
-  </View>
+  </TouchableOpacity>
 )
 
 const CancelIcon = ({ isLoading, onPress }) => (
@@ -42,8 +49,9 @@ const CancelIcon = ({ isLoading, onPress }) => (
 )
 
 const SearchPage = () => {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+  const { profile } = useUser()
 
   const textInputRef = useRef()
 
@@ -54,7 +62,7 @@ const SearchPage = () => {
   const debouncedOnChange = useDebounce(onChange)
 
   const onCancel = useCallback(() => {
-    setSearchQuery('')
+    setSearchQuery(null)
     textInputRef.current.clear()
     textInputRef.current.blur()
   }, [])
@@ -68,25 +76,42 @@ const SearchPage = () => {
     textInputRef.current.setNativeProps({ text })
   }, [onChange])
 
+  const onShowSearchbar = useCallback(() => {
+    setSearchQuery('')
+  }, [])
+
   return (
     <View style={styles.wrapper}>
-      <TextInput
-        placeholder={strings.search.placeholder}
-        fieldName="searchQuery"
-        onValueChange={debouncedOnChange}
-        returnKeyType="search"
-        wrapperStyle={styles.textInputWrapper}
-        textStyle={styles.textInputStyle}
-        ref={textInputRef}
-        Left={SearchIcon}
-        Right={() => <CancelIcon onPress={onCancel} isLoading={isLoading} />}
-      />
+      {searchQuery === null
+        ? (
+          <Header
+            text=""
+            title="Search"
+            displayName={profile.displayName}
+            imageSrc={profile.photoURL}
+            Right={() => <SearchIcon onPress={onShowSearchbar} />}
+            style={{ marginHorizontal: metrics.marginHorizontal }}
+          />
+        ) : (
+          <TextInput
+            autoFocus
+            placeholder={strings.search.placeholder}
+            fieldName="searchQuery"
+            onValueChange={debouncedOnChange}
+            returnKeyType="search"
+            wrapperStyle={styles.textInputWrapper}
+            textStyle={styles.textInputStyle}
+            ref={textInputRef}
+            Left={SearchIcon}
+            Right={() => <CancelIcon onPress={onCancel} isLoading={isLoading} />}
+          />
+        )}
       <Tab.Navigator tabBarOptions={tabBarOptions} sceneContainerStyle={styles.wrapper}>
         <Tab.Screen name={strings.search.posts_tab}>
           {(props) => (
             <Posts
               {...props}
-              searchQuery={searchQuery}
+              searchQuery={searchQuery || ''}
               onSearch={onSearch}
               onRecentSearch={onRecentSearch}
             />
@@ -96,7 +121,7 @@ const SearchPage = () => {
           {(props) => (
             <Users
               {...props}
-              searchQuery={searchQuery}
+              searchQuery={searchQuery || ''}
               onSearch={onSearch}
               onRecentSearch={onRecentSearch}
             />
