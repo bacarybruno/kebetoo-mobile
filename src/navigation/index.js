@@ -32,8 +32,7 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import styles from './styles'
 import routes from './routes'
 import Typography, { types, weights } from '../shared/components/typography'
-import useUser from '../shared/hooks/user'
-import { useNotifications } from '../shared/hooks'
+import { useUser, useNotifications } from '../shared/hooks'
 
 enableScreens()
 
@@ -111,15 +110,30 @@ export const TabBar = (props) => (
   </View>
 )
 
-export const TabPage = () => (
-  <Tab.Navigator
-    screenOptions={defaultTabOptions}
-    tabBarOptions={defaultTabBarOptions}
-    tabBar={TabBar}
-  >
-    {tabPages.map(createPage)}
-  </Tab.Navigator>
-)
+export const TabPage = () => {
+  const { badgeCount } = useNotifications()
+
+  return (
+    <Tab.Navigator
+      screenOptions={defaultTabOptions}
+      tabBarOptions={defaultTabBarOptions}
+      tabBar={TabBar}
+    >
+      {tabPages.map((page, key) => (
+        React.cloneElement(
+          page, {
+            key,
+            options: {
+              tabBarBadge: page.props.name === routes.NOTIFICATIONS && badgeCount > 0
+                ? badgeCount
+                : undefined,
+            },
+          },
+        )
+      ))}
+    </Tab.Navigator>
+  )
+}
 
 export const onboardingPages = [
   <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />,

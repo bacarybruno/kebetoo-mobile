@@ -20,19 +20,34 @@ const useNotifications = () => {
 
   const [newItems, setNewItems] = useState([])
   const [seenItems, setSeenItems] = useState([])
+  const [badgeCount, setBadgeCount] = useState(0)
 
   useEffect(() => {
     const newNotifications = []
     const seenNotifications = []
+    const notifsBadgeItems = []
+
     notifications.forEach((notif) => {
-      if (notif.status === NOTIFICATION_STATUS.NEW) {
-        newNotifications.push(notif)
-      } else {
-        seenNotifications.push(notif)
+      switch (notif.status) {
+        case NOTIFICATION_STATUS.NEW:
+          newNotifications.push(notif)
+          notifsBadgeItems.push(notif)
+          break
+        case NOTIFICATION_STATUS.OPENED:
+          seenNotifications.push(notif)
+          break
+        case NOTIFICATION_STATUS.SEEN:
+          seenNotifications.push(notif)
+          notifsBadgeItems.push(notif)
+          break
+        default:
+          break
       }
     })
+
     setNewItems(newNotifications)
     setSeenItems(seenNotifications)
+    setBadgeCount(notifsBadgeItems.length)
   }, [notifications])
 
   const persistNotification = useCallback((notification) => {
@@ -72,6 +87,7 @@ const useNotifications = () => {
   return {
     newItems,
     seenItems,
+    badgeCount,
     updateSeenStatus,
     updateOpenStatus,
     setupNotifications,
