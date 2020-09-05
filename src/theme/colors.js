@@ -82,19 +82,19 @@ const colors = {
 //   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
 // )
 
-// export const hexToRgb = (hex) => {
-//   const sanitizedHex = hex.replace('#', '')
-//   const bigint = parseInt(sanitizedHex, 16)
-//   const r = (bigint >> 16) & 255
-//   const g = (bigint >> 8) & 255
-//   const b = bigint & 255
-//   return [r, g, b]
-// }
+export const hexToRgb = (hex) => {
+  const sanitizedHex = hex.replace('#', '')
+  const bigint = parseInt(sanitizedHex, 16)
+  const r = (bigint >> 16) & 255
+  const g = (bigint >> 8) & 255
+  const b = bigint & 255
+  return [r, g, b]
+}
 
-// export const hexToRgba = (hex, opacity) => {
-//   const [r, g, b] = hexToRgb(hex)
-//   return `rgba(${r}, ${g}, ${b}, ${opacity})`
-// }
+export const hexToRgba = (hex, opacity) => {
+  const [r, g, b] = hexToRgb(hex)
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`
+}
 
 // export const middleHexColorsToRgb = (color1, color2) => {
 //   const [r1, g1, b1] = hexToRgb(color1)

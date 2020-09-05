@@ -33,11 +33,21 @@ exports[`renders Profile 1`] = `
         }
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "borderRadius": 45,
               "elevation": 3,
               "height": 90,
+              "opacity": 1,
               "shadowColor": "rgba(0, 0, 0, 255)",
               "shadowOffset": Object {
                 "x": 0,

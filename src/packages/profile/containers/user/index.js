@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
+import Typography, { types, weights } from 'Kebetoo/src/shared/components/typography'
 import Badge from 'Kebetoo/src/shared/components/badge'
 import BasicPost from 'Kebetoo/src/packages/post/containers/basic-post'
 import usePosts from 'Kebetoo/src/shared/hooks/posts'
@@ -82,7 +82,8 @@ const UserProfile = ({ navigation }) => {
     return (
       <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
         <Typography
-          type={types.headline3}
+          type={types.subheading}
+          systemWeight={weights.semibold}
           text={dayjs(section.title, dateFormat).format(outputDateFormat)}
         />
         <Badge text={section.data.length} />

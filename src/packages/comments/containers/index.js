@@ -17,6 +17,8 @@ import strings from 'Kebetoo/src/config/strings'
 import colors from 'Kebetoo/src/theme/colors'
 import usePosts from 'Kebetoo/src/shared/hooks/posts'
 import useUser from 'Kebetoo/src/shared/hooks/user'
+import { getSource } from 'Kebetoo/src/packages/post/components/image-content'
+
 import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
@@ -121,7 +123,10 @@ const Comments = () => {
   const onCommentContentPress = useCallback(() => {
     const type = getPostType(post)
     if (type === POST_TYPES.IMAGE) {
-      navigate(routes.MODAL_IMAGE, post.image)
+      navigate(routes.MODAL_IMAGE, {
+        ...post.image,
+        source: getSource(post.url),
+      })
       return false
     }
     return true

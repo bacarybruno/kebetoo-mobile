@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import colors from 'Kebetoo/src/theme/colors'
+import colors, { hexToRgba, rgbaToHex } from 'Kebetoo/src/theme/colors'
 import elevation from 'Kebetoo/src/theme/elevation'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export default StyleSheet.create({
   button: {
@@ -12,13 +13,14 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 15,
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.20,
-    shadowRadius: 1.41,
     ...elevation(2),
+  },
+  disabledButton: {
+    ...elevation(0),
+    backgroundColor: hexToRgba(rgbaToHex(colors.primary), 0.30),
+  },
+  loading: {
+    position: 'absolute',
+    right: metrics.marginHorizontal,
   },
 })

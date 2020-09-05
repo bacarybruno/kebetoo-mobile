@@ -71,37 +71,54 @@ exports[`renders Badge 1`] = `
     </Text>
   </View>
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "height": 30,
-          "width": 30,
-        },
-        undefined,
-        undefined,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
-    <Image
-      source={
-        Object {
-          "uri": "https://avatars1.githubusercontent.com/u/14147533",
-        }
-      }
+    <View
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0, 122, 255, 255)",
-            "borderRadius": 15,
-            "flex": 1,
-            "justifyContent": "center",
+            "height": 30,
+            "width": 30,
           },
+          undefined,
           undefined,
         ]
       }
-      testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-    />
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://avatars1.githubusercontent.com/u/14147533",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 122, 255, 255)",
+              "borderRadius": 15,
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+        testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+      />
+    </View>
   </View>
 </View>
 `;

@@ -6,7 +6,9 @@ jest.mock('@react-navigation/native', () => ({
   ...jest.requireActual('@react-navigation/native'),
   useRoute: () => ({
     params: {
-      url: '/fake-image.png',
+      source: {
+        uri: 'jest://fake-image.png',
+      },
       width: 100,
       height: 100,
     },

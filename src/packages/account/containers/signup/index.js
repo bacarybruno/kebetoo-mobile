@@ -22,6 +22,7 @@ import styles from './styles'
 const SignUp = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signup })
 
+  const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
 
   const [infos, setInfos] = useState({
@@ -103,10 +104,14 @@ const SignUp = ({ navigation }) => {
           ref={passwordRef}
           returnKeyType="done"
         />
-        <FullButton text={strings.auth.signup.toUpperCase()} onPress={onSubmit} />
+        <FullButton
+          text={strings.auth.signup.toUpperCase()}
+          onPress={onSubmit}
+          loading={isLoading}
+        />
       </View>
       {!keyboardShown && (
-        <SocialSignIn sectionText={strings.auth.or_signin_with}>
+        <SocialSignIn sectionText={strings.auth.or_signin_with} onLoading={setIsLoading}>
           <View style={styles.footerText}>
             <Typography type={types.textButtonLight} text={strings.auth.have_account} />
             <Typography type={types.textButtonLight} text=" " />

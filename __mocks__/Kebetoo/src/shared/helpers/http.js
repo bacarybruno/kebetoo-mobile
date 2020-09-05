@@ -14,6 +14,7 @@ export const deletePost = jest.fn().mockResolvedValue(true)
 export const deleteReaction = jest.fn().mockResolvedValue(true)
 export const editReaction = jest.fn().mockResolvedValue(true)
 export const getUsers = jest.fn().mockResolvedValue(authors)
+export const updateAuthor = jest.fn().mockResolvedValue(true)
 export const getAuthorByUid = jest.fn()
   .mockImplementation((uid) => authors.filter((author) => author.uid === uid))
 export const commentPost = jest.fn().mockImplementation((data) => Promise.resolve({

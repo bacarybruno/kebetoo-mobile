@@ -10,16 +10,22 @@ import colors from 'Kebetoo/src/theme/colors'
 
 import styles from './styles'
 
-const SocialSignIn = ({ sectionText, children, onSignIn = () => {} }) => {
+const SocialSignIn = ({
+  sectionText, children, onSignIn, onLoading,
+}) => {
   const signInWithGoogle = useCallback(async () => {
+    onLoading(true)
     const result = await googleLogin()
+    onLoading(false)
     return onSignIn(result)
-  }, [onSignIn])
+  }, [onLoading, onSignIn])
 
   const signInWithFacebook = useCallback(async () => {
+    onLoading(true)
     const result = await facebookLogin()
+    onLoading(false)
     return onSignIn(result)
-  }, [onSignIn])
+  }, [onLoading, onSignIn])
 
   return (
     <View style={styles.socialSignUp}>
@@ -39,6 +45,11 @@ const SocialSignIn = ({ sectionText, children, onSignIn = () => {} }) => {
       </View>
     </View>
   )
+}
+
+SocialSignIn.defaultProps = {
+  onSignIn: () => {},
+  onLoading: () => {},
 }
 
 export default SocialSignIn

@@ -47,8 +47,8 @@ export const getPostType = (post) => {
 
 const Edited = () => (
   <>
-    <Typography text=" • " type={types.headline6} />
-    <Typography text={strings.general.edited} type={types.headline6} />
+    <Typography text=" • " type={types.caption} />
+    <Typography text={strings.general.edited} type={types.caption} />
   </>
 )
 
@@ -72,13 +72,22 @@ export const Header = ({
 }) => {
   let avatarSize = size
   if (isRepost) avatarSize = fontSizes.lg
+
+  const { navigate } = useNavigation()
+
+  const onShowProfile = useCallback(() => {
+    navigate(routes.USER_PROFILE, { userId: author.id })
+  }, [author.id, navigate])
+
   return (
     <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
       <View style={styles.left}>
         <View style={styles.headerContent}>
           {Left && <Left />}
           {author ? (
-            <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
+            <TouchableOpacity onPress={onShowProfile}>
+              <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
+            </TouchableOpacity>
           ) : (
             <PlaceholderAvatar size={avatarSize} />
           )}
@@ -87,12 +96,12 @@ export const Header = ({
           <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
             <Typography
               text={author.displayName}
-              type={types.headline5}
+              type={types.textButton}
               systemWeight={weights.semibold}
             />
             {!isRepost && (
               <View style={styles.smallMeta}>
-                <Typography text={dayjs(post.createdAt).fromNow()} type={types.headline6} />
+                <Typography text={dayjs(post.createdAt).fromNow()} type={types.caption} />
                 {isUpdated(post) && <Edited />}
               </View>
             )}

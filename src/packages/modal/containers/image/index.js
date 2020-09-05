@@ -3,9 +3,9 @@ import { View, Image, StatusBar } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
-import { getSource } from 'Kebetoo/src/packages/post/components/image-content'
-import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import colors from 'Kebetoo/src/theme/colors'
+import metrics from 'Kebetoo/src/theme/metrics'
+import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 
 import styles from './styles'
 
@@ -19,17 +19,20 @@ export const routeOptions = {
   ...TransitionPresets.ScaleFromCenterAndroid,
 }
 
+const isGoogleImageUrl = (url) => url.includes('googleusercontent.com')
+
 const ImageModal = ({ navigation }) => {
   navigation.setOptions(routeOptions)
 
   const { params } = useRoute()
-  const { url, width, height } = params
-  const source = getSource(url)
+  const { source, width, height } = params
   const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
+
+  source.uri = isGoogleImageUrl(source.uri) ? source.uri.replace('s96-c', 's400-c') : source.uri
 
   useEffect(() => {
     if (Number.isNaN(aspectRatio)) {
-      Image.getSize(source, (w, h) => {
+      Image.getSize(source.uri, (w, h) => {
         // set aspect ratio based on react native image size
         setAspectRatio(w / h)
       }, () => {
@@ -37,13 +40,16 @@ const ImageModal = ({ navigation }) => {
         setAspectRatio(0)
       })
     }
-  }, [aspectRatio, source])
+  }, [aspectRatio, source.uri])
 
   return (
     <>
       <StatusBar barStyle="light-content" />
       <View style={styles.wrapper}>
-        <Image source={source} style={{ aspectRatio }} />
+        <Image
+          source={source}
+          style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
+        />
       </View>
     </>
   )

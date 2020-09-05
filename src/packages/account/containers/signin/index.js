@@ -20,6 +20,8 @@ import styles from './styles'
 const SignIn = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signin })
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(8),
@@ -39,11 +41,14 @@ const SignIn = ({ navigation }) => {
 
   const onSubmit = useCallback(async () => {
     try {
+      setIsLoading(true)
       await schema.validate(infos)
       const { user } = await auth().signInWithEmailAndPassword(infos.email, infos.password)
       await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
     } catch (e) {
       console.log(e)
+    } finally {
+      setIsLoading(false)
     }
   }, [schema, infos])
 
@@ -79,7 +84,11 @@ const SignIn = ({ navigation }) => {
           returnKeyType="done"
         />
         <View>
-          <FullButton text={strings.auth.signin.toUpperCase()} onPress={onSubmit} />
+          <FullButton
+            text={strings.auth.signin.toUpperCase()}
+            onPress={onSubmit}
+            loading={isLoading}
+          />
           <Typography
             color="link"
             style={styles.forgotPassword}
@@ -89,7 +98,7 @@ const SignIn = ({ navigation }) => {
         </View>
       </View>
       {!keyboardShown && (
-        <SocialSignIn sectionText={strings.auth.or_signin_with}>
+        <SocialSignIn sectionText={strings.auth.or_signin_with} onLoading={setIsLoading}>
           <View style={styles.footerText}>
             <Typography type={types.textButtonLight} text={strings.auth.dont_have_account} />
             <Typography type={types.textButtonLight} text=" " />
