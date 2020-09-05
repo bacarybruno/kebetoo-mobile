@@ -98,7 +98,11 @@ const SignIn = ({ navigation }) => {
         </View>
       </View>
       {!keyboardShown && (
-        <SocialSignIn sectionText={strings.auth.or_signin_with} onLoading={setIsLoading}>
+        <SocialSignIn
+          sectionText={strings.auth.or_signin_with}
+          onLoading={setIsLoading}
+          disabled={isLoading}
+        >
           <View style={styles.footerText}>
             <Typography type={types.textButtonLight} text={strings.auth.dont_have_account} />
             <Typography type={types.textButtonLight} text=" " />

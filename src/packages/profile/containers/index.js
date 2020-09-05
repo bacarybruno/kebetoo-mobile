@@ -63,8 +63,8 @@ export const Summary = React.memo(({ photoURL, info, displayName }) => {
 
 export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>
-    <Typography type={typos.headline4} text={value} systemWeight={weights.bold} color="primary" />
-    <Typography type={typos.headline6} text={title} systemColor={systemColors.tertiary} />
+    <Typography type={typos.subheading} text={value} systemWeight={weights.bold} color="primary" />
+    <Typography type={typos.headline5} text={title} systemColor={systemColors.tertiary} />
   </View>
 ))
 
@@ -85,8 +85,10 @@ export const IconButton = React.memo(({
   </View>
 ))
 
-export const Stats = React.memo(({ postsCount, reactionsCount, commentsCount }) => (
-  <View style={styles.stats}>
+export const Stats = React.memo(({
+  postsCount, reactionsCount, commentsCount, style,
+}) => (
+  <View style={[styles.stats, style]}>
     <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
     <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
     <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />

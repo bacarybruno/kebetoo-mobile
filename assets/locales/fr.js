@@ -112,6 +112,9 @@ const locales = Object.freeze({
     recent: 'Récent',
     already_seen: 'Déja consultés',
   },
+  dates: {
+    format_month_year: 'MMMM YYYY',
+  },
 })
 
 export default locales

@@ -101,19 +101,16 @@ const ManagePostsPage = ({ navigation }) => {
 
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 
-  const renderSectionHeader = useCallback(({ section }) => {
-    const outputDateFormat = 'MMMM YYYY'
-    return (
-      <View style={styles.sectionHeader}>
-        <Typography
-          type={types.subheading}
-          systemWeight={weights.semibold}
-          text={dayjs(section.title, dateFormat).format(outputDateFormat)}
-        />
-        <Badge text={section.data.length} />
-      </View>
-    )
-  }, [])
+  const renderSectionHeader = useCallback(({ section }) => (
+    <View style={styles.sectionHeader}>
+      <Typography
+        type={types.subheading}
+        systemWeight={weights.semibold}
+        text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
+      />
+      <Badge text={section.data.length} />
+    </View>
+  ), [])
 
   const onPostEdited = useCallback((editedPost) => {
     if (editedPost) {

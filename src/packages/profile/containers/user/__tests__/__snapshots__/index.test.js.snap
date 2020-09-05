@@ -37,419 +37,378 @@ exports[`renders UserProfile 1`] = `
         onLayout={[Function]}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "justifyContent": "center",
-              "marginTop": 30,
-              "paddingHorizontal": 16,
-              "width": "100%",
+              "marginBottom": 95,
             }
           }
         >
           <View
+            accessibilityIgnoresInvertColors={true}
             style={
               Object {
-                "flexDirection": "row",
+                "aspectRatio": 1,
+                "paddingHorizontal": 16,
               }
             }
           >
+            <Image
+              source={
+                Object {
+                  "uri": null,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            />
             <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "borderRadius": 45,
-                  "elevation": 3,
-                  "height": 90,
-                  "opacity": 1,
-                  "shadowColor": "rgba(0, 0, 0, 255)",
-                  "shadowOffset": Object {
-                    "x": 0,
-                    "y": 1,
-                  },
-                  "shadowOpacity": 0.22,
-                  "shadowRadius": 2.22,
-                  "width": 90,
+                  "flex": 1,
+                  "justifyContent": "flex-end",
                 }
               }
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "height": 30,
-                      "width": 30,
+                  Object {
+                    "backgroundColor": "rgba(245, 245, 245, 0.95)",
+                    "borderRadius": 8,
+                    "elevation": 3,
+                    "height": 140,
+                    "marginBottom": -70,
+                    "shadowColor": "rgba(0, 0, 0, 255)",
+                    "shadowOffset": Object {
+                      "x": 0,
+                      "y": 1,
                     },
-                    Object {
-                      "height": 90,
-                      "width": 90,
-                    },
-                    undefined,
-                  ]
+                    "shadowOpacity": 0.22,
+                    "shadowRadius": 2.22,
+                  }
                 }
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "rgba(0, 122, 255, 255)",
-                        "borderRadius": 15,
-                        "flex": 1,
-                        "justifyContent": "center",
-                      },
-                      Object {
-                        "borderRadius": 45,
-                      },
-                      Object {
-                        "backgroundColor": "#a1887f",
-                      },
-                    ]
+                    Object {
+                      "height": "50%",
+                      "justifyContent": "center",
+                    }
                   }
                 >
                   <Text
                     style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "rgba(255, 255, 255, 255)",
-                        "fontFamily": "System",
-                        "fontSize": 48,
-                        "fontWeight": "600",
-                      }
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 22,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.34375,
+                          "lineHeight": 28,
+                        },
+                        false,
+                        false,
+                        false,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "600",
+                          },
+                          Object {
+                            "textAlign": "center",
+                          },
+                        ],
+                      ]
                     }
                   >
                      
                   </Text>
                 </View>
+                <View
+                  style={
+                    Object {
+                      "height": "50%",
+                      "justifyContent": "center",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignSelf": "center",
+                          "backgroundColor": "#F5F5F5",
+                          "borderRadius": 16,
+                          "elevation": 1,
+                          "flexDirection": "row",
+                          "height": 68,
+                          "marginTop": 27,
+                          "shadowColor": "rgba(0, 0, 0, 255)",
+                          "shadowOffset": Object {
+                            "x": 0,
+                            "y": 0,
+                          },
+                          "shadowOpacity": 0.18,
+                          "shadowRadius": 1,
+                          "width": "99%",
+                        },
+                        Object {
+                          "elevation": 0,
+                          "height": "100%",
+                          "marginTop": 0,
+                          "shadowColor": "rgba(0, 0, 0, 255)",
+                          "shadowOffset": Object {
+                            "x": 0,
+                            "y": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                          "width": "100%",
+                        },
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 17,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.408,
+                              "lineHeight": 22,
+                            },
+                            Array [
+                              Object {
+                                "color": "rgba(0, 122, 255, 255)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "700",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        0
+                      </Text>
+                      <Text
+                        style={
+                          Array [
+                            false,
+                            false,
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.24,
+                              "lineHeight": 20,
+                            },
+                            false,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.38)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        posts
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 17,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.408,
+                              "lineHeight": 22,
+                            },
+                            Array [
+                              Object {
+                                "color": "rgba(0, 122, 255, 255)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "700",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        0
+                      </Text>
+                      <Text
+                        style={
+                          Array [
+                            false,
+                            false,
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.24,
+                              "lineHeight": 20,
+                            },
+                            false,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.38)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        comments
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 17,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.408,
+                              "lineHeight": 22,
+                            },
+                            Array [
+                              Object {
+                                "color": "rgba(0, 122, 255, 255)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "700",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        0
+                      </Text>
+                      <Text
+                        style={
+                          Array [
+                            false,
+                            false,
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.24,
+                              "lineHeight": 20,
+                            },
+                            false,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.38)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        reactions
+                      </Text>
+                    </View>
+                  </View>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                  "justifyContent": "center",
-                  "marginLeft": 20,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.87)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                 
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.54)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                undefined
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "alignSelf": "center",
-                "backgroundColor": "#F5F5F5",
-                "borderRadius": 16,
-                "elevation": 1,
-                "flexDirection": "row",
-                "height": 68,
-                "marginTop": 27,
-                "shadowColor": "rgba(0, 0, 0, 255)",
-                "shadowOffset": Object {
-                  "x": 0,
-                  "y": 0,
-                },
-                "shadowOpacity": 0.18,
-                "shadowRadius": 1,
-                "width": "99%",
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 122, 255, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "700",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                0
-              </Text>
-              <Text
-                style={
-                  Array [
-                    false,
-                    false,
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 12,
-                      "fontWeight": "400",
-                      "letterSpacing": 0,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.38)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                posts
-              </Text>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 122, 255, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "700",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                0
-              </Text>
-              <Text
-                style={
-                  Array [
-                    false,
-                    false,
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 12,
-                      "fontWeight": "400",
-                      "letterSpacing": 0,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.38)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                comments
-              </Text>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 122, 255, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "700",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                0
-              </Text>
-              <Text
-                style={
-                  Array [
-                    false,
-                    false,
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 12,
-                      "fontWeight": "400",
-                      "letterSpacing": 0,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.38)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                reactions
-              </Text>
             </View>
           </View>
         </View>
-        <View
-          style={
-            Object {
-              "borderColor": "#F5F5F5",
-              "borderWidth": 2,
-              "marginBottom": 15,
-              "marginTop": 30,
-            }
-          }
-        />
       </View>
     </View>
   </RCTScrollView>
