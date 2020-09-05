@@ -87,6 +87,7 @@ const CreatePostPage = ({ navigation }) => {
   const { profile } = useUser()
 
   const { params } = useRoute()
+  const [isLoading, setIsLoading] = useState(false)
   const [editMode] = useState(params && params.action === actionTypes.EDIT)
   const [shareMode] = useState(params && params.action === actionTypes.SHARE)
   const [text, setText] = useState((value) => value || (
@@ -99,6 +100,7 @@ const CreatePostPage = ({ navigation }) => {
   const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
 
   const onHeaderSavePress = useCallback(async () => {
+    setIsLoading(true)
     let result
     const repost = params && params.post ? params.post : undefined
     if (editMode) {
@@ -110,6 +112,7 @@ const CreatePostPage = ({ navigation }) => {
     } else {
       result = await api.createPost({ content: text, repost, author: profile.uid })
     }
+    setIsLoading(false)
     if (params && params.onGoBack) params.onGoBack(result)
     goBack()
   }, [editMode, audioRecorder, imagePicker, params, goBack, text, profile.uid])
@@ -142,11 +145,12 @@ const CreatePostPage = ({ navigation }) => {
           disabled={text.length === 0}
           onPress={onHeaderSavePress}
           style={styles.headerSaveButton}
+          loading={isLoading}
         />
       ),
       title: headerMessages.title,
     })
-  }, [text, setOptions, onHeaderSavePress, getHeaderMessages])
+  }, [text, setOptions, onHeaderSavePress, getHeaderMessages, isLoading])
 
   return (
     <View style={styles.wrapper}>

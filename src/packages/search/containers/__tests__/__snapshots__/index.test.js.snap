@@ -123,47 +123,64 @@ exports[`renders SearchPage 1`] = `
       />
     </View>
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "height": 30,
-            "width": 30,
-          },
-          undefined,
-          undefined,
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
       <View
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 15,
-              "flex": 1,
-              "justifyContent": "center",
+              "height": 30,
+              "width": 30,
             },
             undefined,
-            Object {
-              "backgroundColor": "#a1887f",
-            },
+            undefined,
           ]
         }
       >
-        <Text
+        <View
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "rgba(255, 255, 255, 255)",
-              "fontFamily": "System",
-              "fontSize": undefined,
-              "fontWeight": "600",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 15,
+                "flex": 1,
+                "justifyContent": "center",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#a1887f",
+              },
+            ]
           }
         >
-           
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgba(255, 255, 255, 255)",
+                "fontFamily": "System",
+                "fontSize": undefined,
+                "fontWeight": "600",
+              }
+            }
+          >
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>

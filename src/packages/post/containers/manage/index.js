@@ -8,7 +8,7 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
 import HeaderBack from 'Kebetoo/src/shared/components/header-back'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
+import Typography, { types, weights } from 'Kebetoo/src/shared/components/typography'
 import colors, { rgbaToHex } from 'Kebetoo/src/theme/colors'
 import routes from 'Kebetoo/src/navigation/routes'
 import NoContent from 'Kebetoo/src/shared/components/no-content'
@@ -106,7 +106,8 @@ const ManagePostsPage = ({ navigation }) => {
     return (
       <View style={styles.sectionHeader}>
         <Typography
-          type={types.headline3}
+          type={types.subheading}
+          systemWeight={weights.semibold}
           text={dayjs(section.title, dateFormat).format(outputDateFormat)}
         />
         <Badge text={section.data.length} />

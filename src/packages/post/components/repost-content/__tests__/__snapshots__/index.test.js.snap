@@ -81,42 +81,59 @@ exports[`renders RepostContent 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "height": 30,
-                      "width": 30,
-                    },
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    },
-                    undefined,
-                  ]
+                  Object {
+                    "opacity": 1,
+                  }
                 }
               >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                    }
-                  }
+                <View
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "rgba(0, 122, 255, 255)",
-                        "borderRadius": 15,
-                        "flex": 1,
-                        "justifyContent": "center",
+                        "height": 30,
+                        "width": 30,
                       },
                       Object {
-                        "borderRadius": 12,
+                        "height": 24,
+                        "width": 24,
                       },
+                      undefined,
                     ]
                   }
-                  testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-                />
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
+                          "borderRadius": 15,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "borderRadius": 12,
+                        },
+                      ]
+                    }
+                    testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                  />
+                </View>
               </View>
             </View>
             <View
@@ -138,18 +155,15 @@ exports[`renders RepostContent 1`] = `
               <Text
                 style={
                   Array [
-                    false,
-                    false,
                     Object {
                       "backgroundColor": "transparent",
                       "color": "#000000",
                       "fontFamily": "System",
-                      "fontSize": 15,
+                      "fontSize": 16,
                       "fontWeight": "400",
-                      "letterSpacing": -0.24,
-                      "lineHeight": 20,
+                      "letterSpacing": -0.32,
+                      "lineHeight": 21,
                     },
-                    false,
                     Array [
                       Object {
                         "color": "rgba(0,0,0,0.87)",

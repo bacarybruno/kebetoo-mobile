@@ -173,6 +173,7 @@ exports[`renders Signin 1`] = `
             "borderRadius": 15,
             "color": "rgba(255, 255, 255, 255)",
             "elevation": 2,
+            "flexDirection": "row",
             "height": 48,
             "justifyContent": "center",
             "opacity": 1,
@@ -215,6 +216,18 @@ exports[`renders Signin 1`] = `
         >
           SIGN IN
         </Text>
+        <ActivityIndicator
+          animating={false}
+          color="rgba(0, 122, 255, 255)"
+          hidesWhenStopped={true}
+          size="small"
+          style={
+            Object {
+              "position": "absolute",
+              "right": 16,
+            }
+          }
+        />
       </View>
       <Text
         style={

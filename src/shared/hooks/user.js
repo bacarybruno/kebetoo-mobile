@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
 
+import * as api from 'Kebetoo/src/shared/helpers/http'
+
 import { getUserId, getUser, setUserId } from '../helpers/users'
 
 // TODO: find out why this hook is looping
@@ -42,9 +44,10 @@ const useUser = () => {
     return subscriber
   }, [])
 
-  const signOut = useCallback(() => {
-    auth().signOut()
-  }, [])
+  const signOut = useCallback(async () => {
+    await api.updateAuthor(profile.uid, { notificationToken: null })
+    await auth().signOut()
+  }, [profile.uid])
 
   return {
     profile,

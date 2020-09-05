@@ -13,7 +13,7 @@ exports[`renders ImageModal 1`] = `
   <Image
     source={
       Object {
-        "uri": "jest://localhost:1337/fake-image.png",
+        "uri": "jest://fake-image.png",
       }
     }
     style={

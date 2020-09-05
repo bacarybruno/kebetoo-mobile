@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableNativeFeedback } from 'react-native'
+import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
 
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 import colors from 'Kebetoo/src/theme/colors'
@@ -8,7 +8,7 @@ import styles from './styles'
 import Typography, { types } from '../../typography'
 
 const OutlinedButton = ({
-  text, onPress, style, disabled,
+  text, onPress, style, disabled, loading = false,
 }) => (
   <Pressable
     style={[styles.wrapper, style, disabled && { borderColor: colors.inactive }]}
@@ -16,7 +16,9 @@ const OutlinedButton = ({
     onPress={onPress}
     disabled={disabled}
   >
-    <Typography type={types.button} text={text} color={disabled ? 'inactive' : 'primary'} />
+    {loading
+      ? <ActivityIndicator animating={loading} color={colors.primary} />
+      : <Typography type={types.button} text={text} color={disabled ? 'inactive' : 'primary'} />}
   </Pressable>
 )
 

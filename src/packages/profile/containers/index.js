@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import {
-  View, ScrollView, Platform, Share,
+  View, ScrollView, Platform, Share, TouchableOpacity, Image,
 } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
@@ -33,17 +33,33 @@ export const SectionTitle = React.memo(({ text }) => (
   />
 ))
 
-export const Summary = React.memo(({ photoURL, info, displayName }) => (
-  <View style={styles.summary}>
-    <View style={styles.imageWrapper}>
-      <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
+export const Summary = React.memo(({ photoURL, info, displayName }) => {
+  const { navigate } = useNavigation()
+
+  const onPress = useCallback(() => {
+    navigate(routes.MODAL_IMAGE, {
+      source: {
+        uri: photoURL,
+      },
+    })
+  }, [navigate, photoURL])
+
+  return (
+    <View style={styles.summary}>
+      <TouchableOpacity
+        style={styles.imageWrapper}
+        activeOpacity={0.8}
+        onPress={onPress}
+      >
+        <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
+      </TouchableOpacity>
+      <View style={styles.summaryText}>
+        <Typography type={typos.headline1} text={displayName} />
+        <Typography type={typos.subheading} systemColor={systemColors.secondary} text={info} />
+      </View>
     </View>
-    <View style={styles.summaryText}>
-      <Typography type={typos.headline1} text={displayName} />
-      <Typography type={typos.subheading} systemColor={systemColors.secondary} text={info} />
-    </View>
-  </View>
-))
+  )
+})
 
 export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>

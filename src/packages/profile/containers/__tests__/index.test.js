@@ -98,8 +98,8 @@ describe('buttons', () => {
       const { wrapper: asyncWrapper } = await givenProfile()
       wrapper = asyncWrapper
     })
-    fireEvent.press(wrapper.root.findByProps({ text: strings.profile.signout }))
-    expect(signOut).toBeCalledTimes(1)
+    await fireEvent.press(wrapper.root.findByProps({ text: strings.profile.signout }))
+    await expect(signOut).toBeCalledTimes(1)
   })
   it('shares the app', async () => {
     let wrapper = null

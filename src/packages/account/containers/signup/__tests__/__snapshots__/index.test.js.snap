@@ -216,6 +216,7 @@ exports[`renders SignUp 1`] = `
           "borderRadius": 15,
           "color": "rgba(255, 255, 255, 255)",
           "elevation": 2,
+          "flexDirection": "row",
           "height": 48,
           "justifyContent": "center",
           "opacity": 1,
@@ -258,6 +259,18 @@ exports[`renders SignUp 1`] = `
       >
         SIGN UP
       </Text>
+      <ActivityIndicator
+        animating={false}
+        color="rgba(0, 122, 255, 255)"
+        hidesWhenStopped={true}
+        size="small"
+        style={
+          Object {
+            "position": "absolute",
+            "right": 16,
+          }
+        }
+      />
     </View>
   </View>
   <View
