@@ -29,6 +29,7 @@ export default StyleSheet.create({
     height: 8,
     borderRadius: 4,
     marginTop: 6,
+    marginLeft: 5,
     backgroundColor: colors.primary,
   },
   captionWrapper: {

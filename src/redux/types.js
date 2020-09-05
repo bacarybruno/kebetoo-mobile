@@ -12,6 +12,7 @@ export const CLEAR_POST_HISTORY = 'user:clear_post_history'
 export const ADD_USER_HISTORY = 'user:add_user_history'
 export const REMOVE_USER_HISTORY = 'user:remove_user_history'
 export const CLEAR_USER_HISTORY = 'user:clear_user_history'
+export const LOGOUT = 'user:logout'
 
 // -- post reducer --
 export const API_FETCH_POSTS = 'sagas:api_fetch_posts'
