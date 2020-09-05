@@ -1883,6 +1883,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "borderRadius": 17.5,
                           },
+                          undefined,
                           Object {
                             "backgroundColor": "#9575cd",
                           },

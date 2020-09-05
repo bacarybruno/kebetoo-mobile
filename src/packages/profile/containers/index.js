@@ -37,11 +37,13 @@ export const Summary = React.memo(({ photoURL, info, displayName }) => {
   const { navigate } = useNavigation()
 
   const onPress = useCallback(() => {
-    navigate(routes.MODAL_IMAGE, {
-      source: {
-        uri: photoURL,
-      },
-    })
+    if (photoURL) {
+      navigate(routes.MODAL_IMAGE, {
+        source: {
+          uri: photoURL,
+        },
+      })
+    }
   }, [navigate, photoURL])
 
   return (

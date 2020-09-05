@@ -19,6 +19,8 @@ import { extractMetadataFromName } from 'Kebetoo/src/shared/hooks/audio-recorder
 import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
 
 import styles from './styles'
+import routes from 'Kebetoo/src/navigation/routes'
+import { useNavigation } from '@react-navigation/native'
 
 export const getAudioSource = (url) => `${BASE_URL}${url}`
 
@@ -55,7 +57,7 @@ export const Reactions = ({ onReaction, reactions, user }) => {
 }
 
 const Header = ({ displayName, updatedAt }) => (
-  <View style={{ ...styles.row, alignItems: 'center', marginBottom: 2 }}>
+  <View style={{ ...styles.row, alignItems: 'center', marginBottom: 5 }}>
     <Typography type={types.headline5} text={displayName} />
     <Typography type={types.headline5} text=" • " />
     <Typography type={types.headline6} text={dayjs(updatedAt).fromNow()} />
@@ -80,11 +82,13 @@ const Content = ({ item }) => {
 }
 
 const Comment = ({
-  item, displayName, photoURL, user,
+  item, displayName, photoURL, user, authorId,
 }) => {
   const [reactions, setReactions] = useState((value) => value || item.reactions)
   const [lastPress, setLastPress] = useState(null)
   const DOUBLE_PRESS_DELAY = 200
+
+  const { navigate } = useNavigation()
 
   // TODO: optimistic ui update
   const onReaction = useCallback(async (type) => {
@@ -126,14 +130,20 @@ const Comment = ({
     }
   }, [lastPress, onReaction])
 
+  const onShowProfile = useCallback(() => {
+    navigate(routes.USER_PROFILE, { userId: authorId })
+  }, [navigate, authorId])
+
   if (!displayName) return <CommentPlaceholder />
 
   return (
     <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
       <View style={styles.row}>
-        <View style={styles.avatarWrapper}>
-          <Avatar src={photoURL} text={displayName} size={35} />
-        </View>
+        <TouchableWithoutFeedback onPress={onShowProfile}>
+          <View style={styles.avatarWrapper}>
+            <Avatar src={photoURL} text={displayName} size={35} />
+          </View>
+        </TouchableWithoutFeedback>
         <View style={styles.flexible}>
           <Header displayName={displayName} updatedAt={item.updatedAt} />
           <Content item={item} />

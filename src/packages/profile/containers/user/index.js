@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { View, SectionList, ImageBackground } from 'react-native'
+import { View, SectionList, Image } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
@@ -17,6 +17,8 @@ import routes from 'Kebetoo/src/navigation/routes'
 
 import { Stats } from '../index'
 import styles from './styles'
+import { TextAvatar } from 'Kebetoo/src/shared/components/avatar'
+import metrics from 'Kebetoo/src/theme/metrics'
 
 export const routeOptions = {
   headerShown: true,
@@ -84,11 +86,13 @@ const UserProfile = ({ navigation }) => {
   }, [posts, getRepostAuthors])
 
   const onListHeaderPress = useCallback(() => {
-    navigate(routes.MODAL_IMAGE, {
-      source: {
-        uri: photoURL,
-      },
-    })
+    if (photoURL) {
+      navigate(routes.MODAL_IMAGE, {
+        source: {
+          uri: photoURL,
+        },
+      })
+    }
   }, [navigate, photoURL])
 
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
@@ -120,36 +124,35 @@ const UserProfile = ({ navigation }) => {
 
   const renderListHeader = useCallback(() => (
     <Pressable style={styles.listHeader} onPress={onListHeaderPress}>
-      <ImageBackground source={{ uri: photoURL }} style={styles.listHeaderImage}>
-        <View style={styles.imgBackgroundContent}>
-          <View style={styles.profileInfos}>
-            <View style={styles.profileInfoSection}>
-              <Typography
-                style={styles.textCenter}
-                type={types.headline2}
-                text={user.displayName}
-                systemWeight={weights.semibold}
-              />
-              <Typography
-                style={styles.textCenter}
-                type={types.subheading}
-                text={strings.formatString(
-                  strings.user_profile.joined_in,
-                  dayjs(user.createdAt).format(strings.dates.format_month_year),
-                )}
-              />
-            </View>
-            <View style={styles.profileInfoSection}>
-              <Stats
-                postsCount={user.posts.length}
-                commentsCount={user.comments.length}
-                reactionsCount={user.reactions.length}
-                style={styles.stats}
-              />
-            </View>
-          </View>
+      {photoURL
+        ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
+        : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
+      <View style={styles.profileInfos}>
+        <View style={styles.profileInfoSection}>
+          <Typography
+            style={styles.textCenter}
+            type={types.headline2}
+            text={user.displayName}
+            systemWeight={weights.semibold}
+          />
+          <Typography
+            style={styles.textCenter}
+            type={types.subheading}
+            text={strings.formatString(
+              strings.user_profile.joined_in,
+              dayjs(user.createdAt).format(strings.dates.format_month_year),
+            )}
+          />
         </View>
-      </ImageBackground>
+        <View style={styles.profileInfoSection}>
+          <Stats
+            postsCount={user.posts.length}
+            commentsCount={user.comments.length}
+            reactionsCount={user.reactions.length}
+            style={styles.stats}
+          />
+        </View>
+      </View>
     </Pressable>
   ), [onListHeaderPress, photoURL, user])
 

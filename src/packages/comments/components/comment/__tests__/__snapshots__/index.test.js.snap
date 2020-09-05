@@ -19,6 +19,15 @@ exports[`renders Comment 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "marginRight": 10,
@@ -77,7 +86,7 @@ exports[`renders Comment 1`] = `
           "alignItems": "center",
           "flex": 1,
           "flexDirection": "row",
-          "marginBottom": 2,
+          "marginBottom": 5,
         }
       }
     >
