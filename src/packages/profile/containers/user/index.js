@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { View, SectionList } from 'react-native'
-import { useRoute } from '@react-navigation/native'
+import { View, SectionList, ImageBackground } from 'react-native'
+import { useRoute, useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
@@ -12,8 +12,10 @@ import HeaderBack from 'Kebetoo/src/shared/components/header-back'
 import colors from 'Kebetoo/src/theme/colors'
 import { TransitionPresets } from '@react-navigation/stack'
 import strings from 'Kebetoo/src/config/strings'
+import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
+import routes from 'Kebetoo/src/navigation/routes'
 
-import { Summary, Stats } from '../index'
+import { Stats } from '../index'
 import styles from './styles'
 
 export const routeOptions = {
@@ -23,9 +25,12 @@ export const routeOptions = {
   ),
   headerStyle: styles.header,
   headerTitleStyle: styles.headerTitle,
-  title: strings.user_profile.profile,
+  title: '',
+  headerTransparent: true,
   ...TransitionPresets.SlideFromRightIOS,
 }
+
+const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
 const UserProfile = ({ navigation }) => {
   navigation.setOptions(routeOptions)
@@ -47,6 +52,9 @@ const UserProfile = ({ navigation }) => {
   const dateFormat = 'YYYY-MM'
 
   const { getRepostAuthors } = usePosts()
+  const { navigate } = useNavigation()
+
+  const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
 
   useEffect(() => {
     api.getAuthorById(userId).then(setUser).catch(console.log)
@@ -75,21 +83,26 @@ const UserProfile = ({ navigation }) => {
     fetchRepostAuthors()
   }, [posts, getRepostAuthors])
 
+  const onListHeaderPress = useCallback(() => {
+    navigate(routes.MODAL_IMAGE, {
+      source: {
+        uri: photoURL,
+      },
+    })
+  }, [navigate, photoURL])
+
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 
-  const renderSectionHeader = useCallback(({ section }) => {
-    const outputDateFormat = 'MMMM YYYY'
-    return (
-      <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
-        <Typography
-          type={types.subheading}
-          systemWeight={weights.semibold}
-          text={dayjs(section.title, dateFormat).format(outputDateFormat)}
-        />
-        <Badge text={section.data.length} />
-      </View>
-    )
-  }, [])
+  const renderSectionHeader = useCallback(({ section }) => (
+    <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
+      <Typography
+        type={types.subheading}
+        systemWeight={weights.semibold}
+        text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
+      />
+      <Badge text={section.data.length} />
+    </View>
+  ), [])
 
   const renderItem = useCallback(({ item }) => (
     <View style={styles.paddingHorizontal}>
@@ -106,22 +119,39 @@ const UserProfile = ({ navigation }) => {
   ), [authors, user])
 
   const renderListHeader = useCallback(() => (
-    <>
-      <View style={styles.userInfos}>
-        <Summary
-          displayName={user.displayName}
-          photoURL={user.photoURL}
-          info={`${strings.formatString(strings.user_profile.joined_in, dayjs(user.createdAt).format('MMMM YYYY'))}`}
-        />
-        <Stats
-          postsCount={user.posts.length}
-          commentsCount={user.comments.length}
-          reactionsCount={user.reactions.length}
-        />
-      </View>
-      <View style={styles.separator} />
-    </>
-  ), [user])
+    <Pressable style={styles.listHeader} onPress={onListHeaderPress}>
+      <ImageBackground source={{ uri: photoURL }} style={styles.listHeaderImage}>
+        <View style={styles.imgBackgroundContent}>
+          <View style={styles.profileInfos}>
+            <View style={styles.profileInfoSection}>
+              <Typography
+                style={styles.textCenter}
+                type={types.headline2}
+                text={user.displayName}
+                systemWeight={weights.semibold}
+              />
+              <Typography
+                style={styles.textCenter}
+                type={types.subheading}
+                text={strings.formatString(
+                  strings.user_profile.joined_in,
+                  dayjs(user.createdAt).format(strings.dates.format_month_year),
+                )}
+              />
+            </View>
+            <View style={styles.profileInfoSection}>
+              <Stats
+                postsCount={user.posts.length}
+                commentsCount={user.comments.length}
+                reactionsCount={user.reactions.length}
+                style={styles.stats}
+              />
+            </View>
+          </View>
+        </View>
+      </ImageBackground>
+    </Pressable>
+  ), [onListHeaderPress, photoURL, user])
 
   return (
     <View style={styles.wrapper}>

@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native'
 
-import colors from 'Kebetoo/src/theme/colors'
+import colors, { hexToRgba, rgbaToHex } from 'Kebetoo/src/theme/colors'
 import metrics from 'Kebetoo/src/theme/metrics'
+import elevation from 'Kebetoo/src/theme/elevation'
+
+const profileInfoSize = 140
+const profileInfoMarginBottom = 25
 
 export default StyleSheet.create({
   wrapper: {
@@ -9,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
   },
   header: {
-    backgroundColor: colors.background,
+    // backgroundColor: colors.background,
   },
   headerTitle: {
     color: colors.textPrimary,
@@ -20,12 +24,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: metrics.marginHorizontal,
   },
-  separator: {
-    borderColor: colors.backgroundSecondary,
-    borderWidth: 2,
-    marginTop: 30,
-    marginBottom: 15,
-  },
   paddingHorizontal: {
     paddingHorizontal: metrics.marginHorizontal,
   },
@@ -34,5 +32,36 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  listHeader: {
+    marginBottom: (profileInfoSize / 2) + profileInfoMarginBottom,
+  },
+  listHeaderImage: {
+    paddingHorizontal: metrics.marginHorizontal,
+    aspectRatio: metrics.aspectRatio.square,
+  },
+  imgBackgroundContent: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  profileInfos: {
+    backgroundColor: hexToRgba(rgbaToHex(colors.backgroundSecondary), 0.95),
+    ...elevation(3),
+    borderRadius: 8,
+    height: profileInfoSize,
+    marginBottom: -profileInfoSize / 2,
+  },
+  profileInfoSection: {
+    height: '50%',
+    justifyContent: 'center',
+  },
+  textCenter: {
+    textAlign: 'center',
+  },
+  stats: {
+    width: '100%',
+    marginTop: 0,
+    height: '100%',
+    ...elevation(0),
   },
 })
