@@ -59,6 +59,7 @@ const SignUp = ({ navigation }) => {
 
   const onSubmit = useCallback(async () => {
     try {
+      setIsLoading(true)
       await schema.validate(infos)
       const displayName = infos.fullName
       dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
@@ -70,6 +71,8 @@ const SignUp = ({ navigation }) => {
       await createUser({ id: user.uid, displayName, photoURL: null })
     } catch (e) {
       console.log(e)
+    } finally {
+      setIsLoading(false)
     }
   }, [schema, infos, dispatch])
 

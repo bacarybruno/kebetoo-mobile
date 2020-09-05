@@ -1667,6 +1667,15 @@ exports[`renders Comments 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "marginRight": 10,
@@ -1725,7 +1734,7 @@ exports[`renders Comments 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
-                      "marginBottom": 2,
+                      "marginBottom": 5,
                     }
                   }
                 >
@@ -2000,6 +2009,15 @@ exports[`renders Comments 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "marginRight": 10,
@@ -2058,7 +2076,7 @@ exports[`renders Comments 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
-                      "marginBottom": 2,
+                      "marginBottom": 5,
                     }
                   }
                 >
@@ -3945,6 +3963,15 @@ exports[`renders Comments in loading state 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "marginRight": 10,
@@ -3979,6 +4006,7 @@ exports[`renders Comments in loading state 1`] = `
                         Object {
                           "borderRadius": 17.5,
                         },
+                        undefined,
                         Object {
                           "backgroundColor": "#a1887f",
                         },
@@ -4014,7 +4042,7 @@ exports[`renders Comments in loading state 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
-                      "marginBottom": 2,
+                      "marginBottom": 5,
                     }
                   }
                 >
@@ -4261,6 +4289,15 @@ exports[`renders Comments in loading state 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "marginRight": 10,
@@ -4295,6 +4332,7 @@ exports[`renders Comments in loading state 1`] = `
                         Object {
                           "borderRadius": 17.5,
                         },
+                        undefined,
                         Object {
                           "backgroundColor": "#a1887f",
                         },
@@ -4330,7 +4368,7 @@ exports[`renders Comments in loading state 1`] = `
                       "alignItems": "center",
                       "flex": 1,
                       "flexDirection": "row",
-                      "marginBottom": 2,
+                      "marginBottom": 5,
                     }
                   }
                 >

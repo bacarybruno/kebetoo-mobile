@@ -393,6 +393,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                     "justifyContent": "center",
                                                   },
                                                   undefined,
+                                                  undefined,
                                                   Object {
                                                     "backgroundColor": "#a1887f",
                                                   },
@@ -3748,6 +3749,7 @@ exports[`tabs renders TabNavigation 1`] = `
                                   "flex": 1,
                                   "justifyContent": "center",
                                 },
+                                undefined,
                                 undefined,
                                 Object {
                                   "backgroundColor": "#a1887f",

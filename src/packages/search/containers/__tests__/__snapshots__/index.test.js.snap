@@ -161,6 +161,7 @@ exports[`renders SearchPage 1`] = `
                 "justifyContent": "center",
               },
               undefined,
+              undefined,
               Object {
                 "backgroundColor": "#a1887f",
               },

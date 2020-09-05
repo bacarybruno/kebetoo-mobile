@@ -83,6 +83,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -1168,6 +1169,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                   Object {
                     "borderRadius": 12,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -1836,6 +1838,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -2279,6 +2282,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -3275,6 +3279,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                   Object {
                     "borderRadius": 12,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -3838,6 +3843,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -4192,6 +4198,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -5319,6 +5326,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                   Object {
                     "borderRadius": 12,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -6029,6 +6037,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -6514,6 +6523,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -7401,6 +7411,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                   Object {
                     "borderRadius": 12,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },
@@ -7927,6 +7938,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   Object {
                     "borderRadius": 17.5,
                   },
+                  undefined,
                   Object {
                     "backgroundColor": "#9575cd",
                   },

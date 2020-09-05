@@ -23,6 +23,7 @@ export default StyleSheet.create({
   headerTitle: {
     flex: 1,
     flexDirection: 'row',
+    marginBottom: 5,
   },
   dot: {
     width: 8,

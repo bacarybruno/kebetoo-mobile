@@ -102,6 +102,7 @@ const Comments = () => {
         <Comment
           item={item}
           user={profile.uid}
+          authorId={item.author.id}
           displayName={item.author.displayName}
           photoURL={item.author.photoURL}
         />

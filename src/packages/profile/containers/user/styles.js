@@ -34,22 +34,19 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   listHeader: {
-    marginBottom: (profileInfoSize / 2) + profileInfoMarginBottom,
+    marginBottom: metrics.marginVertical,
   },
   listHeaderImage: {
     paddingHorizontal: metrics.marginHorizontal,
     aspectRatio: metrics.aspectRatio.square,
-  },
-  imgBackgroundContent: {
-    flex: 1,
-    justifyContent: 'flex-end',
   },
   profileInfos: {
     backgroundColor: hexToRgba(rgbaToHex(colors.backgroundSecondary), 0.95),
     ...elevation(3),
     borderRadius: 8,
     height: profileInfoSize,
-    marginBottom: -profileInfoSize / 2,
+    marginTop: -profileInfoSize / 2,
+    marginHorizontal: metrics.marginHorizontal,
   },
   profileInfoSection: {
     height: '50%',

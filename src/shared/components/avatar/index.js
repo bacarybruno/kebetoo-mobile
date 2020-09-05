@@ -22,10 +22,15 @@ export const ImageAvatar = ({ src, size, style }) => (
 )
 
 export const TextAvatar = ({
-  text, size, style, fontSize,
+  text, size, style, fontSize, noRadius,
 }) => (
   <View style={[styles.wrapper, dimensions(size), style]}>
-    <View style={[styles.content, borderRadius(size), backgroundColor(text)]}>
+    <View style={[
+      styles.content,
+      borderRadius(size),
+      noRadius && { borderRadius: 0 },
+      backgroundColor(text)]}
+    >
       <Text
         style={{ fontSize, ...systemWeights.semibold, color: colors.white }}
       >
