@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
+import { useDispatch } from 'react-redux'
 
 import * as api from 'Kebetoo/src/shared/helpers/http'
+import * as types from 'Kebetoo/src/redux/types'
 
 import { getUserId, getUser, setUserId } from '../helpers/users'
 
@@ -13,6 +15,8 @@ const useUser = () => {
   const [profile, setProfile] = useState({
     uid: null, displayName: ' ', photoURL: null,
   })
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const getUserInfos = async () => {
@@ -46,8 +50,9 @@ const useUser = () => {
 
   const signOut = useCallback(async () => {
     await api.updateAuthor(profile.uid, { notificationToken: null })
+    dispatch({ type: types.LOGOUT })
     await auth().signOut()
-  }, [profile.uid])
+  }, [profile.uid, dispatch])
 
   return {
     profile,

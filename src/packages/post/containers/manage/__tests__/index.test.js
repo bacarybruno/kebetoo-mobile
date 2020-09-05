@@ -1,5 +1,6 @@
 import { act } from 'react-test-renderer'
 import { fireEvent } from 'react-native-testing-library'
+import configureStore from 'redux-mock-store'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import strings from 'Kebetoo/src/config/strings'
@@ -9,11 +10,23 @@ import routes from 'Kebetoo/src/navigation/routes'
 
 import ManagePost from '../index'
 
+const mockStore = configureStore()
+const store = mockStore({
+  postsReducer: {
+    posts: [],
+    authors: [],
+  },
+  notificationsReducer: {
+    notifications: [],
+  },
+  userReducer: [],
+})
 const givenManagePost = setupTest(ManagePost)({
   navigation: {
     navigate: jest.fn(),
     setOptions: jest.fn(),
   },
+  store,
 })
 
 afterEach(jest.clearAllMocks)

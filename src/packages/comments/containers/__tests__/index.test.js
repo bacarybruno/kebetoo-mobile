@@ -1,4 +1,5 @@
 import { act } from 'react-test-renderer'
+import configureStore from 'redux-mock-store'
 
 import setupTest from 'Kebetoo/src/config/jest-setup'
 import strings from 'Kebetoo/src/config/strings'
@@ -24,7 +25,18 @@ jest.mock('@react-navigation/native', () => {
 
 beforeEach(jest.clearAllMocks)
 
-const givenComments = setupTest(Comments)()
+const mockStore = configureStore()
+const store = mockStore({
+  postsReducer: {
+    posts: [],
+    authors: [],
+  },
+  notificationsReducer: {
+    notifications: [],
+  },
+  userReducer: [],
+})
+const givenComments = setupTest(Comments)({ store })
 
 it('renders Comments', async () => {
   let wrapper

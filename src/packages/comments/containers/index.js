@@ -125,7 +125,7 @@ const Comments = () => {
     if (type === POST_TYPES.IMAGE) {
       navigate(routes.MODAL_IMAGE, {
         ...post.image,
-        source: getSource(post.url),
+        source: getSource(post.image.url),
       })
       return false
     }
