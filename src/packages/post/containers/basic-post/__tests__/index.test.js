@@ -10,13 +10,13 @@ import authors from 'Kebetoo/__fixtures__/authors'
 
 import BasicPost, { Content } from '../index'
 
-
 const mockStore = configureStore()
 const store = mockStore({
   userReducer: {
     displayName: null,
   },
 })
+
 const givenBasicPost = setupTest(BasicPost)({
   store,
   author: authors[1],

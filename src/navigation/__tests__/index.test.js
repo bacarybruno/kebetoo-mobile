@@ -19,7 +19,7 @@ const store = mockStore({
   notificationsReducer: {
     notifications: [],
   },
-  userReducer: [],
+  userReducer: {},
 })
 
 const givenAppNavigation = setupTest(AppNavigation)({

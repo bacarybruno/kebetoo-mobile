@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { View, FlatList, TouchableOpacity } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
 
@@ -7,7 +7,6 @@ import * as api from 'Kebetoo/src/shared/helpers/http'
 import Typography, { types as typos, colors as systemColors } from 'Kebetoo/src/shared/components/typography'
 import * as types from 'Kebetoo/src/redux/types'
 import { recentSearchHistory } from 'Kebetoo/src/redux/selectors'
-import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import colors from 'Kebetoo/src/theme/colors'
 import strings from 'Kebetoo/src/config/strings'
@@ -19,17 +18,7 @@ import styles from './styles'
 import HistoryItem from '../../components/history-item'
 import NoResult from '../../components/no-result'
 
-export const DeleteIconButton = ({ onPress }) => (
-  <TouchableOpacity
-    style={styles.deleteWrapper}
-    onPress={onPress}
-    hitSlop={edgeInsets.all(50)}
-  >
-    <Ionicon name="ios-close" size={30} color={colors.textPrimary} />
-  </TouchableOpacity>
-)
-
-export const SearchResult = ({ item, onDelete, onPress }) => (
+export const SearchResult = ({ item, onPress }) => (
   <Pressable style={[styles.searchResult, styles.paddingHorizontal]} onPress={() => onPress(item)}>
     <View style={styles.row}>
       <Avatar
@@ -60,11 +49,10 @@ export const SearchResult = ({ item, onDelete, onPress }) => (
         </View>
       </View>
     </View>
-    {onDelete && <DeleteIconButton onPress={() => onDelete(item)} />}
   </Pressable>
 )
 
-const SearchHistoryHeader = ({ onClear }) => (
+export const SearchHistoryHeader = ({ onClear }) => (
   <View style={[styles.historyHeader, styles.paddingHorizontal]}>
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
@@ -83,7 +71,7 @@ const SearchHistoryHeader = ({ onClear }) => (
   </View>
 )
 
-const Users = ({ searchQuery, onSearch, onRecentSearch }) => {
+const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const [users, setUsers] = useState([])
   const [lastQuery, setLastQuery] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -181,4 +169,4 @@ const Users = ({ searchQuery, onSearch, onRecentSearch }) => {
   )
 }
 
-export default Users
+export default SearchUsers

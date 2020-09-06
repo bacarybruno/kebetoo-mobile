@@ -5,16 +5,8 @@ import setupTest from 'Kebetoo/src/config/jest-setup'
 import CreatePost from '../index'
 
 const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: [],
-    authors: [],
-  },
-  notificationsReducer: {
-    notifications: [],
-  },
-  userReducer: [],
-})
+const store = mockStore()
+
 const givenCreatePost = setupTest(CreatePost)({
   navigation: {
     navigate: jest.fn(),

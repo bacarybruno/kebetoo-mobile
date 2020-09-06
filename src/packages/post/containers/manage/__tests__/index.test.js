@@ -11,16 +11,8 @@ import routes from 'Kebetoo/src/navigation/routes'
 import ManagePost from '../index'
 
 const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: [],
-    authors: [],
-  },
-  notificationsReducer: {
-    notifications: [],
-  },
-  userReducer: [],
-})
+const store = mockStore()
+
 const givenManagePost = setupTest(ManagePost)({
   navigation: {
     navigate: jest.fn(),

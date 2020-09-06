@@ -26,16 +26,8 @@ jest.mock('@react-navigation/native', () => {
 beforeEach(jest.clearAllMocks)
 
 const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: [],
-    authors: [],
-  },
-  notificationsReducer: {
-    notifications: [],
-  },
-  userReducer: [],
-})
+const store = mockStore()
+
 const givenComments = setupTest(Comments)({ store })
 
 it('renders Comments', async () => {

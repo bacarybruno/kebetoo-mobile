@@ -13,8 +13,8 @@ import metrics from 'Kebetoo/src/theme/metrics'
 import useUser from 'Kebetoo/src/shared/hooks/user'
 
 import styles from './styles'
-import Posts from './posts'
-import Users from './users'
+import SearchPosts from './posts'
+import SearchUsers from './users'
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -27,7 +27,7 @@ const tabBarOptions = {
   labelStyle: styles.label,
 }
 
-const SearchIcon = ({ onPress }) => (
+export const SearchIcon = ({ onPress }) => (
   <TouchableOpacity
     style={styles.searchIcon}
     onPress={onPress}
@@ -37,7 +37,7 @@ const SearchIcon = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-const CancelIcon = ({ isLoading, onPress }) => (
+export const CancelIcon = ({ isLoading, onPress }) => (
   <View style={styles.cancelIcon}>
     {!isLoading && (
       <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
@@ -73,7 +73,7 @@ const SearchPage = () => {
 
   const onRecentSearch = useCallback((text) => {
     onChange(text)
-    textInputRef.current.setNativeProps({ text })
+    textInputRef.current?.setNativeProps({ text })
   }, [onChange])
 
   const onShowSearchbar = useCallback(() => {
@@ -109,7 +109,7 @@ const SearchPage = () => {
       <Tab.Navigator tabBarOptions={tabBarOptions} sceneContainerStyle={styles.wrapper}>
         <Tab.Screen name={strings.search.posts_tab}>
           {(props) => (
-            <Posts
+            <SearchPosts
               {...props}
               searchQuery={searchQuery || ''}
               onSearch={onSearch}
@@ -119,7 +119,7 @@ const SearchPage = () => {
         </Tab.Screen>
         <Tab.Screen name={strings.search.users_tab}>
           {(props) => (
-            <Users
+            <SearchUsers
               {...props}
               searchQuery={searchQuery || ''}
               onSearch={onSearch}
