@@ -7,16 +7,8 @@ import authors from 'Kebetoo/__fixtures__/authors'
 import RepostContent from '../index'
 
 const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: [],
-    authors: [],
-  },
-  notificationsReducer: {
-    notifications: [],
-  },
-  userReducer: [],
-})
+const store = mockStore()
+
 const givenRepostContent = setupTest(RepostContent)({
   post: posts.repost,
   originalAuthor: authors[0],

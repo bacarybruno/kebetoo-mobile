@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Notification 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 16,
+        "paddingVertical": 14,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 30,
+          "width": 30,
+        },
+        Object {
+          "height": 55,
+          "width": 55,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://avatars1.githubusercontent.com/u/14147533",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
+            "borderRadius": 15,
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "borderRadius": 27.5,
+          },
+        ]
+      }
+      testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "marginLeft": 12,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "marginBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "600",
+                "letterSpacing": -0.408,
+                "lineHeight": 22,
+              },
+              false,
+              false,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Bruno
+        </Text>
+        <Text
+          style={
+            Array [
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "600",
+                "letterSpacing": -0.408,
+                "lineHeight": 22,
+              },
+              false,
+              false,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+           undefined
+        </Text>
+      </Text>
+    </View>
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.38)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "marginTop": 2,
+              },
+            ],
+          ]
+        }
+      >
+        2 days ago
+      </Text>
+    </View>
+  </View>
+</View>
+`;

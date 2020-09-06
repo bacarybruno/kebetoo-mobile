@@ -17,7 +17,7 @@ import styles from './styles'
 
 const routeOptions = { title: strings.tabs.notifications }
 
-const NOTIFICATION_TYPES = {
+export const NOTIFICATION_TYPES = {
   COMMENT: 'comment',
   POST_REACTION: 'post-reaction',
   COMMENT_REACTION: 'comment-reaction',
@@ -45,7 +45,9 @@ const NotificationsPage = () => {
     const removeBlurListener = addListener('blur', () => {
       updateSeenStatus()
     })
-    return () => removeBlurListener()
+    return () => {
+      if (removeBlurListener) removeBlurListener()
+    }
   }, [addListener, newItems, updateSeenStatus])
 
   const getAuthor = (message) => {

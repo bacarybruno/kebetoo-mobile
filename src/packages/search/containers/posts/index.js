@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { View, FlatList, TouchableOpacity } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
 
@@ -8,7 +8,6 @@ import Typography, { types as typos } from 'Kebetoo/src/shared/components/typogr
 import BasicPost from 'Kebetoo/src/packages/post/containers/basic-post'
 import * as types from 'Kebetoo/src/redux/types'
 import { recentSearchHistory } from 'Kebetoo/src/redux/selectors'
-import edgeInsets from 'Kebetoo/src/theme/edge-insets'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import colors from 'Kebetoo/src/theme/colors'
 import strings from 'Kebetoo/src/config/strings'
@@ -18,17 +17,7 @@ import styles from './styles'
 import HistoryItem from '../../components/history-item'
 import NoResult from '../../components/no-result'
 
-export const DeleteIconButton = ({ onPress }) => (
-  <TouchableOpacity
-    style={styles.deleteWrapper}
-    onPress={onPress}
-    hitSlop={edgeInsets.all(50)}
-  >
-    <Ionicon name="ios-close" size={25} color={colors.textPrimary} />
-  </TouchableOpacity>
-)
-
-const SearchHistoryHeader = ({ onClear }) => (
+export const SearchHistoryHeader = ({ onClear }) => (
   <View style={[styles.historyHeader, styles.paddingHorizontal]}>
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
@@ -47,7 +36,7 @@ const SearchHistoryHeader = ({ onClear }) => (
   </View>
 )
 
-const Posts = ({ searchQuery, onSearch, onRecentSearch }) => {
+const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const [posts, setPosts] = useState([])
   const [authors, setAuthors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
@@ -156,4 +145,4 @@ const Posts = ({ searchQuery, onSearch, onRecentSearch }) => {
   )
 }
 
-export default Posts
+export default SearchPosts

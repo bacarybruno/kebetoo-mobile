@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Heading 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 12,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "letterSpacing": -0.408,
+          "lineHeight": 22,
+        },
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "600",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Count
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 50,
+          "paddingHorizontal": 15,
+          "paddingVertical": 3,
+        },
+        Object {
+          "backgroundColor": "#F0F6FE",
+        },
+        Object {
+          "marginLeft": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          false,
+          Array [
+            Object {
+              "color": "rgba(0, 122, 255, 255)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      2
+    </Text>
+  </View>
+</View>
+`;

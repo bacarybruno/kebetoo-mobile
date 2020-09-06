@@ -8,6 +8,12 @@ const createRandomId = () => parseInt(Math.random() * 10000000).toString()
 export const BASE_URL = 'jest://localhost:1337'
 
 export const getPostsCount = jest.fn().mockResolvedValue(0)
+export const getPost = jest.fn().mockImplementation((postId) => Promise.resolve(
+  postsList.find((post) => post.id === postId),
+))
+export const searchPosts = jest.fn().mockImplementation((query) => Promise.resolve((
+  postsList.filter((post) => post.content?.toLowerCase().includes(query.toLowerCase()))
+)))
 export const getReactionsCount = jest.fn().mockResolvedValue(0)
 export const getCommentsCount = jest.fn().mockResolvedValue(0)
 export const deletePost = jest.fn().mockResolvedValue(true)

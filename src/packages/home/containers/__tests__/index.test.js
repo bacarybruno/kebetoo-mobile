@@ -14,6 +14,7 @@ const store = mockStore({
   },
   userReducer: {},
 })
+
 const givenHomePage = setupTest(HomePage)({
   store,
 })
