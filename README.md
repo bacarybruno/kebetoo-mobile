@@ -8,7 +8,8 @@ Built with React Native.
 
 - Create posts different content types : text, audio, images
 - Comment posts with text and audio
-- Share text, images and audios from others apps to Kebetoo
+- Share text, images and audios from other apps to Kebetoo
+- Receive notifications when other users interact with your posts
 
 You can also:
 - React to a post (like, dislike, share) or comment (love)
@@ -25,7 +26,7 @@ Kebetoo requires [Node.js](https://nodejs.org/) and [React Native](http://reactn
 This installation guide will focus on android.
 
 ### Steps
-Install the dependencies and devDependencies of the [server app](https://github.com/bacarybruno/kebetoo-mobile) and start the server.
+Install the dependencies and devDependencies of the [server app](https://github.com/bacarybruno/kebetoo-mobile) then start the server.
 
 ```sh
 $ mongod
@@ -34,8 +35,18 @@ $ yarn install
 $ yarn develop
 
 ```
+
+Install the dependencies and devDependencies of the [serverless project](https://github.com/bacarybruno/kebetoo-serverless) then start the server.
+
+```sh
+$ cd kebetoo-serverless
+$ yarn install
+$ yarn develop
+
+```
+
 Ensure that you have plugged your android device and enabled usb debugging.
-Install the dependencies and devDependencies of the [client app](https://github.com/bacarybruno/kebetoo-mobile) and start the client.
+Install the dependencies and devDependencies of the [client app](https://github.com/bacarybruno/kebetoo-mobile) then start the client.
 
 ```sh
 $ cd kebetoo-mobile
@@ -51,6 +62,8 @@ And the reload the app.
 ### Contributing
 Want to contribute? Great, create a fork a the project and start hacking!
 Ensuite that the coverage of your code is under 80%. That's the minimum required for this project.
+
+A new contribution guide will soon be created.
 
 Here are the instructions related to tests.
 
