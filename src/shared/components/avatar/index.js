@@ -2,8 +2,8 @@ import React from 'react'
 import { Image, View, Text } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
-import generateColor from 'Kebetoo/src/shared/helpers/color-generator'
-import colors from 'Kebetoo/src/theme/colors'
+import generateColor from '@app/shared/helpers/color-generator'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 

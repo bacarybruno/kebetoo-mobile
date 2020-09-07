@@ -2,11 +2,11 @@ import React from 'react'
 import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import edgeInsets from 'Kebetoo/src/theme/edge-insets'
-import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
-import colors from 'Kebetoo/src/theme/colors'
+import Typography, { types } from '@app/shared/components/typography'
+import Pressable from '@app/shared/components/buttons/pressable'
+import edgeInsets from '@app/theme/edge-insets'
+import { BASE_URL } from '@app/shared/helpers/http'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 

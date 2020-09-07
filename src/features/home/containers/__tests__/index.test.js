@@ -2,8 +2,8 @@ import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import { postsList } from 'Kebetoo/__fixtures__/posts'
+import setupTest from '@app/config/jest-setup'
+import { postsList } from '@fixtures/posts'
 
 import HomePage from '../index'
 

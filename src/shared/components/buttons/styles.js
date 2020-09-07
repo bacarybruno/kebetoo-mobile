@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import colors, { hexToRgba, rgbaToHex } from 'Kebetoo/src/theme/colors'
-import elevation from 'Kebetoo/src/theme/elevation'
-import metrics from 'Kebetoo/src/theme/metrics'
+import colors, { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import elevation from '@app/theme/elevation'
+import metrics from '@app/theme/metrics'
 
 export default StyleSheet.create({
   button: {

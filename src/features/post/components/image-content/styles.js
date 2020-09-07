@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from 'Kebetoo/src/theme/metrics'
-import elevation from 'Kebetoo/src/theme/elevation'
-import colors from 'Kebetoo/src/theme/colors'
-import { reactionsHeight } from 'Kebetoo/src/features/comments/components/reactions/styles'
+import metrics from '@app/theme/metrics'
+import elevation from '@app/theme/elevation'
+import colors from '@app/theme/colors'
+import { reactionsHeight } from '@app/features/comments/components/reactions/styles'
 
 export default StyleSheet.create({
   commentMode: {

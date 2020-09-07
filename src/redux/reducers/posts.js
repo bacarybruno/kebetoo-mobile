@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import { mergeArrays } from 'Kebetoo/src/shared/helpers/object'
+import { mergeArrays } from '@app/shared/helpers/object'
 
 import * as types from '../types'
 

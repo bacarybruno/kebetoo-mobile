@@ -2,11 +2,11 @@ import { act } from 'react-test-renderer'
 import { fireEvent } from 'react-native-testing-library'
 import configureStore from 'redux-mock-store'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
-import * as api from 'Kebetoo/src/shared/helpers/http'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
+import * as api from '@app/shared/helpers/http'
 import ActionButton from 'react-native-action-button'
-import routes from 'Kebetoo/src/navigation/routes'
+import routes from '@app/navigation/routes'
 
 import ManagePost from '../index'
 

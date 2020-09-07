@@ -8,16 +8,16 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Typography, {
   types as typos, colors as systemColors, weights,
-} from 'Kebetoo/src/shared/components/typography'
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import colors from 'Kebetoo/src/theme/colors'
-import Avatar from 'Kebetoo/src/shared/components/avatar'
-import routes from 'Kebetoo/src/navigation/routes'
-import * as api from 'Kebetoo/src/shared/helpers/http'
-import * as types from 'Kebetoo/src/redux/types'
-import { userStatsSelector } from 'Kebetoo/src/redux/selectors'
-import strings from 'Kebetoo/src/config/strings'
-import useUser from 'Kebetoo/src/shared/hooks/user'
+} from '@app/shared/components/typography'
+import Pressable from '@app/shared/components/buttons/pressable'
+import colors from '@app/theme/colors'
+import Avatar from '@app/shared/components/avatar'
+import routes from '@app/navigation/routes'
+import * as api from '@app/shared/helpers/http'
+import * as types from '@app/redux/types'
+import { userStatsSelector } from '@app/redux/selectors'
+import strings from '@app/config/strings'
+import useUser from '@app/shared/hooks/user'
 
 import styles, { imageSize } from './styles'
 

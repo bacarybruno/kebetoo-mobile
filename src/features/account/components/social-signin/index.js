@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react'
 import { View, TouchableOpacity, Image } from 'react-native'
 
-import HrLine from 'Kebetoo/src/features/account/components/hr-line'
-import googleLogin from 'Kebetoo/src/shared/helpers/google-login'
-import facebookLogin from 'Kebetoo/src/shared/helpers/facebook-login'
-import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
-import images from 'Kebetoo/src/theme/images'
-import colors from 'Kebetoo/src/theme/colors'
+import HrLine from '@app/features/account/components/hr-line'
+import googleLogin from '@app/shared/helpers/google-login'
+import facebookLogin from '@app/shared/helpers/facebook-login'
+import Kebeticon from '@app/shared/icons/kebeticons'
+import images from '@app/theme/images'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 

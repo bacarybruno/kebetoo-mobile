@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
+import Kebeticon from '@app/shared/icons/kebeticons'
 
 import styles from './styles'
 

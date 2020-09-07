@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { TouchableOpacity, Animated, View } from 'react-native'
 
-import Kebeticon from 'Kebetoo/src/shared/icons/kebeticons'
-import colors from 'Kebetoo/src/theme/colors'
-import edgeInsets from 'Kebetoo/src/theme/edge-insets'
-import metrics from 'Kebetoo/src/theme/metrics'
-import Badge from 'Kebetoo/src/shared/components/badge'
+import Kebeticon from '@app/shared/icons/kebeticons'
+import colors from '@app/theme/colors'
+import edgeInsets from '@app/theme/edge-insets'
+import metrics from '@app/theme/metrics'
+import Badge from '@app/shared/components/badge'
 
 import styles, { getDimensions, getIconSize } from './styles'
 

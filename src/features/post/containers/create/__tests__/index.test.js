@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import CreatePost from '../index'
 

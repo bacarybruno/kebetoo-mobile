@@ -1,8 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
 
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import colors from 'Kebetoo/src/theme/colors'
+import Typography, { types } from '@app/shared/components/typography'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 

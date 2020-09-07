@@ -1,6 +1,6 @@
-import { postsList } from 'Kebetoo/__fixtures__/posts'
-import authors from 'Kebetoo/__fixtures__/authors'
-import comments from 'Kebetoo/__fixtures__/comments'
+import { postsList } from '@fixtures/posts'
+import authors from '@fixtures/authors'
+import comments from '@fixtures/comments'
 
 // eslint-disable-next-line radix
 const createRandomId = () => parseInt(Math.random() * 10000000).toString()

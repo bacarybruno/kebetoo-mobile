@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
 import changeNavigationBarColor from 'react-native-navigation-bar-color'
 
-import AppNavigation from 'Kebetoo/src/navigation'
-import { appSelector } from 'Kebetoo/src/redux/selectors'
-import { SET_THEME } from 'Kebetoo/src/redux/types'
-import colors, { rgbaToHex } from 'Kebetoo/src/theme/colors'
-import { useNotifications } from 'Kebetoo/src/shared/hooks'
+import AppNavigation from '@app/navigation'
+import { appSelector } from '@app/redux/selectors'
+import { SET_THEME } from '@app/redux/types'
+import colors, { rgbaToHex } from '@app/theme/colors'
+import { useNotifications } from '@app/shared/hooks'
 
 import styles from './styles'
 

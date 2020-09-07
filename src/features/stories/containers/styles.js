@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 
 export default StyleSheet.create({
   wrapper: {

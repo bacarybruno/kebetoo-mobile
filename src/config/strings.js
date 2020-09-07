@@ -4,8 +4,8 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/en'
 import 'dayjs/locale/fr'
 
-import frStrings from 'Kebetoo/assets/locales/fr'
-import enStrings from 'Kebetoo/assets/locales/en'
+import frStrings from '@assets/locales/fr'
+import enStrings from '@assets/locales/en'
 
 const strings = new LocalizedStrings({
   fr: frStrings,

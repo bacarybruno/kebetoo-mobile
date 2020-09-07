@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import colors from 'Kebetoo/src/theme/colors'
-import metrics from 'Kebetoo/src/theme/metrics'
-import elevation from 'Kebetoo/src/theme/elevation'
+import colors from '@app/theme/colors'
+import metrics from '@app/theme/metrics'
+import elevation from '@app/theme/elevation'
 
 export const imageSize = 90
 

@@ -1,7 +1,7 @@
 import { Animated } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
+import setupTest from '@app/config/jest-setup'
+import { readableSeconds } from '@app/shared/helpers/dates'
 
 import IconButton from '../index'
 import { act } from 'react-test-renderer'

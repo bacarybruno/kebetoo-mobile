@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import { NOTIFICATION_STATUS } from 'Kebetoo/src/shared/hooks/notifications'
+import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 
 import * as types from '../types'
 

@@ -2,9 +2,9 @@ import { useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import messaging from '@react-native-firebase/messaging'
 
-import { usePermissions } from 'Kebetoo/src/shared/hooks'
-import { notificationsSelector } from 'Kebetoo/src/redux/selectors'
-import * as types from 'Kebetoo/src/redux/types'
+import { usePermissions } from '@app/shared/hooks'
+import { notificationsSelector } from '@app/redux/selectors'
+import * as types from '@app/redux/types'
 
 export const NOTIFICATION_STATUS = {
   NEW: 'notification_status_new',

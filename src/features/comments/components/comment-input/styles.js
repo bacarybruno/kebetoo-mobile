@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from 'Kebetoo/src/theme/metrics'
-import colors from 'Kebetoo/src/theme/colors'
-import elevation from 'Kebetoo/src/theme/elevation'
+import metrics from '@app/theme/metrics'
+import colors from '@app/theme/colors'
+import elevation from '@app/theme/elevation'
 
 export const bottomBarSize = 45
 export default StyleSheet.create({

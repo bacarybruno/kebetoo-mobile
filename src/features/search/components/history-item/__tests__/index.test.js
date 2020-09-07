@@ -1,6 +1,6 @@
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
+import Pressable from '@app/shared/components/buttons/pressable'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import HistoryItem, { DeleteIconButton } from '../index'
 

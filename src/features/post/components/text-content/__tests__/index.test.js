@@ -1,5 +1,5 @@
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import { POST_TYPES } from 'Kebetoo/src/features/post/containers/basic-post'
+import setupTest from '@app/config/jest-setup'
+import { POST_TYPES } from '@app/features/post/containers/basic-post'
 
 import ImageContent from '../index'
 

@@ -1,9 +1,9 @@
 import auth from '@react-native-firebase/auth'
 import { act } from 'react-test-renderer'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import posts from 'Kebetoo/__fixtures__/posts'
-import comments from 'Kebetoo/__fixtures__/comments'
+import setupTest from '@app/config/jest-setup'
+import posts from '@fixtures/posts'
+import comments from '@fixtures/comments'
 
 import CommentReactions, { SummaryAuthor } from '../index'
 

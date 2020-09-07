@@ -1,6 +1,6 @@
 import { fireEvent } from 'react-native-testing-library'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import OutlinedButton from '../index'
 

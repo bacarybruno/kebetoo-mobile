@@ -2,11 +2,11 @@ import React, { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import Avatar from 'Kebetoo/src/shared/components/avatar'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import strings from 'Kebetoo/src/config/strings'
-import colors from 'Kebetoo/src/theme/colors'
-import routes from 'Kebetoo/src/navigation/routes'
+import Avatar from '@app/shared/components/avatar'
+import Typography, { types } from '@app/shared/components/typography'
+import strings from '@app/config/strings'
+import colors from '@app/theme/colors'
+import routes from '@app/navigation/routes'
 
 import styles from './styles'
 

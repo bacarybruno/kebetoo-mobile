@@ -4,7 +4,7 @@ import {
   Placeholder, PlaceholderMedia, PlaceholderLine, Fade,
 } from 'rn-placeholder'
 
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 
 const colorScheme = Appearance.getColorScheme()
 

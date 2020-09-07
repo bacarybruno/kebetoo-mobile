@@ -1,6 +1,6 @@
 import { ActivityIndicator } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import { SendButton } from '../index'
 

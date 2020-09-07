@@ -1,10 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import { BASE_URL } from 'Kebetoo/src/shared/helpers/http'
-import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
-import { extractMetadataFromName } from 'Kebetoo/src/shared/hooks/audio-recorder'
+import Typography, { types } from '@app/shared/components/typography'
+import { BASE_URL } from '@app/shared/helpers/http'
+import AudioPlayer from '@app/shared/components/audio-player'
+import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 
 import styles from './styles'
 

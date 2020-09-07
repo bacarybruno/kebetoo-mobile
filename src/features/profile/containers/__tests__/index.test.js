@@ -4,10 +4,10 @@ import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import { Share } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
-import * as api from 'Kebetoo/src/shared/helpers/http'
-import routes from 'Kebetoo/src/navigation/routes'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
+import * as api from '@app/shared/helpers/http'
+import routes from '@app/navigation/routes'
 
 import Profile from '../index'
 

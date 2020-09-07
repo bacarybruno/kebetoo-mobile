@@ -1,9 +1,9 @@
 import { act } from 'react-test-renderer'
 import { TouchableWithoutFeedback } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import comments from 'Kebetoo/__fixtures__/comments'
-import authors from 'Kebetoo/__fixtures__/authors'
+import setupTest from '@app/config/jest-setup'
+import comments from '@fixtures/comments'
+import authors from '@fixtures/authors'
 
 import Comment from '../index'
 

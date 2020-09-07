@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage'
 
-import * as api from 'Kebetoo/src/shared/helpers/http'
+import * as api from '@app/shared/helpers/http'
 
 export const chunkArray = (array, size) => {
   const results = []

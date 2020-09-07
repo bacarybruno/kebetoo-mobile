@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import Avatar from 'Kebetoo/src/shared/components/avatar'
-import colors from 'Kebetoo/src/theme/colors'
-import Typography, { types, weights, colors as systemColors } from 'Kebetoo/src/shared/components/typography'
+import Pressable from '@app/shared/components/buttons/pressable'
+import Avatar from '@app/shared/components/avatar'
+import colors from '@app/theme/colors'
+import Typography, { types, weights, colors as systemColors } from '@app/shared/components/typography'
 
 import styles from './styles'
 

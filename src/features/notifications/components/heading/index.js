@@ -1,8 +1,8 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import Badge from 'Kebetoo/src/shared/components/badge'
-import Typography, { types, weights } from 'Kebetoo/src/shared/components/typography'
+import Badge from '@app/shared/components/badge'
+import Typography, { types, weights } from '@app/shared/components/typography'
 
 import styles from './styles'
 

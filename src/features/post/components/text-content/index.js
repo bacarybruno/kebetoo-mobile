@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import { POST_TYPES } from 'Kebetoo/src/features/post/containers/basic-post'
+import Pressable from '@app/shared/components/buttons/pressable'
+import Typography, { types } from '@app/shared/components/typography'
+import { POST_TYPES } from '@app/features/post/containers/basic-post'
 
 import styles from './styles'
 

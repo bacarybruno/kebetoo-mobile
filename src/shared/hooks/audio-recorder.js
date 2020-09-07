@@ -6,9 +6,9 @@ import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 
-import * as api from 'Kebetoo/src/shared/helpers/http'
-import { usePermissions } from 'Kebetoo/src/shared/hooks'
-import { getMimeType } from 'Kebetoo/src/shared/helpers/file'
+import * as api from '@app/shared/helpers/http'
+import { usePermissions } from '@app/shared/hooks'
+import { getMimeType } from '@app/shared/helpers/file'
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30

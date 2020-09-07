@@ -1,8 +1,8 @@
 import React from 'react'
 import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
 
-import Pressable from 'Kebetoo/src/shared/components/buttons/pressable'
-import colors from 'Kebetoo/src/theme/colors'
+import Pressable from '@app/shared/components/buttons/pressable'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 import Typography, { types } from '../../typography'

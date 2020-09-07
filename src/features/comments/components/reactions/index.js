@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import { View } from 'react-native'
 
-import ReactionsOnline from 'Kebetoo/src/features/post/containers/reactions'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import usePosts from 'Kebetoo/src/shared/hooks/posts'
-import strings from 'Kebetoo/src/config/strings'
-import Avatar from 'Kebetoo/src/shared/components/avatar'
+import ReactionsOnline from '@app/features/post/containers/reactions'
+import Typography, { types } from '@app/shared/components/typography'
+import usePosts from '@app/shared/hooks/posts'
+import strings from '@app/config/strings'
+import Avatar from '@app/shared/components/avatar'
 
 import DraggableIndicator from '../draggable-indicator'
 

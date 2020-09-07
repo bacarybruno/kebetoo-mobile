@@ -3,10 +3,10 @@ import { useNavigation } from '@react-navigation/native'
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import routes from 'Kebetoo/src/navigation/routes'
-import posts from 'Kebetoo/__fixtures__/posts'
-import authors from 'Kebetoo/__fixtures__/authors'
+import setupTest from '@app/config/jest-setup'
+import routes from '@app/navigation/routes'
+import posts from '@fixtures/posts'
+import authors from '@fixtures/authors'
 
 import BasicPost, { Content } from '../index'
 
