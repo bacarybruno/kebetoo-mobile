@@ -97,7 +97,7 @@ const locales = Object.freeze({
     posts_tab: 'Posts',
     users_tab: 'Users',
     results: 'Results',
-    recent_searches: 'Recent Searches',
+    recent_searches: 'Recent searches',
     clear_all: 'Clear all',
     no_result: 'No results found for search term "{0}"',
   },
