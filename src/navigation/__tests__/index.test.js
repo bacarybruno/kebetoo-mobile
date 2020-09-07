@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store'
 import auth from '@react-native-firebase/auth'
 import { act } from 'react-test-renderer'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,

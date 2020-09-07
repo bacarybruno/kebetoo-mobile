@@ -1,7 +1,7 @@
 import { render, fireEvent } from 'react-native-testing-library'
 
-import { constructFileName } from 'Kebetoo/src/shared/hooks/audio-recorder'
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import { constructFileName } from '@app/shared/hooks/audio-recorder'
+import setupTest from '@app/config/jest-setup'
 
 import AudioContent from '../index'
 

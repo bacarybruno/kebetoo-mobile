@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import { View } from 'react-native'
 
-import TextInput from 'Kebetoo/src/shared/components/inputs/text'
-import AudioPlayer from 'Kebetoo/src/shared/components/audio-player'
-import strings from 'Kebetoo/src/config/strings'
+import TextInput from '@app/shared/components/inputs/text'
+import AudioPlayer from '@app/shared/components/audio-player'
+import strings from '@app/config/strings'
 
 import { SendButton, RecordButton } from '../send-button'
 import styles from './styles'

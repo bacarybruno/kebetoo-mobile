@@ -3,7 +3,7 @@
 	"Kebetoo jest snippet": {
 		"prefix": "test",
 		"body": [
-			"import setupTest from 'Kebetoo/src/config/jest-setup'\n",
+			"import setupTest from '@app/config/jest-setup'\n",
       "import ${1:ComponentName} from '../index'\n",
       "const given$1 = setupTest($1)($2)\n",
       "it('renders $1', () => {",
@@ -78,8 +78,8 @@
 		"prefix": "styles",
 		"body": [
 			"import { StyleSheet } from 'react-native'\n",
-			"import colors from 'Kebetoo/src/theme/colors'",
-			"import metrics from 'Kebetoo/src/theme/metrics'\n",
+			"import colors from '@app/theme/colors'",
+			"import metrics from '@app/theme/metrics'\n",
 			"export default StyleSheet.create({",
 			"\twrapper: {",
 			"\t\tflex: 1,",

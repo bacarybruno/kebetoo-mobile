@@ -3,8 +3,8 @@ import ImagePicker from 'react-native-image-picker'
 import dayjs from 'dayjs'
 import RNFetchBlob from 'rn-fetch-blob'
 
-import * as api from 'Kebetoo/src/shared/helpers/http'
-import { getMimeType } from 'Kebetoo/src/shared/helpers/file'
+import * as api from '@app/shared/helpers/http'
+import { getMimeType } from '@app/shared/helpers/file'
 
 const PICTURE_CONFIG = Object.freeze({
   mediaType: 'photo',

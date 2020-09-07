@@ -1,7 +1,7 @@
 import { fireEvent } from 'react-native-testing-library'
 import { TouchableOpacity } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import IconButton from '../index'
 

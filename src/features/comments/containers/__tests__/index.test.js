@@ -1,13 +1,13 @@
 import { act } from 'react-test-renderer'
 import configureStore from 'redux-mock-store'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
 
 import Comments from '../index'
 
 jest.mock('@react-navigation/native', () => {
-  const posts = require('Kebetoo/__fixtures__/posts').default
+  const posts = require('@fixtures/posts').default
   return {
     ...jest.requireActual('@react-navigation/native'),
     useRoute: () => ({

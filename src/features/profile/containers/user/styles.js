@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import colors, { hexToRgba, rgbaToHex } from 'Kebetoo/src/theme/colors'
-import metrics from 'Kebetoo/src/theme/metrics'
-import elevation from 'Kebetoo/src/theme/elevation'
+import colors, { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import metrics from '@app/theme/metrics'
+import elevation from '@app/theme/elevation'
 
 const profileInfoSize = 140
 const profileInfoMarginBottom = 25

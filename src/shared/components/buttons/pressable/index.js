@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 
 const CustomPressable = ({ children, ...otherProps }) => (
   <TouchableOpacity {...otherProps}>{children}</TouchableOpacity>

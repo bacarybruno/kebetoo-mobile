@@ -1,7 +1,7 @@
 import { LoginManager, AccessToken } from 'react-native-fbsdk'
 import auth from '@react-native-firebase/auth'
 
-import { createUser } from 'Kebetoo/src/shared/helpers/users'
+import { createUser } from '@app/shared/helpers/users'
 
 export const getFacebookPicture = (profileId) => `https://graph.facebook.com/${profileId}/picture?type=large`
 

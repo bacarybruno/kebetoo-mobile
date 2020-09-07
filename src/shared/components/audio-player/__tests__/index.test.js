@@ -2,8 +2,8 @@ import { fireEvent, act } from 'react-native-testing-library'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { ActivityIndicator } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import { readableSeconds } from 'Kebetoo/src/shared/helpers/dates'
+import setupTest from '@app/config/jest-setup'
+import { readableSeconds } from '@app/shared/helpers/dates'
 
 import AudioPlayer, { PlayButton, DeleteIconButton } from '../index'
 

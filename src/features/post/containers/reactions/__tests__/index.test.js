@@ -2,11 +2,11 @@ import { act } from 'react-test-renderer'
 import { useNavigation } from '@react-navigation/native'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import posts from 'Kebetoo/__fixtures__/posts'
-import authors from 'Kebetoo/__fixtures__/authors'
-import routes from 'Kebetoo/src/navigation/routes'
-import * as api from 'Kebetoo/src/shared/helpers/http'
+import setupTest from '@app/config/jest-setup'
+import posts from '@fixtures/posts'
+import authors from '@fixtures/authors'
+import routes from '@app/navigation/routes'
+import * as api from '@app/shared/helpers/http'
 
 import Reactions from '../index'
 

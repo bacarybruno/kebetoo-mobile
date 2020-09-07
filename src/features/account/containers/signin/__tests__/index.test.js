@@ -1,9 +1,9 @@
 import { render, fireEvent } from 'react-native-testing-library'
 import auth from '@react-native-firebase/auth'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
-import routes from 'Kebetoo/src/navigation/routes'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
+import routes from '@app/navigation/routes'
 
 import SignIn from '../index'
 

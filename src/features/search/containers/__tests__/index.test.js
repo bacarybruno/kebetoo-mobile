@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
 
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
 import SearchPosts from '../posts'

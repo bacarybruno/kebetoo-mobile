@@ -1,7 +1,7 @@
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import { AudioPlayer } from 'Kebetoo/src/shared/components/audio-player'
+import setupTest from '@app/config/jest-setup'
+import { AudioPlayer } from '@app/shared/components/audio-player'
 
-import strings from 'Kebetoo/src/config/strings'
+import strings from '@app/config/strings'
 import { act } from 'react-test-renderer'
 
 import CommentInput from '../index'

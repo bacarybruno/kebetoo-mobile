@@ -1,5 +1,5 @@
-import { NOTIFICATION_STATUS } from 'Kebetoo/src/shared/hooks/notifications'
-import { NOTIFICATION_TYPES } from 'Kebetoo/src/features/notifications/containers'
+import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
+import { NOTIFICATION_TYPES } from '@app/features/notifications/containers'
 
 import authors from './authors.json'
 import textPost from './posts/text.json'

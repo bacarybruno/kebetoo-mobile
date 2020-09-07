@@ -5,12 +5,12 @@ import { act } from 'react-test-renderer'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
-import * as api from 'Kebetoo/src/shared/helpers/http'
-import NoResult from 'Kebetoo/src/features/search/components/no-result'
-import HistoryItem from 'Kebetoo/src/features/search/components/history-item'
-import * as types from 'Kebetoo/src/redux/types'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
+import * as api from '@app/shared/helpers/http'
+import NoResult from '@app/features/search/components/no-result'
+import HistoryItem from '@app/features/search/components/history-item'
+import * as types from '@app/redux/types'
 
 import SearchUsers, { SearchHistoryHeader, SearchResult } from '../index'
 

@@ -1,8 +1,8 @@
 import { Image } from 'react-native'
 import { act } from 'react-test-renderer'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import metrics from 'Kebetoo/src/theme/metrics'
+import setupTest from '@app/config/jest-setup'
+import metrics from '@app/theme/metrics'
 
 import ImageModal from '../index'
 

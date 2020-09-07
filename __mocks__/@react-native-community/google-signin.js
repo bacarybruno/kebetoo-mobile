@@ -1,4 +1,4 @@
-import authors from 'Kebetoo/__fixtures__/authors'
+import authors from '@fixtures/authors'
 
 const author = authors[0]
 const mockUserInfo = {

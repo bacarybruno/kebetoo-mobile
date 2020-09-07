@@ -1,5 +1,5 @@
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import authors from 'Kebetoo/__fixtures__/authors.json'
+import setupTest from '@app/config/jest-setup'
+import authors from '@fixtures/authors.json'
 
 import Notification, { Dot, Title, Message } from '../index'
 

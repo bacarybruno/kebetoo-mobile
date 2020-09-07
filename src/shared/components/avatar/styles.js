@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 
 const imageSize = 30
 export default StyleSheet.create({

@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 import { human, systemWeights, material } from 'react-native-typography'
 
-import themeColors from 'Kebetoo/src/theme/colors'
+import themeColors from '@app/theme/colors'
 
 export const weights = {
   thin: 'thin',

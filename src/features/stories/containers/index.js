@@ -1,8 +1,8 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
-import strings from 'Kebetoo/src/config/strings'
+import Typography, { types } from '@app/shared/components/typography'
+import strings from '@app/config/strings'
 
 import styles from './styles'
 

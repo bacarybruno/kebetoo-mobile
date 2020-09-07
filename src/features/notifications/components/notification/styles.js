@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from 'Kebetoo/src/theme/metrics'
-import colors from 'Kebetoo/src/theme/colors'
+import metrics from '@app/theme/metrics'
+import colors from '@app/theme/colors'
 
 export default StyleSheet.create({
   notificationWrapper: {

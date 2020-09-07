@@ -2,7 +2,7 @@ import {
   takeLeading, call, put, all,
 } from 'redux-saga/effects'
 
-import * as api from 'Kebetoo/src/shared/helpers/http'
+import * as api from '@app/shared/helpers/http'
 
 import * as types from '../types'
 

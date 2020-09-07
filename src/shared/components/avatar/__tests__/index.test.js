@@ -1,6 +1,6 @@
 import { Image } from 'react-native'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import Avatar, { TextAvatar } from '../index'
 

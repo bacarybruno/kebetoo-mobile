@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image } from 'react-native'
-import images from 'Kebetoo/src/theme/images'
+import images from '@app/theme/images'
 
 import styles from './styles'
 

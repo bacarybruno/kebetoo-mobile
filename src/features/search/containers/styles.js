@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 import { human, systemWeights } from 'react-native-typography'
 
-import colors from 'Kebetoo/src/theme/colors'
-import { deleteProperty, mergeObjects } from 'Kebetoo/src/shared/helpers/object'
+import colors from '@app/theme/colors'
+import { deleteProperty, mergeObjects } from '@app/shared/helpers/object'
 
 export default StyleSheet.create({
   wrapper: {

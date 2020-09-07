@@ -1,6 +1,6 @@
 import { render, fireEvent } from 'react-native-testing-library'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
+import setupTest from '@app/config/jest-setup'
 
 import ImageContent from '../index'
 

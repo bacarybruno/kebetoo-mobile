@@ -1,9 +1,9 @@
 import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import IconButton from 'Kebetoo/src/features/post/components/icon-button'
+import IconButton from '@app/features/post/components/icon-button'
 
 import styles from './styles'
 

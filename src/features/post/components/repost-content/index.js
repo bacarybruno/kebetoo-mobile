@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, TouchableWithoutFeedback } from 'react-native'
 
-import BasicPost, { Content, POST_TYPES, getPostType } from 'Kebetoo/src/features/post/containers/basic-post'
-import { deleteProperty } from 'Kebetoo/src/shared/helpers/object'
+import BasicPost, { Content, POST_TYPES, getPostType } from '@app/features/post/containers/basic-post'
+import { deleteProperty } from '@app/shared/helpers/object'
 
 import styles from './styles'
 

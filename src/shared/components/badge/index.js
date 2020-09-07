@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import colors from 'Kebetoo/src/theme/colors'
+import colors from '@app/theme/colors'
 
 import styles from './styles'
 import Typography, { types, weights } from '../typography'

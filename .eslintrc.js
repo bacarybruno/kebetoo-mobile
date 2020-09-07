@@ -5,11 +5,12 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
-    'plugin:jest/recommended'
+    'plugin:jest/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings'
   ],
   rules: {
     'global-require': 0,
-    'import/no-unresolved': [2, { ignore: ['Kebetoo/*'] }],
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-props-no-spreading': 0,
@@ -21,7 +22,8 @@ module.exports = {
     'import/resolver': {
       'node': {
         'extensions': ['.js', '.jsx', '.json', '.native.js']
-      }
+      },
+      'babel-module': {}
     }
   }
 };

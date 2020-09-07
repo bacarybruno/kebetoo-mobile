@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 import { human } from 'react-native-typography'
 
-import metrics from 'Kebetoo/src/theme/metrics'
-import colors from 'Kebetoo/src/theme/colors'
+import metrics from '@app/theme/metrics'
+import colors from '@app/theme/colors'
 
 export const placeholderColor = colors.placeholder
 

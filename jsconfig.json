@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "Kebetoo/*": [
         "./*"
       ],
+      "@app/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@fixtures/*": [
+        "./__fixtures__/*"
+      ]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

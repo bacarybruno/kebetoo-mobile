@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from 'Kebetoo/src/theme/metrics'
+import metrics from '@app/theme/metrics'
 
 export default StyleSheet.create({
   header: {

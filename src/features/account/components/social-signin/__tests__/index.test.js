@@ -3,9 +3,9 @@ import { fireEvent } from 'react-native-testing-library'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
 
-import setupTest from 'Kebetoo/src/config/jest-setup'
-import strings from 'Kebetoo/src/config/strings'
-import Typography, { types } from 'Kebetoo/src/shared/components/typography'
+import setupTest from '@app/config/jest-setup'
+import strings from '@app/config/strings'
+import Typography, { types } from '@app/shared/components/typography'
 
 import SocialSignin from '../index'
 
