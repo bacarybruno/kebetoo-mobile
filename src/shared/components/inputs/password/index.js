@@ -1,45 +1,49 @@
 import React, { useState, useCallback, forwardRef } from 'react'
-import { View, TextInput, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import styles, { placeholderColor } from '../styles'
+import TextInput from '../text'
+
+import styles from '../styles'
+
+export const EyeButton = ({ secureTextEntry, onPress }) => (
+  <TouchableOpacity
+    style={styles.iconWrapper}
+    onPress={onPress}
+  >
+    <Ionicon
+      style={styles.icon}
+      name={secureTextEntry ? 'ios-eye' : 'ios-eye-off'}
+      size={30}
+    />
+  </TouchableOpacity>
+)
 
 const InputPassword = forwardRef((props, ref) => {
   const [value, setValue] = useState(null)
   const [secureTextEntry, setSecureTextEntry] = useState(true)
 
   const onChangeText = useCallback((text) => {
-    const { fieldName } = props
-    props.onValueChange(text, fieldName)
+    const { fieldName, onValueChange } = props
+    onValueChange(text, fieldName)
     setValue(text)
-  }, [setValue, props])
+  }, [props])
 
   const togglePassword = useCallback(() => {
-    setSecureTextEntry(!secureTextEntry)
-  }, [secureTextEntry, setSecureTextEntry])
+    setSecureTextEntry((state) => !state)
+  }, [])
 
   return (
-    <View style={styles.wrapper}>
-      <TextInput
-        secureTextEntry={secureTextEntry}
-        style={styles.textInput}
-        value={value}
-        placeholderTextColor={placeholderColor}
-        onChangeText={onChangeText}
-        ref={ref}
-        {...props}
-      />
-      <TouchableOpacity
-        style={styles.iconWrapper}
-        onPress={togglePassword}
-      >
-        <Ionicon
-          style={styles.icon}
-          name={secureTextEntry ? 'ios-eye' : 'ios-eye-off'}
-          size={30}
-        />
-      </TouchableOpacity>
-    </View>
+    <TextInput
+      secureTextEntry={secureTextEntry}
+      value={value}
+      onChangeText={onChangeText}
+      ref={ref}
+      {...props}
+      Right={() => (
+        <EyeButton secureTextEntry={secureTextEntry} onPress={togglePassword} />
+      )}
+    />
   )
 })
 

@@ -47,6 +47,7 @@ exports[`renders CommentInput 1`] = `
             "shadowOpacity": 0.18,
             "shadowRadius": 1,
           },
+          undefined,
         ]
       }
     >
@@ -55,6 +56,7 @@ exports[`renders CommentInput 1`] = `
         blurOnSubmit={false}
         editable={true}
         multiline={true}
+        onBlur={[Function]}
         onChangeText={[Function]}
         onContentSizeChange={[Function]}
         placeholder="Add a comment"

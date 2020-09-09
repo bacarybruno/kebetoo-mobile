@@ -1,23 +1,29 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { View } from 'react-native'
-import * as yup from 'yup'
 import { useDispatch } from 'react-redux'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import auth from '@react-native-firebase/auth'
+import * as yup from 'yup'
 
 import Typography, { types } from '@app/shared/components/typography'
 import TextInput from '@app/shared/components/inputs/text'
 import PasswordInput from '@app/shared/components/inputs/password'
 import FullButton from '@app/shared/components/buttons/full'
-import metrics from '@app/theme/metrics'
 import routes from '@app/navigation/routes'
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { SET_DISPLAY_NAME } from '@app/redux/types'
 import { createUser } from '@app/shared/helpers/users'
-import { useKeyboard } from '@app/shared/hooks'
 import Logo from '@app/shared/components/logo'
 import strings from '@app/config/strings'
+import metrics from '@app/theme/metrics'
 
 import styles from './styles'
+
+export const fieldNames = {
+  fullName: 'fullName',
+  email: 'email',
+  password: 'password',
+}
 
 const SignUp = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signup })
@@ -26,15 +32,30 @@ const SignUp = ({ navigation }) => {
   const dispatch = useDispatch()
 
   const [infos, setInfos] = useState({
-    fullName: '',
-    email: '',
-    password: '',
+    [fieldNames.fullName]: '',
+    [fieldNames.email]: '',
+    [fieldNames.password]: '',
   })
 
   const schema = yup.object().shape({
-    fullName: yup.string().required(),
-    email: yup.string().email().required(),
-    password: yup.string().min(8),
+    [fieldNames.fullName]: yup.string().required(
+      strings.formatString(strings.errors.required_field, strings.auth.fullname),
+    ),
+    [fieldNames.email]: yup.string().email(
+      strings.formatString(strings.errors.invalid_field, strings.auth.email),
+    ).required(
+      strings.formatString(strings.errors.required_field, strings.auth.email),
+    ),
+    [fieldNames.password]: yup.string().min(
+      8,
+      strings.formatString(strings.errors.min_length_field, strings.auth.password, 8),
+    ),
+  })
+
+  const [errors, setErrors] = useState({
+    [fieldNames.fullName]: null,
+    [fieldNames.email]: null,
+    [fieldNames.password]: null,
   })
 
   const fullNameRef = useRef()
@@ -42,8 +63,9 @@ const SignUp = ({ navigation }) => {
   const passwordRef = useRef()
 
   const onChangeText = useCallback((value, field) => {
-    setInfos((oldInfos) => ({ ...oldInfos, [field]: value }))
-  }, [setInfos])
+    setInfos((state) => ({ ...state, [field]: value }))
+    setErrors((state) => ({ ...state, [field]: null }))
+  }, [])
 
   const navigateToSignIn = useCallback(() => {
     navigation.navigate(routes.SIGNIN)
@@ -76,44 +98,62 @@ const SignUp = ({ navigation }) => {
     }
   }, [schema, infos, dispatch])
 
-  const { keyboardShown, keyboardHeight } = useKeyboard()
-  const availableHeight = metrics.screenHeight - keyboardHeight
+  const validate = useCallback((field) => {
+    try {
+      yup.reach(schema, field).validateSync(infos[field])
+      setErrors((state) => ({ ...state, [field]: null }))
+    } catch (error) {
+      setErrors((state) => ({ ...state, [field]: error.message }))
+    }
+  }, [infos, schema])
 
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.normalSignUp}>
-        {availableHeight > 480 && <Logo />}
-        <TextInput
-          placeholder={strings.auth.fullname}
-          fieldName="fullName"
-          onValueChange={onChangeText}
-          ref={fullNameRef}
-          onSubmitEditing={focusEmail}
-          returnKeyType="next"
-        />
-        <TextInput
-          placeholder={strings.auth.email}
-          fieldName="email"
-          onValueChange={onChangeText}
-          keyboardType="email-address"
-          ref={emailRef}
-          onSubmitEditing={focusPassword}
-          returnKeyType="next"
-        />
-        <PasswordInput
-          placeholder={strings.auth.password}
-          fieldName="password"
-          onValueChange={onChangeText}
-          ref={passwordRef}
-          returnKeyType="done"
-        />
-        <FullButton
-          text={strings.auth.signup.toUpperCase()}
-          onPress={onSubmit}
-          loading={isLoading}
-        />
-      </View>
-      {!keyboardShown && (
+    <KeyboardAwareScrollView
+      extraHeight={80}
+      extraScrollHeight={metrics.marginVertical}
+      contentContainerStyle={styles.scrollView}
+      keyboardShouldPersistTaps="handled"
+      enableOnAndroid
+    >
+      <View style={styles.wrapper}>
+        <View style={styles.normalSignUp}>
+          <Logo />
+          <TextInput
+            placeholder={strings.auth.fullname}
+            fieldName={fieldNames.fullName}
+            onValueChange={onChangeText}
+            ref={fullNameRef}
+            onSubmitEditing={focusEmail}
+            onBlur={validate}
+            error={errors[fieldNames.fullName]}
+            returnKeyType="next"
+          />
+          <TextInput
+            placeholder={strings.auth.email}
+            fieldName={fieldNames.email}
+            onValueChange={onChangeText}
+            keyboardType="email-address"
+            ref={emailRef}
+            onSubmitEditing={focusPassword}
+            onBlur={validate}
+            error={errors[fieldNames.email]}
+            returnKeyType="next"
+          />
+          <PasswordInput
+            placeholder={strings.auth.password}
+            fieldName={fieldNames.password}
+            onValueChange={onChangeText}
+            onBlur={validate}
+            error={errors[fieldNames.password]}
+            ref={passwordRef}
+            returnKeyType="done"
+          />
+          <FullButton
+            text={strings.auth.signup.toUpperCase()}
+            onPress={onSubmit}
+            loading={isLoading}
+          />
+        </View>
         <SocialSignIn
           sectionText={strings.auth.or_signin_with}
           onLoading={setIsLoading}
@@ -125,8 +165,8 @@ const SignUp = ({ navigation }) => {
             <Typography color="link" onPress={navigateToSignIn} type={types.textButton} text={strings.auth.signin} />
           </View>
         </SocialSignIn>
-      )}
-    </View>
+      </View>
+    </KeyboardAwareScrollView>
   )
 }
 

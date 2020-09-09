@@ -32,4 +32,9 @@ export default StyleSheet.create({
   icon: {
     color: placeholderColor,
   },
+  popover: {
+    backgroundColor: colors.background,
+    paddingHorizontal: metrics.marginHorizontal,
+    paddingVertical: metrics.marginHorizontal / 2,
+  },
 })

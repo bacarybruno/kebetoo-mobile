@@ -1,11 +1,12 @@
 import { render, fireEvent } from 'react-native-testing-library'
 import auth from '@react-native-firebase/auth'
+import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
 import strings from '@app/config/strings'
 import routes from '@app/navigation/routes'
 
-import SignIn from '../index'
+import SignIn, { fieldNames } from '../index'
 
 afterEach(jest.clearAllMocks)
 
@@ -45,6 +46,7 @@ describe('submit', () => {
     passwordInput: wrapper.getByPlaceholder(strings.auth.password),
     signInButton: wrapper.getByText(strings.auth.signin.toUpperCase()),
   })
+
   it('throws error if infos are not valid', async () => {
     const { wrapper } = givenSignIn()
     const { signInWithEmailAndPassword } = auth()
@@ -65,5 +67,39 @@ describe('submit', () => {
     await fireEvent.press(signInButton)
     expect(signInWithEmailAndPassword).toBeCalledTimes(1)
     expect(signInWithEmailAndPassword).toBeCalledWith(userInfos.email, userInfos.password)
+  })
+})
+
+describe('form fields validation', () => {
+  let givenSignInTestRenderer
+  beforeEach(() => {
+    givenSignInTestRenderer = setupTest(SignIn)({
+      navigation: {
+        setOptions: jest.fn(),
+        navigate: jest.fn(),
+      },
+    })
+  })
+  it('is invalid', () => {
+    const { wrapper } = givenSignInTestRenderer()
+    const emailInput = wrapper.root.findByProps({ fieldName: fieldNames.email })
+    act(() => {
+      emailInput.props.onValueChange('invalidemail', fieldNames.email)
+    })
+    act(() => {
+      emailInput.props.onBlur(fieldNames.email)
+    })
+    expect(emailInput.props.error).toBeTruthy()
+  })
+  it('is valid', () => {
+    const { wrapper } = givenSignInTestRenderer()
+    const emailInput = wrapper.root.findByProps({ fieldName: fieldNames.email })
+    act(() => {
+      emailInput.props.onValueChange('bacarybruno@gmail.com', fieldNames.email)
+    })
+    act(() => {
+      emailInput.props.onBlur(fieldNames.email)
+    })
+    expect(emailInput.props.error).toBeFalsy()
   })
 })

@@ -21,6 +21,15 @@ export const rgbaToHex = (rgba) => {
     + componentToHex(parseInt(rgb[3], 10)).slice(-2) : rgba
 }
 
+const baseColors = {
+  pink: iosColors.systemPink[colorScheme],
+  blue: iosColors.systemBlue[colorScheme],
+  purple: iosColors.systemPurple[colorScheme],
+  red: iosColors.systemRed[colorScheme],
+  black: iosColors.black,
+  white: iosColors.white,
+}
+
 const customColors = {
   blue_dark: {
     light: '#0B1B77',
@@ -41,9 +50,9 @@ const customColors = {
 }
 
 const iconColors = {
-  like: iosColors.systemBlue[colorScheme],
-  dislike: iosColors.systemRed[colorScheme],
-  heart: iosColors.systemPink[colorScheme],
+  like: baseColors.blue,
+  dislike: baseColors.pink,
+  heart: baseColors.pink,
   reactions: mdColors.textSecondary[colorScheme],
   facebook: '#3b5998',
   icon: '#7A8FA6',
@@ -60,13 +69,9 @@ const colors = {
   backgroundSecondary: customColors.backgroundSecondary[colorScheme],
   backgroundTertiary: iosColors.tertiarySystemBackground[colorScheme],
 
-  primary: iosColors.systemBlue[colorScheme],
+  primary: baseColors.blue,
   secondary: customColors.secondary[colorScheme],
-
-  black: iosColors.black,
-  white: iosColors.white,
-  purple: iosColors.systemPurple[colorScheme],
-  danger: iosColors.systemRed[colorScheme],
+  danger: baseColors.red,
   blue_dark: customColors.blue_dark[colorScheme],
 
   inactive: customColors.inactive[colorScheme],
@@ -76,6 +81,7 @@ const colors = {
 
   ...iconColors,
   ...textColors,
+  ...baseColors,
 }
 
 // export const rgbToHex = (r, g, b) => (

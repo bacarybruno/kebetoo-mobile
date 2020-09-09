@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native'
 import colors from '@app/theme/colors'
 import metrics from '@app/theme/metrics'
 
+const safeHeight = metrics.screenHeight - metrics.headerHeight
+
 export default StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -10,8 +12,11 @@ export default StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
     paddingVertical: metrics.marginVertical,
   },
-  normalSignUp: {
-    flex: 3,
+  scrollView: {
+    flexGrow: 1,
+  },
+  normalSignIn: {
+    height: safeHeight * 0.75,
     maxHeight: 360,
     justifyContent: 'space-between',
   },

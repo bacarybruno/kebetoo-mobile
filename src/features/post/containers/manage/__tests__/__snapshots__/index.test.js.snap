@@ -1655,7 +1655,7 @@ exports[`renders ManagePost 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "rgba(255, 59, 48, 255)",
+                      "color": "rgba(255, 45, 85, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -1682,7 +1682,7 @@ exports[`renders ManagePost 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "rgba(255, 59, 48, 255)",
+                          "color": "rgba(255, 45, 85, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -2464,7 +2464,7 @@ exports[`renders ManagePost 1`] = `
                   allowFontScaling={false}
                   style={
                     Object {
-                      "color": "rgba(255, 59, 48, 255)",
+                      "color": "rgba(255, 45, 85, 255)",
                       "fontFamily": "icomoon",
                       "fontSize": 18,
                       "fontStyle": "normal",
@@ -2491,7 +2491,7 @@ exports[`renders ManagePost 1`] = `
                       },
                       Array [
                         Object {
-                          "color": "rgba(255, 59, 48, 255)",
+                          "color": "rgba(255, 45, 85, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
