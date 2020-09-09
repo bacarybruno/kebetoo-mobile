@@ -8,12 +8,15 @@ exports[`renders SearchPosts history 1`] = `
     }
   }
 >
-  <RNCSafeAreaView
+  <RNCSafeAreaProvider
     onInsetsChange={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -682,7 +685,7 @@ exports[`renders SearchPosts history 1`] = `
         </View>
       </View>
     </View>
-  </RNCSafeAreaView>
+  </RNCSafeAreaProvider>
 </View>
 `;
 
@@ -694,12 +697,15 @@ exports[`renders SearchPosts results 1`] = `
     }
   }
 >
-  <RNCSafeAreaView
+  <RNCSafeAreaProvider
     onInsetsChange={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -2203,6 +2209,6 @@ exports[`renders SearchPosts results 1`] = `
         </View>
       </View>
     </View>
-  </RNCSafeAreaView>
+  </RNCSafeAreaProvider>
 </View>
 `;

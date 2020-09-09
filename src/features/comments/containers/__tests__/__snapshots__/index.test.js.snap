@@ -2506,6 +2506,7 @@ exports[`renders Comments 1`] = `
               "shadowOpacity": 0.18,
               "shadowRadius": 1,
             },
+            undefined,
           ]
         }
       >
@@ -2514,6 +2515,7 @@ exports[`renders Comments 1`] = `
           blurOnSubmit={false}
           editable={true}
           multiline={true}
+          onBlur={[Function]}
           onChangeText={[Function]}
           onContentSizeChange={[Function]}
           placeholder="Add a comment"
@@ -4629,6 +4631,7 @@ exports[`renders Comments in loading state 1`] = `
               "shadowOpacity": 0.18,
               "shadowRadius": 1,
             },
+            undefined,
           ]
         }
       >
@@ -4637,6 +4640,7 @@ exports[`renders Comments in loading state 1`] = `
           blurOnSubmit={false}
           editable={true}
           multiline={true}
+          onBlur={[Function]}
           onChangeText={[Function]}
           onContentSizeChange={[Function]}
           placeholder="Add a comment"

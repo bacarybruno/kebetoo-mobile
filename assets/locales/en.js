@@ -115,6 +115,12 @@ const locales = Object.freeze({
   dates: {
     format_month_year: 'MMMM YYYY',
   },
+  errors: {
+    generic: 'An error occured',
+    required_field: '{0} field is required',
+    invalid_field: 'Please enter a valid {0}',
+    min_length_field: '{0} must be at least {1} characters',
+  },
 })
 
 export default locales

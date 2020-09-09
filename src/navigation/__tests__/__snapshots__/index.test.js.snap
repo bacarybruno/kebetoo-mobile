@@ -8,12 +8,15 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
     }
   }
 >
-  <RNCSafeAreaView
+  <RNCSafeAreaProvider
     onInsetsChange={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -1342,7 +1345,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
         ]
       }
     />
-  </RNCSafeAreaView>
+  </RNCSafeAreaProvider>
 </View>
 `;
 
@@ -1354,12 +1357,15 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
     }
   }
 >
-  <RNCSafeAreaView
+  <RNCSafeAreaProvider
     onInsetsChange={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -2522,7 +2528,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
         ]
       }
     />
-  </RNCSafeAreaView>
+  </RNCSafeAreaProvider>
 </View>
 `;
 
@@ -2534,12 +2540,15 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
     }
   }
 >
-  <RNCSafeAreaView
+  <RNCSafeAreaProvider
     onInsetsChange={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -3515,17 +3524,20 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
         ]
       }
     />
-  </RNCSafeAreaView>
+  </RNCSafeAreaProvider>
 </View>
 `;
 
 exports[`tabs renders TabNavigation 1`] = `
-<RNCSafeAreaView
+<RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
-    Object {
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
   }
 >
   <View
@@ -4675,5 +4687,5 @@ exports[`tabs renders TabNavigation 1`] = `
       </View>
     </View>
   </View>
-</RNCSafeAreaView>
+</RNCSafeAreaProvider>
 `;

@@ -35,6 +35,7 @@ exports[`renders CreatePost 1`] = `
             "marginTop": 8,
             "paddingRight": 16,
           },
+          undefined,
         ]
       }
     >
@@ -46,6 +47,7 @@ exports[`renders CreatePost 1`] = `
         maxLength={180}
         multiline={true}
         numberOfLines={8}
+        onBlur={[Function]}
         onChangeText={[Function]}
         placeholder="What's on your mind?"
         placeholderTextColor="rgba(174, 174, 178, 255)"
