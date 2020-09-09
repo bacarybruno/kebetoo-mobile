@@ -24,6 +24,7 @@ test('getMediaType', () => {
   expect(file.getMediaType('file.jpg')).toBe('image')
   expect(file.getMediaType('file.mp3')).toBe('audio')
   expect(file.getMediaType('file.opus')).toBe('audio')
+  expect(file.getMediaType('file')).toBe(undefined)
 })
 
 test('getFileName', () => {

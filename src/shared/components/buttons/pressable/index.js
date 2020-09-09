@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import colors from '@app/theme/colors'
 
-const CustomPressable = ({ children, ...otherProps }) => (
+export const CustomPressable = ({ children, ...otherProps }) => (
   <TouchableOpacity {...otherProps}>{children}</TouchableOpacity>
 )
 
@@ -15,14 +15,18 @@ CustomPressable.SelectableBackground = () => ({})
 CustomPressable.SelectableBackgroundBorderless = () => ({})
 CustomPressable.Ripple = () => ({})
 
-const TouchableComponent = Platform.select({
-  web: CustomPressable,
-  default: Platform.Version <= 20 ? CustomPressable : TouchableNativeFeedback,
-})
+export const getTouchableComponent = (platform) => (
+  platform.select({
+    web: CustomPressable,
+    default: platform.Version <= 20 ? CustomPressable : TouchableNativeFeedback,
+  })
+)
 
 const Pressable = ({
-  children, style, borderless, foreground, ...otherProps
+  children, style, borderless, foreground, platform = Platform, ...otherProps
 }) => {
+  const TouchableComponent = getTouchableComponent(platform)
+
   if (TouchableComponent === TouchableNativeFeedback) {
     const rippleBackground = TouchableNativeFeedback.Ripple(colors.placeholder, borderless)
     return (
