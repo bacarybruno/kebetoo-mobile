@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Reaction 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  hitSlop={
+    Object {
+      "bottom": 10,
+      "left": 5,
+      "right": 5,
+      "top": 10,
+    }
+  }
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginRight": 15,
+      "minWidth": 35,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Object {
+        "color": "rgba(0,0,0,0.54)",
+        "fontFamily": "icomoon",
+        "fontSize": 18,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "marginRight": 4,
+      }
+    }
+    text="kebeticon-like"
+  />
+  <Text
+    style={
+      Array [
+        false,
+        false,
+        false,
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "letterSpacing": 0,
+          "lineHeight": 16,
+        },
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "fontFamily": "System",
+            "fontWeight": "700",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    1
+  </Text>
+</View>
+`;
