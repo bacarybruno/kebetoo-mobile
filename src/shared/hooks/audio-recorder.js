@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 
 import * as api from '@app/shared/helpers/http'
-import { usePermissions } from '@app/shared/hooks'
+import usePermissions from '@app/shared/hooks/permissions'
 import { getMimeType } from '@app/shared/helpers/file'
 
 export const MIN_DURATION_IN_SECONDS = 1
