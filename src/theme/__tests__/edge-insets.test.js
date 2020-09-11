@@ -1,27 +1,23 @@
-import {
-  all, fromTRBL, only, symmetric, zero,
-} from '../edge-insets'
+import edgeInsets from '../edge-insets'
 
 test('fromTRBL', () => {
-  expect(fromTRBL(3, 5, 8, 13)).toStrictEqual({
+  expect(edgeInsets.fromTRBL(3, 5, 8, 13)).toStrictEqual({
     top: 3,
     right: 5,
     bottom: 8,
     left: 13,
   })
-  expect(() => {
-    fromTRBL(null, 5, 8, 13)
-  }).toThrowError()
+  expect(() => edgeInsets.fromTRBL(null, 5, 8, 13)).toThrowError()
 })
 
 test('symmetric', () => {
-  expect(symmetric({ horizontal: 10, vertical: 100 })).toStrictEqual({
+  expect(edgeInsets.symmetric({ horizontal: 10, vertical: 100 })).toStrictEqual({
     top: 100,
     right: 10,
     bottom: 100,
     left: 10,
   })
-  expect(symmetric({})).toStrictEqual({
+  expect(edgeInsets.symmetric({})).toStrictEqual({
     top: 0,
     right: 0,
     bottom: 0,
@@ -30,25 +26,25 @@ test('symmetric', () => {
 })
 
 test('only', () => {
-  expect(only({ top: 10 })).toStrictEqual({
+  expect(edgeInsets.only({ top: 10 })).toStrictEqual({
     top: 10,
     right: 0,
     bottom: 0,
     left: 0,
   })
-  expect(only({ right: 10 })).toStrictEqual({
+  expect(edgeInsets.only({ right: 10 })).toStrictEqual({
     top: 0,
     right: 10,
     bottom: 0,
     left: 0,
   })
-  expect(only({ bottom: 10 })).toStrictEqual({
+  expect(edgeInsets.only({ bottom: 10 })).toStrictEqual({
     top: 0,
     right: 0,
     bottom: 10,
     left: 0,
   })
-  expect(only({ left: 10 })).toStrictEqual({
+  expect(edgeInsets.only({ left: 10 })).toStrictEqual({
     top: 0,
     right: 0,
     bottom: 0,
@@ -57,7 +53,7 @@ test('only', () => {
 })
 
 test('all', () => {
-  expect(all(10)).toStrictEqual({
+  expect(edgeInsets.all(10)).toStrictEqual({
     top: 10,
     right: 10,
     bottom: 10,
@@ -66,7 +62,7 @@ test('all', () => {
 })
 
 test('zero', () => {
-  expect(zero()).toStrictEqual({
+  expect(edgeInsets.zero()).toStrictEqual({
     top: 0,
     right: 0,
     bottom: 0,

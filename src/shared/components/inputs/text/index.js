@@ -5,7 +5,6 @@ import Popover, { PopoverPlacement } from 'react-native-popover-view'
 
 import colors from '@app/theme/colors'
 import Typography from '@app/shared/components/typography'
-import strings from '@app/config/strings'
 import { capitalize } from '@app/shared/helpers/strings'
 
 import styles, { placeholderColor } from '../styles'
@@ -21,7 +20,7 @@ export const ErrorTooltip = (
   </TouchableOpacity>
 )
 
-export const PopoverTooltip = ({ message = strings.errors.generic, from = ErrorTooltip }) => (
+export const PopoverTooltip = ({ message, from = ErrorTooltip }) => (
   <Popover from={from} popoverStyle={styles.popover} placement={PopoverPlacement.BOTTOM}>
     <Typography text={capitalize(message)} />
   </Popover>

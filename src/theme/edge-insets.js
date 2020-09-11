@@ -5,7 +5,7 @@
  * @param {*} bottom
  * @param {*} left
  */
-export const fromTRBL = (top, right, bottom, left) => {
+const fromTRBL = (top, right, bottom, left) => {
   if (top && right && bottom && left) {
     return {
       top, right, bottom, left,
@@ -20,7 +20,7 @@ export const fromTRBL = (top, right, bottom, left) => {
  * vertical = top and bottom
  * @param {*} value
  */
-export const symmetric = ({ horizontal = 0, vertical = 0 }) => ({
+const symmetric = ({ horizontal = 0, vertical = 0 }) => ({
   top: vertical,
   right: horizontal,
   bottom: vertical,
@@ -32,7 +32,7 @@ export const symmetric = ({ horizontal = 0, vertical = 0 }) => ({
  * The others fields will be equal to 0
  * @param {*} value
  */
-export const only = ({
+const only = ({
   top = 0, right = 0, bottom = 0, left = 0,
 }) => ({
   top,
@@ -45,7 +45,7 @@ export const only = ({
  * Create insets with the same value
  * @param {*} value
  */
-export const all = (value) => ({
+const all = (value) => ({
   top: value,
   right: value,
   bottom: value,
@@ -55,7 +55,7 @@ export const all = (value) => ({
 /**
  * Create insets with all values equal to 0
  */
-export const zero = () => only({})
+const zero = () => only({})
 
 export default {
   fromTRBL,
