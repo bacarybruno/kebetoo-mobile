@@ -28,4 +28,4 @@
 - Or use only a ionic icon package and find a way to use custom icons
 
 # Code coverage
-- ```bash <(curl -s https://codecov.io/bash) -t 08a1db6e-e5b9-4f4e-83a9-8941c08529bb```
+- Will be automatically added by github actions. See `.github/workflows` folder.
