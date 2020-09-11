@@ -8,6 +8,7 @@ import TextInput, { PopoverTooltip } from '../text'
 
 const givenTextInput = setupTest(TextInput)({
   onValueChange: jest.fn(),
+  onBlur: jest.fn(),
   fieldName: 'fullname',
 })
 
@@ -29,4 +30,13 @@ it('handles value change', () => {
   })
   expect(props.onValueChange).toBeCalledTimes(1)
   expect(props.onValueChange).toBeCalledWith(message, props.fieldName)
+})
+
+it('handles onBlur', () => {
+  const { wrapper, props } = givenTextInput()
+  act(() => {
+    fireEvent(wrapper.root.findByType(RNTextInput), 'onBlur')
+  })
+  expect(props.onBlur).toBeCalledTimes(1)
+  expect(props.onBlur).toBeCalledWith(props.fieldName)
 })
