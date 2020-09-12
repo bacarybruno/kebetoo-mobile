@@ -7,7 +7,6 @@ import setupTest from '@app/config/jest-setup'
 import notifications from '@fixtures/notifications'
 import strings from '@app/config/strings'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
-import textPost from '@fixtures/posts/text.json'
 
 import NotificationsPage from '../index'
 import Notification from '../../components/notification'

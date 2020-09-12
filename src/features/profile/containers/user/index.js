@@ -32,6 +32,17 @@ export const routeOptions = {
   ...TransitionPresets.SlideFromRightIOS,
 }
 
+export const SectionHeader = ({ section, dateFormat }) => (
+  <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
+    <Typography
+      type={types.subheading}
+      systemWeight={weights.semibold}
+      text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
+    />
+    <Badge text={section.data.length} />
+  </View>
+)
+
 const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
 const UserProfile = ({ navigation }) => {
@@ -98,14 +109,7 @@ const UserProfile = ({ navigation }) => {
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 
   const renderSectionHeader = useCallback(({ section }) => (
-    <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
-      <Typography
-        type={types.subheading}
-        systemWeight={weights.semibold}
-        text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
-      />
-      <Badge text={section.data.length} />
-    </View>
+    <SectionHeader section={section} dateFormat={dateFormat} />
   ), [])
 
   const renderItem = useCallback(({ item }) => (
@@ -123,7 +127,7 @@ const UserProfile = ({ navigation }) => {
   ), [authors, user])
 
   const renderListHeader = useCallback(() => (
-    <Pressable style={styles.listHeader} onPress={onListHeaderPress}>
+    <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
       {photoURL
         ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
         : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}

@@ -169,23 +169,9 @@ const AppNavigation = () => {
     RNBootSplash.hide({ duration: 250 })
   }, [])
 
-  const handleNotification = useCallback((remoteMessage) => {
-    if (remoteMessage !== null) {
-      console.log(
-        'Notification caused app to open from background state:',
-        remoteMessage.notification,
-        remoteMessage.data,
-      )
-    }
-  }, [])
-
   const handleInitialNotification = useCallback((remoteMessage) => {
     if (remoteMessage !== null) {
-      console.log(
-        'Notification caused app to open from quit state:',
-        remoteMessage.notification,
-        remoteMessage.data,
-      )
+      // do someting
     }
   }, [])
 
@@ -215,7 +201,7 @@ const AppNavigation = () => {
     }
 
     updateUserNotificationId()
-    messaging().onNotificationOpenedApp(handleNotification)
+    // messaging().onNotificationOpenedApp(handleNotification)
     messaging().getInitialNotification().then(handleInitialNotification)
     const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
     const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
@@ -226,7 +212,7 @@ const AppNavigation = () => {
       unsubscribeForegroundNotification()
       unsubscribeTokenRefresh()
     }
-  }, [isLoggedIn, profile.uid, handleInitialNotification, handleNotification, persistNotification])
+  }, [isLoggedIn, profile.uid, handleInitialNotification, persistNotification])
 
   return (
     <NavigationContainer>
