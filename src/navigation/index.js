@@ -201,7 +201,6 @@ const AppNavigation = () => {
     }
 
     updateUserNotificationId()
-    // messaging().onNotificationOpenedApp(handleNotification)
     messaging().getInitialNotification().then(handleInitialNotification)
     const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
     const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
