@@ -2,14 +2,6 @@ import AsyncStorage from '@react-native-community/async-storage'
 
 import * as api from '@app/shared/helpers/http'
 
-export const chunkArray = (array, size) => {
-  const results = []
-  while (array.length) {
-    results.push(array.splice(0, size))
-  }
-  return results
-}
-
 export const setUserId = async (uid) => AsyncStorage.setItem('uid', uid)
 
 export const getUserId = async () => AsyncStorage.getItem('uid')

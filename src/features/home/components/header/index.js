@@ -12,19 +12,11 @@ import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
-const HeaderAvatar = ({ photoURL, displayName }) => {
-  const { navigate } = useNavigation()
-
-  const onPress = useCallback(() => {
-    navigate(routes.PROFILE)
-  }, [navigate])
-
-  return (
-    <TouchableOpacity onPress={onPress}>
-      <Avatar src={photoURL} text={displayName} />
-    </TouchableOpacity>
-  )
-}
+export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
+    <Avatar src={photoURL} text={displayName} />
+  </TouchableOpacity>
+)
 
 const Header = ({
   displayName = ' ',
@@ -34,18 +26,26 @@ const Header = ({
   text = strings.home.whats_new,
   loading = false,
   Right,
-}) => (
-  <View style={[styles.header, style]}>
-    <View style={styles.greetings}>
-      <View style={styles.headingWrapper}>
-        <Typography text={title} type={types.headline2} />
-        <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
+}) => {
+  const { navigate } = useNavigation()
+
+  const onHeaderPress = useCallback(() => {
+    navigate(routes.PROFILE)
+  }, [navigate])
+
+  return (
+    <View style={[styles.header, style]}>
+      <View style={styles.greetings}>
+        <View style={styles.headingWrapper}>
+          <Typography text={title} type={types.headline2} />
+          <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
+        </View>
+        {text.length > 0 && <Typography text={text} type={types.subheading} />}
       </View>
-      {text.length > 0 && <Typography text={text} type={types.subheading} />}
+      {Right && <Right />}
+      <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />
     </View>
-    {Right && <Right />}
-    <HeaderAvatar displayName={displayName} photoURL={imageSrc} />
-  </View>
-)
+  )
+}
 
 export default Header

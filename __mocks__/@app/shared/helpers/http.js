@@ -66,3 +66,6 @@ export const createCommentReaction = jest.fn().mockImplementation(
     })
   ),
 )
+
+export const getAuthorById = jest.fn()
+

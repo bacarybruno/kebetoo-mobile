@@ -51,6 +51,7 @@ exports[`renders UserProfile 1`] = `
               "marginBottom": 24,
             }
           }
+          testID="list-header"
         >
           <View
             style={
