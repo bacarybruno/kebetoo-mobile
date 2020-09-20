@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
+import { colors, metrics } from '@app/theme'
 
 export const paddingHorizontal = metrics.marginHorizontal * 1.5
 export const borderRadiusSize = 35

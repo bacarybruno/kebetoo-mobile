@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { human } from 'react-native-typography'
 
-import metrics from '@app/theme/metrics'
-import colors from '@app/theme/colors'
+import { colors, metrics } from '@app/theme'
 
 export const placeholderColor = colors.placeholder
 
@@ -15,6 +14,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     paddingLeft: metrics.marginHorizontal,
     flexDirection: 'row',
+    alignItems: 'center',
   },
   textInput: {
     ...human.callout,
@@ -36,5 +36,25 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
     paddingHorizontal: metrics.marginHorizontal,
     paddingVertical: metrics.marginHorizontal / 2,
+  },
+  error: {
+    borderColor: colors.pink,
+  },
+  trailing: {
+    paddingRight: 38,
+  },
+  emojiSelector: {
+    marginTop: 15,
+    width: metrics.screenWidth,
+    marginLeft: -metrics.marginHorizontal,
+    marginBottom: -10,
+    display: 'flex',
+    backgroundColor: colors.secondary,
+  },
+  hide: {
+    display: 'none',
+  },
+  emojiPicker: {
+    marginRight: 5,
   },
 })

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 export const bottomBarSize = 45
 export default StyleSheet.create({

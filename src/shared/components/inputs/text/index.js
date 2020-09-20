@@ -1,22 +1,19 @@
-import React, { useState, useCallback, forwardRef } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Popover, { PopoverPlacement } from 'react-native-popover-view'
+import { KeyboardAccessoryView, KeyboardUtils } from 'react-native-ui-lib/keyboard'
 
-import colors from '@app/theme/colors'
+import { colors, edgeInsets } from '@app/theme'
 import Typography from '@app/shared/components/typography'
 import { capitalize } from '@app/shared/helpers/strings'
+import { keyboardName } from '@app/shared/components/emoji-selector'
 
 import styles, { placeholderColor } from '../styles'
 
 export const ErrorTooltip = (
   <TouchableOpacity style={styles.iconWrapper}>
-    <Ionicon
-      style={{ ...styles.icon, color: colors.pink }}
-      name="ios-alert"
-      size={28}
-      color={colors.pink}
-    />
+    <Ionicon name="ios-alert" size={28} color={colors.pink} />
   </TouchableOpacity>
 )
 
@@ -26,48 +23,131 @@ export const PopoverTooltip = ({ message, from = ErrorTooltip }) => (
   </Popover>
 )
 
-const InputText = forwardRef((props, ref) => {
+export const EmojiPickerToggler = ({ onPress, isActive }) => (
+  <TouchableOpacity onPress={onPress} style={styles.emojiPicker} hitSlop={edgeInsets.all(20)}>
+    <Ionicon
+      name="md-happy"
+      size={28}
+      color={isActive ? colors.primary : colors.placeholder}
+    />
+  </TouchableOpacity>
+)
+
+export const EmojiKeyboard = ({
+  inputRef, showEmojiPicker, onSelectEmoji, hide,
+}) => (
+  <View style={[styles.emojiSelector, hide && styles.hide]}>
+    <KeyboardAccessoryView
+      kbComponent={showEmojiPicker ? keyboardName : undefined}
+      onItemSelected={onSelectEmoji}
+      kbInputRef={inputRef}
+    />
+  </View>
+)
+
+const InputText = React.forwardRef((props, ref) => {
   const {
-    onValueChange,
-    onBlur,
+    onValueChange = () => { },
+    onBlur = () => { },
     fieldName,
     wrapperStyle,
     textStyle,
     error,
+    withEmoji,
     Left,
     Right,
     ...otherProps
   } = props
   const [value, setValue] = useState(null)
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false)
+  const [blurred, setBlurred] = useState(false)
 
-  const onChangeText = useCallback((text) => {
-    if (onValueChange) onValueChange(text, fieldName)
-    setValue(text)
-  }, [setValue, fieldName, onValueChange])
+  const onChangeText = useCallback((newValue) => {
+    if (onValueChange) onValueChange(newValue, fieldName)
+    if (value !== newValue) {
+      setValue(newValue)
+    }
+  }, [onValueChange, fieldName, value])
+
+  const toggleEmojiPicker = useCallback(() => {
+    if (showEmojiPicker) {
+      setShowEmojiPicker(false)
+    } else {
+      KeyboardUtils.dismiss()
+      setShowEmojiPicker(true)
+    }
+    setBlurred(false)
+  }, [showEmojiPicker])
+
+  useEffect(() => {
+    if (!blurred) {
+      // eslint-disable-next-line no-unused-expressions
+      ref?.current?.focus()
+    }
+  }, [showEmojiPicker, ref, blurred])
+
+  const onSelectEmoji = useCallback((keyboard, emoji) => {
+    if (keyboard !== keyboardName) return
+    let newValue = null
+    setValue((state) => {
+      newValue = `${state || ''}${emoji}`
+      return newValue
+    })
+    onChangeText(newValue)
+  }, [onChangeText])
+
+  const handleBlur = useCallback(() => {
+    onBlur(fieldName)
+    if (showEmojiPicker) {
+      setBlurred(true)
+      setShowEmojiPicker(false)
+    }
+  }, [fieldName, onBlur, showEmojiPicker])
+
+  const handleFocus = useCallback(() => {
+    setBlurred(false)
+  }, [])
+
+  const hasTrailingItem = error || Right
 
   return (
-    <View style={[styles.wrapper, wrapperStyle, error && { borderColor: colors.pink }]}>
-      {Left && <Left />}
-      <TextInput
-        style={[styles.textInput, textStyle]}
-        value={value}
-        placeholderTextColor={placeholderColor}
-        onChangeText={onChangeText}
-        ref={ref}
-        blurOnSubmit={false}
-        onBlur={() => onBlur(fieldName)}
-        {...otherProps}
-      />
-      {error
-        ? <PopoverTooltip message={error} />
-        : Right && <Right />}
+    <View>
+      <View style={[styles.wrapper, wrapperStyle, error && styles.error]}>
+        {withEmoji
+          ? <EmojiPickerToggler onPress={toggleEmojiPicker} isActive={showEmojiPicker} />
+          : Left && <Left />}
+        <TextInput
+          key={showEmojiPicker}
+          style={[
+            styles.textInput,
+            textStyle,
+            hasTrailingItem && styles.trailing,
+          ]}
+          value={value}
+          placeholderTextColor={placeholderColor}
+          onChangeText={onChangeText}
+          ref={ref}
+          blurOnSubmit={false}
+          showSoftInputOnFocus={!showEmojiPicker}
+          onBlur={handleBlur}
+          onFocus={handleFocus}
+          {...otherProps}
+        />
+        {error
+          ? <PopoverTooltip message={error} />
+          : Right && <Right />}
+      </View>
+      {withEmoji && (
+        <EmojiKeyboard
+          hide={blurred}
+          inputRef={ref}
+          onSelectEmoji={onSelectEmoji}
+          showEmojiPicker={showEmojiPicker}
+        />
+      )}
     </View>
   )
 })
 
-InputText.defaultProps = {
-  onValueChange: () => {},
-  onBlur: () => {},
-}
 
 export default React.memo(InputText)

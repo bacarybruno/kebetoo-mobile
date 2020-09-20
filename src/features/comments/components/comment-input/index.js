@@ -28,6 +28,7 @@ const CommentInput = ({
         {!audioRecorder.hasRecording && (
           <TextInput
             multiline
+            withEmoji
             fieldName="comment"
             placeholder={strings.comments.add_comment}
             onValueChange={onChange}
@@ -55,14 +56,15 @@ const CommentInput = ({
           </View>
         )}
       </View>
-
-      {value.length === 0 && !audioRecorder.hasRecording
+      {value?.length === 0 && !audioRecorder.hasRecording
         ? (
-          <RecordButton
-            isRecording={audioRecorder.isRecording}
-            start={audioRecorder.start}
-            stop={audioRecorder.stop}
-          />
+          <View>
+            <RecordButton
+              isRecording={audioRecorder.isRecording}
+              start={audioRecorder.start}
+              stop={audioRecorder.stop}
+            />
+          </View>
         ) : (
           <SendButton onPress={onSend} isLoading={isLoading} testID="send-button" />
         )}
