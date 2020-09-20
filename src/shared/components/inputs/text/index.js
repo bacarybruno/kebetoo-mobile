@@ -80,11 +80,23 @@ const InputText = React.forwardRef((props, ref) => {
   }, [showEmojiPicker])
 
   useEffect(() => {
-    if (!blurred) {
-      // eslint-disable-next-line no-unused-expressions
-      ref?.current?.focus()
+    if (!withEmoji) return
+    // eslint-disable-next-line no-unused-expressions
+    if (!blurred) ref?.current?.focus()
+  }, [showEmojiPicker, ref, blurred, withEmoji])
+
+  const handleFocus = useCallback(() => {
+    if (!withEmoji) return
+    setBlurred(false)
+  }, [withEmoji])
+
+  const handleBlur = useCallback(() => {
+    onBlur(fieldName)
+    if (showEmojiPicker) {
+      setBlurred(true)
+      setShowEmojiPicker(false)
     }
-  }, [showEmojiPicker, ref, blurred])
+  }, [fieldName, onBlur, showEmojiPicker])
 
   const onSelectEmoji = useCallback((keyboard, emoji) => {
     if (keyboard !== keyboardName) return
@@ -95,18 +107,6 @@ const InputText = React.forwardRef((props, ref) => {
     })
     onChangeText(newValue)
   }, [onChangeText])
-
-  const handleBlur = useCallback(() => {
-    onBlur(fieldName)
-    if (showEmojiPicker) {
-      setBlurred(true)
-      setShowEmojiPicker(false)
-    }
-  }, [fieldName, onBlur, showEmojiPicker])
-
-  const handleFocus = useCallback(() => {
-    setBlurred(false)
-  }, [])
 
   const hasTrailingItem = error || Right
 
