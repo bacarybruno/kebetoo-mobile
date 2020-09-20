@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
+import { colors, metrics } from '@app/theme'
 import { fontSizes } from '@app/shared/components/typography'
 
 export const paginationBottom = metrics.marginVertical

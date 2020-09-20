@@ -2,7 +2,7 @@ import { useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import messaging from '@react-native-firebase/messaging'
 
-import usePermissions from '@app/shared/hooks/permissions'
+import { usePermissions } from '@app/shared/hooks'
 import { notificationsSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
 

@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
-import elevation from '@app/theme/elevation'
+import { colors, metrics, elevation } from '@app/theme'
 
 export default StyleSheet.create({
   headerStyle: {

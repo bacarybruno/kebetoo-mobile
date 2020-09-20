@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from '@app/theme/metrics'
-import elevation from '@app/theme/elevation'
-import colors from '@app/theme/colors'
+import { colors, metrics, elevation } from '@app/theme'
 import { reactionsHeight } from '@app/features/comments/components/reactions/styles'
 
 export default StyleSheet.create({

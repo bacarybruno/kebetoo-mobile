@@ -3,8 +3,7 @@ import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Typography, { types } from '@app/shared/components/typography'
-import edgeInsets from '@app/theme/edge-insets'
-import colors from '@app/theme/colors'
+import { colors, edgeInsets } from '@app/theme'
 import Pressable from '@app/shared/components/buttons/pressable'
 
 import styles from './styles'

@@ -1,11 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-import colors, { hexToRgba, rgbaToHex } from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
-import elevation from '@app/theme/elevation'
+import { colors, metrics, elevation } from '@app/theme'
+import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
 const profileInfoSize = 140
-const profileInfoMarginBottom = 25
 
 export default StyleSheet.create({
   wrapper: {

@@ -2,7 +2,7 @@ import { Image } from 'react-native'
 import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
-import metrics from '@app/theme/metrics'
+import { metrics } from '@app/theme'
 
 import ImageModal from '../index'
 

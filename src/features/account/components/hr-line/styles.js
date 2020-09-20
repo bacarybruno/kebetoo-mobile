@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 const styles = StyleSheet.create({
   wrapper: {

@@ -8,7 +8,7 @@ import Typography, { types as typos, colors as systemColors } from '@app/shared/
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import strings from '@app/config/strings'
 import Avatar from '@app/shared/components/avatar'
 import Pressable from '@app/shared/components/buttons/pressable'

@@ -10,14 +10,14 @@ import Typography, {
   types as typos, colors as systemColors, weights,
 } from '@app/shared/components/typography'
 import Pressable from '@app/shared/components/buttons/pressable'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import Avatar from '@app/shared/components/avatar'
 import routes from '@app/navigation/routes'
 import * as api from '@app/shared/helpers/http'
 import * as types from '@app/redux/types'
 import { userStatsSelector } from '@app/redux/selectors'
 import strings from '@app/config/strings'
-import useUser from '@app/shared/hooks/user'
+import { useUser } from '@app/shared/hooks'
 
 import styles, { imageSize } from './styles'
 

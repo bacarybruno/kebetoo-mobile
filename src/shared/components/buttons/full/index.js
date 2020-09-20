@@ -2,7 +2,7 @@ import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
 
 import Typography, { types } from '@app/shared/components/typography'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 import styles from './styles'
 

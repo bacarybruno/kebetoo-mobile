@@ -6,9 +6,7 @@ import { MediaStates } from '@react-native-community/audio-toolkit'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Player from 'react-native-sound'
 
-import images from '@app/theme/images'
-import colors from '@app/theme/colors'
-import edgeInsets from '@app/theme/edge-insets'
+import { colors, edgeInsets, images } from '@app/theme'
 import Pressable from '@app/shared/components/buttons/pressable'
 import { readableSeconds } from '@app/shared/helpers/dates'
 

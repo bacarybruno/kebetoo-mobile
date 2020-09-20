@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from '@app/theme/metrics'
-import colors from '@app/theme/colors'
+import { colors, metrics } from '@app/theme'
 
 export default StyleSheet.create({
   notificationWrapper: {
