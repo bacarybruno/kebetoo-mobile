@@ -1,0 +1,528 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders EmojiSelector 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F5F5F5",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          Object {
+            "borderBottomColor": "rgba(0, 122, 255, 255)",
+          },
+        ]
+      }
+      testID="emoji-tab-0"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        🕘
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-1"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        😀
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-2"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        🐻
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-3"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        🍔
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-4"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        ⚽
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-5"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        ✈️
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-6"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        💡
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-7"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        🔣
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#F5F5F5",
+            "borderBottomWidth": 2,
+            "flex": 1,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          false,
+        ]
+      }
+      testID="emoji-tab-8"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        🏳️‍
+      </Text>
+    </View>
+  </View>
+  <RCTScrollView
+    data={
+      Array [
+        "Recently used",
+        "Smileys & Emotion",
+        "Animals & Nature",
+        "Food & Drink",
+        "Activities",
+        "Travel & Places",
+        "Objects",
+        "Symbols",
+        "Flags",
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemLayout={[Function]}
+    horizontal={true}
+    initialNumToRender={1}
+    initialScrollIndex={0}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={true}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="emoji-list"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={3}
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <RCTScrollView
+          ListEmptyComponent={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "compare": null,
+              "type": [Function],
+            }
+          }
+          data={
+            Array [
+              Object {
+                "addedOn": 1593084600000,
+                "count": 1,
+                "symbol": "😀",
+              },
+              Object {
+                "addedOn": 1593084600000,
+                "count": 2,
+                "symbol": "🦁",
+              },
+            ]
+          }
+          disableVirtualization={false}
+          getItem={[Function]}
+          getItemCount={[Function]}
+          getItemLayout={[Function]}
+          horizontal={false}
+          initialNumToRender={10}
+          keyExtractor={[Function]}
+          keyboardShouldPersistTaps="handled"
+          maxToRenderPerBatch={10}
+          onContentSizeChange={[Function]}
+          onEndReachedThreshold={2}
+          onLayout={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={true}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={8}
+        >
+          <View>
+            <View
+              style={null}
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flexDirection": "row",
+                    },
+                    Object {
+                      "width": 750,
+                    },
+                  ]
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 93.75,
+                      "justifyContent": "center",
+                      "width": 93.75,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "fontSize": 27,
+                      }
+                    }
+                  >
+                    😀
+                  </Text>
+                </View>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 93.75,
+                      "justifyContent": "center",
+                      "width": 93.75,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "fontSize": 27,
+                      }
+                    }
+                  >
+                    🦁
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+      <View
+        style={
+          Object {
+            "width": 6000,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;

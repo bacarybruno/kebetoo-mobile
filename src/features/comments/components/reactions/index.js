@@ -3,7 +3,7 @@ import { View } from 'react-native'
 
 import ReactionsOnline from '@app/features/post/containers/reactions'
 import Typography, { types } from '@app/shared/components/typography'
-import usePosts from '@app/shared/hooks/posts'
+import { usePosts } from '@app/shared/hooks'
 import strings from '@app/config/strings'
 import Avatar from '@app/shared/components/avatar'
 

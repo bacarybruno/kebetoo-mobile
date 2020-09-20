@@ -1,9 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
+import { NativeModules } from 'react-native'
 import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import MockDate from 'mockdate'
 import 'react-native-gesture-handler/jestSetup'
+
+// wix/react-native-keyboard-input
+NativeModules.KeyboardTrackingViewTempManager = {
+  KeyboardTrackingScrollBehaviorNone: 'NONE',
+  KeyboardTrackingScrollBehaviorScrollToBottomInvertedOnly: 'SCROLL_TO_BOTTOM_INVERTED_ONLY',
+  KeyboardTrackingScrollBehaviorFixedOffset: 'FIXED_OFFSET',
+}
 
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')

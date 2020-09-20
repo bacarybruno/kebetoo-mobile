@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import IconButton from '@app/features/post/components/icon-button'

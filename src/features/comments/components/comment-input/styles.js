@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from '@app/theme/metrics'
-import colors from '@app/theme/colors'
-import elevation from '@app/theme/elevation'
+import { colors, metrics, elevation } from '@app/theme'
 
 export const bottomBarSize = 45
 export default StyleSheet.create({
@@ -14,7 +12,6 @@ export default StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
     width: '100%',
     flexDirection: 'row',
-    alignItems: 'flex-end',
     paddingBottom: 10,
   },
   textInputSize: {
