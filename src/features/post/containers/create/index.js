@@ -14,11 +14,9 @@ import * as api from '@app/shared/helpers/http'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import strings from '@app/config/strings'
 import { getMediaType } from '@app/shared/helpers/file'
-import metrics from '@app/theme/metrics'
-import useAudioRecorder from '@app/shared/hooks/audio-recorder'
+import { colors, metrics } from '@app/theme'
+import { useAudioRecorder, useUser } from '@app/shared/hooks'
 import useImagePicker from '@app/features/post/hooks/image-picker'
-import colors from '@app/theme/colors'
-import useUser from '@app/shared/hooks/user'
 
 import styles from './styles'
 

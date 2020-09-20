@@ -7,7 +7,7 @@ import IconButton from '@app/shared/components/buttons/icon'
 import FullButton from '@app/shared/components/buttons/full'
 import OnbordingSlide from '@app/features/onboarding/components'
 import routes from '@app/navigation/routes'
-import images from '@app/theme/images'
+import { images } from '@app/theme'
 import strings from '@app/config/strings'
 
 import styles from './styles'

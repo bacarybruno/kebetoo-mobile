@@ -4,9 +4,8 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Typography, { types } from '@app/shared/components/typography'
 import Pressable from '@app/shared/components/buttons/pressable'
-import edgeInsets from '@app/theme/edge-insets'
 import { BASE_URL } from '@app/shared/helpers/http'
-import colors from '@app/theme/colors'
+import { colors, edgeInsets } from '@app/theme'
 
 import styles from './styles'
 

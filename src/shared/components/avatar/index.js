@@ -3,7 +3,7 @@ import { Image, View, Text } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
 import generateColor from '@app/shared/helpers/color-generator'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 import styles from './styles'
 

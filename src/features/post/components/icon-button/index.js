@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TouchableOpacity, Animated, View } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
-import colors from '@app/theme/colors'
-import edgeInsets from '@app/theme/edge-insets'
-import metrics from '@app/theme/metrics'
+import { colors, edgeInsets, metrics } from '@app/theme'
 import Badge from '@app/shared/components/badge'
 
 import styles, { getDimensions, getIconSize } from './styles'

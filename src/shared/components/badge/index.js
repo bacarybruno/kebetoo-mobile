@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
-import colors from '@app/theme/colors'
+
+import { colors } from '@app/theme'
 
 import styles from './styles'
 import Typography, { types, weights } from '../typography'

@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 
 import Pressable from '@app/shared/components/buttons/pressable'
 import Avatar from '@app/shared/components/avatar'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import Typography, { types, weights, colors as systemColors } from '@app/shared/components/typography'
 
 import styles from './styles'

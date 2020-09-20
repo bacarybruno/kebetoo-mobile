@@ -12,11 +12,10 @@ import TextContent from '@app/features/post/components/text-content'
 import AudioContent from '@app/features/post/components/audio-content'
 import ImageContent from '@app/features/post/components/image-content'
 import RepostContent from '@app/features/post/components/repost-content'
-import edgeInsets from '@app/theme/edge-insets'
 import routes from '@app/navigation/routes'
 import strings from '@app/config/strings'
-import colors from '@app/theme/colors'
-import useUser from '@app/shared/hooks/user'
+import { colors, edgeInsets } from '@app/theme'
+import { useUser } from '@app/shared/hooks'
 
 import styles from './styles'
 

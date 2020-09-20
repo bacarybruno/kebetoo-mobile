@@ -15,7 +15,7 @@ import { SET_DISPLAY_NAME } from '@app/redux/types'
 import { createUser } from '@app/shared/helpers/users'
 import Logo from '@app/shared/components/logo'
 import strings from '@app/config/strings'
-import metrics from '@app/theme/metrics'
+import { metrics } from '@app/theme'
 
 import styles from './styles'
 
@@ -109,11 +109,12 @@ const SignUp = ({ navigation }) => {
 
   return (
     <KeyboardAwareScrollView
+      enableOnAndroid
       extraHeight={80}
       extraScrollHeight={metrics.marginVertical}
       contentContainerStyle={styles.scrollView}
       keyboardShouldPersistTaps="handled"
-      enableOnAndroid
+      style={styles.keyboard}
     >
       <View style={styles.wrapper}>
         <View style={styles.normalSignUp}>

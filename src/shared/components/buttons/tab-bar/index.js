@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import ActionButton from 'react-native-action-button'
 
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 import styles, { size } from './styles'
 

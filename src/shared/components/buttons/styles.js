@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native'
 
-import colors, { hexToRgba, rgbaToHex } from '@app/theme/colors'
-import elevation from '@app/theme/elevation'
-import metrics from '@app/theme/metrics'
+import { colors, metrics, elevation } from '@app/theme'
+import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
 export default StyleSheet.create({
   button: {

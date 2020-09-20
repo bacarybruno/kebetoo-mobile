@@ -18,61 +18,67 @@ exports[`renders CreatePost 1`] = `
       }
     }
   >
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#F5F5F5",
-            "borderColor": "rgba(229, 229, 234, 255)",
-            "borderRadius": 15,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "minHeight": 48,
-            "paddingLeft": 16,
-          },
-          Object {
-            "backgroundColor": "#F5F5F5",
-            "marginTop": 8,
-            "paddingRight": 16,
-          },
-          undefined,
-        ]
-      }
-    >
-      <TextInput
-        allowFontScaling={true}
-        autoFocus={true}
-        blurOnSubmit={false}
-        defaultValue=""
-        maxLength={180}
-        multiline={true}
-        numberOfLines={8}
-        onBlur={[Function]}
-        onChangeText={[Function]}
-        placeholder="What's on your mind?"
-        placeholderTextColor="rgba(174, 174, 178, 255)"
-        rejectResponderTermination={true}
-        returnKeyType="done"
+    <View>
+      <View
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgba(0,0,0,0.87)",
-              "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-              "fontWeight": "400",
-              "letterSpacing": -0.32,
-              "lineHeight": 21,
+              "alignItems": "center",
+              "backgroundColor": "#F5F5F5",
+              "borderColor": "rgba(229, 229, 234, 255)",
+              "borderRadius": 15,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "minHeight": 48,
+              "paddingLeft": 16,
             },
             Object {
-              "textAlignVertical": "top",
+              "backgroundColor": "#F5F5F5",
+              "marginTop": 8,
+              "paddingRight": 16,
             },
+            undefined,
           ]
         }
-        underlineColorAndroid="transparent"
-        value={null}
-      />
+      >
+        <TextInput
+          allowFontScaling={true}
+          autoFocus={true}
+          blurOnSubmit={false}
+          defaultValue=""
+          maxLength={180}
+          multiline={true}
+          numberOfLines={8}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onFocus={[Function]}
+          placeholder="What's on your mind?"
+          placeholderTextColor="rgba(174, 174, 178, 255)"
+          rejectResponderTermination={true}
+          returnKeyType="done"
+          showSoftInputOnFocus={true}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgba(0,0,0,0.87)",
+                "flex": 1,
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Object {
+                "textAlignVertical": "top",
+              },
+              undefined,
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value={null}
+        />
+      </View>
     </View>
     <View
       style={

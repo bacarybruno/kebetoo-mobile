@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import Avatar from '@app/shared/components/avatar'
 import Typography, { types } from '@app/shared/components/typography'
 import strings from '@app/config/strings'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
 
 import styles from './styles'

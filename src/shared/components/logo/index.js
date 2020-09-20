@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from 'react-native'
-import images from '@app/theme/images'
+
+import { images } from '@app/theme'
 
 import styles from './styles'
 

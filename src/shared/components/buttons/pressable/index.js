@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 
 export const CustomPressable = ({ children, ...otherProps }) => (
   <TouchableOpacity {...otherProps}>{children}</TouchableOpacity>

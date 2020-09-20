@@ -2,8 +2,7 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
-import colors from '@app/theme/colors'
-import edgeInsets from '@app/theme/edge-insets'
+import { colors, edgeInsets } from '@app/theme'
 import Typography, { types, weights } from '@app/shared/components/typography'
 
 import styles from './styles'

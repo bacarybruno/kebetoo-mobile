@@ -9,7 +9,7 @@ import TextInput from '@app/shared/components/inputs/text'
 import PasswordInput from '@app/shared/components/inputs/password'
 import FullButton from '@app/shared/components/buttons/full'
 import SocialSignIn from '@app/features/account/components/social-signin'
-import metrics from '@app/theme/metrics'
+import { metrics } from '@app/theme'
 import routes from '@app/navigation/routes'
 import Logo from '@app/shared/components/logo'
 import strings from '@app/config/strings'
@@ -88,10 +88,11 @@ const SignIn = ({ navigation }) => {
 
   return (
     <KeyboardAwareScrollView
+      enableOnAndroid
       extraScrollHeight={metrics.marginVertical}
       contentContainerStyle={styles.scrollView}
       keyboardShouldPersistTaps="handled"
-      enableOnAndroid
+      style={styles.keyboard}
     >
       <View style={styles.wrapper}>
         <View style={styles.normalSignIn}>

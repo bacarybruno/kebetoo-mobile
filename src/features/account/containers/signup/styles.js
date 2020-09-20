@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import colors from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
+import { colors, metrics } from '@app/theme'
 
 const safeHeight = metrics.screenHeight - metrics.headerHeight
 
@@ -24,5 +23,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
+  },
+  keyboard: {
+    backgroundColor: colors.background,
   },
 })

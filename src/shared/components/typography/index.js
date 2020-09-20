@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 import { human, systemWeights, material } from 'react-native-typography'
 
-import themeColors from '@app/theme/colors'
+import { colors as themeColors } from '@app/theme'
 
 export const weights = {
   thin: 'thin',

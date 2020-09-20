@@ -3,8 +3,7 @@ import { View, Image, StatusBar } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
-import colors from '@app/theme/colors'
-import metrics from '@app/theme/metrics'
+import { colors, metrics } from '@app/theme'
 import HeaderBack from '@app/shared/components/header-back'
 
 import styles from './styles'

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import metrics from '@app/theme/metrics'
+import { metrics } from '@app/theme'
 
 export default StyleSheet.create({
   header: {

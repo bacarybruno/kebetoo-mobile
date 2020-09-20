@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import metrics from '@app/theme/metrics'
+import { metrics } from '@app/theme'
 
 export const size = 56
 export default StyleSheet.create({

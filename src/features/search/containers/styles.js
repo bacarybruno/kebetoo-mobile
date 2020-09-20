@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { human, systemWeights } from 'react-native-typography'
 
-import colors from '@app/theme/colors'
+import { colors } from '@app/theme'
 import { deleteProperty, mergeObjects } from '@app/shared/helpers/object'
 
 export default StyleSheet.create({
