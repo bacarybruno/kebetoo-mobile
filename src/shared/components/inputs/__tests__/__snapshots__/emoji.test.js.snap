@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders EmojiTextInput 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "rgba(229, 229, 234, 255)",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "minHeight": 48,
+          "paddingLeft": 16,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      hitSlop={
+        Object {
+          "bottom": 20,
+          "left": 20,
+          "right": 20,
+          "top": 20,
+        }
+      }
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginRight": 5,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(174, 174, 178, 255)",
+            "fontFamily": "Ionicons",
+            "fontSize": 28,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-md-happy"
+      />
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={false}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onTouchStart={[Function]}
+      placeholderTextColor="rgba(174, 174, 178, 255)"
+      rejectResponderTermination={true}
+      showSoftInputOnFocus={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgba(0,0,0,0.87)",
+            "flex": 1,
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": -0.32,
+            "lineHeight": 21,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value="😀😀😀"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F0F6FE",
+          "display": "flex",
+          "marginBottom": -10,
+          "marginLeft": -16,
+          "marginTop": 15,
+          "width": 750,
+        },
+        false,
+      ]
+    }
+  >
+    <KeyboardTrackingViewTemp
+      addBottomView={false}
+      allowHitsOutsideBounds={false}
+      manageScrollView={true}
+      onLayout={[Function]}
+      requiresSameParentToManageScrollView={false}
+      revealKeyboardInteractive={false}
+      scrollBehavior="FIXED_OFFSET"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": undefined,
+        }
+      }
+    />
+  </View>
+</View>
+`;

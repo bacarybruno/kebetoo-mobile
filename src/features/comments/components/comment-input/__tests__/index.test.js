@@ -72,6 +72,6 @@ it('handles content size change', () => {
     input.props.onContentSizeChange(event)
   })
   expect(input.props.wrapperStyle).toEqual(
-    expect.objectContaining({ height: expectedHeight }),
+    expect.arrayContaining([{ height: expectedHeight }]),
   )
 })

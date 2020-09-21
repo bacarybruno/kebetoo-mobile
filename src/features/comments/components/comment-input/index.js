@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { View } from 'react-native'
 
-import TextInput from '@app/shared/components/inputs/text'
+import EmojiTextInput from '@app/shared/components/inputs/emoji'
 import AudioPlayer from '@app/shared/components/audio-player'
 import strings from '@app/config/strings'
 
@@ -26,21 +26,21 @@ const CommentInput = ({
     <View style={styles.commentInputWrapper}>
       <View style={styles.flexible}>
         {!audioRecorder.hasRecording && (
-          <TextInput
+          <EmojiTextInput
             multiline
-            withEmoji
             fieldName="comment"
             placeholder={strings.comments.add_comment}
             onValueChange={onChange}
+            value={value}
             ref={inputRef}
             textStyle={styles.textInputSize}
             editable={!isLoading}
             onContentSizeChange={updateInputHeight}
-            wrapperStyle={{
-              ...styles.textInputSize,
-              ...styles.textInputWrapper,
-              height: inputHeight,
-            }}
+            wrapperStyle={[
+              styles.textInputSize,
+              styles.textInputWrapper,
+              { height: inputHeight },
+            ]}
             {...inputProps}
           />
         )}

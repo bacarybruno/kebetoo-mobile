@@ -33,21 +33,27 @@ exports[`renders CommentInput 1`] = `
               "minHeight": 48,
               "paddingLeft": 16,
             },
-            Object {
-              "backgroundColor": "#F5F5F5",
-              "borderRadius": 22.5,
-              "borderWidth": 0.5,
-              "elevation": 1,
-              "height": 45,
-              "minHeight": 45,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 0,
+            Array [
+              Object {
+                "minHeight": 45,
               },
-              "shadowOpacity": 0.18,
-              "shadowRadius": 1,
-            },
+              Object {
+                "backgroundColor": "#F5F5F5",
+                "borderRadius": 22.5,
+                "borderWidth": 0.5,
+                "elevation": 1,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 0,
+                },
+                "shadowOpacity": 0.18,
+                "shadowRadius": 1,
+              },
+              Object {
+                "height": 45,
+              },
+            ],
             undefined,
           ]
         }
@@ -100,6 +106,7 @@ exports[`renders CommentInput 1`] = `
           onChangeText={[Function]}
           onContentSizeChange={[Function]}
           onFocus={[Function]}
+          onTouchStart={[Function]}
           placeholder="Add a comment"
           placeholderTextColor="rgba(174, 174, 178, 255)"
           rejectResponderTermination={true}
@@ -123,7 +130,7 @@ exports[`renders CommentInput 1`] = `
             ]
           }
           underlineColorAndroid="transparent"
-          value={null}
+          value=""
         />
       </View>
       <View
