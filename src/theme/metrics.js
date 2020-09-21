@@ -2,18 +2,20 @@ import { Dimensions, Platform } from 'react-native'
 
 const { width, height } = Dimensions.get('window')
 
-export const getDefaultHeaderHeight = (statusBarHeight = 0) => {
-  const isLandscape = width > height
+export const getDefaultHeaderHeight = (
+  statusBarHeight = 0, platform = Platform, w = width, h = height,
+) => {
+  const isLandscape = w > h
 
   let headerHeight
 
-  if (Platform.OS === 'ios') {
-    if (isLandscape && !Platform.isPad) {
+  if (platform.OS === 'ios') {
+    if (isLandscape && !platform.isPad) {
       headerHeight = 32
     } else {
       headerHeight = 44
     }
-  } else if (Platform.OS === 'android') {
+  } else if (platform.OS === 'android') {
     headerHeight = 56
   } else {
     headerHeight = 64
