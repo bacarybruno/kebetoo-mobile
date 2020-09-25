@@ -13,6 +13,7 @@ const givenSocialSignin = setupTest(SocialSignin)({
   text: strings.auth.or_signin_with,
   onSignIn: jest.fn(),
   children: <Typography text={strings.auth.dont_have_account} type={types.textButton} />,
+  type: 'signIn',
 })
 
 it('renders SocialSignin', () => {
@@ -30,9 +31,10 @@ describe('sign in', () => {
     error: null,
   })
 
-  const testProvider = async (testID, onSignIn) => {
+  const testProvider = async (testID, onSignIn, type) => {
     const { wrapper, props } = givenSocialSignin({
       onSignIn,
+      type,
     })
     const signinButton = wrapper.root.findByProps({ testID })
     await act(async () => {
@@ -43,14 +45,14 @@ describe('sign in', () => {
 
   test('with google', async () => {
     const onSignIn = jest.fn()
-    await testProvider('google-signin', onSignIn)
+    await testProvider('google-signin', onSignIn, 'signIn')
     expect(onSignIn).toBeCalledTimes(1)
     expect(onSignIn).toBeCalledWith(onSignInPayload)
   })
 
   test('with facebook', async () => {
     const onSignIn = jest.fn()
-    await testProvider('facebook-signin', onSignIn)
+    await testProvider('facebook-signin', onSignIn, 'signUp')
     expect(onSignIn).toBeCalledTimes(1)
     expect(onSignIn).toBeCalledWith(onSignInPayload)
   })

@@ -4,8 +4,9 @@ import { NativeModules } from 'react-native'
 import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import MockDate from 'mockdate'
-import 'react-native-gesture-handler/jestSetup'
 import configureStore from 'redux-mock-store'
+import 'react-native-gesture-handler/jestSetup'
+import { renderHook } from '@testing-library/react-hooks'
 
 // wix/react-native-keyboard-input
 NativeModules.KeyboardTrackingViewTempManager = {
@@ -28,13 +29,28 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
       ...additionalProps,
     }
     const mockStore = configureStore()
-    wrapper = renderFn(
+    const Component = (
       <Provider store={store || mockStore()}>
         <WrappedComponent {...propsWithArgs} />
       </Provider>
     )
+    wrapper = renderFn(Component)
     return { wrapper, props: propsWithArgs }
   }
+}
+
+export const setupHook = (useHook, ...props) => {
+  const mockStore = configureStore()
+  const store = mockStore()
+  const wrapper = ({ children }) => (
+    <Provider store={store}>
+      {children}
+    </Provider>
+  )
+  const rendered = renderHook(() => useHook(...props), {
+    wrapper,
+  })
+  return rendered
 }
 
 /**

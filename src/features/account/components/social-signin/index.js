@@ -10,8 +10,7 @@ import { useAnalytics } from '@app/shared/hooks'
 import styles from './styles'
 
 const SocialSignIn = ({
-  sectionText, children, onSignIn, onLoading, disabled, type
-  ,
+  sectionText, children, onSignIn, onLoading, disabled, type,
 }) => {
   const { trackSignIn, trackSignUp, reportError } = useAnalytics()
 
