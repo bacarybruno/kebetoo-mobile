@@ -191,7 +191,7 @@ describe('optimistic ui update rejection', () => {
     expect(wrapper.root.findByProps({ testID: 'like-button' }).props.count).toBe(1)
   })
   it('fails to delete reaction', async () => {
-    api.deleteReaction = jest.fn().mockRejectedValue(true)
+    api.deleteReaction.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 

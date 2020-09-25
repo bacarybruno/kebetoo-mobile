@@ -79,7 +79,8 @@ describe('renders component', () => {
 
 describe('buttons', () => {
   it('handles options button press', async () => {
-    let wrapper, props
+    let wrapper
+    let props
     await act(async () => {
       const { wrapper: asyncWrapper, props: asyncProps } = await givenBasicPost({
         post: posts.text,
@@ -93,7 +94,8 @@ describe('buttons', () => {
     expect(props.onOptions).toBeCalledWith(props.post.id)
   })
   it('handles navigation on comments page', async () => {
-    let wrapper, props
+    let wrapper
+    let props
     await act(async () => {
       const { wrapper: asyncWrapper, props: asyncProps } = await givenBasicPost({
         post: posts.text,
@@ -110,7 +112,7 @@ describe('buttons', () => {
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenBasicPost({
         post: posts.text,
-        isRepost: true
+        isRepost: true,
       })
       wrapper = asyncWrapper
     })

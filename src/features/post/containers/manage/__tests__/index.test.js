@@ -6,8 +6,12 @@ import strings from '@app/config/strings'
 import * as api from '@app/shared/helpers/http'
 import ActionButton from 'react-native-action-button'
 import routes from '@app/navigation/routes'
+import audioPost from '@fixtures/posts/audio'
+import { useActionSheet } from '@expo/react-native-action-sheet'
 
 import ManagePost from '../index'
+import BasicPost from '../../basic-post'
+import { actionTypes } from '../../create'
 
 const givenManagePost = setupTest(ManagePost)({
   navigation: {
@@ -37,7 +41,7 @@ it('defines page name', () => {
 })
 
 it('display a no-content message if there is no post', async () => {
-  api.getUserPosts = jest.fn().mockResolvedValue([])
+  api.getUserPosts.mockResolvedValue([])
   let wrapper
   await act(async () => {
     const { wrapper: asyncWrapper } = await givenManagePost()
@@ -55,4 +59,53 @@ it('navigates to post creation page on fab press', async () => {
   })
   expect(props.navigation.navigate).toBeCalledTimes(1)
   expect(props.navigation.navigate).toBeCalledWith(routes.CREATE_POST, expect.anything())
+})
+
+jest.mock('@expo/react-native-action-sheet', () => ({
+  useActionSheet: jest.fn().mockReturnValue({
+    showActionSheetWithOptions: jest.fn(),
+  }),
+}))
+
+describe('post options', () => {
+  it('navigates on post edit', async () => {
+    let wrapper
+    let props
+    const userPosts = [audioPost]
+    api.getUserPosts.mockResolvedValue(userPosts)
+    await act(async () => {
+      const { wrapper: asyncWrapper, props: asyncProps } = await givenManagePost()
+      wrapper = asyncWrapper
+      props = asyncProps
+    })
+    act(() => {
+      wrapper.root.findAllByType(BasicPost)[0].props.onOptions()
+    })
+    expect(useActionSheet().showActionSheetWithOptions).toBeCalledTimes(1)
+    expect(useActionSheet().showActionSheetWithOptions.mock.calls[0]).toMatchSnapshot()
+    useActionSheet().showActionSheetWithOptions.mock.calls[0][1](0)
+    expect(props.navigation.navigate).toBeCalledTimes(1)
+    expect(props.navigation.navigate).toBeCalledWith(routes.CREATE_POST, {
+      action: actionTypes.EDIT,
+      payload: expect.any(Object),
+      onGoBack: expect.any(Function),
+    })
+  })
+  it('doesnt navigate on post delete', async () => {
+    let wrapper
+    let props
+    const userPosts = [audioPost]
+    api.getUserPosts.mockResolvedValue(userPosts)
+    await act(async () => {
+      const { wrapper: asyncWrapper, props: asyncProps } = await givenManagePost()
+      wrapper = asyncWrapper
+      props = asyncProps
+    })
+    act(() => {
+      wrapper.root.findAllByType(BasicPost)[0].props.onOptions()
+    })
+    expect(useActionSheet().showActionSheetWithOptions).toBeCalledTimes(1)
+    useActionSheet().showActionSheetWithOptions.mock.calls[0][1](1)
+    expect(props.navigation.navigate).not.toBeCalledTimes(1)
+  })
 })
