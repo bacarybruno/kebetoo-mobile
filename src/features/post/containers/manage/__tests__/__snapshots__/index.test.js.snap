@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`post options navigates on post edit 1`] = `
+Array [
+  Object {
+    "cancelButtonIndex": 2,
+    "containerStyle": Object {
+      "backgroundColor": "#F5F5F5",
+    },
+    "destructiveButtonIndex": 1,
+    "icons": Array [
+      <_default
+        color="rgba(0,0,0,0.87)"
+        name="md-create"
+        size={24}
+      />,
+      <_default
+        color="rgba(255, 59, 48, 255)"
+        name="ios-trash"
+        size={24}
+      />,
+      <_default
+        color="rgba(0,0,0,0.87)"
+        name="md-close"
+        size={24}
+      />,
+    ],
+    "options": Array [
+      "Edit post",
+      "Delete post",
+      "Cancel",
+    ],
+    "textStyle": Object {
+      "color": "rgba(0,0,0,0.87)",
+    },
+    "title": "Actions",
+    "titleTextStyle": Object {
+      "color": "rgba(0,0,0,0.54)",
+    },
+  },
+  [Function],
+]
+`;
+
 exports[`renders ManagePost 1`] = `
 <View
   style={
