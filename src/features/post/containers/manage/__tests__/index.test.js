@@ -1,6 +1,5 @@
 import { act } from 'react-test-renderer'
 import { fireEvent } from 'react-native-testing-library'
-import configureStore from 'redux-mock-store'
 
 import setupTest from '@app/config/jest-setup'
 import strings from '@app/config/strings'
@@ -10,15 +9,11 @@ import routes from '@app/navigation/routes'
 
 import ManagePost from '../index'
 
-const mockStore = configureStore()
-const store = mockStore()
-
 const givenManagePost = setupTest(ManagePost)({
   navigation: {
     navigate: jest.fn(),
     setOptions: jest.fn(),
   },
-  store,
 })
 
 afterEach(jest.clearAllMocks)

@@ -19,6 +19,8 @@ const givenHomePage = setupTest(HomePage)({
   store,
 })
 
+beforeEach(jest.clearAllMocks)
+
 it('renders HomePage', async () => {
   let wrapper
   await act(async () => {
@@ -29,7 +31,9 @@ it('renders HomePage', async () => {
 })
 
 it('search for shared file', () => {
-  givenHomePage()
+  act(() => {
+    givenHomePage()
+  })
   expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(1)
   expect(ReceiveSharingIntent.clearReceivedFiles).toBeCalledTimes(1)
 })

@@ -5,6 +5,7 @@ import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import MockDate from 'mockdate'
 import 'react-native-gesture-handler/jestSetup'
+import configureStore from 'redux-mock-store'
 
 // wix/react-native-keyboard-input
 NativeModules.KeyboardTrackingViewTempManager = {
@@ -26,15 +27,12 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
       ...props,
       ...additionalProps,
     }
-    if (store) {
-      wrapper = renderFn(
-        <Provider store={store}>
-          <WrappedComponent {...propsWithArgs} />
-        </Provider>
-      )
-    } else {
-      wrapper = renderFn(<WrappedComponent {...propsWithArgs} />)
-    }
+    const mockStore = configureStore()
+    wrapper = renderFn(
+      <Provider store={store || mockStore()}>
+        <WrappedComponent {...propsWithArgs} />
+      </Provider>
+    )
     return { wrapper, props: propsWithArgs }
   }
 }
@@ -67,7 +65,7 @@ jest.mock('react-native-reanimated', () => {
 
   // The mock for `call` immediately calls the callback which is incorrect
   // So we override it with a no-op
-  Reanimated.default.call = () => {}
+  Reanimated.default.call = () => { }
 
   return Reanimated
 })
@@ -75,7 +73,7 @@ jest.mock('react-native-reanimated', () => {
 // react-native-screens
 jest.mock('react-native-screens', () => {
   const Screens = jest.requireActual('react-native-screens')
-  Screens.enableScreens = () => {}
+  Screens.enableScreens = () => { }
   return Screens
 })
 

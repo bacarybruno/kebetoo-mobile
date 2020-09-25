@@ -16,6 +16,7 @@ import { createUser } from '@app/shared/helpers/users'
 import Logo from '@app/shared/components/logo'
 import strings from '@app/config/strings'
 import { metrics } from '@app/theme'
+import { useAnalytics } from '@app/shared/hooks'
 
 import styles from './styles'
 
@@ -28,6 +29,7 @@ export const fieldNames = {
 const SignUp = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signup })
 
+  const { trackSignUp, reportError } = useAnalytics()
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
 
@@ -87,16 +89,17 @@ const SignUp = ({ navigation }) => {
       dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
 
       const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
+      trackSignUp('password')
       await user.updateProfile({ displayName, photoURL: null })
       auth().currentUser = user
 
       await createUser({ id: user.uid, displayName, photoURL: null })
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      reportError(error)
     } finally {
       setIsLoading(false)
     }
-  }, [schema, infos, dispatch])
+  }, [schema, infos, dispatch, trackSignUp, reportError])
 
   const validate = useCallback((field) => {
     try {

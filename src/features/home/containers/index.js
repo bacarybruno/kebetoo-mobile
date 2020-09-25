@@ -16,8 +16,8 @@ import strings from '@app/config/strings'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
 import routes from '@app/navigation/routes'
 import RNFetchBlob from 'rn-fetch-blob'
-import { getFileName } from '@app/shared/helpers/file'
-import { usePosts, useUser } from '@app/shared/hooks'
+import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file'
+import { useAnalytics, usePosts, useUser } from '@app/shared/hooks'
 
 import Header from '../components/header'
 import styles from './styles'
@@ -35,6 +35,7 @@ const HomePage = () => {
   const [refreshing, setRefreshing] = useState(false)
   const [page, setPage] = useState(0)
   const [authors, setAuthors] = useState({})
+  const { trackReceiveIntent, reportError } = useAnalytics()
 
   const { profile } = useUser()
   const savedDisplayName = useSelector(displayNameSelector)
@@ -55,24 +56,25 @@ const HomePage = () => {
           await RNFetchBlob.fs.cp(file, dest)
           sharedFileContentUri = dest
         }
+        trackReceiveIntent(getMimeType(sharedFileContentUri), getExtension(sharedFileContentUri))
         navigate(routes.CREATE_POST, { sharedFile: sharedFileContentUri })
       } else {
         navigate(routes.CREATE_POST, {
           sharedText: sharedFile.text || sharedFile.weblink || '',
         })
+        trackReceiveIntent(sharedFile.weblink ? 'weblink' : 'text', sharedFile.weblink)
       }
     } catch (error) {
-      console.log('An error occured', error)
+      reportError(error)
     }
-  }, [navigate])
+  }, [navigate, trackReceiveIntent, reportError])
 
   useEffect(() => {
     handleSharingIntent()
-    AppState.addEventListener('change', (status) => {
-      if (status === 'active') {
-        handleSharingIntent()
-      }
-    })
+    AppState.addEventListener('focus', handleSharingIntent)
+    return () => {
+      AppState.removeEventListener('focus', handleSharingIntent)
+    }
   }, [handleSharingIntent])
 
   const onRefresh = useCallback(() => {

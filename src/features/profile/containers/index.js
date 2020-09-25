@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import {
-  View, ScrollView, Platform, Share, TouchableOpacity, Image,
+  View, ScrollView, Platform, Share, TouchableOpacity,
 } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
@@ -17,11 +17,11 @@ import * as api from '@app/shared/helpers/http'
 import * as types from '@app/redux/types'
 import { userStatsSelector } from '@app/redux/selectors'
 import strings from '@app/config/strings'
-import { useUser } from '@app/shared/hooks'
+import { useAnalytics, useUser } from '@app/shared/hooks'
 
 import styles, { imageSize } from './styles'
 
-export const routeOptions = { title: strings.tabs.profile }
+const routeOptions = { title: strings.tabs.profile }
 
 export const SectionTitle = React.memo(({ text }) => (
   <Typography
@@ -172,6 +172,7 @@ export const Header = React.memo(({
 const ProfilePage = React.memo(() => {
   const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
+  const { trackSignOut } = useAnalytics()
 
   const stats = useSelector(userStatsSelector)
   const [postsCount, setPostsCount] = useState(stats.posts)
@@ -218,6 +219,11 @@ const ProfilePage = React.memo(() => {
 
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
+  const requestSignOut = useCallback(async () => {
+    await signOut()
+    trackSignOut()
+  }, [signOut, trackSignOut])
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.padding}>
@@ -231,7 +237,7 @@ const ProfilePage = React.memo(() => {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <ProfileSection managePosts={managePosts} />
         <PreferencesSection shareApp={shareApp} />
-        <AccountSection signOut={signOut} />
+        <AccountSection signOut={requestSignOut} />
       </ScrollView>
     </View>
   )

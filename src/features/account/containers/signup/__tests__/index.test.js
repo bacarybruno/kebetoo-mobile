@@ -1,6 +1,5 @@
 import { render, fireEvent } from 'react-native-testing-library'
 import auth from '@react-native-firebase/auth'
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
@@ -17,11 +16,7 @@ const userInfos = {
   password: 'Kebetoo!',
 }
 
-const mockStore = configureStore()
-const store = mockStore()
-
 const givenSignUp = setupTest(SignUp, render)({
-  store,
   navigation: {
     setOptions: jest.fn(),
     navigate: jest.fn(),
@@ -35,7 +30,6 @@ it('renders SignUp', () => {
 
 test('screen title', () => {
   const { props } = givenSignUp()
-  expect(props.navigation.setOptions).toBeCalledTimes(1)
   expect(props.navigation.setOptions).toBeCalledWith({ title: strings.auth.signup })
 })
 
@@ -84,18 +78,17 @@ describe('submit', () => {
 
 
 describe('form fields validation', () => {
-  let givenSignUpInTestRenderer
+  let givenSignUpTestRenderer
   beforeEach(() => {
-    givenSignUpInTestRenderer = setupTest(SignUp)({
+    givenSignUpTestRenderer = setupTest(SignUp)({
       navigation: {
         setOptions: jest.fn(),
         navigate: jest.fn(),
       },
-      store,
     })
   })
   it('is invalid', () => {
-    const { wrapper } = givenSignUpInTestRenderer()
+    const { wrapper } = givenSignUpTestRenderer()
     const emailInput = wrapper.root.findByProps({ fieldName: fieldNames.email })
     act(() => {
       emailInput.props.onValueChange('invalidemail', fieldNames.email)
@@ -106,7 +99,7 @@ describe('form fields validation', () => {
     expect(emailInput.props.error).toBeTruthy()
   })
   it('is valid', () => {
-    const { wrapper } = givenSignUpInTestRenderer()
+    const { wrapper } = givenSignUpTestRenderer()
     const emailInput = wrapper.root.findByProps({ fieldName: fieldNames.email })
     act(() => {
       emailInput.props.onValueChange('bacarybruno@gmail.com', fieldNames.email)

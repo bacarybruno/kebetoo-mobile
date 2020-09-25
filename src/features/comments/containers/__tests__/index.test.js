@@ -1,5 +1,4 @@
 import { act } from 'react-test-renderer'
-import configureStore from 'redux-mock-store'
 
 import setupTest from '@app/config/jest-setup'
 import strings from '@app/config/strings'
@@ -25,10 +24,7 @@ jest.mock('@react-navigation/native', () => {
 
 beforeEach(jest.clearAllMocks)
 
-const mockStore = configureStore()
-const store = mockStore()
-
-const givenComments = setupTest(Comments)({ store })
+const givenComments = setupTest(Comments)()
 
 it('renders Comments', async () => {
   let wrapper

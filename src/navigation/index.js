@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback, useRef } from 'react'
 import { Image, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
@@ -31,7 +31,7 @@ import * as api from '@app/shared/helpers/http'
 import styles from './styles'
 import routes from './routes'
 import Typography, { types, weights } from '../shared/components/typography'
-import { useUser, useNotifications } from '../shared/hooks'
+import { useUser, useNotifications, useAnalytics } from '../shared/hooks'
 
 enableScreens()
 
@@ -163,10 +163,14 @@ export const loggedInPages = [
 const AppNavigation = () => {
   const { isLoggedIn, profile } = useUser()
   const { persistNotification } = useNotifications()
+  const { trackPageView } = useAnalytics()
+  const navigationRef = useRef()
+  const routeNameRef = useRef()
 
   useEffect(() => {
     RNBootSplash.hide({ duration: 250 })
-  }, [])
+    trackPageView(routes.HOME)
+  }, [trackPageView])
 
   const handleInitialNotification = useCallback((remoteMessage) => {
     if (remoteMessage !== null) {
@@ -212,8 +216,29 @@ const AppNavigation = () => {
     }
   }, [isLoggedIn, profile.uid, handleInitialNotification, persistNotification])
 
+  const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name
+
+  const onNavigationReady = useCallback(() => {
+    routeNameRef.current = getCurrentRouteName()
+  }, [])
+
+  const onNavigationStateChange = useCallback(() => {
+    const previousRouteName = routeNameRef.current
+    const currentRouteName = getCurrentRouteName()
+
+    if (previousRouteName !== currentRouteName) {
+      trackPageView(currentRouteName)
+    }
+
+    routeNameRef.current = currentRouteName
+  }, [trackPageView])
+
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigationRef}
+      onReady={onNavigationReady}
+      onStateChange={onNavigationStateChange}
+    >
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isLoggedIn && loggedInPages.map(createPage)}
         {!isLoggedIn && notLoggedInPages.map(createPage)}

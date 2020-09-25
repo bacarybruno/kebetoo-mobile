@@ -29,7 +29,6 @@ it('renders Signin', () => {
 
 test('screen title', () => {
   const { props } = givenSignIn()
-  expect(props.navigation.setOptions).toBeCalledTimes(1)
   expect(props.navigation.setOptions).toBeCalledWith({ title: strings.auth.signin })
 })
 

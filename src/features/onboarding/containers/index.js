@@ -1,4 +1,6 @@
-import React, { useCallback, useState, useRef } from 'react'
+import React, {
+  useCallback, useState, useRef, useEffect,
+} from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
 
@@ -8,6 +10,7 @@ import FullButton from '@app/shared/components/buttons/full'
 import OnbordingSlide from '@app/features/onboarding/components'
 import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
+import { useAnalytics } from '@app/shared/hooks'
 import strings from '@app/config/strings'
 
 import styles from './styles'
@@ -34,9 +37,15 @@ export const SkipButton = ({ onPress }) => (
 
 const OnboardingPage = ({ navigation }) => {
   navigation.setOptions({ headerShown: false })
+
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
   const isLastSlideItem = slideItems.length - 1 === slideIndex
+  const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
+
+  useEffect(() => {
+    trackOnboardingStart()
+  }, [trackOnboardingStart])
 
   const onSlideIndexChanged = useCallback((index) => {
     setSlideIndex(index)
@@ -47,8 +56,9 @@ const OnboardingPage = ({ navigation }) => {
   }, [swiperRef])
 
   const onGetStarted = useCallback(() => {
+    trackOnboardingEnd()
     navigation.navigate(routes.SIGNUP)
-  }, [navigation])
+  }, [navigation, trackOnboardingEnd])
 
   return (
     <View style={styles.wrapper}>

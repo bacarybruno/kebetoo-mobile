@@ -14,6 +14,8 @@ import routes from '@app/navigation/routes'
 import Logo from '@app/shared/components/logo'
 import strings from '@app/config/strings'
 import { createUser } from '@app/shared/helpers/users'
+import { useAnalytics } from '@app/shared/hooks'
+
 import styles from './styles'
 
 export const fieldNames = {
@@ -24,6 +26,7 @@ export const fieldNames = {
 const SignIn = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signin })
 
+  const { trackSignIn, reportError } = useAnalytics()
   const [isLoading, setIsLoading] = useState(false)
 
   const schema = yup.object().shape({
@@ -61,13 +64,14 @@ const SignIn = ({ navigation }) => {
       setIsLoading(true)
       await schema.validate(infos)
       const { user } = await auth().signInWithEmailAndPassword(infos.email, infos.password)
+      trackSignIn('password')
       await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      reportError(error)
     } finally {
       setIsLoading(false)
     }
-  }, [schema, infos])
+  }, [schema, infos, trackSignIn, reportError])
 
   const navigateToSignUp = useCallback(() => {
     navigation.navigate(routes.SIGNUP)
