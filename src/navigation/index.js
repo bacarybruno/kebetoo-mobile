@@ -27,11 +27,11 @@ import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
 import UserProfilePage from '@app/features/profile/containers/user'
 import * as api from '@app/shared/helpers/http'
+import Typography, { types, weights } from '@app/shared/components/typography'
+import { useUser, useNotifications, useAnalytics } from '@app/shared/hooks'
 
 import styles from './styles'
 import routes from './routes'
-import Typography, { types, weights } from '../shared/components/typography'
-import { useUser, useNotifications, useAnalytics } from '../shared/hooks'
 
 enableScreens()
 
@@ -236,6 +236,7 @@ const AppNavigation = () => {
   return (
     <NavigationContainer
       ref={navigationRef}
+      testRef={navigationRef}
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
     >

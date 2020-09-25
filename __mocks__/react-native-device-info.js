@@ -1,13 +1,5 @@
-const getBrand = jest.fn().mockReturnValue('Huawei')
-const getModel = jest.fn().mockReturnValue('P30 Lite')
-const getDeviceType = jest.fn().mockReturnValue('Phone')
-const getSystemName = jest.fn().mockReturnValue('Android')
-const getSystemVersion = jest.fn().mockReturnValue(10)
-
-export default {
-  getBrand,
-  getModel,
-  getDeviceType,
-  getSystemName,
-  getSystemVersion,
-}
+export const getBrand = jest.fn().mockReturnValue('Huawei')
+export const getModel = jest.fn().mockReturnValue('P30 Lite')
+export const getDeviceType = jest.fn().mockReturnValue('Phone')
+export const getSystemName = jest.fn().mockReturnValue('Android')
+export const getSystemVersion = jest.fn().mockReturnValue(10)
