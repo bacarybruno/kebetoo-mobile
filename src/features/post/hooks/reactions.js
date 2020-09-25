@@ -8,6 +8,7 @@ import colors, { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import strings from '@app/config/strings'
 import * as api from '@app/shared/helpers/http'
+import { useAnalytics } from '@app/shared/hooks'
 
 import { actionTypes } from '../containers/create'
 
@@ -46,6 +47,7 @@ const useReactions = ({
 
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = useNavigation()
+  const { trackSelectPost } = useAnalytics()
 
   const findUserReaction = useCallback((reaction) => reaction.author === author, [author])
 
@@ -182,6 +184,7 @@ const useReactions = ({
           onComment()
         } else {
           navigate(routes.COMMENTS, { post })
+          trackSelectPost(post.id)
           setDirty(true)
         }
         break
@@ -191,7 +194,7 @@ const useReactions = ({
       default: break
     }
     return null
-  }, [handlePostReaction, onComment, navigate, post, handlePostShare])
+  }, [handlePostReaction, onComment, navigate, post, handlePostShare, trackSelectPost])
 
   return {
     onReaction,

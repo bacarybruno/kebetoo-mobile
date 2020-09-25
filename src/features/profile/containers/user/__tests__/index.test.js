@@ -1,7 +1,6 @@
 import { act } from 'react-test-renderer'
 import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import configureStore from 'redux-mock-store'
 
 import setupTest from '@app/config/jest-setup'
 import * as api from '@app/shared/helpers/http'
@@ -13,14 +12,10 @@ import BasicPost from '@app/features/post/containers/basic-post'
 
 import UserProfile, { SectionHeader } from '../index'
 
-const mockStore = configureStore()
-const store = mockStore()
-
 const givenUserProfile = setupTest(UserProfile)({
   navigation: {
     setOptions: jest.fn(),
   },
-  store,
 })
 
 it('renders UserProfile', () => {

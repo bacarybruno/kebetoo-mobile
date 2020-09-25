@@ -7,7 +7,8 @@ import { colors, metrics, edgeInsets } from '@app/theme'
 import strings from '@app/config/strings'
 import TextInput from '@app/shared/components/inputs/text'
 import Header from '@app/features/home/components/header'
-import { useUser, useDebounce } from '@app/shared/hooks'
+import { useUser, useDebounce, useAnalytics } from '@app/shared/hooks'
+import routes from '@app/navigation/routes'
 
 import styles from './styles'
 import SearchPosts from './posts'
@@ -49,6 +50,7 @@ const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const { profile } = useUser()
+  const { trackSearch } = useAnalytics()
 
   const textInputRef = useRef()
 
@@ -64,9 +66,12 @@ const SearchPage = () => {
     textInputRef.current.blur()
   }, [])
 
-  const onSearch = useCallback((state) => {
-    setIsLoading(state)
-  }, [])
+  const onSearch = useCallback((isSearching) => {
+    if (isSearching) {
+      trackSearch(searchQuery)
+    }
+    setIsLoading(isSearching)
+  }, [trackSearch, searchQuery])
 
   const onRecentSearch = useCallback((text) => {
     onChange(text)
@@ -104,7 +109,7 @@ const SearchPage = () => {
           />
         )}
       <Tab.Navigator tabBarOptions={tabBarOptions} sceneContainerStyle={styles.wrapper}>
-        <Tab.Screen name={strings.search.posts_tab}>
+        <Tab.Screen name={routes.SEARCH_POSTS} options={{ tabBarLabel: strings.search.posts_tab }}>
           {(props) => (
             <SearchPosts
               {...props}
@@ -114,7 +119,7 @@ const SearchPage = () => {
             />
           )}
         </Tab.Screen>
-        <Tab.Screen name={strings.search.users_tab}>
+        <Tab.Screen name={routes.SEARCH_USERS} options={{ tabBarLabel: strings.search.users_tab }}>
           {(props) => (
             <SearchUsers
               {...props}

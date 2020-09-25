@@ -15,7 +15,7 @@ import RepostContent from '@app/features/post/components/repost-content'
 import routes from '@app/navigation/routes'
 import strings from '@app/config/strings'
 import { colors, edgeInsets } from '@app/theme'
-import { useUser } from '@app/shared/hooks'
+import { useAnalytics, useUser } from '@app/shared/hooks'
 
 import styles from './styles'
 
@@ -142,12 +142,13 @@ const BasicPost = ({
   post, author, originalAuthor, onOptions, isRepost, mode, size = 35, withReactions = true,
 }) => {
   const { navigate } = useNavigation()
-
   const { profile } = useUser()
+  const { trackSelectPost } = useAnalytics()
 
   const navigateToComments = useCallback(() => {
     navigate(routes.COMMENTS, { post })
-  }, [navigate, post])
+    trackSelectPost(post.id)
+  }, [navigate, post, trackSelectPost])
 
   if (!author) return <PostPlaceholder withReactions={withReactions} avatarSize={size} />
 

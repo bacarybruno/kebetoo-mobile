@@ -23,7 +23,6 @@ it('renders Onboarding', () => {
 
 it('hides navigation header by default', () => {
   const { props } = givenOnboarding()
-  expect(props.navigation.setOptions).toBeCalledTimes(1)
   expect(props.navigation.setOptions).toBeCalledWith({ headerShown: false })
 })
 
