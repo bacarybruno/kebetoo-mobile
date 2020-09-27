@@ -8,14 +8,14 @@ import Typography, { types, fontSizes, weights } from '@app/shared/components/ty
 import Avatar from '@app/shared/components/avatar'
 import PostPlaceholder, { PlaceholderAvatar } from '@app/shared/components/placeholders/posts'
 import Reactions from '@app/features/post/containers/reactions'
-import TextContent from '@app/features/post/components/text-content'
 import AudioContent from '@app/features/post/components/audio-content'
 import ImageContent from '@app/features/post/components/image-content'
-import RepostContent from '@app/features/post/components/repost-content'
 import routes from '@app/navigation/routes'
 import strings from '@app/config/strings'
 import { colors, edgeInsets } from '@app/theme'
 import { useAnalytics, useUser } from '@app/shared/hooks'
+import TextContent from '@app/features/post/components/text-content'
+import RepostContent from '@app/features/post/components/repost-content'
 
 import styles from './styles'
 

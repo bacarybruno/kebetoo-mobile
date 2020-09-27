@@ -5,7 +5,6 @@ import auth from '@react-native-firebase/auth'
 import { fireEvent, act } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
-import { useAnalytics } from '@app/shared/hooks'
 
 import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,

@@ -13,7 +13,7 @@ const posts = (state = initialState.posts, action) => {
     case types.API_FETCH_POSTS_SUCCESS:
       return mergeArrays(state, action.payload)
     case types.REPLACE_POSTS:
-      return action.payload
+      return mergeArrays([], action.payload)
     default:
       return state
   }

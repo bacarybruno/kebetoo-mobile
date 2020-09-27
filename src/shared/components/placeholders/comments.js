@@ -37,7 +37,7 @@ export const Animation = (props) => (
   <Fade {...props} style={colorScheme === 'dark' && { backgroundColor: colors.backgroundSecondary }} />
 )
 
-const CommentPlaceholder = () => (
+export const CommentPlaceholder = () => (
   <Placeholder
     style={styles.placeholder}
     Animation={Animation}

@@ -33,29 +33,22 @@ const Reactions = ({
   post: givenPost, author, comments, onComment,
 }) => {
   const [post, setPost] = useState(givenPost)
-  const [dirty, setDirty] = useState(false)
 
-  const {
-    count, isDirty, onReaction, userReactionType,
-  // eslint-disable-next-line object-curly-newline
-  } = useReactions({ post, author, comments, onComment })
+  const { count, onReaction, userReactionType } = useReactions({
+    post, author, comments, onComment,
+  })
 
   const { addListener: addNavigationListener } = useNavigation()
 
   const updatePost = useCallback(async () => {
     const updatedPost = await api.getPost(post.id)
     setPost(updatedPost)
-    setDirty(false)
   }, [post.id])
 
-  useEffect(() => { setDirty(isDirty) }, [isDirty])
-
   useEffect(() => {
-    const unsusbcribeFocus = addNavigationListener('focus', () => {
-      if (dirty) updatePost()
-    })
+    const unsusbcribeFocus = addNavigationListener('focus', updatePost)
     return unsusbcribeFocus
-  }, [addNavigationListener, dirty, updatePost])
+  }, [addNavigationListener, updatePost])
 
   return (
     <View style={styles.reactions}>

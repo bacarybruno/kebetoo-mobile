@@ -1,9 +1,11 @@
 import { act } from 'react-test-renderer'
 import { TouchableWithoutFeedback } from 'react-native'
+import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 import comments from '@fixtures/comments'
 import authors from '@fixtures/authors'
+import { CommentPlaceholder } from '@app/shared/components/placeholders/comments'
 
 import Comment from '../index'
 
@@ -32,13 +34,9 @@ it('handles reaction', async () => {
     },
   })
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart-empty')
-  await act(async () => {
-    await wrapper.root.findByProps({ testID: 'reaction-button' }).props.onPress()
-  })
+  await fireEvent.press(wrapper.root.findByProps({ testID: 'reaction-button' }))
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
-  await act(async () => {
-    await wrapper.root.findByProps({ testID: 'reaction-button' }).props.onPress()
-  })
+  await fireEvent.press(wrapper.root.findByProps({ testID: 'reaction-button' }))
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart-empty')
 })
 
@@ -59,4 +57,11 @@ it('handles double tap', async () => {
     await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
   })
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
+})
+
+it('renders placeholder if data is not available', () => {
+  const { wrapper } = givenComment({
+    displayName: null,
+  })
+  expect(wrapper.root.findAllByType(CommentPlaceholder).length).toBe(1)
 })

@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -43,7 +43,10 @@ const useReactions = ({
   post: givenPost, author, comments, onComment,
 }) => {
   const [post, setPost] = useState(givenPost)
-  const [dirty, setDirty] = useState(false)
+
+  useEffect(() => {
+    setPost({ ...givenPost })
+  }, [givenPost])
 
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = useNavigation()
@@ -65,7 +68,7 @@ const useReactions = ({
         { id: optimisticId, type, author },
       ],
     }
-    setPost(optimisticPost)
+    setPost({ ...optimisticPost })
 
     // create the reaction on the backend
     api.createReaction(type, post.id, author)
@@ -95,7 +98,7 @@ const useReactions = ({
     const optimisticPost = { ...post }
     const deletedReaction = optimisticPost.reactions.find((r) => r.id === reactionId)
     optimisticPost.reactions = optimisticPost.reactions.filter((r) => r.id !== reactionId)
-    setPost(optimisticPost)
+    setPost({ ...optimisticPost })
 
     // then remove it from the backend
     api.deleteReaction(reactionId).catch(() => {
@@ -185,7 +188,6 @@ const useReactions = ({
         } else {
           navigate(routes.COMMENTS, { post })
           trackSelectPost(post.id)
-          setDirty(true)
         }
         break
       case REACTION_TYPES.SHARE:
@@ -199,11 +201,10 @@ const useReactions = ({
   return {
     onReaction,
     userReactionType: userReaction.type,
-    isDirty: dirty,
     count: {
       likes: countReactions(post, REACTION_TYPES.LIKE),
       dislikes: countReactions(post, REACTION_TYPES.DISLIKE),
-      comments: comments?.length || post.comments.length,
+      comments: (comments || post.comments).length,
       shares: countReactions(post, REACTION_TYPES.SHARE),
     },
   }

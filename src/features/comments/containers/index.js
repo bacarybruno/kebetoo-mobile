@@ -45,7 +45,7 @@ const Comments = () => {
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState(
-    post.comments ? post.comments.map(mapComments) : [],
+    post.comments?.map(mapComments) || [],
   )
 
   const { profile } = useUser()

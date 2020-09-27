@@ -129,9 +129,10 @@ describe('handles comments', () => {
 
 describe('optimistic ui update rejection', () => {
   afterEach(() => {
-    api.createReaction = jest.fn().mockImplementation(
+    api.createReaction.mockImplementation(
       (type, postId, author) => (
         Promise.resolve({
+          // eslint-disable-next-line radix
           id: parseInt(Math.random() * 1000000),
           type,
           author: {
@@ -141,12 +142,12 @@ describe('optimistic ui update rejection', () => {
         })
       ),
     )
-    api.deleteReaction = jest.fn().mockResolvedValue(true)
-    api.editReaction = jest.fn().mockResolvedValue(true)
+    api.deleteReaction.mockResolvedValue(true)
+    api.editReaction.mockResolvedValue(true)
   })
   it('fails to create reactions', async () => {
-    api.createReaction = jest.fn().mockRejectedValue(true)
-    // api.deleteReaction = jest.fn().mockRejectedValue(true)
+    api.createReaction.mockRejectedValue(true)
+    // api.deleteReaction.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 
@@ -164,7 +165,7 @@ describe('optimistic ui update rejection', () => {
     expect(wrapper.root.findByProps({ testID: 'like-button' }).props.count).toBe(0)
   })
   it('fails to edit reaction', async () => {
-    api.editReaction = jest.fn().mockRejectedValue(true)
+    api.editReaction.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 

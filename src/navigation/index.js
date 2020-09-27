@@ -174,7 +174,7 @@ const AppNavigation = () => {
 
   const handleInitialNotification = useCallback((remoteMessage) => {
     if (remoteMessage !== null) {
-      // do someting
+      navigationRef.current.navigate(routes.NOTIFICATIONS)
     }
   }, [])
 
@@ -205,6 +205,7 @@ const AppNavigation = () => {
 
     updateUserNotificationId()
     messaging().getInitialNotification().then(handleInitialNotification)
+    messaging().onNotificationOpenedApp(handleInitialNotification)
     const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
     const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
       api.updateAuthor(profile.uid, { notificationToken })

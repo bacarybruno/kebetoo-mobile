@@ -248,7 +248,7 @@ exports[`renders HomePage 1`] = `
           ]
         }
         onRefresh={[Function]}
-        progressBackgroundColor="#F5F5F5"
+        progressBackgroundColor="rgba(255, 255, 255, 255)"
         refreshing={false}
       />
     }

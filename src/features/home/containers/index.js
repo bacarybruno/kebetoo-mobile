@@ -7,17 +7,17 @@ import {
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
+import RNFetchBlob from 'rn-fetch-blob'
 
 import * as types from '@app/redux/types'
-import BasicPost from '@app/features/post/containers/basic-post'
-import { colors } from '@app/theme'
 import { postsSelector, displayNameSelector } from '@app/redux/selectors'
-import strings from '@app/config/strings'
-import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
-import routes from '@app/navigation/routes'
-import RNFetchBlob from 'rn-fetch-blob'
+import BasicPost from '@app/features/post/containers/basic-post'
 import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file'
 import { useAnalytics, usePosts, useUser } from '@app/shared/hooks'
+import strings from '@app/config/strings'
+import routes from '@app/navigation/routes'
+import { colors } from '@app/theme'
+import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
 
 import Header from '../components/header'
 import styles from './styles'
@@ -87,14 +87,17 @@ const HomePage = () => {
   }, [])
 
   useEffect(() => {
-    dispatch({ type: types.API_FETCH_POSTS, payload: page })
-  }, [dispatch, page, refreshing])
+    if (page > 0) {
+      dispatch({ type: types.API_FETCH_POSTS, payload: page })
+    }
+  }, [dispatch, page])
 
   useEffect(() => {
     if (page === 0) {
       if (refreshing) setRefreshing(false)
+      dispatch({ type: types.API_FETCH_POSTS, payload: 0 })
     }
-  }, [page, refreshing])
+  }, [dispatch, page, refreshing])
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
@@ -128,7 +131,7 @@ const HomePage = () => {
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl
-      progressBackgroundColor={colors.backgroundSecondary}
+      progressBackgroundColor={colors.background}
       colors={[colors.primary]}
       refreshing={refreshing}
       onRefresh={onRefresh}

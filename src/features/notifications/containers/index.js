@@ -83,18 +83,6 @@ const NotificationsPage = () => {
     }
   }
 
-  const renderNotification = useCallback(({ item, index, onPress }) => (
-    <Notification
-      isOpened={item.status === NOTIFICATION_STATUS.OPENED}
-      onPress={() => onPress(item)}
-      title={getTitle(item.message)}
-      message={getMessage(item.message)}
-      author={getAuthor(item.message)}
-      caption={dayjs(item.time).fromNow()}
-      key={`${item.id}-${index}`}
-    />
-  ), [])
-
   const onNotificationOpen = useCallback(async ({ id, message }) => {
     setIsLoading(true)
 
@@ -107,7 +95,7 @@ const NotificationsPage = () => {
         postId = payload.post.id
         break
       case NOTIFICATION_TYPES.COMMENT_REACTION:
-        postId = payload.post
+        postId = payload.comment.post
         break
       default:
         break
@@ -122,6 +110,18 @@ const NotificationsPage = () => {
     setIsLoading(false)
   }, [navigate, updateOpenStatus])
 
+  const renderNotification = useCallback((item, index) => (
+    <Notification
+      isOpened={item.status === NOTIFICATION_STATUS.OPENED}
+      onPress={() => onNotificationOpen(item)}
+      title={getTitle(item.message)}
+      message={getMessage(item.message)}
+      author={getAuthor(item.message)}
+      caption={dayjs(item.time).fromNow()}
+      key={`${item.id}-${index}`}
+    />
+  ), [onNotificationOpen])
+
   return (
     <ScrollView style={styles.wrapper} contentContainerStyle={styles.content}>
       <Header
@@ -135,16 +135,12 @@ const NotificationsPage = () => {
       <Section
         title={strings.notifications.recent}
         items={newItems}
-        renderItem={(item, index) => (
-          renderNotification({ item, index, onPress: onNotificationOpen })
-        )}
+        renderItem={renderNotification}
       />
       <Section
         title={strings.notifications.already_seen}
         items={seenItems}
-        renderItem={(item, index) => (
-          renderNotification({ item, index, onPress: onNotificationOpen })
-        )}
+        renderItem={renderNotification}
       />
     </ScrollView>
   )
