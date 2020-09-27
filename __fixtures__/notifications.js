@@ -46,9 +46,9 @@ const notifications = [{
       payload: JSON.stringify({
         author: authors[1],
         comment: {
+          post: audioPost.id,
           content: audioPost.comments[1].content,
         },
-        post: audioPost.id,
       }),
     },
   },

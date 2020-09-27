@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { View, TouchableWithoutFeedback } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
@@ -83,9 +83,13 @@ const Content = ({ item }) => {
 const Comment = ({
   item, displayName, photoURL, user, authorId,
 }) => {
-  const [reactions, setReactions] = useState((value) => value || item.reactions)
+  const [reactions, setReactions] = useState(item.reactions)
   const [lastPress, setLastPress] = useState(null)
   const DOUBLE_PRESS_DELAY = 200
+
+  useEffect(() => {
+    setReactions(item.reactions)
+  }, [item.reactions])
 
   const { navigate } = useNavigation()
 
@@ -95,16 +99,10 @@ const Comment = ({
     if (userReaction === undefined) {
       const result = await api.createCommentReaction(type, item.id, user)
       result.author = result.author.id
-      setReactions((values) => {
-        values.push(result)
-        return [...values]
-      })
+      setReactions((values) => values.concat([result]))
     } else if (userReaction.type === type) {
       await api.deleteReaction(userReaction.id)
-      setReactions((values) => {
-        const filteredReactions = values.filter((r) => r.id !== userReaction.id)
-        return [...filteredReactions]
-      })
+      setReactions((values) => values.filter((r) => r.id !== userReaction.id))
     }
     // // Will be used when we'll have many reactions for comments
     // else {
@@ -133,7 +131,7 @@ const Comment = ({
     navigate(routes.USER_PROFILE, { userId: authorId })
   }, [navigate, authorId])
 
-  if (!displayName) return <CommentPlaceholder />
+  if (!displayName?.trim().length > 0) return <CommentPlaceholder />
 
   return (
     <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
@@ -153,4 +151,4 @@ const Comment = ({
   )
 }
 
-export default React.memo(Comment)
+export default Comment

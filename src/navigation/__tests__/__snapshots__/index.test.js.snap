@@ -191,8 +191,8 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                       >
                         <View
                           collapsable={false}
-                          pointerEvents="auto"
-                          removeClippedSubviews={false}
+                          pointerEvents="none"
+                          removeClippedSubviews={true}
                           style={
                             Array [
                               Object {
@@ -214,12 +214,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                             style={
                               Object {
                                 "flex": 1,
+                                "top": 30000,
                               }
                             }
                           >
                             <View
-                              accessibilityElementsHidden={false}
-                              importantForAccessibility="auto"
+                              accessibilityElementsHidden={true}
+                              importantForAccessibility="no-hide-descendants"
                               style={
                                 Array [
                                   Object {
@@ -271,7 +272,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         ]
                                       }
                                       onRefresh={[Function]}
-                                      progressBackgroundColor="#F5F5F5"
+                                      progressBackgroundColor="rgba(255, 255, 255, 255)"
                                       refreshing={false}
                                     />
                                   }
@@ -424,6 +425,203 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                   </View>
                                 </RCTScrollView>
                               </View>
+                            </View>
+                          </View>
+                        </View>
+                        <View
+                          collapsable={false}
+                          pointerEvents="auto"
+                          removeClippedSubviews={false}
+                          style={
+                            Array [
+                              Object {
+                                "flex": 1,
+                                "overflow": "hidden",
+                              },
+                              null,
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              },
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "flex": 1,
+                              }
+                            }
+                          >
+                            <View
+                              accessibilityElementsHidden={false}
+                              importantForAccessibility="auto"
+                              style={
+                                Array [
+                                  Object {
+                                    "flex": 1,
+                                  },
+                                  Object {
+                                    "backgroundColor": "rgb(242, 242, 242)",
+                                  },
+                                ]
+                              }
+                            >
+                              <RCTScrollView
+                                contentContainerStyle={
+                                  Object {
+                                    "paddingBottom": 24,
+                                  }
+                                }
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(255, 255, 255, 255)",
+                                    "flex": 1,
+                                  }
+                                }
+                              >
+                                <View>
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                          "height": 60,
+                                        },
+                                        Object {
+                                          "marginBottom": 12,
+                                          "paddingHorizontal": 16,
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "flex": 8,
+                                        }
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "flexDirection": "row",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 22,
+                                                "fontWeight": "400",
+                                                "letterSpacing": 0.34375,
+                                                "lineHeight": 28,
+                                              },
+                                              false,
+                                              false,
+                                              false,
+                                              Array [
+                                                Object {
+                                                  "color": "rgba(0,0,0,0.87)",
+                                                },
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "fontFamily": "System",
+                                                  "fontWeight": "600",
+                                                },
+                                                undefined,
+                                              ],
+                                            ]
+                                          }
+                                        >
+                                          Notifications
+                                        </Text>
+                                        <ActivityIndicator
+                                          animating={false}
+                                          color="rgba(0, 122, 255, 255)"
+                                          hidesWhenStopped={true}
+                                          size="small"
+                                          style={
+                                            Object {
+                                              "marginLeft": 8,
+                                            }
+                                          }
+                                        />
+                                      </View>
+                                    </View>
+                                    <View
+                                      accessible={true}
+                                      focusable={true}
+                                      onClick={[Function]}
+                                      onResponderGrant={[Function]}
+                                      onResponderMove={[Function]}
+                                      onResponderRelease={[Function]}
+                                      onResponderTerminate={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      style={
+                                        Object {
+                                          "opacity": 1,
+                                        }
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Array [
+                                            Object {
+                                              "height": 30,
+                                              "width": 30,
+                                            },
+                                            undefined,
+                                            undefined,
+                                          ]
+                                        }
+                                      >
+                                        <View
+                                          style={
+                                            Array [
+                                              Object {
+                                                "alignItems": "center",
+                                                "backgroundColor": "rgba(0, 122, 255, 255)",
+                                                "borderRadius": 15,
+                                                "flex": 1,
+                                                "justifyContent": "center",
+                                              },
+                                              undefined,
+                                              undefined,
+                                              Object {
+                                                "backgroundColor": "#a1887f",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "rgba(255, 255, 255, 255)",
+                                                "fontFamily": "System",
+                                                "fontSize": undefined,
+                                                "fontWeight": "600",
+                                              }
+                                            }
+                                          >
+                                             
+                                          </Text>
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                </View>
+                              </RCTScrollView>
                             </View>
                           </View>
                         </View>
@@ -655,145 +853,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 accessibilityRole="button"
                                 accessibilityState={
                                   Object {
-                                    "selected": true,
-                                  }
-                                }
-                                accessible={true}
-                                focusable={true}
-                                onClick={[Function]}
-                                onResponderGrant={[Function]}
-                                onResponderMove={[Function]}
-                                onResponderRelease={[Function]}
-                                onResponderTerminate={[Function]}
-                                onResponderTerminationRequest={[Function]}
-                                onStartShouldSetResponder={[Function]}
-                                style={
-                                  Array [
-                                    Object {
-                                      "alignItems": "center",
-                                      "flex": 1,
-                                    },
-                                    Object {
-                                      "backgroundColor": "transparent",
-                                    },
-                                    Object {
-                                      "flexDirection": "column",
-                                      "justifyContent": "flex-end",
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "flex": 1,
-                                      },
-                                      undefined,
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Array [
-                                        Object {
-                                          "alignItems": "center",
-                                          "alignSelf": "center",
-                                          "height": "100%",
-                                          "justifyContent": "center",
-                                          "minWidth": 25,
-                                          "position": "absolute",
-                                          "width": "100%",
-                                        },
-                                        Object {
-                                          "opacity": 1,
-                                        },
-                                      ]
-                                    }
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "rgba(0, 122, 255, 255)",
-                                          "fontFamily": "icomoon",
-                                          "fontSize": 24,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="kebeticon-home"
-                                    />
-                                  </View>
-                                  <View
-                                    style={
-                                      Array [
-                                        Object {
-                                          "alignItems": "center",
-                                          "alignSelf": "center",
-                                          "height": "100%",
-                                          "justifyContent": "center",
-                                          "minWidth": 25,
-                                          "position": "absolute",
-                                          "width": "100%",
-                                        },
-                                        Object {
-                                          "opacity": 0,
-                                        },
-                                      ]
-                                    }
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "#7A8FA6",
-                                          "fontFamily": "icomoon",
-                                          "fontSize": 18,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="kebeticon-home"
-                                    />
-                                  </View>
-                                </View>
-                                <Text
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 12,
-                                        "fontWeight": "400",
-                                        "letterSpacing": 0,
-                                        "lineHeight": 16,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "fontFamily": "System",
-                                          "fontWeight": "700",
-                                        },
-                                        Object {
-                                          "color": "rgba(0, 122, 255, 255)",
-                                        },
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  Home
-                                </Text>
-                              </View>
-                              <View
-                                accessibilityRole="button"
-                                accessibilityState={
-                                  Object {
                                     "selected": false,
                                   }
                                 }
@@ -856,6 +915,145 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       style={
                                         Object {
                                           "color": "rgba(0, 122, 255, 255)",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 24,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
+                                      }
+                                      text="kebeticon-home"
+                                    />
+                                  </View>
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "alignSelf": "center",
+                                          "height": "100%",
+                                          "justifyContent": "center",
+                                          "minWidth": 25,
+                                          "position": "absolute",
+                                          "width": "100%",
+                                        },
+                                        Object {
+                                          "opacity": 1,
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <Text
+                                      allowFontScaling={false}
+                                      style={
+                                        Object {
+                                          "color": "#7A8FA6",
+                                          "fontFamily": "icomoon",
+                                          "fontSize": 18,
+                                          "fontStyle": "normal",
+                                          "fontWeight": "normal",
+                                        }
+                                      }
+                                      text="kebeticon-home"
+                                    />
+                                  </View>
+                                </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 12,
+                                        "fontWeight": "400",
+                                        "letterSpacing": 0,
+                                        "lineHeight": 16,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                        },
+                                        Object {
+                                          "color": "#7A8FA6",
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Home
+                                </Text>
+                              </View>
+                              <View
+                                accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "selected": true,
+                                  }
+                                }
+                                accessible={true}
+                                focusable={true}
+                                onClick={[Function]}
+                                onResponderGrant={[Function]}
+                                onResponderMove={[Function]}
+                                onResponderRelease={[Function]}
+                                onResponderTerminate={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                style={
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "flex": 1,
+                                    },
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                    },
+                                    Object {
+                                      "flexDirection": "column",
+                                      "justifyContent": "flex-end",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "flex": 1,
+                                      },
+                                      undefined,
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "alignSelf": "center",
+                                          "height": "100%",
+                                          "justifyContent": "center",
+                                          "minWidth": 25,
+                                          "position": "absolute",
+                                          "width": "100%",
+                                        },
+                                        Object {
+                                          "opacity": 1,
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <Text
+                                      allowFontScaling={false}
+                                      style={
+                                        Object {
+                                          "color": "rgba(0, 122, 255, 255)",
                                           "fontFamily": "Ionicons",
                                           "fontSize": 36,
                                           "fontStyle": "normal",
@@ -878,7 +1076,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                           "width": "100%",
                                         },
                                         Object {
-                                          "opacity": 1,
+                                          "opacity": 0,
                                         },
                                       ]
                                     }
@@ -917,10 +1115,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         Object {
                                           "backgroundColor": "transparent",
                                           "fontFamily": "System",
-                                          "fontWeight": "400",
+                                          "fontWeight": "700",
                                         },
                                         Object {
-                                          "color": "#7A8FA6",
+                                          "color": "rgba(0, 122, 255, 255)",
                                         },
                                       ],
                                     ]
@@ -3637,7 +3835,7 @@ exports[`tabs renders TabNavigation 1`] = `
                       ]
                     }
                     onRefresh={[Function]}
-                    progressBackgroundColor="#F5F5F5"
+                    progressBackgroundColor="rgba(255, 255, 255, 255)"
                     refreshing={false}
                   />
                 }
