@@ -4,24 +4,20 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useNavigation } from '@react-navigation/native'
 
-import CommentPlaceholder from '@app/shared/components/placeholders/comments'
-import Avatar from '@app/shared/components/avatar'
-import Typography, {
-  types, fontSizes, weights, colors as systemColors,
-} from '@app/shared/components/typography'
-import { BASE_URL } from '@app/shared/helpers/http'
+import {
+  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable,
+} from '@app/shared/components'
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
-import AudioPlayer from '@app/shared/components/audio-player'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
 import { colors, edgeInsets } from '@app/theme'
 import * as api from '@app/shared/helpers/http'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
-import Pressable from '@app/shared/components/buttons/pressable'
 import routes from '@app/navigation/routes'
+import { env } from '@app/config'
 
 import styles from './styles'
 
-export const getAudioSource = (url) => `${BASE_URL}${url}`
+export const getAudioSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}` })
 
 export const Reactions = ({ onReaction, reactions, user }) => {
   const loved = reactions.find((reaction) => (
@@ -38,17 +34,17 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         testID="reaction-button"
       >
         <Typography
-          type={types.headline6}
-          systemWeight={weights.bold}
+          type={Typography.types.headline6}
+          systemWeight={Typography.weights.bold}
           text={reactions.length}
-          systemColor={systemColors.primary}
+          systemColor={Typography.colors.primary}
         />
-        <Typography type={types.body} text=" " />
+        <Typography type={Typography.types.body} text=" " />
         <Ionicon
           name={loved ? 'md-heart' : 'md-heart-empty'}
           testID="reaction"
           color={loved ? colors.heart : colors.textPrimary}
-          size={fontSizes.md}
+          size={Typography.fontSizes.md}
         />
       </Pressable>
     </View>
@@ -56,10 +52,10 @@ export const Reactions = ({ onReaction, reactions, user }) => {
 }
 
 const Header = ({ displayName, updatedAt }) => (
-  <View style={{ ...styles.row, alignItems: 'center', marginBottom: 5 }}>
-    <Typography type={types.headline5} text={displayName} />
-    <Typography type={types.headline5} text=" • " />
-    <Typography type={types.headline6} text={dayjs(updatedAt).fromNow()} />
+  <View style={styles.header}>
+    <Typography type={Typography.types.headline5} text={displayName} />
+    <Typography type={Typography.types.headline5} text=" • " />
+    <Typography type={Typography.types.headline6} text={dayjs(updatedAt).fromNow()} />
   </View>
 )
 
@@ -74,7 +70,7 @@ const Content = ({ item }) => {
         />
       )
     case POST_TYPES.TEXT:
-      return <Typography type={types.body} text={item.content} />
+      return <Typography type={Typography.types.body} text={item.content} />
     default:
       return null
   }

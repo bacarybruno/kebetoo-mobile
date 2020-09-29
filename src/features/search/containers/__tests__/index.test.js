@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
 import SearchPosts from '../posts'

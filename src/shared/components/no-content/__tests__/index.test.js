@@ -1,7 +1,7 @@
 import React from 'react'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 import NoContent from '../index'
 import Typography, { types } from '../../typography'

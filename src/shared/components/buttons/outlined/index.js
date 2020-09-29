@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
 
-import Pressable from '@app/shared/components/buttons/pressable'
+import { Pressable } from '@app/shared/components'
 import { colors } from '@app/theme'
 
 import styles from './styles'

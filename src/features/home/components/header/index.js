@@ -2,9 +2,8 @@ import React, { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import Avatar from '@app/shared/components/avatar'
-import Typography, { types } from '@app/shared/components/typography'
-import strings from '@app/config/strings'
+import { Avatar, Typography } from '@app/shared/components'
+import { strings } from '@app/config'
 import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
 
@@ -37,10 +36,10 @@ const Header = ({
     <View style={[styles.header, style]}>
       <View style={styles.greetings}>
         <View style={styles.headingWrapper}>
-          <Typography text={title} type={types.headline2} />
+          <Typography text={title} type={Typography.types.headline2} />
           <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
         </View>
-        {text.length > 0 && <Typography text={text} type={types.subheading} />}
+        {text.length > 0 && <Typography text={text} type={Typography.types.subheading} />}
       </View>
       {Right && <Right />}
       <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />

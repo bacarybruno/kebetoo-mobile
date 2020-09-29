@@ -2,9 +2,8 @@ import React from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Typography, { types } from '@app/shared/components/typography'
 import { colors, edgeInsets } from '@app/theme'
-import Pressable from '@app/shared/components/buttons/pressable'
+import { Pressable, Typography } from '@app/shared/components'
 
 import styles from './styles'
 
@@ -21,7 +20,7 @@ export const DeleteIconButton = ({ onPress }) => (
 const HistoryItem = ({ item, onPress, onDelete }) => (
   <Pressable onPress={() => onPress(item)} testID="history-item" style={styles.searchHistoryButton}>
     <View style={styles.historyItem}>
-      <Typography text={item} type={types.headline4} />
+      <Typography text={item} type={Typography.types.headline4} />
       <DeleteIconButton onPress={() => onDelete(item)} />
     </View>
   </Pressable>

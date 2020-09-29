@@ -4,7 +4,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import Popover, { PopoverPlacement } from 'react-native-popover-view'
 
 import { colors } from '@app/theme'
-import Typography from '@app/shared/components/typography'
+import { Typography } from '@app/shared/components'
 import { capitalize } from '@app/shared/helpers/strings'
 
 import styles, { placeholderColor } from '../styles'

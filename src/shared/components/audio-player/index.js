@@ -7,7 +7,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import Player from 'react-native-sound'
 
 import { colors, edgeInsets, images } from '@app/theme'
-import Pressable from '@app/shared/components/buttons/pressable'
+import { Pressable } from '@app/shared/components'
 import { readableSeconds } from '@app/shared/helpers/dates'
 
 import styles from './styles'

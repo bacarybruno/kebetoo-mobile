@@ -4,7 +4,8 @@ import AsyncStorage from '@react-native-community/async-storage'
 import messaging from '@react-native-firebase/messaging'
 import { KeyboardRegistry } from 'react-native-ui-lib/keyboard'
 
-import EmojiSelector, { keyboardName } from '@app/shared/components/emoji-selector'
+import { EmojiSelector } from '@app/shared/components'
+import { keyboardName } from '@app/shared/components/emoji-selector'
 
 import { name as appName } from './app.json'
 import App from './src'

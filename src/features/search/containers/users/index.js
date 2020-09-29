@@ -2,16 +2,14 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import * as api from '@app/shared/helpers/http'
-import Typography, { types as typos, colors as systemColors } from '@app/shared/components/typography'
+import { Typography, Avatar, Pressable } from '@app/shared/components'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 import { colors } from '@app/theme'
-import strings from '@app/config/strings'
-import Avatar from '@app/shared/components/avatar'
-import Pressable from '@app/shared/components/buttons/pressable'
+import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
 import styles from './styles'
@@ -29,22 +27,22 @@ export const SearchResult = ({ item, onPress }) => (
         style={styles.avatar}
       />
       <View style={styles.metadata}>
-        <Typography text={item.displayName} type={typos.subheading} />
+        <Typography text={item.displayName} type={Typography.types.subheading} />
         <View style={styles.row}>
           <Typography
-            type={typos.headline5}
+            type={Typography.types.headline5}
             text={`${item.posts.length} ${strings.profile.posts.toLowerCase()}`}
-            systemColor={systemColors.tertiary}
+            systemColor={Typography.colors.tertiary}
           />
           <Typography
-            type={typos.headline5}
+            type={Typography.types.headline5}
             text=" • "
-            systemColor={systemColors.tertiary}
+            systemColor={Typography.colors.tertiary}
           />
           <Typography
-            type={typos.headline5}
+            type={Typography.types.headline5}
             text={`${item.comments.length} ${strings.profile.comments.toLowerCase()}`}
-            systemColor={systemColors.tertiary}
+            systemColor={Typography.colors.tertiary}
           />
         </View>
       </View>
@@ -57,13 +55,13 @@ export const SearchHistoryHeader = ({ onClear }) => (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
       <Typography
-        type={typos.headline5}
+        type={Typography.types.headline5}
         style={styles.sectionHeader}
         text={strings.search.recent_searches}
       />
     </View>
     <Typography
-      type={typos.textButton}
+      type={Typography.types.textButton}
       style={[styles.sectionHeader, styles.sectionHeaderLink]}
       onPress={onClear}
       text={strings.search.clear_all}
@@ -109,7 +107,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
-      type={typos.headline5}
+      type={Typography.types.headline5}
       systemColor={colors.textTertiary}
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}

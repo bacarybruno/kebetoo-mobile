@@ -6,7 +6,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import colors, { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import * as api from '@app/shared/helpers/http'
 import { useAnalytics } from '@app/shared/hooks'
 

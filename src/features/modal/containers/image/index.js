@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
 import { colors, metrics } from '@app/theme'
-import HeaderBack from '@app/shared/components/header-back'
+import { HeaderBack } from '@app/shared/components'
 
 import styles from './styles'
 

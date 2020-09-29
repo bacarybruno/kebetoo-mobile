@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
 
-import Typography, { types } from '@app/shared/components/typography'
+import { Typography } from '@app/shared/components'
 import { colors } from '@app/theme'
 
 import styles from './styles'
@@ -20,7 +20,7 @@ const FullButton = ({
     onPress={onPress}
     {...rest}
   >
-    <Typography type={types.button} text={text.toUpperCase()} />
+    <Typography type={Typography.types.button} text={text.toUpperCase()} />
     <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
   </TouchableOpacity>
 )

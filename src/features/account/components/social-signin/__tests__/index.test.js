@@ -4,15 +4,15 @@ import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
-import Typography, { types } from '@app/shared/components/typography'
+import { strings } from '@app/config'
+import { Typography } from '@app/shared/components'
 
 import SocialSignin from '../index'
 
 const givenSocialSignin = setupTest(SocialSignin)({
   text: strings.auth.or_signin_with,
   onSignIn: jest.fn(),
-  children: <Typography text={strings.auth.dont_have_account} type={types.textButton} />,
+  children: <Typography text={strings.auth.dont_have_account} type={Typography.types.textButton} />,
   type: 'signIn',
 })
 

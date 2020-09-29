@@ -5,16 +5,15 @@ import {
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
+import ActionButton from 'react-native-action-button'
 
 import * as api from '@app/shared/helpers/http'
-import HeaderBack from '@app/shared/components/header-back'
-import Typography, { types, weights } from '@app/shared/components/typography'
+import {
+  HeaderBack, Typography, NoContent, Badge,
+} from '@app/shared/components'
 import colors, { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
-import NoContent from '@app/shared/components/no-content'
-import ActionButton from 'react-native-action-button'
-import Badge from '@app/shared/components/badge'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { usePosts, useUser } from '@app/shared/hooks'
 
 import styles from './styles'
@@ -103,8 +102,8 @@ const ManagePostsPage = ({ navigation }) => {
   const renderSectionHeader = useCallback(({ section }) => (
     <View style={styles.sectionHeader}>
       <Typography
-        type={types.subheading}
-        systemWeight={weights.semibold}
+        type={Typography.types.subheading}
+        systemWeight={Typography.weights.semibold}
         text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
       />
       <Badge text={section.data.length} />

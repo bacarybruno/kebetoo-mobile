@@ -4,17 +4,15 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
 import * as api from '@app/shared/helpers/http'
-import Typography, { types, weights } from '@app/shared/components/typography'
-import Badge from '@app/shared/components/badge'
+import {
+  Badge, Typography, HeaderBack, Pressable, TextAvatar,
+} from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { usePosts } from '@app/shared/hooks'
-import HeaderBack from '@app/shared/components/header-back'
 import { colors, metrics } from '@app/theme'
 import { TransitionPresets } from '@react-navigation/stack'
-import strings from '@app/config/strings'
-import Pressable from '@app/shared/components/buttons/pressable'
+import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
-import { TextAvatar } from '@app/shared/components/avatar'
 
 import { Stats } from '../index'
 import styles from './styles'
@@ -34,8 +32,8 @@ export const routeOptions = {
 export const SectionHeader = ({ section, dateFormat }) => (
   <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
     <Typography
-      type={types.subheading}
-      systemWeight={weights.semibold}
+      type={Typography.types.subheading}
+      systemWeight={Typography.weights.semibold}
       text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
     />
     <Badge text={section.data.length} />
@@ -134,13 +132,13 @@ const UserProfile = ({ navigation }) => {
         <View style={styles.profileInfoSection}>
           <Typography
             style={styles.textCenter}
-            type={types.headline2}
+            type={Typography.types.headline2}
             text={user.displayName}
-            systemWeight={weights.semibold}
+            systemWeight={Typography.weights.semibold}
           />
           <Typography
             style={styles.textCenter}
-            type={types.subheading}
+            type={Typography.types.subheading}
             text={strings.formatString(
               strings.user_profile.joined_in,
               dayjs(user.createdAt).format(strings.dates.format_month_year),

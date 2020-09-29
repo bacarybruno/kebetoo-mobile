@@ -6,17 +6,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Typography, {
-  types as typos, colors as systemColors, weights,
-} from '@app/shared/components/typography'
-import Pressable from '@app/shared/components/buttons/pressable'
+import { Pressable, Typography, Avatar } from '@app/shared/components'
 import { colors } from '@app/theme'
-import Avatar from '@app/shared/components/avatar'
 import routes from '@app/navigation/routes'
 import * as api from '@app/shared/helpers/http'
 import * as types from '@app/redux/types'
 import { userStatsSelector } from '@app/redux/selectors'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { useAnalytics, useUser } from '@app/shared/hooks'
 
 import styles, { imageSize } from './styles'
@@ -26,10 +22,10 @@ const routeOptions = { title: strings.tabs.profile }
 export const SectionTitle = React.memo(({ text }) => (
   <Typography
     text={text}
-    systemWeight={weights.bold}
+    systemWeight={Typography.weights.bold}
     style={styles.sectionTitle}
-    type={typos.headline5}
-    systemColor={systemColors.tertiary}
+    type={Typography.types.headline5}
+    systemColor={Typography.colors.tertiary}
   />
 ))
 
@@ -56,8 +52,12 @@ export const Summary = React.memo(({ photoURL, info, displayName }) => {
         <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
       </TouchableOpacity>
       <View style={styles.summaryText}>
-        <Typography type={typos.headline1} text={displayName} />
-        <Typography type={typos.subheading} systemColor={systemColors.secondary} text={info} />
+        <Typography type={Typography.types.headline1} text={displayName} />
+        <Typography
+          type={Typography.types.subheading}
+          systemColor={Typography.colors.secondary}
+          text={info}
+        />
       </View>
     </View>
   )
@@ -65,8 +65,17 @@ export const Summary = React.memo(({ photoURL, info, displayName }) => {
 
 export const Stat = React.memo(({ title, value }) => (
   <View style={styles.stat}>
-    <Typography type={typos.subheading} text={value} systemWeight={weights.bold} color="primary" />
-    <Typography type={typos.headline5} text={title} systemColor={systemColors.tertiary} />
+    <Typography
+      type={Typography.types.subheading}
+      text={value}
+      systemWeight={Typography.weights.bold}
+      color="primary"
+    />
+    <Typography
+      type={Typography.types.headline5}
+      text={title}
+      systemColor={Typography.colors.tertiary}
+    />
   </View>
 ))
 
@@ -79,8 +88,16 @@ export const IconButton = React.memo(({
         <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
       </View>
       <View>
-        <Typography type={typos.headline5} text={text} style={styles.iconButtonTitle} />
-        <Typography type={typos.headline5} text={message} systemColor={systemColors.tertiary} />
+        <Typography
+          type={Typography.types.headline5}
+          text={text}
+          style={styles.iconButtonTitle}
+        />
+        <Typography
+          type={Typography.types.headline5}
+          text={message}
+          systemColor={Typography.colors.tertiary}
+        />
       </View>
     </Pressable>
     {children}

@@ -7,7 +7,7 @@ import firebaseAnalytics from '@react-native-firebase/analytics'
 import firebaseCrashlytics from '@react-native-firebase/crashlytics'
 
 import { useUser } from '@app/shared/hooks'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 const Types = {
   POST: 'post',

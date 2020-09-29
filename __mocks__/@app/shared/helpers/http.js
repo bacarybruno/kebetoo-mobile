@@ -5,8 +5,6 @@ import comments from '@fixtures/comments'
 // eslint-disable-next-line radix
 const createRandomId = () => parseInt(Math.random() * 10000000).toString()
 
-export const BASE_URL = 'jest://localhost:1337'
-
 export const getPostsCount = jest.fn().mockResolvedValue(0)
 export const getPost = jest.fn().mockImplementation((postId) => Promise.resolve(
   postsList.find((post) => post.id === postId),

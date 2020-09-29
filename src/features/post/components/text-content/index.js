@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Pressable from '@app/shared/components/buttons/pressable'
-import Typography, { types } from '@app/shared/components/typography'
+import { Pressable, Typography } from '@app/shared/components'
 import { POST_TYPES } from '@app/features/post/containers/basic-post'
 
 import styles from './styles'
@@ -20,7 +19,7 @@ const TextContent = ({
       mode === 'comments' && isRepost && styles.commentRepost,
     ]}
   >
-    <Typography type={types.body} text={content} />
+    <Typography type={Typography.types.body} text={content} />
   </Pressable>
 )
 

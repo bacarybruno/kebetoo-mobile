@@ -4,14 +4,13 @@ import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 
-import Typography, { types, fontSizes, weights } from '@app/shared/components/typography'
-import Avatar from '@app/shared/components/avatar'
-import PostPlaceholder, { PlaceholderAvatar } from '@app/shared/components/placeholders/posts'
+import { Avatar, Typography, PostPlaceholder } from '@app/shared/components'
+import { PlaceholderAvatar } from '@app/shared/components/placeholders/posts'
 import Reactions from '@app/features/post/containers/reactions'
 import AudioContent from '@app/features/post/components/audio-content'
 import ImageContent from '@app/features/post/components/image-content'
 import routes from '@app/navigation/routes'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { colors, edgeInsets } from '@app/theme'
 import { useAnalytics, useUser } from '@app/shared/hooks'
 import TextContent from '@app/features/post/components/text-content'
@@ -46,8 +45,8 @@ export const getPostType = (post) => {
 
 const Edited = () => (
   <>
-    <Typography text=" • " type={types.caption} />
-    <Typography text={strings.general.edited} type={types.caption} />
+    <Typography text=" • " type={Typography.types.caption} />
+    <Typography text={strings.general.edited} type={Typography.types.caption} />
   </>
 )
 
@@ -60,7 +59,7 @@ const MoreButton = ({ onPress }) => (
   >
     <Ionicon
       name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
-      size={fontSizes.lg}
+      size={Typography.fontSizes.lg}
       color={colors.textTertiary}
     />
   </TouchableOpacity>
@@ -70,7 +69,7 @@ export const Header = ({
   post, isRepost, author, size, onOptions, Left,
 }) => {
   let avatarSize = size
-  if (isRepost) avatarSize = fontSizes.lg
+  if (isRepost) avatarSize = Typography.fontSizes.lg
 
   const { navigate } = useNavigation()
 
@@ -95,12 +94,15 @@ export const Header = ({
           <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
             <Typography
               text={author.displayName}
-              type={types.textButton}
-              systemWeight={weights.semibold}
+              type={Typography.types.textButton}
+              systemWeight={Typography.weights.semibold}
             />
             {!isRepost && (
               <View style={styles.smallMeta}>
-                <Typography text={dayjs(post.createdAt).fromNow()} type={types.caption} />
+                <Typography
+                  text={dayjs(post.createdAt).fromNow()}
+                  type={Typography.types.caption}
+                />
                 {isUpdated(post) && <Edited />}
               </View>
             )}

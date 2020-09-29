@@ -2512,7 +2512,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         <Image
           source={
             Object {
-              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+              "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
             }
           }
           style={
@@ -3418,7 +3418,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         <Image
           source={
             Object {
-              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+              "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
             }
           }
           style={
@@ -4073,7 +4073,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
         <Image
           source={
             Object {
-              "uri": "jest://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
+              "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
             }
           }
           style={

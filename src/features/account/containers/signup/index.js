@@ -5,16 +5,14 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import auth from '@react-native-firebase/auth'
 import * as yup from 'yup'
 
-import Typography, { types } from '@app/shared/components/typography'
-import TextInput from '@app/shared/components/inputs/text'
-import PasswordInput from '@app/shared/components/inputs/password'
-import FullButton from '@app/shared/components/buttons/full'
+import {
+  Typography, TextInput, PasswordInput, Logo, FullButton,
+} from '@app/shared/components'
 import routes from '@app/navigation/routes'
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { SET_DISPLAY_NAME } from '@app/redux/types'
 import { createUser } from '@app/shared/helpers/users'
-import Logo from '@app/shared/components/logo'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { metrics } from '@app/theme'
 import { useAnalytics } from '@app/shared/hooks'
 
@@ -164,9 +162,9 @@ const SignUp = ({ navigation }) => {
           disabled={isLoading}
         >
           <View style={styles.footerText}>
-            <Typography type={types.textButtonLight} text={strings.auth.have_account} />
-            <Typography type={types.textButtonLight} text=" " />
-            <Typography color="link" onPress={navigateToSignIn} type={types.textButton} text={strings.auth.signin} />
+            <Typography type={Typography.types.textButtonLight} text={strings.auth.have_account} />
+            <Typography type={Typography.types.textButtonLight} text=" " />
+            <Typography color="link" onPress={navigateToSignIn} type={Typography.types.textButton} text={strings.auth.signin} />
           </View>
         </SocialSignIn>
       </View>

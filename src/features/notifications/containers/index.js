@@ -3,7 +3,7 @@ import { View, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { useUser, useNotifications } from '@app/shared/hooks'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import routes from '@app/navigation/routes'

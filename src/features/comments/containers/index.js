@@ -9,11 +9,10 @@ import {
   Content, Header, getPostType, POST_TYPES,
 } from '@app/features/post/containers/basic-post'
 import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
-import HeaderBack from '@app/shared/components/header-back'
-import NoContent from '@app/shared/components/no-content'
+import { HeaderBack, NoContent } from '@app/shared/components'
 import * as api from '@app/shared/helpers/http'
 import routes from '@app/navigation/routes'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { colors } from '@app/theme'
 import { getSource } from '@app/features/post/components/image-content'
 

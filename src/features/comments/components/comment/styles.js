@@ -29,4 +29,10 @@ export default StyleSheet.create({
   avatarWrapper: {
     marginRight: 10,
   },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
 })

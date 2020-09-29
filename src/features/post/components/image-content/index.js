@@ -2,14 +2,13 @@ import React from 'react'
 import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Typography, { types } from '@app/shared/components/typography'
-import Pressable from '@app/shared/components/buttons/pressable'
-import { BASE_URL } from '@app/shared/helpers/http'
+import { Pressable, Typography } from '@app/shared/components'
 import { colors, edgeInsets } from '@app/theme'
+import { env } from '@app/config'
 
 import styles from './styles'
 
-export const getSource = (url) => ({ uri: `${BASE_URL}${url}` })
+export const getSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}` })
 
 export const DeleteIconButton = ({ onPress }) => (
   <TouchableOpacity
@@ -38,7 +37,7 @@ const ImageContent = ({
   content, url, style, mode, onPress,
 }) => (
   <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
-    <Typography type={types.body} text={content} style={styles.text} numberOfLines={mode === 'comments' ? 1 : undefined} />
+    <Typography type={Typography.types.body} text={content} style={styles.text} numberOfLines={mode === 'comments' ? 1 : undefined} />
     <ImageViewer
       onPress={onPress}
       style={styles.imageViewer}

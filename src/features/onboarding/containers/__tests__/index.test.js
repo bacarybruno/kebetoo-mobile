@@ -2,7 +2,7 @@ import { render, fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
 import Onboarding, { slideItems } from '../index'

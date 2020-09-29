@@ -71,7 +71,7 @@ exports[`renders ImageContent 1`] = `
       <Image
         source={
           Object {
-            "uri": "jest://localhost:1337/fake-image.png",
+            "uri": "http://localhost:1337/fake-image.png",
           }
         }
         style={
@@ -186,7 +186,7 @@ exports[`renders ImageContent on comments mode 1`] = `
       <Image
         source={
           Object {
-            "uri": "jest://localhost:1337/fake-image.png",
+            "uri": "http://localhost:1337/fake-image.png",
           }
         }
         style={

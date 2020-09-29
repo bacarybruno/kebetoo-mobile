@@ -4,15 +4,13 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import auth from '@react-native-firebase/auth'
 import * as yup from 'yup'
 
-import Typography, { types } from '@app/shared/components/typography'
-import TextInput from '@app/shared/components/inputs/text'
-import PasswordInput from '@app/shared/components/inputs/password'
-import FullButton from '@app/shared/components/buttons/full'
+import {
+  Logo, Typography, TextInput, PasswordInput, FullButton,
+} from '@app/shared/components'
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { metrics } from '@app/theme'
 import routes from '@app/navigation/routes'
-import Logo from '@app/shared/components/logo'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { createUser } from '@app/shared/helpers/users'
 import { useAnalytics } from '@app/shared/hooks'
 
@@ -130,7 +128,7 @@ const SignIn = ({ navigation }) => {
             <Typography
               color="link"
               style={styles.forgotPassword}
-              type={types.textButton}
+              type={Typography.types.textButton}
               text={strings.auth.forgot_password}
             />
           </View>
@@ -141,9 +139,17 @@ const SignIn = ({ navigation }) => {
           disabled={isLoading}
         >
           <View style={styles.footerText}>
-            <Typography type={types.textButtonLight} text={strings.auth.dont_have_account} />
-            <Typography type={types.textButtonLight} text=" " />
-            <Typography onPress={navigateToSignUp} color="link" type={types.textButton} text={strings.auth.signup} />
+            <Typography
+              type={Typography.types.textButtonLight}
+              text={strings.auth.dont_have_account}
+            />
+            <Typography type={Typography.types.textButtonLight} text=" " />
+            <Typography
+              onPress={navigateToSignUp}
+              color="link"
+              type={Typography.types.textButton}
+              text={strings.auth.signup}
+            />
           </View>
         </SocialSignIn>
       </View>

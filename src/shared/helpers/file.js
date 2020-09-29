@@ -3,6 +3,8 @@ export const mimeTypes = Object.freeze({
   jpg: 'image/jpeg',
   jpeg: 'image/jpeg',
   mp3: 'audio/mp3',
+  m4a: 'audio/mp4',
+  mp4: 'audio/mp4',
   aac: 'audio/x-aac',
   mpeg: 'audio/mpeg',
   opus: 'audio/ogg',

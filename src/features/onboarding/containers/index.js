@@ -4,14 +4,12 @@ import React, {
 import { View, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
 
-import Typography, { types } from '@app/shared/components/typography'
-import IconButton from '@app/shared/components/buttons/icon'
-import FullButton from '@app/shared/components/buttons/full'
+import { IconButton, FullButton, Typography } from '@app/shared/components'
 import OnbordingSlide from '@app/features/onboarding/components'
 import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
 import { useAnalytics } from '@app/shared/hooks'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 import styles from './styles'
 
@@ -31,7 +29,7 @@ export const slideItems = [{
 
 export const SkipButton = ({ onPress }) => (
   <TouchableOpacity style={styles.skipButton} onPress={onPress}>
-    <Typography type={types.textButtonLight} text={strings.general.skip} />
+    <Typography type={Typography.types.textButtonLight} text={strings.general.skip} />
   </TouchableOpacity>
 )
 

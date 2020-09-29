@@ -4,8 +4,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { colors, metrics, edgeInsets } from '@app/theme'
-import strings from '@app/config/strings'
-import TextInput from '@app/shared/components/inputs/text'
+import { strings } from '@app/config'
+import { TextInput } from '@app/shared/components'
 import Header from '@app/features/home/components/header'
 import { useUser, useDebounce, useAnalytics } from '@app/shared/hooks'
 import routes from '@app/navigation/routes'
