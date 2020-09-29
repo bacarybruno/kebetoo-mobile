@@ -1,12 +1,19 @@
 import { useCallback } from 'react'
 import { Platform } from 'react-native'
-import { request, PERMISSIONS, RESULTS } from 'react-native-permissions'
+import {
+  check, request, PERMISSIONS, RESULTS,
+} from 'react-native-permissions'
 import messaging from '@react-native-firebase/messaging'
 
 const usePermissions = () => {
   const handlePermissions = useCallback(async (name) => {
+    const checkPermissionResult = await check(name)
+    const isNew = checkPermissionResult !== RESULTS.GRANTED
     const requestPermissionResult = await request(name)
-    return requestPermissionResult === RESULTS.GRANTED
+    return {
+      success: requestPermissionResult === RESULTS.GRANTED,
+      isNew,
+    }
   }, [])
 
   const recordAudio = useCallback(async () => {

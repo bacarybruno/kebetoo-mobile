@@ -12,7 +12,7 @@ import { getMimeType } from '@app/shared/helpers/file'
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'PTT.mp3'
+export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 20000,
   sampleRate: 16000,
@@ -97,11 +97,10 @@ const useAudioRecorder = (
   }, [elapsedTime, getFileUri])
 
   const start = useCallback(async () => {
-    const hasPermissions = await permissions.recordAudio()
-    if (hasPermissions) {
-      setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).record())
-      setIsRecording(true)
-    }
+    const { isNew, success } = await permissions.recordAudio()
+    if (isNew || !success) return
+    setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).record())
+    setIsRecording(true)
   }, [permissions])
 
   const reset = useCallback(async () => {
