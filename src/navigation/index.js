@@ -11,9 +11,8 @@ import AsyncStorage from '@react-native-community/async-storage'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
-import TabBarAddButton from '@app/shared/components/buttons/tab-bar'
+import { TabBarAddButton, HeaderBack, Typography } from '@app/shared/components'
 import { colors, images } from '@app/theme'
-import HeaderBack from '@app/shared/components/header-back'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
@@ -27,11 +26,10 @@ import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
 import UserProfilePage from '@app/features/profile/containers/user'
 import * as api from '@app/shared/helpers/http'
-import Typography, { types, weights } from '@app/shared/components/typography'
 import { useUser, useNotifications, useAnalytics } from '@app/shared/hooks'
 
-import styles from './styles'
 import routes from './routes'
+import styles from './styles'
 
 enableScreens()
 
@@ -81,9 +79,9 @@ const defaultTabOptions = ({ route }) => ({
     }
     return (
       <Typography
-        type={types.caption}
+        type={Typography.types.caption}
         text={labels[route.name]}
-        systemWeight={focused ? weights.bold : undefined}
+        systemWeight={focused ? Typography.weights.bold : undefined}
         style={{ color }}
       />
     )

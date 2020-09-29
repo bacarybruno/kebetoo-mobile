@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
 
 import * as api from '@app/shared/helpers/http'
-import Typography, { types as typos } from '@app/shared/components/typography'
+import { Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { colors } from '@app/theme'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { usePosts } from '@app/shared/hooks'
 
 import styles from './styles'
@@ -22,13 +22,13 @@ export const SearchHistoryHeader = ({ onClear }) => (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
       <Typography
-        type={typos.headline5}
+        type={Typography.types.headline5}
         style={styles.sectionHeader}
         text={strings.search.recent_searches}
       />
     </View>
     <Typography
-      type={typos.textButton}
+      type={Typography.types.textButton}
       style={[styles.sectionHeader, styles.sectionHeaderLink]}
       onPress={onClear}
       text={strings.search.clear_all}
@@ -93,7 +93,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
-      type={typos.headline5}
+      type={Typography.types.headline5}
       systemColor={colors.textTertiary}
       style={styles.sectionHeader}
       text={strings.search.results}

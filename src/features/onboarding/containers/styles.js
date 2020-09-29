@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import { colors, metrics } from '@app/theme'
-import { fontSizes } from '@app/shared/components/typography'
+import { Typography } from '@app/shared/components'
 
 export const paginationBottom = metrics.marginVertical
 export const dotHeight = 8
@@ -51,7 +51,7 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
   },
   skipText: {
-    fontSize: fontSizes.md,
+    fontSize: Typography.fontSizes.md,
     color: colors.border,
   },
 })

@@ -3,16 +3,14 @@ import { View } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
-import Typography, { types } from '@app/shared/components/typography'
-import TextInput from '@app/shared/components/inputs/text'
-import HeaderBack from '@app/shared/components/header-back'
-import OutlinedButton from '@app/shared/components/buttons/outlined'
+import {
+  TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer,
+} from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
-import AudioPlayer from '@app/shared/components/audio-player'
 import { ImageViewer } from '@app/features/post/components/image-content'
 import * as api from '@app/shared/helpers/http'
 import { readableSeconds } from '@app/shared/helpers/dates'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'
 import { colors, metrics } from '@app/theme'
 import { useAudioRecorder, useUser } from '@app/shared/hooks'
@@ -59,7 +57,7 @@ export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => (
     />
     <Typography
       style={styles.textCount}
-      type={types.headline6}
+      type={Typography.types.headline6}
       text={strings.formatString(
         strings.create_post.characters,
         TEXT_MAX_LENGHT - text.length,
@@ -140,7 +138,7 @@ const CreatePostPage = ({ navigation }) => {
       headerRight: () => (
         <OutlinedButton
           text={headerMessages.post.toUpperCase()}
-          disabled={text.length === 0}
+          disabled={text.length === 0 || isLoading}
           onPress={onHeaderSavePress}
           style={styles.headerSaveButton}
           loading={isLoading}

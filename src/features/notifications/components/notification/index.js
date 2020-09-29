@@ -1,10 +1,8 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import Pressable from '@app/shared/components/buttons/pressable'
-import Avatar from '@app/shared/components/avatar'
+import { Pressable, Avatar, Typography } from '@app/shared/components'
 import { colors } from '@app/theme'
-import Typography, { types, weights, colors as systemColors } from '@app/shared/components/typography'
 
 import styles from './styles'
 
@@ -13,15 +11,19 @@ export const Dot = () => <View style={styles.dot} />
 export const Title = ({ name, message, showDot }) => (
   <View style={styles.headerTitleWrapper}>
     <Text style={styles.headerTitle} numberOfLines={2}>
-      <Typography text={name} type={types.headline4} systemWeight={weights.semibold} />
-      <Typography text={` ${message}`} type={types.headline4} />
+      <Typography
+        text={name}
+        type={Typography.types.headline4}
+        systemWeight={Typography.weights.semibold}
+      />
+      <Typography text={` ${message}`} type={Typography.types.headline4} />
     </Text>
     {showDot && <Dot />}
   </View>
 )
 
 export const Message = ({ text }) => (
-  <Typography numberOfLines={1} type={types.body} text={text} />
+  <Typography numberOfLines={1} type={Typography.types.body} text={text} />
 )
 
 const Notification = ({
@@ -40,8 +42,8 @@ const Notification = ({
       <View style={styles.captionWrapper}>
         <Typography
           text={caption}
-          type={types.body}
-          color={systemColors.tertiary}
+          type={Typography.types.body}
+          color={Typography.colors.tertiary}
           style={styles.notificationCaption}
         />
       </View>

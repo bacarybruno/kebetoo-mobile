@@ -1,5 +1,5 @@
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 import OnboardingSlide from '../index'
 

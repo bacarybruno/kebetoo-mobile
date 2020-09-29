@@ -3,7 +3,7 @@ import auth from '@react-native-firebase/auth'
 import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
 import SignUp, { fieldNames } from '../index'

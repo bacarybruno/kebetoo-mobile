@@ -2,10 +2,9 @@ import React, { useEffect, useState, useMemo } from 'react'
 import { View } from 'react-native'
 
 import BaseReactions from '@app/features/post/containers/reactions'
-import Typography, { types } from '@app/shared/components/typography'
+import { Typography, Avatar } from '@app/shared/components'
 import { usePosts } from '@app/shared/hooks'
-import strings from '@app/config/strings'
-import Avatar from '@app/shared/components/avatar'
+import { strings } from '@app/config'
 
 import DraggableIndicator from '../draggable-indicator'
 import styles, { reactionsHeight, summaryHeight } from './styles'
@@ -66,7 +65,7 @@ const Summary = React.memo(({ comments }) => {
         )}
       </View>
       <Typography
-        type={types.headline5}
+        type={Typography.types.headline5}
         text={strings.formatString(
           strings.comments.people_reacted, reactors.length,
         )}

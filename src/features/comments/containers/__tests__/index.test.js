@@ -1,7 +1,7 @@
 import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 
 import Comments from '../index'
 

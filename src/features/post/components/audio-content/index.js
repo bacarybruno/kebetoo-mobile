@@ -1,20 +1,19 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import Typography, { types } from '@app/shared/components/typography'
-import { BASE_URL } from '@app/shared/helpers/http'
-import AudioPlayer from '@app/shared/components/audio-player'
+import { AudioPlayer, Typography } from '@app/shared/components'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
+import { env } from '@app/config'
 
 import styles from './styles'
 
-export const getSource = (url) => `${BASE_URL}${url}`
+export const getSource = (url) => (url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`)
 
 const AudioContent = ({
   content, audioName, audioUrl, style, onPress, mode,
 }) => (
   <View style={style}>
-    <Typography type={types.body} text={content} style={styles.text} />
+    <Typography type={Typography.types.body} text={content} style={styles.text} />
     <AudioPlayer
       onPress={onPress}
       source={getSource(audioUrl)}

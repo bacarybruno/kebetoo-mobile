@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import authors from '@fixtures/authors'
 import * as api from '@app/shared/helpers/http'
 import BasicPost from '@app/features/post/containers/basic-post'

@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import { View } from 'react-native'
 
-import EmojiTextInput from '@app/shared/components/inputs/emoji'
-import AudioPlayer from '@app/shared/components/audio-player'
-import strings from '@app/config/strings'
+import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
+import { strings } from '@app/config'
 
 import { SendButton, RecordButton } from '../send-button'
 import styles from './styles'

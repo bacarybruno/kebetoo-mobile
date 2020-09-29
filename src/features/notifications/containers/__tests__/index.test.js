@@ -5,7 +5,7 @@ import routes from '@app/navigation/routes'
 
 import setupTest from '@app/config/jest-setup'
 import notifications from '@fixtures/notifications'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 
 import NotificationsPage from '../index'

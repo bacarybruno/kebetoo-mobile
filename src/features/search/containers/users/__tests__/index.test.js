@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import setupTest from '@app/config/jest-setup'
-import strings from '@app/config/strings'
+import { strings } from '@app/config'
 import * as api from '@app/shared/helpers/http'
 import NoResult from '@app/features/search/components/no-result'
 import HistoryItem from '@app/features/search/components/history-item'

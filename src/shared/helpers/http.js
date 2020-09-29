@@ -1,12 +1,13 @@
 /* eslint-disable no-undef */
 import RNFetchBlob from 'rn-fetch-blob'
 
-export const BASE_URL = 'http://localhost:1337'
+import { env } from '@app/config'
+
 const ITEMS_PER_PAGE = 20
 
 const parseJSON = (res) => res.json()
 
-const getApiUrl = (path) => `${BASE_URL}/${path}`
+const getApiUrl = (path) => `${env.apiBaseUrl}/${path}`
 
 const jsonHeaders = {
   Accept: 'application/json',

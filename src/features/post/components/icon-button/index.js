@@ -3,7 +3,7 @@ import { TouchableOpacity, Animated, View } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { colors, edgeInsets, metrics } from '@app/theme'
-import Badge from '@app/shared/components/badge'
+import { Badge } from '@app/shared/components'
 
 import styles, { getDimensions, getIconSize } from './styles'
 

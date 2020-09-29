@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { colors, edgeInsets } from '@app/theme'
-import Typography, { types, weights } from '@app/shared/components/typography'
+import { Typography } from '@app/shared/components'
 
 import styles from './styles'
 
@@ -17,7 +17,12 @@ const Reaction = ({
     {...otherProps}
   >
     <Kebeticon color={colors[color]} style={styles.icon} size={18} name={iconName} />
-    <Typography type={types.headline6} systemWeight={weights.bold} text={count} color={color} />
+    <Typography
+      type={Typography.types.headline6}
+      systemWeight={Typography.weights.bold}
+      text={count}
+      color={color}
+    />
   </TouchableOpacity>
 )
 

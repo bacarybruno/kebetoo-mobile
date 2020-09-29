@@ -183,4 +183,9 @@ const Typography = ({
   }
 }
 
+Typography.types = types
+Typography.weights = weights
+Typography.colors = colors
+Typography.fontSizes = fontSizes
+
 export default Typography
