@@ -17,7 +17,7 @@ const useUser = () => {
 
   useEffect(() => {
     const getUserInfos = async () => {
-      if (authenticatedUser && !profile.uid) {
+      if (authenticatedUser && !profile.email) {
         const userId = await getUserId()
         const { email, displayName, photoURL } = authenticatedUser
         const userInfos = {
@@ -37,7 +37,7 @@ const useUser = () => {
 
     getUserInfos()
     refreshUserId()
-  }, [authenticatedUser, profile.uid, dispatch])
+  }, [authenticatedUser, profile.uid, profile.email, dispatch])
 
 
   useEffect(() => {
@@ -48,8 +48,8 @@ const useUser = () => {
 
   const signOut = useCallback(async () => {
     await api.updateAuthor(profile.uid, { notificationToken: null })
-    dispatch({ type: types.LOGOUT })
     await auth().signOut()
+    dispatch({ type: types.LOGOUT })
   }, [profile.uid, dispatch])
 
   return {
