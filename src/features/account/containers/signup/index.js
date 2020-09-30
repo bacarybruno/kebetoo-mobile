@@ -10,7 +10,7 @@ import {
 } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 import SocialSignIn from '@app/features/account/components/social-signin'
-import { SET_DISPLAY_NAME } from '@app/redux/types'
+import { SET_USER_PROFILE } from '@app/redux/types'
 import { createUser } from '@app/shared/helpers/users'
 import { strings } from '@app/config'
 import { metrics } from '@app/theme'
@@ -84,7 +84,7 @@ const SignUp = ({ navigation }) => {
       setIsLoading(true)
       await schema.validate(infos)
       const displayName = infos.fullName
-      dispatch({ type: SET_DISPLAY_NAME, payload: displayName })
+      dispatch({ type: SET_USER_PROFILE, payload: { displayName } })
 
       const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
       trackSignUp('password')

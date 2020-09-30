@@ -7,7 +7,7 @@ export const ADD_EMOJI_HISTORY = 'app:add_emoji_history'
 export const ADD_EMOJI_HISTORY_ERROR = 'app:add_emoji_history_error'
 
 // -- user reducer --
-export const SET_DISPLAY_NAME = 'user:set_display_name'
+export const SET_USER_PROFILE = 'user:set_user_profile'
 export const SET_USER_STATS = 'user:set_user_stats'
 export const ADD_POST_HISTORY = 'user:add_post_history'
 export const REMOVE_POST_HISTORY = 'user:remove_post_history'

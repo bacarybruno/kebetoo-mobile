@@ -2,6 +2,7 @@ import { fireEvent } from 'react-native-testing-library'
 import { useNavigation } from '@react-navigation/native'
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
+import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import routes from '@app/navigation/routes'
@@ -13,7 +14,7 @@ import BasicPost, { Content } from '../index'
 const mockStore = configureStore()
 const store = mockStore({
   userReducer: {
-    displayName: null,
+    profile: auth().currentUser,
   },
 })
 

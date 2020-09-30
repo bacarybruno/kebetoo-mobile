@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
@@ -41,6 +42,7 @@ const store = mockStore({
     searchHistory: {
       posts: ['first post', 'covid19'],
     },
+    profile: auth().currentUser,
   },
 })
 
@@ -54,7 +56,7 @@ const SearchPostsNavigation = (ownProps) => (
   </NavigationContainer>
 )
 
-api.searchPosts = jest.fn().mockImplementation(async (query) => {
+api.searchPosts.mockImplementation(async (query) => {
   const results = posts.filter((post) => (
     post.content?.toLowerCase().includes(query.toLowerCase())
   ))

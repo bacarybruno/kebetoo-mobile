@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import configureStore from 'redux-mock-store'
 import auth from '@react-native-firebase/auth'
 import { fireEvent, act } from 'react-native-testing-library'
 
@@ -10,22 +9,7 @@ import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,
 } from '../index'
 
-const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: [],
-    authors: [],
-  },
-  notificationsReducer: {
-    notifications: [],
-  },
-  userReducer: {},
-})
-
-const givenAppNavigation = setupTest(AppNavigation)({
-  store,
-})
-
+const givenAppNavigation = setupTest(AppNavigation)()
 
 describe('tabs', () => {
   const TabNavigation = () => (
@@ -34,9 +18,7 @@ describe('tabs', () => {
     </NavigationContainer>
   )
 
-  const givenTabPage = setupTest(TabNavigation)({
-    store,
-  })
+  const givenTabPage = setupTest(TabNavigation)()
 
   it('renders TabNavigation', () => {
     const { wrapper } = givenTabPage()

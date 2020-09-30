@@ -6,19 +6,27 @@ const initialState = {
     reactions: 0,
     comments: 0,
   },
-  displayName: '',
   searchHistory: {
     posts: [],
     users: [],
+  },
+  profile: {
+    uid: null,
+    email: null,
+    displayName: ' ',
+    photoURL: null,
   },
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_DISPLAY_NAME:
+    case types.SET_USER_PROFILE:
       return {
         ...state,
-        displayName: action.payload,
+        profile: {
+          ...state.profile,
+          ...action.payload,
+        },
       }
     case types.SET_USER_STATS:
       return {

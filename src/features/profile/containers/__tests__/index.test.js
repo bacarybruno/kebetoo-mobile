@@ -1,8 +1,8 @@
+import { Share } from 'react-native'
 import configureStore from 'redux-mock-store'
 import { act, fireEvent } from 'react-native-testing-library'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
-import { Share } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
@@ -19,6 +19,7 @@ const store = mockStore({
       comments: 100,
       reactions: 100,
     },
+    profile: auth().currentUser,
   },
 })
 
@@ -55,9 +56,9 @@ describe('displays the right stats for', () => {
   }]
   statsItems.forEach((item) => {
     it(`[${item.name}]: when request is resolved`, async () => {
-      api.getPostsCount = jest.fn().mockResolvedValue(item.resolvedValue)
-      api.getCommentsCount = jest.fn().mockResolvedValue(item.resolvedValue)
-      api.getReactionsCount = jest.fn().mockResolvedValue(item.resolvedValue)
+      api.getPostsCount.mockResolvedValue(item.resolvedValue)
+      api.getCommentsCount.mockResolvedValue(item.resolvedValue)
+      api.getReactionsCount.mockResolvedValue(item.resolvedValue)
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()
@@ -66,9 +67,9 @@ describe('displays the right stats for', () => {
       expect(wrapper.root.findByProps({ title: item.title }).props.value).toBe(item.resolvedValue)
     })
     it(`[${item.name}]: when request fails`, async () => {
-      api.getPostsCount = jest.fn().mockRejectedValue()
-      api.getCommentsCount = jest.fn().mockRejectedValue()
-      api.getReactionsCount = jest.fn().mockRejectedValue()
+      api.getPostsCount.mockRejectedValue()
+      api.getCommentsCount.mockRejectedValue()
+      api.getReactionsCount.mockRejectedValue()
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()
