@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { View, TouchableOpacity, Image } from 'react-native'
 
 import HrLine from '@app/features/account/components/hr-line'
-import { googleLogin, facebookLogin } from '@app/shared/helpers'
+import { googleLogin, facebookLogin } from '@app/shared/services'
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { colors, images } from '@app/theme'
 import { useAnalytics } from '@app/shared/hooks'

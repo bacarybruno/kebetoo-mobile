@@ -8,7 +8,7 @@ import { useUser, useNotifications } from '@app/shared/hooks'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import routes from '@app/navigation/routes'
 import Header from '@app/features/home/components/header'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 
 import Notification from '../components/notification'
 import Heading from '../components/heading'

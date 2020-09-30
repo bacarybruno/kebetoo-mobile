@@ -3,7 +3,7 @@ import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'

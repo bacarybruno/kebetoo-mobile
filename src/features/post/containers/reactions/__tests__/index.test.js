@@ -6,7 +6,7 @@ import setupTest from '@app/config/jest-setup'
 import posts from '@fixtures/posts'
 import authors from '@fixtures/authors'
 import routes from '@app/navigation/routes'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 
 import Reactions from '../index'
 

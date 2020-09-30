@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 
 export const setUserId = async (uid) => AsyncStorage.setItem('uid', uid)
 

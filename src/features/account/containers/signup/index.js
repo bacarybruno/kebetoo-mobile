@@ -11,7 +11,7 @@ import {
 import routes from '@app/navigation/routes'
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { SET_USER_PROFILE } from '@app/redux/types'
-import { createUser } from '@app/shared/helpers/users'
+import { createUser } from '@app/shared/services/users'
 import { strings } from '@app/config'
 import { metrics } from '@app/theme'
 import { useAnalytics } from '@app/shared/hooks'

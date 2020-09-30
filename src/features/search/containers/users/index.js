@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { Typography, Avatar, Pressable } from '@app/shared/components'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'

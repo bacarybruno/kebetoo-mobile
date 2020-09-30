@@ -11,7 +11,7 @@ import SocialSignIn from '@app/features/account/components/social-signin'
 import { metrics } from '@app/theme'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import { createUser } from '@app/shared/helpers/users'
+import { createUser } from '@app/shared/services/users'
 import { useAnalytics } from '@app/shared/hooks'
 
 import styles from './styles'

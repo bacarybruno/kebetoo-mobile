@@ -10,7 +10,7 @@ import {
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
 import { colors, edgeInsets } from '@app/theme'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
 import { env } from '@app/config'

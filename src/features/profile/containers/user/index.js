@@ -3,7 +3,7 @@ import { View, SectionList, Image } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import {
   Badge, Typography, HeaderBack, Pressable, TextAvatar,
 } from '@app/shared/components'

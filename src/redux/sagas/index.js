@@ -2,7 +2,7 @@ import {
   takeLeading, call, put, all, select, debounce,
 } from 'redux-saga/effects'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import helpers from '@app/shared/components/emoji-selector/helpers'
 
 import * as types from '../types'

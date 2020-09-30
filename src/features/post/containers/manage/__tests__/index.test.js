@@ -3,7 +3,7 @@ import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import ActionButton from 'react-native-action-button'
 import routes from '@app/navigation/routes'
 import audioPost from '@fixtures/posts/audio'

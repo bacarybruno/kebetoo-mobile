@@ -1,7 +1,7 @@
-import { GoogleSignin, statusCodes } from '@react-native-community/google-signin'
+import { GoogleSignin } from '@react-native-community/google-signin'
 import auth from '@react-native-firebase/auth'
 
-import { createUser } from './users'
+import { createUser } from '@app/shared/services/users'
 
 const googleLogin = async () => {
   const result = { error: null, data: null }
