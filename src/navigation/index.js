@@ -25,7 +25,7 @@ import CommentsPage from '@app/features/comments/containers'
 import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
 import UserProfilePage from '@app/features/profile/containers/user'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { useUser, useNotifications, useAnalytics } from '@app/shared/hooks'
 
 import routes from './routes'

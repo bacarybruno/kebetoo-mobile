@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { userProfileSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
 
-import { getUserId, getUser, setUserId } from '../helpers/users'
+import { getUserId, getUser, setUserId } from '../services/users'
 
 const useUser = () => {
   const authenticatedUser = auth().currentUser

@@ -6,7 +6,7 @@ import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import routes from '@app/navigation/routes'
 
 import Profile from '../index'

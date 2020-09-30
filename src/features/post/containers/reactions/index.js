@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import useReactions from '@app/features/post/hooks/reactions'
 import Reaction from '@app/features/post/components/reaction'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { strings } from '@app/config'
 
 import styles from './styles'

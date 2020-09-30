@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import ActionButton from 'react-native-action-button'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import {
   HeaderBack, Typography, NoContent, Badge,
 } from '@app/shared/components'

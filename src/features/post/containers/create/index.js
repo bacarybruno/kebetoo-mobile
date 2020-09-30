@@ -8,7 +8,7 @@ import {
 } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'

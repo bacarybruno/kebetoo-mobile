@@ -3,7 +3,7 @@ import ImagePicker from 'react-native-image-picker'
 import dayjs from 'dayjs'
 import RNFetchBlob from 'rn-fetch-blob'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { getMimeType } from '@app/shared/helpers/file'
 
 const PICTURE_CONFIG = Object.freeze({

@@ -3,7 +3,7 @@ import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import setupTest from '@app/config/jest-setup'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import authors from '@fixtures/authors'
 import { TextAvatar } from '@app/shared/components'
 import routes from '@app/navigation/routes'

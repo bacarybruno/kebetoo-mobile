@@ -10,7 +10,7 @@ import {
 } from '@app/features/post/containers/basic-post'
 import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
 import { HeaderBack, NoContent } from '@app/shared/components'
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { colors } from '@app/theme'

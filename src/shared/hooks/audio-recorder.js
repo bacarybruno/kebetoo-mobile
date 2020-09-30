@@ -6,7 +6,7 @@ import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 
-import * as api from '@app/shared/helpers/http'
+import * as api from '@app/shared/services/http'
 import { usePermissions } from '@app/shared/hooks'
 import { getMimeType } from '@app/shared/helpers/file'
 
