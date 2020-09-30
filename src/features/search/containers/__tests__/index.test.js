@@ -1,14 +1,15 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
+import { ActivityIndicator } from 'react-native'
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
+import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
 import SearchPosts from '../posts'
-import { ActivityIndicator } from 'react-native'
 
 const SearchPageNavigation = () => (
   <NavigationContainer>
@@ -23,6 +24,7 @@ const store = mockStore({
       posts: ['first post', 'covid19'],
       users: ['john', 'doe'],
     },
+    profile: auth().currentUser,
   },
 })
 

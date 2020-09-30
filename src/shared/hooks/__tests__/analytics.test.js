@@ -11,12 +11,12 @@ beforeEach(jest.clearAllMocks)
 
 const givenAnalytics = () => {
   const rendered = setupHook(useAnalytics, analyticsMock, crashlyticsMock)
-  return { analytics: rendered.result.current, waitForNextUpdate: rendered.waitForNextUpdate }
+  return { analytics: rendered.result.current, rerender: rendered.rerender }
 }
 
 it('sets attributes', async () => {
-  const { waitForNextUpdate } = givenAnalytics()
-  await waitForNextUpdate()
+  const { rerender } = givenAnalytics()
+  await rerender()
   await expect(analyticsMock.setUserProperties).toBeCalledTimes(1)
   await expect(crashlyticsMock.setAttributes).toBeCalledTimes(1)
 })
@@ -39,7 +39,7 @@ it('is defined', () => {
   expect(analytics.trackReceiveIntent).toBeDefined()
 })
 
-it('reports errorasync ', () => {
+it('reports error ', () => {
   const { analytics } = givenAnalytics()
   const error = new Error('Something went wrong')
   analytics.reportError(error)

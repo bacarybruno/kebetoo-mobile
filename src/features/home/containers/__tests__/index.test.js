@@ -1,6 +1,7 @@
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
+import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import { postsList } from '@fixtures/posts'
@@ -12,7 +13,9 @@ const store = mockStore({
   postsReducer: {
     posts: postsList,
   },
-  userReducer: {},
+  userReducer: {
+    profile: auth().currentUser,
+  },
 })
 
 const givenHomePage = setupTest(HomePage)({

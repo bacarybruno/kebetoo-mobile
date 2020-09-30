@@ -7,6 +7,7 @@ import MockDate from 'mockdate'
 import configureStore from 'redux-mock-store'
 import 'react-native-gesture-handler/jestSetup'
 import { renderHook } from '@testing-library/react-hooks'
+import auth from '@react-native-firebase/auth'
 
 // wix/react-native-keyboard-input
 NativeModules.KeyboardTrackingViewTempManager = {
@@ -18,6 +19,18 @@ NativeModules.KeyboardTrackingViewTempManager = {
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
 
+const mockStoreState = {
+  postsReducer: {
+    posts: [],
+    authors: [],
+  },
+  notificationsReducer: {
+    notifications: [],
+  },
+  userReducer: {
+    profile: auth().currentUser,
+  },
+}
 // helper to setup unit tests
 /* eslint-disable comma-dangle */
 const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
@@ -30,7 +43,7 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
     }
     const mockStore = configureStore()
     const Component = (
-      <Provider store={store || mockStore()}>
+      <Provider store={store || mockStore(mockStoreState)}>
         <WrappedComponent {...propsWithArgs} />
       </Provider>
     )
@@ -41,7 +54,7 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
 
 export const setupHook = (useHook, ...props) => {
   const mockStore = configureStore()
-  const store = mockStore()
+  const store = mockStore(mockStoreState)
   const wrapper = ({ children }) => (
     <Provider store={store}>
       {children}

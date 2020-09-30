@@ -1,46 +1,44 @@
 import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import * as api from '@app/shared/helpers/http'
+import { userProfileSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
 
 import { getUserId, getUser, setUserId } from '../helpers/users'
 
-// TODO: find out why this hook is looping
 const useUser = () => {
   const authenticatedUser = auth().currentUser
   const [isLoggedIn, setIsLoggedIn] = useState(authenticatedUser !== null)
 
-  const [profile, setProfile] = useState({
-    uid: null, displayName: ' ', photoURL: null,
-  })
-
+  const profile = useSelector(userProfileSelector)
   const dispatch = useDispatch()
 
   useEffect(() => {
     const getUserInfos = async () => {
-      if (authenticatedUser) {
-        const { email, displayName, photoURL } = authenticatedUser
+      if (authenticatedUser && !profile.uid) {
         const userId = await getUserId()
-        setProfile({
+        const { email, displayName, photoURL } = authenticatedUser
+        const userInfos = {
           uid: userId, displayName, email, photoURL,
-        })
+        }
+        dispatch({ type: types.SET_USER_PROFILE, payload: userInfos })
       }
     }
-    getUserInfos()
-  }, [authenticatedUser])
 
-  useEffect(() => {
     const refreshUserId = async () => {
       if (!profile.uid && authenticatedUser?.uid) {
-        const user = await getUser(authenticatedUser.uid)
-        await setUserId(user.id)
-        setProfile((profileState) => ({ ...profileState, uid: user.id }))
+        const { id: uid } = await getUser(authenticatedUser.uid)
+        await setUserId(uid)
+        dispatch({ type: types.SET_USER_PROFILE, payload: { uid } })
       }
     }
+
+    getUserInfos()
     refreshUserId()
-  }, [authenticatedUser, profile.uid])
+  }, [authenticatedUser, profile.uid, dispatch])
+
 
   useEffect(() => {
     const onAuthStateChanged = (user) => setIsLoggedIn(!!user)

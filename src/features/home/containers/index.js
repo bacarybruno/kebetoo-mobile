@@ -10,7 +10,7 @@ import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 import RNFetchBlob from 'rn-fetch-blob'
 
 import * as types from '@app/redux/types'
-import { postsSelector, displayNameSelector } from '@app/redux/selectors'
+import { postsSelector } from '@app/redux/selectors'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file'
 import { useAnalytics, usePosts, useUser } from '@app/shared/hooks'
@@ -38,7 +38,6 @@ const HomePage = () => {
   const { trackReceiveIntent, reportError } = useAnalytics()
 
   const { profile } = useUser()
-  const savedDisplayName = useSelector(displayNameSelector)
   const { getRepostAuthors } = usePosts()
 
   const { navigate } = useNavigation()
@@ -123,11 +122,11 @@ const HomePage = () => {
 
   const renderListHeader = useCallback(() => (
     <Header
-      displayName={savedDisplayName || profile.displayName}
+      displayName={profile.displayName}
       imageSrc={profile.photoURL}
       style={styles.header}
     />
-  ), [profile, savedDisplayName])
+  ), [profile])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

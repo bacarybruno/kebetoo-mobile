@@ -2956,7 +2956,7 @@ exports[`renders Comments in loading state 1`] = `
             />
           </View>
           <Memo(Reactions)
-            author={null}
+            author="1"
             comments={
               Array [
                 Object {
@@ -3745,7 +3745,7 @@ exports[`renders Comments in loading state 1`] = `
                       allowFontScaling={false}
                       style={
                         Object {
-                          "color": "rgba(0,0,0,0.54)",
+                          "color": "rgba(0, 122, 255, 255)",
                           "fontFamily": "icomoon",
                           "fontSize": 18,
                           "fontStyle": "normal",
@@ -3753,7 +3753,7 @@ exports[`renders Comments in loading state 1`] = `
                           "marginRight": 4,
                         }
                       }
-                      text="kebeticon-like"
+                      text="kebeticon-like-fill"
                     />
                     <Text
                       style={
@@ -3772,7 +3772,7 @@ exports[`renders Comments in loading state 1`] = `
                           },
                           Array [
                             Object {
-                              "color": "rgba(0,0,0,0.54)",
+                              "color": "rgba(0, 122, 255, 255)",
                             },
                             Object {
                               "backgroundColor": "transparent",

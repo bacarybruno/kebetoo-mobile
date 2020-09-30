@@ -386,7 +386,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               ]
                                             }
                                           >
-                                            <View
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                                                }
+                                              }
                                               style={
                                                 Array [
                                                   Object {
@@ -397,27 +402,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                     "justifyContent": "center",
                                                   },
                                                   undefined,
-                                                  undefined,
-                                                  Object {
-                                                    "backgroundColor": "#a1887f",
-                                                  },
                                                 ]
                                               }
-                                            >
-                                              <Text
-                                                style={
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "color": "rgba(255, 255, 255, 255)",
-                                                    "fontFamily": "System",
-                                                    "fontSize": undefined,
-                                                    "fontWeight": "600",
-                                                  }
-                                                }
-                                              >
-                                                 
-                                              </Text>
-                                            </View>
+                                              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                                            />
                                           </View>
                                         </View>
                                       </View>
@@ -585,7 +573,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                           ]
                                         }
                                       >
-                                        <View
+                                        <Image
+                                          source={
+                                            Object {
+                                              "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                                            }
+                                          }
                                           style={
                                             Array [
                                               Object {
@@ -596,27 +589,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                 "justifyContent": "center",
                                               },
                                               undefined,
-                                              undefined,
-                                              Object {
-                                                "backgroundColor": "#a1887f",
-                                              },
                                             ]
                                           }
-                                        >
-                                          <Text
-                                            style={
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "color": "rgba(255, 255, 255, 255)",
-                                                "fontFamily": "System",
-                                                "fontSize": undefined,
-                                                "fontWeight": "600",
-                                              }
-                                            }
-                                          >
-                                             
-                                          </Text>
-                                        </View>
+                                          testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                                        />
                                       </View>
                                     </View>
                                   </View>
@@ -3949,7 +3925,12 @@ exports[`tabs renders TabNavigation 1`] = `
                             ]
                           }
                         >
-                          <View
+                          <Image
+                            source={
+                              Object {
+                                "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                              }
+                            }
                             style={
                               Array [
                                 Object {
@@ -3960,27 +3941,10 @@ exports[`tabs renders TabNavigation 1`] = `
                                   "justifyContent": "center",
                                 },
                                 undefined,
-                                undefined,
-                                Object {
-                                  "backgroundColor": "#a1887f",
-                                },
                               ]
                             }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "rgba(255, 255, 255, 255)",
-                                  "fontFamily": "System",
-                                  "fontSize": undefined,
-                                  "fontWeight": "600",
-                                }
-                              }
-                            >
-                               
-                            </Text>
-                          </View>
+                            testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                          />
                         </View>
                       </View>
                     </View>

@@ -2,6 +2,7 @@ import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import { useNavigation } from '@react-navigation/native'
 import routes from '@app/navigation/routes'
+import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import notifications from '@fixtures/notifications'
@@ -15,6 +16,9 @@ const mockStore = configureStore()
 const store = mockStore({
   notificationsReducer: {
     notifications,
+  },
+  userReducer: {
+    profile: auth().currentUser,
   },
 })
 
@@ -56,6 +60,9 @@ it('renders only recent notifications if no past one', async () => {
     notificationsReducer: {
       notifications: testNotifications,
     },
+    userReducer: {
+      profile: auth().currentUser,
+    },
   })
 
   let wrapper
@@ -82,6 +89,9 @@ it('renders only past notifications if no recent one', async () => {
     notificationsReducer: {
       notifications: testNotifications,
     },
+    userReducer: {
+      profile: auth().currentUser,
+    },
   })
 
   let wrapper
@@ -107,6 +117,9 @@ describe('opening notifications', () => {
       const testStore = mockStore({
         notificationsReducer: {
           notifications: [message],
+        },
+        userReducer: {
+          profile: auth().currentUser,
         },
       })
 
