@@ -5,6 +5,7 @@ import { strings } from '@app/config'
 import { act } from 'react-test-renderer'
 
 import CommentInput from '../index'
+import ReplyInfo from '../../reply-info'
 
 const givenCommentInput = setupTest(CommentInput)({
   onChange: jest.fn(),
@@ -63,6 +64,19 @@ it('renders AudioPlayer and SendButton if it has recording', () => {
 })
 
 it('renders SendButton if it has text', () => {
+  const { wrapper } = givenCommentInput({
+    value: 'New comment',
+    reply: {
+      content: 'A comment reply',
+      author: {
+        displayName: 'Bruno',
+      },
+    },
+  })
+  expect(wrapper.root.findAllByType(ReplyInfo).length).toBe(1)
+})
+
+it('renders Reply Infos if it has data', () => {
   const { wrapper } = givenCommentInput({
     value: 'New comment',
   })

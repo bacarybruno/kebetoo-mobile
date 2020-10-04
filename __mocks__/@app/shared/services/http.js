@@ -40,6 +40,7 @@ export const getUserPosts = jest.fn().mockImplementation((userId) => Promise.res
 export const getComments = jest.fn().mockImplementation((postId) => Promise.resolve(
   comments.filter((comment) => comment.post.id === postId),
 ))
+export const getReplies = jest.fn().mockResolvedValue([])
 export const createReaction = jest.fn().mockImplementation(
   (type, postId, author) => (
     Promise.resolve({

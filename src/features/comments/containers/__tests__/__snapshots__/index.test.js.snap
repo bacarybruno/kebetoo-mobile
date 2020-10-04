@@ -315,6 +315,11 @@ exports[`renders Comments 1`] = `
                       "updatedAt": "2020-06-20T14:39:18.807Z",
                     },
                   ],
+                  "replies": Array [
+                    Object {
+                      "id": "fake-comment-reply-id-123",
+                    },
+                  ],
                   "updatedAt": "2020-06-20T09:41:40.405Z",
                 },
                 Object {
@@ -561,6 +566,11 @@ exports[`renders Comments 1`] = `
                 "id": "5eee1f963acba504d4a1cfd1",
                 "type": "love",
                 "updatedAt": "2020-06-20T14:39:18.807Z",
+              },
+            ],
+            "replies": Array [
+              Object {
+                "id": "fake-comment-reply-id-123",
               },
             ],
             "updatedAt": "2020-06-20T09:41:40.405Z",
@@ -1639,7 +1649,7 @@ exports[`renders Comments 1`] = `
           <View
             style={
               Object {
-                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopColor": "rgba(229, 229, 234, 255)",
                 "borderTopWidth": 1,
               }
             }
@@ -1974,17 +1984,40 @@ exports[`renders Comments 1`] = `
                           }
                         }
                       />
+                      <Text
+                        style={
+                          Array [
+                            false,
+                            false,
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                              "letterSpacing": -0.24,
+                              "lineHeight": 20,
+                            },
+                            false,
+                            Array [
+                              Object {
+                                "color": "rgba(0,0,0,0.87)",
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              undefined,
+                            ],
+                          ]
+                        }
+                      >
+                        |
+                      </Text>
                       <View
                         accessible={true}
                         focusable={true}
-                        hitSlop={
-                          Object {
-                            "bottom": 30,
-                            "left": 30,
-                            "right": 30,
-                            "top": 30,
-                          }
-                        }
                         onClick={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
@@ -2088,7 +2121,7 @@ exports[`renders Comments 1`] = `
           <View
             style={
               Object {
-                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopColor": "rgba(229, 229, 234, 255)",
                 "borderTopWidth": 1,
               }
             }
@@ -2565,14 +2598,6 @@ exports[`renders Comments 1`] = `
                       <View
                         accessible={true}
                         focusable={true}
-                        hitSlop={
-                          Object {
-                            "bottom": 30,
-                            "left": 30,
-                            "right": 30,
-                            "top": 30,
-                          }
-                        }
                         onClick={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
@@ -4233,7 +4258,7 @@ exports[`renders Comments in loading state 1`] = `
           <View
             style={
               Object {
-                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopColor": "rgba(229, 229, 234, 255)",
                 "borderTopWidth": 1,
               }
             }
@@ -4525,7 +4550,7 @@ exports[`renders Comments in loading state 1`] = `
           <View
             style={
               Object {
-                "borderTopColor": "rgba(0, 0, 0, 0.07)",
+                "borderTopColor": "rgba(229, 229, 234, 255)",
                 "borderTopWidth": 1,
               }
             }

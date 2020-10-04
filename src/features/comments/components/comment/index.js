@@ -9,7 +9,7 @@ import {
 } from '@app/shared/components'
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
-import { colors, edgeInsets } from '@app/theme'
+import { colors } from '@app/theme'
 import * as api from '@app/shared/services/http'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
@@ -45,7 +45,6 @@ export const Reactions = ({
         foreground
         style={styles.reactionsButton}
         onPress={() => onReaction(REACTION_TYPES.LOVE)}
-        hitSlop={edgeInsets.all(30)}
         testID="reaction-button"
       >
         <Typography

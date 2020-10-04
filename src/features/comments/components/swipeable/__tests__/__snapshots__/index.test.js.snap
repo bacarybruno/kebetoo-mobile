@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SwipeableComment 1`] = `
+<View
+  collapsable={false}
+  forwardedRef={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onLayout={[Function]}
+  style={
+    Object {
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "flexDirection": "row",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "transform": Array [
+          Object {
+            "translateX": -10000,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+          "paddingLeft": 16,
+          "width": 214.28571428571428,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5F5F5",
+            "borderRadius": 20,
+            "height": 40,
+            "justifyContent": "center",
+            "transform": Array [
+              Object {
+                "translateX": -80,
+              },
+            ],
+            "width": 40,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+              "fontFamily": "Ionicons",
+              "fontSize": 20,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            }
+          }
+          text="ionicon-ios-undo"
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+    />
+  </View>
+  <View
+    collapsable={false}
+    forwardedRef={[Function]}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
+    pointerEvents="auto"
+    style={
+      Object {
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      testID="swipeable-content"
+    />
+  </View>
+</View>
+`;
