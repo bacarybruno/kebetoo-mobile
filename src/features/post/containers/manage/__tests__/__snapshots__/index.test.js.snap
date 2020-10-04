@@ -1528,12 +1528,12 @@ exports[`renders ManagePost 1`] = `
                 accessibilityIgnoresInvertColors={true}
                 style={
                   Object {
-                    "borderRadius": 0,
                     "flex": 1,
                   }
                 }
               >
                 <Image
+                  borderRadius={0}
                   source={
                     Object {
                       "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",

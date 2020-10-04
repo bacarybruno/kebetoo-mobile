@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ReplyInfo 1`] = `
+<View
+  style={
+    Object {
+      "height": 20,
+      "marginHorizontal": 5.333333333333333,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgba(229, 229, 234, 0.5)",
+          "borderLeftWidth": 3,
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "marginTop": 8,
+          "paddingHorizontal": 8,
+          "paddingVertical": 10,
+        },
+        Object {
+          "borderColor": "#4db6ac",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            false,
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            false,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        A comment reply
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(229, 229, 234, 255)",
+          "borderRadius": 9,
+          "height": 18,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 18,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontFamily": "Ionicons",
+            "fontSize": 20,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-ios-close"
+      />
+    </View>
+  </View>
+</View>
+`;

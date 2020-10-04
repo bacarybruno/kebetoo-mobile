@@ -25,7 +25,7 @@ export const ImageViewer = ({
 }) => (
   <>
     <View style={[styles.imageWrapper, style]} {...otherProps}>
-      <ImageBackground source={source} style={{ ...styles.flex, borderRadius }}>
+      <ImageBackground source={source} style={styles.flex} borderRadius={borderRadius}>
         {onPress && <Pressable style={styles.flex} onPress={onPress} />}
       </ImageBackground>
     </View>

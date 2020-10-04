@@ -1,5 +1,7 @@
 import React, { useState, useCallback, forwardRef } from 'react'
-import { View, TextInput, TouchableOpacity } from 'react-native'
+import {
+  View, TextInput, TouchableOpacity, Animated,
+} from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Popover, { PopoverPlacement } from 'react-native-popover-view'
 
@@ -33,6 +35,8 @@ const InputText = forwardRef((props, ref) => {
     withEmoji,
     Left,
     Right,
+    children,
+    height,
     ...otherProps
   } = props
   const [value, setValue] = useState(null)
@@ -45,27 +49,32 @@ const InputText = forwardRef((props, ref) => {
   const hasTrailingItem = error || Right
 
   return (
-    <View style={[styles.wrapper, wrapperStyle, error && styles.error]}>
-      {Left && <Left />}
-      <TextInput
-        style={[
-          styles.textInput,
-          textStyle,
-          hasTrailingItem && styles.trailing,
-        ]}
-        value={value}
-        placeholderTextColor={placeholderColor}
-        onChangeText={onChangeText}
-        ref={ref}
-        blurOnSubmit={false}
-        onBlur={() => onBlur(fieldName)}
-        onFocus={() => onFocus(fieldName)}
-        {...otherProps}
-      />
-      {error
-        ? <PopoverTooltip message={error} />
-        : Right && <Right />}
-    </View>
+    <Animated.View
+      style={[styles.wrapper, wrapperStyle, height && { height }, error && styles.error]}
+    >
+      {children}
+      <View style={styles.inputWrapper}>
+        {Left && <Left />}
+        <TextInput
+          style={[
+            styles.textInput,
+            textStyle,
+            hasTrailingItem && styles.trailing,
+          ]}
+          value={value}
+          placeholderTextColor={placeholderColor}
+          onChangeText={onChangeText}
+          ref={ref}
+          blurOnSubmit={false}
+          onBlur={() => onBlur(fieldName)}
+          onFocus={() => onFocus(fieldName)}
+          {...otherProps}
+        />
+        {error
+          ? <PopoverTooltip message={error} />
+          : Right && <Right />}
+      </View>
+    </Animated.View>
   )
 })
 

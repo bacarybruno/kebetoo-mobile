@@ -9,7 +9,6 @@ export default StyleSheet.create({
   },
   audio: {
     marginTop: 5,
-    height: 45,
     backgroundColor: colors.backgroundSecondary,
   },
   reactionsWrapper: {
@@ -20,7 +19,7 @@ export default StyleSheet.create({
   reactionsButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 5,
+    padding: 5,
   },
   row: {
     flex: 1,
@@ -34,5 +33,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 5,
+  },
+  repliesCount: {
+    paddingHorizontal: 5,
   },
 })

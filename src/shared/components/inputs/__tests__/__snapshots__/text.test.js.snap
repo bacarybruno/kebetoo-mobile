@@ -3,48 +3,52 @@
 exports[`renders TextInput 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#F5F5F5",
-        "borderColor": "rgba(229, 229, 234, 255)",
-        "borderRadius": 15,
-        "borderWidth": 1,
-        "flexDirection": "row",
-        "minHeight": 48,
-        "paddingLeft": 16,
-      },
-      undefined,
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "#F5F5F5",
+      "borderColor": "rgba(229, 229, 234, 255)",
+      "borderRadius": 15,
+      "borderWidth": 1,
+      "minHeight": 48,
+      "overflow": "hidden",
+    }
   }
 >
-  <TextInput
-    allowFontScaling={true}
-    blurOnSubmit={false}
-    onBlur={[Function]}
-    onChangeText={[Function]}
-    onFocus={[Function]}
-    placeholderTextColor="rgba(174, 174, 178, 255)"
-    rejectResponderTermination={true}
+  <View
     style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "color": "rgba(0,0,0,0.87)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 16,
-          "fontWeight": "400",
-          "letterSpacing": -0.32,
-          "lineHeight": 21,
-        },
-        undefined,
-        undefined,
-      ]
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingLeft": 16,
+      }
     }
-    underlineColorAndroid="transparent"
-    value={null}
-  />
+  >
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={false}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholderTextColor="rgba(174, 174, 178, 255)"
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgba(0,0,0,0.87)",
+            "flex": 1,
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": -0.32,
+            "lineHeight": 21,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value={null}
+    />
+  </View>
 </View>
 `;

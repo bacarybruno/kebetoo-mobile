@@ -13,18 +13,33 @@ import { colors, edgeInsets } from '@app/theme'
 import * as api from '@app/shared/services/http'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
-import { env } from '@app/config'
+import { env, strings } from '@app/config'
 
 import styles from './styles'
 
-export const getAudioSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}` })
+export const getAudioSource = (url) => (
+  url.startsWith('http')
+    ? url
+    : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`
+)
 
-export const Reactions = ({ onReaction, reactions, user }) => {
+export const Reactions = ({
+  onReaction, reactions, user, repliesCount, onShowReplies,
+}) => {
   const loved = reactions.find((reaction) => (
     reaction.author === user && reaction.type === REACTION_TYPES.LOVE
   ))
   return (
     <View style={styles.reactionsWrapper}>
+      <Pressable borderless style={styles.repliesCount} onPress={onShowReplies}>
+        {repliesCount > 0 && (
+          <Typography
+            type={Typography.types.headline5}
+            text={strings.formatString(strings.comments.reply_count, repliesCount)}
+          />
+        )}
+      </Pressable>
+      {repliesCount > 0 && <Typography type={Typography.types.headline5} text="|" />}
       <Pressable
         borderless
         foreground
@@ -34,8 +49,7 @@ export const Reactions = ({ onReaction, reactions, user }) => {
         testID="reaction-button"
       >
         <Typography
-          type={Typography.types.headline6}
-          systemWeight={Typography.weights.bold}
+          type={Typography.types.headline5}
           text={reactions.length}
           systemColor={Typography.colors.primary}
         />
@@ -77,7 +91,7 @@ const Content = ({ item }) => {
 }
 
 const Comment = ({
-  item, displayName, photoURL, user, authorId,
+  item, displayName, photoURL, user, authorId, repliesCount, onShowReplies,
 }) => {
   const [reactions, setReactions] = useState(item.reactions)
   const [lastPress, setLastPress] = useState(null)
@@ -140,7 +154,13 @@ const Comment = ({
         <View style={styles.flexible}>
           <Header displayName={displayName} updatedAt={item.updatedAt} />
           <Content item={item} />
-          <Reactions reactions={reactions} user={user} onReaction={onReaction} />
+          <Reactions
+            reactions={reactions}
+            user={user}
+            onReaction={onReaction}
+            repliesCount={repliesCount}
+            onShowReplies={onShowReplies}
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>

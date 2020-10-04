@@ -20,6 +20,7 @@ import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
+import SwipeableComment from '../components/swipeable'
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
@@ -36,6 +37,7 @@ const mapComments = (comment) => ({
 })
 
 // TODO: paginate comments
+// TODO: use local reducer
 const Comments = () => {
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
@@ -43,9 +45,9 @@ const Comments = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [authors, setAuthors] = useState({})
   const [comment, setComment] = useState('')
-  const [comments, setComments] = useState(
-    post.comments?.map(mapComments) || [],
-  )
+  const [toReply, setToReply] = useState(null)
+  const [comments, setComments] = useState(post.comments?.map(mapComments) || [])
+  const [replies, setReplies] = useState({})
 
   const { profile } = useUser()
   const commentInput = useRef()
@@ -77,35 +79,68 @@ const Comments = () => {
     let result = null
     setIsLoading(true)
     if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, profile.uid)
+      result = await audioRecorder.saveComment(post.id, profile.uid, toReply)
     } else if (comment.length > 0) {
       result = await api.commentPost({
         author: profile.uid,
         content: comment,
-        post: post.id,
+        thread: toReply ? toReply.id : null,
+        post: toReply ? null : post.id,
       })
       commentInput.current?.clear()
       setComment('')
     }
-    setComments((value) => [...value, result])
+    if (toReply) {
+      setReplies((state) => ({ ...state, [toReply.id]: [...state[toReply.id], result] }))
+      setToReply(null)
+    } else {
+      setComments((value) => [...value, result])
+      setTimeout(() => scrollView.current?.scrollToEnd(), 200)
+    }
     setIsLoading(false)
-    setTimeout(() => scrollView.current?.scrollToEnd(), 200)
-  }, [audioRecorder, comment, post.id, profile.uid])
+  }, [audioRecorder, comment, post.id, profile.uid, toReply])
+
+  const onSetReply = useCallback((item) => {
+    commentInput.current?.focus()
+    setToReply(item)
+  }, [])
+
+  const loadReplies = useCallback(async (commentId) => {
+    const loadedReplies = await api.getReplies(commentId)
+    setReplies((state) => ({ ...state, [commentId]: loadedReplies }))
+  }, [])
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
+    const hasReplies = item.replies?.length > 0
+
     return (
       <View style={styles.comment}>
-        <Comment
-          item={item}
-          user={profile.uid}
-          authorId={item.author.id}
-          displayName={item.author.displayName}
-          photoURL={item.author.photoURL}
-        />
+        <SwipeableComment style={styles.swipeable} onFulfilled={() => onSetReply(item)}>
+          <Comment
+            item={item}
+            user={profile.uid}
+            authorId={item.author.id}
+            displayName={item.author.displayName}
+            photoURL={item.author.photoURL}
+            repliesCount={item.replies?.length}
+            onShowReplies={() => loadReplies(item.id)}
+          />
+        </SwipeableComment>
+        {hasReplies && replies[item.id]?.map((reply) => (
+          <View style={styles.repliesWrapper} key={`comment-reply-${reply.id}`}>
+            <Comment
+              item={reply}
+              user={profile.uid}
+              authorId={reply.author.id}
+              displayName={reply.author.displayName}
+              photoURL={reply.author.photoURL}
+            />
+          </View>
+        ))}
       </View>
     )
-  }, [profile.uid])
+  }, [onSetReply, profile.uid, replies, loadReplies])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -172,6 +207,8 @@ const Comments = () => {
         audioRecorder={audioRecorder}
         value={comment}
         isLoading={isLoading}
+        reply={toReply}
+        onReplyClose={() => setToReply(null)}
       />
     </View>
   )

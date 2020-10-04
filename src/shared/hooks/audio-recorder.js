@@ -79,11 +79,12 @@ const useAudioRecorder = (
     return response
   }, [elapsedTime, getFileUri, uri])
 
-  const saveComment = useCallback(async (post, author) => {
+  const saveComment = useCallback(async (post, author, toReply) => {
     const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     const response = await api.commentPostWithAudio({
-      post,
+      post: toReply ? null : post,
+      thread: toReply ? toReply.id : null,
       author,
       audio: {
         uri: fileUri,

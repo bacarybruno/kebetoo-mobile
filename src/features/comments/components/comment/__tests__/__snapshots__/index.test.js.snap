@@ -223,6 +223,22 @@ exports[`renders Comment 1`] = `
     >
       <View
         accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "paddingHorizontal": 5,
+          }
+        }
+      />
+      <View
+        accessible={true}
         focusable={true}
         hitSlop={
           Object {
@@ -243,7 +259,7 @@ exports[`renders Comment 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "paddingVertical": 5,
+            "padding": 5,
           }
         }
         testID="reaction-button"
@@ -253,16 +269,16 @@ exports[`renders Comment 1`] = `
             Array [
               false,
               false,
-              false,
               Object {
                 "backgroundColor": "transparent",
                 "color": "#000000",
                 "fontFamily": "System",
-                "fontSize": 12,
+                "fontSize": 15,
                 "fontWeight": "400",
-                "letterSpacing": 0,
-                "lineHeight": 16,
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
               },
+              false,
               Array [
                 Object {
                   "color": "rgba(0,0,0,0.87)",
@@ -270,7 +286,7 @@ exports[`renders Comment 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "700",
+                  "fontWeight": "400",
                 },
                 undefined,
               ],

@@ -16,6 +16,28 @@ const givenCommentInput = setupTest(CommentInput)({
   },
 })
 
+const { now } = Date
+const originalInterval = setInterval
+
+beforeEach(() => {
+  jest.clearAllMocks()
+  jest.setTimeout(10000)
+  let time = now()
+  Date.now = () => time
+  const fakeInterval = global.setInterval
+  global.setInterval = (fn, interval) => (
+    fakeInterval((...args) => {
+      time += interval
+      fn(...args)
+    }, interval)
+  )
+})
+
+afterEach(() => {
+  Date.now = now
+  global.setInterval = originalInterval
+})
+
 it('renders CommentInput', () => {
   const { wrapper } = givenCommentInput()
   expect(wrapper.toJSON()).toMatchSnapshot()
@@ -71,7 +93,7 @@ it('handles content size change', () => {
   act(() => {
     input.props.onContentSizeChange(event)
   })
-  expect(input.props.wrapperStyle).toEqual(
-    expect.arrayContaining([{ height: expectedHeight }]),
-  )
+  setImmediate(() => {
+    expect(input.props.height).toEqual(expectedHeight)
+  })
 })
