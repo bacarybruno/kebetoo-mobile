@@ -13,7 +13,8 @@ import { colors } from '@app/theme'
 import * as api from '@app/shared/services/http'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
-import { env, strings } from '@app/config'
+import { env } from '@app/config'
+import Kebeticon from '@app/shared/icons/kebeticons'
 
 import styles from './styles'
 
@@ -31,15 +32,17 @@ export const Reactions = ({
   ))
   return (
     <View style={styles.reactionsWrapper}>
-      <Pressable borderless style={styles.repliesCount} onPress={onShowReplies}>
-        {repliesCount > 0 && (
+      {repliesCount > 0 && (
+        <Pressable borderless style={styles.repliesCount} onPress={onShowReplies}>
           <Typography
             type={Typography.types.headline5}
-            text={strings.formatString(strings.comments.reply_count, repliesCount)}
+            text={repliesCount}
+            systemColor={Typography.colors.primary}
           />
-        )}
-      </Pressable>
-      {repliesCount > 0 && <Typography type={Typography.types.headline5} text="|" />}
+          <Typography type={Typography.types.body} text=" " />
+          <Kebeticon color={colors.textPrimary} size={14} name="comment" />
+        </Pressable>
+      )}
       <Pressable
         borderless
         foreground
@@ -49,16 +52,20 @@ export const Reactions = ({
       >
         <Typography
           type={Typography.types.headline5}
-          text={reactions.length}
+          text={reactions.length > 0 ? reactions.length : null}
           systemColor={Typography.colors.primary}
         />
         <Typography type={Typography.types.body} text=" " />
-        <Ionicon
-          name={loved ? 'md-heart' : 'md-heart-empty'}
-          testID="reaction"
-          color={loved ? colors.heart : colors.textPrimary}
-          size={Typography.fontSizes.md}
-        />
+        {!loved
+          ? <Kebeticon testID="reaction" color={colors.textPrimary} size={14} name="heart" />
+          : (
+            <Ionicon
+              name="md-heart"
+              testID="reaction"
+              color={colors.heart}
+              size={Typography.fontSizes.md}
+            />
+          )}
       </Pressable>
     </View>
   )

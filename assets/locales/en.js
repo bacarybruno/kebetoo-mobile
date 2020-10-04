@@ -80,7 +80,6 @@ const locales = Object.freeze({
     add_comment: 'Add a comment',
     people_reacted: '{0} Reacted',
     replying_to: 'Replying to {0}',
-    reply_count: '{0} reply',
   },
   create_post: {
     create_post: 'Create post',
