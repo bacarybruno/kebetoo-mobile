@@ -36,5 +36,8 @@ export default StyleSheet.create({
   },
   repliesCount: {
     paddingHorizontal: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })

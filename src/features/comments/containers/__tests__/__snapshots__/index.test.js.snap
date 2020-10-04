@@ -1980,41 +1980,86 @@ exports[`renders Comments 1`] = `
                         onStartShouldSetResponder={[Function]}
                         style={
                           Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "justifyContent": "center",
                             "paddingHorizontal": 5,
                           }
                         }
-                      />
-                      <Text
-                        style={
-                          Array [
-                            false,
-                            false,
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontSize": 15,
-                              "fontWeight": "400",
-                              "letterSpacing": -0.24,
-                              "lineHeight": 20,
-                            },
-                            false,
+                      >
+                        <Text
+                          style={
                             Array [
-                              Object {
-                                "color": "rgba(0,0,0,0.87)",
-                              },
+                              false,
+                              false,
                               Object {
                                 "backgroundColor": "transparent",
+                                "color": "#000000",
                                 "fontFamily": "System",
+                                "fontSize": 15,
                                 "fontWeight": "400",
+                                "letterSpacing": -0.24,
+                                "lineHeight": 20,
                               },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                        |
-                      </Text>
+                              false,
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          1
+                        </Text>
+                        <Text
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontSize": 15,
+                                "fontWeight": "400",
+                                "letterSpacing": -0.24,
+                                "lineHeight": 20,
+                              },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                           
+                        </Text>
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                              "fontFamily": "icomoon",
+                              "fontSize": 14,
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            }
+                          }
+                          text="kebeticon-comment"
+                        />
+                      </View>
                       <View
                         accessible={true}
                         focusable={true}
@@ -2591,22 +2636,6 @@ exports[`renders Comments 1`] = `
                         onStartShouldSetResponder={[Function]}
                         style={
                           Object {
-                            "paddingHorizontal": 5,
-                          }
-                        }
-                      />
-                      <View
-                        accessible={true}
-                        focusable={true}
-                        onClick={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                        style={
-                          Object {
                             "alignItems": "center",
                             "flexDirection": "row",
                             "padding": 5,
@@ -2678,13 +2707,13 @@ exports[`renders Comments 1`] = `
                           style={
                             Object {
                               "color": "rgba(0,0,0,0.87)",
-                              "fontFamily": "Ionicons",
-                              "fontSize": 16,
+                              "fontFamily": "icomoon",
+                              "fontSize": 14,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
                           }
-                          text="ionicon-md-heart-empty"
+                          text="kebeticon-heart"
                         />
                       </View>
                     </View>

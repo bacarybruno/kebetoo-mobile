@@ -33,11 +33,11 @@ it('handles reaction', async () => {
       reactions: [],
     },
   })
-  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart-empty')
+  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
   await fireEvent.press(wrapper.root.findByProps({ testID: 'reaction-button' }))
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
   await fireEvent.press(wrapper.root.findByProps({ testID: 'reaction-button' }))
-  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart-empty')
+  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
 })
 
 it('handles double tap', async () => {
@@ -47,7 +47,7 @@ it('handles double tap', async () => {
       reactions: [],
     },
   })
-  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart-empty')
+  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
   await act(async () => {
     await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
     await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
