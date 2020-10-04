@@ -240,14 +240,6 @@ exports[`renders Comment 1`] = `
       <View
         accessible={true}
         focusable={true}
-        hitSlop={
-          Object {
-            "bottom": 30,
-            "left": 30,
-            "right": 30,
-            "top": 30,
-          }
-        }
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}

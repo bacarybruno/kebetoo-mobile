@@ -39,7 +39,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   comment: {
-    borderTopColor: 'rgba(0, 0, 0, 0.07)',
+    borderTopColor: colors.border,
     borderTopWidth: 1,
   },
   swipeable: {

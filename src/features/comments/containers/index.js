@@ -26,6 +26,18 @@ export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
 
+export const CommentReply = ({ reply, profile }) => (
+  <View style={styles.repliesWrapper}>
+    <Comment
+      item={reply}
+      user={profile.uid}
+      authorId={reply.author.id}
+      displayName={reply.author.displayName}
+      photoURL={reply.author.photoURL}
+    />
+  </View>
+)
+
 const mapComments = (comment) => ({
   id: comment.id,
   author: {
@@ -128,19 +140,11 @@ const Comments = () => {
           />
         </SwipeableComment>
         {hasReplies && replies[item.id]?.map((reply) => (
-          <View style={styles.repliesWrapper} key={`comment-reply-${reply.id}`}>
-            <Comment
-              item={reply}
-              user={profile.uid}
-              authorId={reply.author.id}
-              displayName={reply.author.displayName}
-              photoURL={reply.author.photoURL}
-            />
-          </View>
+          <CommentReply reply={reply} profile={profile} key={`comment-reply-${reply.id}`} />
         ))}
       </View>
     )
-  }, [onSetReply, profile.uid, replies, loadReplies])
+  }, [profile, replies, onSetReply, loadReplies])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton

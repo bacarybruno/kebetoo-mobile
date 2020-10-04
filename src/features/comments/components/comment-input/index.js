@@ -12,7 +12,7 @@ import styles from './styles'
 
 const baseReplyInfoSize = 62
 
-const CommentInput = ({
+export const CommentInput = ({
   onChange, onSend, inputRef, value, audioRecorder, isLoading, reply, onReplyClose, ...inputProps
 }) => {
   const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight)
