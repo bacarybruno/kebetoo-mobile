@@ -10,7 +10,8 @@
     "start": "react-native start --port=1148",
     "test": "jest",
     "lint": "eslint .",
-    "coverage": "yarn test src --coverage --silent"
+    "coverage": "yarn test src --coverage --silent",
+    "coverage:open": "start ./coverage/lcov-report/index.html"
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.6.0",

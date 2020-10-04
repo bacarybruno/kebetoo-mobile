@@ -12,9 +12,7 @@ export default StyleSheet.create({
     borderColor: colors.border,
     borderRadius: 15,
     borderWidth: 1,
-    paddingLeft: metrics.marginHorizontal,
-    flexDirection: 'row',
-    alignItems: 'center',
+    overflow: 'hidden',
   },
   textInput: {
     ...human.callout,
@@ -56,5 +54,10 @@ export default StyleSheet.create({
   },
   emojiPicker: {
     marginRight: 5,
+  },
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: metrics.marginHorizontal,
   },
 })

@@ -22,116 +22,113 @@ exports[`renders CommentInput 1`] = `
     <View>
       <View
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#F5F5F5",
-              "borderColor": "rgba(229, 229, 234, 255)",
-              "borderRadius": 15,
-              "borderWidth": 1,
-              "flexDirection": "row",
-              "minHeight": 48,
-              "paddingLeft": 16,
+          Object {
+            "backgroundColor": "#F5F5F5",
+            "borderBottomLeftRadius": 22.5,
+            "borderBottomRightRadius": 22.5,
+            "borderColor": "rgba(229, 229, 234, 255)",
+            "borderRadius": 15,
+            "borderTopLeftRadius": 22.5,
+            "borderTopRightRadius": 22.5,
+            "borderWidth": 0.5,
+            "elevation": 1,
+            "height": 0,
+            "minHeight": 45,
+            "overflow": "hidden",
+            "shadowColor": "rgba(0, 0, 0, 255)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
             },
-            Array [
-              Object {
-                "minHeight": 45,
-              },
-              Object {
-                "backgroundColor": "#F5F5F5",
-                "borderRadius": 22.5,
-                "borderWidth": 0.5,
-                "elevation": 1,
-                "shadowColor": "rgba(0, 0, 0, 255)",
-                "shadowOffset": Object {
-                  "x": 0,
-                  "y": 0,
-                },
-                "shadowOpacity": 0.18,
-                "shadowRadius": 1,
-              },
-              Object {
-                "height": 45,
-              },
-            ],
-            undefined,
-          ]
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          hitSlop={
-            Object {
-              "bottom": 20,
-              "left": 20,
-              "right": 20,
-              "top": 20,
-            }
-          }
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "marginRight": 5,
-              "opacity": 1,
+              "alignItems": "center",
+              "flexDirection": "row",
+              "paddingLeft": 16,
             }
           }
         >
-          <Text
-            allowFontScaling={false}
-            style={
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
               Object {
-                "color": "rgba(174, 174, 178, 255)",
-                "fontFamily": "Ionicons",
-                "fontSize": 28,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
+                "bottom": 20,
+                "left": 20,
+                "right": 20,
+                "top": 20,
               }
             }
-            text="ionicon-md-happy"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "marginRight": 5,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(174, 174, 178, 255)",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 28,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="ionicon-md-happy"
+            />
+          </View>
+          <TextInput
+            allowFontScaling={true}
+            blurOnSubmit={false}
+            editable={true}
+            multiline={true}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onContentSizeChange={[Function]}
+            onFocus={[Function]}
+            onTouchStart={[Function]}
+            placeholder="Add a comment"
+            placeholderTextColor="rgba(174, 174, 178, 255)"
+            rejectResponderTermination={true}
+            showSoftInputOnFocus={true}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgba(0,0,0,0.87)",
+                  "flex": 1,
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Object {
+                  "minHeight": 45,
+                },
+                undefined,
+              ]
+            }
+            underlineColorAndroid="transparent"
+            value=""
           />
         </View>
-        <TextInput
-          allowFontScaling={true}
-          blurOnSubmit={false}
-          editable={true}
-          multiline={true}
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onContentSizeChange={[Function]}
-          onFocus={[Function]}
-          onTouchStart={[Function]}
-          placeholder="Add a comment"
-          placeholderTextColor="rgba(174, 174, 178, 255)"
-          rejectResponderTermination={true}
-          showSoftInputOnFocus={true}
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "rgba(0,0,0,0.87)",
-                "flex": 1,
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
-              },
-              Object {
-                "minHeight": 45,
-              },
-              undefined,
-            ]
-          }
-          underlineColorAndroid="transparent"
-          value=""
-        />
       </View>
       <View
         style={

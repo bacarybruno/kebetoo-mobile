@@ -39,13 +39,14 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   comment: {
-    marginHorizontal: paddingHorizontal,
-    paddingTop: metrics.marginHorizontal,
-    paddingBottom: metrics.marginHorizontal / 2,
     borderTopColor: 'rgba(0, 0, 0, 0.07)',
     borderTopWidth: 1,
+  },
+  swipeable: {
+    paddingHorizontal: metrics.marginHorizontal,
+    paddingTop: metrics.marginHorizontal,
+    paddingBottom: metrics.marginHorizontal / 2,
     justifyContent: 'center',
-    flexDirection: 'row',
   },
   backHandler: {
     width: 24,
@@ -53,5 +54,9 @@ export default StyleSheet.create({
     margin: 3,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  repliesWrapper: {
+    paddingLeft: metrics.marginHorizontal * 3,
+    paddingRight: metrics.marginHorizontal,
   },
 })

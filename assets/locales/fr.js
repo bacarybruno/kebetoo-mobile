@@ -11,6 +11,7 @@ const locales = Object.freeze({
     share: 'Partager',
     confirm: 'Confirmer',
     system_default: 'Thème par défaut du système',
+    audio: 'Audio',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',
@@ -78,6 +79,8 @@ const locales = Object.freeze({
     no_content: 'Soyez le premier à ajouter un commentaire ! 👇',
     add_comment: 'Ajouter un commentaire',
     people_reacted: '{0} ont réagi',
+    replying_to: 'Réponse à {0}',
+    reply_count: '{0} réponses',
   },
   create_post: {
     create_post: 'Créer un post',

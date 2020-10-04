@@ -2504,12 +2504,12 @@ exports[`renders component [image]: renders BasicPost 1`] = `
         accessibilityIgnoresInvertColors={true}
         style={
           Object {
-            "borderRadius": 0,
             "flex": 1,
           }
         }
       >
         <Image
+          borderRadius={0}
           source={
             Object {
               "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
@@ -3410,12 +3410,12 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
         accessibilityIgnoresInvertColors={true}
         style={
           Object {
-            "borderRadius": 0,
             "flex": 1,
           }
         }
       >
         <Image
+          borderRadius={0}
           source={
             Object {
               "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",
@@ -4065,12 +4065,12 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
         accessibilityIgnoresInvertColors={true}
         style={
           Object {
-            "borderRadius": 0,
             "flex": 1,
           }
         }
       >
         <Image
+          borderRadius={0}
           source={
             Object {
               "uri": "http://localhost:1337/uploads/IMG_20200618_0bd8b30d6a.jpeg",

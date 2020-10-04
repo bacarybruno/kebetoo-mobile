@@ -7,7 +7,11 @@ import { env } from '@app/config'
 
 import styles from './styles'
 
-export const getSource = (url) => (url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`)
+export const getSource = (url) => (
+  url.startsWith('http')
+    ? url
+    : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`
+)
 
 const AudioContent = ({
   content, audioName, audioUrl, style, onPress, mode,

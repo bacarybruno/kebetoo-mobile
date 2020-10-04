@@ -1,16 +1,30 @@
-import React, { useState, useCallback } from 'react'
-import { View } from 'react-native'
+import React, {
+  useState, useCallback, useRef, useEffect,
+} from 'react'
+import { Animated, View } from 'react-native'
 
 import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
 import { strings } from '@app/config'
 
 import { SendButton, RecordButton } from '../send-button'
+import ReplyInfo from '../reply-info'
 import styles from './styles'
 
+const baseReplyInfoSize = 62
+
 const CommentInput = ({
-  onChange, onSend, inputRef, value, audioRecorder, isLoading, ...inputProps
+  onChange, onSend, inputRef, value, audioRecorder, isLoading, reply, onReplyClose, ...inputProps
 }) => {
   const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight)
+  const inputSize = useRef(new Animated.Value(0))
+
+  useEffect(() => {
+    Animated.timing(inputSize.current, {
+      toValue: inputHeight + (reply ? baseReplyInfoSize : 0),
+      useNativeDriver: false,
+      duration: 200,
+    }).start()
+  }, [inputHeight, reply])
 
   const updateInputHeight = useCallback((event) => {
     setInputHeight(
@@ -35,13 +49,18 @@ const CommentInput = ({
             textStyle={styles.textInputSize}
             editable={!isLoading}
             onContentSizeChange={updateInputHeight}
+            height={inputSize.current}
             wrapperStyle={[
               styles.textInputSize,
               styles.textInputWrapper,
-              { height: inputHeight },
+              reply && styles.textInputWrapperWithReply,
             ]}
             {...inputProps}
-          />
+          >
+            {reply && (
+              <ReplyInfo info={reply} size={baseReplyInfoSize} onClose={onReplyClose} />
+            )}
+          </EmojiTextInput>
         )}
         {audioRecorder.hasRecording && (
           <View style={styles.audioWrapper}>

@@ -49,6 +49,8 @@ export const getPost = (id) => request.get(`posts/${id}`)
 
 export const getComments = (postId) => request.get(`comments?post.id=${postId}`)
 
+export const getReplies = (commentId) => request.get(`comments?thread=${commentId}`)
+
 export const getLatestsPosts = (page = 0) => request.get(
   `posts?_sort=updatedAt:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
 )
@@ -89,14 +91,20 @@ export const editPost = ({ id, content }) => request.put(`posts/${id}`, { conten
 
 export const deletePost = (id) => request.delete(`posts/${id}`)
 
-export const commentPost = ({ author, post, content }) => request.post(
-  'comments',
-  { author, post, content },
+export const commentPost = ({
+  author, post, content, thread,
+}) => (
+  request.post('comments', {
+    author, post, content, thread,
+  })
 )
-export const commentPostWithAudio = ({ author, audio, post }) => {
+
+export const commentPostWithAudio = ({
+  author, audio, post, thread,
+}) => {
   const commentData = {
     name: 'data',
-    data: JSON.stringify({ author, post }),
+    data: JSON.stringify({ author, post, thread }),
   }
   const audioData = {
     name: 'files.audio',

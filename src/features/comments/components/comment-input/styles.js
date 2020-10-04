@@ -18,10 +18,17 @@ export default StyleSheet.create({
     minHeight: bottomBarSize,
   },
   textInputWrapper: {
-    borderRadius: bottomBarSize / 2,
+    borderBottomLeftRadius: bottomBarSize / 2,
+    borderBottomRightRadius: bottomBarSize / 2,
+    borderTopLeftRadius: bottomBarSize / 2,
+    borderTopRightRadius: bottomBarSize / 2,
     backgroundColor: colors.backgroundSecondary,
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),
+  },
+  textInputWrapperWithReply: {
+    borderTopLeftRadius: bottomBarSize / 4,
+    borderTopRightRadius: bottomBarSize / 4,
   },
   audioWrapper: {
     marginRight: 4,

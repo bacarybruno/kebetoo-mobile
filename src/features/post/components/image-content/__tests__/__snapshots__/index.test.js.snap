@@ -63,12 +63,12 @@ exports[`renders ImageContent 1`] = `
       accessibilityIgnoresInvertColors={true}
       style={
         Object {
-          "borderRadius": 0,
           "flex": 1,
         }
       }
     >
       <Image
+        borderRadius={0}
         source={
           Object {
             "uri": "http://localhost:1337/fake-image.png",
@@ -178,12 +178,12 @@ exports[`renders ImageContent on comments mode 1`] = `
       accessibilityIgnoresInvertColors={true}
       style={
         Object {
-          "borderRadius": 0,
           "flex": 1,
         }
       }
     >
       <Image
+        borderRadius={0}
         source={
           Object {
             "uri": "http://localhost:1337/fake-image.png",
