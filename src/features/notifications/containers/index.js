@@ -18,6 +18,7 @@ const routeOptions = { title: strings.tabs.notifications }
 
 export const NOTIFICATION_TYPES = {
   COMMENT: 'comment',
+  REPLY: 'reply',
   POST_REACTION: 'post-reaction',
   COMMENT_REACTION: 'comment-reaction',
 }
@@ -64,6 +65,8 @@ const NotificationsPage = () => {
         return { name, message: strings.notifications.reacted_comment }
       case NOTIFICATION_TYPES.POST_REACTION:
         return { name, message: strings.notifications.reacted_post }
+      case NOTIFICATION_TYPES.REPLY:
+        return { name, message: strings.notifications.replied_comment }
       default:
         return null
     }
@@ -73,6 +76,7 @@ const NotificationsPage = () => {
     const payload = JSON.parse(message.data.payload)
     switch (message.data.type) {
       case NOTIFICATION_TYPES.COMMENT:
+      case NOTIFICATION_TYPES.REPLY:
         return payload.content
       case NOTIFICATION_TYPES.COMMENT_REACTION:
         return payload.comment.content
@@ -96,6 +100,9 @@ const NotificationsPage = () => {
         break
       case NOTIFICATION_TYPES.COMMENT_REACTION:
         postId = payload.comment.post
+        break
+      case NOTIFICATION_TYPES.REPLY:
+        postId = payload.thread.post
         break
       default:
         break

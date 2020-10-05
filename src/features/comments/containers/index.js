@@ -103,7 +103,10 @@ const Comments = () => {
       setComment('')
     }
     if (toReply) {
-      setReplies((state) => ({ ...state, [toReply.id]: [...state[toReply.id], result] }))
+      setReplies((state) => ({
+        ...state,
+        [toReply.id]: (state[toReply.id] || []).concat(result),
+      }))
       setToReply(null)
     } else {
       setComments((value) => [...value, result])
@@ -124,8 +127,6 @@ const Comments = () => {
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
-    const hasReplies = item.replies?.length > 0
-
     return (
       <View style={styles.comment}>
         <SwipeableComment style={styles.swipeable} onFulfilled={() => onSetReply(item)}>
@@ -139,7 +140,7 @@ const Comments = () => {
             onShowReplies={() => loadReplies(item.id)}
           />
         </SwipeableComment>
-        {hasReplies && replies[item.id]?.map((reply) => (
+        {replies[item.id]?.map((reply) => (
           <CommentReply reply={reply} profile={profile} key={`comment-reply-${reply.id}`} />
         ))}
       </View>

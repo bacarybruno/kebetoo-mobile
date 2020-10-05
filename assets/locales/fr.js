@@ -113,6 +113,7 @@ const locales = Object.freeze({
     reacted_post: 'a réagi à votre post',
     recent: 'Récent',
     already_seen: 'Déja consultés',
+    replied_comment: 'a répondu à votre commentaire',
   },
   dates: {
     format_month_year: 'MMMM YYYY',
