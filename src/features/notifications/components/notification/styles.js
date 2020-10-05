@@ -35,4 +35,7 @@ export default StyleSheet.create({
   captionWrapper: {
     flex: 1,
   },
+  pendingNotification: {
+    backgroundColor: colors.secondary,
+  },
 })

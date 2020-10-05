@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { colors, elevation, metrics } from '@app/theme'
 
 export const paddingHorizontal = metrics.marginHorizontal * 1.5
 export const bottomBarSize = 45
@@ -58,5 +58,9 @@ export default StyleSheet.create({
   repliesWrapper: {
     paddingLeft: metrics.marginHorizontal * 3,
     paddingRight: metrics.marginHorizontal,
+  },
+  selectedComment: {
+    backgroundColor: colors.backgroundSecondary,
+    ...elevation(3),
   },
 })

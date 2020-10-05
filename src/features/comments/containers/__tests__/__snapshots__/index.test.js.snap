@@ -1648,10 +1648,13 @@ exports[`renders Comments 1`] = `
         >
           <View
             style={
-              Object {
-                "borderTopColor": "rgba(229, 229, 234, 255)",
-                "borderTopWidth": 1,
-              }
+              Array [
+                Object {
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
+                  "borderTopWidth": 1,
+                },
+                false,
+              ]
             }
           >
             <View
@@ -2165,10 +2168,13 @@ exports[`renders Comments 1`] = `
         >
           <View
             style={
-              Object {
-                "borderTopColor": "rgba(229, 229, 234, 255)",
-                "borderTopWidth": 1,
-              }
+              Array [
+                Object {
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
+                  "borderTopWidth": 1,
+                },
+                false,
+              ]
             }
           >
             <View
@@ -4286,10 +4292,13 @@ exports[`renders Comments in loading state 1`] = `
         >
           <View
             style={
-              Object {
-                "borderTopColor": "rgba(229, 229, 234, 255)",
-                "borderTopWidth": 1,
-              }
+              Array [
+                Object {
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
+                  "borderTopWidth": 1,
+                },
+                false,
+              ]
             }
           >
             <View
@@ -4578,10 +4587,13 @@ exports[`renders Comments in loading state 1`] = `
         >
           <View
             style={
-              Object {
-                "borderTopColor": "rgba(229, 229, 234, 255)",
-                "borderTopWidth": 1,
-              }
+              Array [
+                Object {
+                  "borderTopColor": "rgba(229, 229, 234, 255)",
+                  "borderTopWidth": 1,
+                },
+                false,
+              ]
             }
           >
             <View

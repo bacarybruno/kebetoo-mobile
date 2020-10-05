@@ -127,8 +127,9 @@ const Comments = () => {
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
+    const isToReply = toReply?.id === item.id
     return (
-      <View style={styles.comment}>
+      <View style={[styles.comment, isToReply && styles.selectedComment]}>
         <SwipeableComment style={styles.swipeable} onFulfilled={() => onSetReply(item)}>
           <Comment
             item={item}
@@ -145,7 +146,7 @@ const Comments = () => {
         ))}
       </View>
     )
-  }, [profile, replies, onSetReply, loadReplies])
+  }, [toReply, profile, replies, onSetReply, loadReplies])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton

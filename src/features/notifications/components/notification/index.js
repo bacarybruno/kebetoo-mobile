@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 import { Pressable, Avatar, Typography } from '@app/shared/components'
-import { colors } from '@app/theme'
 
 import styles from './styles'
 
@@ -30,7 +29,7 @@ const Notification = ({
   isOpened, title, message, caption, author, onPress,
 }) => (
   <Pressable
-    style={[styles.notificationWrapper, !isOpened && { backgroundColor: colors.secondary }]}
+    style={[styles.notificationWrapper, !isOpened && styles.pendingNotification]}
     onPress={onPress}
   >
     <Avatar text={author.displayName} src={author.photoURL} size={55} fontSize={25} />
