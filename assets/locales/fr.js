@@ -65,6 +65,7 @@ const locales = Object.freeze({
     share_message: 'Téléchargez l\'application Kebetoo, le réseau social Africain!',
   },
   manage_posts: {
+    my_posts: 'Mes publications',
     edit_post: 'Modifier le post',
     delete_post: 'Supprimer le post',
     no_content: 'Créer votre premier post ! 👇',

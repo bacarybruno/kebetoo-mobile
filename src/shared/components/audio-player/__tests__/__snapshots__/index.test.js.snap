@@ -9,7 +9,9 @@ exports[`renders AudioPlayer 1`] = `
         "height": 52,
         "maxHeight": 52,
       },
-      undefined,
+      Object {
+        "height": 20,
+      },
     ]
   }
 >
@@ -176,7 +178,9 @@ exports[`renders AudioPlayer with delete icon 1`] = `
         "height": 52,
         "maxHeight": 52,
       },
-      undefined,
+      Object {
+        "height": 20,
+      },
     ]
   }
 >
@@ -398,7 +402,9 @@ exports[`renders round AudioPlayer 1`] = `
         "height": 52,
         "maxHeight": 52,
       },
-      undefined,
+      Object {
+        "height": 20,
+      },
     ]
   }
 >

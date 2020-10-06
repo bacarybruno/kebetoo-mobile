@@ -1,6 +1,5 @@
 import { act } from 'react-test-renderer'
 import { Image } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 
 import setupTest from '@app/config/jest-setup'
 import * as api from '@app/shared/services/http'
@@ -15,6 +14,12 @@ import UserProfile, { SectionHeader } from '../index'
 const givenUserProfile = setupTest(UserProfile)({
   navigation: {
     setOptions: jest.fn(),
+    navigate: jest.fn(),
+  },
+  route: {
+    params: {
+      userId: 1,
+    },
   },
 })
 
@@ -26,6 +31,7 @@ it('renders UserProfile', () => {
 describe('avatar', () => {
   it('renders text avatar if there is no image', async () => {
     let wrapper
+    let props
     const author = {
       ...authors.find((a) => a.photoURL === null),
       posts: [],
@@ -35,8 +41,9 @@ describe('avatar', () => {
     api.getAuthorById.mockResolvedValue(author)
 
     await act(async () => {
-      const { wrapper: wrapperAsync } = await givenUserProfile()
+      const { wrapper: wrapperAsync, props: propsAsync } = await givenUserProfile()
       wrapper = wrapperAsync
+      props = propsAsync
     })
 
     expect(wrapper.root.findAllByType(TextAvatar).length).toBe(1)
@@ -45,10 +52,11 @@ describe('avatar', () => {
     act(() => {
       header.props.onPress()
     })
-    expect(useNavigation().navigate).toBeCalledTimes(0)
+    expect(props.navigation.navigate).toBeCalledTimes(0)
   })
   it('renders image avatar if there is an image', async () => {
     let wrapper
+    let props
     const author = {
       ...authors.find((a) => a.photoURL !== null),
       posts: [],
@@ -58,8 +66,9 @@ describe('avatar', () => {
     api.getAuthorById.mockResolvedValue(author)
 
     await act(async () => {
-      const { wrapper: wrapperAsync } = await givenUserProfile()
+      const { wrapper: wrapperAsync, props: propsAsync } = await givenUserProfile()
       wrapper = wrapperAsync
+      props = propsAsync
     })
 
     expect(wrapper.root.findAllByType(TextAvatar).length).toBe(0)
@@ -70,8 +79,8 @@ describe('avatar', () => {
     act(() => {
       header.props.onPress()
     })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(routes.MODAL_IMAGE, {
+    expect(props.navigation.navigate).toBeCalledTimes(1)
+    expect(props.navigation.navigate).toBeCalledWith(routes.MODAL_IMAGE, {
       source: {
         uri: author.photoURL,
       },

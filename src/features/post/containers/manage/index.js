@@ -25,7 +25,7 @@ YellowBox.ignoreWarnings([
 ])
 
 export const routeOptions = {
-  title: strings.profile.manage_posts_title,
+  title: strings.manage_posts.my_posts,
   headerShown: true,
   headerStyle: { backgroundColor: colors.background },
   headerTitleStyle: { color: colors.textPrimary },

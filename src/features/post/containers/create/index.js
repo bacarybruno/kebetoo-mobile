@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
-import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
 import {
@@ -15,6 +14,7 @@ import { getMediaType } from '@app/shared/helpers/file'
 import { colors, metrics } from '@app/theme'
 import { useAudioRecorder, useUser } from '@app/shared/hooks'
 import useImagePicker from '@app/features/post/hooks/image-picker'
+import routes from '@app/navigation/routes'
 
 import styles from './styles'
 
@@ -71,34 +71,30 @@ const Button = ({ name, onPress }) => (
 )
 
 const ImagePreviewer = ({ uri, onDelete }) => (
-  <View style={{ width: '50%' }}>
+  <View style={styles.imagePreviewer}>
     <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
   </View>
 )
 
-const CreatePostPage = ({ navigation }) => {
-  const { setOptions, goBack } = navigation
-  setOptions(routeOptions)
+const CreatePostPage = ({ route, navigation }) => {
+  navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
 
-  const { params } = useRoute()
+  const { params } = route
   const [isLoading, setIsLoading] = useState(false)
-  const [editMode] = useState(params && params.action === actionTypes.EDIT)
-  const [shareMode] = useState(params && params.action === actionTypes.SHARE)
-  const [text, setText] = useState((value) => value || (
-    editMode
-      ? params.payload.content
-      : (params && params.sharedText) || ''
-  ))
+  const editMode = params && params.action === actionTypes.EDIT
+  const shareMode = params && params.action === actionTypes.SHARE
   const mediaType = getMediaType(params && params.sharedFile)
   const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
   const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
+  const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
+  const [text, setText] = useState((value) => value || payload)
 
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
-    let result
-    const repost = params && params.post ? params.post : undefined
+    let result = null
+    const repost = params?.post ?? undefined
     if (editMode) {
       result = await api.editPost({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
@@ -110,8 +106,9 @@ const CreatePostPage = ({ navigation }) => {
     }
     setIsLoading(false)
     if (params && params.onGoBack) params.onGoBack(result)
-    goBack()
-  }, [editMode, audioRecorder, imagePicker, params, goBack, text, profile.uid])
+    if (editMode) return navigation.goBack()
+    return navigation.replace(routes.MANAGE_POSTS)
+  }, [editMode, audioRecorder, imagePicker, params, navigation, text, profile.uid])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
@@ -134,7 +131,7 @@ const CreatePostPage = ({ navigation }) => {
 
   useLayoutEffect(() => {
     const headerMessages = getHeaderMessages()
-    setOptions({
+    navigation.setOptions({
       headerRight: () => (
         <OutlinedButton
           text={headerMessages.post.toUpperCase()}
@@ -146,7 +143,7 @@ const CreatePostPage = ({ navigation }) => {
       ),
       title: headerMessages.title,
     })
-  }, [text, setOptions, onHeaderSavePress, getHeaderMessages, isLoading])
+  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading])
 
   return (
     <View style={styles.wrapper}>

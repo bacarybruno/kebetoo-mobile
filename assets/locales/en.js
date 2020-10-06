@@ -65,6 +65,7 @@ const locales = Object.freeze({
     share_message: 'Download the Kebetoo app, the African social network!',
   },
   manage_posts: {
+    my_posts: 'My posts',
     edit_post: 'Edit post',
     delete_post: 'Delete post',
     no_content: 'Create your first post! 👇',

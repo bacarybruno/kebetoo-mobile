@@ -35,7 +35,7 @@ it('defines page name', () => {
   const { props } = givenManagePost()
   expect(props.navigation.setOptions).toBeCalledWith(
     expect.objectContaining({
-      title: strings.profile.manage_posts_title, headerShown: true,
+      title: strings.manage_posts.my_posts, headerShown: true,
     }),
   )
 })

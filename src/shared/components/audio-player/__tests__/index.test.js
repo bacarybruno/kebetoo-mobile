@@ -11,6 +11,9 @@ jest.useFakeTimers()
 
 const givenAudioPlayer = setupTest(AudioPlayer)({
   source: 'http://localhost:1337/uploads/PTT_20200618_4_77ef44ec7b.mp3',
+  style: {
+    height: 20,
+  },
 })
 
 it('renders AudioPlayer', () => {
@@ -75,6 +78,24 @@ describe('player states', () => {
     })
     expect(props.player.pause).toBeCalledTimes(1)
     expect(wrapper.root.findByType(Ionicon).props.name).toBe('ios-play')
+  })
+  it('end playing', () => {
+    const { wrapper } = givenAudioPlayer({
+      player: {
+        play: jest.fn().mockImplementation((callback) => callback(true)),
+        isLoaded: jest.fn().mockReturnValue(true),
+        isPlaying: jest.fn().mockReturnValue(false),
+        getDuration: jest.fn().mockReturnValue(5000),
+        getCurrentTime: jest.fn().mockReturnValue((callback) => {
+          callback(1000)
+        }),
+      },
+    })
+    act(() => {
+      fireEvent.press(wrapper.root.findByType(PlayButton))
+    })
+    expect(wrapper.root.findByProps({ text: readableSeconds(0) })).toBeTruthy()
+    expect(wrapper.root.findByProps({ testID: 'progress' }).props.style).toMatchObject({ width: '0%' })
   })
 })
 
