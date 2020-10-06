@@ -167,6 +167,7 @@ const useReactions = ({
     }, async (index) => {
       if (index === 0) {
         await api.createPost({ author, repost: repostId })
+        navigate(routes.MANAGE_POSTS)
       } else if (index === 1) {
         navigate(routes.CREATE_POST, {
           action: actionTypes.SHARE,
@@ -205,7 +206,7 @@ const useReactions = ({
       likes: countReactions(post, REACTION_TYPES.LIKE),
       dislikes: countReactions(post, REACTION_TYPES.DISLIKE),
       comments: (comments || post.comments).length,
-      shares: countReactions(post, REACTION_TYPES.SHARE),
+      shares: post.reposts?.length ?? 0,
     },
   }
 }

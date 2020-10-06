@@ -6,20 +6,16 @@ import { metrics } from '@app/theme'
 
 import ImageModal from '../index'
 
-jest.mock('@react-navigation/native', () => ({
-  ...jest.requireActual('@react-navigation/native'),
-  useRoute: () => ({
+const givenImageModal = setupTest(ImageModal)({
+  navigation: {
+    setOptions: jest.fn(),
+  },
+  route: {
     params: {
       source: {
         uri: 'jest://fake-image.png',
       },
     },
-  }),
-}))
-
-const givenImageModal = setupTest(ImageModal)({
-  navigation: {
-    setOptions: jest.fn(),
   },
 })
 

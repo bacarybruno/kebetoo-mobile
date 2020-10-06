@@ -51,4 +51,7 @@ export default StyleSheet.create({
     borderRadius: 15,
     ...elevation(1),
   },
+  imagePreviewer: {
+    width: '50%',
+  },
 })

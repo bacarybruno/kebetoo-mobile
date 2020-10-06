@@ -20,10 +20,10 @@ export const routeOptions = {
 
 const isGoogleImageUrl = (url) => url.includes('googleusercontent.com')
 
-const ImageModal = ({ navigation }) => {
+const ImageModal = ({ route, navigation }) => {
   navigation.setOptions(routeOptions)
 
-  const { params } = useRoute()
+  const { params } = route
   const { source, width, height } = params
   const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
 

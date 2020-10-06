@@ -34,6 +34,7 @@ export const CommentReply = ({ reply, profile }) => (
       authorId={reply.author.id}
       displayName={reply.author.displayName}
       photoURL={reply.author.photoURL}
+      avatarSize={30}
     />
   </View>
 )
@@ -203,6 +204,7 @@ const Comments = () => {
           ListHeaderComponent={ListHeader}
           ListEmptyComponent={NoComments}
           contentContainerStyle={styles.flatlistContent}
+          removeClippedSubviews
           ref={scrollView}
         />
       </View>

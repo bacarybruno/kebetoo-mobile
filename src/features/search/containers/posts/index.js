@@ -2,13 +2,13 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import * as api from '@app/shared/services/http'
 import { Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 import { colors } from '@app/theme'
 import { strings } from '@app/config'
 import { usePosts } from '@app/shared/hooks'
@@ -45,7 +45,6 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const dispatch = useDispatch()
 
   const { getRepostAuthors } = usePosts()
-
   const isFocused = useIsFocused()
 
   useEffect(() => {

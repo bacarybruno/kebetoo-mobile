@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { View, SectionList, Image } from 'react-native'
-import { useRoute, useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
 import * as api from '@app/shared/services/http'
@@ -42,10 +41,10 @@ export const SectionHeader = ({ section, dateFormat }) => (
 
 const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
-const UserProfile = ({ navigation }) => {
+const UserProfile = ({ route, navigation }) => {
   navigation.setOptions(routeOptions)
 
-  const { params: { userId } } = useRoute()
+  const { params: { userId } } = route
   const [posts, setPosts] = useState([])
   const [sortedPosts, setSortedPosts] = useState([])
   const [authors, setAuthors] = useState({})
@@ -62,7 +61,6 @@ const UserProfile = ({ navigation }) => {
   const dateFormat = 'YYYY-MM'
 
   const { getRepostAuthors } = usePosts()
-  const { navigate } = useNavigation()
 
   const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
 
@@ -95,13 +93,13 @@ const UserProfile = ({ navigation }) => {
 
   const onListHeaderPress = useCallback(() => {
     if (photoURL) {
-      navigate(routes.MODAL_IMAGE, {
+      navigation.navigate(routes.MODAL_IMAGE, {
         source: {
           uri: photoURL,
         },
       })
     }
-  }, [navigate, photoURL])
+  }, [navigation, photoURL])
 
   const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
 

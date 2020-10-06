@@ -97,7 +97,7 @@ const Content = ({ item }) => {
 }
 
 const Comment = ({
-  item, displayName, photoURL, user, authorId, repliesCount, onShowReplies,
+  item, displayName, photoURL, user, authorId, repliesCount, onShowReplies, avatarSize = 35,
 }) => {
   const [reactions, setReactions] = useState(item.reactions)
   const [lastPress, setLastPress] = useState(null)
@@ -154,7 +154,7 @@ const Comment = ({
       <View style={styles.row}>
         <TouchableWithoutFeedback onPress={onShowProfile}>
           <View style={styles.avatarWrapper}>
-            <Avatar src={photoURL} text={displayName} size={35} />
+            <Avatar src={photoURL} text={displayName} size={avatarSize} />
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.flexible}>
