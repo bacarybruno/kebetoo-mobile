@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
+import { CommonActions } from '@react-navigation/native'
 
 import {
   TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer,
@@ -106,8 +107,21 @@ const CreatePostPage = ({ route, navigation }) => {
     }
     setIsLoading(false)
     if (params && params.onGoBack) params.onGoBack(result)
+
     if (editMode) return navigation.goBack()
-    return navigation.replace(routes.MANAGE_POSTS)
+
+    navigation.dispatch((state) => {
+      // Remove the manage route from the stack
+      const newRoutes = state.routes.filter((r) => r.name !== routes.MANAGE_POSTS)
+
+      return CommonActions.reset({
+        ...state,
+        routes: newRoutes,
+        index: newRoutes.length - 1,
+      })
+    })
+
+    return navigation.replace(routes.MANAGE_POSTS, { payload: result.id })
   }, [editMode, audioRecorder, imagePicker, params, navigation, text, profile.uid])
 
   const getHeaderMessages = useCallback(() => {

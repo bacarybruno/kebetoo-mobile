@@ -133,7 +133,7 @@ exports[`renders Comments 1`] = `
                     },
                   ],
                   "reposts": Array [],
-                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                  "updatedAt": "2020-06-20T09:40:53.841Z",
                 }
               }
               size={35}
@@ -238,7 +238,7 @@ exports[`renders Comments 1`] = `
                     },
                   ],
                   "reposts": Array [],
-                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                  "updatedAt": "2020-06-20T09:40:53.841Z",
                 }
               }
               style={
@@ -495,7 +495,7 @@ exports[`renders Comments 1`] = `
                   },
                 ],
                 "reposts": Array [],
-                "updatedAt": "2020-06-20T09:40:52.841Z",
+                "updatedAt": "2020-06-20T09:40:53.841Z",
               }
             }
           />
@@ -3105,7 +3105,7 @@ exports[`renders Comments in loading state 1`] = `
                     },
                   ],
                   "reposts": Array [],
-                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                  "updatedAt": "2020-06-20T09:40:53.841Z",
                 }
               }
               size={35}
@@ -3210,7 +3210,7 @@ exports[`renders Comments in loading state 1`] = `
                     },
                   ],
                   "reposts": Array [],
-                  "updatedAt": "2020-06-20T09:40:52.841Z",
+                  "updatedAt": "2020-06-20T09:40:53.841Z",
                 }
               }
               style={
@@ -3338,7 +3338,7 @@ exports[`renders Comments in loading state 1`] = `
                   },
                 ],
                 "reposts": Array [],
-                "updatedAt": "2020-06-20T09:40:52.841Z",
+                "updatedAt": "2020-06-20T09:40:53.841Z",
               }
             }
           />

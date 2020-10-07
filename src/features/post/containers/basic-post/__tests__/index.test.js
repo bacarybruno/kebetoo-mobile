@@ -3,13 +3,17 @@ import { useNavigation } from '@react-navigation/native'
 import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
+import { TouchableOpacity } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
 import routes from '@app/navigation/routes'
 import posts from '@fixtures/posts'
 import authors from '@fixtures/authors'
+import { strings } from '@app/config'
 
-import BasicPost, { Content } from '../index'
+import BasicPost, { Content, propsAreEqual } from '../index'
+
+beforeEach(jest.clearAllMocks)
 
 const mockStore = configureStore()
 const store = mockStore({
@@ -18,14 +22,16 @@ const store = mockStore({
   },
 })
 
-const givenBasicPost = setupTest(BasicPost)({
+const componentProps = {
   store,
   author: authors[1],
   originalAuthor: authors[0],
   isRepost: false,
   size: 35,
   withReactions: true,
-})
+  badge: strings.general.new,
+}
+const givenBasicPost = setupTest(BasicPost)(componentProps)
 
 // test only snapshots as the components behaviors are already tested
 // on the standalone components
@@ -119,4 +125,31 @@ describe('buttons', () => {
     })
     expect(wrapper.root.findByType(Content).props.onPress).toBeUndefined()
   })
+})
+
+it('compare props properly', () => {
+  const propsWithAudioPost = {
+    ...componentProps,
+    post: posts.audio,
+  }
+  const propsWithTextPost = {
+    ...componentProps,
+    post: posts.text,
+  }
+  expect(propsAreEqual(propsWithAudioPost, propsWithAudioPost)).toBe(true)
+  expect(propsAreEqual(propsWithAudioPost, propsWithTextPost)).toBe(false)
+})
+
+it('shows user profile', async () => {
+  let wrapper
+  await act(async () => {
+    const { wrapper: asyncWrapper } = await givenBasicPost({
+      post: posts.text,
+      isRepost: true,
+    })
+    wrapper = asyncWrapper
+  })
+  wrapper.root.findAllByType(TouchableOpacity)[0].props.onPress()
+  expect(useNavigation().navigate).toBeCalledTimes(1)
+  expect(useNavigation().navigate).toBeCalledWith(routes.USER_PROFILE, expect.anything())
 })

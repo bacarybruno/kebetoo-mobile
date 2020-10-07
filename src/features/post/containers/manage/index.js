@@ -49,7 +49,7 @@ const bottomSheetItems = [{
   icon: 'md-close',
 }]
 
-const ManagePostsPage = ({ navigation }) => {
+const ManagePostsPage = ({ route, navigation }) => {
   navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
@@ -59,6 +59,7 @@ const ManagePostsPage = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
 
   const { getRepostAuthors } = usePosts()
+  const { params } = route
 
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = navigation
@@ -192,6 +193,7 @@ const ManagePostsPage = ({ navigation }) => {
     <BasicPost
       onOptions={() => showPostOptions(item)}
       author={userToAuthor(profile)}
+      badge={params?.payload === item.id ? strings.general.new : undefined}
       originalAuthor={
         item.repost
           ? authors[item.repost.author]
@@ -199,7 +201,7 @@ const ManagePostsPage = ({ navigation }) => {
       }
       post={item}
     />
-  ), [authors, showPostOptions, profile])
+  ), [profile, params, authors, showPostOptions])
 
   const renderNoPost = useCallback(() => loading === false && <NoPosts />, [loading])
 

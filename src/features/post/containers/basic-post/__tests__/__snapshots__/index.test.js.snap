@@ -241,6 +241,78 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           >
             Edited
           </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -1996,6 +2068,78 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
           >
             Edited
           </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2412,34 +2556,50 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           >
              • 
           </Text>
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
                 },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
               ]
             }
           >
-            Edited
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3973,34 +4133,50 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
           >
              • 
           </Text>
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
                 },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
               ]
             }
           >
-            Edited
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -4328,34 +4504,50 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           >
              • 
           </Text>
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
                 },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
               ]
             }
           >
-            Edited
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -6167,34 +6359,50 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           >
              • 
           </Text>
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
                 },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
               ]
             }
           >
-            Edited
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -6625,6 +6833,78 @@ exports[`renders component [text]: renders BasicPost 1`] = `
           >
             7 days ago
           </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -8040,6 +8320,78 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
           >
             7 days ago
           </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
         </View>
       </View>
     </View>

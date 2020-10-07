@@ -12,6 +12,7 @@ const locales = Object.freeze({
     confirm: 'Confirmer',
     system_default: 'Thème par défaut du système',
     audio: 'Audio',
+    new: 'Nouveau',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',

@@ -10,10 +10,12 @@ const getBackgroundColor = (primary) => ({
   backgroundColor: primary ? colors.primary : colors.secondary,
 })
 
-const Badge = ({ text, style, primary }) => (
+const Badge = ({
+  text, style, primary, typography,
+}) => (
   <View style={[styles.wrapper, getBackgroundColor(primary), style]}>
     <Typography
-      type={types.headline5}
+      type={typography || types.headline5}
       text={text}
       color={primary ? 'white' : 'primary'}
       systemWeight={weights.bold}

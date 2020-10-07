@@ -1,11 +1,12 @@
 import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
+import { strings } from '@app/config'
 
 import OutlinedButton from '../index'
 
 const givenOutlinedButton = setupTest(OutlinedButton)({
-  text: 'New',
+  text: strings.general.new,
   style: { backgroundColor: 'red', color: 'white' },
   onPress: jest.fn(),
 })
