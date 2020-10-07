@@ -18,6 +18,9 @@ const givenManagePost = setupTest(ManagePost)({
     navigate: jest.fn(),
     setOptions: jest.fn(),
   },
+  route: {
+    params: null,
+  },
 })
 
 afterEach(jest.clearAllMocks)

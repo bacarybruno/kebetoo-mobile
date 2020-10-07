@@ -4,7 +4,9 @@ import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 
-import { Avatar, Typography, PostPlaceholder } from '@app/shared/components'
+import {
+  Avatar, Typography, PostPlaceholder, Badge,
+} from '@app/shared/components'
 import { PlaceholderAvatar } from '@app/shared/components/placeholders/posts'
 import Reactions from '@app/features/post/containers/reactions'
 import AudioContent from '@app/features/post/components/audio-content'
@@ -18,7 +20,7 @@ import RepostContent from '@app/features/post/components/repost-content'
 
 import styles from './styles'
 
-const isUpdated = (post) => post.createdAt !== post.updatedAt
+const isUpdated = (post) => post.createdAt?.split('.')[0] !== post.updatedAt?.split('.')[0]
 
 export const POST_TYPES = {
   AUDIO: 'audio',
@@ -50,6 +52,13 @@ const Edited = () => (
   </>
 )
 
+const InfoBadge = ({ text }) => (
+  <>
+    <Typography text=" • " type={Typography.types.caption} />
+    <Badge text={text} typography={Typography.types.caption} primary />
+  </>
+)
+
 const MoreButton = ({ onPress }) => (
   <TouchableOpacity
     onPress={onPress}
@@ -66,7 +75,7 @@ const MoreButton = ({ onPress }) => (
 )
 
 export const Header = ({
-  post, isRepost, author, size, onOptions, Left,
+  post, isRepost, author, size, onOptions, Left, badge,
 }) => {
   let avatarSize = size
   if (isRepost) avatarSize = Typography.fontSizes.lg
@@ -104,6 +113,7 @@ export const Header = ({
                   type={Typography.types.caption}
                 />
                 {isUpdated(post) && <Edited />}
+                {badge && <InfoBadge text={badge} />}
               </View>
             )}
           </View>
@@ -141,7 +151,7 @@ export const Content = ({ post, ...otherProps }) => {
 }
 
 const BasicPost = ({
-  post, author, originalAuthor, onOptions, isRepost, mode, size = 35, withReactions = true,
+  post, author, originalAuthor, onOptions, isRepost, mode, size = 35, withReactions = true, badge,
 }) => {
   const { navigate } = useNavigation()
   const { profile } = useUser()
@@ -156,7 +166,14 @@ const BasicPost = ({
 
   return (
     <View style={[styles.wrapper, isRepost && styles.noMargin]}>
-      <Header isRepost={isRepost} post={post} author={author} size={size} onOptions={onOptions} />
+      <Header
+        badge={badge}
+        isRepost={isRepost}
+        post={post}
+        author={author}
+        size={size}
+        onOptions={onOptions}
+      />
       <Content
         onPress={isRepost ? undefined : navigateToComments}
         originalAuthor={originalAuthor}
@@ -173,7 +190,7 @@ const BasicPost = ({
   )
 }
 
-const propsAreEqual = (prevProps, nextProps) => (
+export const propsAreEqual = (prevProps, nextProps) => (
   prevProps.post.updatedAt === nextProps.post.updatedAt
   && prevProps.withReactions && nextProps.withReactions
   && prevProps.author && nextProps.author

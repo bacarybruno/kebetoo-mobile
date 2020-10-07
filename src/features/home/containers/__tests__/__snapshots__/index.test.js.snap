@@ -107,7 +107,7 @@ exports[`renders HomePage 1`] = `
             },
           ],
           "reposts": Array [],
-          "updatedAt": "2020-06-20T09:40:52.841Z",
+          "updatedAt": "2020-06-20T09:40:53.841Z",
         },
         Object {
           "__v": 0,
@@ -1312,62 +1312,6 @@ exports[`renders HomePage 1`] = `
                   >
                     7 days ago
                   </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
-                        Array [
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                     • 
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
-                        Array [
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Edited
-                  </Text>
                 </View>
               </View>
             </View>
@@ -2536,62 +2480,6 @@ exports[`renders HomePage 1`] = `
                     }
                   >
                     7 days ago
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
-                        Array [
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                     • 
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
-                        Array [
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Edited
                   </Text>
                 </View>
               </View>
