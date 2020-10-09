@@ -355,7 +355,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               ]
                                             }
                                           >
-                                            What's new in Paris?
+                                            Happy to see you! 🦜
                                           </Text>
                                         </View>
                                         <View
@@ -3894,7 +3894,7 @@ exports[`tabs renders TabNavigation 1`] = `
                             ]
                           }
                         >
-                          What's new in Paris?
+                          Happy to see you! 🦜
                         </Text>
                       </View>
                       <View

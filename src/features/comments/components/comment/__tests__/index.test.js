@@ -1,11 +1,10 @@
-import { act } from 'react-test-renderer'
-import { TouchableWithoutFeedback } from 'react-native'
 import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 import comments from '@fixtures/comments'
 import authors from '@fixtures/authors'
 import { CommentPlaceholder } from '@app/shared/components/placeholders/comments'
+import { DoubleTapHandler } from '@app/shared/components'
 
 import Comment from '../index'
 
@@ -40,7 +39,7 @@ it('handles reaction', async () => {
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
 })
 
-it('handles double tap', async () => {
+it('react to comment on double press', async () => {
   const { wrapper } = givenComment({
     item: {
       ...comments[0],
@@ -48,15 +47,16 @@ it('handles double tap', async () => {
     },
   })
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
-  await act(async () => {
-    await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
-    await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
-  })
+  await fireEvent(wrapper.root.findByType(DoubleTapHandler), 'onDoublePress')
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
-  await act(async () => {
-    await wrapper.root.findByType(TouchableWithoutFeedback).props.onPress()
+})
+
+it('loads replies on press', async () => {
+  const { wrapper, props } = givenComment({
+    onShowReplies: jest.fn(),
   })
-  expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
+  await fireEvent.press(wrapper.root.findByType(DoubleTapHandler))
+  expect(props.onShowReplies).toBeCalledTimes(1)
 })
 
 it('renders placeholder if data is not available', () => {

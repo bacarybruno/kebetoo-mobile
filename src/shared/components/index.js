@@ -8,6 +8,7 @@ export { default as Logo } from './logo'
 export { default as NoContent } from './no-content'
 export { default as Typography } from './typography'
 export { PostPlaceholder, CommentPlaceholder } from './placeholders'
+export { default as DoubleTapHandler } from './double-tap'
 export {
   FullButton, IconButton, OutlinedButton, Pressable, TabBarAddButton,
 } from './buttons'

@@ -5,6 +5,7 @@ import { Animated, View } from 'react-native'
 
 import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
 import { strings } from '@app/config'
+import { readableSeconds } from '@app/shared/helpers/dates'
 
 import { SendButton, RecordButton } from '../send-button'
 import ReplyInfo from '../reply-info'
@@ -42,7 +43,9 @@ export const CommentInput = ({
           <EmojiTextInput
             multiline
             fieldName="comment"
-            placeholder={strings.comments.add_comment}
+            placeholder={audioRecorder.isRecording
+              ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
+              : strings.comments.add_comment}
             onValueChange={onChange}
             value={value}
             ref={inputRef}

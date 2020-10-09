@@ -48,6 +48,12 @@ export default StyleSheet.create({
     paddingBottom: metrics.marginHorizontal / 2,
     justifyContent: 'center',
   },
+  swipeableReply: {
+    paddingLeft: metrics.marginHorizontal,
+    paddingTop: metrics.marginHorizontal / 2,
+    paddingBottom: metrics.marginHorizontal / 2,
+    justifyContent: 'center',
+  },
   backHandler: {
     width: 24,
     height: 24,
@@ -55,12 +61,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  repliesWrapper: {
+  replyWrapper: {
     paddingLeft: metrics.marginHorizontal * 3,
     paddingRight: metrics.marginHorizontal,
   },
   selectedComment: {
     backgroundColor: colors.backgroundSecondary,
-    ...elevation(3),
+    ...elevation(1),
   },
 })

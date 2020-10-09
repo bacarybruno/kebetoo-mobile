@@ -3,6 +3,7 @@ import { AudioPlayer } from '@app/shared/components/audio-player'
 
 import { strings } from '@app/config'
 import { act } from 'react-test-renderer'
+import { EmojiTextInput } from '@app/shared/components'
 
 import CommentInput from '../index'
 import ReplyInfo from '../../reply-info'
@@ -110,4 +111,14 @@ it('handles content size change', () => {
   setImmediate(() => {
     expect(input.props.height).toEqual(expectedHeight)
   })
+})
+
+it('renders duration as placeholder if it is recording', () => {
+  const { wrapper } = givenCommentInput({
+    audioRecorder: {
+      isRecording: true,
+      elapsedTime: 10,
+    },
+  })
+  expect(wrapper.root.findByType(EmojiTextInput).props.placeholder).toBe('Recording (0:10)')
 })
