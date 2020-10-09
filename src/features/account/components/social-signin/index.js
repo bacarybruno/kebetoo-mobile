@@ -10,9 +10,9 @@ import { useAnalytics } from '@app/shared/hooks'
 import styles from './styles'
 
 const SocialSignIn = ({
-  sectionText, children, onSignIn, onLoading, disabled, type,
+  sectionText, children, onSignIn, onLoading, disabled, type, onError = () => {},
 }) => {
-  const { trackSignIn, trackSignUp, reportError } = useAnalytics()
+  const { trackSignIn, trackSignUp } = useAnalytics()
 
   const trackAuthEvent = useCallback((provider) => {
     if (type === 'signIn') {
@@ -27,26 +27,26 @@ const SocialSignIn = ({
     onLoading(true)
     const result = await googleLogin()
     if (result.error) {
-      reportError(result.error)
+      onError(result.error)
     } else {
       trackAuthEvent('google.com')
     }
     onLoading(false)
     return onSignIn(result)
-  }, [onLoading, onSignIn, disabled, trackAuthEvent, reportError])
+  }, [disabled, onLoading, onSignIn, onError, trackAuthEvent])
 
   const signInWithFacebook = useCallback(async () => {
     if (disabled) return false
     onLoading(true)
     const result = await facebookLogin()
     if (result.error) {
-      reportError(result.error)
+      onError(result.error)
     } else {
       trackAuthEvent('facebook.com')
     }
     onLoading(false)
     return onSignIn(result)
-  }, [onLoading, onSignIn, disabled, trackAuthEvent, reportError])
+  }, [onLoading, onSignIn, disabled, trackAuthEvent, onError])
 
   return (
     <View style={styles.socialSignUp}>

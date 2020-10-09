@@ -79,6 +79,24 @@ const SignUp = ({ navigation }) => {
     passwordRef.current.focus()
   }, [])
 
+  const handleAuthError = useCallback((error) => {
+    switch (error?.code) {
+      case 'auth/email-already-in-use':
+        setErrors((state) => ({
+          ...state, [fieldNames.email]: strings.errors.auth_email_already_in_use,
+        }))
+        break
+      case 'auth/account-exists-with-different-credential':
+        setErrors((state) => ({
+          ...state, [fieldNames.email]: strings.errors.auth_account_exists_different_credential,
+        }))
+        break
+      default:
+        reportError(error)
+        break
+    }
+  }, [reportError])
+
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true)
@@ -93,11 +111,11 @@ const SignUp = ({ navigation }) => {
 
       await createUser({ id: user.uid, displayName, photoURL: null })
     } catch (error) {
-      reportError(error)
+      handleAuthError(error)
     } finally {
       setIsLoading(false)
     }
-  }, [schema, infos, dispatch, trackSignUp, reportError])
+  }, [schema, infos, dispatch, trackSignUp, handleAuthError])
 
   const validate = useCallback((field) => {
     try {
@@ -160,6 +178,7 @@ const SignUp = ({ navigation }) => {
           sectionText={strings.auth.or_signin_with}
           onLoading={setIsLoading}
           disabled={isLoading}
+          onError={handleAuthError}
         >
           <View style={styles.footerText}>
             <Typography type={Typography.types.textButtonLight} text={strings.auth.have_account} />

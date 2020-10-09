@@ -126,6 +126,11 @@ const locales = Object.freeze({
     required_field: 'Veuillez entrer votre {0}',
     invalid_field: 'Veuillez entrer un {0} valide',
     min_length_field: '{0} doit contenir au moins {1} caractères',
+    auth_user_not_found: 'Cet utilisateur n\'existe pas. Veuillez essayer de créer un compte',
+    auth_wrong_password: 'Le mot de passe est incorrect',
+    auth_user_disabled: 'Cet utilisateur a été désactivé',
+    auth_email_already_in_use: 'Ce compte existe déjà. Veuillez essayer de vous connecter',
+    auth_account_exists_different_credential: 'L\'e-mail utilisé est déjà associé à un autre compte. Veuillez essayer une autre méthode de connexion',
   },
 })
 
