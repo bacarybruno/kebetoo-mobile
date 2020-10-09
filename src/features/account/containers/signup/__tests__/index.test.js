@@ -23,6 +23,13 @@ const givenSignUp = setupTest(SignUp, render)({
   },
 })
 
+const givenSignUpTestRenderer = setupTest(SignUp)({
+  navigation: {
+    setOptions: jest.fn(),
+    navigate: jest.fn(),
+  },
+})
+
 it('renders SignUp', () => {
   const { wrapper } = givenSignUp()
   expect(wrapper.toJSON()).toMatchSnapshot()
@@ -78,15 +85,6 @@ describe('submit', () => {
 
 
 describe('form fields validation', () => {
-  let givenSignUpTestRenderer
-  beforeEach(() => {
-    givenSignUpTestRenderer = setupTest(SignUp)({
-      navigation: {
-        setOptions: jest.fn(),
-        navigate: jest.fn(),
-      },
-    })
-  })
   it('is invalid', () => {
     const { wrapper } = givenSignUpTestRenderer()
     const emailInput = wrapper.root.findByProps({ fieldName: fieldNames.email })
@@ -108,5 +106,44 @@ describe('form fields validation', () => {
       emailInput.props.onBlur(fieldNames.email)
     })
     expect(emailInput.props.error).toBeFalsy()
+  })
+})
+
+
+describe('auth errors', () => {
+  const testCases = {
+    'auth/email-already-in-use': {
+      fieldName: fieldNames.email,
+      fieldValue: strings.errors.auth_email_already_in_use,
+    },
+    'auth/account-exists-with-different-credential': {
+      fieldName: fieldNames.email,
+      fieldValue: strings.errors.auth_account_exists_different_credential,
+    },
+  }
+
+  Object.keys(testCases).forEach((errorCode) => {
+    it(`handles ${errorCode} error`, async () => {
+      auth().createUserWithEmailAndPassword = jest.fn().mockRejectedValue({ code: errorCode })
+      const { wrapper } = givenSignUpTestRenderer()
+
+      const fullnameInput = wrapper.root.findByProps({ placeholder: strings.auth.fullname })
+      const emailInput = wrapper.root.findByProps({ placeholder: strings.auth.email })
+      const passwordInput = wrapper.root.findByProps({ placeholder: strings.auth.password })
+      const signUpButton = wrapper.root.findByProps({ text: strings.auth.signup.toUpperCase() })
+
+      fullnameInput.props.onValueChange('Testeur', fieldNames.fullName)
+      fireEvent(emailInput, 'onSubmitEditing')
+      emailInput.props.onValueChange('bacarybruno@gmail.com', fieldNames.email)
+      fireEvent(emailInput, 'onSubmitEditing')
+      passwordInput.props.onValueChange('12345678', fieldNames.password)
+
+      await act(async () => {
+        await fireEvent.press(signUpButton)
+      })
+
+      expect(wrapper.root.findByProps({ fieldName: testCases[errorCode].fieldName }).props.error)
+        .toBe(testCases[errorCode].fieldValue)
+    })
   })
 })

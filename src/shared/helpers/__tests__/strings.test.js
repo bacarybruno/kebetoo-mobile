@@ -13,6 +13,9 @@ it('capitalizes string', () => {
   }, {
     actual: 'hello world',
     expected: 'Hello world',
+  }, {
+    actual: 'hello world. im kebetoo',
+    expected: 'Hello world. Im kebetoo',
   }]
   testCases.forEach((testCase) => {
     expect(strings.capitalize(testCase.actual)).toBe(testCase.expected)

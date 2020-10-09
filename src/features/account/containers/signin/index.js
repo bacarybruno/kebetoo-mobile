@@ -57,6 +57,34 @@ const SignIn = ({ navigation }) => {
     setErrors((state) => ({ ...state, [field]: null }))
   }, [])
 
+  const handleAuthError = useCallback((error) => {
+    switch (error.code) {
+      case 'auth/user-not-found':
+        setErrors((state) => ({
+          ...state, [fieldNames.email]: strings.errors.auth_user_not_found,
+        }))
+        break
+      case 'auth/wrong-password':
+        setErrors((state) => ({
+          ...state, [fieldNames.password]: strings.errors.auth_wrong_password,
+        }))
+        break
+      case 'auth/user-disabled':
+        setErrors((state) => ({
+          ...state, [fieldNames.email]: strings.errors.auth_user_disabled,
+        }))
+        break
+      case 'auth/account-exists-with-different-credential':
+        setErrors((state) => ({
+          ...state, [fieldNames.email]: strings.errors.auth_account_exists_different_credential,
+        }))
+        break
+      default:
+        reportError(error)
+        break
+    }
+  }, [reportError])
+
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true)
@@ -65,11 +93,11 @@ const SignIn = ({ navigation }) => {
       trackSignIn('password')
       await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
     } catch (error) {
-      reportError(error)
+      handleAuthError(error)
     } finally {
       setIsLoading(false)
     }
-  }, [schema, infos, trackSignIn, reportError])
+  }, [schema, infos, trackSignIn, handleAuthError])
 
   const navigateToSignUp = useCallback(() => {
     navigation.navigate(routes.SIGNUP)
@@ -137,6 +165,7 @@ const SignIn = ({ navigation }) => {
           sectionText={strings.auth.or_signin_with}
           onLoading={setIsLoading}
           disabled={isLoading}
+          onError={handleAuthError}
         >
           <View style={styles.footerText}>
             <Typography
