@@ -18,8 +18,10 @@ export default StyleSheet.create({
   },
   reactionsButton: {
     flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
-    padding: 5,
+    paddingTop: 5,
+    paddingHorizontal: 5,
   },
   row: {
     flex: 1,
@@ -33,11 +35,5 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 5,
-  },
-  repliesCount: {
-    paddingHorizontal: 5,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 })

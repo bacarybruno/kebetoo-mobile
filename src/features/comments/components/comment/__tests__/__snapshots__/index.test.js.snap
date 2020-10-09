@@ -2,15 +2,9 @@
 
 exports[`renders Comment 1`] = `
 <View
-  accessible={true}
-  focusable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  collapsable={false}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
   style={
     Object {
       "flex": 1,
@@ -18,61 +12,73 @@ exports[`renders Comment 1`] = `
     }
   }
 >
-  <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+  <RNGestureHandlerButton
+    collapsable={false}
+    onGestureEvent={[Function]}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
+    onHandlerStateChange={[Function]}
+    rippleColor={0}
     style={
-      Object {
-        "marginRight": 10,
-      }
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
     }
   >
     <View
-      style={
-        Array [
-          Object {
-            "height": 30,
-            "width": 30,
-          },
-          Object {
-            "height": 35,
-            "width": 35,
-          },
-          undefined,
-        ]
-      }
+      accessible={true}
     >
-      <Image
-        source={
+      <View
+        style={
           Object {
-            "uri": "https://avatars1.githubusercontent.com/u/14147533",
+            "marginRight": 10,
           }
         }
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 15,
-              "flex": 1,
-              "justifyContent": "center",
-            },
-            Object {
-              "borderRadius": 17.5,
-            },
-          ]
-        }
-        testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-      />
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 30,
+                "width": 30,
+              },
+              Object {
+                "height": 35,
+                "width": 35,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://avatars1.githubusercontent.com/u/14147533",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                  "borderRadius": 15,
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "borderRadius": 17.5,
+                },
+              ]
+            }
+            testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+          />
+        </View>
+      </View>
     </View>
-  </View>
+  </RNGestureHandlerButton>
   <View
     style={
       Object {
@@ -235,7 +241,9 @@ exports[`renders Comment 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "padding": 5,
+            "justifyContent": "center",
+            "paddingHorizontal": 5,
+            "paddingTop": 5,
           }
         }
         testID="reaction-button"

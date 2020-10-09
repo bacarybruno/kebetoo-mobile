@@ -20,14 +20,14 @@ import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
-import SwipeableComment from '../components/swipeable'
+import Swipeable from '../components/swipeable'
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
 
 export const CommentReply = ({ reply, profile }) => (
-  <View style={styles.repliesWrapper}>
+  <View style={styles.replyWrapper}>
     <Comment
       item={reply}
       user={profile.uid}
@@ -84,29 +84,32 @@ const Comments = () => {
     fetchRepostAuthors()
   }, [post, getRepostAuthors])
 
-  const onChangeText = useCallback((value) => {
-    setComment(value)
-  }, [])
-
   const onSend = useCallback(async () => {
     let result = null
     setIsLoading(true)
+
+    let replyThread = null
+    if (toReply) {
+      // use the comment reply thread or the base comment
+      replyThread = toReply.thread || toReply
+    }
+
     if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, profile.uid, toReply)
+      result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
     } else if (comment.length > 0) {
       result = await api.commentPost({
         author: profile.uid,
         content: comment,
-        thread: toReply ? toReply.id : null,
-        post: toReply ? null : post.id,
+        thread: replyThread ? replyThread.id : null,
+        post: replyThread ? null : post.id,
       })
       commentInput.current?.clear()
       setComment('')
     }
-    if (toReply) {
+    if (replyThread) {
       setReplies((state) => ({
         ...state,
-        [toReply.id]: (state[toReply.id] || []).concat(result),
+        [replyThread.id]: (state[replyThread.id] || []).concat(result),
       }))
       setToReply(null)
     } else {
@@ -121,17 +124,29 @@ const Comments = () => {
     setToReply(item)
   }, [])
 
-  const loadReplies = useCallback(async (commentId) => {
-    const loadedReplies = await api.getReplies(commentId)
-    setReplies((state) => ({ ...state, [commentId]: loadedReplies }))
-  }, [])
+  const loadReplies = useCallback(async (c) => {
+    if (!replies[c.id]) {
+      setReplies((state) => ({ ...state, [c.id]: c.replies.map(mapComments) }))
+    }
+    const loadedReplies = await api.getReplies(c.id)
+    setReplies((state) => ({ ...state, [c.id]: loadedReplies }))
+  }, [replies])
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
-    const isToReply = toReply?.id === item.id
+
+    const checkSelectedComment = (c) => (
+      toReply?.id === c.id ? styles.selectedComment : {}
+    )
+
+    const onShowReplies = () => loadReplies(item)
+
     return (
-      <View style={[styles.comment, isToReply && styles.selectedComment]}>
-        <SwipeableComment style={styles.swipeable} onFulfilled={() => onSetReply(item)}>
+      <View style={styles.comment}>
+        <Swipeable
+          style={[styles.swipeable, checkSelectedComment(item)]}
+          onFulfilled={() => onSetReply(item)}
+        >
           <Comment
             item={item}
             user={profile.uid}
@@ -139,11 +154,16 @@ const Comments = () => {
             displayName={item.author.displayName}
             photoURL={item.author.photoURL}
             repliesCount={item.replies?.length}
-            onShowReplies={() => loadReplies(item.id)}
+            onShowReplies={onShowReplies}
           />
-        </SwipeableComment>
+        </Swipeable>
         {replies[item.id]?.map((reply) => (
-          <CommentReply reply={reply} profile={profile} key={`comment-reply-${reply.id}`} />
+          <Swipeable
+            onFulfilled={() => onSetReply(reply)}
+            style={[styles.swipeableReply, checkSelectedComment(reply)]}
+          >
+            <CommentReply reply={reply} profile={profile} key={`comment-reply-${reply.id}`} />
+          </Swipeable>
         ))}
       </View>
     )
@@ -209,7 +229,7 @@ const Comments = () => {
         />
       </View>
       <CommentInput
-        onChange={onChangeText}
+        onChange={setComment}
         onSend={onSend}
         inputRef={commentInput}
         audioRecorder={audioRecorder}

@@ -67,7 +67,7 @@ exports[`renders Header 1`] = `
         ]
       }
     >
-      What's new in Paris?
+      Happy to see you! 🦜
     </Text>
   </View>
   <View

@@ -1,11 +1,12 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { View, TouchableWithoutFeedback } from 'react-native'
+import { View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useNavigation } from '@react-navigation/native'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
 import {
-  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable,
+  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, DoubleTapHandler,
 } from '@app/shared/components'
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
@@ -33,7 +34,7 @@ export const Reactions = ({
   return (
     <View style={styles.reactionsWrapper}>
       {repliesCount > 0 && (
-        <Pressable borderless style={styles.repliesCount} onPress={onShowReplies}>
+        <Pressable borderless style={styles.reactionsButton} onPress={onShowReplies}>
           <Typography
             type={Typography.types.headline5}
             text={repliesCount}
@@ -100,8 +101,6 @@ const Comment = ({
   item, displayName, photoURL, user, authorId, repliesCount, onShowReplies, avatarSize = 35,
 }) => {
   const [reactions, setReactions] = useState(item.reactions)
-  const [lastPress, setLastPress] = useState(null)
-  const DOUBLE_PRESS_DELAY = 200
 
   useEffect(() => {
     setReactions(item.reactions)
@@ -132,16 +131,13 @@ const Comment = ({
     // }
   }, [item.id, reactions, user])
 
+  const onDoublePress = useCallback(async () => onReaction(REACTION_TYPES.LOVE), [onReaction])
+
   const onPress = useCallback(async () => {
-    const now = new Date().getTime()
-    if (lastPress && (now - lastPress) < DOUBLE_PRESS_DELAY) {
-      setLastPress(null)
-      // double press
-      await onReaction(REACTION_TYPES.LOVE)
-    } else {
-      setLastPress(now)
+    if (onShowReplies) {
+      await onShowReplies()
     }
-  }, [lastPress, onReaction])
+  }, [onShowReplies])
 
   const onShowProfile = useCallback(() => {
     navigate(routes.USER_PROFILE, { userId: authorId })
@@ -150,7 +146,7 @@ const Comment = ({
   if (!displayName?.trim().length > 0) return <CommentPlaceholder />
 
   return (
-    <TouchableWithoutFeedback style={styles.row} onPress={onPress}>
+    <DoubleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
       <View style={styles.row}>
         <TouchableWithoutFeedback onPress={onShowProfile}>
           <View style={styles.avatarWrapper}>
@@ -169,7 +165,7 @@ const Comment = ({
           />
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </DoubleTapHandler>
   )
 }
 

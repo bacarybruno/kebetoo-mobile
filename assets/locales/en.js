@@ -43,7 +43,7 @@ const locales = Object.freeze({
   },
   home: {
     welcome: 'Hey {0},',
-    whats_new: 'What\'s new in Paris?',
+    whats_new: 'Happy to see you! 🦜',
   },
   profile: {
     posts: 'Posts',
@@ -80,6 +80,7 @@ const locales = Object.freeze({
   comments: {
     no_content: 'Be the first to add a comment! 👇',
     add_comment: 'Add a comment',
+    recording: 'Recording',
     people_reacted: '{0} Reacted',
     replying_to: 'Replying to {0}',
   },
