@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { Pressable, Typography, Avatar } from '@app/shared/components'
+import {
+  Pressable, Typography, Avatar, AppHeader,
+} from '@app/shared/components'
 import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
 import * as api from '@app/shared/services/http'
@@ -169,7 +171,7 @@ const PreferencesSection = React.memo(({ shareApp }) => (
   </View>
 ))
 
-export const Header = React.memo(({
+export const ProfileHeader = React.memo(({
   profile, postsCount, reactionsCount, commentsCount,
 }) => (
   <View style={styles.header}>
@@ -243,15 +245,16 @@ const ProfilePage = React.memo(() => {
 
   return (
     <View style={styles.wrapper}>
-      <View style={styles.padding}>
-        <Header
-          profile={profile}
-          postsCount={postsCount}
-          reactionsCount={reactionsCount}
-          commentsCount={commentsCount}
-        />
-      </View>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
+        <View style={styles.padding}>
+          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} />
+          <ProfileHeader
+            profile={profile}
+            postsCount={postsCount}
+            reactionsCount={reactionsCount}
+            commentsCount={commentsCount}
+          />
+        </View>
         <ProfileSection managePosts={managePosts} />
         <PreferencesSection shareApp={shareApp} />
         <AccountSection signOut={requestSignOut} />

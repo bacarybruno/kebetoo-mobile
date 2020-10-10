@@ -5,8 +5,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { colors, metrics, edgeInsets } from '@app/theme'
 import { strings } from '@app/config'
-import { TextInput } from '@app/shared/components'
-import Header from '@app/features/home/components/header'
+import { AppHeader, TextInput } from '@app/shared/components'
 import { useUser, useDebounce, useAnalytics } from '@app/shared/hooks'
 import routes from '@app/navigation/routes'
 
@@ -86,7 +85,7 @@ const SearchPage = () => {
     <View style={styles.wrapper}>
       {searchQuery === null
         ? (
-          <Header
+          <AppHeader
             text=""
             title={strings.search.search}
             displayName={profile.displayName}

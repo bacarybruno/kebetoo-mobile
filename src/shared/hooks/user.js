@@ -21,7 +21,10 @@ const useUser = () => {
         const userId = await getUserId()
         const { email, displayName, photoURL } = authenticatedUser
         const userInfos = {
-          uid: userId, displayName, email, photoURL,
+          uid: userId, email, photoURL,
+        }
+        if (displayName) {
+          userInfos.displayName = displayName
         }
         dispatch({ type: types.SET_USER_PROFILE, payload: userInfos })
       }

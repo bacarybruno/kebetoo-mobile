@@ -24,6 +24,7 @@ const Header = ({
   title = strings.formatString(strings.home.welcome, displayName.split(' ')[0]),
   text = strings.home.whats_new,
   loading = false,
+  showAvatar = true,
   Right,
 }) => {
   const { navigate } = useNavigation()
@@ -42,7 +43,9 @@ const Header = ({
         {text.length > 0 && <Typography text={text} type={Typography.types.subheading} />}
       </View>
       {Right && <Right />}
-      <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />
+      {showAvatar && (
+        <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />
+      )}
     </View>
   )
 }

@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
   header: {
     width: '100%',
-    marginTop: 30,
+    marginTop: 15,
     justifyContent: 'center',
   },
   summary: {

@@ -9,400 +9,6 @@ exports[`renders Profile 1`] = `
     }
   }
 >
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 16,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "justifyContent": "center",
-          "marginTop": 30,
-          "width": "100%",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "borderRadius": 45,
-              "elevation": 3,
-              "height": 90,
-              "opacity": 1,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 1,
-              },
-              "shadowOpacity": 0.22,
-              "shadowRadius": 2.22,
-              "width": 90,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "height": 30,
-                  "width": 30,
-                },
-                Object {
-                  "height": 90,
-                  "width": 90,
-                },
-                undefined,
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                    "borderRadius": 15,
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "borderRadius": 45,
-                  },
-                ]
-              }
-              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-            />
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "flexDirection": "column",
-              "justifyContent": "center",
-              "marginLeft": 20,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 28,
-                  "fontWeight": "400",
-                  "letterSpacing": 0.355469,
-                  "lineHeight": 34,
-                },
-                false,
-                false,
-                false,
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Bruno Bodian
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 17,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.408,
-                  "lineHeight": 22,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.54)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            bacarybruno@kebetoo.com
-          </Text>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignSelf": "center",
-              "backgroundColor": "#F5F5F5",
-              "borderRadius": 16,
-              "elevation": 1,
-              "flexDirection": "row",
-              "height": 68,
-              "marginTop": 27,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 0,
-              },
-              "shadowOpacity": 0.18,
-              "shadowRadius": 1,
-              "width": "99%",
-            },
-            undefined,
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 17,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.408,
-                  "lineHeight": 22,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0, 122, 255, 255)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "700",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
-                false,
-                false,
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.24,
-                  "lineHeight": 20,
-                },
-                false,
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.38)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            posts
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 17,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.408,
-                  "lineHeight": 22,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0, 122, 255, 255)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "700",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
-                false,
-                false,
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.24,
-                  "lineHeight": 20,
-                },
-                false,
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.38)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            comments
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 17,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.408,
-                  "lineHeight": 22,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0, 122, 255, 255)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "700",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            0
-          </Text>
-          <Text
-            style={
-              Array [
-                false,
-                false,
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "letterSpacing": -0.24,
-                  "lineHeight": 20,
-                },
-                false,
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.38)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            reactions
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
   <RCTScrollView
     contentContainerStyle={
       Object {
@@ -411,6 +17,471 @@ exports[`renders Profile 1`] = `
     }
   >
     <View>
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": 60,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 22,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.34375,
+                      "lineHeight": 28,
+                    },
+                    false,
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Profile
+              </Text>
+              <ActivityIndicator
+                animating={false}
+                color="rgba(0, 122, 255, 255)"
+                hidesWhenStopped={true}
+                size="small"
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "justifyContent": "center",
+              "marginTop": 15,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderRadius": 45,
+                  "elevation": 3,
+                  "height": 90,
+                  "opacity": 1,
+                  "shadowColor": "rgba(0, 0, 0, 255)",
+                  "shadowOffset": Object {
+                    "x": 0,
+                    "y": 1,
+                  },
+                  "shadowOpacity": 0.22,
+                  "shadowRadius": 2.22,
+                  "width": 90,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "height": 90,
+                      "width": 90,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "rgba(0, 122, 255, 255)",
+                        "borderRadius": 15,
+                        "flex": 1,
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "borderRadius": 45,
+                      },
+                    ]
+                  }
+                  testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "marginLeft": 20,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 28,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.355469,
+                      "lineHeight": 34,
+                    },
+                    false,
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Bruno Bodian
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.54)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                bacarybruno@kebetoo.com
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "#F5F5F5",
+                  "borderRadius": 16,
+                  "elevation": 1,
+                  "flexDirection": "row",
+                  "height": 68,
+                  "marginTop": 27,
+                  "shadowColor": "rgba(0, 0, 0, 255)",
+                  "shadowOffset": Object {
+                    "x": 0,
+                    "y": 0,
+                  },
+                  "shadowOpacity": 0.18,
+                  "shadowRadius": 1,
+                  "width": "99%",
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0, 122, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                0
+              </Text>
+              <Text
+                style={
+                  Array [
+                    false,
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
+                    },
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                posts
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0, 122, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                0
+              </Text>
+              <Text
+                style={
+                  Array [
+                    false,
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
+                    },
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                comments
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0, 122, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                0
+              </Text>
+              <Text
+                style={
+                  Array [
+                    false,
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
+                    },
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                reactions
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
       <View
         style={
           Object {
