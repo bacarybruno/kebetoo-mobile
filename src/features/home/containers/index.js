@@ -18,8 +18,8 @@ import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import { colors } from '@app/theme'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
+import { AppHeader } from '@app/shared/components'
 
-import Header from '../components/header'
 import styles from './styles'
 
 const routeOptions = { title: strings.tabs.home }
@@ -121,7 +121,7 @@ const HomePage = () => {
   ), [authors])
 
   const renderListHeader = useCallback(() => (
-    <Header
+    <AppHeader
       displayName={profile.displayName}
       imageSrc={profile.photoURL}
       style={styles.header}

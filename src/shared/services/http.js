@@ -39,8 +39,6 @@ const request = {
   }, formdata).then(parseJSON),
 }
 
-export const getPosts = () => request.get(`posts?_limit=${ITEMS_PER_PAGE}`)
-
 export const getUserPosts = (authorId) => request.get(
   `posts?author.id=${authorId}&_sort=updatedAt:desc`,
 )
@@ -49,10 +47,10 @@ export const getPost = (id) => request.get(`posts/${id}`)
 
 export const getComments = (postId) => request.get(`comments?post.id=${postId}`)
 
-export const getReplies = (commentId) => request.get(`comments?thread=${commentId}`)
+export const getReplies = (commentId) => request.get(`comments?thread=${commentId}&_sort=createdAt`)
 
 export const getLatestsPosts = (page = 0) => request.get(
-  `posts?_sort=updatedAt:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
+  `posts?_sort=score:desc&_start=${page * ITEMS_PER_PAGE}&_limit=${ITEMS_PER_PAGE}`,
 )
 
 export const createPost = async ({ author, content, repost }) => request.post('posts', { author, content, repost })

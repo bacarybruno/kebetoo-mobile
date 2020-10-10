@@ -9,6 +9,7 @@ export { default as NoContent } from './no-content'
 export { default as Typography } from './typography'
 export { PostPlaceholder, CommentPlaceholder } from './placeholders'
 export { default as DoubleTapHandler } from './double-tap'
+export { default as AppHeader } from './app-header'
 export {
   FullButton, IconButton, OutlinedButton, Pressable, TabBarAddButton,
 } from './buttons'

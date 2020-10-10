@@ -22,6 +22,31 @@ import Reactions from '../components/reactions'
 import Comment from '../components/comment'
 import Swipeable from '../components/swipeable'
 
+/**
+ * Hackernews' hot sort
+ * https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d
+ */
+export const scoreComment = (votes, itemDate, gravity = 1.8) => {
+  const hourAge = (Date.now() - itemDate.getTime()) / (1000 * 3600)
+  return (votes - 1) / (hourAge + 2 ** gravity)
+}
+
+export const sortComments = (comments) => (
+  comments
+    .map((comment) => ({
+      ...comment,
+      score: scoreComment(
+        comment.reactions.length + comment.replies.length,
+        new Date(comment.createdAt),
+      ),
+    }))
+    .sort((a, b) => {
+      if (a.score < b.score) return 1
+      if (b.score < a.score) return -1
+      return 0
+    })
+)
+
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
@@ -71,7 +96,7 @@ const Comments = () => {
   useEffect(() => {
     const fetchComments = async () => {
       const result = await api.getComments(post.id)
-      setComments(result)
+      setComments(sortComments(result))
     }
     fetchComments()
   }, [post.id])
