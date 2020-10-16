@@ -3,7 +3,7 @@ import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import ActionButton from 'react-native-action-button'
 import routes from '@app/navigation/routes'
 import audioPost from '@fixtures/posts/audio'
@@ -12,6 +12,8 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 import ManagePost from '../index'
 import BasicPost from '../../basic-post'
 import { actionTypes } from '../../create'
+
+beforeEach(jest.clearAllMocks)
 
 const givenManagePost = setupTest(ManagePost)({
   navigation: {
@@ -44,7 +46,7 @@ it('defines page name', () => {
 })
 
 it('display a no-content message if there is no post', async () => {
-  api.getUserPosts.mockResolvedValue([])
+  api.posts.getByAuthor.mockResolvedValue([])
   let wrapper
   await act(async () => {
     const { wrapper: asyncWrapper } = await givenManagePost()
@@ -75,7 +77,7 @@ describe('post options', () => {
     let wrapper
     let props
     const userPosts = [audioPost]
-    api.getUserPosts.mockResolvedValue(userPosts)
+    api.posts.getByAuthor.mockResolvedValue(userPosts)
     await act(async () => {
       const { wrapper: asyncWrapper, props: asyncProps } = await givenManagePost()
       wrapper = asyncWrapper
@@ -98,7 +100,7 @@ describe('post options', () => {
     let wrapper
     let props
     const userPosts = [audioPost]
-    api.getUserPosts.mockResolvedValue(userPosts)
+    api.posts.getByAuthor.mockResolvedValue(userPosts)
     await act(async () => {
       const { wrapper: asyncWrapper, props: asyncProps } = await givenManagePost()
       wrapper = asyncWrapper

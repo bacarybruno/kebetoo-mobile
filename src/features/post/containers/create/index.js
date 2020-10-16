@@ -8,7 +8,7 @@ import {
 } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'
@@ -97,13 +97,13 @@ const CreatePostPage = ({ route, navigation }) => {
     let result = null
     const repost = params?.post ?? undefined
     if (editMode) {
-      result = await api.editPost({ id: params.payload.id, content: text })
+      result = await api.posts.update({ id: params.payload.id, content: text })
     } else if (audioRecorder.hasRecording) {
       result = await audioRecorder.savePost(profile.uid, text, repost)
     } else if (imagePicker.hasFile) {
       result = await imagePicker.savePost(profile.uid, text, repost)
     } else {
-      result = await api.createPost({ content: text, repost, author: profile.uid })
+      result = await api.posts.create({ content: text, repost, author: profile.uid })
     }
     setIsLoading(false)
     if (params && params.onGoBack) params.onGoBack(result)

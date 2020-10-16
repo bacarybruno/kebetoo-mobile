@@ -11,7 +11,7 @@ import {
 } from '@app/shared/components'
 import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import * as types from '@app/redux/types'
 import { userStatsSelector } from '@app/redux/selectors'
 import { strings } from '@app/config'
@@ -207,9 +207,9 @@ const ProfilePage = React.memo(() => {
         const userId = profile.uid
         if (userId) {
           const [posts, comments, reactions] = await Promise.all([
-            api.getPostsCount(userId),
-            api.getCommentsCount(userId),
-            api.getReactionsCount(userId),
+            api.posts.countByAuthor(userId),
+            api.comments.countByAuthor(userId),
+            api.reactions.countByAuthor(userId),
           ])
 
           // update data in component

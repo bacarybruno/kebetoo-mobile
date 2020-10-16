@@ -6,7 +6,7 @@ import setupTest from '@app/config/jest-setup'
 import posts from '@fixtures/posts'
 import authors from '@fixtures/authors'
 import routes from '@app/navigation/routes'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 
 import Reactions from '../index'
 
@@ -129,7 +129,7 @@ describe('handles comments', () => {
 
 describe('optimistic ui update rejection', () => {
   afterEach(() => {
-    api.createReaction.mockImplementation(
+    api.reactions.create.mockImplementation(
       (type, postId, author) => (
         Promise.resolve({
           // eslint-disable-next-line radix
@@ -142,12 +142,12 @@ describe('optimistic ui update rejection', () => {
         })
       ),
     )
-    api.deleteReaction.mockResolvedValue(true)
-    api.editReaction.mockResolvedValue(true)
+    api.reactions.delete.mockResolvedValue(true)
+    api.reactions.update.mockResolvedValue(true)
   })
   it('fails to create reactions', async () => {
-    api.createReaction.mockRejectedValue(true)
-    // api.deleteReaction.mockRejectedValue(true)
+    api.reactions.create.mockRejectedValue(true)
+    // api.reactions.delete.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 
@@ -165,7 +165,7 @@ describe('optimistic ui update rejection', () => {
     expect(wrapper.root.findByProps({ testID: 'like-button' }).props.count).toBe(0)
   })
   it('fails to edit reaction', async () => {
-    api.editReaction.mockRejectedValue(true)
+    api.reactions.update.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 
@@ -192,7 +192,7 @@ describe('optimistic ui update rejection', () => {
     expect(wrapper.root.findByProps({ testID: 'like-button' }).props.count).toBe(1)
   })
   it('fails to delete reaction', async () => {
-    api.deleteReaction.mockRejectedValue(true)
+    api.reactions.delete.mockRejectedValue(true)
 
     const { wrapper } = givenReactions()
 

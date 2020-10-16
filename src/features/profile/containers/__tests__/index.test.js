@@ -6,7 +6,7 @@ import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 
 import Profile from '../index'
@@ -56,9 +56,9 @@ describe('displays the right stats for', () => {
   }]
   statsItems.forEach((item) => {
     it(`[${item.name}]: when request is resolved`, async () => {
-      api.getPostsCount.mockResolvedValue(item.resolvedValue)
-      api.getCommentsCount.mockResolvedValue(item.resolvedValue)
-      api.getReactionsCount.mockResolvedValue(item.resolvedValue)
+      api.posts.countByAuthor.mockResolvedValue(item.resolvedValue)
+      api.comments.countByAuthor.mockResolvedValue(item.resolvedValue)
+      api.reactions.countByAuthor.mockResolvedValue(item.resolvedValue)
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()
@@ -67,9 +67,9 @@ describe('displays the right stats for', () => {
       expect(wrapper.root.findByProps({ title: item.title }).props.value).toBe(item.resolvedValue)
     })
     it(`[${item.name}]: when request fails`, async () => {
-      api.getPostsCount.mockRejectedValue()
-      api.getCommentsCount.mockRejectedValue()
-      api.getReactionsCount.mockRejectedValue()
+      api.posts.countByAuthor.mockRejectedValue()
+      api.comments.countByAuthor.mockRejectedValue()
+      api.reactions.countByAuthor.mockRejectedValue()
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()

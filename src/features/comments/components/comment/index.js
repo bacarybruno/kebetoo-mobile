@@ -11,7 +11,7 @@ import {
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
 import { colors } from '@app/theme'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
 import { env } from '@app/config'
@@ -112,16 +112,16 @@ const Comment = ({
   const onReaction = useCallback(async (type) => {
     const userReaction = reactions.find((r) => r.author === user)
     if (userReaction === undefined) {
-      const result = await api.createCommentReaction(type, item.id, user)
+      const result = await api.reactions.createCommentReaction(type, item.id, user)
       result.author = result.author.id
       setReactions((values) => values.concat([result]))
     } else if (userReaction.type === type) {
-      await api.deleteReaction(userReaction.id)
+      await api.reactions.delete(userReaction.id)
       setReactions((values) => values.filter((r) => r.id !== userReaction.id))
     }
     // // Will be used when we'll have many reactions for comments
     // else {
-    //   await api.editReaction(userReaction.id, type)
+    //   await api.reactions.edit(userReaction.id, type)
     //   setReactions((values) => {
     //     const reaction = values.find((r) => r.id === userReaction.id)
     //     reaction.type = type

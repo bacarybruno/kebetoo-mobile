@@ -9,7 +9,7 @@ import auth from '@react-native-firebase/auth'
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 import authors from '@fixtures/authors'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import BasicPost from '@app/features/post/containers/basic-post'
 import NoResult from '@app/features/search/components/no-result'
 import HistoryItem from '@app/features/search/components/history-item'
@@ -56,7 +56,7 @@ const SearchPostsNavigation = (ownProps) => (
   </NavigationContainer>
 )
 
-api.searchPosts.mockImplementation(async (query) => {
+api.posts.search.mockImplementation(async (query) => {
   const results = posts.filter((post) => (
     post.content?.toLowerCase().includes(query.toLowerCase())
   ))

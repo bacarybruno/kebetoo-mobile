@@ -6,7 +6,7 @@ import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
 import { getMimeType } from '@app/shared/helpers/file'
 
@@ -64,7 +64,7 @@ const useAudioRecorder = (
         })
       })
     }
-    const response = await api.createPostWithAudio({
+    const response = await api.posts.createAudio({
       author,
       content,
       audio: {
@@ -82,7 +82,7 @@ const useAudioRecorder = (
   const saveComment = useCallback(async (post, author, toReply) => {
     const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
-    const response = await api.commentPostWithAudio({
+    const response = await api.comments.createAudio({
       post: toReply ? null : post,
       thread: toReply ? toReply.id : null,
       author,

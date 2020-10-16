@@ -2523,10 +2523,11 @@ exports[`renders HomePage 1`] = `
                 <View
                   style={
                     Array [
-                      undefined,
                       Object {
-                        "flexDirection": "row",
-                        "width": "100%",
+                        "marginBottom": 30,
+                      },
+                      Object {
+                        "marginBottom": 0,
                       },
                     ]
                   }
@@ -2535,17 +2536,13 @@ exports[`renders HomePage 1`] = `
                     style={
                       Array [
                         Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 17.5,
-                          "height": 35,
-                          "width": 35,
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "space-between",
+                          "marginBottom": 8,
                         },
                         Object {
-                          "backgroundColor": undefined,
-                          "marginRight": 10,
-                        },
-                        Object {
-                          "overflow": "hidden",
+                          "marginBottom": 4,
                         },
                       ]
                     }
@@ -2553,138 +2550,186 @@ exports[`renders HomePage 1`] = `
                     <View
                       style={
                         Object {
-                          "backgroundColor": "#dfdfdf",
-                          "height": "100%",
-                          "opacity": 0.5,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "height": 35,
-                          "marginBottom": 8,
+                          "flexDirection": "row",
+                          "justifyContent": "space-between",
                         }
                       }
                     >
                       <View
                         style={
-                          Array [
-                            Object {
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 2.5,
-                              "height": 10,
-                              "marginBottom": 10,
-                              "width": "50%",
-                            },
-                            Object {
-                              "backgroundColor": undefined,
-                            },
-                            Object {
-                              "overflow": "hidden",
-                            },
-                          ]
+                          Object {
+                            "flexDirection": "row",
+                          }
                         }
                       >
                         <View
+                          accessible={true}
+                          focusable={true}
+                          onClick={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
                           style={
                             Object {
-                              "backgroundColor": "#dfdfdf",
-                              "height": "100%",
-                              "opacity": 0.5,
+                              "opacity": 1,
                             }
                           }
-                        />
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "height": 30,
+                                  "width": 30,
+                                },
+                                Object {
+                                  "height": 24,
+                                  "width": 24,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                                    "borderRadius": 15,
+                                    "flex": 1,
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "borderRadius": 12,
+                                  },
+                                  undefined,
+                                  Object {
+                                    "backgroundColor": "#9575cd",
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "rgba(255, 255, 255, 255)",
+                                    "fontFamily": "System",
+                                    "fontSize": undefined,
+                                    "fontWeight": "600",
+                                  }
+                                }
+                              >
+                                J
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
                       </View>
                       <View
                         style={
                           Array [
                             Object {
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 2.5,
-                              "height": 10,
-                              "marginBottom": 10,
-                              "width": "30%",
+                              "justifyContent": "space-between",
+                              "marginLeft": 5,
                             },
                             Object {
-                              "backgroundColor": undefined,
+                              "height": 24,
                             },
                             Object {
-                              "overflow": "hidden",
+                              "justifyContent": "center",
                             },
                           ]
                         }
                       >
-                        <View
+                        <Text
                           style={
-                            Object {
-                              "backgroundColor": "#dfdfdf",
-                              "height": "100%",
-                              "opacity": 0.5,
-                            }
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontSize": 16,
+                                "fontWeight": "400",
+                                "letterSpacing": -0.32,
+                                "lineHeight": 21,
+                              },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "600",
+                                },
+                                undefined,
+                              ],
+                            ]
                           }
-                        />
+                        >
+                          John Doe
+                        </Text>
                       </View>
                     </View>
                   </View>
-                </View>
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      Object {
-                        "flexDirection": "row",
-                        "width": "100%",
-                      },
-                    ]
-                  }
-                >
                   <View
+                    accessible={true}
+                    focusable={false}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
-                      Object {
-                        "flex": 1,
-                      }
+                      Array [
+                        Object {
+                          "backgroundColor": "#F5F5F5",
+                          "borderRadius": 5,
+                          "minHeight": 52,
+                          "padding": 16,
+                        },
+                        false,
+                        undefined,
+                        false,
+                        false,
+                      ]
                     }
                   >
-                    <View
+                    <Text
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 13,
-                            "height": 52,
-                            "marginBottom": 52,
-                            "width": "100%",
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 15,
+                            "fontWeight": "400",
+                            "letterSpacing": -0.24,
+                            "lineHeight": 20,
                           },
-                          Object {
-                            "backgroundColor": undefined,
-                            "borderRadius": 5,
-                            "marginBottom": 8,
-                          },
-                          Object {
-                            "overflow": "hidden",
-                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "#dfdfdf",
-                            "height": "100%",
-                            "opacity": 0.5,
-                          }
-                        }
-                      />
-                    </View>
+                      I'll input the open-source RAM sensor, that should card the FTP protocol!
+                    </Text>
                   </View>
                 </View>
               </View>

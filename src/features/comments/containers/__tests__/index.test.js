@@ -2,7 +2,7 @@ import { act } from 'react-test-renderer'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import comments from '@fixtures/comments'
 
 import Comments, { CommentReply } from '../index'
@@ -95,8 +95,8 @@ it('clears selected comment to reply', async () => {
 })
 
 it('loads replies', async () => {
-  api.getComments.mockResolvedValue([comments[0]])
-  api.getReplies.mockResolvedValue([comments[1]])
+  api.comments.getByPostId.mockResolvedValue([comments[0]])
+  api.comments.getReplies.mockResolvedValue([comments[1]])
   let wrapper
   await act(async () => {
     const { wrapper: asyncWrapper } = await givenComments()

@@ -7,7 +7,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import colors, { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { useAnalytics } from '@app/shared/hooks'
 
 import { actionTypes } from '../containers/create'
@@ -71,7 +71,7 @@ const useReactions = ({
     setPost({ ...optimisticPost })
 
     // create the reaction on the backend
-    api.createReaction(type, post.id, author)
+    api.reactions.create(type, post.id, author)
       .then((res) => {
         // replace the fake reaction created with the new one
         const result = res
@@ -101,7 +101,7 @@ const useReactions = ({
     setPost({ ...optimisticPost })
 
     // then remove it from the backend
-    api.deleteReaction(reactionId).catch(() => {
+    api.reactions.delete(reactionId).catch(() => {
       // operation failed => rollback the operation
       optimisticPost.reactions = [
         ...optimisticPost.reactions,
@@ -129,7 +129,7 @@ const useReactions = ({
     setPost({ ...optimisticPost })
 
     // then edit it from the backend
-    api.editReaction(reactionId, type).catch(() => {
+    api.reactions.update(reactionId, type).catch(() => {
       // operation failed => rollback the operation
       editedReaction.type = editedReactionBaseType
       optimisticPost.reactions = [
@@ -166,7 +166,7 @@ const useReactions = ({
       containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
     }, async (index) => {
       if (index === 0) {
-        await api.createPost({ author, repost: repostId })
+        await api.posts.create({ author, repost: repostId })
         navigate(routes.MANAGE_POSTS)
       } else if (index === 1) {
         navigate(routes.CREATE_POST, {
