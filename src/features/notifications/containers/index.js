@@ -7,7 +7,7 @@ import { strings } from '@app/config'
 import { useUser, useNotifications } from '@app/shared/hooks'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import routes from '@app/navigation/routes'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { AppHeader } from '@app/shared/components'
 
 import Notification from '../components/notification'
@@ -109,7 +109,7 @@ const NotificationsPage = () => {
     }
 
     if (postId) {
-      const post = await api.getPost(postId)
+      const post = await api.posts.getById(postId)
       updateOpenStatus(id)
       navigate(routes.COMMENTS, { post })
     }

@@ -2,7 +2,7 @@ import {
   takeLeading, call, put, all, select, debounce,
 } from 'redux-saga/effects'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import helpers from '@app/shared/components/emoji-selector/helpers'
 
 import * as types from '../types'
@@ -10,7 +10,7 @@ import { emojiHistorySelector } from '../selectors'
 
 function* fetchPosts(action) {
   try {
-    const data = yield call(api.getLatestsPosts, action.payload)
+    const data = yield call([api.posts, 'get'], action.payload)
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
     if (action.payload === 0) {
@@ -19,6 +19,7 @@ function* fetchPosts(action) {
 
     yield put({ type: postActionType, payload: data || [] })
   } catch (error) {
+    console.log(error)
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })
   }
 }

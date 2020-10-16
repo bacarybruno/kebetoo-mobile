@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'
@@ -51,7 +51,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
     const query = searchQuery.trim()
     if (query.length > 0 && isFocused) {
       setIsLoading(true)
-      api.searchPosts(query)
+      api.posts.search(query)
         .then((data) => {
           setPosts(data)
           dispatch({ type: types.ADD_POST_HISTORY, payload: query })

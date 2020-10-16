@@ -25,7 +25,7 @@ import CommentsPage from '@app/features/comments/containers'
 import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
 import UserProfilePage from '@app/features/profile/containers/user'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { useUser, useNotifications, useAnalytics } from '@app/shared/hooks'
 
 import routes from './routes'
@@ -197,7 +197,7 @@ const AppNavigation = () => {
       const deviceRegistered = messaging().isDeviceRegisteredForRemoteMessages
       if (isLoggedIn && profile.uid && deviceRegistered) {
         const notificationToken = await messaging().getToken()
-        api.updateAuthor(profile.uid, { notificationToken })
+        api.authors.update(profile.uid, { notificationToken })
       }
     }
 
@@ -206,7 +206,7 @@ const AppNavigation = () => {
     messaging().onNotificationOpenedApp(handleInitialNotification)
     const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
     const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
-      api.updateAuthor(profile.uid, { notificationToken })
+      api.authors.update(profile.uid, { notificationToken })
     })
 
     return () => {

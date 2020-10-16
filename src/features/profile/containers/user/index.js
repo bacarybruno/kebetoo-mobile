@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { View, SectionList, Image } from 'react-native'
 import dayjs from 'dayjs'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import {
   Badge, Typography, HeaderBack, Pressable, TextAvatar,
 } from '@app/shared/components'
@@ -65,8 +65,8 @@ const UserProfile = ({ route, navigation }) => {
   const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
 
   useEffect(() => {
-    api.getAuthorById(userId).then(setUser).catch(console.log)
-    api.getUserPosts(userId).then(setPosts).catch(console.log)
+    api.authors.getById(userId).then(setUser).catch(console.log)
+    api.posts.getByAuthor(userId).then(setPosts).catch(console.log)
   }, [userId])
 
   useEffect(() => {

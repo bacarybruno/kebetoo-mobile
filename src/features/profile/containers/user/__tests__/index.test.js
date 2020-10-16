@@ -2,7 +2,7 @@ import { act } from 'react-test-renderer'
 import { Image } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import authors from '@fixtures/authors'
 import { TextAvatar } from '@app/shared/components'
 import routes from '@app/navigation/routes'
@@ -38,7 +38,7 @@ describe('avatar', () => {
       comments: [],
       reactions: [],
     }
-    api.getAuthorById.mockResolvedValue(author)
+    api.authors.getById.mockResolvedValue(author)
 
     await act(async () => {
       const { wrapper: wrapperAsync, props: propsAsync } = await givenUserProfile()
@@ -63,7 +63,7 @@ describe('avatar', () => {
       comments: [],
       reactions: [],
     }
-    api.getAuthorById.mockResolvedValue(author)
+    api.authors.getById.mockResolvedValue(author)
 
     await act(async () => {
       const { wrapper: wrapperAsync, props: propsAsync } = await givenUserProfile()
@@ -99,8 +99,8 @@ describe('posts', () => {
       reactions: ['reaction-1', 'reaction-2'],
     }
     const userPosts = [audioPost]
-    api.getAuthorById.mockResolvedValue(author)
-    api.getUserPosts.mockResolvedValue(userPosts)
+    api.authors.getById.mockResolvedValue(author)
+    api.posts.getByAuthor.mockResolvedValue(userPosts)
 
     await act(async () => {
       const { wrapper: wrapperAsync } = await givenUserProfile()

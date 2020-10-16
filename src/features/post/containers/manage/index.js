@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import ActionButton from 'react-native-action-button'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import {
   HeaderBack, Typography, NoContent, Badge,
 } from '@app/shared/components'
@@ -68,7 +68,7 @@ const ManagePostsPage = ({ route, navigation }) => {
   useEffect(() => {
     const getPosts = async () => {
       if (profile.uid) {
-        const userPosts = await api.getUserPosts(profile.uid)
+        const userPosts = await api.posts.getByAuthor(profile.uid)
         setPosts(userPosts)
         setLoading(false)
       }

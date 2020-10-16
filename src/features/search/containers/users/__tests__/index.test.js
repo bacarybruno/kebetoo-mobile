@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import NoResult from '@app/features/search/components/no-result'
 import HistoryItem from '@app/features/search/components/history-item'
 import * as types from '@app/redux/types'
@@ -58,7 +58,7 @@ const SearchUsersNavigation = (ownProps) => (
   </NavigationContainer>
 )
 
-api.searchUsers = jest.fn().mockImplementation(async (query) => {
+api.authors.search = jest.fn().mockImplementation(async (query) => {
   const results = users.filter((user) => (
     user.displayName.toLowerCase().includes(query.toLowerCase())
   ))

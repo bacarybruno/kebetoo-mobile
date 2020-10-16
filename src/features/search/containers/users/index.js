@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { Typography, Avatar, Pressable } from '@app/shared/components'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
@@ -85,7 +85,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
     if (!isFocused) return
     if (query.length > 0) {
       setIsLoading(true)
-      api.searchUsers(query)
+      api.authors.search(query)
         .then((data) => {
           setUsers(data)
           setLastQuery(query)

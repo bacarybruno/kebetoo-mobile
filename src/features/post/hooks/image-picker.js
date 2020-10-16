@@ -3,7 +3,7 @@ import ImagePicker from 'react-native-image-picker'
 import dayjs from 'dayjs'
 import RNFetchBlob from 'rn-fetch-blob'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { getMimeType } from '@app/shared/helpers/file'
 
 const PICTURE_CONFIG = Object.freeze({
@@ -50,7 +50,7 @@ const useFilePicker = (uri) => {
 
   const savePost = useCallback(async (author, content, repost) => {
     const time = dayjs().format('YYYYMMDD')
-    const response = await api.createPostWithImage({
+    const response = await api.posts.createImage({
       author,
       content,
       image: {

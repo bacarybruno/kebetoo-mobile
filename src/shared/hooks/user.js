@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import { userProfileSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
 
@@ -50,7 +50,7 @@ const useUser = () => {
   }, [])
 
   const signOut = useCallback(async () => {
-    await api.updateAuthor(profile.uid, { notificationToken: null })
+    await api.authors.update(profile.uid, { notificationToken: null })
     await auth().signOut()
     dispatch({ type: types.LOGOUT })
   }, [profile.uid, dispatch])

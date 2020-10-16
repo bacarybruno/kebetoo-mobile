@@ -10,7 +10,7 @@ import {
 } from '@app/features/post/containers/basic-post'
 import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
 import { HeaderBack, NoContent } from '@app/shared/components'
-import * as api from '@app/shared/services/http'
+import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { colors } from '@app/theme'
@@ -95,7 +95,7 @@ const Comments = () => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const result = await api.getComments(post.id)
+      const result = await api.comments.getByPostId(post.id)
       setComments(sortComments(result))
     }
     fetchComments()
@@ -122,7 +122,7 @@ const Comments = () => {
     if (audioRecorder.hasRecording) {
       result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
     } else if (comment.length > 0) {
-      result = await api.commentPost({
+      result = await api.comments.create({
         author: profile.uid,
         content: comment,
         thread: replyThread ? replyThread.id : null,
@@ -153,7 +153,7 @@ const Comments = () => {
     if (!replies[c.id]) {
       setReplies((state) => ({ ...state, [c.id]: c.replies.map(mapComments) }))
     }
-    const loadedReplies = await api.getReplies(c.id)
+    const loadedReplies = await api.comments.getReplies(c.id)
     setReplies((state) => ({ ...state, [c.id]: loadedReplies }))
   }, [replies])
 
@@ -186,8 +186,9 @@ const Comments = () => {
           <Swipeable
             onFulfilled={() => onSetReply(reply)}
             style={[styles.swipeableReply, checkSelectedComment(reply)]}
+            key={`comment-reply-${reply.id}`}
           >
-            <CommentReply reply={reply} profile={profile} key={`comment-reply-${reply.id}`} />
+            <CommentReply reply={reply} profile={profile} />
           </Swipeable>
         ))}
       </View>
