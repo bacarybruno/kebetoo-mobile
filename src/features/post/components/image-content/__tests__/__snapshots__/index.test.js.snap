@@ -71,7 +71,7 @@ exports[`renders ImageContent 1`] = `
         borderRadius={0}
         source={
           Object {
-            "uri": "http://localhost:1337/fake-image.png",
+            "uri": "https://kebetoo.s3.eu-west-3.amazonaws.com/fake-image.png",
           }
         }
         style={
@@ -186,7 +186,7 @@ exports[`renders ImageContent on comments mode 1`] = `
         borderRadius={0}
         source={
           Object {
-            "uri": "http://localhost:1337/fake-image.png",
+            "uri": "https://kebetoo.s3.eu-west-3.amazonaws.com/fake-image.png",
           }
         }
         style={

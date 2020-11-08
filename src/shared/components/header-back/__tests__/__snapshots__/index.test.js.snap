@@ -5,9 +5,8 @@ exports[`renders HeaderBack 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "height": 24,
       "justifyContent": "center",
-      "margin": 3,
+      "marginLeft": 16,
       "width": 24,
     }
   }
@@ -33,9 +32,8 @@ exports[`renders HeaderClose 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "height": 24,
       "justifyContent": "center",
-      "margin": 3,
+      "marginLeft": 16,
       "width": 24,
     }
   }

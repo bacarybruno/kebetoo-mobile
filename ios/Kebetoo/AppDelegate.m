@@ -4,8 +4,12 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import "RNBootSplash.h"
+#import <Firebase.h>
 
-#if DEBUG
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <RNGoogleSignin/RNGoogleSignin.h>
+
+#ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
 #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
 #import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
@@ -28,7 +32,12 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#if DEBUG
+  // Firebase
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+
+#ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
 
@@ -55,6 +64,21 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  if ([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options]) {
+    return YES;
+  }
+
+  if ([RNGoogleSignin application:app openURL:url options:options]) {
+    return YES;
+  }
+
+  return NO;
 }
 
 @end

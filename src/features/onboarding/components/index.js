@@ -22,4 +22,4 @@ const OnboardingSlide = ({ imageSrc, slideTitle, slideDescription }) => (
   </View>
 )
 
-export default OnboardingSlide
+export default React.memo(OnboardingSlide)

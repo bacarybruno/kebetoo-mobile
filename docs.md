@@ -8,6 +8,7 @@
 - https://github.com/zoontek/react-native-bootsplash/issues/73
 - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
 - https://github.com/ajith-ab/react-native-receive-sharing-intent
+- https://firebase.google.com/docs/crashlytics/get-started?platform=android
 
 # Generating SHA1 (google)
 - Debug: ```keytool -list -v -keystore ./android/app/debug.keystore -alias androiddebugkey -storepass android -keypass android```
