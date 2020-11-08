@@ -27,7 +27,7 @@ exports[`renders NoContent 1`] = `
         false,
         Array [
           Object {
-            "color": undefined,
+            "color": "rgba(0, 122, 255, 255)",
           },
           Object {
             "backgroundColor": "transparent",
@@ -58,7 +58,7 @@ exports[`renders NoContent 1`] = `
         false,
         Array [
           Object {
-            "color": undefined,
+            "color": "rgba(0,0,0,0.87)",
           },
           Object {
             "backgroundColor": "transparent",
@@ -86,7 +86,7 @@ exports[`renders NoContent 1`] = `
         },
         Array [
           Object {
-            "color": undefined,
+            "color": "rgba(0,0,0,0.87)",
           },
           Object {
             "backgroundColor": "transparent",

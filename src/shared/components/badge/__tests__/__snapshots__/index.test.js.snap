@@ -10,7 +10,7 @@ exports[`renders Badge 1`] = `
         "paddingVertical": 3,
       },
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#F0F6FE",
       },
       Object {
         "backgroundColor": "red",
@@ -36,7 +36,7 @@ exports[`renders Badge 1`] = `
         false,
         Array [
           Object {
-            "color": undefined,
+            "color": "rgba(0, 122, 255, 255)",
           },
           Object {
             "backgroundColor": "transparent",
