@@ -31,7 +31,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   searchIcon: {
-    width: 50,
+    marginRight: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
