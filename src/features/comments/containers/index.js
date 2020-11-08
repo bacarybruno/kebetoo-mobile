@@ -198,6 +198,7 @@ const Comments = () => {
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
       onPress={goBack}
+      labelVisible={false}
       backImage={() => (
         <HeaderBack tintColor={colors.textPrimary} />
       )}

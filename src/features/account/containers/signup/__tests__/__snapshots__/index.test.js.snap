@@ -92,6 +92,7 @@ exports[`renders SignUp 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flex": 1,
                 "flexDirection": "row",
                 "paddingLeft": 16,
               }
@@ -117,6 +118,7 @@ exports[`renders SignUp 1`] = `
                     "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "height": "100%",
                     "letterSpacing": -0.32,
                     "lineHeight": 21,
                   },
@@ -145,6 +147,7 @@ exports[`renders SignUp 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flex": 1,
                 "flexDirection": "row",
                 "paddingLeft": 16,
               }
@@ -171,6 +174,7 @@ exports[`renders SignUp 1`] = `
                     "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "height": "100%",
                     "letterSpacing": -0.32,
                     "lineHeight": 21,
                   },
@@ -199,6 +203,7 @@ exports[`renders SignUp 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flex": 1,
                 "flexDirection": "row",
                 "paddingLeft": 16,
               }
@@ -224,6 +229,7 @@ exports[`renders SignUp 1`] = `
                     "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "height": "100%",
                     "letterSpacing": -0.32,
                     "lineHeight": 21,
                   },

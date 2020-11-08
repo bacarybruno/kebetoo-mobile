@@ -36,7 +36,10 @@ enableScreens()
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
-const createPage = (page, key) => React.cloneElement(page, { key })
+const createPage = (page, key) => React.cloneElement(page, {
+  key,
+  options: { headerBackTitleVisible: false }
+})
 
 const EmptyPage = () => null
 
@@ -47,6 +50,7 @@ const defaultScreenOptions = {
   ),
   headerStyle: styles.headerStyle,
   headerTitleAlign: 'center',
+  headerBackTitleVisible: false,
   headerTitleStyle: { color: colors.textPrimary },
 }
 
@@ -171,10 +175,10 @@ const AppNavigation = () => {
   }, [trackPageView])
 
   const handleInitialNotification = useCallback((remoteMessage) => {
-    if (remoteMessage !== null) {
+    if (remoteMessage && isLoggedIn) {
       navigationRef.current.navigate(routes.NOTIFICATIONS)
     }
-  }, [])
+  }, [isLoggedIn])
 
   useEffect(() => {
     const handleBackgroundNotifications = async () => {
@@ -239,7 +243,7 @@ const AppNavigation = () => {
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false　}}>
         {isLoggedIn && loggedInPages.map(createPage)}
         {!isLoggedIn && notLoggedInPages.map(createPage)}
       </Stack.Navigator>

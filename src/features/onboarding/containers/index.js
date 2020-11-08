@@ -38,6 +38,7 @@ const OnboardingPage = ({ navigation }) => {
 
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
+  const [slides, setSlides] = useState([])
   const isLastSlideItem = slideItems.length - 1 === slideIndex
   const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
 
@@ -58,6 +59,19 @@ const OnboardingPage = ({ navigation }) => {
     navigation.navigate(routes.SIGNUP)
   }, [navigation, trackOnboardingEnd])
 
+  useEffect(() => {
+    setSlides(
+      slideItems.map((slideItem, index) => (
+        <OnbordingSlide
+          imageSrc={slideItem.imageSrc}
+          slideTitle={slideItem.title}
+          slideDescription={slideItem.description}
+          key={`onboarding-slide-item-${index}`}
+        />
+      ))
+    )
+  }, [])
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
@@ -75,14 +89,7 @@ const OnboardingPage = ({ navigation }) => {
           scrollEnabled={false}
           testID="swiper"
         >
-          {slideItems.map((slideItem, index) => (
-            <OnbordingSlide
-              imageSrc={slideItem.imageSrc}
-              slideTitle={slideItem.title}
-              slideDescription={slideItem.description}
-              key={`onboarding-slide-item-${index}`}
-            />
-          ))}
+          {slides}
         </Swiper>
         <View style={styles.buttonWrapper}>
           {isLastSlideItem ? (
@@ -101,4 +108,4 @@ const OnboardingPage = ({ navigation }) => {
   )
 }
 
-export default OnboardingPage
+export default React.memo(OnboardingPage)

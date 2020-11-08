@@ -1,10 +1,13 @@
 import { fireEvent } from 'react-native-testing-library'
+import { Platform } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
 import { keyboardName } from '@app/shared/components/emoji-selector'
 
 import EmojiTextInput, { EmojiPickerToggler, EmojiKeyboard } from '../emoji'
 import TextInput from '../text'
+
+Platform.OS = 'android'
 
 jest.mock('react-native-ui-lib/keyboard', () => ({
   ...jest.requireActual('react-native-ui-lib/keyboard'),

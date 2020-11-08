@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, Platform } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAccessoryView, KeyboardUtils } from 'react-native-ui-lib/keyboard'
 
@@ -90,23 +90,26 @@ const EmojiTextInput = React.forwardRef((props, ref) => {
   return (
     <View>
       <TextInput
+        {...props}
         value={value}
         onChangeText={onChangeText}
         ref={ref}
         key={showEmojiPicker}
-        Left={renderToggler}
+        Left={Platform.OS === 'android' && renderToggler}
+        multiline={Platform.OS === 'android' ? props.multiline : false}
         showSoftInputOnFocus={!showEmojiPicker}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onTouchStart={onKeyboardPress}
-        {...props}
       />
-      <EmojiKeyboard
-        hide={blurred}
-        inputRef={ref}
-        onSelectEmoji={onSelectEmoji}
-        showEmojiPicker={showEmojiPicker}
-      />
+      {Platform.OS === 'android' && (
+        <EmojiKeyboard
+          hide={blurred}
+          inputRef={ref}
+          onSelectEmoji={onSelectEmoji}
+          showEmojiPicker={showEmojiPicker}
+        />
+      )}
     </View>
   )
 })

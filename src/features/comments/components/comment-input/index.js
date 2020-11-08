@@ -36,6 +36,7 @@ export const CommentInput = ({
     )
   }, [])
 
+  //FIXME: handle ios keyboard on comments
   return (
     <View style={styles.commentInputWrapper}>
       <View style={styles.flexible}>
@@ -43,9 +44,11 @@ export const CommentInput = ({
           <EmojiTextInput
             multiline
             fieldName="comment"
-            placeholder={audioRecorder.isRecording
-              ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
-              : strings.comments.add_comment}
+            placeholder={
+              audioRecorder.isRecording
+                ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
+                : strings.comments.add_comment
+            }
             onValueChange={onChange}
             value={value}
             ref={inputRef}

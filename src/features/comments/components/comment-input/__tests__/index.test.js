@@ -1,12 +1,15 @@
+import { Platform } from 'react-native'
+import { act } from 'react-test-renderer'
+
 import setupTest from '@app/config/jest-setup'
 import { AudioPlayer } from '@app/shared/components/audio-player'
-
 import { strings } from '@app/config'
-import { act } from 'react-test-renderer'
 import { EmojiTextInput } from '@app/shared/components'
 
 import CommentInput from '../index'
 import ReplyInfo from '../../reply-info'
+
+Platform.OS = 'android'
 
 const givenCommentInput = setupTest(CommentInput)({
   onChange: jest.fn(),

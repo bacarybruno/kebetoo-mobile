@@ -25,11 +25,13 @@ const RootContainer = () => {
   const { trackAppOpen, trackAppBackground } = useAnalytics()
 
   useEffect(() => {
-    AppState.addEventListener('focus', trackAppOpen)
-    AppState.addEventListener('blur', trackAppBackground)
+    const appStateChange = (state) => {
+      if (state === 'active') trackAppOpen()
+      else if (state === 'inactive') trackAppBackground()
+    }
+    AppState.addEventListener('change', appStateChange)
     return () => {
-      AppState.removeEventListener('focus', trackAppOpen)
-      AppState.removeEventListener('blur', trackAppBackground)
+      AppState.removeEventListener('change', appStateChange)
     }
   }, [trackAppBackground, trackAppOpen])
 

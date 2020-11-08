@@ -505,9 +505,8 @@ exports[`renders Comments 1`] = `
                         style={
                           Object {
                             "alignItems": "center",
-                            "height": 24,
                             "justifyContent": "center",
-                            "margin": 3,
+                            "marginLeft": 16,
                             "width": 24,
                           }
                         }
@@ -525,24 +524,6 @@ exports[`renders Comments 1`] = `
                           }
                           text="kebeticon-chevron-left"
                         />
-                      </View>
-                      <View
-                        style={null}
-                      >
-                        <Text
-                          accessible={false}
-                          allowFontScaling={false}
-                          numberOfLines={1}
-                          style={
-                            Object {
-                              "color": "rgb(0, 122, 255)",
-                              "fontSize": 17,
-                              "letterSpacing": 0.35,
-                            }
-                          }
-                        >
-                          Back
-                        </Text>
                       </View>
                     </RNGestureHandlerButton>
                     <View
@@ -1949,55 +1930,17 @@ exports[`renders Comments 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flex": 1,
                 "flexDirection": "row",
                 "paddingLeft": 16,
               }
             }
           >
-            <View
-              accessible={true}
-              focusable={true}
-              hitSlop={
-                Object {
-                  "bottom": 20,
-                  "left": 20,
-                  "right": 20,
-                  "top": 20,
-                }
-              }
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "marginRight": 5,
-                  "opacity": 1,
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Object {
-                    "color": "rgba(174, 174, 178, 255)",
-                    "fontFamily": "Ionicons",
-                    "fontSize": 28,
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  }
-                }
-                text="ionicon-md-happy"
-              />
-            </View>
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
               editable={true}
-              multiline={true}
+              multiline={false}
               onBlur={[Function]}
               onChangeText={[Function]}
               onContentSizeChange={[Function]}
@@ -2016,6 +1959,7 @@ exports[`renders Comments 1`] = `
                     "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "height": "100%",
                     "letterSpacing": -0.32,
                     "lineHeight": 21,
                   },
@@ -2029,40 +1973,6 @@ exports[`renders Comments 1`] = `
               value=""
             />
           </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#F0F6FE",
-                "display": "flex",
-                "marginBottom": -10,
-                "marginLeft": -16,
-                "marginTop": 15,
-                "width": 750,
-              },
-              false,
-            ]
-          }
-        >
-          <KeyboardTrackingViewTemp
-            addBottomView={false}
-            allowHitsOutsideBounds={false}
-            manageScrollView={true}
-            onLayout={[Function]}
-            requiresSameParentToManageScrollView={false}
-            revealKeyboardInteractive={false}
-            scrollBehavior="FIXED_OFFSET"
-            style={
-              Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": undefined,
-              }
-            }
-          />
         </View>
       </View>
     </View>
@@ -2646,9 +2556,8 @@ exports[`renders Comments in loading state 1`] = `
                         style={
                           Object {
                             "alignItems": "center",
-                            "height": 24,
                             "justifyContent": "center",
-                            "margin": 3,
+                            "marginLeft": 16,
                             "width": 24,
                           }
                         }
@@ -2666,24 +2575,6 @@ exports[`renders Comments in loading state 1`] = `
                           }
                           text="kebeticon-chevron-left"
                         />
-                      </View>
-                      <View
-                        style={null}
-                      >
-                        <Text
-                          accessible={false}
-                          allowFontScaling={false}
-                          numberOfLines={1}
-                          style={
-                            Object {
-                              "color": "rgb(0, 122, 255)",
-                              "fontSize": 17,
-                              "letterSpacing": 0.35,
-                            }
-                          }
-                        >
-                          Back
-                        </Text>
                       </View>
                     </RNGestureHandlerButton>
                     <View
@@ -4090,55 +3981,17 @@ exports[`renders Comments in loading state 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "flex": 1,
                 "flexDirection": "row",
                 "paddingLeft": 16,
               }
             }
           >
-            <View
-              accessible={true}
-              focusable={true}
-              hitSlop={
-                Object {
-                  "bottom": 20,
-                  "left": 20,
-                  "right": 20,
-                  "top": 20,
-                }
-              }
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "marginRight": 5,
-                  "opacity": 1,
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Object {
-                    "color": "rgba(174, 174, 178, 255)",
-                    "fontFamily": "Ionicons",
-                    "fontSize": 28,
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  }
-                }
-                text="ionicon-md-happy"
-              />
-            </View>
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
               editable={true}
-              multiline={true}
+              multiline={false}
               onBlur={[Function]}
               onChangeText={[Function]}
               onContentSizeChange={[Function]}
@@ -4157,6 +4010,7 @@ exports[`renders Comments in loading state 1`] = `
                     "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "height": "100%",
                     "letterSpacing": -0.32,
                     "lineHeight": 21,
                   },
@@ -4170,40 +4024,6 @@ exports[`renders Comments in loading state 1`] = `
               value=""
             />
           </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#F0F6FE",
-                "display": "flex",
-                "marginBottom": -10,
-                "marginLeft": -16,
-                "marginTop": 15,
-                "width": 750,
-              },
-              false,
-            ]
-          }
-        >
-          <KeyboardTrackingViewTemp
-            addBottomView={false}
-            allowHitsOutsideBounds={false}
-            manageScrollView={true}
-            onLayout={[Function]}
-            requiresSameParentToManageScrollView={false}
-            revealKeyboardInteractive={false}
-            scrollBehavior="FIXED_OFFSET"
-            style={
-              Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": undefined,
-              }
-            }
-          />
         </View>
       </View>
     </View>
