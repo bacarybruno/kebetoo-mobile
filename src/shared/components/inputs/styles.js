@@ -18,6 +18,7 @@ export default StyleSheet.create({
     ...human.callout,
     color: colors.textPrimary,
     flex: 1,
+    height: '100%'
   },
   iconWrapper: {
     height: 48,
@@ -59,5 +60,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: metrics.marginHorizontal,
+    flex: 1,
   },
 })

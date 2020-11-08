@@ -70,9 +70,11 @@ const HomePage = () => {
 
   useEffect(() => {
     handleSharingIntent()
-    AppState.addEventListener('focus', handleSharingIntent)
+    const appStateChange = (state) => {
+      if (state === 'active') handleSharingIntent()
+    }
     return () => {
-      AppState.removeEventListener('focus', handleSharingIntent)
+      AppState.removeEventListener('change', appStateChange)
     }
   }, [handleSharingIntent])
 

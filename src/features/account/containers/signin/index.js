@@ -79,6 +79,9 @@ const SignIn = ({ navigation }) => {
           ...state, [fieldNames.email]: strings.errors.auth_account_exists_different_credential,
         }))
         break
+      case 'auth/network-request-failed':
+        //TODO: handler network request fail
+        break
       default:
         reportError(error)
         break

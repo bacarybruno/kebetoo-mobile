@@ -1,10 +1,10 @@
+import { metrics } from '@app/theme'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   wrapper: {
     width: 24,
-    height: 24,
-    margin: 3,
+    marginLeft: metrics.marginHorizontal,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -26,6 +26,9 @@ export default StyleSheet.create({
     marginTop: 8,
     backgroundColor: colors.backgroundSecondary,
     paddingRight: metrics.marginHorizontal,
+    height: metrics.screenHeight / 3.5,
+    minHeight: 250,
+    paddingVertical: metrics.marginVertical / 4,
   },
   textCount: {
     marginTop: 8,
