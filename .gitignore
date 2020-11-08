@@ -60,3 +60,4 @@ buck-out/
 
 # Custom
 coverage
+debug.log
