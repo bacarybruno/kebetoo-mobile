@@ -165,6 +165,36 @@ exports[`renders UserProfile 1`] = `
               >
                  
               </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                    ],
+                  ]
+                }
+              >
+                Joined on June 2020
+              </Text>
             </View>
             <View
               style={

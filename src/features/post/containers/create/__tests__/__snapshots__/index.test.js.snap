@@ -83,6 +83,39 @@ exports[`renders CreatePost 1`] = `
         />
       </View>
     </View>
+    <Text
+      style={
+        Array [
+          false,
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginTop": 8,
+            },
+          ],
+        ]
+      }
+    >
+      169 characters
+    </Text>
     <View
       style={
         Object {

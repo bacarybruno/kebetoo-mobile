@@ -35,6 +35,36 @@ exports[`renders ReplyInfo 1`] = `
       }
     >
       <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 16,
+            },
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              Object {
+                "marginBottom": 6,
+              },
+            ],
+          ]
+        }
+      >
+        Replying to Bruno
+      </Text>
+      <Text
         numberOfLines={1}
         style={
           Array [
