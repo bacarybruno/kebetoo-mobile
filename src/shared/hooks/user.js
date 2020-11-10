@@ -50,7 +50,7 @@ const useUser = () => {
   }, [])
 
   const signOut = useCallback(async () => {
-    // await api.authors.update(profile.uid, { notificationToken: null })
+    await api.authors.update(profile.uid, { notificationToken: null })
     await auth().signOut()
     dispatch({ type: types.LOGOUT })
   }, [profile.uid, dispatch])
