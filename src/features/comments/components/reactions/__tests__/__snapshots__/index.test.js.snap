@@ -492,6 +492,37 @@ exports[`renders CommentReactions 1`] = `
           </View>
         </View>
       </View>
+      <Text
+        style={
+          Array [
+            false,
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            false,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        2 Reacted
+      </Text>
     </View>
   </View>
 </View>

@@ -29,6 +29,37 @@ exports[`renders Header 1`] = `
         }
       }
     >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 22,
+              "fontWeight": "400",
+              "letterSpacing": 0.34375,
+              "lineHeight": 28,
+            },
+            false,
+            false,
+            false,
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        Hey Bruno,
+      </Text>
       <ActivityIndicator
         animating={false}
         color="rgba(0, 122, 255, 255)"
