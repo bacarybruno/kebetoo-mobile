@@ -1,4 +1,3 @@
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import { useNavigation } from '@react-navigation/native'
 import routes from '@app/navigation/routes'
@@ -12,18 +11,17 @@ import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import NotificationsPage from '../index'
 import Notification from '../../components/notification'
 
-const mockStore = configureStore()
-const store = mockStore({
+const store = {
   notificationsReducer: {
     notifications,
   },
   userReducer: {
     profile: auth().currentUser,
   },
-})
+}
 
-const givenNotificationsPageWithStore = (appStore) => setupTest(NotificationsPage)({
-  store: appStore,
+const givenNotificationsPageWithStore = (storeState) => setupTest(NotificationsPage)({
+  __storeState__: storeState,
 })
 
 it('renders NotificationsPage', async () => {
@@ -56,20 +54,18 @@ it('renders only recent notifications if no past one', async () => {
     ...notification, status: NOTIFICATION_STATUS.NEW,
   }))
 
-  const testStore = mockStore({
+  const testStore = {
     notificationsReducer: {
       notifications: testNotifications,
     },
     userReducer: {
       profile: auth().currentUser,
     },
-  })
+  }
 
   let wrapper
   await act(async () => {
-    const { wrapper: wrapperAsync } = await givenNotificationsPageWithStore(testStore)({
-      store: testStore,
-    })
+    const { wrapper: wrapperAsync } = await givenNotificationsPageWithStore(testStore)()
     wrapper = wrapperAsync
   })
 
@@ -85,20 +81,18 @@ it('renders only past notifications if no recent one', async () => {
     ...notification, status: NOTIFICATION_STATUS.SEEN,
   }))
 
-  const testStore = mockStore({
+  const testStore = {
     notificationsReducer: {
       notifications: testNotifications,
     },
     userReducer: {
       profile: auth().currentUser,
     },
-  })
+  }
 
   let wrapper
   await act(async () => {
-    const { wrapper: wrapperAsync } = await givenNotificationsPageWithStore(testStore)({
-      store: testStore,
-    })
+    const { wrapper: wrapperAsync } = await givenNotificationsPageWithStore(testStore)()
     wrapper = wrapperAsync
   })
 
@@ -114,14 +108,14 @@ describe('opening notifications', () => {
     })
 
     it(`opens ${message.message.data.type} notification`, async () => {
-      const testStore = mockStore({
+      const testStore = {
         notificationsReducer: {
           notifications: [message],
         },
         userReducer: {
           profile: auth().currentUser,
         },
-      })
+      }
 
       let wrapper
 

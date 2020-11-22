@@ -1,5 +1,4 @@
 import { act } from 'react-test-renderer'
-import configureStore from 'redux-mock-store'
 
 import setupTest from '@app/config/jest-setup'
 
@@ -7,8 +6,7 @@ import EmojiSelector, { Emoji, EmojiTab } from '../index'
 
 import { categoryNames } from '../categories'
 
-const mockStore = configureStore()
-const store = mockStore({
+const storeState = {
   appReducer: {
     emojiHistory: [{
       count: 1, symbol: '😀', addedOn: Date.now(),
@@ -16,21 +14,22 @@ const store = mockStore({
       count: 2, symbol: '🦁', addedOn: Date.now(),
     }],
   },
-})
-const emptyStore = mockStore({
+}
+
+const emptyStoreState = {
   appReducer: {
     emojiHistory: [],
   },
-})
+}
 
 const givenEmojiSelector = setupTest(EmojiSelector)({
   onSelectItem: jest.fn(),
-  store,
+  __storeState__: storeState,
 })
 
 const givenEmptyStateEmojiSelector = setupTest(EmojiSelector)({
   onSelectItem: jest.fn(),
-  store: emptyStore,
+  __storeState__: emptyStoreState,
 })
 
 it('renders EmojiSelector', () => {

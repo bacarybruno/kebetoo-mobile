@@ -19,7 +19,7 @@ NativeModules.KeyboardTrackingViewTempManager = {
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
 
-const mockStoreState = {
+const mockedStoreState = {
   postsReducer: {
     posts: [],
     authors: [],
@@ -36,14 +36,14 @@ const mockStoreState = {
 const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
   let wrapper = null
   return (defaultProps = {}) => (additionalProps = {}) => {
-    const { store, ...props } = defaultProps
+    const { store, __storeState__ = mockedStoreState, ...props } = defaultProps
     const propsWithArgs = {
       ...props,
       ...additionalProps,
     }
     const mockStore = configureStore()
     const Component = (
-      <Provider store={store || mockStore(mockStoreState)}>
+      <Provider store={store || mockStore(__storeState__)}>
         <WrappedComponent {...propsWithArgs} />
       </Provider>
     )
@@ -54,7 +54,7 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
 
 export const setupHook = (useHook, ...props) => {
   const mockStore = configureStore()
-  const store = mockStore(mockStoreState)
+  const store = mockStore(mockedStoreState)
   const wrapper = ({ children }) => (
     <Provider store={store}>
       {children}

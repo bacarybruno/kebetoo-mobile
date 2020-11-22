@@ -1,6 +1,5 @@
 import React from 'react'
 import * as redux from 'react-redux'
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -36,16 +35,6 @@ const posts = [{
   comments: [],
 }]
 
-const mockStore = configureStore()
-const store = mockStore({
-  userReducer: {
-    searchHistory: {
-      posts: ['first post', 'covid19'],
-    },
-    profile: auth().currentUser,
-  },
-})
-
 const SearchPostsNavigation = (ownProps) => (
   <NavigationContainer>
     <Stack.Navigator>
@@ -64,7 +53,14 @@ api.posts.search.mockImplementation(async (query) => {
 })
 
 const givenSearchPosts = setupTest(SearchPostsNavigation)({
-  store,
+  __storeState__: {
+    userReducer: {
+      searchHistory: {
+        posts: ['first post', 'covid19'],
+      },
+      profile: auth().currentUser,
+    },
+  },
   searchQuery: '',
   onSearch: jest.fn(),
   onRecentSearch: jest.fn(),
