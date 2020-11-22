@@ -1,4 +1,3 @@
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 import auth from '@react-native-firebase/auth'
@@ -8,18 +7,15 @@ import { postsList } from '@fixtures/posts'
 
 import HomePage from '../index'
 
-const mockStore = configureStore()
-const store = mockStore({
-  postsReducer: {
-    posts: postsList,
-  },
-  userReducer: {
-    profile: auth().currentUser,
-  },
-})
-
 const givenHomePage = setupTest(HomePage)({
-  store,
+  __storeState__: {
+    postsReducer: {
+      posts: postsList,
+    },
+    userReducer: {
+      profile: auth().currentUser,
+    },
+  },
 })
 
 beforeEach(jest.clearAllMocks)

@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { ActivityIndicator } from 'react-native'
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
 
@@ -17,19 +16,16 @@ const SearchPageNavigation = () => (
   </NavigationContainer>
 )
 
-const mockStore = configureStore()
-const store = mockStore({
-  userReducer: {
-    searchHistory: {
-      posts: ['first post', 'covid19'],
-      users: ['john', 'doe'],
-    },
-    profile: auth().currentUser,
-  },
-})
-
 const givenSearchPage = setupTest(SearchPageNavigation)({
-  store,
+  __storeState__: {
+    userReducer: {
+      searchHistory: {
+        posts: ['first post', 'covid19'],
+        users: ['john', 'doe'],
+      },
+      profile: auth().currentUser,
+    },
+  },
 })
 
 it('renders SearchPage', () => {

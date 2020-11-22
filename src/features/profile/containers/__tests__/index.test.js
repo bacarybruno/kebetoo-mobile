@@ -1,5 +1,4 @@
 import { Share } from 'react-native'
-import configureStore from 'redux-mock-store'
 import { act, fireEvent } from 'react-native-testing-library'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
@@ -11,8 +10,7 @@ import routes from '@app/navigation/routes'
 
 import Profile from '../index'
 
-const mockStore = configureStore()
-const store = mockStore({
+const storeState = {
   userReducer: {
     stats: {
       posts: 100,
@@ -21,10 +19,9 @@ const store = mockStore({
     },
     profile: auth().currentUser,
   },
-})
-
+}
 const givenProfile = setupTest(Profile)({
-  store,
+  __storeState__: storeState,
 })
 
 it('renders Profile', async () => {
@@ -37,7 +34,7 @@ it('renders Profile', async () => {
 })
 
 describe('displays the right stats for', () => {
-  const { stats } = store.getState().userReducer
+  const { stats } = storeState.userReducer
   const statsItems = [{
     name: 'posts',
     title: strings.profile.posts.toLowerCase(),

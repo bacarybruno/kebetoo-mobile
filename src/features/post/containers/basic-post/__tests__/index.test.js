@@ -1,6 +1,5 @@
 import { fireEvent } from 'react-native-testing-library'
 import { useNavigation } from '@react-navigation/native'
-import configureStore from 'redux-mock-store'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
 import { TouchableOpacity } from 'react-native'
@@ -15,15 +14,12 @@ import BasicPost, { Content, propsAreEqual } from '../index'
 
 beforeEach(jest.clearAllMocks)
 
-const mockStore = configureStore()
-const store = mockStore({
-  userReducer: {
-    profile: auth().currentUser,
-  },
-})
-
 const componentProps = {
-  store,
+  __storeState__: {
+    userReducer: {
+      profile: auth().currentUser,
+    },
+  },
   author: authors[1],
   originalAuthor: authors[0],
   isRepost: false,
