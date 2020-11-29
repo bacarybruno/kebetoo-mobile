@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import {
-  View, SectionList, Alert, YellowBox,
+  View, SectionList, Alert, LogBox,
 } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
@@ -20,7 +20,7 @@ import styles from './styles'
 import BasicPost from '../basic-post'
 import { actionTypes } from '../create'
 
-YellowBox.ignoreWarnings([
+LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
 ])
 

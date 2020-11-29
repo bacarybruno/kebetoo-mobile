@@ -1,14 +1,18 @@
-import {
-  useState, useEffect, useCallback, useRef,
-} from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
+import BackgroundTimer from 'react-native-background-timer'
+import { LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
 import { getMimeType } from '@app/shared/helpers/file'
+
+LogBox.ignoreLogs([
+  'Warning: Cannot update a component from inside the function body of a different component.',
+])
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
@@ -47,7 +51,6 @@ const useAudioRecorder = (
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
   const [recorder, setRecorder] = useState(null)
-  const intervalRef = useRef()
   const permissions = usePermissions()
 
   const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
@@ -105,8 +108,6 @@ const useAudioRecorder = (
   }, [permissions])
 
   const reset = useCallback(async () => {
-    clearInterval(intervalRef.current)
-    intervalRef.current = null
     const fileUri = getFileUri()
     await RNFetchBlob.fs.unlink(fileUri)
     setHasRecording(false)
@@ -114,31 +115,26 @@ const useAudioRecorder = (
   }, [getFileUri])
 
   const stop = useCallback(() => {
+    BackgroundTimer.stopBackgroundTimer()
     setIsRecording(false)
     if (recorder) {
       recorder.stop(() => {
-        if (elapsedTime < minDurationInSeconds) {
-          reset()
-        } else {
-          setHasRecording(true)
-        }
+        if (elapsedTime < minDurationInSeconds) return reset()
+        return setHasRecording(true)
       })
     }
   }, [elapsedTime, minDurationInSeconds, recorder, reset])
 
   useEffect(() => {
-    if (isRecording && !intervalRef.current) {
-      const timeStart = Date.now()
-      intervalRef.current = setInterval(() => {
-        const delta = Date.now() - timeStart
-        setElapsedTime(Math.floor(delta / 1000))
-      }, 250)
+    if (isRecording) {
+      BackgroundTimer.runBackgroundTimer(() => {
+        setElapsedTime((state) => state + 1)
+      }, 1000)
     }
     return () => {
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
+      BackgroundTimer.stopBackgroundTimer()
     }
-  }, [isRecording, intervalRef])
+  }, [isRecording])
 
   useEffect(() => {
     if (elapsedTime >= maxDurationInSeconds) {
