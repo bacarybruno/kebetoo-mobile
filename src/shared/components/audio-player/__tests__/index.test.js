@@ -53,10 +53,8 @@ describe('player states', () => {
         play: jest.fn(),
         isLoaded: jest.fn().mockReturnValue(true),
         isPlaying: jest.fn().mockReturnValue(false),
-        getDuration: jest.fn().mockReturnValue(5000),
-        getCurrentTime: jest.fn().mockReturnValue((callback) => {
-          callback(1000)
-        }),
+        getDuration: jest.fn().mockReturnValue(60),
+        getCurrentTime: jest.fn((callback) => callback(10)),
       },
     })
     act(() => {

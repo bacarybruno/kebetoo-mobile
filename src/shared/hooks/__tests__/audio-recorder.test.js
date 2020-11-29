@@ -4,6 +4,8 @@ import RNFetchBlob from 'rn-fetch-blob'
 
 import useAudioRecorder from '../audio-recorder'
 
+jest.useFakeTimers()
+
 /**
  * Audio Recorder hook
  * @param {String} uri a predefined audio uri
@@ -36,30 +38,8 @@ it('is defined', () => {
 })
 
 describe('mutators', () => {
-  const { now } = Date
-  const originalInterval = setInterval
-
-  // clear all mocks
-  // set jest timeout to 1000 to avoid jest.setTimeout.Timeout error
-  // mock date to add interval value to current date
-  // because jest.advanceTimersByTime(5000) doesn't handle it for us
-  // see https://github.com/facebook/jest/issues/2684
   beforeEach(() => {
     jest.clearAllMocks()
-    jest.setTimeout(10000)
-    let time = now()
-    Date.now = () => time
-    const fakeInterval = global.setInterval
-    global.setInterval = (fn, interval) => (
-      fakeInterval((...args) => {
-        time += interval
-        fn(...args)
-      }, interval)
-    )
-  })
-  afterEach(() => {
-    Date.now = now
-    global.setInterval = originalInterval
   })
   it('starts recording', async () => {
     const audioRecorder = createAudioRecorder()
