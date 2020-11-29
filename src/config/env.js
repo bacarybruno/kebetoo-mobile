@@ -1,7 +1,8 @@
-/* eslint-disable no-undef */
+// eslint-disable-next-line import/no-unresolved
+import { API_BASE_URL, ASSETS_BASE_URL, GOOGLE_SIGNIN_WEB_CLIENT_ID } from '@env'
 
-// TODO: use env variables
 export default {
-  apiBaseUrl: __DEV__ ? 'http://localhost:1337' : 'https://kebetoo.herokuapp.com',
-  assetsBaseUrl: __DEV__ ? 'http://localhost:1337' : 'https://kebetoo.s3.eu-west-3.amazonaws.com',
+  apiBaseUrl: API_BASE_URL,
+  assetsBaseUrl: ASSETS_BASE_URL,
+  googleSigninWebClientId: GOOGLE_SIGNIN_WEB_CLIENT_ID,
 }

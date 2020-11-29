@@ -61,3 +61,5 @@ buck-out/
 # Custom
 coverage
 debug.log
+.env
+.env.development
