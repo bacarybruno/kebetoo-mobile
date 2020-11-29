@@ -1,10 +1,11 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import {
   TouchableOpacity, ActivityIndicator, View, Image,
 } from 'react-native'
 import { MediaStates } from '@react-native-community/audio-toolkit'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Player from 'react-native-sound'
+import BackgroundTimer from 'react-native-background-timer'
 
 import { colors, edgeInsets, images } from '@app/theme'
 import { Pressable } from '@app/shared/components'
@@ -47,13 +48,11 @@ export const AudioPlayer = ({
   const [player, setPlayer] = useState(instance)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
-  const intervalRef = useRef(null)
 
   const onEnd = useCallback((ended) => {
     if (ended) {
       setPlayerState(MediaStates.IDLE)
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
+      BackgroundTimer.stopBackgroundTimer()
       setProgress(0)
       setPlayer(null)
     }
@@ -64,18 +63,16 @@ export const AudioPlayer = ({
     if (totalTime < 0) {
       totalTime = parseInt(duration, 10)
     }
-    if (!intervalRef.current) {
-      const intervalId = setInterval(() => {
-        soundPlayer.getCurrentTime((currentTime) => {
-          const currentProgress = (currentTime / totalTime) * 100
-          setProgress(currentProgress < 100 ? currentProgress : 0)
-        })
-      }, 1)
 
-      intervalRef.current = intervalId
-    }
+    BackgroundTimer.runBackgroundTimer(() => {
+      soundPlayer.getCurrentTime((currentTime) => {
+        const currentProgress = (currentTime / totalTime) * 100
+        setProgress(currentProgress < 100 ? currentProgress : 0)
+      })
+    }, 1)
+
     return () => {
-      clearInterval(intervalRef.current)
+      BackgroundTimer.stopBackgroundTimer()
     }
   }, [duration])
 
