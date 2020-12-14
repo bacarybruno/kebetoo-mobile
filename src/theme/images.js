@@ -10,7 +10,7 @@ const images = {
   bottom_tab_overlay: colorScheme === 'dark'
     ? require('@assets/images/bottom-tab-overlay-dark.png')
     : require('@assets/images/bottom-tab-overlay.png'),
-  logo_full: require('@assets/images/logo-full.png'),
+  logo: require('@assets/images/logo.png'),
   waves: require('@assets/images/waves.png'),
 }
 

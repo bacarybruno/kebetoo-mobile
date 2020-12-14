@@ -313,6 +313,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                           <View
                                             style={
                                               Object {
+                                                "alignItems": "center",
                                                 "flexDirection": "row",
                                               }
                                             }
@@ -360,34 +361,65 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               }
                                             />
                                           </View>
-                                          <Text
+                                          <View
                                             style={
-                                              Array [
-                                                Object {
-                                                  "backgroundColor": "transparent",
-                                                  "color": "#000000",
-                                                  "fontFamily": "System",
-                                                  "fontSize": 17,
-                                                  "fontWeight": "400",
-                                                  "letterSpacing": -0.408,
-                                                  "lineHeight": 22,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "color": "rgba(0,0,0,0.87)",
-                                                  },
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "400",
-                                                  },
-                                                  undefined,
-                                                ],
-                                              ]
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
                                             }
                                           >
-                                            Happy to see you! 🦜
-                                          </Text>
+                                            <Text
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "color": "rgba(0,0,0,0.87)",
+                                                    },
+                                                    Object {
+                                                      "backgroundColor": "transparent",
+                                                      "fontFamily": "System",
+                                                      "fontWeight": "400",
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                ]
+                                              }
+                                            >
+                                              Happy to see you!
+                                            </Text>
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "testUri": "../../../assets/images/logo.png",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "alignSelf": "center",
+                                                    "height": 118,
+                                                    "resizeMode": "contain",
+                                                    "width": "80%",
+                                                  },
+                                                  Object {
+                                                    "height": 20,
+                                                    "marginLeft": 4,
+                                                    "width": 20,
+                                                  },
+                                                ]
+                                              }
+                                            />
+                                          </View>
                                         </View>
                                         <View
                                           accessible={true}
@@ -528,6 +560,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       <View
                                         style={
                                           Object {
+                                            "alignItems": "center",
                                             "flexDirection": "row",
                                           }
                                         }
@@ -3883,6 +3916,7 @@ exports[`tabs renders TabNavigation 1`] = `
                         <View
                           style={
                             Object {
+                              "alignItems": "center",
                               "flexDirection": "row",
                             }
                           }
@@ -3930,34 +3964,65 @@ exports[`tabs renders TabNavigation 1`] = `
                             }
                           />
                         </View>
-                        <Text
+                        <View
                           style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 17,
-                                "fontWeight": "400",
-                                "letterSpacing": -0.408,
-                                "lineHeight": 22,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                            }
                           }
                         >
-                          Happy to see you! 🦜
-                        </Text>
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 17,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.408,
+                                  "lineHeight": 22,
+                                },
+                                Array [
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Happy to see you!
+                          </Text>
+                          <Image
+                            source={
+                              Object {
+                                "testUri": "../../../assets/images/logo.png",
+                              }
+                            }
+                            style={
+                              Array [
+                                Object {
+                                  "alignSelf": "center",
+                                  "height": 118,
+                                  "resizeMode": "contain",
+                                  "width": "80%",
+                                },
+                                Object {
+                                  "height": 20,
+                                  "marginLeft": 4,
+                                  "width": 20,
+                                },
+                              ]
+                            }
+                          />
+                        </View>
                       </View>
                       <View
                         accessible={true}
