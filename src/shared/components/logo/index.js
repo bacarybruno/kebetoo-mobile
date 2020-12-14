@@ -5,8 +5,8 @@ import { images } from '@app/theme'
 
 import styles from './styles'
 
-const Logo = () => (
-  <Image style={styles.logo} source={images.logo_full} />
+const Logo = ({ style }) => (
+  <Image style={[styles.logo, style]} source={images.logo} />
 )
 
 export default React.memo(Logo)

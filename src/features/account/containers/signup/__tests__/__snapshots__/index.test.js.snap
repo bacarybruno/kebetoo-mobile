@@ -64,16 +64,19 @@ exports[`renders SignUp 1`] = `
         <Image
           source={
             Object {
-              "testUri": "../../../assets/images/logo-full.png",
+              "testUri": "../../../assets/images/logo.png",
             }
           }
           style={
-            Object {
-              "alignSelf": "center",
-              "height": 118,
-              "resizeMode": "contain",
-              "width": "80%",
-            }
+            Array [
+              Object {
+                "alignSelf": "center",
+                "height": 118,
+                "resizeMode": "contain",
+                "width": "80%",
+              },
+              undefined,
+            ]
           }
         />
         <View

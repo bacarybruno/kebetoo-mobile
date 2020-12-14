@@ -46,6 +46,7 @@ exports[`renders Profile 1`] = `
             <View
               style={
                 Object {
+                  "alignItems": "center",
                   "flexDirection": "row",
                 }
               }

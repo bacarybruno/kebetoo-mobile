@@ -43,7 +43,7 @@ const locales = Object.freeze({
   },
   home: {
     welcome: 'Salut {0},',
-    whats_new: 'Content de vous voir! 🦜',
+    whats_new: 'Content de vous voir!',
   },
   profile: {
     posts: 'Posts',

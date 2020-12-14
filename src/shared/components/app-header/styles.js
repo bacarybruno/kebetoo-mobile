@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { fontSizes } from '../typography'
 
 export default StyleSheet.create({
   header: {
@@ -9,10 +10,16 @@ export default StyleSheet.create({
   greetings: {
     flex: 8,
   },
-  headingWrapper: {
+  section: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   loading: {
     marginLeft: 8,
+  },
+  icon: {
+    width: fontSizes.header,
+    height: fontSizes.header,
+    marginLeft: 4,
   },
 })
