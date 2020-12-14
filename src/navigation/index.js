@@ -170,7 +170,7 @@ const AppNavigation = () => {
   const routeNameRef = useRef()
 
   useEffect(() => {
-    RNBootSplash.hide({ duration: 250 })
+    RNBootSplash.hide({ fade: true })
     trackPageView(routes.HOME)
   }, [trackPageView])
 
