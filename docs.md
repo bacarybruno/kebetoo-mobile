@@ -30,3 +30,10 @@
 
 # Code coverage
 - Will be automatically added by github actions. See `.github/workflows` folder.
+
+# Generate assets
+$ `react-native generate-bootsplash --logo-width=200 --background-color=FFFFFF ./splash.png`
+$ `react-native set-icon --path ./icon.png`
+
+# Generate notification icons
+http://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&source.space.trim=1&source.space.pad=0&name=ic_stat_ic_notification
