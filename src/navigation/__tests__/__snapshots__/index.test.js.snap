@@ -241,7 +241,17 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 }
                               >
                                 <RCTScrollView
-                                  ListHeaderComponent={[Function]}
+                                  ListHeaderComponent={
+                                    <Header
+                                      displayName="Bruno Bodian"
+                                      imageSrc="https://avatars1.githubusercontent.com/u/14147533"
+                                      style={
+                                        Object {
+                                          "marginBottom": 20,
+                                        }
+                                      }
+                                    />
+                                  }
                                   contentContainerStyle={
                                     Object {
                                       "paddingBottom": 30,
@@ -3844,7 +3854,17 @@ exports[`tabs renders TabNavigation 1`] = `
               }
             >
               <RCTScrollView
-                ListHeaderComponent={[Function]}
+                ListHeaderComponent={
+                  <Header
+                    displayName="Bruno Bodian"
+                    imageSrc="https://avatars1.githubusercontent.com/u/14147533"
+                    style={
+                      Object {
+                        "marginBottom": 20,
+                      }
+                    }
+                  />
+                }
                 contentContainerStyle={
                   Object {
                     "paddingBottom": 30,

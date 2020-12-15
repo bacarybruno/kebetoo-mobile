@@ -122,13 +122,13 @@ const HomePage = () => {
     />
   ), [authors])
 
-  const renderListHeader = useCallback(() => (
+  const renderListHeader = useMemo(() => (user) => (
     <AppHeader
-      displayName={profile.displayName}
-      imageSrc={profile.photoURL}
+      displayName={user.displayName}
+      imageSrc={user.photoURL}
       style={styles.header}
     />
-  ), [profile])
+  ), [])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl
@@ -147,7 +147,7 @@ const HomePage = () => {
         onEndReached={onEndReached}
         onEndReachedThreshold={0.5}
         keyExtractor={createKey}
-        ListHeaderComponent={renderListHeader}
+        ListHeaderComponent={renderListHeader(profile)}
         refreshControl={renderRefreshControl}
         renderItem={renderBasicPost}
         removeClippedSubviews
