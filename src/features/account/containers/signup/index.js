@@ -1,22 +1,16 @@
-import React, { useCallback, useState, useRef } from 'react'
+import React, { useRef } from 'react'
 import { View } from 'react-native'
-import { useDispatch } from 'react-redux'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import auth from '@react-native-firebase/auth'
-import * as yup from 'yup'
 
 import {
   Typography, TextInput, PasswordInput, Logo, FullButton,
 } from '@app/shared/components'
-import routes from '@app/navigation/routes'
 import SocialSignIn from '@app/features/account/components/social-signin'
-import { SET_USER_PROFILE } from '@app/redux/types'
-import { createUser } from '@app/shared/services/users'
 import { strings } from '@app/config'
 import { metrics } from '@app/theme'
-import { useAnalytics } from '@app/shared/hooks'
 
 import styles from './styles'
+import useSignUp from './hook'
 
 export const fieldNames = {
   fullName: 'fullName',
@@ -27,107 +21,22 @@ export const fieldNames = {
 const SignUp = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signup })
 
-  const { trackSignUp, reportError } = useAnalytics()
-  const [isLoading, setIsLoading] = useState(false)
-  const dispatch = useDispatch()
-
-  const [infos, setInfos] = useState({
-    [fieldNames.fullName]: '',
-    [fieldNames.email]: '',
-    [fieldNames.password]: '',
-  })
-
-  const schema = yup.object().shape({
-    [fieldNames.fullName]: yup.string().required(
-      strings.formatString(strings.errors.required_field, strings.auth.fullname),
-    ),
-    [fieldNames.email]: yup.string().email(
-      strings.formatString(strings.errors.invalid_field, strings.auth.email),
-    ).required(
-      strings.formatString(strings.errors.required_field, strings.auth.email),
-    ),
-    [fieldNames.password]: yup.string().min(
-      8,
-      strings.formatString(strings.errors.min_length_field, strings.auth.password, 8),
-    ),
-  })
-
-  const [errors, setErrors] = useState({
-    [fieldNames.fullName]: null,
-    [fieldNames.email]: null,
-    [fieldNames.password]: null,
-  })
-
   const fullNameRef = useRef()
   const emailRef = useRef()
   const passwordRef = useRef()
 
-  const onChangeText = useCallback((value, field) => {
-    setInfos((state) => ({ ...state, [field]: value }))
-    setErrors((state) => ({ ...state, [field]: null }))
-  }, [])
-
-  const navigateToSignIn = useCallback(() => {
-    navigation.navigate(routes.SIGNIN)
-  }, [navigation])
-
-  const focusEmail = useCallback(() => {
-    emailRef.current.focus()
-  }, [])
-
-  const focusPassword = useCallback(() => {
-    passwordRef.current.focus()
-  }, [])
-
-  const handleAuthError = useCallback((error) => {
-    switch (error?.code) {
-      case 'auth/email-already-in-use':
-        setErrors((state) => ({
-          ...state, [fieldNames.email]: strings.errors.auth_email_already_in_use,
-        }))
-        break
-      case 'auth/account-exists-with-different-credential':
-        setErrors((state) => ({
-          ...state, [fieldNames.email]: strings.errors.auth_account_exists_different_credential,
-        }))
-        break
-      case 'auth/network-request-failed':
-        //TODO: handler network request fail
-        break
-      default:
-        reportError(error)
-        break
-    }
-  }, [reportError])
-
-  const onSubmit = useCallback(async () => {
-    try {
-      setIsLoading(true)
-      await schema.validate(infos)
-      const displayName = infos.fullName
-      dispatch({ type: SET_USER_PROFILE, payload: { displayName } })
-
-      const { user } = await auth().createUserWithEmailAndPassword(infos.email, infos.password)
-      trackSignUp('password')
-      await user.updateProfile({ displayName, photoURL: null })
-      auth().currentUser = user
-
-      await createUser({ id: user.uid, displayName, photoURL: null })
-    } catch (error) {
-      handleAuthError(error)
-    } finally {
-      setIsLoading(false)
-    }
-  }, [schema, infos, dispatch, trackSignUp, handleAuthError])
-
-  const validate = useCallback((field) => {
-    try {
-      yup.reach(schema, field).validateSync(infos[field])
-      setErrors((state) => ({ ...state, [field]: null }))
-    } catch (error) {
-      setErrors((state) => ({ ...state, [field]: error.message }))
-    }
-  }, [infos, schema])
+  const {
+    errors,
+    focusEmail,
+    focusPassword,
+    handleAuthError,
+    isLoading,
+    navigateToSignIn,
+    onChangeText,
+    onLoading,
+    onSubmit,
+    validate,
+  } = useSignUp(navigation, emailRef, passwordRef)
 
   return (
     <KeyboardAwareScrollView
@@ -179,7 +88,7 @@ const SignUp = ({ navigation }) => {
         </View>
         <SocialSignIn
           sectionText={strings.auth.or_signin_with}
-          onLoading={setIsLoading}
+          onLoading={onLoading}
           disabled={isLoading}
           onError={handleAuthError}
         >
