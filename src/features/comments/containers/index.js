@@ -1,51 +1,20 @@
-import React, {
-  useState, useEffect, useCallback, useRef, useMemo,
-} from 'react'
+import React, { useCallback, useRef, useMemo } from 'react'
 import { View, FlatList } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
 
-import {
-  Content, Header, getPostType, POST_TYPES,
-} from '@app/features/post/containers/basic-post'
-import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
+import { Content, Header } from '@app/features/post/containers/basic-post'
+import { useAudioRecorder, useUser } from '@app/shared/hooks'
 import { HeaderBack, NoContent } from '@app/shared/components'
-import { api } from '@app/shared/services'
-import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { colors } from '@app/theme'
-import { getSource } from '@app/features/post/components/image-content'
 
 import styles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
 import Swipeable from '../components/swipeable'
-
-/**
- * Hackernews' hot sort
- * https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d
- */
-export const scoreComment = (votes, itemDate, gravity = 1.8) => {
-  const hourAge = (Date.now() - itemDate.getTime()) / (1000 * 3600)
-  return (votes - 1) / (hourAge + 2 ** gravity)
-}
-
-export const sortComments = (comments) => (
-  comments
-    .map((comment) => ({
-      ...comment,
-      score: scoreComment(
-        comment.reactions.length + comment.replies.length,
-        new Date(comment.createdAt),
-      ),
-    }))
-    .sort((a, b) => {
-      if (a.score < b.score) return 1
-      if (b.score < a.score) return -1
-      return 0
-    })
-)
+import useComments from './hook'
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
@@ -64,98 +33,32 @@ export const CommentReply = ({ reply, profile }) => (
   </View>
 )
 
-const mapComments = (comment) => ({
-  id: comment.id,
-  author: {
-    id: comment.author,
-    displayName: ' ',
-    photoURL: null,
-  },
-  reactions: [],
-})
-
 // TODO: paginate comments
-// TODO: use local reducer
+// TODO: create custom hook
 const Comments = () => {
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
-  const { goBack, navigate } = useNavigation()
-  const [isLoading, setIsLoading] = useState(false)
-  const [authors, setAuthors] = useState({})
-  const [comment, setComment] = useState('')
-  const [toReply, setToReply] = useState(null)
-  const [comments, setComments] = useState(post.comments?.map(mapComments) || [])
-  const [replies, setReplies] = useState({})
+  const navigation = useNavigation()
 
-  const { profile } = useUser()
   const commentInput = useRef()
   const scrollView = useRef()
 
-  const { getRepostAuthors } = usePosts()
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      const result = await api.comments.getByPostId(post.id)
-      setComments(sortComments(result))
-    }
-    fetchComments()
-  }, [post.id])
-
-  useEffect(() => {
-    const fetchRepostAuthors = async () => {
-      const data = await getRepostAuthors(post)
-      setAuthors(data)
-    }
-    fetchRepostAuthors()
-  }, [post, getRepostAuthors])
-
-  const onSend = useCallback(async () => {
-    let result = null
-    setIsLoading(true)
-
-    let replyThread = null
-    if (toReply) {
-      // use the comment reply thread or the base comment
-      replyThread = toReply.thread || toReply
-    }
-
-    if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
-    } else if (comment.length > 0) {
-      result = await api.comments.create({
-        author: profile.uid,
-        content: comment,
-        thread: replyThread ? replyThread.id : null,
-        post: replyThread ? null : post.id,
-      })
-      commentInput.current?.clear()
-      setComment('')
-    }
-    if (replyThread) {
-      setReplies((state) => ({
-        ...state,
-        [replyThread.id]: (state[replyThread.id] || []).concat(result),
-      }))
-      setToReply(null)
-    } else {
-      setComments((value) => [...value, result])
-      setTimeout(() => scrollView.current?.scrollToEnd(), 200)
-    }
-    setIsLoading(false)
-  }, [audioRecorder, comment, post.id, profile.uid, toReply])
-
-  const onSetReply = useCallback((item) => {
-    commentInput.current?.focus()
-    setToReply(item)
-  }, [])
-
-  const loadReplies = useCallback(async (c) => {
-    if (!replies[c.id]) {
-      setReplies((state) => ({ ...state, [c.id]: c.replies.map(mapComments) }))
-    }
-    const loadedReplies = await api.comments.getReplies(c.id)
-    setReplies((state) => ({ ...state, [c.id]: loadedReplies }))
-  }, [replies])
+  const { profile } = useUser()
+  const {
+    clearToReply,
+    loadReplies,
+    onComment,
+    onCommentContentPress,
+    onSend,
+    onSetReply,
+    setComment,
+    authors,
+    comments,
+    isLoading,
+    toReply,
+    replies,
+    comment,
+  } = useComments(navigation, post, commentInput)
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
@@ -197,27 +100,13 @@ const Comments = () => {
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
-      onPress={goBack}
+      onPress={navigation.goBack}
       labelVisible={false}
       backImage={() => (
         <HeaderBack tintColor={colors.textPrimary} />
       )}
     />
-  ), [goBack])
-
-  const onComment = useCallback(() => commentInput.current?.focus(), [])
-
-  const onCommentContentPress = useCallback(() => {
-    const type = getPostType(post)
-    if (type === POST_TYPES.IMAGE) {
-      navigate(routes.MODAL_IMAGE, {
-        ...post.image,
-        source: getSource(post.image.url),
-      })
-      return false
-    }
-    return true
-  }, [navigate, post])
+  ), [navigation.goBack])
 
   const ListHeader = useMemo(() => (
     <View style={styles.post}>
@@ -263,7 +152,7 @@ const Comments = () => {
         value={comment}
         isLoading={isLoading}
         reply={toReply}
-        onReplyClose={() => setToReply(null)}
+        onReplyClose={clearToReply}
       />
     </View>
   )
