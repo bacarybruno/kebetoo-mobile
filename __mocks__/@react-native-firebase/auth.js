@@ -21,7 +21,7 @@ const mockOptions = {
   onAuthStateChanged: jest.fn(),
   signInWithCredential: jest.fn().mockReturnValue(authCredentials),
   credentials: authCredentials,
-  signInWithEmailAndPassword: jest.fn(),
+  signInWithEmailAndPassword: jest.fn().mockReturnValue(Promise.resolve({ user })),
   createUserWithEmailAndPassword: jest.fn().mockReturnValue(Promise.resolve({ user })),
   currentUser: user,
 }

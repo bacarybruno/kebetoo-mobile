@@ -5,7 +5,8 @@ import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
-import SignIn, { fieldNames } from '../index'
+import SignIn from '../index'
+import { fieldNames } from '../hook'
 
 beforeEach(jest.clearAllMocks)
 
