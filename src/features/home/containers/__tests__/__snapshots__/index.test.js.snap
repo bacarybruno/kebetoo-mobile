@@ -10,7 +10,17 @@ exports[`renders HomePage 1`] = `
   }
 >
   <RCTScrollView
-    ListHeaderComponent={[Function]}
+    ListHeaderComponent={
+      <Header
+        displayName="Bruno Bodian"
+        imageSrc="https://avatars1.githubusercontent.com/u/14147533"
+        style={
+          Object {
+            "marginBottom": 20,
+          }
+        }
+      />
+    }
     contentContainerStyle={
       Object {
         "paddingBottom": 30,
