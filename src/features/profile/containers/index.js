@@ -5,34 +5,41 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useActionSheet } from '@expo/react-native-action-sheet'
 
 import {
   Pressable, Typography, Avatar, AppHeader,
 } from '@app/shared/components'
-import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
 import * as types from '@app/redux/types'
-import { userStatsSelector } from '@app/redux/selectors'
+import { appSelector, userStatsSelector } from '@app/redux/selectors'
 import { strings } from '@app/config'
-import { useAnalytics, useUser } from '@app/shared/hooks'
+import {
+  useAnalytics, useAppColors, useAppStyles, useUser,
+} from '@app/shared/hooks'
 
-import styles, { imageSize } from './styles'
+import createThemedStyles, { imageSize } from './styles'
+import { rgbaToHex } from '@app/theme/colors'
 
 const routeOptions = { title: strings.tabs.profile }
 
-export const SectionTitle = React.memo(({ text }) => (
-  <Typography
-    text={text}
-    systemWeight={Typography.weights.bold}
-    style={styles.sectionTitle}
-    type={Typography.types.headline5}
-    systemColor={Typography.colors.tertiary}
-  />
-))
+export const SectionTitle = React.memo(({ text }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <Typography
+      text={text}
+      systemWeight={Typography.weights.bold}
+      style={styles.sectionTitle}
+      type={Typography.types.headline5}
+      systemColor={Typography.colors.tertiary}
+    />
+  )
+})
 
 export const Summary = React.memo(({ photoURL, info, displayName }) => {
   const { navigate } = useNavigation()
+  const styles = useAppStyles(createThemedStyles)
 
   const onPress = useCallback(() => {
     if (photoURL) {
@@ -65,128 +72,172 @@ export const Summary = React.memo(({ photoURL, info, displayName }) => {
   )
 })
 
-export const Stat = React.memo(({ title, value }) => (
-  <View style={styles.stat}>
-    <Typography
-      type={Typography.types.subheading}
-      text={value}
-      systemWeight={Typography.weights.bold}
-      color="primary"
-    />
-    <Typography
-      type={Typography.types.headline5}
-      text={title}
-      systemColor={Typography.colors.tertiary}
-    />
-  </View>
-))
+export const Stat = React.memo(({ title, value }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.stat}>
+      <Typography
+        type={Typography.types.subheading}
+        text={value}
+        systemWeight={Typography.weights.bold}
+        color="primary"
+      />
+      <Typography
+        type={Typography.types.headline5}
+        text={title}
+        systemColor={Typography.colors.tertiary}
+      />
+    </View>
+  )
+})
 
 export const IconButton = React.memo(({
   icon, text, message, onPress, children, ...otherProps
-}) => (
-  <View style={styles.iconButtonWrapper}>
-    <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
-      <View style={styles.iconWrapper}>
-        <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
-      </View>
-      <View>
-        <Typography
-          type={Typography.types.headline5}
-          text={text}
-          style={styles.iconButtonTitle}
-        />
-        <Typography
-          type={Typography.types.headline5}
-          text={message}
-          systemColor={Typography.colors.tertiary}
-        />
-      </View>
-    </Pressable>
-    {children}
-  </View>
-))
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <View style={styles.iconButtonWrapper}>
+      <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
+        <View style={styles.iconWrapper}>
+          <Ionicon style={styles.icon} name={icon} size={20} color={colors.blue_dark} />
+        </View>
+        <View>
+          <Typography
+            type={Typography.types.headline5}
+            text={text}
+            style={styles.iconButtonTitle}
+          />
+          <Typography
+            type={Typography.types.headline5}
+            text={message}
+            systemColor={Typography.colors.tertiary}
+          />
+        </View>
+      </Pressable>
+      {children}
+    </View>
+  )
+})
 
 export const Stats = React.memo(({
   postsCount, reactionsCount, commentsCount, style,
-}) => (
-  <View style={[styles.stats, style]}>
-    <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
-    <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
-    <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
-  </View>
-))
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={[styles.stats, style]}>
+      <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
+      <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
+      <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
+    </View>
+  )
+})
 
-const ProfileSection = React.memo(({ managePosts }) => (
-  <View style={styles.section}>
-    <IconButton
-      icon="md-list"
-      text={strings.profile.manage_posts_title}
-      message={strings.profile.manage_posts_desc}
-      onPress={managePosts}
-    />
-  </View>
-))
+const ProfileSection = React.memo(({ managePosts }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.section}>
+      <IconButton
+        icon="md-list"
+        text={strings.profile.manage_posts_title}
+        message={strings.profile.manage_posts_desc}
+        onPress={managePosts}
+      />
+    </View>
+  )
+})
 
-const AccountSection = React.memo(({ signOut }) => (
-  <View style={styles.section}>
-    <SectionTitle text={strings.profile.account} />
-    <IconButton
-      icon="ios-at"
-      text={strings.profile.edit_username}
-      message={strings.profile.no_username_defined}
-    />
-    <IconButton
-      icon="md-create"
-      text={strings.profile.edit_profile}
-    />
-    <IconButton
-      icon="ios-log-out"
-      text={strings.profile.signout}
-      onPress={signOut}
-    />
-  </View>
-))
+const AccountSection = React.memo(({ signOut }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.section}>
+      <SectionTitle text={strings.profile.account} />
+      <IconButton
+        icon="ios-at"
+        text={strings.profile.edit_username}
+        message={strings.profile.no_username_defined}
+        disabled
+      />
+      <IconButton
+        icon="md-create"
+        text={strings.profile.edit_profile}
+        disabled
+      />
+      <IconButton
+        icon="ios-log-out"
+        text={strings.profile.signout}
+        onPress={signOut}
+      />
+    </View>
+  )
+})
 
-const PreferencesSection = React.memo(({ shareApp }) => (
-  <View style={styles.section}>
-    <SectionTitle text={strings.profile.preferences} />
-    <IconButton
-      icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
-      text={strings.profile.invite_fiend_title}
-      onPress={shareApp}
-    />
-    <IconButton
-      disabled
-      icon="ios-color-palette"
-      text={strings.profile.dark_mode}
-      message={strings.general.system_default}
-    />
-    <IconButton icon="ios-notifications" text={strings.profile.notifications} />
-    <IconButton
-      disabled
-      icon="ios-globe"
-      text={strings.profile.language}
-      message={strings.languages[strings.getLanguage()]}
-    />
-  </View>
-))
+const PreferencesSection = React.memo(({ shareApp, updateAppearance }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const { theme } = useSelector(appSelector)
+
+  const getAppearanceMessage = useCallback(() => {
+    switch (theme) {
+      case 'dark':
+        return strings.general.on
+      case 'light':
+        return strings.general.off
+      case 'system':
+        return strings.general.system_default
+      default:
+        return null
+    }
+  }, [theme])
+
+  return (
+    <View style={styles.section}>
+      <SectionTitle text={strings.profile.preferences} />
+      <IconButton
+        icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
+        text={strings.profile.invite_fiend_title}
+        onPress={shareApp}
+      />
+      <IconButton
+        onPress={updateAppearance}
+        icon="ios-color-palette"
+        text={strings.profile.dark_mode}
+        message={getAppearanceMessage()}
+      />
+      <IconButton
+        icon="ios-notifications"
+        text={strings.profile.notifications}
+        message={strings.general.on}
+        disabled
+      />
+      <IconButton
+        disabled
+        icon="ios-globe"
+        text={strings.profile.language}
+        message={strings.languages[strings.getLanguage()]}
+      />
+    </View>
+  )
+})
 
 export const ProfileHeader = React.memo(({
   profile, postsCount, reactionsCount, commentsCount,
-}) => (
-  <View style={styles.header}>
-    <Summary
-      photoURL={profile.photoURL}
-      displayName={profile.displayName}
-      info={profile.email}
-    />
-    <Stats
-      postsCount={postsCount}
-      reactionsCount={reactionsCount}
-      commentsCount={commentsCount}
-    />
-  </View>
-))
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.header}>
+      <Summary
+        photoURL={profile.photoURL}
+        displayName={profile.displayName}
+        info={profile.email}
+      />
+      <Stats
+        postsCount={postsCount}
+        reactionsCount={reactionsCount}
+        commentsCount={commentsCount}
+      />
+    </View>
+  )
+})
 
 const ProfilePage = React.memo(() => {
   const { profile, signOut } = useUser()
@@ -197,6 +248,11 @@ const ProfilePage = React.memo(() => {
   const [postsCount, setPostsCount] = useState(stats.posts)
   const [commentsCount, setCommentsCount] = useState(stats.comments)
   const [reactionsCount, setReactionsCount] = useState(stats.reactions)
+
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+
+  const { showActionSheetWithOptions } = useActionSheet()
 
   const dispatch = useDispatch()
 
@@ -236,6 +292,35 @@ const ProfilePage = React.memo(() => {
     })
   }, [])
 
+  const updateAppearance = useCallback(() => {
+    const cancelButtonIndex = 3
+
+    const bottomSheetItems = [{
+      title: strings.general.system_default,
+    }, {
+      title: strings.profile.dark,
+    }, {
+      title: strings.profile.light,
+    }]
+
+    showActionSheetWithOptions({
+      options: bottomSheetItems.map((item) => item.title),
+      cancelButtonIndex,
+      title: strings.general.options,
+      textStyle: { color: colors.textPrimary },
+      titleTextStyle: { color: colors.textSecondary },
+      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
+    }, (index) => {
+      if (index === 0) {
+        dispatch({ type: types.SET_THEME, payload: 'system' })
+      } else if (index === 1) {
+        dispatch({ type: types.SET_THEME, payload: 'dark' })
+      } else if (index === 2) {
+        dispatch({ type: types.SET_THEME, payload: 'light' })
+      }
+    })
+  }, [colors, dispatch, showActionSheetWithOptions])
+
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
   const requestSignOut = useCallback(async () => {
@@ -256,7 +341,7 @@ const ProfilePage = React.memo(() => {
           />
         </View>
         <ProfileSection managePosts={managePosts} />
-        <PreferencesSection shareApp={shareApp} />
+        <PreferencesSection shareApp={shareApp} updateAppearance={updateAppearance} />
         <AccountSection signOut={requestSignOut} />
       </ScrollView>
     </View>

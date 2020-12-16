@@ -7,16 +7,16 @@ import {
   Badge, Typography, HeaderBack, Pressable, TextAvatar,
 } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
-import { usePosts } from '@app/shared/hooks'
-import { colors, metrics } from '@app/theme'
+import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks'
+import { metrics } from '@app/theme'
 import { TransitionPresets } from '@react-navigation/stack'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
 import { Stats } from '../index'
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const routeOptions = {
+export const routeOptions = (styles, colors) => ({
   headerShown: true,
   headerBackImage: () => (
     <HeaderBack tintColor={colors.textPrimary} />
@@ -26,23 +26,28 @@ export const routeOptions = {
   title: '',
   headerTransparent: true,
   ...TransitionPresets.SlideFromRightIOS,
-}
+})
 
-export const SectionHeader = ({ section, dateFormat }) => (
-  <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
-    <Typography
-      type={Typography.types.subheading}
-      systemWeight={Typography.weights.semibold}
-      text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
-    />
-    <Badge text={section.data.length} />
-  </View>
-)
+export const SectionHeader = ({ section, dateFormat }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
+      <Typography
+        type={Typography.types.subheading}
+        systemWeight={Typography.weights.semibold}
+        text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
+      />
+      <Badge text={section.data.length} />
+    </View>
+  )
+}
 
 const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
 const UserProfile = ({ route, navigation }) => {
-  navigation.setOptions(routeOptions)
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  navigation.setOptions(routeOptions(styles, colors))
 
   const { params: { userId } } = route
   const [posts, setPosts] = useState([])
@@ -119,7 +124,7 @@ const UserProfile = ({ route, navigation }) => {
         post={item}
       />
     </View>
-  ), [authors, user])
+  ), [authors, styles.paddingHorizontal, user])
 
   const renderListHeader = useCallback(() => (
     <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
@@ -153,7 +158,7 @@ const UserProfile = ({ route, navigation }) => {
         </View>
       </View>
     </Pressable>
-  ), [onListHeaderPress, photoURL, user])
+  ), [onListHeaderPress, photoURL, styles, user])
 
   return (
     <View style={styles.wrapper}>

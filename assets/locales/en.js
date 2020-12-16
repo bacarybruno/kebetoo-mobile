@@ -3,6 +3,7 @@ const locales = Object.freeze({
     skip: 'Skip',
     get_started: 'Get Started',
     actions: 'Actions',
+    options: 'Options',
     cancel: 'Cancel',
     no_content: 'No content yet',
     edited: 'Edited',
@@ -13,6 +14,8 @@ const locales = Object.freeze({
     system_default: 'System default',
     audio: 'Audio',
     new: 'New',
+    on: 'On',
+    off: 'Off',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -64,6 +67,8 @@ const locales = Object.freeze({
     share_title: 'Kebetoo',
     share_url: 'https://kebetoo.com/download',
     share_message: 'Download the Kebetoo app, the African social network!',
+    dark: 'Dark',
+    light: 'Light',
   },
   manage_posts: {
     my_posts: 'My posts',

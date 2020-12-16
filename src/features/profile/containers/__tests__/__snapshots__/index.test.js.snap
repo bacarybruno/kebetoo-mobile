@@ -763,7 +763,7 @@ exports[`renders Profile 1`] = `
         >
           <View
             accessible={true}
-            focusable={false}
+            focusable={true}
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -966,6 +966,37 @@ exports[`renders Profile 1`] = `
                 }
               >
                 Notifications
+              </Text>
+              <Text
+                style={
+                  Array [
+                    false,
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 15,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.24,
+                      "lineHeight": 20,
+                    },
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                On
               </Text>
             </View>
           </View>

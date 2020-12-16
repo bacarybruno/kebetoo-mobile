@@ -19,6 +19,9 @@ const storeState = {
     },
     profile: auth().currentUser,
   },
+  appReducer: {
+    theme: 'system',
+  },
 }
 const givenProfile = setupTest(Profile)({
   __storeState__: storeState,
