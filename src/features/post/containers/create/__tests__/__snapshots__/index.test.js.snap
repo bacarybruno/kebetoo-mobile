@@ -22,12 +22,12 @@ exports[`renders CreatePost 1`] = `
       style={
         Object {
           "backgroundColor": "#F5F5F5",
-          "borderColor": "rgba(229, 229, 234, 255)",
+          "borderColor": "transparent",
           "borderRadius": 15,
           "borderWidth": 1,
           "height": 381.14285714285717,
           "marginTop": 8,
-          "minHeight": 250,
+          "minHeight": 200,
           "overflow": "hidden",
           "paddingRight": 16,
           "paddingVertical": 6,
@@ -73,6 +73,7 @@ exports[`renders CreatePost 1`] = `
                 "lineHeight": 21,
               },
               Object {
+                "fontSize": 16,
                 "textAlignVertical": "top",
               },
               undefined,

@@ -2650,11 +2650,16 @@ exports[`renders component [image]: renders BasicPost 1`] = `
           Object {
             "aspectRatio": 1.3333333333333333,
             "backgroundColor": "rgba(255, 255, 255, 255)",
+            "borderColor": "rgba(229, 229, 234, 255)",
+            "borderWidth": 1,
             "width": "100%",
           },
           Object {
             "marginLeft": -16,
             "width": 750,
+          },
+          Object {
+            "borderRadius": 0,
           },
         ]
       }
@@ -3556,11 +3561,16 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
           Object {
             "aspectRatio": 1.3333333333333333,
             "backgroundColor": "rgba(255, 255, 255, 255)",
+            "borderColor": "rgba(229, 229, 234, 255)",
+            "borderWidth": 1,
             "width": "100%",
           },
           Object {
             "marginLeft": -16,
             "width": 750,
+          },
+          Object {
+            "borderRadius": 0,
           },
         ]
       }
@@ -4227,11 +4237,16 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
           Object {
             "aspectRatio": 1.3333333333333333,
             "backgroundColor": "rgba(255, 255, 255, 255)",
+            "borderColor": "rgba(229, 229, 234, 255)",
+            "borderWidth": 1,
             "width": "100%",
           },
           Object {
             "marginLeft": -16,
             "width": 750,
+          },
+          Object {
+            "borderRadius": 0,
           },
         ]
       }

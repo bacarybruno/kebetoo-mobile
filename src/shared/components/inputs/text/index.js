@@ -5,14 +5,13 @@ import {
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Popover, { PopoverPlacement } from 'react-native-popover-view'
 
-import { colors } from '@app/theme'
 import { Typography } from '@app/shared/components'
 import { capitalize } from '@app/shared/helpers/strings'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from '../styles'
 
-export const ErrorTooltip = (styles) => (
+export const ErrorTooltip = (styles, colors) => (
   <TouchableOpacity style={styles.iconWrapper}>
     <Ionicon name="ios-alert" size={28} color={colors.pink} />
   </TouchableOpacity>
@@ -20,8 +19,14 @@ export const ErrorTooltip = (styles) => (
 
 export const PopoverTooltip = ({ message, from = ErrorTooltip }) => {
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+
   return (
-    <Popover from={from(styles)} popoverStyle={styles.popover} placement={PopoverPlacement.BOTTOM}>
+    <Popover
+      from={from(styles, colors)}
+      popoverStyle={styles.popover}
+      placement={PopoverPlacement.BOTTOM}
+    >
       <Typography text={capitalize(message)} />
     </Popover>
   )
