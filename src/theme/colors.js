@@ -6,8 +6,6 @@ import { Appearance } from 'react-native'
 import iosColors from './ios-colors'
 import mdColors from './md-colors'
 
-const colorScheme = Appearance.getColorScheme()
-
 const componentToHex = (c) => {
   const hex = c.toString(16)
   return hex.length === 1 ? `0${hex}` : hex
@@ -20,73 +18,6 @@ export const rgbaToHex = (rgba) => {
     + componentToHex(parseInt(rgb[2], 10)).slice(-2)
     + componentToHex(parseInt(rgb[3], 10)).slice(-2) : rgba
 }
-
-const baseColors = {
-  pink: iosColors.systemPink[colorScheme],
-  blue: iosColors.systemBlue[colorScheme],
-  purple: iosColors.systemPurple[colorScheme],
-  red: iosColors.systemRed[colorScheme],
-  black: iosColors.black,
-  white: iosColors.white,
-}
-
-const customColors = {
-  blue_dark: {
-    light: '#0B1B77',
-    dark: iosColors.systemGrey.light,
-  },
-  backgroundSecondary: {
-    light: '#F5F5F5',
-    dark: iosColors.secondarySystemBackground[colorScheme],
-  },
-  inactive: {
-    light: iosColors.systemGrey3[colorScheme],
-    dark: iosColors.inactiveGrey[colorScheme],
-  },
-  secondary: {
-    light: '#F0F6FE',
-    dark: iosColors.secondarySystemBackground[colorScheme],
-  },
-}
-
-const iconColors = {
-  like: baseColors.blue,
-  dislike: baseColors.pink,
-  heart: baseColors.pink,
-  reactions: mdColors.textSecondary[colorScheme],
-  facebook: '#3b5998',
-  icon: '#7A8FA6',
-}
-
-const textColors = {
-  textPrimary: mdColors.textPrimary[colorScheme],
-  textSecondary: mdColors.textSecondary[colorScheme],
-  textTertiary: mdColors.textTertiary[colorScheme],
-}
-
-const colors = {
-  background: iosColors.systemBackground[colorScheme],
-  backgroundSecondary: customColors.backgroundSecondary[colorScheme],
-  backgroundTertiary: iosColors.tertiarySystemBackground[colorScheme],
-
-  primary: baseColors.blue,
-  secondary: customColors.secondary[colorScheme],
-  danger: baseColors.red,
-  blue_dark: customColors.blue_dark[colorScheme],
-
-  inactive: customColors.inactive[colorScheme],
-  placeholder: iosColors.systemGrey2[colorScheme],
-  border: iosColors.systemGrey5[colorScheme],
-  link: iosColors.link[colorScheme],
-
-  ...iconColors,
-  ...textColors,
-  ...baseColors,
-}
-
-// export const rgbToHex = (r, g, b) => (
-//   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
-// )
 
 export const hexToRgb = (hex) => {
   const sanitizedHex = hex.replace('#', '')
@@ -102,6 +33,10 @@ export const hexToRgba = (hex, opacity) => {
   return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }
 
+// export const rgbToHex = (r, g, b) => (
+//   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
+// )
+
 // export const middleHexColorsToRgb = (color1, color2) => {
 //   const [r1, g1, b1] = hexToRgb(color1)
 //   const [r2, g2, b2] = hexToRgb(color2)
@@ -115,4 +50,77 @@ export const hexToRgba = (hex, opacity) => {
 //   ...middleHexColorsToRgb(colors.primary, colors.secondary),
 // )
 
-export default colors
+export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => {
+  const baseColors = {
+    pink: iosColors.systemPink[colorScheme],
+    blue: iosColors.systemBlue[colorScheme],
+    purple: iosColors.systemPurple[colorScheme],
+    red: iosColors.systemRed[colorScheme],
+    black: iosColors.black,
+    white: iosColors.white,
+  }
+
+  const customColors = {
+    blue_dark: {
+      light: '#0B1B77',
+      dark: iosColors.systemGrey.light,
+    },
+    backgroundSecondary: {
+      light: '#F5F5F5',
+      dark: iosColors.secondarySystemBackground[colorScheme],
+    },
+    inactive: {
+      light: iosColors.systemGrey3[colorScheme],
+      dark: iosColors.inactiveGrey[colorScheme],
+    },
+    secondary: {
+      light: '#F0F6FE',
+      dark: iosColors.secondarySystemBackground[colorScheme],
+    },
+    background: {
+      light: iosColors.systemBackground[colorScheme],
+      dark: '#121212',
+    },
+  }
+
+  const iconColors = {
+    like: baseColors.blue,
+    dislike: baseColors.pink,
+    heart: baseColors.pink,
+    reactions: mdColors.textSecondary[colorScheme],
+    facebook: '#3b5998',
+    icon: '#7A8FA6',
+  }
+
+  const textColors = {
+    textPrimary: mdColors.textPrimary[colorScheme],
+    textSecondary: mdColors.textSecondary[colorScheme],
+    textTertiary: mdColors.textTertiary[colorScheme],
+  }
+
+  const colors = {
+    background: customColors.background[colorScheme],
+    backgroundSecondary: customColors.backgroundSecondary[colorScheme],
+    backgroundTertiary: iosColors.tertiarySystemBackground[colorScheme],
+
+    primary: baseColors.blue,
+    secondary: customColors.secondary[colorScheme],
+    danger: baseColors.red,
+    blue_dark: customColors.blue_dark[colorScheme],
+
+    inactive: customColors.inactive[colorScheme],
+    placeholder: iosColors.systemGrey2[colorScheme],
+    border: iosColors.systemGrey5[colorScheme],
+    link: iosColors.link[colorScheme],
+
+    ...iconColors,
+    ...textColors,
+    ...baseColors,
+
+    colorScheme,
+  }
+
+  return colors
+}
+
+export default createThemeColors()
