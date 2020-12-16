@@ -78,8 +78,8 @@
 		"prefix": "styles",
 		"body": [
 			"import { StyleSheet } from 'react-native'\n",
-			"import { colors, metrics } from '@app/theme'",
-			"export default StyleSheet.create({",
+			"import { metrics } from '@app/theme'",
+			"export default (colors) => StyleSheet.create({",
 			"\twrapper: {",
 			"\t\tflex: 1,",
 			"\t\tbackgroundColor: colors.background,",

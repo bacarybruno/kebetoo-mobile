@@ -1,34 +1,30 @@
 import React, { useEffect } from 'react'
-import {
-  useColorScheme, StatusBar, Appearance, AppState,
-} from 'react-native'
+import { StatusBar, AppState } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { useSelector, useDispatch } from 'react-redux'
 import { enableScreens } from 'react-native-screens'
 import changeNavigationBarColor from 'react-native-navigation-bar-color'
 
 import AppNavigation from '@app/navigation'
-import { appSelector } from '@app/redux/selectors'
-import { SET_THEME } from '@app/redux/types'
-import colors, { rgbaToHex } from '@app/theme/colors'
-import { useAnalytics, useNotifications } from '@app/shared/hooks'
+import { useAnalytics, useAppColors, useNotifications } from '@app/shared/hooks'
+import { rgbaToHex } from '@app/theme/colors'
 
 import styles from './styles'
 
 enableScreens()
 
 const RootContainer = () => {
-  const { theme } = useSelector(appSelector)
-  const defaultTheme = useColorScheme()
-  const dispatch = useDispatch()
   const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
+
+  const themeValue = useAppColors()
+  const themeColorScheme = themeValue.colorScheme
 
   useEffect(() => {
     const appStateChange = (state) => {
       if (state === 'active') trackAppOpen()
       else if (state === 'inactive') trackAppBackground()
     }
+
     AppState.addEventListener('change', appStateChange)
     return () => {
       AppState.removeEventListener('change', appStateChange)
@@ -36,15 +32,14 @@ const RootContainer = () => {
   }, [trackAppBackground, trackAppOpen])
 
   useEffect(() => {
-    if (theme === null) {
-      dispatch({ type: SET_THEME, payload: defaultTheme })
+    if (themeColorScheme === 'dark') {
+      StatusBar.setBarStyle('light-content')
+    } else {
+      StatusBar.setBarStyle('dark-content')
     }
-    const colorScheme = Appearance.getColorScheme()
-    if (colorScheme === 'dark') {
-      StatusBar.setBackgroundColor(colors.backgroundSecondary)
-      changeNavigationBarColor(rgbaToHex(colors.backgroundSecondary))
-    }
-  }, [defaultTheme, dispatch, theme])
+    StatusBar.setBackgroundColor(themeValue.backgroundSecondary)
+    changeNavigationBarColor(rgbaToHex(themeValue.backgroundSecondary))
+  }, [themeColorScheme, themeValue])
 
   useEffect(() => {
     setupNotifications()

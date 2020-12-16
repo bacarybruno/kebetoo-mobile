@@ -30,6 +30,9 @@ const mockedStoreState = {
   userReducer: {
     profile: auth().currentUser,
   },
+  appReducer: {
+    theme: 'system',
+  },
 }
 // helper to setup unit tests
 /* eslint-disable comma-dangle */
