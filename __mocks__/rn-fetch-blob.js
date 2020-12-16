@@ -2,13 +2,14 @@ const existsMock = jest.fn()
 existsMock.mockReturnValueOnce({ then: jest.fn() })
 
 export default {
-  DocumentDir: () => { },
+  DocumentDir: jest.fn(),
   ImageCache: {
     get: {
-      clear: () => { },
+      clear: jest.fn(),
     },
   },
   fs: {
+    cp: jest.fn().mockResolvedValue(),
     exists: existsMock,
     unlink: jest.fn().mockReturnValue(true),
     dirs: {

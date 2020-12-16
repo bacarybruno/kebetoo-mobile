@@ -76,6 +76,7 @@ const HomePage = () => {
     const appStateChange = (state) => {
       if (state === 'active') handleSharingIntent()
     }
+    AppState.addEventListener('change', appStateChange)
     return () => {
       AppState.removeEventListener('change', appStateChange)
     }
@@ -140,7 +141,7 @@ const HomePage = () => {
       refreshing={refreshing}
       onRefresh={onRefresh}
     />
-  ), [onRefresh, refreshing])
+  ), [colors, onRefresh, refreshing])
 
   return (
     <View style={styles.wrapper}>
