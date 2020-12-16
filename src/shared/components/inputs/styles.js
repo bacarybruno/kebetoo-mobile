@@ -1,11 +1,9 @@
 import { StyleSheet } from 'react-native'
 import { human } from 'react-native-typography'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 
-export const placeholderColor = colors.placeholder
-
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     backgroundColor: colors.backgroundSecondary,
     minHeight: 48,
@@ -18,7 +16,7 @@ export default StyleSheet.create({
     ...human.callout,
     color: colors.textPrimary,
     flex: 1,
-    height: '100%'
+    height: '100%',
   },
   iconWrapper: {
     height: 48,
@@ -29,7 +27,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    color: placeholderColor,
+    color: colors.placeholder,
   },
   popover: {
     backgroundColor: colors.background,

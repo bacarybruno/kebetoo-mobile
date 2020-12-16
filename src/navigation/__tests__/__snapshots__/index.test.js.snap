@@ -127,7 +127,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                 pointerEvents="none"
                 style={
                   Object {
-                    "backgroundColor": "rgb(242, 242, 242)",
+                    "backgroundColor": "rgba(255, 255, 255, 255)",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -152,7 +152,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                     },
                     Array [
                       Object {
-                        "backgroundColor": "rgb(242, 242, 242)",
+                        "backgroundColor": "rgba(255, 255, 255, 255)",
                       },
                       undefined,
                     ],
@@ -227,7 +227,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     "flex": 1,
                                   },
                                   Object {
-                                    "backgroundColor": "rgb(242, 242, 242)",
+                                    "backgroundColor": "rgba(255, 255, 255, 255)",
                                   },
                                 ]
                               }
@@ -526,7 +526,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     "flex": 1,
                                   },
                                   Object {
-                                    "backgroundColor": "rgb(242, 242, 242)",
+                                    "backgroundColor": "rgba(255, 255, 255, 255)",
                                   },
                                 ]
                               }
@@ -678,6 +678,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                       </View>
                       <View>
                         <Image
+                          fadeDuration={0}
                           source={
                             Object {
                               "testUri": "../../../assets/images/bottom-tab-overlay.png",
@@ -1724,7 +1725,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                 pointerEvents="none"
                 style={
                   Object {
-                    "backgroundColor": "rgb(242, 242, 242)",
+                    "backgroundColor": "rgba(255, 255, 255, 255)",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -1749,7 +1750,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                     },
                     Array [
                       Object {
-                        "backgroundColor": "rgb(242, 242, 242)",
+                        "backgroundColor": "rgba(255, 255, 255, 255)",
                       },
                       undefined,
                     ],
@@ -1886,7 +1887,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                   pointerEvents="none"
                                   style={
                                     Object {
-                                      "backgroundColor": "rgb(242, 242, 242)",
+                                      "backgroundColor": "rgba(255, 255, 255, 255)",
                                       "bottom": 0,
                                       "left": 0,
                                       "position": "absolute",
@@ -1911,7 +1912,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       },
                                       Array [
                                         Object {
-                                          "backgroundColor": "rgb(242, 242, 242)",
+                                          "backgroundColor": "rgba(255, 255, 255, 255)",
                                         },
                                         undefined,
                                       ],
@@ -4105,6 +4106,7 @@ exports[`tabs renders TabNavigation 1`] = `
     </View>
     <View>
       <Image
+        fadeDuration={0}
         source={
           Object {
             "testUri": "../../../assets/images/bottom-tab-overlay.png",

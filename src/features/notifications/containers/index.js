@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'
 
 import { strings } from '@app/config'
-import { useUser, useNotifications } from '@app/shared/hooks'
+import { useUser, useNotifications, useAppStyles } from '@app/shared/hooks'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
@@ -12,7 +12,7 @@ import { AppHeader } from '@app/shared/components'
 
 import Notification from '../components/notification'
 import Heading from '../components/heading'
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const routeOptions = { title: strings.tabs.notifications }
 
@@ -23,14 +23,17 @@ export const NOTIFICATION_TYPES = {
   COMMENT_REACTION: 'comment-reaction',
 }
 
-const Section = ({ title, items, renderItem }) => (
-  items.length > 0 && (
-    <View style={styles.section}>
-      <Heading name={title} value={items.length} />
-      {items.map(renderItem)}
-    </View>
+const Section = ({ title, items, renderItem }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    items.length > 0 && (
+      <View style={styles.section}>
+        <Heading name={title} value={items.length} />
+        {items.map(renderItem)}
+      </View>
+    )
   )
-)
+}
 
 const NotificationsPage = () => {
   const {
@@ -40,6 +43,7 @@ const NotificationsPage = () => {
   const { profile } = useUser()
 
   const [isLoading, setIsLoading] = useState(false)
+  const styles = useAppStyles(createThemedStyles)
 
   useEffect(() => {
     const removeBlurListener = addListener('blur', () => {

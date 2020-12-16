@@ -3,33 +3,41 @@ import { View, TouchableOpacity, Platform } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAccessoryView, KeyboardUtils } from 'react-native-ui-lib/keyboard'
 
-import { colors, edgeInsets } from '@app/theme'
+import { edgeInsets } from '@app/theme'
 import { keyboardName } from '@app/shared/components/emoji-selector'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles from '../styles'
+import createThemedStyles from '../styles'
 import TextInput from '../text'
 
-export const EmojiPickerToggler = ({ onPress, isActive }) => (
-  <TouchableOpacity onPress={onPress} style={styles.emojiPicker} hitSlop={edgeInsets.all(20)}>
-    <Ionicon
-      name="md-happy"
-      size={28}
-      color={isActive ? colors.primary : colors.placeholder}
-    />
-  </TouchableOpacity>
-)
+export const EmojiPickerToggler = ({ onPress, isActive }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.emojiPicker} hitSlop={edgeInsets.all(20)}>
+      <Ionicon
+        name="md-happy"
+        size={28}
+        color={isActive ? colors.primary : colors.placeholder}
+      />
+    </TouchableOpacity>
+  )
+}
 
 export const EmojiKeyboard = ({
   inputRef, showEmojiPicker, onSelectEmoji, hide,
-}) => (
-  <View style={[styles.emojiSelector, hide && styles.hide]}>
-    <KeyboardAccessoryView
-      kbComponent={showEmojiPicker ? keyboardName : undefined}
-      onItemSelected={onSelectEmoji}
-      kbInputRef={inputRef}
-    />
-  </View>
-)
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={[styles.emojiSelector, hide && styles.hide]}>
+      <KeyboardAccessoryView
+        kbComponent={showEmojiPicker ? keyboardName : undefined}
+        onItemSelected={onSelectEmoji}
+        kbInputRef={inputRef}
+      />
+    </View>
+  )
+}
 
 const EmojiTextInput = React.forwardRef((props, ref) => {
   const [value, setValue] = useState(props.value)

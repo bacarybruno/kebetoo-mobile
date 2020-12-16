@@ -4,30 +4,37 @@ import { colors } from '@app/theme'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import IconButton from '@app/features/post/components/icon-button'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => (
-  <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress} {...otherProps}>
-    {isLoading
-      ? <ActivityIndicator size={25} color={colors.white} />
-      : (
-        <Ionicon style={styles.sendIcon} name="md-send" size={25} color={colors.white} />
-      )}
-  </TouchableOpacity>
-))
+export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress} {...otherProps}>
+      {isLoading
+        ? <ActivityIndicator size={25} color={colors.white} />
+        : (
+          <Ionicon style={styles.sendIcon} name="md-send" size={25} color={colors.white} />
+        )}
+    </TouchableOpacity>
+  )
+})
 
-export const RecordButton = React.memo(({ isRecording, start, stop }) => (
-  <IconButton
-    activable
-    size={50}
-    name="microphone"
-    defaultHitSlop={0}
-    color={colors.white}
-    style={styles.recordButton}
-    onPressIn={start}
-    onPressOut={stop}
-    isActive={isRecording}
-    defaultBgColor={colors.primary}
-  />
-))
+export const RecordButton = React.memo(({ isRecording, start, stop }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <IconButton
+      activable
+      size={50}
+      name="microphone"
+      defaultHitSlop={0}
+      color={colors.white}
+      style={styles.recordButton}
+      onPressIn={start}
+      onPressOut={stop}
+      isActive={isRecording}
+      defaultBgColor={colors.primary}
+    />
+  )
+})

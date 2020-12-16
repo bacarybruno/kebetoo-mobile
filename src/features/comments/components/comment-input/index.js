@@ -6,16 +6,19 @@ import { Animated, View } from 'react-native'
 import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
 import { strings } from '@app/config'
 import { readableSeconds } from '@app/shared/helpers/dates'
+import { useAppStyles } from '@app/shared/hooks'
 
 import { SendButton, RecordButton } from '../send-button'
 import ReplyInfo from '../reply-info'
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const baseReplyInfoSize = 62
 
 export const CommentInput = ({
   onChange, onSend, inputRef, value, audioRecorder, isLoading, reply, onReplyClose, ...inputProps
 }) => {
+  const styles = useAppStyles(createThemedStyles)
+
   const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight)
   const inputSize = useRef(new Animated.Value(0))
 
@@ -36,7 +39,7 @@ export const CommentInput = ({
     )
   }, [])
 
-  //FIXME: handle ios keyboard on comments
+  // FIXME: handle ios keyboard on comments
   return (
     <View style={styles.commentInputWrapper}>
       <View style={styles.flexible}>

@@ -8,9 +8,10 @@ import {
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { metrics } from '@app/theme'
 import { strings } from '@app/config'
+import { useAppStyles } from '@app/shared/hooks'
 
 import useSignin, { fieldNames } from './hook'
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const SignIn = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signin })
@@ -29,6 +30,8 @@ const SignIn = ({ navigation }) => {
     validate,
     handleAuthError,
   } = useSignin(navigation, passwordRef)
+
+  const styles = useAppStyles(createThemedStyles)
 
   return (
     <KeyboardAwareScrollView

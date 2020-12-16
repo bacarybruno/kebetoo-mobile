@@ -3,13 +3,14 @@ import { View } from 'react-native'
 
 import BaseReactions from '@app/features/post/containers/reactions'
 import { Typography, Avatar } from '@app/shared/components'
-import { usePosts } from '@app/shared/hooks'
+import { useAppStyles, usePosts } from '@app/shared/hooks'
 import { strings } from '@app/config'
 
 import DraggableIndicator from '../draggable-indicator'
-import styles, { reactionsHeight, summaryHeight } from './styles'
+import createThemedStyles, { reactionsHeight, summaryHeight } from './styles'
 
 export const SummaryAuthor = ({ author }) => {
+  const styles = useAppStyles(createThemedStyles)
   if (!author) return <View style={styles.img} />
   return (
     <Avatar src={author.photoURL} text={author.displayName} style={styles.img} />
@@ -21,6 +22,7 @@ const Summary = React.memo(({ comments }) => {
   const [reactionsMap, setReactionsMap] = useState({})
 
   const { getAuthors } = usePosts()
+  const styles = useAppStyles(createThemedStyles)
 
   useEffect(() => {
     const reactionsMapData = {}
@@ -77,12 +79,14 @@ const Summary = React.memo(({ comments }) => {
 const Reactions = ({
   post, author, comments, ...reactionProps
 }) => {
+  const styles = useAppStyles(createThemedStyles)
+
   const hasReactions = comments.flatMap((comment) => comment.reactions).length > 0
   const getContainerStyle = useMemo(() => () => {
     let height = reactionsHeight
     if (hasReactions) height += summaryHeight
     return { ...styles.reactionsContainer, height }
-  }, [hasReactions])
+  }, [hasReactions, styles.reactionsContainer])
 
   return (
     <View style={getContainerStyle()}>

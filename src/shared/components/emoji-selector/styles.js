@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 import { fontSizes } from '../typography'
 
 export const numColumns = 8
 export const emojiSize = metrics.screenWidth / numColumns
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     backgroundColor: colors.backgroundSecondary,
   },

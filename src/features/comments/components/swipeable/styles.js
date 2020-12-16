@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 
 export const swipeableThresold = metrics.screenWidth / 3.5
 export const swipeableMargin = 80
 const iconWrapperSize = 40
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   leftAction: {
     justifyContent: 'center',
     width: swipeableThresold,

@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme'
 import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   button: {
     width: '100%',
     height: 48,

@@ -6,17 +6,22 @@ import { Typography } from '@app/shared/components'
 import { colors } from '@app/theme'
 import { strings } from '@app/config'
 import { generateColor } from '@app/shared/helpers'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const DeleteIconButton = ({ onPress }) => (
-  <TouchableOpacity style={styles.deleteWrapper} onPress={onPress}>
-    <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
-  </TouchableOpacity>
-)
+export const DeleteIconButton = ({ onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <TouchableOpacity style={styles.deleteWrapper} onPress={onPress}>
+      <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
+    </TouchableOpacity>
+  )
+}
 
 const ReplyInfo = ({ info, size, onClose }) => {
   const { content, author } = info
+  const styles = useAppStyles(createThemedStyles)
   return (
     <View style={{ ...styles.replyInfoWrapper, height: size }}>
       <View style={[styles.replyInfoContainer, { borderColor: generateColor(author.displayName) }]}>

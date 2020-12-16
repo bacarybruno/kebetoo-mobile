@@ -9,37 +9,43 @@ import { Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
-import { colors } from '@app/theme'
 import { strings } from '@app/config'
-import { usePosts } from '@app/shared/hooks'
+import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import HistoryItem from '../../components/history-item'
 import NoResult from '../../components/no-result'
 
-export const SearchHistoryHeader = ({ onClear }) => (
-  <View style={[styles.historyHeader, styles.paddingHorizontal]}>
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
+export const SearchHistoryHeader = ({ onClear }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <View style={[styles.historyHeader, styles.paddingHorizontal]}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
+        <Typography
+          type={Typography.types.headline5}
+          style={styles.sectionHeader}
+          text={strings.search.recent_searches}
+        />
+      </View>
       <Typography
-        type={Typography.types.headline5}
-        style={styles.sectionHeader}
-        text={strings.search.recent_searches}
+        type={Typography.types.textButton}
+        style={[styles.sectionHeader, styles.sectionHeaderLink]}
+        onPress={onClear}
+        text={strings.search.clear_all}
       />
     </View>
-    <Typography
-      type={Typography.types.textButton}
-      style={[styles.sectionHeader, styles.sectionHeaderLink]}
-      onPress={onClear}
-      text={strings.search.clear_all}
-    />
-  </View>
-)
+  )
+}
 
 const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const [posts, setPosts] = useState([])
   const [authors, setAuthors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   const { posts: postsHistory } = useSelector(recentSearchHistory)
   const dispatch = useDispatch()
@@ -97,7 +103,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
       style={styles.sectionHeader}
       text={strings.search.results}
     />
-  ), [])
+  ), [colors.textTertiary, styles.sectionHeader])
 
   const onClearAllRecentSearches = useCallback(() => {
     dispatch({ type: types.CLEAR_POST_HISTORY })

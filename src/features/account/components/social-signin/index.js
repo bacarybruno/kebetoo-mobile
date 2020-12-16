@@ -4,14 +4,15 @@ import { View, TouchableOpacity, Image } from 'react-native'
 import HrLine from '@app/features/account/components/hr-line'
 import { googleLogin, facebookLogin } from '@app/shared/services'
 import Kebeticon from '@app/shared/icons/kebeticons'
-import { colors, images } from '@app/theme'
-import { useAnalytics } from '@app/shared/hooks'
+import { images } from '@app/theme'
+import { useAnalytics, useAppColors } from '@app/shared/hooks'
 
 import styles from './styles'
 
 const SocialSignIn = ({
   sectionText, children, onSignIn, onLoading, disabled, type, onError = () => {},
 }) => {
+  const colors = useAppColors()
   const { trackSignIn, trackSignUp } = useAnalytics()
 
   const trackAuthEvent = useCallback((provider) => {

@@ -7,39 +7,51 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import Player from 'react-native-sound'
 import BackgroundTimer from 'react-native-background-timer'
 
-import { colors, edgeInsets, images } from '@app/theme'
+import { edgeInsets, images } from '@app/theme'
 import { Pressable } from '@app/shared/components'
 import { readableSeconds } from '@app/shared/helpers/dates'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import Typography, { types } from '../typography'
 
-const Waves = () => (
-  <View style={styles.wavesContainer}>
-    <Image style={styles.waves} source={images.waves} />
-  </View>
-)
+const Waves = () => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.wavesContainer}>
+      <Image style={styles.waves} source={images.waves} />
+    </View>
+  )
+}
 
-export const PlayButton = ({ onPress, state, ...otherProps }) => (
-  <TouchableOpacity style={styles.iconWrapper} onPress={onPress} {...otherProps}>
-    {state === MediaStates.PREPARING
-      ? (
-        <ActivityIndicator color={colors.blue_dark} />
-      ) : (
-        <Ionicon
-          name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
-          size={22}
-          color={colors.blue_dark}
-        />
-      )}
-  </TouchableOpacity>
-)
+export const PlayButton = ({ onPress, state, ...otherProps }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <TouchableOpacity style={styles.iconWrapper} onPress={onPress} {...otherProps}>
+      {state === MediaStates.PREPARING
+        ? (
+          <ActivityIndicator color={colors.blue_dark} />
+        ) : (
+          <Ionicon
+            name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
+            size={22}
+            color={colors.blue_dark}
+          />
+        )}
+    </TouchableOpacity>
+  )
+}
 
-export const DeleteIconButton = ({ onPress }) => (
-  <TouchableOpacity style={styles.deleteWrapper} onPress={onPress} hitSlop={edgeInsets.all(50)}>
-    <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
-  </TouchableOpacity>
-)
+export const DeleteIconButton = ({ onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <TouchableOpacity style={styles.deleteWrapper} onPress={onPress} hitSlop={edgeInsets.all(50)}>
+      <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
+    </TouchableOpacity>
+  )
+}
 
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
@@ -48,6 +60,8 @@ export const AudioPlayer = ({
   const [player, setPlayer] = useState(instance)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
+
+  const styles = useAppStyles(createThemedStyles)
 
   const onEnd = useCallback((ended) => {
     if (ended) {

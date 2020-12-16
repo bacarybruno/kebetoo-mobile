@@ -2,24 +2,31 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 import { Pressable, Avatar, Typography } from '@app/shared/components'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const Dot = () => <View style={styles.dot} />
+export const Dot = () => {
+  const styles = useAppStyles(createThemedStyles)
+  return <View style={styles.dot} />
+}
 
-export const Title = ({ name, message, showDot }) => (
-  <View style={styles.headerTitleWrapper}>
-    <Text style={styles.headerTitle} numberOfLines={2}>
-      <Typography
-        text={name}
-        type={Typography.types.headline4}
-        systemWeight={Typography.weights.semibold}
-      />
-      <Typography text={` ${message}`} type={Typography.types.headline4} />
-    </Text>
-    {showDot && <Dot />}
-  </View>
-)
+export const Title = ({ name, message, showDot }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.headerTitleWrapper}>
+      <Text style={styles.headerTitle} numberOfLines={2}>
+        <Typography
+          text={name}
+          type={Typography.types.headline4}
+          systemWeight={Typography.weights.semibold}
+        />
+        <Typography text={` ${message}`} type={Typography.types.headline4} />
+      </Text>
+      {showDot && <Dot />}
+    </View>
+  )
+}
 
 export const Message = ({ text }) => (
   <Typography numberOfLines={1} type={Typography.types.body} text={text} />
@@ -27,27 +34,30 @@ export const Message = ({ text }) => (
 
 const Notification = ({
   isOpened, title, message, caption, author, onPress,
-}) => (
-  <Pressable
-    style={[styles.notificationWrapper, !isOpened && styles.pendingNotification]}
-    onPress={onPress}
-  >
-    <Avatar text={author.displayName} src={author.photoURL} size={55} fontSize={25} />
-    <View style={styles.notificationInfos}>
-      {title && (
-        <Title name={title.name} message={title.message} showDot={!isOpened} />
-      )}
-      {message && <Message text={message} />}
-      <View style={styles.captionWrapper}>
-        <Typography
-          text={caption}
-          type={Typography.types.body}
-          color={Typography.colors.tertiary}
-          style={styles.notificationCaption}
-        />
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <Pressable
+      style={[styles.notificationWrapper, !isOpened && styles.pendingNotification]}
+      onPress={onPress}
+    >
+      <Avatar text={author.displayName} src={author.photoURL} size={55} fontSize={25} />
+      <View style={styles.notificationInfos}>
+        {title && (
+          <Title name={title.name} message={title.message} showDot={!isOpened} />
+        )}
+        {message && <Message text={message} />}
+        <View style={styles.captionWrapper}>
+          <Typography
+            text={caption}
+            type={Typography.types.body}
+            color={Typography.colors.tertiary}
+            style={styles.notificationCaption}
+          />
+        </View>
       </View>
-    </View>
-  </Pressable>
-)
+    </Pressable>
+  )
+}
 
 export default Notification

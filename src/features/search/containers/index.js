@@ -3,13 +3,15 @@ import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { colors, metrics, edgeInsets } from '@app/theme'
+import { metrics, edgeInsets } from '@app/theme'
 import { strings } from '@app/config'
 import { AppHeader, TextInput } from '@app/shared/components'
-import { useUser, useDebounce, useAnalytics } from '@app/shared/hooks'
 import routes from '@app/navigation/routes'
+import {
+  useUser, useDebounce, useAnalytics, useAppStyles, useAppColors,
+} from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import SearchPosts from './posts'
 import SearchUsers from './users'
 
@@ -17,33 +19,41 @@ const Tab = createMaterialTopTabNavigator()
 
 const routeOptions = { title: strings.tabs.search }
 
-const tabBarOptions = {
+const tabBarOptions = (styles, colors) => ({
   activeTintColor: colors.primary,
   inactiveTintColor: colors.textTertiary,
   style: styles.tabbar,
   labelStyle: styles.label,
+})
+
+export const SearchIcon = ({ onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <TouchableOpacity
+      style={styles.searchIcon}
+      onPress={onPress}
+      hitSlop={edgeInsets.all(15)}
+    >
+      <Ionicon name="ios-search" size={23} color={colors.textPrimary} />
+    </TouchableOpacity>
+  )
 }
 
-export const SearchIcon = ({ onPress }) => (
-  <TouchableOpacity
-    style={styles.searchIcon}
-    onPress={onPress}
-    hitSlop={edgeInsets.all(15)}
-  >
-    <Ionicon name="ios-search" size={23} color={colors.textPrimary} />
-  </TouchableOpacity>
-)
-
-export const CancelIcon = ({ isLoading, onPress }) => (
-  <View style={styles.cancelIcon}>
-    {!isLoading && (
-      <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
-        <Ionicon name="ios-close" size={36} color={colors.textPrimary} />
-      </TouchableOpacity>
-    )}
-    {isLoading && <ActivityIndicator size={23} color={colors.textPrimary} />}
-  </View>
-)
+export const CancelIcon = ({ isLoading, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <View style={styles.cancelIcon}>
+      {!isLoading && (
+        <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
+          <Ionicon name="ios-close" size={36} color={colors.textPrimary} />
+        </TouchableOpacity>
+      )}
+      {isLoading && <ActivityIndicator size={23} color={colors.textPrimary} />}
+    </View>
+  )
+}
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState(null)
@@ -52,6 +62,9 @@ const SearchPage = () => {
   const { trackSearch } = useAnalytics()
 
   const textInputRef = useRef()
+
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   const onChange = useCallback((terms) => {
     setSearchQuery(terms)
@@ -107,7 +120,10 @@ const SearchPage = () => {
             Right={() => <CancelIcon onPress={onCancel} isLoading={isLoading} />}
           />
         )}
-      <Tab.Navigator tabBarOptions={tabBarOptions} sceneContainerStyle={styles.wrapper}>
+      <Tab.Navigator
+        tabBarOptions={tabBarOptions(styles, colors)}
+        sceneContainerStyle={styles.wrapper}
+      >
         <Tab.Screen name={routes.SEARCH_POSTS} options={{ tabBarLabel: strings.search.posts_tab }}>
           {(props) => (
             <SearchPosts

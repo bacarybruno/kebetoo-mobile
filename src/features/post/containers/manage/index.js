@@ -11,12 +11,14 @@ import { api } from '@app/shared/services'
 import {
   HeaderBack, Typography, NoContent, Badge,
 } from '@app/shared/components'
-import colors, { rgbaToHex } from '@app/theme/colors'
+import { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import { usePosts, useUser } from '@app/shared/hooks'
+import {
+  useAppColors, useAppStyles, usePosts, useUser,
+} from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import BasicPost from '../basic-post'
 import { actionTypes } from '../create'
 
@@ -24,7 +26,7 @@ LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
 ])
 
-export const routeOptions = {
+export const routeOptions = (colors) => ({
   title: strings.manage_posts.my_posts,
   headerShown: true,
   headerStyle: { backgroundColor: colors.background },
@@ -32,7 +34,7 @@ export const routeOptions = {
   headerBackImage: () => (
     <HeaderBack tintColor={colors.textPrimary} />
   ),
-}
+})
 
 export const NoPosts = () => (
   <NoContent title={strings.general.no_content} text={strings.manage_posts.no_content} />
@@ -50,7 +52,9 @@ const bottomSheetItems = [{
 }]
 
 const ManagePostsPage = ({ route, navigation }) => {
-  navigation.setOptions(routeOptions)
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  navigation.setOptions(routeOptions(colors))
 
   const { profile } = useUser()
   const [posts, setPosts] = useState([])
@@ -60,6 +64,7 @@ const ManagePostsPage = ({ route, navigation }) => {
 
   const { getRepostAuthors } = usePosts()
   const { params } = route
+
 
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = navigation
@@ -181,7 +186,7 @@ const ManagePostsPage = ({ route, navigation }) => {
         deletePost(post)
       }
     })
-  }, [deletePost, editPost, showActionSheetWithOptions])
+  }, [colors, deletePost, editPost, showActionSheetWithOptions])
 
   const userToAuthor = ({ displayName, uid, photoURL }) => ({
     displayName,

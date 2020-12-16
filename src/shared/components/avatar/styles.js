@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '@app/theme'
 
 const imageSize = 30
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     width: imageSize,
     height: imageSize,

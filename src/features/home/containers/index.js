@@ -13,14 +13,15 @@ import * as types from '@app/redux/types'
 import { postsSelector } from '@app/redux/selectors'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file'
-import { useAnalytics, usePosts, useUser } from '@app/shared/hooks'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
-import { colors } from '@app/theme'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
 import { AppHeader } from '@app/shared/components'
+import {
+  useAnalytics, useAppColors, useAppStyles, usePosts, useUser,
+} from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const routeOptions = { title: strings.tabs.home }
 
@@ -29,6 +30,7 @@ const getSharedFile = () => new Promise((resolve, reject) => {
   ReceiveSharingIntent.clearReceivedFiles()
 })
 
+// TODO: use local reducer
 const HomePage = () => {
   const dispatch = useDispatch()
   const posts = useSelector(postsSelector) || []
@@ -36,11 +38,12 @@ const HomePage = () => {
   const [page, setPage] = useState(0)
   const [authors, setAuthors] = useState({})
   const { trackReceiveIntent, reportError } = useAnalytics()
-
   const { profile } = useUser()
   const { getRepostAuthors } = usePosts()
-
   const { navigate } = useNavigation()
+
+  const colors = useAppColors()
+  const styles = useAppStyles(createThemedStyles)
 
   const handleSharingIntent = useCallback(async () => {
     try {
@@ -128,7 +131,7 @@ const HomePage = () => {
       imageSrc={user.photoURL}
       style={styles.header}
     />
-  ), [])
+  ), [styles.header])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

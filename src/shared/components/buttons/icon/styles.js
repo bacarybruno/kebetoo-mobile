@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-import { colors } from '@app/theme'
 import defaultStyles from '../styles'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   button: {
-    ...defaultStyles.button,
+    ...defaultStyles(colors).button,
     width: 57,
     backgroundColor: colors.primary,
   },
