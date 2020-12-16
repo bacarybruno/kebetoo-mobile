@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, elevation } from '@app/theme'
+import { elevation } from '@app/theme'
 
 export const bottomBarSize = 45
 
@@ -16,7 +16,7 @@ const defaultButtonStyle = {
   ...elevation(2),
 }
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   send: {
     ...defaultButtonStyle,
     backgroundColor: colors.primary,

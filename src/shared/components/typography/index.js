@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 import { human, systemWeights, material } from 'react-native-typography'
 
-import { colors as themeColors } from '@app/theme'
+import { useAppColors } from '@app/shared/hooks'
 
 export const weights = {
   thin: 'thin',
@@ -101,7 +101,9 @@ const Caption = ({ children, style, ...otherProps }) => (
   </Text>
 )
 
-const createTypography = (text, style, color, onPress, defaultProps) => (Component, props) => {
+const createTypography = (
+  text, style, color, onPress, themeColors, defaultProps,
+) => (Component, props) => {
   const { systemWeight = weights.regular, systemColor = colors.primary, ...textProps } = {
     ...props,
     ...defaultProps,
@@ -124,9 +126,11 @@ const createTypography = (text, style, color, onPress, defaultProps) => (Compone
 const Typography = ({
   type = types.body, text, style, color, onPress, ...otherProps
 }) => {
+  const themeColors = useAppColors()
+
   if (text === null || text === undefined) return null
 
-  const typography = createTypography(text, style, color, onPress, otherProps)
+  const typography = createTypography(text, style, color, onPress, themeColors, otherProps)
 
   switch (type) {
     case types.headline1:

@@ -3,14 +3,17 @@ import Swipeable from 'react-native-gesture-handler/Swipeable'
 import { Animated, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { colors } from '@app/theme'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles, { swipeableMargin, swipeableThresold } from './styles'
+import createThemedStyles, { swipeableMargin, swipeableThresold } from './styles'
 
 const swipeableOptions = { restSpeedThreshold: 100, restDisplacementThreshold: 40, speed: 48 }
 
 const SwipeableComment = ({ children, style, onFulfilled }) => {
   const swipeableRef = useRef()
+
+  const colors = useAppColors()
+  const styles = useAppStyles(createThemedStyles)
 
   const mapRef = (ref) => {
     swipeableRef.current = ref

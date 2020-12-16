@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors } from '@app/theme'
-
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   draggableContainer: {
     width: '100%',
     alignItems: 'center',

@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     minWidth: 64,
     height: 36,

@@ -1,12 +1,17 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import styles from './styles'
+import { useAppStyles } from '@app/shared/hooks'
 
-const DraggableIndicator = () => (
-  <View style={styles.draggableContainer}>
-    <View style={styles.draggableIcon} />
-  </View>
-)
+import createThemedStyles from './styles'
+
+const DraggableIndicator = () => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.draggableContainer}>
+      <View style={styles.draggableIcon} />
+    </View>
+  )
+}
 
 export default React.memo(DraggableIndicator)

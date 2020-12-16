@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import colors, { rgbaToHex } from '@app/theme/colors'
+import { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { api } from '@app/shared/services'
-import { useAnalytics } from '@app/shared/hooks'
+import { useAnalytics, useAppColors } from '@app/shared/hooks'
 
 import { actionTypes } from '../containers/create'
 
@@ -31,8 +31,8 @@ export const bottomSheetItems = [{
   icon: 'md-close',
 }]
 
-const createBottomSheetIcon = (item) => (
-  <Ionicon name={item.icon} size={24} color={colors.textPrimary} />
+const createBottomSheetIcon = (color) => (item) => (
+  <Ionicon name={item.icon} size={24} color={color} />
 )
 
 const countReactions = (post, type) => (
@@ -51,6 +51,8 @@ const useReactions = ({
   const { showActionSheetWithOptions } = useActionSheet()
   const { navigate } = useNavigation()
   const { trackSelectPost } = useAnalytics()
+
+  const colors = useAppColors()
 
   const findUserReaction = useCallback((reaction) => reaction.author === author, [author])
 
@@ -158,7 +160,7 @@ const useReactions = ({
     const cancelButtonIndex = 2
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map(createBottomSheetIcon),
+      icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
       cancelButtonIndex,
       title: strings.general.share,
       textStyle: { color: colors.textPrimary },
@@ -175,7 +177,7 @@ const useReactions = ({
         })
       }
     })
-  }, [author, navigate, post, showActionSheetWithOptions])
+  }, [author, colors, navigate, post.author.id, post.id, post.repost, showActionSheetWithOptions])
 
   const onReaction = useCallback(async (type) => {
     switch (type) {

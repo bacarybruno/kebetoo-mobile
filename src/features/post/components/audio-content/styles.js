@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, elevation } from '@app/theme'
+import { elevation } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   text: {
     marginBottom: 8,
   },

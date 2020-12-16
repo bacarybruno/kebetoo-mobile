@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { TouchableOpacity, Animated, View } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
-import { colors, edgeInsets, metrics } from '@app/theme'
+import { edgeInsets, metrics } from '@app/theme'
 import { Badge } from '@app/shared/components'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles, { getDimensions, getIconSize } from './styles'
+import createThemedStyles, { getDimensions, getIconSize } from './styles'
 
 const scale = (value = 1) => ({ transform: [{ scale: value }] })
 
@@ -17,13 +18,15 @@ const IconButton = ({
   size = 40,
   activable = false,
   isActive = false,
-  color = colors.blue_dark,
-  activeColor = colors.white,
-  defaultBgColor = colors.backgroundSecondary,
+  color,
+  activeColor,
+  defaultBgColor,
   defaultHitSlop = 20,
   ...otherProps
 }) => {
   const [animatedScale] = useState(new Animated.Value(1))
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   useEffect(() => {
     if (activable && isActive) {
@@ -56,7 +59,7 @@ const IconButton = ({
         }
         style={[
           styles.button,
-          { backgroundColor: defaultBgColor },
+          { backgroundColor: defaultBgColor || colors.backgroundSecondary },
           isActive && styles.activeButton,
           getDimensions(size),
           scale(animatedScale),
@@ -64,7 +67,11 @@ const IconButton = ({
         ]}
         {...otherProps}
       >
-        <Kebeticon name={name} size={getIconSize(size)} color={isActive ? activeColor : color} />
+        <Kebeticon
+          name={name}
+          size={getIconSize(size)}
+          color={isActive ? (activeColor || colors.white) : (color || colors.blue_dark)}
+        />
       </TouchableOpacity>
     </View>
   )

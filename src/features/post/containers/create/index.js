@@ -12,14 +12,16 @@ import { api } from '@app/shared/services'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'
-import { colors, metrics } from '@app/theme'
-import { useAudioRecorder, useUser } from '@app/shared/hooks'
+import { metrics } from '@app/theme'
 import useImagePicker from '@app/features/post/hooks/image-picker'
 import routes from '@app/navigation/routes'
+import {
+  useAppColors, useAppStyles, useAudioRecorder, useUser,
+} from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const routeOptions = {
+export const routeOptions = (styles, colors) => ({
   headerShown: true,
   headerBackImage: () => (
     <HeaderBack.Close tintColor={colors.textPrimary} />
@@ -27,7 +29,7 @@ export const routeOptions = {
   headerStyle: styles.header,
   headerTitleStyle: { color: colors.textPrimary },
   ...TransitionPresets.ModalSlideFromBottomIOS,
-}
+})
 
 export const actionTypes = {
   EDIT: 'edit',
@@ -39,46 +41,57 @@ const TEXT_MAX_LENGHT = 180
 
 const noop = () => { }
 
-export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => (
-  <>
-    <TextInput
-      autoFocus
-      multiline
-      placeholder={strings.create_post.placeholder}
-      onValueChange={onChange}
-      returnKeyType="done"
-      textStyle={styles.textInput}
-      wrapperStyle={styles.textInputWrapper}
-      maxLength={TEXT_MAX_LENGHT}
-      defaultValue={text}
-      numberOfLines={Math.min(
-        Math.floor(metrics.screenHeight / 75),
-        maxNumberOfLines,
-      )}
-    />
-    <Typography
-      style={styles.textCount}
-      type={Typography.types.headline6}
-      text={strings.formatString(
-        strings.create_post.characters,
-        TEXT_MAX_LENGHT - text.length,
-      )}
-    />
-  </>
-)
+export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <>
+      <TextInput
+        autoFocus
+        multiline
+        placeholder={strings.create_post.placeholder}
+        onValueChange={onChange}
+        returnKeyType="done"
+        textStyle={styles.textInput}
+        wrapperStyle={styles.textInputWrapper}
+        maxLength={TEXT_MAX_LENGHT}
+        defaultValue={text}
+        numberOfLines={Math.min(
+          Math.floor(metrics.screenHeight / 75),
+          maxNumberOfLines,
+        )}
+      />
+      <Typography
+        style={styles.textCount}
+        type={Typography.types.headline6}
+        text={strings.formatString(
+          strings.create_post.characters,
+          TEXT_MAX_LENGHT - text.length,
+        )}
+      />
+    </>
+  )
+}
 
-const Button = ({ name, onPress }) => (
-  <IconButton name={name} style={styles.iconButton} onPress={onPress} />
-)
+const Button = ({ name, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <IconButton name={name} style={styles.iconButton} onPress={onPress} />
+  )
+}
 
-const ImagePreviewer = ({ uri, onDelete }) => (
-  <View style={styles.imagePreviewer}>
-    <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
-  </View>
-)
+const ImagePreviewer = ({ uri, onDelete }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.imagePreviewer}>
+      <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+    </View>
+  )
+}
 
 const CreatePostPage = ({ route, navigation }) => {
-  navigation.setOptions(routeOptions)
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  navigation.setOptions(routeOptions(styles, colors))
 
   const { profile } = useUser()
 
@@ -157,7 +170,7 @@ const CreatePostPage = ({ route, navigation }) => {
       ),
       title: headerMessages.title,
     })
-  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading])
+  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading, styles.headerSaveButton])
 
   return (
     <View style={styles.wrapper}>

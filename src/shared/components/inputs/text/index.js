@@ -8,20 +8,24 @@ import Popover, { PopoverPlacement } from 'react-native-popover-view'
 import { colors } from '@app/theme'
 import { Typography } from '@app/shared/components'
 import { capitalize } from '@app/shared/helpers/strings'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles, { placeholderColor } from '../styles'
+import createThemedStyles from '../styles'
 
-export const ErrorTooltip = (
+export const ErrorTooltip = (styles) => (
   <TouchableOpacity style={styles.iconWrapper}>
     <Ionicon name="ios-alert" size={28} color={colors.pink} />
   </TouchableOpacity>
 )
 
-export const PopoverTooltip = ({ message, from = ErrorTooltip }) => (
-  <Popover from={from} popoverStyle={styles.popover} placement={PopoverPlacement.BOTTOM}>
-    <Typography text={capitalize(message)} />
-  </Popover>
-)
+export const PopoverTooltip = ({ message, from = ErrorTooltip }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <Popover from={from(styles)} popoverStyle={styles.popover} placement={PopoverPlacement.BOTTOM}>
+      <Typography text={capitalize(message)} />
+    </Popover>
+  )
+}
 
 const InputText = forwardRef((props, ref) => {
   const {
@@ -40,6 +44,8 @@ const InputText = forwardRef((props, ref) => {
     ...otherProps
   } = props
   const [value, setValue] = useState(null)
+
+  const styles = useAppStyles(createThemedStyles)
 
   const onChangeText = useCallback((newValue) => {
     if (onValueChange) onValueChange(newValue, fieldName)
@@ -62,7 +68,7 @@ const InputText = forwardRef((props, ref) => {
             hasTrailingItem && styles.trailing,
           ]}
           value={value}
-          placeholderTextColor={placeholderColor}
+          placeholderTextColor={styles.icon.color}
           onChangeText={onChangeText}
           ref={ref}
           blurOnSubmit={false}

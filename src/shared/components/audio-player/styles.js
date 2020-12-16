@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wavesContainer: {
     alignItems: 'center',
     flex: 1,

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { View, Image, StatusBar } from 'react-native'
-import { useRoute } from '@react-navigation/native'
 import { TransitionPresets } from '@react-navigation/stack'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 import { HeaderBack } from '@app/shared/components'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
-export const routeOptions = {
+export const routeOptions = (colors) => ({
   title: '',
   headerShown: true,
   headerBackImage: () => (
@@ -16,12 +16,14 @@ export const routeOptions = {
   ),
   headerTransparent: true,
   ...TransitionPresets.ScaleFromCenterAndroid,
-}
+})
 
 const isGoogleImageUrl = (url) => url.includes('googleusercontent.com')
 
 const ImageModal = ({ route, navigation }) => {
-  navigation.setOptions(routeOptions)
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  navigation.setOptions(routeOptions(colors))
 
   const { params } = route
   const { source, width, height } = params

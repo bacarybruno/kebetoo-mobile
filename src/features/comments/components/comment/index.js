@@ -16,8 +16,9 @@ import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
 import { env } from '@app/config'
 import Kebeticon from '@app/shared/icons/kebeticons'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
 export const getAudioSource = (url) => (
   url.startsWith('http')
@@ -31,6 +32,9 @@ export const Reactions = ({
   const loved = reactions.find((reaction) => (
     reaction.author === user && reaction.type === REACTION_TYPES.LOVE
   ))
+
+  const styles = useAppStyles(createThemedStyles)
+
   return (
     <View style={styles.reactionsWrapper}>
       {repliesCount > 0 && (
@@ -72,15 +76,21 @@ export const Reactions = ({
   )
 }
 
-const Header = ({ displayName, updatedAt }) => (
-  <View style={styles.header}>
-    <Typography type={Typography.types.headline5} text={displayName} />
-    <Typography type={Typography.types.headline5} text=" • " />
-    <Typography type={Typography.types.headline6} text={dayjs(updatedAt).fromNow()} />
-  </View>
-)
+const Header = ({ displayName, updatedAt }) => {
+  const styles = useAppStyles(createThemedStyles)
+
+  return (
+    <View style={styles.header}>
+      <Typography type={Typography.types.headline5} text={displayName} />
+      <Typography type={Typography.types.headline5} text=" • " />
+      <Typography type={Typography.types.headline6} text={dayjs(updatedAt).fromNow()} />
+    </View>
+  )
+}
 
 const Content = ({ item }) => {
+  const styles = useAppStyles(createThemedStyles)
+
   switch (getPostType(item)) {
     case POST_TYPES.AUDIO:
       return (
@@ -107,6 +117,8 @@ const Comment = ({
   }, [item.reactions])
 
   const { navigate } = useNavigation()
+
+  const styles = useAppStyles(createThemedStyles)
 
   // TODO: optimistic ui update
   const onReaction = useCallback(async (type) => {

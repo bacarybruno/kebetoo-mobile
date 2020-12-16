@@ -1,8 +1,9 @@
+import { useAppStyles } from '@app/shared/hooks'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const IconButton = ({
   onPress,
@@ -10,18 +11,13 @@ const IconButton = ({
   style,
   iconName,
   ...rest
-}) => (
-  <TouchableOpacity
-    style={[styles.button, style]}
-    onPress={onPress}
-    {...rest}
-  >
-    <Ionicon
-      style={styles.icon}
-      name={iconName}
-      size={30}
-    />
-  </TouchableOpacity>
-)
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <TouchableOpacity style={[styles.button, style]} onPress={onPress} {...rest}>
+      <Ionicon style={styles.icon} name={iconName} size={30} />
+    </TouchableOpacity>
+  )
+}
 
 export default IconButton

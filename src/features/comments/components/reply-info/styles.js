@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 import { rgbaToHex, hexToRgba } from '@app/theme/colors'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   deleteWrapper: {
     width: 18,
     height: 18,

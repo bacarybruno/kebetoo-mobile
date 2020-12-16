@@ -7,10 +7,11 @@ import { KeyboardRegistry } from 'react-native-ui-lib/keyboard'
 import { metrics } from '@app/theme'
 import { ADD_EMOJI_HISTORY } from '@app/redux/types'
 import { emojiHistorySelector } from '@app/redux/selectors'
+import { useAppStyles } from '@app/shared/hooks'
 
 import categories, { categoryNames, categoryIcons } from './categories'
 import helpers from './helpers'
-import styles, { numColumns, emojiSize } from './styles'
+import createThemedStyles, { numColumns, emojiSize } from './styles'
 import Pressable from '../buttons/pressable'
 
 export const keyboardName = 'EmojiKeyboard'
@@ -22,41 +23,55 @@ export const emojisByCategory = helpers.groupByCategory(
     .map(helpers.mapEmojis),
 )
 
-export const Emoji = React.memo(({ item, onPress }) => (
-  <Pressable style={styles.emoji} onPress={() => onPress(item)}>
-    <Text style={styles.emojiSymbol}>{item}</Text>
-  </Pressable>
-), () => true)
+export const Emoji = React.memo(({ item, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <Pressable style={styles.emoji} onPress={() => onPress(item)}>
+      <Text style={styles.emojiSymbol}>{item}</Text>
+    </Pressable>
+  )
+}, () => true)
 
 export const EmojiTab = React.memo(({
   item, active, onPress, ...otherProps
-}) => (
-  <Pressable style={[styles.tab, active && styles.activeTab]} onPress={onPress} {...otherProps}>
-    <Text style={styles.tabEmojiSymbol}>{item}</Text>
-  </Pressable>
-), (prevProps, nextProps) => prevProps.active === nextProps.active)
+}) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <Pressable style={[styles.tab, active && styles.activeTab]} onPress={onPress} {...otherProps}>
+      <Text style={styles.tabEmojiSymbol}>{item}</Text>
+    </Pressable>
+  )
+}, (prevProps, nextProps) => prevProps.active === nextProps.active)
 
 
-export const EmojisTabs = React.memo(({ items, activeTab, onTabPress }) => (
-  <View style={styles.emojiTabs}>
-    {items.map((item, index) => (
-      <EmojiTab
-        testID={`emoji-tab-${index}`}
-        key={`emoji-tab-${index}`}
-        onPress={() => onTabPress(index)}
-        item={item}
-        active={index === activeTab}
-      />
-    ))}
-  </View>
-))
+export const EmojisTabs = React.memo(({ items, activeTab, onTabPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.emojiTabs}>
+      {items.map((item, index) => (
+        <EmojiTab
+          testID={`emoji-tab-${index}`}
+          key={`emoji-tab-${index}`}
+          onPress={() => onTabPress(index)}
+          item={item}
+          active={index === activeTab}
+        />
+      ))}
+    </View>
+  )
+})
 
-const EmptyEmojiTabContent = React.memo(() => <View style={styles.tabContent} />)
+const EmptyEmojiTabContent = React.memo(() => {
+  const styles = useAppStyles(createThemedStyles)
+  return <View style={styles.tabContent} />
+})
 
 const EmojiSelector = ({ onSelectItem, style }) => {
   const historyItems = useSelector(emojiHistorySelector)
   const flatlistRef = useRef(null)
   const dispatch = useDispatch()
+
+  const styles = useAppStyles(createThemedStyles)
 
   const defaultActiveTab = historyItems.length > 0 ? 0 : 1
   const [activeTab, setActiveTab] = useState((state) => state || defaultActiveTab)
@@ -108,7 +123,7 @@ const EmojiSelector = ({ onSelectItem, style }) => {
       ListEmptyComponent={EmptyEmojiTabContent}
       data={item === categories.history.name ? historyItems : emojisByCategory[item]}
     />
-  ), [emojiItemsKeyExtractor, historyItems, getEmojiItemsLayout, renderEmoji])
+  ), [renderEmoji, getEmojiItemsLayout, emojiItemsKeyExtractor, styles.tabContent, historyItems])
 
   return (
     <View style={[styles.wrapper, style]}>

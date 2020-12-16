@@ -12,7 +12,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { TabBarAddButton, HeaderBack, Typography } from '@app/shared/components'
-import { colors, images } from '@app/theme'
+import { images } from '@app/theme'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
@@ -26,10 +26,12 @@ import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
 import UserProfilePage from '@app/features/profile/containers/user'
 import { api } from '@app/shared/services'
-import { useUser, useNotifications, useAnalytics } from '@app/shared/hooks'
+import {
+  useUser, useNotifications, useAnalytics, useAppStyles, useAppColors,
+} from '@app/shared/hooks'
 
 import routes from './routes'
-import styles from './styles'
+import createThemedStyles from './styles'
 
 enableScreens()
 
@@ -38,13 +40,13 @@ const Tab = createBottomTabNavigator()
 
 const createPage = (page, key) => React.cloneElement(page, {
   key,
-  options: { headerBackTitleVisible: false }
+  options: { headerBackTitleVisible: false },
 })
 
 const EmptyPage = () => null
 
 // Screen options
-const defaultScreenOptions = {
+const defaultScreenOptions = (styles, colors) => ({
   headerBackImage: () => (
     <HeaderBack tintColor={colors.textPrimary} />
   ),
@@ -52,13 +54,13 @@ const defaultScreenOptions = {
   headerTitleAlign: 'center',
   headerBackTitleVisible: false,
   headerTitleStyle: { color: colors.textPrimary },
-}
+})
 
-const defaultTabBarOptions = {
+const defaultTabBarOptions = (styles, colors) => ({
   activeTintColor: colors.primary,
   inactiveTintColor: colors.icon,
   style: styles.tabBar,
-}
+})
 
 const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
@@ -101,9 +103,17 @@ export const tabPages = [
   <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
 ]
 
-export const TabBar = (props) => (
+export const TabBar = (styles, colors) => (props) => (
   <View>
-    <Image source={images.bottom_tab_overlay} style={styles.bottomTabOverlay} />
+    <Image
+      source={
+        colors.colorScheme === 'dark'
+          ? images.bottom_tab_overlay_dark
+          : images.bottom_tab_overlay
+      }
+      fadeDuration={0}
+      style={styles.bottomTabOverlay}
+    />
     <View>
       <TabBarAddButton route={routes.CREATE_POST} />
       <BottomTabBar {...props} />
@@ -113,24 +123,23 @@ export const TabBar = (props) => (
 
 export const TabPage = () => {
   const { badgeCount } = useNotifications()
-
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
   return (
     <Tab.Navigator
       screenOptions={defaultTabOptions}
-      tabBarOptions={defaultTabBarOptions}
-      tabBar={TabBar}
+      tabBarOptions={defaultTabBarOptions(styles, colors)}
+      tabBar={TabBar(styles, colors)}
     >
       {tabPages.map((page, key) => (
-        React.cloneElement(
-          page, {
-            key,
-            options: {
-              tabBarBadge: page.props.name === routes.NOTIFICATIONS && badgeCount > 0
-                ? badgeCount
-                : undefined,
-            },
+        React.cloneElement(page, {
+          key,
+          options: {
+            tabBarBadge: page.props.name === routes.NOTIFICATIONS && badgeCount > 0
+              ? badgeCount
+              : undefined,
           },
-        )
+        })
       ))}
     </Tab.Navigator>
   )
@@ -142,11 +151,15 @@ export const onboardingPages = [
   <Stack.Screen name={routes.SIGNIN} component={SignInPage} />,
 ]
 
-export const OnboardingStack = () => (
-  <Stack.Navigator screenOptions={defaultScreenOptions}>
-    {onboardingPages.map(createPage)}
-  </Stack.Navigator>
-)
+export const OnboardingStack = () => {
+  const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
+  return (
+    <Stack.Navigator screenOptions={defaultScreenOptions(styles, colors)}>
+      {onboardingPages.map(createPage)}
+    </Stack.Navigator>
+  )
+}
 
 export const notLoggedInPages = [
   <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />,
@@ -168,6 +181,20 @@ const AppNavigation = () => {
   const { trackPageView } = useAnalytics()
   const navigationRef = useRef()
   const routeNameRef = useRef()
+
+  const colors = useAppColors()
+
+  const navigationTheme = {
+    dark: colors.colorScheme === 'dark',
+    colors: {
+      primary: colors.primary,
+      background: colors.background,
+      card: colors.backgroundSecondary,
+      text: colors.textPrimary,
+      border: colors.border,
+      notification: colors.pink,
+    },
+  }
 
   useEffect(() => {
     RNBootSplash.hide({ fade: true })
@@ -242,8 +269,9 @@ const AppNavigation = () => {
       testRef={navigationRef}
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
+      theme={navigationTheme}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false　}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isLoggedIn && loggedInPages.map(createPage)}
         {!isLoggedIn && notLoggedInPages.map(createPage)}
       </Stack.Navigator>

@@ -2,22 +2,23 @@ import React, { useState, useCallback, forwardRef } from 'react'
 import { TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
+import { useAppStyles } from '@app/shared/hooks'
+
 import TextInput from '../text'
+import createThemedStyles from '../styles'
 
-import styles from '../styles'
-
-export const EyeButton = ({ secureTextEntry, onPress }) => (
-  <TouchableOpacity
-    style={styles.iconWrapper}
-    onPress={onPress}
-  >
-    <Ionicon
-      style={styles.icon}
-      name={secureTextEntry ? 'ios-eye' : 'ios-eye-off'}
-      size={30}
-    />
-  </TouchableOpacity>
-)
+export const EyeButton = ({ secureTextEntry, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <TouchableOpacity style={styles.iconWrapper} onPress={onPress}>
+      <Ionicon
+        style={styles.icon}
+        name={secureTextEntry ? 'ios-eye' : 'ios-eye-off'}
+        size={30}
+      />
+    </TouchableOpacity>
+  )
+}
 
 const InputPassword = forwardRef((props, ref) => {
   const [value, setValue] = useState(null)

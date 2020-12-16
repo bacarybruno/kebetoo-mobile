@@ -8,10 +8,10 @@ import { IconButton, FullButton, Typography } from '@app/shared/components'
 import OnbordingSlide from '@app/features/onboarding/components'
 import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
-import { useAnalytics } from '@app/shared/hooks'
+import { useAnalytics, useAppStyles } from '@app/shared/hooks'
 import { strings } from '@app/config'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
 export const slideItems = [{
   imageSrc: images.onboarding1,
@@ -27,14 +27,18 @@ export const slideItems = [{
   description: strings.onboarding.screen_three_description,
 }]
 
-export const SkipButton = ({ onPress }) => (
-  <TouchableOpacity style={styles.skipButton} onPress={onPress}>
-    <Typography type={Typography.types.textButtonLight} text={strings.general.skip} />
-  </TouchableOpacity>
-)
+export const SkipButton = ({ onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <TouchableOpacity style={styles.skipButton} onPress={onPress}>
+      <Typography type={Typography.types.textButtonLight} text={strings.general.skip} />
+    </TouchableOpacity>
+  )
+}
 
 const OnboardingPage = ({ navigation }) => {
   navigation.setOptions({ headerShown: false })
+  const styles = useAppStyles(createThemedStyles)
 
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
@@ -68,7 +72,7 @@ const OnboardingPage = ({ navigation }) => {
           slideDescription={slideItem.description}
           key={`onboarding-slide-item-${index}`}
         />
-      ))
+      )),
     )
   }, [])
 

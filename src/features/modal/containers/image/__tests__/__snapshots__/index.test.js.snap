@@ -4,7 +4,7 @@ exports[`renders ImageModal 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#000",
+      "backgroundColor": "rgba(0, 0, 0, 255)",
       "flex": 1,
       "justifyContent": "center",
     }

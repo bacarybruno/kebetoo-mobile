@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, elevation } from '@app/theme'
+import { elevation } from '@app/theme'
 
 export const getDimensions = (size) => ({
   width: size,
@@ -10,7 +10,7 @@ export const getDimensions = (size) => ({
 
 export const getIconSize = (size) => size / 2.22
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -2,16 +2,16 @@ import { StyleSheet } from 'react-native'
 
 import defaultStyles from '../styles'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   button: {
-    ...defaultStyles.button,
+    ...defaultStyles(colors).button,
     flexDirection: 'row',
     width: '100%',
   },
   disabledButton: {
-    ...defaultStyles.disabledButton,
+    ...defaultStyles(colors).disabledButton,
   },
   loading: {
-    ...defaultStyles.loading,
+    ...defaultStyles(colors).loading,
   },
 })

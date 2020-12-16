@@ -11,63 +11,71 @@ import { recentSearchHistory } from '@app/redux/selectors'
 import { colors } from '@app/theme'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
+import { useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import HistoryItem from '../../components/history-item'
 import NoResult from '../../components/no-result'
 
-export const SearchResult = ({ item, onPress }) => (
-  <Pressable style={[styles.searchResult, styles.paddingHorizontal]} onPress={() => onPress(item)}>
-    <View style={styles.row}>
-      <Avatar
-        src={item.photoURL}
-        text={item.displayName}
-        size={40}
-        fontSize={24}
-        style={styles.avatar}
-      />
-      <View style={styles.metadata}>
-        <Typography text={item.displayName} type={Typography.types.subheading} />
-        <View style={styles.row}>
-          <Typography
-            type={Typography.types.headline5}
-            text={`${item.posts.length} ${strings.profile.posts.toLowerCase()}`}
-            systemColor={Typography.colors.tertiary}
-          />
-          <Typography
-            type={Typography.types.headline5}
-            text=" • "
-            systemColor={Typography.colors.tertiary}
-          />
-          <Typography
-            type={Typography.types.headline5}
-            text={`${item.comments.length} ${strings.profile.comments.toLowerCase()}`}
-            systemColor={Typography.colors.tertiary}
-          />
+export const SearchResult = ({ item, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const onItemPress = useCallback(() => onPress(item), [item, onPress])
+  return (
+    <Pressable style={[styles.searchResult, styles.paddingHorizontal]} onPress={onItemPress}>
+      <View style={styles.row}>
+        <Avatar
+          src={item.photoURL}
+          text={item.displayName}
+          size={40}
+          fontSize={24}
+          style={styles.avatar}
+        />
+        <View style={styles.metadata}>
+          <Typography text={item.displayName} type={Typography.types.subheading} />
+          <View style={styles.row}>
+            <Typography
+              type={Typography.types.headline5}
+              text={`${item.posts.length} ${strings.profile.posts.toLowerCase()}`}
+              systemColor={Typography.colors.tertiary}
+            />
+            <Typography
+              type={Typography.types.headline5}
+              text=" • "
+              systemColor={Typography.colors.tertiary}
+            />
+            <Typography
+              type={Typography.types.headline5}
+              text={`${item.comments.length} ${strings.profile.comments.toLowerCase()}`}
+              systemColor={Typography.colors.tertiary}
+            />
+          </View>
         </View>
       </View>
-    </View>
-  </Pressable>
-)
+    </Pressable>
+  )
+}
 
-export const SearchHistoryHeader = ({ onClear }) => (
-  <View style={[styles.historyHeader, styles.paddingHorizontal]}>
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
+export const SearchHistoryHeader = ({ onClear }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={[styles.historyHeader, styles.paddingHorizontal]}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
+        <Typography
+          type={Typography.types.headline5}
+          style={styles.sectionHeader}
+          text={strings.search.recent_searches}
+        />
+      </View>
       <Typography
-        type={Typography.types.headline5}
-        style={styles.sectionHeader}
-        text={strings.search.recent_searches}
+        type={Typography.types.textButton}
+        style={[styles.sectionHeader, styles.sectionHeaderLink]}
+        onPress={onClear}
+        text={strings.search.clear_all}
       />
     </View>
-    <Typography
-      type={Typography.types.textButton}
-      style={[styles.sectionHeader, styles.sectionHeaderLink]}
-      onPress={onClear}
-      text={strings.search.clear_all}
-    />
-  </View>
-)
+  )
+}
 
 const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const [users, setUsers] = useState([])
@@ -77,6 +85,8 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const { users: usersHistory } = useSelector(recentSearchHistory)
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
+
+  const styles = useAppStyles(createThemedStyles)
 
   const isFocused = useIsFocused()
 
@@ -112,7 +122,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}
     />
-  ), [])
+  ), [styles])
 
   const onClearAllRecentSearches = useCallback(() => {
     dispatch({ type: types.CLEAR_USER_HISTORY })

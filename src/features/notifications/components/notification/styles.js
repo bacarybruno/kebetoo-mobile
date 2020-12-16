@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   notificationWrapper: {
     paddingVertical: 14,
     flexDirection: 'row',

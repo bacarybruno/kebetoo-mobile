@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
-import { colors, metrics } from '@app/theme'
+import { metrics } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,

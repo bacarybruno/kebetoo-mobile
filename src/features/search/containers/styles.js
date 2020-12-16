@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native'
 import { human, systemWeights } from 'react-native-typography'
 
-import { colors } from '@app/theme'
 import { deleteProperty, mergeObjects } from '@app/shared/helpers/object'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,

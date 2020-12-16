@@ -4,12 +4,12 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
 
 import { Content, Header } from '@app/features/post/containers/basic-post'
-import { useAudioRecorder, useUser } from '@app/shared/hooks'
+import { useAppStyles, useAudioRecorder, useUser } from '@app/shared/hooks'
 import { HeaderBack, NoContent } from '@app/shared/components'
 import { strings } from '@app/config'
 import { colors } from '@app/theme'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 import CommentInput from '../components/comment-input'
 import Reactions from '../components/reactions'
 import Comment from '../components/comment'
@@ -20,18 +20,21 @@ export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
 )
 
-export const CommentReply = ({ reply, profile }) => (
-  <View style={styles.replyWrapper}>
-    <Comment
-      item={reply}
-      user={profile.uid}
-      authorId={reply.author.id}
-      displayName={reply.author.displayName}
-      photoURL={reply.author.photoURL}
-      avatarSize={30}
-    />
-  </View>
-)
+export const CommentReply = ({ reply, profile }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.replyWrapper}>
+      <Comment
+        item={reply}
+        user={profile.uid}
+        authorId={reply.author.id}
+        displayName={reply.author.displayName}
+        photoURL={reply.author.photoURL}
+        avatarSize={30}
+      />
+    </View>
+  )
+}
 
 // TODO: paginate comments
 // TODO: create custom hook
@@ -59,6 +62,8 @@ const Comments = () => {
     replies,
     comment,
   } = useComments(navigation, post, commentInput)
+
+  const styles = useAppStyles(createThemedStyles)
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
@@ -96,7 +101,7 @@ const Comments = () => {
         ))}
       </View>
     )
-  }, [toReply, profile, replies, onSetReply, loadReplies])
+  }, [styles, profile, replies, toReply, loadReplies, onSetReply])
 
   const ListHeaderLeft = useCallback(() => (
     <HeaderBackButton
@@ -126,7 +131,7 @@ const Comments = () => {
       </View>
       <Reactions post={post} author={profile.uid} comments={comments} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, authors, comments, onComment, onCommentContentPress, post, profile.uid])
+  ), [ListHeaderLeft, styles, authors, comments, onComment, onCommentContentPress, post, profile.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 

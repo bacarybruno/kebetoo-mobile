@@ -13,8 +13,8 @@ import AudioContent from '@app/features/post/components/audio-content'
 import ImageContent from '@app/features/post/components/image-content'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import { colors, edgeInsets } from '@app/theme'
-import { useAnalytics, useUser } from '@app/shared/hooks'
+import { edgeInsets } from '@app/theme'
+import { useAnalytics, useAppColors, useUser } from '@app/shared/hooks'
 import TextContent from '@app/features/post/components/text-content'
 import RepostContent from '@app/features/post/components/repost-content'
 
@@ -59,20 +59,23 @@ const InfoBadge = ({ text }) => (
   </>
 )
 
-const MoreButton = ({ onPress }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={styles.moreButton}
-    hitSlop={edgeInsets.all(50)}
-    testID="more-button"
-  >
-    <Ionicon
-      name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
-      size={Typography.fontSizes.lg}
-      color={colors.textTertiary}
-    />
-  </TouchableOpacity>
-)
+const MoreButton = ({ onPress }) => {
+  const colors = useAppColors()
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.moreButton}
+      hitSlop={edgeInsets.all(50)}
+      testID="more-button"
+    >
+      <Ionicon
+        name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
+        size={Typography.fontSizes.lg}
+        color={colors.textTertiary}
+      />
+    </TouchableOpacity>
+  )
+}
 
 export const Header = ({
   post, isRepost, author, size, onOptions, Left, badge,
