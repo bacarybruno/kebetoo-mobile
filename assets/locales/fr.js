@@ -3,6 +3,7 @@ const locales = Object.freeze({
     skip: 'Passer',
     get_started: 'Commencer',
     actions: 'Actions',
+    options: 'Options',
     cancel: 'Fermer',
     no_content: 'Section vide',
     edited: 'Modifié',
@@ -13,6 +14,8 @@ const locales = Object.freeze({
     system_default: 'Thème par défaut du système',
     audio: 'Audio',
     new: 'Nouveau',
+    on: 'Actif',
+    off: 'Inactif',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',
@@ -64,6 +67,8 @@ const locales = Object.freeze({
     share_title: 'Kebetoo',
     share_url: 'https://kebetoo.com/download',
     share_message: 'Téléchargez l\'application Kebetoo, le réseau social Africain!',
+    dark: 'Sombre',
+    light: 'Clair',
   },
   manage_posts: {
     my_posts: 'Mes publications',

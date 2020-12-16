@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme'
 import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
 const profileInfoSize = 140
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,
