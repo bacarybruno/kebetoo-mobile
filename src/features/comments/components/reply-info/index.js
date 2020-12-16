@@ -3,15 +3,15 @@ import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { Typography } from '@app/shared/components'
-import { colors } from '@app/theme'
 import { strings } from '@app/config'
 import { generateColor } from '@app/shared/helpers'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
 export const DeleteIconButton = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
   return (
     <TouchableOpacity style={styles.deleteWrapper} onPress={onPress}>
       <Ionicon name="ios-close" size={20} color={colors.textPrimary} />

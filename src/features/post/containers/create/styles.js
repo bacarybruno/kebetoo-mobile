@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import { metrics, elevation } from '@app/theme'
+import { fontSizes } from '@app/shared/components/typography'
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -21,14 +22,16 @@ export default (colors) => StyleSheet.create({
   },
   textInput: {
     textAlignVertical: 'top',
+    fontSize: fontSizes.md,
   },
   textInputWrapper: {
     marginTop: 8,
     backgroundColor: colors.backgroundSecondary,
     paddingRight: metrics.marginHorizontal,
     height: metrics.screenHeight / 3.5,
-    minHeight: 250,
+    minHeight: 200,
     paddingVertical: metrics.marginVertical / 4,
+    borderColor: 'transparent',
   },
   textCount: {
     marginTop: 8,

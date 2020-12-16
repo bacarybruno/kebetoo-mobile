@@ -15,6 +15,8 @@ export default (colors) => StyleSheet.create({
     width: '100%',
     backgroundColor: colors.background,
     aspectRatio: metrics.aspectRatio.feed,
+    borderColor: colors.border,
+    borderWidth: 1,
   },
   flex: {
     flex: 1,

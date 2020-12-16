@@ -31,7 +31,7 @@ export const ImageViewer = ({
   const styles = useAppStyles(createThemeColors)
   return (
     <>
-      <View style={[styles.imageWrapper, style]} {...otherProps}>
+      <View style={[styles.imageWrapper, style, { borderRadius }]} {...otherProps}>
         <ImageBackground source={source} style={styles.flex} borderRadius={borderRadius}>
           {onPress && <Pressable style={styles.flex} onPress={onPress} />}
         </ImageBackground>

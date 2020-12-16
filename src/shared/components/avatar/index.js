@@ -3,8 +3,7 @@ import { Image, View, Text } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
 import generateColor from '@app/shared/helpers/color-generator'
-import { colors } from '@app/theme'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
@@ -29,6 +28,7 @@ export const TextAvatar = ({
   text, size, style, fontSize, noRadius,
 }) => {
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
   return (
     <View style={[styles.wrapper, dimensions(size), style]}>
       <View style={[

@@ -3,12 +3,13 @@ import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import ActionButton from 'react-native-action-button'
 
-import { colors } from '@app/theme'
+import { useAppColors } from '@app/shared/hooks'
 
 import styles, { size } from './styles'
 
 const TabBarActionButton = ({ route }) => {
   const { navigate } = useNavigation()
+  const colors = useAppColors()
 
   const navigateToPage = useCallback(() => {
     navigate(route)

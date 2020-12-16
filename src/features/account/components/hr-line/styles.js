@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors } from '@app/theme'
-
-const styles = StyleSheet.create({
+export default (colors) => StyleSheet.create({
   wrapper: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -17,5 +15,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
 })
-
-export default styles

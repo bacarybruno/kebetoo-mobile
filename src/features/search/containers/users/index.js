@@ -8,10 +8,9 @@ import { api } from '@app/shared/services'
 import { Typography, Avatar, Pressable } from '@app/shared/components'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
-import { colors } from '@app/theme'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 import HistoryItem from '../../components/history-item'
@@ -57,6 +56,7 @@ export const SearchResult = ({ item, onPress }) => {
 
 export const SearchHistoryHeader = ({ onClear }) => {
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
   return (
     <View style={[styles.historyHeader, styles.paddingHorizontal]}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -87,6 +87,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const { navigate } = useNavigation()
 
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   const isFocused = useIsFocused()
 
@@ -122,7 +123,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}
     />
-  ), [styles])
+  ), [colors.textTertiary, styles])
 
   const onClearAllRecentSearches = useCallback(() => {
     dispatch({ type: types.CLEAR_USER_HISTORY })

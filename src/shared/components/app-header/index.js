@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native'
 
 import { Avatar, Logo, Typography } from '@app/shared/components'
 import { strings } from '@app/config'
-import { colors } from '@app/theme'
 import routes from '@app/navigation/routes'
+import { useAppColors } from '@app/shared/hooks'
 
 import styles from './styles'
 
@@ -28,6 +28,7 @@ const Header = ({
   Right,
 }) => {
   const { navigate } = useNavigation()
+  const colors = useAppColors()
 
   const onHeaderPress = useCallback(() => {
     navigate(routes.PROFILE)

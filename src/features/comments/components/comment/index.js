@@ -10,13 +10,12 @@ import {
 } from '@app/shared/components'
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
-import { colors } from '@app/theme'
 import { api } from '@app/shared/services'
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
 import routes from '@app/navigation/routes'
 import { env } from '@app/config'
 import Kebeticon from '@app/shared/icons/kebeticons'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
@@ -34,6 +33,7 @@ export const Reactions = ({
   ))
 
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   return (
     <View style={styles.reactionsWrapper}>

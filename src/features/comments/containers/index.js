@@ -4,10 +4,11 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
 
 import { Content, Header } from '@app/features/post/containers/basic-post'
-import { useAppStyles, useAudioRecorder, useUser } from '@app/shared/hooks'
 import { HeaderBack, NoContent } from '@app/shared/components'
 import { strings } from '@app/config'
-import { colors } from '@app/theme'
+import {
+  useAppColors, useAppStyles, useAudioRecorder, useUser,
+} from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 import CommentInput from '../components/comment-input'
@@ -51,7 +52,7 @@ const Comments = () => {
     clearToReply,
     loadReplies,
     onComment,
-    onCommentContentPress,
+    onCommentContentPress: onCommentPress,
     onSend,
     onSetReply,
     setComment,
@@ -64,6 +65,7 @@ const Comments = () => {
   } = useComments(navigation, post, commentInput)
 
   const styles = useAppStyles(createThemedStyles)
+  const colors = useAppColors()
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
@@ -111,7 +113,7 @@ const Comments = () => {
         <HeaderBack tintColor={colors.textPrimary} />
       )}
     />
-  ), [navigation.goBack])
+  ), [colors.textPrimary, navigation.goBack])
 
   const ListHeader = useMemo(() => (
     <View style={styles.post}>
@@ -121,7 +123,7 @@ const Comments = () => {
           post={post}
           style={styles.content}
           mode="comments"
-          onPress={onCommentContentPress}
+          onPress={onCommentPress}
           originalAuthor={
             post.repost
               ? authors[post.repost.author]
@@ -131,7 +133,7 @@ const Comments = () => {
       </View>
       <Reactions post={post} author={profile.uid} comments={comments} onComment={onComment} />
     </View>
-  ), [ListHeaderLeft, styles, authors, comments, onComment, onCommentContentPress, post, profile.uid])
+  ), [ListHeaderLeft, styles, authors, comments, onComment, onCommentPress, post, profile.uid])
 
   const keyExtractor = useCallback((item, index) => `comment-${item.id}-${index}`, [])
 
