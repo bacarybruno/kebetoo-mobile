@@ -16,6 +16,8 @@ const locales = Object.freeze({
     new: 'Nouveau',
     on: 'Actif',
     off: 'Inactif',
+    read_more: 'Voir plus',
+    show_less: 'Réduire',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',
