@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import { metrics, elevation } from '@app/theme'
-import { fontSizes } from '@app/shared/components/typography'
+import Typography from '@app/shared/components/typography'
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -22,7 +22,7 @@ export default (colors) => StyleSheet.create({
   },
   textInput: {
     textAlignVertical: 'top',
-    fontSize: fontSizes.md,
+    fontSize: Typography.fontSizes.md,
   },
   textInputWrapper: {
     marginTop: 8,

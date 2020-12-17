@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import { metrics } from '@app/theme'
-import { fontSizes } from '../typography'
+import Typography from '../typography'
 
 export const numColumns = 8
 export const emojiSize = metrics.screenWidth / numColumns
@@ -24,7 +24,7 @@ export default (colors) => StyleSheet.create({
     borderBottomColor: colors.backgroundSecondary,
   },
   tabEmojiSymbol: {
-    fontSize: fontSizes.header,
+    fontSize: Typography.fontSizes.header,
   },
   activeTab: {
     borderBottomColor: colors.primary,
@@ -39,6 +39,6 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
   },
   emojiSymbol: {
-    fontSize: fontSizes.xl,
+    fontSize: Typography.fontSizes.xl,
   },
 })

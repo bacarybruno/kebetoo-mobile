@@ -5,7 +5,7 @@ import { Pressable } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
-import Typography, { types } from '../../typography'
+import Typography from '../../typography'
 
 const OutlinedButton = ({
   text, onPress, style, disabled, loading = false,
@@ -21,7 +21,7 @@ const OutlinedButton = ({
     >
       {loading
         ? <ActivityIndicator animating={loading} color={colors.primary} />
-        : <Typography type={types.button} text={text} color={disabled ? 'inactive' : 'primary'} />}
+        : <Typography type={Typography.types.button} text={text} color={disabled ? 'inactive' : 'primary'} />}
     </Pressable>
   )
 }

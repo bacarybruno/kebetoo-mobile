@@ -71,7 +71,7 @@ const SignIn = ({ navigation }) => {
               loading={isLoading}
             />
             <Typography
-              color="link"
+              color={Typography.colors.link}
               style={styles.forgotPassword}
               type={Typography.types.textButton}
               text={strings.auth.forgot_password}
@@ -92,7 +92,7 @@ const SignIn = ({ navigation }) => {
             <Typography type={Typography.types.textButtonLight} text=" " />
             <Typography
               onPress={navigateToSignUp}
-              color="link"
+              color={Typography.colors.link}
               type={Typography.types.textButton}
               text={strings.auth.signup}
             />

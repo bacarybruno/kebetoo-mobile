@@ -45,7 +45,6 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
 
   const { posts: postsHistory } = useSelector(recentSearchHistory)
   const dispatch = useDispatch()
@@ -99,11 +98,11 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
       type={Typography.types.headline5}
-      systemColor={colors.textTertiary}
+      systemColor={Typography.colors.tertiary}
       style={styles.sectionHeader}
       text={strings.search.results}
     />
-  ), [colors.textTertiary, styles.sectionHeader])
+  ), [styles.sectionHeader])
 
   const onClearAllRecentSearches = useCallback(() => {
     dispatch({ type: types.CLEAR_POST_HISTORY })
