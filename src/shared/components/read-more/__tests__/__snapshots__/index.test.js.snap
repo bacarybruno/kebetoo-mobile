@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadMore renders ReadMore 1`] = `
+<View
+  style={
+    Object {
+      "opacity": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+  >
+    <Text
+      numberOfLines={1}
+      style={Object {}}
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+      </Text>
+    </Text>
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      style={Object {}}
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "400",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Reveal renders Reveal 1`] = `
+<Text
+  accessible={true}
+  focusable={true}
+  hitSlop={
+    Object {
+      "bottom": 10,
+      "left": 5,
+      "right": 5,
+      "top": 10,
+    }
+  }
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "letterSpacing": -0.32,
+        "lineHeight": 21,
+      },
+      Array [
+        Object {
+          "color": "rgba(0, 122, 255, 255)",
+        },
+        Object {
+          "backgroundColor": "transparent",
+          "fontFamily": "System",
+          "fontWeight": "400",
+        },
+        Object {
+          "fontSize": 14,
+          "marginTop": 4,
+          "opacity": 0.75,
+        },
+      ],
+    ]
+  }
+>
+  read more
+</Text>
+`;
