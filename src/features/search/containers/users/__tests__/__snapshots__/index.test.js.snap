@@ -1076,7 +1076,7 @@ exports[`renders SearchUsers results 1`] = `
                                   false,
                                   Array [
                                     Object {
-                                      "color": undefined,
+                                      "color": "rgba(0,0,0,0.38)",
                                     },
                                     Object {
                                       "backgroundColor": "transparent",

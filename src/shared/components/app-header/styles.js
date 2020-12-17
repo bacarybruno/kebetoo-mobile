@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { fontSizes } from '../typography'
+import Typography from '../typography'
 
 export default StyleSheet.create({
   header: {
@@ -18,8 +18,8 @@ export default StyleSheet.create({
     marginLeft: 8,
   },
   icon: {
-    width: fontSizes.header,
-    height: fontSizes.header,
+    width: Typography.fontSizes.header,
+    height: Typography.fontSizes.header,
     marginLeft: 4,
   },
 })

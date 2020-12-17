@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import { useAppColors } from '@app/shared/hooks'
 
 import styles from './styles'
-import Typography, { types, weights } from '../typography'
+import Typography from '../typography'
 
 const getBackgroundColor = (primary, colors) => ({
   backgroundColor: primary ? colors.primary : colors.secondary,
@@ -17,10 +17,10 @@ const Badge = ({
   return (
     <View style={[styles.wrapper, getBackgroundColor(primary, colors), style]}>
       <Typography
-        type={typography || types.headline5}
+        type={typography || Typography.types.headline5}
         text={text}
         color={primary ? 'white' : 'primary'}
-        systemWeight={weights.bold}
+        systemWeight={Typography.weights.bold}
       />
     </View>
   )

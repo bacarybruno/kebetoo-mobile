@@ -2036,34 +2036,95 @@ exports[`renders HomePage 1`] = `
               ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 15,
-                    "fontWeight": "400",
-                    "letterSpacing": -0.24,
-                    "lineHeight": 20,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
+                Object {
+                  "opacity": 0,
+                }
               }
             >
-              Use the online SMS system, then you can calculate the digital card!
-            </Text>
+              <View
+                onLayout={[Function]}
+              >
+                <Text
+                  numberOfLines={5}
+                  style={Object {}}
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 15,
+                          "fontWeight": "400",
+                          "letterSpacing": -0.24,
+                          "lineHeight": 20,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    Use the online SMS system, then you can calculate the digital card!
+                  </Text>
+                </Text>
+              </View>
+              <View
+                onLayout={[Function]}
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={Object {}}
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 15,
+                          "fontWeight": "400",
+                          "letterSpacing": -0.24,
+                          "lineHeight": 20,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    Use the online SMS system, then you can calculate the digital card!
+                  </Text>
+                </Text>
+              </View>
+            </View>
           </View>
           <View
             style={
@@ -2780,34 +2841,95 @@ exports[`renders HomePage 1`] = `
                       ]
                     }
                   >
-                    <Text
+                    <View
                       style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.24,
-                            "lineHeight": 20,
-                          },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
+                        Object {
+                          "opacity": 0,
+                        }
                       }
                     >
-                      I'll input the open-source RAM sensor, that should card the FTP protocol!
-                    </Text>
+                      <View
+                        onLayout={[Function]}
+                      >
+                        <Text
+                          numberOfLines={5}
+                          style={Object {}}
+                        >
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                                Array [
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            I'll input the open-source RAM sensor, that should card the FTP protocol!
+                          </Text>
+                        </Text>
+                      </View>
+                      <View
+                        onLayout={[Function]}
+                        style={
+                          Object {
+                            "left": 0,
+                            "opacity": 0,
+                            "position": "absolute",
+                            "top": 0,
+                          }
+                        }
+                      >
+                        <Text
+                          style={Object {}}
+                        >
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                                Array [
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            I'll input the open-source RAM sensor, that should card the FTP protocol!
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
                   </View>
                 </View>
               </View>

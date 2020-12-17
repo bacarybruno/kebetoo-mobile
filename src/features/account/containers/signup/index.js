@@ -96,9 +96,17 @@ const SignUp = ({ navigation }) => {
           onError={handleAuthError}
         >
           <View style={styles.footerText}>
-            <Typography type={Typography.types.textButtonLight} text={strings.auth.have_account} />
+            <Typography
+              type={Typography.types.textButtonLight}
+              text={strings.auth.have_account}
+            />
             <Typography type={Typography.types.textButtonLight} text=" " />
-            <Typography color="link" onPress={navigateToSignIn} type={Typography.types.textButton} text={strings.auth.signin} />
+            <Typography
+              color={Typography.colors.link}
+              onPress={navigateToSignIn}
+              type={Typography.types.textButton}
+              text={strings.auth.signin}
+            />
           </View>
         </SocialSignIn>
       </View>

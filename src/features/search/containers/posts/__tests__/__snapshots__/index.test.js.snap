@@ -1061,7 +1061,7 @@ exports[`renders SearchPosts results 1`] = `
                                   false,
                                   Array [
                                     Object {
-                                      "color": undefined,
+                                      "color": "rgba(0,0,0,0.38)",
                                     },
                                     Object {
                                       "backgroundColor": "transparent",
@@ -1287,34 +1287,95 @@ exports[`renders SearchPosts results 1`] = `
                                   ]
                                 }
                               >
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 15,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.24,
-                                        "lineHeight": 20,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "fontFamily": "System",
-                                          "fontWeight": "400",
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
+                                    Object {
+                                      "opacity": 0,
+                                    }
                                   }
                                 >
-                                  Hello World
-                                </Text>
+                                  <View
+                                    onLayout={[Function]}
+                                  >
+                                    <Text
+                                      numberOfLines={5}
+                                      style={Object {}}
+                                    >
+                                      <Text
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 15,
+                                              "fontWeight": "400",
+                                              "letterSpacing": -0.24,
+                                              "lineHeight": 20,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                              },
+                                              undefined,
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Hello World
+                                      </Text>
+                                    </Text>
+                                  </View>
+                                  <View
+                                    onLayout={[Function]}
+                                    style={
+                                      Object {
+                                        "left": 0,
+                                        "opacity": 0,
+                                        "position": "absolute",
+                                        "top": 0,
+                                      }
+                                    }
+                                  >
+                                    <Text
+                                      style={Object {}}
+                                    >
+                                      <Text
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 15,
+                                              "fontWeight": "400",
+                                              "letterSpacing": -0.24,
+                                              "lineHeight": 20,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                              },
+                                              undefined,
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Hello World
+                                      </Text>
+                                    </Text>
+                                  </View>
+                                </View>
                               </View>
                               <View
                                 style={
@@ -1851,34 +1912,95 @@ exports[`renders SearchPosts results 1`] = `
                                   ]
                                 }
                               >
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 15,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.24,
-                                        "lineHeight": 20,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "fontFamily": "System",
-                                          "fontWeight": "400",
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
+                                    Object {
+                                      "opacity": 0,
+                                    }
                                   }
                                 >
-                                  Hellow Kebetoo
-                                </Text>
+                                  <View
+                                    onLayout={[Function]}
+                                  >
+                                    <Text
+                                      numberOfLines={5}
+                                      style={Object {}}
+                                    >
+                                      <Text
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 15,
+                                              "fontWeight": "400",
+                                              "letterSpacing": -0.24,
+                                              "lineHeight": 20,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                              },
+                                              undefined,
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Hellow Kebetoo
+                                      </Text>
+                                    </Text>
+                                  </View>
+                                  <View
+                                    onLayout={[Function]}
+                                    style={
+                                      Object {
+                                        "left": 0,
+                                        "opacity": 0,
+                                        "position": "absolute",
+                                        "top": 0,
+                                      }
+                                    }
+                                  >
+                                    <Text
+                                      style={Object {}}
+                                    >
+                                      <Text
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 15,
+                                              "fontWeight": "400",
+                                              "letterSpacing": -0.24,
+                                              "lineHeight": 20,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                              },
+                                              undefined,
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Hellow Kebetoo
+                                      </Text>
+                                    </Text>
+                                  </View>
+                                </View>
                               </View>
                               <View
                                 style={

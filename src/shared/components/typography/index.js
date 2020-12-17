@@ -1,11 +1,10 @@
 import React from 'react'
 import { Text } from 'react-native'
-
 import { human, systemWeights, material } from 'react-native-typography'
 
 import { useAppColors } from '@app/shared/hooks'
 
-export const weights = {
+const weights = {
   thin: 'thin',
   light: 'light',
   regular: 'regular',
@@ -13,14 +12,15 @@ export const weights = {
   bold: 'bold',
 }
 
-export const colors = {
+const colors = {
   primary: 'textPrimary',
   secondary: 'textSecondary',
   tertiary: 'textTertiary',
   link: 'link',
+  white: 'white',
 }
 
-export const fontSizes = {
+const fontSizes = {
   tiny: 10,
   xs: 12,
   sm: 14,
@@ -30,7 +30,7 @@ export const fontSizes = {
   xl: 27,
 }
 
-export const types = {
+const types = {
   headline1: 'headline1',
   headline2: 'headline2',
   headline3: 'headline3',
@@ -111,7 +111,7 @@ const createTypography = (
   return (
     <Component
       style={[
-        { color: color ? themeColors[color] : themeColors[systemColor] },
+        { color: themeColors[color || systemColor] },
         systemWeights[systemWeight],
         style,
       ]}
@@ -165,7 +165,7 @@ const Typography = ({
       return typography(Subheading)
     case types.button:
       return typography(Button, {
-        systemColor: 'white',
+        systemColor: colors.white,
         systemWeight: weights.semibold,
       })
     case types.separator:
@@ -188,8 +188,8 @@ const Typography = ({
 }
 
 Typography.types = types
-Typography.weights = weights
 Typography.colors = colors
+Typography.weights = weights
 Typography.fontSizes = fontSizes
 
 export default Typography

@@ -87,7 +87,6 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const { navigate } = useNavigation()
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
 
   const isFocused = useIsFocused()
 
@@ -119,11 +118,11 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
       type={Typography.types.headline5}
-      systemColor={colors.textTertiary}
+      systemColor={Typography.colors.tertiary}
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}
     />
-  ), [colors.textTertiary, styles])
+  ), [styles])
 
   const onClearAllRecentSearches = useCallback(() => {
     dispatch({ type: types.CLEAR_USER_HISTORY })

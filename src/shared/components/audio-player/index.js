@@ -13,7 +13,7 @@ import { readableSeconds } from '@app/shared/helpers/dates'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
-import Typography, { types } from '../typography'
+import Typography from '../typography'
 
 const Waves = () => {
   const styles = useAppStyles(createThemedStyles)
@@ -136,7 +136,11 @@ export const AudioPlayer = ({
           <View testID="progress" style={{ ...styles.progress, width: `${progress}%` }} />
           <PlayButton state={playerState} onPress={onPlayPause} />
           <Waves />
-          <Typography type={types.headline6} text={readableDuration} style={styles.duration} />
+          <Typography
+            type={Typography.types.headline6}
+            text={readableDuration}
+            style={styles.duration}
+          />
         </View>
       </Pressable>
       {onDelete && <DeleteIconButton onPress={onDelete} />}

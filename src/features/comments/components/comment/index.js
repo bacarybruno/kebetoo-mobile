@@ -101,7 +101,7 @@ const Content = ({ item }) => {
         />
       )
     case POST_TYPES.TEXT:
-      return <Typography type={Typography.types.body} text={item.content} />
+      return <Typography type={Typography.types.body} text={item.content.trim()} />
     default:
       return null
   }
