@@ -3,12 +3,15 @@
 exports[`renders HeaderBack 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginLeft": 16,
-      "width": 24,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginLeft": 16,
+        "width": 24,
+      },
+      undefined,
+    ]
   }
 >
   <Text
@@ -30,12 +33,15 @@ exports[`renders HeaderBack 1`] = `
 exports[`renders HeaderClose 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginLeft": 16,
-      "width": 24,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginLeft": 16,
+        "width": 24,
+      },
+      undefined,
+    ]
   }
 >
   <Text

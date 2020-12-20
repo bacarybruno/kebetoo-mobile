@@ -503,12 +503,15 @@ exports[`renders Comments 1`] = `
                     >
                       <View
                         style={
-                          Object {
-                            "alignItems": "center",
-                            "justifyContent": "center",
-                            "marginLeft": 16,
-                            "width": 24,
-                          }
+                          Array [
+                            Object {
+                              "alignItems": "center",
+                              "justifyContent": "center",
+                              "marginLeft": 16,
+                              "width": 24,
+                            },
+                            undefined,
+                          ]
                         }
                       >
                         <Text
@@ -2554,12 +2557,15 @@ exports[`renders Comments in loading state 1`] = `
                     >
                       <View
                         style={
-                          Object {
-                            "alignItems": "center",
-                            "justifyContent": "center",
-                            "marginLeft": 16,
-                            "width": 24,
-                          }
+                          Array [
+                            Object {
+                              "alignItems": "center",
+                              "justifyContent": "center",
+                              "marginLeft": 16,
+                              "width": 24,
+                            },
+                            undefined,
+                          ]
                         }
                       >
                         <Text
