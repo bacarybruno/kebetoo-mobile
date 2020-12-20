@@ -81,6 +81,10 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
       light: iosColors.systemBackground[colorScheme],
       dark: '#121212',
     },
+    ripple: {
+      dark: 'rgba(255, 255, 255, .32)',
+      light: 'rgba(0, 0, 0, .32)',
+    },
   }
 
   const iconColors = {
@@ -112,6 +116,8 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
     placeholder: iosColors.systemGrey2[colorScheme],
     border: iosColors.systemGrey5[colorScheme],
     link: iosColors.link[colorScheme],
+
+    ripple: customColors.ripple[colorScheme],
 
     ...iconColors,
     ...textColors,

@@ -6,18 +6,18 @@ import Kebeticon from '@app/shared/icons/kebeticons'
 
 import styles from './styles'
 
-const Wrapper = ({ children }) => (
-  <View style={styles.wrapper}>{children}</View>
+const Wrapper = ({ children, style }) => (
+  <View style={[styles.wrapper, style]}>{children}</View>
 )
 
-const HeaderBack = ({ tintColor }) => (
-  <Wrapper>
+const HeaderBack = ({ tintColor, style }) => (
+  <Wrapper style={style}>
     <Kebeticon name="chevron-left" color={tintColor} size={20} />
   </Wrapper>
 )
 
-HeaderBack.Close = ({ tintColor }) => (
-  <Wrapper>
+HeaderBack.Close = ({ tintColor, style }) => (
+  <Wrapper style={style}>
     <Ionicon name="ios-close" color={tintColor} size={40} />
   </Wrapper>
 )

@@ -29,7 +29,7 @@ const Pressable = ({
   const TouchableComponent = getTouchableComponent(platform)
 
   if (TouchableComponent === TouchableNativeFeedback) {
-    const rippleBackground = TouchableNativeFeedback.Ripple(colors.placeholder, borderless)
+    const rippleBackground = TouchableNativeFeedback.Ripple(colors.ripple, borderless)
     return (
       <TouchableComponent {...otherProps} useForeground={foreground} background={rippleBackground}>
         <View style={style}>{children}</View>
