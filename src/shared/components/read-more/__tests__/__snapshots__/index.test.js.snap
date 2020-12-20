@@ -92,6 +92,20 @@ exports[`ReadMore renders ReadMore 1`] = `
 </View>
 `;
 
+exports[`ReadMore renders view less 1`] = `
+<Reveal
+  onPress={[MockFunction]}
+  text="show less"
+/>
+`;
+
+exports[`ReadMore renders view more 1`] = `
+<Reveal
+  onPress={[MockFunction]}
+  text="read more"
+/>
+`;
+
 exports[`Reveal renders Reveal 1`] = `
 <Text
   accessible={true}

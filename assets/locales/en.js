@@ -98,6 +98,12 @@ const locales = Object.freeze({
     publish: 'Post',
     placeholder: 'What\'s on your mind?',
     characters: '{0} characters',
+    all_videos: 'All Videos',
+    all_photos: 'All Photos',
+    albums: 'Albums',
+    all_assets: 'All',
+    album_empty: 'This album is empty',
+    edit_photo: 'Edit Photo',
   },
   reactions: {
     share_now: 'Share now',

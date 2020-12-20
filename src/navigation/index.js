@@ -11,7 +11,9 @@ import AsyncStorage from '@react-native-community/async-storage'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
-import { TabBarAddButton, HeaderBack, Typography } from '@app/shared/components'
+import {
+  TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
+} from '@app/shared/components'
 import { images } from '@app/theme'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
@@ -172,6 +174,7 @@ export const loggedInPages = [
   <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />,
   <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />,
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
+  <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
 ]
 
 // Main Section

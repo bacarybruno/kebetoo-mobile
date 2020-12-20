@@ -16,8 +16,8 @@ const locales = Object.freeze({
     new: 'Nouveau',
     on: 'Actif',
     off: 'Inactif',
-    read_more: 'Voir plus',
-    show_less: 'Réduire',
+    read_more: 'Lire la suite',
+    show_less: 'Moins',
   },
   onboarding: {
     screen_one_title: 'Rejoins Notre Réseau Social',
@@ -98,6 +98,12 @@ const locales = Object.freeze({
     publish: 'Publier',
     placeholder: 'Qu\'avez-vous à l\'esprit ?',
     characters: '{0} caractères',
+    all_videos: 'Toutes les Videos',
+    all_photos: 'Toutes les Photos',
+    albums: 'Albums',
+    all_assets: 'Tout',
+    album_empty: 'Cet album est vide',
+    edit_photo: 'Editer la photo',
   },
   reactions: {
     share_now: 'Partager maintenant',

@@ -1,38 +1,48 @@
 import { useCallback, useState, useEffect } from 'react'
-import ImagePicker from 'react-native-image-picker'
 import dayjs from 'dayjs'
 import RNFetchBlob from 'rn-fetch-blob'
+import { useNavigation } from '@react-navigation/native'
 
 import { api } from '@app/shared/services'
 import { getMimeType } from '@app/shared/helpers/file'
+import { CameraRollPicker } from '@app/shared/components'
+import routes from '@app/navigation/routes'
 
-const PICTURE_CONFIG = Object.freeze({
-  mediaType: 'photo',
-  noData: true,
-  allowsEditing: true,
-  quality: 0.8,
-  maxHeight: 800,
-})
 export const constructFileName = (time) => `IMG-${time}`
 
 const useFilePicker = (uri) => {
   const [file, setFile] = useState(null)
+  const { navigate } = useNavigation()
 
   const pickImage = useCallback(async () => {
     const fileData = await new Promise((resolve) => {
-      ImagePicker.launchImageLibrary(PICTURE_CONFIG, (res) => {
-        if (res.uri) resolve(res)
-        else resolve(false)
+      navigate(routes.CAMERA_ROLL_PICKER, {
+        assetType: CameraRollPicker.AssetTypes.Photos,
+        onSelectedItem: (item) => {
+          if (item) resolve(item)
+          resolve(false)
+        },
       })
     })
     if (fileData) setFile(fileData)
-  }, [])
+  }, [navigate])
+
+  const pickVideo = useCallback(async () => {
+    const fileData = await new Promise((resolve) => {
+      navigate(routes.CAMERA_ROLL_PICKER, {
+        assetType: CameraRollPicker.AssetTypes.Videos,
+        onSelectedItem: (item) => {
+          resolve(item || false)
+        },
+      })
+    })
+    if (fileData) setFile(fileData)
+  }, [navigate])
 
   useEffect(() => {
     if (uri) {
       setFile({
         uri: uri.startsWith('file://') ? uri : `file://${uri}`,
-        path: uri,
         type: getMimeType(uri),
       })
     }
@@ -41,7 +51,7 @@ const useFilePicker = (uri) => {
   const reset = useCallback(async () => {
     if (file) {
       try {
-        await RNFetchBlob.fs.unlink(file.path)
+        await RNFetchBlob.fs.unlink(file.uri)
       } finally {
         setFile(null)
       }
@@ -54,7 +64,7 @@ const useFilePicker = (uri) => {
       author,
       content,
       image: {
-        uri: file.uri,
+        uri: file.uri.replace('file://', ''),
         mimeType: file.type,
         name: constructFileName(time),
       },
@@ -66,6 +76,7 @@ const useFilePicker = (uri) => {
 
   return {
     pickImage,
+    pickVideo,
     hasFile: file !== null,
     file,
     reset,
