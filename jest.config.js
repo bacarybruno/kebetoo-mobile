@@ -9,7 +9,7 @@ module.exports = {
     '^.+\\.[t|j]sx?$': 'babel-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|@react-native-community)',
+    'node_modules/(?!(jest-)?react-native|@react-native-community|@kebetoo)',
   ],
   testPathIgnorePatterns: [
     '/node_modules/',

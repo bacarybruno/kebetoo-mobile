@@ -101,5 +101,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Kebetoo would like to select photos from your camera roll.</string>
 </dict>
 </plist>

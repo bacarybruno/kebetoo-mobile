@@ -34,9 +34,16 @@ const usePermissions = () => {
     return authorizedStatus.includes(permissionStatus)
   }, [])
 
+  const readExternalStorage = useCallback(async () => {
+    if (Platform.OS === 'ios') return Promise.resolve(true)
+    const hasPermissions = await handlePermissions(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
+    return hasPermissions
+  }, [handlePermissions])
+
   return {
     recordAudio,
     notifications,
+    readExternalStorage,
   }
 }
 
