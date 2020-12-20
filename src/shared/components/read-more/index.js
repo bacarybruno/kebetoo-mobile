@@ -36,6 +36,7 @@ const ReadMore = ({ numberOfLines = 5, text, ...typographyProps }) => {
       numberOfLines={numberOfLines}
       renderViewLess={renderViewLess}
       renderViewMore={renderViewMore}
+      testID="read-more-text"
     >
       <Typography text={text} {...typographyProps} />
     </ReadMoreText>

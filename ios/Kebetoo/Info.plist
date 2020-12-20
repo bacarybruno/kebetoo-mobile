@@ -103,5 +103,7 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Kebetoo would like to select photos from your camera roll.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Kebetoo will need access to your camera roll to cache images.</string>
 </dict>
 </plist>

@@ -170,7 +170,7 @@ const CreatePostPage = ({ route, navigation }) => {
       ),
       title: headerMessages.title,
     })
-  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading, styles.headerSaveButton])
+  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading, styles])
 
   return (
     <View style={styles.wrapper}>
@@ -194,7 +194,7 @@ const CreatePostPage = ({ route, navigation }) => {
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && !shareMode && (
                 <>
-                  <Button name="camera" onPress={noop} />
+                  <Button name="camera" onPress={imagePicker.pickVideo} />
                   <Button name="photo" onPress={imagePicker.pickImage} />
                   <Button name="more-h" onPress={noop} />
                 </>
