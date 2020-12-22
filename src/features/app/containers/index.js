@@ -16,8 +16,7 @@ const RootContainer = () => {
   const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
 
-  const themeValue = useAppColors()
-  const themeColorScheme = themeValue.colorScheme
+  const colors = useAppColors()
 
   useEffect(() => {
     const appStateChange = (state) => {
@@ -32,14 +31,15 @@ const RootContainer = () => {
   }, [trackAppBackground, trackAppOpen])
 
   useEffect(() => {
-    if (themeColorScheme === 'dark') {
+    StatusBar.setBackgroundColor(colors.background)
+    if (colors.colorScheme === 'dark') {
+      changeNavigationBarColor(rgbaToHex(colors.backgroundSecondary))
       StatusBar.setBarStyle('light-content')
     } else {
+      changeNavigationBarColor(rgbaToHex(colors.background))
       StatusBar.setBarStyle('dark-content')
     }
-    StatusBar.setBackgroundColor(themeValue.backgroundSecondary)
-    changeNavigationBarColor(rgbaToHex(themeValue.backgroundSecondary))
-  }, [themeColorScheme, themeValue])
+  }, [colors])
 
   useEffect(() => {
     setupNotifications()
