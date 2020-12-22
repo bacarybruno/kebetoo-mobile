@@ -194,19 +194,24 @@ const ManagePostsPage = ({ route, navigation }) => {
     photoURL,
   })
 
-  const renderItem = useCallback(({ item }) => (
-    <BasicPost
-      onOptions={() => showPostOptions(item)}
-      author={userToAuthor(profile)}
-      badge={params?.payload === item.id ? strings.general.new : undefined}
-      originalAuthor={
-        item.repost
-          ? authors[item.repost.author]
-          : userToAuthor(profile)
-      }
-      post={item}
-    />
-  ), [profile, params, authors, showPostOptions])
+  const renderItem = useCallback(({ item }) => {
+    const badge = params?.action === actionTypes.EDIT
+      ? strings.general.edited
+      : strings.general.new
+    return (
+      <BasicPost
+        onOptions={() => showPostOptions(item)}
+        author={userToAuthor(profile)}
+        badge={params?.payload === item.id ? badge : undefined}
+        originalAuthor={
+          item.repost
+            ? authors[item.repost.author]
+            : userToAuthor(profile)
+        }
+        post={item}
+      />
+    )
+  }, [profile, params, authors, showPostOptions])
 
   const renderNoPost = useCallback(() => loading === false && <NoPosts />, [loading])
 

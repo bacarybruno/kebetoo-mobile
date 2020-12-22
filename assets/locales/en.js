@@ -73,7 +73,7 @@ const locales = Object.freeze({
     light: 'Light',
   },
   manage_posts: {
-    my_posts: 'My posts',
+    my_posts: 'Manage posts',
     edit_post: 'Edit post',
     delete_post: 'Delete post',
     no_content: 'Create your first post! 👇',
@@ -104,6 +104,9 @@ const locales = Object.freeze({
     all_assets: 'All',
     album_empty: 'This album is empty',
     edit_photo: 'Edit Photo',
+    post_created: 'Your post has successfully been created!',
+    post_edited: 'Your post has successfully beed edited!',
+    show_post_created: 'Show',
   },
   reactions: {
     share_now: 'Share now',
@@ -136,6 +139,7 @@ const locales = Object.freeze({
   },
   errors: {
     generic: 'An error occured',
+    retry: 'Retry',
     required_field: '{0} field is required',
     invalid_field: 'Please enter a valid {0}',
     min_length_field: '{0} must be at least {1} characters',
@@ -144,6 +148,7 @@ const locales = Object.freeze({
     auth_user_disabled: 'This user has been disabled',
     auth_email_already_in_use: 'This account already exists. Please try to log in instead',
     auth_account_exists_different_credential: 'The email used is already associated with another account. Please try another signin method',
+    create_post_error: 'An error occured while creating the post. Please try again later.',
   },
 })
 
