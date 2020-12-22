@@ -226,7 +226,7 @@ const CameraRollPicker = ({ navigation }) => {
 
     navigation.setOptions({
       headerRight: () => (
-        <Pressable testID={selected.length} borderless foreground onPress={() => onPress()}>
+        <Pressable borderless foreground onPress={() => onPress()}>
           <Ionicon
             name={iconName}
             size={25}
