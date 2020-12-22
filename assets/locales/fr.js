@@ -104,6 +104,9 @@ const locales = Object.freeze({
     all_assets: 'Tout',
     album_empty: 'Cet album est vide',
     edit_photo: 'Editer la photo',
+    post_created: 'Votre post a bien été créé!',
+    post_edited: 'Votre post a bien été modifié!',
+    show_post_created: 'Voir',
   },
   reactions: {
     share_now: 'Partager maintenant',
@@ -136,6 +139,7 @@ const locales = Object.freeze({
   },
   errors: {
     generic: 'Une erreur est survenue',
+    retry: 'Réessayer',
     required_field: 'Veuillez entrer votre {0}',
     invalid_field: 'Veuillez entrer un {0} valide',
     min_length_field: '{0} doit contenir au moins {1} caractères',
@@ -144,6 +148,7 @@ const locales = Object.freeze({
     auth_user_disabled: 'Cet utilisateur a été désactivé',
     auth_email_already_in_use: 'Ce compte existe déjà. Veuillez essayer de vous connecter',
     auth_account_exists_different_credential: 'L\'e-mail utilisé est déjà associé à un autre compte. Veuillez essayer une autre méthode de connexion',
+    create_post_error: 'Une erreur est survenue lors de la création du post. Merci de réessayer plus tard.',
   },
 })
 

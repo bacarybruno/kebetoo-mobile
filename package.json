@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android:dev": "react-native run-android",
-    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:1337 tcp:1337",
+    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
@@ -54,6 +54,7 @@
     "react-native-receive-sharing-intent": "^1.0.3",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.4.0",
+    "react-native-snackbar": "^2.3.0",
     "react-native-sound": "^0.11.0",
     "react-native-swiper": "^1.6.0",
     "react-native-tab-view": "^2.14.4",

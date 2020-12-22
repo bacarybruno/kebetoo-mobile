@@ -7621,6 +7621,11 @@ react-native-slider@^0.11.0:
   dependencies:
     prop-types "^15.5.6"
 
+react-native-snackbar@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-2.3.0.tgz#8c5777f1174addd01505dadb1fe8ce8f3f52113e"
+  integrity sha512-b20bRyzRKXxcv/kRf36K7oMM3l3dD4ovGVuMzOeNTThC5wcsslmzdmmcQwMDqVPOSFMSWCGS7OANN+EGwZjV2g==
+
 react-native-sound@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.11.0.tgz#ad60b55ba8c6dc89917f381ad3713f2738de530f"

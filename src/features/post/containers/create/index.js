@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import { CommonActions } from '@react-navigation/native'
+import Snackbar from 'react-native-snackbar'
 
 import {
   TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer,
@@ -18,6 +19,7 @@ import routes from '@app/navigation/routes'
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
+import iosColors from '@app/theme/ios-colors'
 
 import createThemedStyles from './styles'
 
@@ -88,6 +90,8 @@ const ImagePreviewer = ({ uri, onDelete }) => {
   )
 }
 
+// TODO: separate UI from logic to make unit tests easier
+// or use redux-saga to handle post creation
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const colors = useAppColors()
@@ -107,35 +111,68 @@ const CreatePostPage = ({ route, navigation }) => {
 
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
-    let result = null
-    const repost = params?.post ?? undefined
-    if (editMode) {
-      result = await api.posts.update({ id: params.payload.id, content: text })
-    } else if (audioRecorder.hasRecording) {
-      result = await audioRecorder.savePost(profile.uid, text, repost)
-    } else if (imagePicker.hasFile) {
-      result = await imagePicker.savePost(profile.uid, text, repost)
-    } else {
-      result = await api.posts.create({ content: text, repost, author: profile.uid })
-    }
-    setIsLoading(false)
-    if (params && params.onGoBack) params.onGoBack(result)
+    try {
+      let post = null
+      const repost = params?.post ?? undefined
+      if (editMode) {
+        post = await api.posts.update({ id: params.payload.id, content: text })
+      } else if (audioRecorder.hasRecording) {
+        post = await audioRecorder.savePost(profile.uid, text, repost)
+      } else if (imagePicker.hasFile) {
+        post = await imagePicker.savePost(profile.uid, text, repost)
+      } else {
+        post = await api.posts.create({ content: text, repost, author: profile.uid })
+      }
+      setIsLoading(false)
+      if (params && params.onGoBack) params.onGoBack(post)
 
-    if (editMode) return navigation.goBack()
+      if (editMode) {
+        Snackbar.show({
+          text: strings.create_post.post_edited,
+          duration: Snackbar.LENGTH_SHORT,
+        })
+        navigation.dispatch((state) => {
+          // Remove the manage_page route from the stack
+          const newRoutes = state.routes.filter((r) => r.name !== routes.MANAGE_POSTS)
 
-    navigation.dispatch((state) => {
-      // Remove the manage route from the stack
-      const newRoutes = state.routes.filter((r) => r.name !== routes.MANAGE_POSTS)
+          return CommonActions.reset({
+            ...state,
+            routes: newRoutes,
+            index: newRoutes.length - 1,
+          })
+        })
+        return navigation.replace(routes.MANAGE_POSTS, {
+          payload: post.id,
+          action: actionTypes.EDIT,
+        })
+      }
 
-      return CommonActions.reset({
-        ...state,
-        routes: newRoutes,
-        index: newRoutes.length - 1,
+      Snackbar.show({
+        text: strings.create_post.post_created,
+        duration: Snackbar.LENGTH_LONG,
+        action: {
+          text: strings.create_post.show_post_created.toUpperCase(),
+          textColor: iosColors.systemBlue.dark,
+          onPress: () => {
+            navigation.navigate(routes.COMMENTS, { post })
+          },
+        },
       })
-    })
 
-    return navigation.replace(routes.MANAGE_POSTS, { payload: result.id })
-  }, [editMode, audioRecorder, imagePicker, params, navigation, text, profile.uid])
+      return navigation.goBack()
+    } catch (error) {
+      Snackbar.show({
+        text: strings.errors.create_post_error,
+        duration: Snackbar.LENGTH_INDEFINITE,
+        action: {
+          text: strings.errors.retry.toUpperCase(),
+          textColor: iosColors.systemBlue.dark,
+          onPress: () => onHeaderSavePress(),
+        },
+      })
+      setIsLoading(false)
+    }
+  }, [params, editMode, audioRecorder, imagePicker, navigation, text, profile.uid])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
