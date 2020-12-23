@@ -1,5 +1,4 @@
 import { useEffect, useCallback } from 'react'
-import { useColorScheme } from 'react-native'
 import {
   getSystemName, getSystemVersion, getDeviceType, getModel, getBrand,
 } from 'react-native-device-info'
@@ -8,6 +7,8 @@ import firebaseCrashlytics from '@react-native-firebase/crashlytics'
 
 import { useUser } from '@app/shared/hooks'
 import { strings } from '@app/config'
+
+import useAppColors from './app-colors'
 
 const Types = {
   POST: 'post',
@@ -22,7 +23,7 @@ let didSetUserAttributes = false
 
 const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModule) => {
   const { profile } = useUser()
-  const colorScheme = useColorScheme()
+  const colors = useAppColors()
 
   useEffect(() => {
     const declareUserProperties = async () => {
@@ -32,7 +33,7 @@ const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModu
           system: `${getSystemName()} ${getSystemVersion()}`,
           type: getDeviceType(),
           locale: strings.getLanguage(),
-          theme: colorScheme,
+          theme: colors.colorScheme,
         }
         await analytics.setUserProperties(attributes)
         await crashlytics.setAttributes(attributes)
@@ -40,7 +41,7 @@ const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModu
       }
     }
     declareUserProperties()
-  }, [analytics, colorScheme, crashlytics])
+  }, [analytics, colors.colorScheme, crashlytics])
 
   useEffect(() => {
     const declareUserId = async () => {
