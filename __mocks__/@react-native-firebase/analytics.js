@@ -1,5 +1,6 @@
 const analytics = () => ({
   setUserProperties: jest.fn().mockResolvedValue(true),
+  setUserProperty: jest.fn().mockResolvedValue(true),
   setUserId: jest.fn().mockResolvedValue(true),
   logTutorialBegin: jest.fn().mockResolvedValue(true),
   logTutorialComplete: jest.fn().mockResolvedValue(true),

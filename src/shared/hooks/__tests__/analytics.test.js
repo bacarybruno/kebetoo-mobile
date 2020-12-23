@@ -15,10 +15,19 @@ const givenAnalytics = () => {
 }
 
 it('sets attributes', async () => {
+  const attributes = {
+    brand: expect.any(String),
+    system: expect.any(String),
+    type: expect.any(String),
+    locale: expect.any(String),
+    theme: expect.any(String),
+  }
   const { rerender } = givenAnalytics()
   await rerender()
   await expect(analyticsMock.setUserProperties).toBeCalledTimes(1)
+  await expect(analyticsMock.setUserProperties).toBeCalledWith(attributes)
   await expect(crashlyticsMock.setAttributes).toBeCalledTimes(1)
+  await expect(crashlyticsMock.setAttributes).toBeCalledWith(attributes)
 })
 
 it('is defined', () => {
@@ -47,7 +56,7 @@ it('reports error ', () => {
   expect(crashlyticsMock.recordError).toBeCalledWith(error)
 })
 
-it('tracks AppOpenasync ', () => {
+it('tracks AppOpen', () => {
   const { analytics } = givenAnalytics()
   analytics.trackAppOpen()
   expect(analyticsMock.logAppOpen).toBeCalledTimes(1)
@@ -60,7 +69,7 @@ it('tracks AppBackground', () => {
   expect(analyticsMock.logEvent).toBeCalledWith('app_background')
 })
 
-it('tracks PageViewasync', () => {
+it('tracks PageView', () => {
   const { analytics } = givenAnalytics()
   analytics.trackPageView()
   expect(analyticsMock.logScreenView).toBeCalledTimes(1)
@@ -78,32 +87,32 @@ it('tracks OnboardingEnd', () => {
   expect(analyticsMock.logTutorialComplete).toBeCalledTimes(1)
 })
 
-it('tracks SignInasync ', () => {
+it('tracks SignIn', () => {
   const { analytics } = givenAnalytics()
   analytics.trackSignIn()
   expect(analyticsMock.logLogin).toBeCalledTimes(1)
 })
 
-it('tracks SignUpasync ', () => {
+it('tracks SignUp', () => {
   const { analytics } = givenAnalytics()
   analytics.trackSignUp()
   expect(analyticsMock.logSignUp).toBeCalledTimes(1)
 })
 
-it('tracks SignOutasync ', () => {
+it('tracks SignOut', () => {
   const { analytics } = givenAnalytics()
   analytics.trackSignOut()
   expect(analyticsMock.logEvent).toBeCalledTimes(1)
   expect(analyticsMock.logEvent).toBeCalledWith('sign_out')
 })
 
-it('tracks Searchasync', () => {
+it('tracks Search', () => {
   const { analytics } = givenAnalytics()
   analytics.trackSearch()
   expect(analyticsMock.logSearch).toBeCalledTimes(1)
 })
 
-it('tracks async SelectPost', () => {
+it('tracks SelectPost', () => {
   const { analytics } = givenAnalytics()
   analytics.trackSelectPost()
   expect(analyticsMock.logSelectContent).toBeCalledTimes(1)
