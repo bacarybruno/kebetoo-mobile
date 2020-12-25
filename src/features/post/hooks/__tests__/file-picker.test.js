@@ -6,14 +6,14 @@ import RNFetchBlob from 'rn-fetch-blob'
 import routes from '@app/navigation/routes'
 import { CameraRollPicker } from '@app/shared/components'
 
-import useImagePicker from '../image-picker'
+import useFilePicker from '../file-picker'
 
 beforeEach(jest.clearAllMocks)
 
 const createImagePicker = (...props) => {
   const returnVal = {}
   const TestComponent = () => {
-    Object.assign(returnVal, useImagePicker(...props))
+    Object.assign(returnVal, useFilePicker(...props))
     return null
   }
   render(<TestComponent />)

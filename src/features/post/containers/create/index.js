@@ -14,7 +14,7 @@ import { readableSeconds } from '@app/shared/helpers/dates'
 import { strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'
 import { metrics } from '@app/theme'
-import useImagePicker from '@app/features/post/hooks/image-picker'
+import useFilePicker from '@app/features/post/hooks/file-picker'
 import routes from '@app/navigation/routes'
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
@@ -105,7 +105,7 @@ const CreatePostPage = ({ route, navigation }) => {
   const shareMode = params && params.action === actionTypes.SHARE
   const mediaType = getMediaType(params && params.sharedFile)
   const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
-  const imagePicker = useImagePicker(mediaType === 'image' ? params.sharedFile : undefined)
+  const filePicker = useFilePicker(mediaType === 'image' ? params.sharedFile : undefined)
   const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
   const [text, setText] = useState((value) => value || payload)
 
@@ -118,13 +118,15 @@ const CreatePostPage = ({ route, navigation }) => {
         post = await api.posts.update({ id: params.payload.id, content: text })
       } else if (audioRecorder.hasRecording) {
         post = await audioRecorder.savePost(profile.uid, text, repost)
-      } else if (imagePicker.hasFile) {
-        post = await imagePicker.savePost(profile.uid, text, repost)
+      } else if (filePicker.hasFile) {
+        post = await filePicker.savePost(profile.uid, text, repost)
       } else {
         post = await api.posts.create({ content: text, repost, author: profile.uid })
       }
+
+      const updatedPost = { ...post, localFileUri: filePicker.file.uri }
       setIsLoading(false)
-      if (params && params.onGoBack) params.onGoBack(post)
+      if (params && params.onGoBack) params.onGoBack(updatedPost)
 
       if (editMode) {
         Snackbar.show({
@@ -154,7 +156,7 @@ const CreatePostPage = ({ route, navigation }) => {
           text: strings.create_post.show_post_created.toUpperCase(),
           textColor: iosColors.systemBlue.dark,
           onPress: () => {
-            navigation.navigate(routes.COMMENTS, { post })
+            navigation.navigate(routes.COMMENTS, { post: updatedPost })
           },
         },
       })
@@ -163,16 +165,16 @@ const CreatePostPage = ({ route, navigation }) => {
     } catch (error) {
       Snackbar.show({
         text: strings.errors.create_post_error,
-        duration: Snackbar.LENGTH_INDEFINITE,
+        duration: Snackbar.LENGTH_LONG,
         action: {
           text: strings.errors.retry.toUpperCase(),
           textColor: iosColors.systemBlue.dark,
           onPress: () => onHeaderSavePress(),
         },
       })
-      setIsLoading(false)
+      return setIsLoading(false)
     }
-  }, [params, editMode, audioRecorder, imagePicker, navigation, text, profile.uid])
+  }, [params, editMode, audioRecorder, filePicker, navigation, text, profile.uid])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
@@ -222,17 +224,17 @@ const CreatePostPage = ({ route, navigation }) => {
               style={styles.audioPlayer}
             />
           )}
-          {imagePicker.hasFile && (
-            <ImagePreviewer uri={imagePicker.file.uri} onDelete={imagePicker.reset} />
+          {filePicker.hasFile && (
+            <ImagePreviewer uri={filePicker.file.uri} onDelete={filePicker.reset} />
           )}
         </View>
-        {!editMode && !audioRecorder.hasRecording && !imagePicker.hasFile && (
+        {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && (
           <View style={styles.buttonsWrapper}>
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && !shareMode && (
                 <>
-                  <Button name="camera" onPress={imagePicker.pickVideo} />
-                  <Button name="photo" onPress={imagePicker.pickImage} />
+                  <Button name="camera" onPress={filePicker.pickVideo} />
+                  <Button name="photo" onPress={filePicker.pickImage} />
                   <Button name="more-h" onPress={noop} />
                 </>
               )}
