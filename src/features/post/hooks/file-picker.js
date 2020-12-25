@@ -4,11 +4,17 @@ import RNFetchBlob from 'rn-fetch-blob'
 import { useNavigation } from '@react-navigation/native'
 
 import { api } from '@app/shared/services'
-import { getMimeType } from '@app/shared/helpers/file'
+import { getMimeType, isVideo } from '@app/shared/helpers/file'
 import { CameraRollPicker } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 
-export const constructFileName = (time) => `IMG-${time}`
+export const constructFileName = (time, prefix = 'IMG', duration) => {
+  let fileName = `${prefix}-${time}`
+  if (duration) {
+    fileName = `${fileName}-${duration}`
+  }
+  return fileName
+}
 
 const useFilePicker = (uri) => {
   const [file, setFile] = useState(null)
@@ -51,7 +57,9 @@ const useFilePicker = (uri) => {
   const reset = useCallback(async () => {
     if (file) {
       try {
-        await RNFetchBlob.fs.unlink(file.uri)
+        if (!isVideo(file.uri)) {
+          await RNFetchBlob.fs.unlink(file.uri)
+        }
       } finally {
         setFile(null)
       }
@@ -59,17 +67,34 @@ const useFilePicker = (uri) => {
   }, [file])
 
   const savePost = useCallback(async (author, content, repost) => {
+    // TODO: check if it's necessary to have unique file names
     const time = dayjs().format('YYYYMMDD')
-    const response = await api.posts.createImage({
-      author,
-      content,
-      image: {
-        uri: file.uri.replace('file://', ''),
-        mimeType: file.type,
-        name: constructFileName(time),
-      },
-      repost,
-    })
+    let response
+    if (isVideo(file.uri)) {
+      response = await api.posts.createVideo({
+        author,
+        content,
+        video: {
+          uri: file.uri.replace('file://', ''),
+          mimeType: file.type,
+          // TODO: for video, save video duration in file name
+          // to be able to extract that metadata (playableDuration)
+          name: constructFileName(time, 'VID', 10),
+        },
+        repost,
+      })
+    } else {
+      response = await api.posts.createImage({
+        author,
+        content,
+        image: {
+          uri: file.uri.replace('file://', ''),
+          mimeType: file.type,
+          name: constructFileName(time, 'IMG'),
+        },
+        repost,
+      })
+    }
     await reset()
     return response
   }, [file, reset])
