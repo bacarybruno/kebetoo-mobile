@@ -145,7 +145,11 @@ it('submits selection', async () => {
 })
 
 it('selects an item from camera', async () => {
-  const cropperResult = { path: photosMock.edges[0].node.image.uri, mime: 'image/png' }
+  const cropperResult = {
+    path: photosMock.edges[0].node.image.uri,
+    mime: 'video/mp4',
+    duration: 1000,
+  }
   ImageCropPicker.openCamera.mockResolvedValue(cropperResult)
 
   const { wrapper } = await givenCameraRollPicker({})
@@ -157,5 +161,6 @@ it('selects an item from camera', async () => {
   expect(routeParamsMock.onSelectedItem).toBeCalledWith({
     uri: cropperResult.path,
     type: cropperResult.mime,
+    duration: cropperResult.duration / 1000,
   })
 })

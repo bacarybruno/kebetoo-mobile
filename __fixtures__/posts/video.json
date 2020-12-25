@@ -1,0 +1,36 @@
+{
+  "_id": "5fe6488ed1fef52bc41fd932",
+  "content": "Record",
+  "author": {
+    "id": "1",
+    "email": "bacarybruno@kebetoo.com",
+    "displayName": "Bruno Bodian",
+    "photoURL": "https://avatars1.githubusercontent.com/u/14147533"
+  },
+  "createdAt": "2020-12-25T20:16:14.306Z",
+  "updatedAt": "2020-12-25T20:16:15.614Z",
+  "__v": 0,
+  "video": {
+    "_id": "5fe6488fd1fef52bc41fd933",
+    "name": "VID-20200620-6",
+    "alternativeText": null,
+    "caption": null,
+    "hash": "VID_20201225_6059_0938913cfc",
+    "ext": ".mp4",
+    "mime": "video/mp4",
+    "size": 13.24,
+    "url": "http://localhost:4569/local-bucket/VID_20201225_6059_0938913cfc.mp4",
+    "provider": "aws-s3",
+    "width": null,
+    "height": null,
+    "related": ["5fe6488ed1fef52bc41fd932"],
+    "createdAt": "2020-12-25T20:16:15.604Z",
+      "updatedAt": "2020-12-25T20:16:15.612Z",
+    "__v": 0,
+    "id": "5fe6488fd1fef52bc41fd933"
+  },
+  "comments": [],
+  "reactions": [],
+  "reposts": [],
+  "id": "5fe6488ed1fef52bc41fd932"
+}

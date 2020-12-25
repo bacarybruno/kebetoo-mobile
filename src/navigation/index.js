@@ -26,6 +26,7 @@ import CreatePostPage from '@app/features/post/containers/create'
 import CommentsPage from '@app/features/comments/containers'
 import ManagePostsPage from '@app/features/post/containers/manage'
 import ImageModal from '@app/features/modal/containers/image'
+import VideoModal from '@app/features/modal/containers/video'
 import UserProfilePage from '@app/features/profile/containers/user'
 import { api } from '@app/shared/services'
 import {
@@ -173,6 +174,7 @@ export const loggedInPages = [
   <Stack.Screen component={CommentsPage} name={routes.COMMENTS} />,
   <Stack.Screen component={ManagePostsPage} name={routes.MANAGE_POSTS} />,
   <Stack.Screen component={ImageModal} name={routes.MODAL_IMAGE} />,
+  <Stack.Screen component={VideoModal} name={routes.MODAL_VIDEO} />,
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
 ]

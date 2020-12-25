@@ -475,14 +475,17 @@ exports[`renders CameraRollPicker 1`] = `
                                     allowFontScaling={false}
                                     style={
                                       Object {
-                                        "bottom": 5,
-                                        "color": "white",
+                                        "0": Object {
+                                          "bottom": 5,
+                                          "left": 5,
+                                          "position": "absolute",
+                                        },
+                                        "1": undefined,
+                                        "color": "rgba(242, 242, 247, 255)",
                                         "fontFamily": "Ionicons",
                                         "fontSize": 15,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "left": 5,
-                                        "position": "absolute",
                                       }
                                     }
                                     text="ionicon-md-videocam"

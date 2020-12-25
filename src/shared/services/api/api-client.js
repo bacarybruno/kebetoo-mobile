@@ -11,8 +11,9 @@ class ApiClient extends HttpClient {
   }
 
   get authors() {
+    const pageSize = 30
     return {
-      search: (query) => this.get(`/authors?displayName_contains=${query}&_limit=30`),
+      search: (query) => this.get(`/authors?displayName_contains=${query}&_limit=${pageSize}`),
       create: (author) => this.post('/authors', author),
       getByUid: (uid) => this.get(`/authors?uid=${uid}`),
       getById: (id) => this.get(`/authors/${id}`),
@@ -33,6 +34,7 @@ class ApiClient extends HttpClient {
       create: (post) => this.post('/posts', post),
       createAudio: ({ audio, ...payload }) => this.postAsset('/posts', 'audio', audio, payload),
       createImage: ({ image, ...payload }) => this.postAsset('/posts', 'image', image, payload),
+      createVideo: ({ video, ...payload }) => this.postAsset('/posts', 'video', video, payload),
       update: ({ id, content }) => this.put(`/posts/${id}`, { content }),
       delete: (id) => this.delete(`/posts/${id}`),
       search: (query) => this.get(`/posts?content_contains=${query}&_limit=${pageSize}`),

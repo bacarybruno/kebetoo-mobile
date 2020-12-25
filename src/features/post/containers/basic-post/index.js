@@ -11,6 +11,7 @@ import { PlaceholderAvatar } from '@app/shared/components/placeholders/posts'
 import Reactions from '@app/features/post/containers/reactions'
 import AudioContent from '@app/features/post/components/audio-content'
 import ImageContent from '@app/features/post/components/image-content'
+import VideoContent from '@app/features/post/components/video-content'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { edgeInsets } from '@app/theme'
@@ -27,6 +28,7 @@ export const POST_TYPES = {
   IMAGE: 'image',
   TEXT: 'text',
   REPOST: 'repost',
+  VIDEO: 'video',
 }
 
 export const getPostType = (post) => {
@@ -38,6 +40,9 @@ export const getPostType = (post) => {
   }
   if (post.image && post.image.url) {
     return POST_TYPES.IMAGE
+  }
+  if (post.video && post.video.url) {
+    return POST_TYPES.VIDEO
   }
   if (post.content && post.content.length > 0) {
     return POST_TYPES.TEXT
@@ -143,6 +148,16 @@ export const Content = ({ post, ...otherProps }) => {
           {...otherProps}
         />
       )
+    case POST_TYPES.VIDEO:
+      return (
+        <VideoContent
+          content={post.content}
+          videoName={post.video.name}
+          videoUrl={post.video.url}
+          localFileUri={post.localFileUri}
+          {...otherProps}
+        />
+      )
     case POST_TYPES.IMAGE:
       return <ImageContent content={post.content} url={post.image.url} {...otherProps} />
     case POST_TYPES.REPOST:
@@ -199,5 +214,6 @@ export const propsAreEqual = (prevProps, nextProps) => (
   && prevProps.author && nextProps.author
   && prevProps.author.id === nextProps.author.id
   && prevProps.post.comments.length === nextProps.post.comments.length
+  && prevProps.post.localFileUri === nextProps.post.localFileUri
 )
 export default React.memo(BasicPost, propsAreEqual)
