@@ -6,6 +6,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import ActionButton from 'react-native-action-button'
+import Snackbar from 'react-native-snackbar'
 
 import { api } from '@app/shared/services'
 import {
@@ -114,7 +115,7 @@ const ManagePostsPage = ({ route, navigation }) => {
       />
       <Badge text={section.data.length} />
     </View>
-  ), [])
+  ), [styles.sectionHeader])
 
   const onPostEdited = useCallback((editedPost) => {
     if (editedPost) {
@@ -136,8 +137,12 @@ const ManagePostsPage = ({ route, navigation }) => {
 
   const confirmDeletePost = useCallback(async (id) => {
     if (id) {
-      await api.deletePost(id)
+      await api.posts.delete(id)
       setPosts((value) => value.filter((v) => v.id !== id))
+      Snackbar.show({
+        text: strings.create_post.post_deleted,
+        duration: Snackbar.LENGTH_SHORT,
+      })
     }
   }, [])
 

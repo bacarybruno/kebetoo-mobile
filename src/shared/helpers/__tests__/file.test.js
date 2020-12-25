@@ -5,6 +5,7 @@ it('is defined', () => {
   expect(file.getFileName).toBeDefined()
   expect(file.getMediaType).toBeDefined()
   expect(file.getMimeType).toBeDefined()
+  expect(file.isVideo).toBeDefined()
   expect(file.mimeTypes).toBeDefined()
 })
 
@@ -43,4 +44,13 @@ test('getExtension', () => {
   expect(file.getExtension('test/file.jpg')).toBe('jpg')
   expect(file.getExtension('test/test/file.mp3')).toBe('mp3')
   expect(file.getExtension('//file.opus')).toBe('opus')
+})
+
+test('isVideo', () => {
+  expect(file.isVideo()).toBe(false)
+  expect(file.isVideo('file')).toBe(false)
+  expect(file.isVideo(null)).toBe(false)
+  expect(file.isVideo(false)).toBe(false)
+  expect(file.isVideo('file.mp4mp4')).toBe(false)
+  expect(file.isVideo('file.mp4')).toBe(true)
 })

@@ -106,6 +106,7 @@ const locales = Object.freeze({
     edit_photo: 'Edit Photo',
     post_created: 'Your post has successfully been created!',
     post_edited: 'Your post has successfully beed edited!',
+    post_deleted: 'Your post has successfully beed deleted!',
     show_post_created: 'Show',
   },
   reactions: {
