@@ -8833,3 +8833,2304 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
   </View>
 </View>
 `;
+
+exports[`renders component [video]: renders BasicPost 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                Object {
+                  "height": 35,
+                  "width": 35,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "borderRadius": 17.5,
+                  },
+                  undefined,
+                  Object {
+                    "backgroundColor": "#9575cd",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(255, 255, 255, 255)",
+                    "fontFamily": "System",
+                    "fontSize": undefined,
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                J
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          John Doe
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            in 6 months
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Edited
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
+        ]
+      }
+    >
+      Record
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "aspectRatio": 1,
+            "borderRadius": 5,
+            "elevation": 1,
+            "flex": 1,
+            "shadowColor": "rgba(0, 0, 0, 255)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
+            },
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          }
+        }
+      >
+        <Image
+          fadeDuration={0}
+          resizeMode="cover"
+          source={
+            Object {
+              "uri": "http://localhost:4569/local-bucket/thumbnails/VID_20201225_6059_0938913cfc.png",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 5,
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": "100%",
+              "justifyContent": "center",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                "borderColor": "rgba(229, 229, 234, 255)",
+                "borderRadius": 35,
+                "borderWidth": 0.5,
+                "height": 70,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingLeft": 5,
+                "width": 70,
+                "zIndex": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 45,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="ionicon-ios-play"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                  "borderColor": "rgba(229, 229, 234, 255)",
+                  "bottom": 10,
+                  "position": "absolute",
+                  "right": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              0:06
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="like-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-like"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="dislike-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-dislike"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="comment-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-comment"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="share-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-share"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [video]: renders BasicPost with no author 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#efefef",
+            "borderRadius": 17.5,
+            "height": 35,
+            "width": 35,
+          },
+          Object {
+            "backgroundColor": undefined,
+            "marginRight": 10,
+          },
+          Object {
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dfdfdf",
+            "height": "100%",
+            "opacity": 0.5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 35,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "50%",
+              },
+              Object {
+                "backgroundColor": undefined,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 2.5,
+                "height": 10,
+                "marginBottom": 10,
+                "width": "30%",
+              },
+              Object {
+                "backgroundColor": undefined,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#efefef",
+              "borderRadius": 13,
+              "height": 52,
+              "marginBottom": 52,
+              "width": "100%",
+            },
+            Object {
+              "backgroundColor": undefined,
+              "borderRadius": 5,
+              "marginBottom": 8,
+            },
+            Object {
+              "overflow": "hidden",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dfdfdf",
+              "height": "100%",
+              "opacity": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 30,
+        },
+        Object {
+          "flexDirection": "row",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "backgroundColor": undefined,
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "backgroundColor": undefined,
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "backgroundColor": undefined,
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#efefef",
+                "borderRadius": 5,
+                "height": 20,
+                "marginBottom": 20,
+                "width": "15%",
+              },
+              Object {
+                "backgroundColor": undefined,
+                "marginRight": 10,
+              },
+              Object {
+                "overflow": "hidden",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dfdfdf",
+                "height": "100%",
+                "opacity": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      Object {
+        "marginBottom": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                Object {
+                  "height": 24,
+                  "width": 24,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "borderRadius": 12,
+                  },
+                  undefined,
+                  Object {
+                    "backgroundColor": "#9575cd",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(255, 255, 255, 255)",
+                    "fontFamily": "System",
+                    "fontSize": undefined,
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                J
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 24,
+            },
+            Object {
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          John Doe
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
+        ]
+      }
+    >
+      Record
+    </Text>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "aspectRatio": 1,
+            "borderRadius": 5,
+            "elevation": 1,
+            "flex": 1,
+            "shadowColor": "rgba(0, 0, 0, 255)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
+            },
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          }
+        }
+      >
+        <Image
+          fadeDuration={0}
+          resizeMode="cover"
+          source={
+            Object {
+              "uri": "http://localhost:4569/local-bucket/thumbnails/VID_20201225_6059_0938913cfc.png",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 5,
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": "100%",
+              "justifyContent": "center",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                "borderColor": "rgba(229, 229, 234, 255)",
+                "borderRadius": 35,
+                "borderWidth": 0.5,
+                "height": 70,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingLeft": 5,
+                "width": 70,
+                "zIndex": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 45,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="ionicon-ios-play"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                  "borderColor": "rgba(229, 229, 234, 255)",
+                  "bottom": 10,
+                  "position": "absolute",
+                  "right": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              0:06
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="like-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-like"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="dislike-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-dislike"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="comment-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-comment"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 10,
+            "left": 5,
+            "right": 5,
+            "top": 10,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginRight": 15,
+            "minWidth": 35,
+            "opacity": 1,
+          }
+        }
+        testID="share-button"
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "icomoon",
+              "fontSize": 18,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "marginRight": 4,
+            }
+          }
+          text="kebeticon-share"
+        />
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "700",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders component [video]: renders BasicPost without reactions 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 30,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 8,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                Object {
+                  "height": 35,
+                  "width": 35,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                    "borderRadius": 15,
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "borderRadius": 17.5,
+                  },
+                  undefined,
+                  Object {
+                    "backgroundColor": "#9575cd",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(255, 255, 255, 255)",
+                    "fontFamily": "System",
+                    "fontSize": undefined,
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                J
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "space-between",
+              "marginLeft": 5,
+            },
+            Object {
+              "height": 35,
+            },
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          John Doe
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            in 6 months
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Edited
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+             • 
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              New
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginBottom": 8,
+            },
+          ],
+        ]
+      }
+    >
+      Record
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "aspectRatio": 1,
+            "borderRadius": 5,
+            "elevation": 1,
+            "flex": 1,
+            "shadowColor": "rgba(0, 0, 0, 255)",
+            "shadowOffset": Object {
+              "x": 0,
+              "y": 0,
+            },
+            "shadowOpacity": 0.18,
+            "shadowRadius": 1,
+          }
+        }
+      >
+        <Image
+          fadeDuration={0}
+          resizeMode="cover"
+          source={
+            Object {
+              "uri": "http://localhost:4569/local-bucket/thumbnails/VID_20201225_6059_0938913cfc.png",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 5,
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": "100%",
+              "justifyContent": "center",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                "borderColor": "rgba(229, 229, 234, 255)",
+                "borderRadius": 35,
+                "borderWidth": 0.5,
+                "height": 70,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingLeft": 5,
+                "width": 70,
+                "zIndex": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 45,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="ionicon-ios-play"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 3,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                  "borderColor": "rgba(229, 229, 234, 255)",
+                  "bottom": 10,
+                  "position": "absolute",
+                  "right": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              0:06
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

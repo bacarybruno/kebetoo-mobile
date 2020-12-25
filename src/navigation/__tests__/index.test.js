@@ -60,8 +60,8 @@ describe('app navigation', () => {
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
-  it('has 7 pages for authenticated users', () => {
-    expect(loggedInPages.length).toBe(7)
+  it('has 8 pages for authenticated users', () => {
+    expect(loggedInPages.length).toBe(8)
   })
 
   it('has 1 page for unauthenticated users', () => {

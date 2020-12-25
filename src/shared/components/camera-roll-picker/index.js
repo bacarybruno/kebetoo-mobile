@@ -133,6 +133,7 @@ const CameraRollPicker = ({ navigation }) => {
 
   const viewport = metrics.screenHeight - headerHeight
   const [modalPosition] = useState(new Animated.Value(-viewport))
+  const [includeFields] = useState(['playableDuration'])
 
   useEffect(() => {
     const title = headerTitles[assetType]
@@ -184,7 +185,11 @@ const CameraRollPicker = ({ navigation }) => {
         let payload = {}
         if (isVideo(item.uri)) {
           // videos does not need image crop picker
-          payload = { uri: item.uri, type: getMimeType(item.uri) }
+          payload = {
+            uri: item.uri,
+            type: getMimeType(item.uri),
+            duration: item.playableDuration,
+          }
         } else {
           const croppedImage = await ImageCropPicker.openCropper({
             path: item.uri,
@@ -207,12 +212,16 @@ const CameraRollPicker = ({ navigation }) => {
       [AssetTypes.All]: 'any',
     }
     try {
-      const croppedImage = await ImageCropPicker.openCamera({
+      const videoRecord = await ImageCropPicker.openCamera({
         cropping: assetType === AssetTypes.Photos,
         mediaType: mediaTypes[assetType],
         ...cropperThemeOptions,
       })
-      onSubmit({ uri: croppedImage.path, type: croppedImage.mime })
+      onSubmit({
+        uri: videoRecord.path,
+        type: videoRecord.mime,
+        duration: videoRecord.duration / 1000,
+      })
       navigation.goBack()
     } catch (error) {
       console.log(error)
@@ -261,6 +270,14 @@ const CameraRollPicker = ({ navigation }) => {
     />
   ), [colors.primary])
 
+  const VideoMarker = useMemo(() => (
+    <Ionicon
+      name={Platform.select({ android: 'md-videocam', ios: 'md-videocam' })}
+      size={15}
+      color={iosColors.secondarySystemBackground.light}
+    />
+  ), [])
+
   const renderFABIcon = useCallback(() => {
     const icons = {
       [AssetTypes.Videos]: { name: 'ios-videocam', size: 30 },
@@ -290,6 +307,8 @@ const CameraRollPicker = ({ navigation }) => {
           emptyText={strings.create_post.album_empty}
           emptyTextStyle={styles.emptyText}
           selectedMarker={SelectedMarker}
+          videoMarker={VideoMarker}
+          include={includeFields}
         />
         <Animated.View style={[styles.modal, { marginTop: modalPosition, height: viewport }]}>
           <Albums previews={previews} onSelect={onSelectAlbum} />

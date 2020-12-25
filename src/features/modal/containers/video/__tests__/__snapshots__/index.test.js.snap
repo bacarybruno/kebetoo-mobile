@@ -1,0 +1,491 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders VideoModal 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#000",
+        "flex": 1,
+        "justifyContent": "space-between",
+        "overflow": "hidden",
+      },
+      Object {},
+    ]
+  }
+>
+  <Video
+    controlAnimationTiming={500}
+    controlTimeout={5000}
+    disableVolume={true}
+    doubleTapTime={200}
+    isFullscreen={false}
+    muted={false}
+    navigator={
+      Object {
+        "goBack": [MockFunction],
+        "setOptions": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "cardStyleInterpolator": [Function],
+                "gestureDirection": "horizontal",
+                "headerShown": false,
+                "headerStyleInterpolator": [Function],
+                "headerTransparent": true,
+                "title": "",
+                "transitionSpec": Object {
+                  "close": Object {
+                    "animation": "timing",
+                    "config": Object {
+                      "duration": 400,
+                      "easing": [Function],
+                    },
+                  },
+                  "open": Object {
+                    "animation": "timing",
+                    "config": Object {
+                      "duration": 400,
+                      "easing": [Function],
+                    },
+                  },
+                },
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
+    onBack={[Function]}
+    onEnd={[Function]}
+    onError={[Function]}
+    onHideControls={[Function]}
+    onLoad={[Function]}
+    onLoadStart={[Function]}
+    onProgress={[Function]}
+    onSeek={[Function]}
+    onShowControls={[Function]}
+    paused={false}
+    playInBackground={false}
+    playWhenInactive={false}
+    poster="jest://fake-video-poster.png"
+    rate={1}
+    repeat={true}
+    resizeMode="contain"
+    seekColor="rgba(0, 122, 255, 255)"
+    showOnStart={false}
+    source={
+      Object {
+        "uri": "jest://fake-video.mp4",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {},
+      ]
+    }
+    title=""
+    toggleResizeModeOnFullscreen={true}
+    volume={1}
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flex": 1,
+        "justifyContent": "flex-start",
+        "marginTop": 0,
+        "opacity": 0,
+      }
+    }
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "column",
+            "height": null,
+            "justifyContent": "space-between",
+            "width": null,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../react-native-video-controls/assets/img/top-vignette.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            Array [
+              Object {
+                "resizeMode": "stretch",
+              },
+            ],
+          ]
+        }
+      />
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "margin": 12,
+            "marginBottom": 18,
+            "width": null,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "padding": 16,
+              },
+              Object {},
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../react-native-video-controls/assets/img/back.png",
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+              ]
+            }
+          />
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../react-native-video-controls/assets/img/expand.png",
+                }
+              }
+            />
+          </View>
+        </View>
+      </RCTSafeAreaView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flex": 2,
+        "justifyContent": "flex-end",
+        "marginBottom": 0,
+        "opacity": 0,
+      }
+    }
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "column",
+            "height": null,
+            "justifyContent": "space-between",
+            "width": null,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../react-native-video-controls/assets/img/bottom-vignette.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            Array [
+              Object {
+                "resizeMode": "stretch",
+              },
+            ],
+          ]
+        }
+      />
+      <View
+        collapsable={false}
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "height": 28,
+            "marginLeft": 20,
+            "marginRight": 20,
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "backgroundColor": "#333",
+              "height": 1,
+              "position": "relative",
+              "top": 14,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFF",
+                  "height": 1,
+                  "width": "100%",
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                  "width": 0,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          pointerEvents="none"
+          style={
+            Array [
+              Object {
+                "height": 28,
+                "marginLeft": -7,
+                "position": "absolute",
+                "width": 28,
+              },
+              Object {
+                "left": 0,
+              },
+            ]
+          }
+        >
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "borderRadius": 12,
+                  "height": 12,
+                  "left": 8,
+                  "position": "relative",
+                  "top": 8,
+                  "width": 12,
+                },
+                Object {
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "justifyContent": "space-between",
+              "marginBottom": 0,
+              "marginLeft": 12,
+              "marginRight": 12,
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "padding": 16,
+              },
+              Object {
+                "position": "relative",
+                "width": 80,
+                "zIndex": 0,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../react-native-video-controls/assets/img/pause.png",
+              }
+            }
+          />
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "padding": 16,
+              },
+              Object {
+                "width": 80,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#FFF",
+                "fontSize": 11,
+                "textAlign": "right",
+              }
+            }
+          >
+            -00:00
+          </Text>
+        </View>
+      </RCTSafeAreaView>
+    </View>
+  </View>
+</View>
+`;

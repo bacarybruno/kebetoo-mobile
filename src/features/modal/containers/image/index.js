@@ -60,7 +60,6 @@ const ImageModal = ({ route, navigation }) => {
 
   useEffect(() => {
     return () => {
-      showControls()
       StatusBar.setBarStyle(colors.colorScheme === 'dark' ? 'light-content' : 'dark-content')
       StatusBar.setBackgroundColor(colors.background)
       StatusBar.setHidden(false)

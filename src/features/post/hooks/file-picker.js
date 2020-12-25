@@ -77,9 +77,7 @@ const useFilePicker = (uri) => {
         video: {
           uri: file.uri.replace('file://', ''),
           mimeType: file.type,
-          // TODO: for video, save video duration in file name
-          // to be able to extract that metadata (playableDuration)
-          name: constructFileName(time, 'VID', 10),
+          name: constructFileName(time, 'VID', file.duration),
         },
         repost,
       })

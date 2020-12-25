@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android:dev": "react-native run-android",
-    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337",
+    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337 && adb reverse tcp:4569 tcp:4569",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
     "start": "react-native start --port=1148",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.6.0",
-    "@kebetoo/camera-roll-picker": "^1.0.3",
+    "@kebetoo/camera-roll-picker": "^1.0.5",
     "@react-native-community/async-storage": "^1.9.0",
     "@react-native-community/audio-toolkit": "^2.0.3",
     "@react-native-community/cameraroll": "^4.0.1",
@@ -61,6 +61,8 @@
     "react-native-typography": "^1.4.1",
     "react-native-ui-lib": "^5.14.0",
     "react-native-vector-icons": "6.6.0",
+    "react-native-video": "^5.1.0-alpha8",
+    "react-native-video-controls": "^2.7.1",
     "react-native-view-more-text": "^2.1.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",

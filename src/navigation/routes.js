@@ -14,6 +14,7 @@ const routes = {
   COMMENTS: 'route:comments',
   MANAGE_POSTS: 'route:manage_posts',
   MODAL_IMAGE: 'route:modal_image',
+  MODAL_VIDEO: 'route:modal_video',
   USER_PROFILE: 'route:user_profile',
   SEARCH_POSTS: 'tab:search_posts',
   SEARCH_USERS: 'tab:search_users',
