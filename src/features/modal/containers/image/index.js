@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { View, Image, StatusBar } from 'react-native'
+import React, { useCallback, useEffect, useState } from 'react'
+import {
+  View, Image, StatusBar, TouchableWithoutFeedback,
+} from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
+import changeNavigationBarColor from 'react-native-navigation-bar-color'
 
 import { metrics } from '@app/theme'
 import { HeaderBack } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { rgbaToHex } from '@app/theme/colors'
 
 import createThemedStyles from './styles'
 
@@ -25,11 +29,44 @@ const ImageModal = ({ route, navigation }) => {
   const colors = useAppColors()
   navigation.setOptions(routeOptions(colors))
 
-  const { params } = route
-  const { source, width, height } = params
-  const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
+  const [controlsHidden, setControlsHidden] = useState(true)
 
+  const { source, width, height } = route.params
+  const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
   source.uri = isGoogleImageUrl(source.uri) ? source.uri.replace('s96-c', 's400-c') : source.uri
+
+  const showControls = useCallback(() => {
+    StatusBar.setBarStyle('light-content', true)
+  }, [])
+
+  const hideControls = useCallback(() => {
+    StatusBar.setBackgroundColor(colors.black)
+    StatusBar.setBarStyle('dark-content', true)
+    changeNavigationBarColor(rgbaToHex(colors.black))
+  }, [colors.black])
+
+  const onShowControls = useCallback(() => {
+    if (controlsHidden) {
+      showControls()
+    } else {
+      hideControls()
+    }
+    setControlsHidden((state) => !state)
+  }, [controlsHidden, hideControls, showControls])
+
+  useEffect(() => {
+    hideControls()
+  }, [hideControls])
+
+  useEffect(() => {
+    return () => {
+      showControls()
+      StatusBar.setBarStyle(colors.colorScheme === 'dark' ? 'light-content' : 'dark-content')
+      StatusBar.setBackgroundColor(colors.background)
+      StatusBar.setHidden(false)
+      changeNavigationBarColor(rgbaToHex(colors.background))
+    }
+  }, [])
 
   useEffect(() => {
     if (Number.isNaN(aspectRatio)) {
@@ -44,15 +81,14 @@ const ImageModal = ({ route, navigation }) => {
   }, [aspectRatio, source.uri])
 
   return (
-    <>
-      <StatusBar barStyle="light-content" />
+    <TouchableWithoutFeedback onPress={onShowControls} testID="pressable">
       <View style={styles.wrapper}>
         <Image
           source={source}
           style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
         />
       </View>
-    </>
+    </TouchableWithoutFeedback>
   )
 }
 
