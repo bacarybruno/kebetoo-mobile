@@ -41,4 +41,8 @@ export default (colors) => StyleSheet.create({
     bottom: 10,
     right: 10,
   },
+  defaultVideo: {
+    width: 0,
+    height: 0,
+  },
 })
