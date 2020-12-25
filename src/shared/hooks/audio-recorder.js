@@ -16,7 +16,7 @@ LogBox.ignoreLogs([
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'PTT.mp4'
+export const RECORD_NAME = 'PTT.m4a'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 20000,
   sampleRate: 16000,
@@ -24,6 +24,7 @@ export const RECORD_CONFIG = Object.freeze({
   quality: 'min',
 })
 export const constructFileName = (time, duration) => (
+  // TODO: check if it's necessary to have unique file names
   `PTT-${time}-${duration}`
 )
 export const extractMetadataFromName = (name) => {

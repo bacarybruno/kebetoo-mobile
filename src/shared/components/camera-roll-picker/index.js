@@ -17,6 +17,7 @@ import { elevation, metrics } from '@app/theme'
 import { strings } from '@app/config'
 import { rgbaToHex } from '@app/theme/colors'
 import iosColors from '@app/theme/ios-colors'
+import { getMimeType, isVideo } from '@app/shared/helpers/file'
 
 import createThemedStyles from './styles'
 import HeaderBack from '../header-back'
@@ -180,11 +181,18 @@ const CameraRollPicker = ({ navigation }) => {
     if (maximum === 1) {
       setSelected([])
       try {
-        const croppedImage = await ImageCropPicker.openCropper({
-          path: item.uri,
-          ...cropperThemeOptions,
-        })
-        onSubmit({ uri: croppedImage.path, type: croppedImage.mime })
+        let payload = {}
+        if (isVideo(item.uri)) {
+          // videos does not need image crop picker
+          payload = { uri: item.uri, type: getMimeType(item.uri) }
+        } else {
+          const croppedImage = await ImageCropPicker.openCropper({
+            path: item.uri,
+            ...cropperThemeOptions,
+          })
+          payload = { uri: croppedImage.path, type: croppedImage.mime }
+        }
+        onSubmit(payload)
         navigation.goBack()
       } catch (error) {
         console.log(error)
