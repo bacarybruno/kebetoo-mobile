@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
-import { View } from 'react-native'
+import { View, TouchableWithoutFeedback } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
@@ -20,6 +20,7 @@ import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
 import iosColors from '@app/theme/ios-colors'
+import { VideoMarker } from '@app/shared/components/camera-roll-picker'
 
 import createThemedStyles from './styles'
 
@@ -81,11 +82,27 @@ const Button = ({ name, onPress }) => {
   )
 }
 
-const ImagePreviewer = ({ uri, onDelete }) => {
+const ImagePreviewer = ({ uri, onDelete, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.imagePreviewer}>
-      <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+      <TouchableWithoutFeedback onPress={onPress}>
+        <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+      </TouchableWithoutFeedback>
+    </View>
+  )
+}
+
+const VideoPreviewer = ({ uri, onDelete, onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.imagePreviewer}>
+      <TouchableWithoutFeedback onPress={onPress}>
+        <View>
+          <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+          <VideoMarker style={{ position: 'absolute', left: 10, bottom: 5 }} />
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   )
 }
@@ -211,6 +228,21 @@ const CreatePostPage = ({ route, navigation }) => {
     })
   }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading, styles])
 
+  const openImagePreview = useCallback(() => {
+    navigation.navigate(routes.MODAL_IMAGE, {
+      source: {
+        uri: filePicker.file.uri,
+      },
+    })
+  }, [filePicker.file, navigation])
+
+  const openVideoPreview = useCallback(() => {
+    navigation.navigate(routes.MODAL_VIDEO, {
+      source: filePicker.file.uri,
+      poster: null,
+    })
+  }, [filePicker.file, navigation])
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
@@ -224,8 +256,19 @@ const CreatePostPage = ({ route, navigation }) => {
               style={styles.audioPlayer}
             />
           )}
-          {filePicker.hasFile && (
-            <ImagePreviewer uri={filePicker.file.uri} onDelete={filePicker.reset} />
+          {filePicker.hasFile && filePicker.type === 'image' && (
+            <ImagePreviewer
+              uri={filePicker.file.uri}
+              onDelete={filePicker.reset}
+              onPress={openImagePreview}
+            />
+          )}
+          {filePicker.hasFile && filePicker.type === 'video' && (
+            <VideoPreviewer
+              uri={filePicker.file.uri}
+              onDelete={filePicker.reset}
+              onPress={openVideoPreview}
+            />
           )}
         </View>
         {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && (

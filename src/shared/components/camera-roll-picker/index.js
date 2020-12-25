@@ -104,6 +104,15 @@ const headerTitles = {
   [AssetTypes.All]: strings.create_post.all_videos,
 }
 
+export const VideoMarker = ({ style }) => (
+  <Ionicon
+    name={Platform.select({ android: 'md-videocam', ios: 'md-videocam' })}
+    size={15}
+    color={iosColors.systemGrey4.light}
+    style={style}
+  />
+)
+
 const CameraRollPicker = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const colors = useAppColors()
@@ -270,12 +279,8 @@ const CameraRollPicker = ({ navigation }) => {
     />
   ), [colors.primary])
 
-  const VideoMarker = useMemo(() => (
-    <Ionicon
-      name={Platform.select({ android: 'md-videocam', ios: 'md-videocam' })}
-      size={15}
-      color={iosColors.secondarySystemBackground.light}
-    />
+  const VideoMarkerIcon = useMemo(() => (
+    <VideoMarker />
   ), [])
 
   const renderFABIcon = useCallback(() => {
@@ -307,7 +312,7 @@ const CameraRollPicker = ({ navigation }) => {
           emptyText={strings.create_post.album_empty}
           emptyTextStyle={styles.emptyText}
           selectedMarker={SelectedMarker}
-          videoMarker={VideoMarker}
+          videoMarker={VideoMarkerIcon}
           include={includeFields}
         />
         <Animated.View style={[styles.modal, { marginTop: modalPosition, height: viewport }]}>

@@ -101,6 +101,7 @@ const useFilePicker = (uri) => {
     pickImage,
     pickVideo,
     hasFile: file !== null,
+    type: isVideo(file?.uri) ? 'video' : 'image',
     file,
     reset,
     savePost,
