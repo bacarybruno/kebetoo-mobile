@@ -122,7 +122,7 @@ const CreatePostPage = ({ route, navigation }) => {
   const shareMode = params && params.action === actionTypes.SHARE
   const mediaType = getMediaType(params && params.sharedFile)
   const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
-  const filePicker = useFilePicker(mediaType === 'image' ? params.sharedFile : undefined)
+  const filePicker = useFilePicker(['image', 'video'].includes(mediaType) ? params.sharedFile : undefined)
   const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
   const [text, setText] = useState((value) => value || payload)
 
