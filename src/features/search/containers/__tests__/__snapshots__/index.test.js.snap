@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders SearchPage 1`] = `
+exports[`renders SearchPage for posts 1`] = `
 <View
   style={
     Object {
@@ -175,820 +175,1273 @@ exports[`renders SearchPage 1`] = `
     </View>
   </View>
   <View
-    onLayout={[Function]}
     style={
       Array [
         Object {
+          "backgroundColor": "#F5F5F5",
+          "elevation": 1,
           "flex": 1,
-          "overflow": "hidden",
+          "flexDirection": "row",
+          "height": 40,
+          "maxHeight": 40,
+          "shadowColor": "rgba(0, 0, 0, 255)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "shadowOpacity": 0.18,
+          "shadowRadius": 1,
         },
-        undefined,
+        Object {
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+        },
+        Object {
+          "marginHorizontal": 16,
+        },
+      ]
+    }
+    testID="segmented-control"
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 122, 255, 255)",
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+          "elevation": 4,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 24,
+          "shadowColor": "rgba(0, 0, 0, 255)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "shadowOpacity": 0.23,
+          "shadowRadius": 2.62,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
+            },
+            Array [
+              Object {
+                "color": "rgba(255, 255, 255, 255)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        Posts
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
+            },
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.38)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        Users
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListHeaderComponent={[Function]}
+      contentContainerStyle={
+        Object {
+          "paddingBottom": 30,
+        }
+      }
+      data={
+        Array [
+          "first post",
+          "covid19",
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={true}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                },
+                Object {
+                  "paddingHorizontal": 16,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 18,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginRight": 8,
+                  }
+                }
+                text="ionicon-md-time"
+              />
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                        "marginVertical": 18.46153846153846,
+                      },
+                    ],
+                  ]
+                }
+              >
+                Recent searches
+              </Text>
+            </View>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                        "marginVertical": 18.46153846153846,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0, 122, 255, 255)",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Clear all
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "height": "100%",
+                "justifyContent": "center",
+                "paddingHorizontal": 16,
+              }
+            }
+            testID="history-item"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(229, 229, 234, 255)",
+                  "borderBottomWidth": 1,
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "600",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                first post
+              </Text>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 50,
+                    "left": 50,
+                    "right": 50,
+                    "top": 50,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 11,
+                    "height": 22,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 22,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 25,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-ios-close"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "height": "100%",
+                "justifyContent": "center",
+                "paddingHorizontal": 16,
+              }
+            }
+            testID="history-item"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(229, 229, 234, 255)",
+                  "borderBottomWidth": 1,
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "600",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                covid19
+              </Text>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 50,
+                    "left": 50,
+                    "right": 50,
+                    "top": 50,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 11,
+                    "height": 22,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 22,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 25,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-ios-close"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`renders SearchPage for users 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 255)",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        Object {
+          "marginHorizontal": 16,
+        },
       ]
     }
   >
     <View
-      onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "backgroundColor": "#2196f3",
-            "elevation": 4,
-            "shadowColor": "black",
-            "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
-            },
-            "shadowOpacity": 0.1,
-            "shadowRadius": 0.5,
-            "zIndex": 1,
-          },
-          Array [
-            Object {
-              "backgroundColor": "rgb(255, 255, 255)",
-            },
-            Object {
-              "backgroundColor": "rgba(255, 255, 255, 255)",
-            },
-          ],
-        ]
+        Object {
+          "flex": 8,
+        }
       }
     >
       <View
-        pointerEvents="none"
         style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            null,
-            null,
-            undefined,
-          ]
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
         }
       >
-        <View
+        <Text
           style={
             Array [
               Object {
-                "backgroundColor": "#ffeb3b",
-                "bottom": 0,
-                "height": 2,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 22,
+                "fontWeight": "400",
+                "letterSpacing": 0.34375,
+                "lineHeight": 28,
               },
-              Object {
-                "width": "50%",
-              },
-              Object {
-                "left": "0%",
-              },
-              null,
+              false,
+              false,
+              false,
               Array [
                 Object {
-                  "backgroundColor": "rgb(0, 122, 255)",
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
             ]
           }
+        >
+          Search
+        </Text>
+        <ActivityIndicator
+          animating={false}
+          color="rgba(0, 122, 255, 255)"
+          hidesWhenStopped={true}
+          size="small"
+          style={
+            Object {
+              "marginLeft": 8,
+            }
+          }
         />
       </View>
-      <View
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      hitSlop={
+        Object {
+          "bottom": 15,
+          "left": 15,
+          "right": 15,
+          "top": 15,
+        }
+      }
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginRight": 10,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
         style={
           Object {
-            "overflow": "scroll",
+            "color": "rgba(0,0,0,0.87)",
+            "fontFamily": "Ionicons",
+            "fontSize": 23,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
           }
         }
+        text="ionicon-ios-search"
+      />
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 30,
+            },
+            undefined,
+            undefined,
+          ]
+        }
       >
-        <RCTScrollView
-          accessibilityRole="tablist"
-          alwaysBounceHorizontal={false}
-          automaticallyAdjustContentInsets={false}
-          contentContainerStyle={
+        <Image
+          source={
+            Object {
+              "uri": "https://avatars1.githubusercontent.com/u/14147533",
+            }
+          }
+          style={
             Array [
               Object {
-                "flexDirection": "row",
-                "flexWrap": "nowrap",
-              },
-              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 15,
                 "flex": 1,
+                "justifyContent": "center",
               },
               undefined,
             ]
           }
-          forwardedRef={[Function]}
-          horizontal={true}
-          keyboardShouldPersistTaps="handled"
-          overScrollMode="never"
-          scrollEventThrottle={16}
-          scrollsToTop={false}
-          showsHorizontalScrollIndicator={false}
-        >
-          <View>
-            <View
-              accessibilityRole="tab"
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "flex": 1,
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                pointerEvents="none"
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "justifyContent": "center",
-                      "minHeight": 48,
-                      "padding": 10,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View>
-                  <View
-                    style={
-                      Object {
-                        "opacity": undefined,
-                      }
-                    }
-                  >
-                    <Text
-                      allowFontScaling={true}
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontSize": 13,
-                            "margin": 4,
-                            "textAlign": "center",
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "rgba(0,0,0,0.38)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontSize": 13,
-                            "fontWeight": "700",
-                            "letterSpacing": -0.078,
-                            "lineHeight": 18,
-                          },
-                        ]
-                      }
-                    >
-                      Posts
-                    </Text>
-                  </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                        },
-                        Object {
-                          "opacity": undefined,
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      allowFontScaling={true}
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontSize": 13,
-                            "margin": 4,
-                            "textAlign": "center",
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "rgba(0, 122, 255, 255)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontSize": 13,
-                            "fontWeight": "700",
-                            "letterSpacing": -0.078,
-                            "lineHeight": 18,
-                          },
-                        ]
-                      }
-                    >
-                      Posts
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View
-              accessibilityRole="tab"
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "flex": 1,
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                pointerEvents="none"
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "justifyContent": "center",
-                      "minHeight": 48,
-                      "padding": 10,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View>
-                  <View
-                    style={
-                      Object {
-                        "opacity": undefined,
-                      }
-                    }
-                  >
-                    <Text
-                      allowFontScaling={true}
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontSize": 13,
-                            "margin": 4,
-                            "textAlign": "center",
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "rgba(0,0,0,0.38)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontSize": 13,
-                            "fontWeight": "700",
-                            "letterSpacing": -0.078,
-                            "lineHeight": 18,
-                          },
-                        ]
-                      }
-                    >
-                      Users
-                    </Text>
-                  </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                        },
-                        Object {
-                          "opacity": undefined,
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      allowFontScaling={true}
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontSize": 13,
-                            "margin": 4,
-                            "textAlign": "center",
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "rgba(0, 122, 255, 255)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontSize": 13,
-                            "fontWeight": "700",
-                            "letterSpacing": -0.078,
-                            "lineHeight": 18,
-                          },
-                        ]
-                      }
-                    >
-                      Users
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
-        </RCTScrollView>
+          testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+        />
       </View>
     </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-      removeClippedSubviews={false}
-      style={
-        Array [
-          Object {
-            "flex": 1,
-            "flexDirection": "row",
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F5F5F5",
+          "elevation": 1,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 40,
+          "maxHeight": 40,
+          "shadowColor": "rgba(0, 0, 0, 255)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 0,
           },
-          null,
-        ]
+          "shadowOpacity": 0.18,
+          "shadowRadius": 1,
+        },
+        Object {
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+        },
+        Object {
+          "marginHorizontal": 16,
+        },
+      ]
+    }
+    testID="segmented-control"
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+        }
       }
     >
-      <View
-        accessibilityElementsHidden={false}
-        importantForAccessibility="auto"
+      <Text
+        numberOfLines={1}
         style={
           Array [
             Object {
-              "flex": 1,
-              "overflow": "hidden",
-            },
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
             },
             Array [
               Object {
-                "backgroundColor": "rgb(242, 242, 242)",
+                "color": "rgba(0,0,0,0.38)",
               },
               Object {
-                "backgroundColor": "rgba(255, 255, 255, 255)",
-                "flex": 1,
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "700",
               },
+              undefined,
             ],
           ]
         }
       >
-        <View
-          style={
-            Object {
-              "backgroundColor": "rgba(255, 255, 255, 255)",
-              "flex": 1,
-            }
-          }
-        >
-          <RCTScrollView
-            ListHeaderComponent={[Function]}
-            contentContainerStyle={
-              Object {
-                "paddingBottom": 30,
-              }
-            }
-            data={
-              Array [
-                "first post",
-                "covid19",
-              ]
-            }
-            disableVirtualization={false}
-            getItem={[Function]}
-            getItemCount={[Function]}
-            horizontal={false}
-            initialNumToRender={10}
-            keyExtractor={[Function]}
-            maxToRenderPerBatch={10}
-            onContentSizeChange={[Function]}
-            onEndReachedThreshold={2}
-            onLayout={[Function]}
-            onMomentumScrollEnd={[Function]}
-            onScroll={[Function]}
-            onScrollBeginDrag={[Function]}
-            onScrollEndDrag={[Function]}
-            removeClippedSubviews={true}
-            renderItem={[Function]}
-            scrollEventThrottle={50}
-            stickyHeaderIndices={Array []}
-            updateCellsBatchingPeriod={50}
-            viewabilityConfigCallbackPairs={Array []}
-            windowSize={21}
-          >
-            <View>
-              <View
-                onLayout={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flexDirection": "row",
-                        "justifyContent": "space-between",
-                      },
-                      Object {
-                        "paddingHorizontal": 16,
-                      },
-                    ]
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                      }
-                    }
-                  >
-                    <Text
-                      allowFontScaling={false}
-                      style={
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                          "fontFamily": "Ionicons",
-                          "fontSize": 18,
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                          "marginRight": 8,
-                        }
-                      }
-                      text="ionicon-md-time"
-                    />
-                    <Text
-                      style={
-                        Array [
-                          false,
-                          false,
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.24,
-                            "lineHeight": 20,
-                          },
-                          false,
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "rgba(0,0,0,0.87)",
-                              "fontFamily": "System",
-                              "fontWeight": "600",
-                              "marginVertical": 18.46153846153846,
-                            },
-                          ],
-                        ]
-                      }
-                    >
-                      Recent searches
-                    </Text>
-                  </View>
-                  <Text
-                    onPress={[Function]}
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 16,
-                          "fontWeight": "400",
-                          "letterSpacing": -0.32,
-                          "lineHeight": 21,
-                        },
-                        Array [
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
-                            "backgroundColor": "transparent",
-                            "fontFamily": "System",
-                            "fontWeight": "400",
-                          },
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "rgba(0,0,0,0.87)",
-                              "fontFamily": "System",
-                              "fontWeight": "600",
-                              "marginVertical": 18.46153846153846,
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "rgba(0, 122, 255, 255)",
-                              "fontFamily": "System",
-                              "fontWeight": "700",
-                            },
-                          ],
-                        ],
-                      ]
-                    }
-                  >
-                    Clear all
-                  </Text>
-                </View>
-              </View>
-              <View
-                onLayout={[Function]}
-                style={null}
-              >
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "flex": 1,
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "paddingHorizontal": 16,
-                    }
-                  }
-                  testID="history-item"
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "borderBottomColor": "rgba(229, 229, 234, 255)",
-                        "borderBottomWidth": 1,
-                        "flexDirection": "row",
-                        "height": 50,
-                        "justifyContent": "space-between",
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          false,
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 17,
-                            "fontWeight": "600",
-                            "letterSpacing": -0.408,
-                            "lineHeight": 22,
-                          },
-                          false,
-                          false,
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                      first post
-                    </Text>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      hitSlop={
-                        Object {
-                          "bottom": 50,
-                          "left": 50,
-                          "right": 50,
-                          "top": 50,
-                        }
-                      }
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "#F5F5F5",
-                          "borderRadius": 11,
-                          "height": 22,
-                          "justifyContent": "center",
-                          "opacity": 1,
-                          "width": 22,
-                        }
-                      }
-                    >
-                      <Text
-                        allowFontScaling={false}
-                        style={
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                            "fontFamily": "Ionicons",
-                            "fontSize": 25,
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          }
-                        }
-                        text="ionicon-ios-close"
-                      />
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                onLayout={[Function]}
-                style={null}
-              >
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "flex": 1,
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "paddingHorizontal": 16,
-                    }
-                  }
-                  testID="history-item"
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "borderBottomColor": "rgba(229, 229, 234, 255)",
-                        "borderBottomWidth": 1,
-                        "flexDirection": "row",
-                        "height": 50,
-                        "justifyContent": "space-between",
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          false,
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 17,
-                            "fontWeight": "600",
-                            "letterSpacing": -0.408,
-                            "lineHeight": 22,
-                          },
-                          false,
-                          false,
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                      covid19
-                    </Text>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      hitSlop={
-                        Object {
-                          "bottom": 50,
-                          "left": 50,
-                          "right": 50,
-                          "top": 50,
-                        }
-                      }
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "#F5F5F5",
-                          "borderRadius": 11,
-                          "height": 22,
-                          "justifyContent": "center",
-                          "opacity": 1,
-                          "width": 22,
-                        }
-                      }
-                    >
-                      <Text
-                        allowFontScaling={false}
-                        style={
-                          Object {
-                            "color": "rgba(0,0,0,0.87)",
-                            "fontFamily": "Ionicons",
-                            "fontSize": 25,
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          }
-                        }
-                        text="ionicon-ios-close"
-                      />
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </RCTScrollView>
-        </View>
-      </View>
-      <View
-        accessibilityElementsHidden={true}
-        importantForAccessibility="no-hide-descendants"
+        Posts
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 122, 255, 255)",
+          "borderBottomLeftRadius": 20,
+          "borderBottomRightRadius": 20,
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+          "elevation": 4,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 24,
+          "shadowColor": "rgba(0, 0, 0, 255)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "shadowOpacity": 0.23,
+          "shadowRadius": 2.62,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
         style={
           Array [
             Object {
-              "flex": 1,
-              "overflow": "hidden",
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
             },
-            null,
             Array [
               Object {
-                "backgroundColor": "rgb(242, 242, 242)",
+                "color": "rgba(255, 255, 255, 255)",
               },
               Object {
-                "backgroundColor": "rgba(255, 255, 255, 255)",
-                "flex": 1,
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "700",
               },
+              undefined,
             ],
           ]
         }
-      />
+      >
+        Users
+      </Text>
     </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      ListHeaderComponent={[Function]}
+      contentContainerStyle={
+        Object {
+          "paddingBottom": 30,
+        }
+      }
+      data={
+        Array [
+          "john",
+          "doe",
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={true}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                },
+                Object {
+                  "paddingHorizontal": 16,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 18,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginRight": 8,
+                  }
+                }
+                text="ionicon-md-time"
+              />
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                        "marginVertical": 18.46153846153846,
+                      },
+                    ],
+                  ]
+                }
+              >
+                Recent searches
+              </Text>
+            </View>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                        "marginVertical": 18.46153846153846,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "rgba(0, 122, 255, 255)",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Clear all
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "height": "100%",
+                "justifyContent": "center",
+                "paddingHorizontal": 16,
+              }
+            }
+            testID="history-item"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(229, 229, 234, 255)",
+                  "borderBottomWidth": 1,
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "600",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                john
+              </Text>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 50,
+                    "left": 50,
+                    "right": 50,
+                    "top": 50,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 11,
+                    "height": 22,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 22,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 25,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-ios-close"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "height": "100%",
+                "justifyContent": "center",
+                "paddingHorizontal": 16,
+              }
+            }
+            testID="history-item"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "rgba(229, 229, 234, 255)",
+                  "borderBottomWidth": 1,
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    false,
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 17,
+                      "fontWeight": "600",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                    },
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                doe
+              </Text>
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 50,
+                    "left": 50,
+                    "right": 50,
+                    "top": 50,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 11,
+                    "height": 22,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 22,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 25,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-ios-close"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
   </View>
 </View>
 `;

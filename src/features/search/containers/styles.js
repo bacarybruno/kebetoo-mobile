@@ -1,17 +1,13 @@
 import { StyleSheet } from 'react-native'
-import { human, systemWeights } from 'react-native-typography'
+import { systemWeights } from 'react-native-typography'
 
-import { deleteProperty, mergeObjects } from '@app/shared/helpers/object'
+import { metrics } from '@app/theme'
 
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,
   },
-  tabbar: {
-    backgroundColor: colors.background,
-  },
-  label: deleteProperty(mergeObjects(human.footnote, systemWeights.bold), 'color'),
   textInputWrapper: {
     borderColor: 'transparent',
     backgroundColor: colors.backgroundSecondary,
@@ -33,5 +29,8 @@ export default (colors) => StyleSheet.create({
     marginRight: 10,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  segmentedControl: {
+    marginHorizontal: metrics.marginHorizontal,
   },
 })

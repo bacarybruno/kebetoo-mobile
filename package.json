@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "android:dev": "react-native run-android",
-    "android:tcp": "adb reverse tcp:1148 tcp:1148 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337 && adb reverse tcp:4569 tcp:4569",
+    "android:tcp": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337 && adb reverse tcp:4569 tcp:4569",
+    "android:cast": "scrcpy -m 1080 -T",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
-    "start": "react-native start --port=1148",
+    "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "coverage": "yarn test src --coverage --silent",
+    "coverage": "yarn test src --coverage --silent --ci --no-cache",
     "coverage:open": "start ./coverage/lcov-report/index.html"
   },
   "dependencies": {
@@ -29,7 +30,6 @@
     "@react-native-firebase/crashlytics": "^8.4.5",
     "@react-native-firebase/messaging": "^7.8.3",
     "@react-navigation/bottom-tabs": "^5.8.0",
-    "@react-navigation/material-top-tabs": "^5.2.12",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "dayjs": "^1.8.27",

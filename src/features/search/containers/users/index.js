@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { useIsFocused, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { api } from '@app/shared/services'
@@ -62,7 +62,9 @@ export const SearchHistoryHeader = ({ onClear }) => {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
         <Typography
-          type={Typography.types.headline5}
+          type={Typography.types.subheading}
+          systemWeight={Typography.weights.semibold}
+          systemColor={Typography.colors.tertiary}
           style={styles.sectionHeader}
           text={strings.search.recent_searches}
         />
@@ -88,11 +90,8 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
 
   const styles = useAppStyles(createThemedStyles)
 
-  const isFocused = useIsFocused()
-
   useEffect(() => {
     const query = searchQuery.trim()
-    if (!isFocused) return
     if (query.length > 0) {
       setIsLoading(true)
       api.authors.search(query)
@@ -107,7 +106,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
     } else {
       setUsers([])
     }
-  }, [dispatch, onSearch, searchQuery, isFocused, lastQuery])
+  }, [dispatch, onSearch, searchQuery, lastQuery])
 
   useEffect(() => {
     onSearch(isLoading)
@@ -117,7 +116,8 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
-      type={Typography.types.headline5}
+      type={Typography.types.subheading}
+      systemWeight={Typography.weights.semibold}
       systemColor={Typography.colors.tertiary}
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}

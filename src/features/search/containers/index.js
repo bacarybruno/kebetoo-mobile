@@ -1,11 +1,11 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { metrics, edgeInsets } from '@app/theme'
 import { strings } from '@app/config'
-import { AppHeader, TextInput } from '@app/shared/components'
+import { AppHeader, SegmentedControl, TextInput } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 import {
   useUser, useDebounce, useAnalytics, useAppStyles, useAppColors,
@@ -15,16 +15,7 @@ import createThemedStyles from './styles'
 import SearchPosts from './posts'
 import SearchUsers from './users'
 
-const Tab = createMaterialTopTabNavigator()
-
 const routeOptions = { title: strings.tabs.search }
-
-const tabBarOptions = (styles, colors) => ({
-  activeTintColor: colors.primary,
-  inactiveTintColor: colors.textTertiary,
-  style: styles.tabbar,
-  labelStyle: styles.label,
-})
 
 export const SearchIcon = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -64,7 +55,15 @@ const SearchPage = () => {
   const textInputRef = useRef()
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+
+  const [selectedTab, setSelectedTab] = useState(routes.SEARCH_POSTS)
+  const tabs = [{
+    label: strings.search.posts_tab,
+    value: routes.SEARCH_POSTS,
+  }, {
+    label: strings.search.users_tab,
+    value: routes.SEARCH_USERS,
+  }]
 
   const onChange = useCallback((terms) => {
     setSearchQuery(terms)
@@ -120,31 +119,30 @@ const SearchPage = () => {
             Right={() => <CancelIcon onPress={onCancel} isLoading={isLoading} />}
           />
         )}
-      <Tab.Navigator
-        tabBarOptions={tabBarOptions(styles, colors)}
-        sceneContainerStyle={styles.wrapper}
-      >
-        <Tab.Screen name={routes.SEARCH_POSTS} options={{ tabBarLabel: strings.search.posts_tab }}>
-          {(props) => (
-            <SearchPosts
-              {...props}
-              searchQuery={searchQuery || ''}
-              onSearch={onSearch}
-              onRecentSearch={onRecentSearch}
-            />
-          )}
-        </Tab.Screen>
-        <Tab.Screen name={routes.SEARCH_USERS} options={{ tabBarLabel: strings.search.users_tab }}>
-          {(props) => (
-            <SearchUsers
-              {...props}
-              searchQuery={searchQuery || ''}
-              onSearch={onSearch}
-              onRecentSearch={onRecentSearch}
-            />
-          )}
-        </Tab.Screen>
-      </Tab.Navigator>
+
+      <SegmentedControl
+        items={tabs}
+        testID="segmented-control"
+        onSelect={(item) => setSelectedTab(item.value)}
+        style={styles.segmentedControl}
+        selectedValue={selectedTab}
+      />
+
+      {selectedTab === routes.SEARCH_POSTS && (
+        <SearchPosts
+          searchQuery={searchQuery || ''}
+          onSearch={onSearch}
+          onRecentSearch={onRecentSearch}
+        />
+      )}
+
+      {selectedTab === routes.SEARCH_USERS && (
+        <SearchUsers
+          searchQuery={searchQuery || ''}
+          onSearch={onSearch}
+          onRecentSearch={onRecentSearch}
+        />
+      )}
     </View>
   )
 }
