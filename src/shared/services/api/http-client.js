@@ -1,4 +1,5 @@
 import RNFetchBlob from 'rn-fetch-blob'
+import auth from '@react-native-firebase/auth'
 
 class HttpClient {
   constructor(options = {}) {
@@ -17,6 +18,12 @@ class HttpClient {
   }
 
   async fetchJSON(endpoint, options = {}) {
+    try {
+      const token = await auth().currentUser.getIdToken()
+      this.setBearerAuth(token)
+    } catch (error) {
+      console.log('No token was given for request', endpoint, options)
+    }
     // eslint-disable-next-line no-undef
     const res = await fetch(this.baseURL + endpoint, {
       ...options,

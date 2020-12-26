@@ -19,7 +19,7 @@ export const createUser = async ({ id, displayName, photoURL }) => {
   if (existingAuthor) {
     authorId = existingAuthor.id
   } else {
-    const createdAuthor = await api.authors.create({ id, displayName, photoURL })
+    const createdAuthor = await api.authors.create({ uid: id, displayName, photoURL })
     authorId = createdAuthor.id
   }
   await setUserId(authorId)

@@ -1,15 +1,15 @@
 import { useCallback, useReducer } from 'react'
 import auth from '@react-native-firebase/auth'
 import * as yup from 'yup'
+import { useDispatch } from 'react-redux'
 
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { createUser } from '@app/shared/services/users'
 import { useAnalytics } from '@app/shared/hooks'
+import { SET_USER_PROFILE } from '@app/redux/types'
 
 import reducer, { actionTypes } from '../../reducer'
-import { useDispatch } from 'react-redux'
-import { SET_USER_PROFILE } from '@app/redux/types'
 
 export const fieldNames = {
   fullName: 'fullName',

@@ -1,6 +1,6 @@
 {
   "name": "Kebetoo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "android:dev": "react-native run-android",
@@ -8,7 +8,7 @@
     "android:cast": "scrcpy -m 1080 -T",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "ios:dev": "react-native run-ios",
-    "start": "react-native start",
+    "develop": "react-native start",
     "test": "jest",
     "lint": "eslint .",
     "coverage": "yarn test src --coverage --silent --ci --no-cache",
