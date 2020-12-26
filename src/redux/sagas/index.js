@@ -13,7 +13,7 @@ function* fetchPosts(action) {
     const data = yield call([api.posts, 'get'], action.payload)
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
-    if (action.payload === 0) {
+    if (action.payload.page === 0) {
       postActionType = types.REPLACE_POSTS
     }
 

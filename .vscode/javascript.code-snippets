@@ -20,14 +20,16 @@
 		"body": [
 			"import React from 'react'",
 			"import { View } from 'react-native'\n",
-      "import styles from './styles'\n",
+			"import { useAppStyles } from '@app/shared/hooks'\n",
+      "import createThemedStyles from './styles'\n",
 			"const ${1:ComponentName} = () => {",
+			"\tconst styles = useAppStyles(createThemedStyles)",
 			"\treturn (",
 			"\t\t<View style={styles.wrapper}>",
 			"\t\t\t$0",
 			"\t\t</View>",
 			"\t)",
-			")\n",
+			"}\n",
 			"export default React.memo($1)\n"
 		],
 		"description": "React memoized functional component boilerplate"
@@ -38,8 +40,10 @@
 		"body": [
 			"import React from 'react'",
 			"import { View } from 'react-native'\n",
-      "import styles from './styles'\n",
+      "import { useAppStyles } from '@app/shared/hooks'\n",
+      "import createThemedStyles from './styles'\n",
 			"const ${1:ComponentName} = ($2) => {",
+			"\tconst styles = useAppStyles(createThemedStyles)",
 			"\treturn (",
 			"\t\t<View style={styles.wrapper}>",
 			"\t\t\t$0",
@@ -78,7 +82,7 @@
 		"prefix": "styles",
 		"body": [
 			"import { StyleSheet } from 'react-native'\n",
-			"import { metrics } from '@app/theme'",
+			"import { metrics } from '@app/theme'\n",
 			"export default (colors) => StyleSheet.create({",
 			"\twrapper: {",
 			"\t\tflex: 1,",
