@@ -16,7 +16,7 @@ import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
-import { AppHeader } from '@app/shared/components'
+import { AppHeader, SegmentedControl } from '@app/shared/components'
 import {
   useAnalytics, useAppColors, useAppStyles, usePosts, useUser,
 } from '@app/shared/hooks'
@@ -30,6 +30,7 @@ const getSharedFile = () => new Promise((resolve, reject) => {
   ReceiveSharingIntent.clearReceivedFiles()
 })
 
+
 // TODO: use local reducer
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -41,6 +42,7 @@ const HomePage = () => {
   const { profile } = useUser()
   const { getRepostAuthors } = usePosts()
   const { navigate } = useNavigation()
+  const [postsSort, setPostsSort] = useState('score')
 
   const colors = useAppColors()
   const styles = useAppStyles(createThemedStyles)
@@ -93,16 +95,16 @@ const HomePage = () => {
 
   useEffect(() => {
     if (page > 0) {
-      dispatch({ type: types.API_FETCH_POSTS, payload: page })
+      dispatch({ type: types.API_FETCH_POSTS, payload: { page, sort: postsSort } })
     }
-  }, [dispatch, page])
+  }, [dispatch, page, postsSort])
 
   useEffect(() => {
     if (page === 0) {
       if (refreshing) setRefreshing(false)
-      dispatch({ type: types.API_FETCH_POSTS, payload: 0 })
+      dispatch({ type: types.API_FETCH_POSTS, payload: { page: 0, sort: postsSort } })
     }
-  }, [dispatch, page, refreshing])
+  }, [dispatch, page, postsSort, refreshing])
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
@@ -126,13 +128,35 @@ const HomePage = () => {
     />
   ), [authors])
 
-  const renderListHeader = useMemo(() => (user) => (
-    <AppHeader
-      displayName={user.displayName}
-      imageSrc={user.photoURL}
-      style={styles.header}
-    />
-  ), [styles.header])
+  const onSelectFilter = useCallback((item) => {
+    setPostsSort(item.value)
+    setTimeout(onRefresh, 1)
+  }, [onRefresh])
+
+  const renderListHeader = useMemo(() => (user) => {
+    const filterItems = [{
+      label: strings.home.sort_trending,
+      value: 'score',
+    }, {
+      label: strings.home.sort_recent,
+      value: 'updatedAt',
+    }]
+    return (
+      <>
+        <AppHeader
+          displayName={user.displayName}
+          imageSrc={user.photoURL}
+          style={styles.header}
+        />
+        <SegmentedControl
+          style={styles.header}
+          items={filterItems}
+          onSelect={onSelectFilter}
+          selectedValue={postsSort}
+        />
+      </>
+    )
+  }, [onSelectFilter, styles.header, postsSort])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

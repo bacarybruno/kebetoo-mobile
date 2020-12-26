@@ -56,9 +56,6 @@ $ yarn android:tcp
 $ yarn android:dev
 ```
 
-Once the app is open, toggle developer options and change bundle location to `localhost:1148`.
-And the reload the app.
-
 ### Contributing
 Want to contribute? Great, create a fork a the project and start hacking!
 Ensuite that the coverage of your code is under 80%. That's the minimum required for this project.

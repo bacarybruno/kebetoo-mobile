@@ -11,15 +11,38 @@ exports[`renders HomePage 1`] = `
 >
   <RCTScrollView
     ListHeaderComponent={
-      <Header
-        displayName="Bruno Bodian"
-        imageSrc="https://avatars1.githubusercontent.com/u/14147533"
-        style={
-          Object {
-            "marginBottom": 20,
+      <React.Fragment>
+        <Header
+          displayName="Bruno Bodian"
+          imageSrc="https://avatars1.githubusercontent.com/u/14147533"
+          style={
+            Object {
+              "marginBottom": 20,
+            }
           }
-        }
-      />
+        />
+        <Memo(SegmentedControl)
+          items={
+            Array [
+              Object {
+                "label": "Trending",
+                "value": "score",
+              },
+              Object {
+                "label": "Recents",
+                "value": "updatedAt",
+              },
+            ]
+          }
+          onSelect={[Function]}
+          selectedValue="score"
+          style={
+            Object {
+              "marginBottom": 20,
+            }
+          }
+        />
+      </React.Fragment>
     }
     contentContainerStyle={
       Object {
@@ -494,6 +517,158 @@ exports[`renders HomePage 1`] = `
                 testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
               />
             </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#F5F5F5",
+                "elevation": 1,
+                "flex": 1,
+                "flexDirection": "row",
+                "height": 40,
+                "maxHeight": 40,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 0,
+                },
+                "shadowOpacity": 0.18,
+                "shadowRadius": 1,
+              },
+              Object {
+                "borderBottomLeftRadius": 20,
+                "borderBottomRightRadius": 20,
+                "borderTopLeftRadius": 20,
+                "borderTopRightRadius": 20,
+              },
+              Object {
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderBottomLeftRadius": 20,
+                "borderBottomRightRadius": 20,
+                "borderTopLeftRadius": 20,
+                "borderTopRightRadius": 20,
+                "elevation": 4,
+                "flex": 1,
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 24,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 2,
+                },
+                "shadowOpacity": 0.23,
+                "shadowRadius": 2.62,
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Trending
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "borderBottomLeftRadius": 20,
+                "borderBottomRightRadius": 20,
+                "borderTopLeftRadius": 20,
+                "borderTopRightRadius": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.38)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "700",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Recents
+            </Text>
           </View>
         </View>
       </View>
