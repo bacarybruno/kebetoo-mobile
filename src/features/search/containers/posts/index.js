@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { useIsFocused } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { api } from '@app/shared/services'
@@ -24,7 +23,9 @@ export const SearchHistoryHeader = ({ onClear }) => {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
         <Typography
-          type={Typography.types.headline5}
+          type={Typography.types.subheading}
+          systemWeight={Typography.weights.semibold}
+          systemColor={Typography.colors.tertiary}
           style={styles.sectionHeader}
           text={strings.search.recent_searches}
         />
@@ -50,11 +51,10 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
   const dispatch = useDispatch()
 
   const { getRepostAuthors } = usePosts()
-  const isFocused = useIsFocused()
 
   useEffect(() => {
     const query = searchQuery.trim()
-    if (query.length > 0 && isFocused) {
+    if (query.length > 0) {
       setIsLoading(true)
       api.posts.search(query)
         .then((data) => {
@@ -67,7 +67,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
     } else {
       setPosts([])
     }
-  }, [dispatch, onSearch, searchQuery, isFocused])
+  }, [dispatch, onSearch, searchQuery])
 
   useEffect(() => {
     onSearch(isLoading)
@@ -97,7 +97,8 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
-      type={Typography.types.headline5}
+      type={Typography.types.subheading}
+      systemWeight={Typography.weights.semibold}
       systemColor={Typography.colors.tertiary}
       style={styles.sectionHeader}
       text={strings.search.results}

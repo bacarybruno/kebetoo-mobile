@@ -9,14 +9,10 @@ import { strings } from '@app/config'
 
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
 import SearchPosts from '../posts'
+import { SegmentedControl } from '@app/shared/components'
+import routes from '@app/navigation/routes'
 
-const SearchPageNavigation = () => (
-  <NavigationContainer>
-    <SearchPage />
-  </NavigationContainer>
-)
-
-const givenSearchPage = setupTest(SearchPageNavigation)({
+const givenSearchPage = setupTest(SearchPage)({
   __storeState__: {
     userReducer: {
       searchHistory: {
@@ -28,8 +24,17 @@ const givenSearchPage = setupTest(SearchPageNavigation)({
   },
 })
 
-it('renders SearchPage', () => {
+it('renders SearchPage for posts', () => {
   const { wrapper } = givenSearchPage()
+  const segmentedControl = wrapper.root.findByProps({ testID: 'segmented-control' })
+  segmentedControl.props.onSelect({ value: routes.SEARCH_POSTS })
+  expect(wrapper.toJSON()).toMatchSnapshot()
+})
+
+it('renders SearchPage for users', () => {
+  const { wrapper } = givenSearchPage()
+  const segmentedControl = wrapper.root.findByProps({ testID: 'segmented-control' })
+  segmentedControl.props.onSelect({ value: routes.SEARCH_USERS })
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 

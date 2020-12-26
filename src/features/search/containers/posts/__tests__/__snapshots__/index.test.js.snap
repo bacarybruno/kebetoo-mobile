@@ -366,26 +366,23 @@ exports[`renders SearchPosts history 1`] = `
                                 <Text
                                   style={
                                     Array [
-                                      false,
-                                      false,
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
                                         "fontFamily": "System",
-                                        "fontSize": 15,
+                                        "fontSize": 17,
                                         "fontWeight": "400",
-                                        "letterSpacing": -0.24,
-                                        "lineHeight": 20,
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
                                       },
-                                      false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0,0,0,0.38)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "fontFamily": "System",
-                                          "fontWeight": "400",
+                                          "fontWeight": "600",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -1047,18 +1044,15 @@ exports[`renders SearchPosts results 1`] = `
                             <Text
                               style={
                                 Array [
-                                  false,
-                                  false,
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 15,
+                                    "fontSize": 17,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.24,
-                                    "lineHeight": 20,
+                                    "letterSpacing": -0.408,
+                                    "lineHeight": 22,
                                   },
-                                  false,
                                   Array [
                                     Object {
                                       "color": "rgba(0,0,0,0.38)",
@@ -1066,7 +1060,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "backgroundColor": "transparent",
                                       "fontFamily": "System",
-                                      "fontWeight": "400",
+                                      "fontWeight": "600",
                                     },
                                     Object {
                                       "backgroundColor": "transparent",
