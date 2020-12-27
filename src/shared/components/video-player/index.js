@@ -11,10 +11,10 @@ import { readableSeconds } from '@app/shared/helpers/dates'
 import { metrics } from '@app/theme'
 import routes from '@app/navigation/routes'
 
-import createThemedStyles from './styles'
+import createThemedStyles, { borderRadius } from './styles'
 import Badge from '../badge'
 
-const VideoDurationChecker = ({ uri, onChange, style }) => {
+const VideoDurationChecker = ({ uri, onChange }) => {
   const styles = useAppStyles(createThemedStyles)
 
   return (
@@ -80,6 +80,7 @@ const VideoPlayer = ({
         style={styles.thumbnail}
         resizeMode="cover"
         fadeDuration={0}
+        borderRadius={borderRadius}
       />
       <View style={styles.touchableOverlay}>
         <TouchableOpacity style={styles.touchable} onPress={onPlayVideo}>
