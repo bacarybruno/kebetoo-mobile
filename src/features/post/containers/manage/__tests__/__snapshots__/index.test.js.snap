@@ -3172,7 +3172,7 @@ exports[`renders ManagePost 1`] = `
                 style={
                   Object {
                     "aspectRatio": 1,
-                    "borderRadius": 5,
+                    "borderRadius": 12,
                     "elevation": 1,
                     "flex": 1,
                     "shadowColor": "rgba(0, 0, 0, 255)",
@@ -3186,6 +3186,7 @@ exports[`renders ManagePost 1`] = `
                 }
               >
                 <Image
+                  borderRadius={12}
                   fadeDuration={0}
                   resizeMode="cover"
                   source={
@@ -3195,7 +3196,7 @@ exports[`renders ManagePost 1`] = `
                   }
                   style={
                     Object {
-                      "borderRadius": 5,
+                      "borderRadius": 12,
                       "flex": 1,
                     }
                   }

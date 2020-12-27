@@ -4,16 +4,17 @@ import { elevation, metrics } from '@app/theme'
 import iosColors from '@app/theme/ios-colors'
 import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
+export const borderRadius = 12
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     aspectRatio: metrics.aspectRatio.square,
-    borderRadius: 5,
+    borderRadius,
     ...elevation(1),
   },
   thumbnail: {
     flex: 1,
-    borderRadius: 5,
+    borderRadius,
   },
   touchableOverlay: {
     width: '100%',
