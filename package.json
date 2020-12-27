@@ -7,7 +7,7 @@
     "android:tcp": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:1337 tcp:1337 && adb reverse tcp:4569 tcp:4569",
     "android:cast": "scrcpy -m 1080 -T",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
-    "ios:dev": "react-native run-ios",
+    "ios:dev": "cd ios && pod install && cd .. && react-native run-ios",
     "develop": "react-native start",
     "test": "jest",
     "lint": "eslint .",
