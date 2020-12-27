@@ -6,8 +6,13 @@ import { api } from '@app/shared/services'
 import { userProfileSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
 
-import { getUserId, getUser, setUserId } from '../services/users'
+import {
+  getUserId, getUser, setUserId, clearUserAttributes,
+} from '../services/users'
 
+// FIXME: change this implementation to deduplicte instances
+// use sagas to orchrestrate auth events
+// use same instance of hook or move all the logic in sagas
 const useUser = () => {
   const authenticatedUser = auth().currentUser
   const [isLoggedIn, setIsLoggedIn] = useState(authenticatedUser !== null)
@@ -18,23 +23,32 @@ const useUser = () => {
   useEffect(() => {
     const getUserInfos = async () => {
       if (authenticatedUser && !profile.email) {
-        const userId = await getUserId()
-        const { email, displayName, photoURL } = authenticatedUser
-        const userInfos = {
-          uid: userId, email, photoURL,
+        try {
+          const userId = await getUserId()
+          const { email, displayName, photoURL } = authenticatedUser
+          const userInfos = {
+            uid: userId, email, photoURL,
+          }
+          if (displayName) {
+            userInfos.displayName = displayName
+          }
+          dispatch({ type: types.SET_USER_PROFILE, payload: userInfos })
+        } catch (error) {
+          console.log('Error while getting user infos', error)
         }
-        if (displayName) {
-          userInfos.displayName = displayName
-        }
-        dispatch({ type: types.SET_USER_PROFILE, payload: userInfos })
       }
     }
 
     const refreshUserId = async () => {
       if (!profile.uid && authenticatedUser?.uid) {
-        const { id: uid } = await getUser(authenticatedUser.uid)
-        await setUserId(uid)
-        dispatch({ type: types.SET_USER_PROFILE, payload: { uid } })
+        const author = await getUser(authenticatedUser.uid)
+        if (!author) {
+          console.log('User not yet created. Retrying in 5s')
+          setTimeout(refreshUserId, 5000)
+          return
+        }
+        await setUserId(author.id)
+        dispatch({ type: types.SET_USER_PROFILE, payload: { uid: author.id } })
       }
     }
 
@@ -50,9 +64,15 @@ const useUser = () => {
   }, [])
 
   const signOut = useCallback(async () => {
-    await api.authors.update(profile.uid, { notificationToken: null })
-    await auth().signOut()
-    dispatch({ type: types.LOGOUT })
+    try {
+      await api.authors.update(profile.uid, { notificationToken: null })
+      await clearUserAttributes()
+    } catch (error) {
+      console.log('An error occured when trying to sign user out', error)
+    } finally {
+      await auth().signOut()
+      dispatch({ type: types.LOGOUT })
+    }
   }, [profile.uid, dispatch])
 
   return {
