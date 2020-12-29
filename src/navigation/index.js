@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react'
-import { Image, View } from 'react-native'
+import { Image, Platform, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -49,7 +49,15 @@ const createPage = (page, key) => React.cloneElement(page, {
 const EmptyPage = () => null
 
 // Screen options
-const defaultScreenOptions = (styles, colors) => ({
+const defaultScreenOptions = {
+  safeAreaInsets: Platform.select({
+    ios: { top: 10, bottom: 0 },
+    default: {}
+  })
+}
+
+const defaultOnboardingScreenOptions = (styles, colors) => ({
+  ...defaultScreenOptions,
   headerBackImage: () => (
     <HeaderBack tintColor={colors.textPrimary} />
   ),
@@ -60,6 +68,7 @@ const defaultScreenOptions = (styles, colors) => ({
 })
 
 const defaultTabBarOptions = (styles, colors) => ({
+  ...defaultScreenOptions,
   activeTintColor: colors.primary,
   inactiveTintColor: colors.icon,
   style: styles.tabBar,
@@ -76,7 +85,7 @@ const defaultTabOptions = ({ route }) => ({
     const size = focused ? 24 : 18
     const iconName = iconNames[route.name]
     return iconName === 'ios-notifications-outline'
-      ? <Ionicon name={iconName} size={size * 1.5} color={color} />
+      ? <Ionicon name={iconName} size={size * 1.5} color={color} style={{ marginTop: focused ? -8 : 0 }} />
       : <Kebeticon name={iconName} size={size} color={color} />
   },
   tabBarLabel: ({ focused, color }) => {
@@ -91,11 +100,17 @@ const defaultTabOptions = ({ route }) => ({
         type={Typography.types.caption}
         text={labels[route.name]}
         systemWeight={focused ? Typography.weights.bold : undefined}
+        numberOfLines={1}
         style={{ color }}
       />
     )
   },
 })
+
+const defaultMainScreenOptions = {
+  ...defaultScreenOptions,
+  headerShown: false,
+}
 
 // Pages
 export const tabPages = [
@@ -158,7 +173,7 @@ export const OnboardingStack = () => {
   const styles = useAppStyles(createThemedStyles)
   const colors = useAppColors()
   return (
-    <Stack.Navigator screenOptions={defaultScreenOptions(styles, colors)}>
+    <Stack.Navigator screenOptions={defaultOnboardingScreenOptions(styles, colors)}>
       {onboardingPages.map(createPage)}
     </Stack.Navigator>
   )
@@ -276,7 +291,7 @@ const AppNavigation = () => {
       onStateChange={onNavigationStateChange}
       theme={navigationTheme}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={defaultMainScreenOptions}>
         {isLoggedIn && loggedInPages.map(createPage)}
         {!isLoggedIn && notLoggedInPages.map(createPage)}
       </Stack.Navigator>

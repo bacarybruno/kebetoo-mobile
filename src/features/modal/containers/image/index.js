@@ -33,7 +33,7 @@ const ImageModal = ({ route, navigation }) => {
 
   const { source, width, height } = route.params
   const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
-  source.uri = isGoogleImageUrl(source.uri) ? source.uri.replace('s96-c', 's400-c') : source.uri
+  const sourceUri = isGoogleImageUrl(source.uri) ? source.uri.replace('s96-c', 's400-c') : source.uri
 
   const showControls = useCallback(() => {
     StatusBar.setBarStyle('light-content', true)
@@ -69,7 +69,7 @@ const ImageModal = ({ route, navigation }) => {
 
   useEffect(() => {
     if (Number.isNaN(aspectRatio)) {
-      Image.getSize(source.uri, (w, h) => {
+      Image.getSize(sourceUri, (w, h) => {
         // set aspect ratio based on react native image size
         setAspectRatio(w / h)
       }, () => {
@@ -77,7 +77,7 @@ const ImageModal = ({ route, navigation }) => {
         setAspectRatio(0)
       })
     }
-  }, [aspectRatio, source.uri])
+  }, [aspectRatio, sourceUri])
 
   return (
     <TouchableWithoutFeedback onPress={onShowControls} testID="pressable">
