@@ -25,9 +25,6 @@ target 'Kebetoo' do
   # react-native-google-signin
   pod 'GoogleSignIn', '~> 5.0.2'
 
-  # Facebook SDK
-  pod 'FacebookLogin'
-
   target 'KebetooTests' do
     inherit! :complete
     # Pods for testing
