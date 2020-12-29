@@ -5,14 +5,16 @@ import HrLine from '@app/features/account/components/hr-line'
 import { googleLogin, facebookLogin } from '@app/shared/services'
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { images } from '@app/theme'
-import { useAnalytics, useAppColors } from '@app/shared/hooks'
+import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
 const SocialSignIn = ({
   sectionText, children, onSignIn, onLoading, disabled, type, onError = () => {},
 }) => {
   const colors = useAppColors()
+  const styles = useAppStyles(createThemedStyles)
+
   const { trackSignIn, trackSignUp } = useAnalytics()
 
   const trackAuthEvent = useCallback((provider) => {
@@ -55,7 +57,7 @@ const SocialSignIn = ({
         <View style={styles.socialSignUpContent}>
           <HrLine text={sectionText} />
           <View style={styles.socialSignUpButtons}>
-            <TouchableOpacity testID="facebook-signin" onPress={signInWithFacebook}>
+            <TouchableOpacity style={styles.facebookIconWrapper} testID="facebook-signin" onPress={signInWithFacebook}>
               <Kebeticon name="facebook" color={colors.facebook} size={33} />
             </TouchableOpacity>
             <TouchableOpacity testID="google-signin" onPress={signInWithGoogle}>
