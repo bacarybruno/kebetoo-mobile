@@ -36,7 +36,7 @@ const routeOptions = (title, colors) => ({
     <HeaderBack.Close tintColor={colors.textPrimary} />
   ),
   headerStyle: {
-    backgroundColor: colors.backgroundSecondary,
+    backgroundColor: colors.background,
   },
   ...TransitionPresets.ModalSlideFromBottomIOS,
 })
@@ -52,11 +52,13 @@ const ImagePreview = React.memo(({ item }) => {
           text={item.title}
           color={Typography.colors.primary}
         />
-        <Typography
-          type={Typography.types.caption}
-          text={item.count}
-          color={Typography.colors.tertiary}
-        />
+        {item.count > 0 && (
+          <Typography
+            type={Typography.types.caption}
+            text={item.count}
+            color={Typography.colors.tertiary}
+          />
+        )}
       </View>
     </>
   )
@@ -94,6 +96,7 @@ const Albums = React.memo(({ previews, onSelect }) => {
       numColumns={numColumns}
       keyExtractor={keyExtractor}
       columnWrapperStyle={styles.flatlistColumn}
+      contentContainerStyle={styles.albumsContent}
     />
   )
 })
@@ -266,7 +269,7 @@ const CameraRollPicker = ({ navigation }) => {
 
   const onSelectAlbum = useCallback((album) => {
     setGroupName(album.value)
-    const title = `${album.title} (${album.count})`
+    const title = album.title + (album.count > 0 ? ` (${album.count})` : '')
     setPageTitle(title)
     toggleModalPicker(title)
   }, [toggleModalPicker])
