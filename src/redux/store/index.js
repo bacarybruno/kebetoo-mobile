@@ -17,12 +17,14 @@ const sagaMiddleware = createSagaMiddleware()
 const persistedReducer = persistReducer(persistConfig, (state, action) => {
   let ownState = state
   if (action.type === types.LOGOUT) {
-    // remote all persisted redux data
+    // remove all persisted redux data
     persistConfig.storage.removeItem('persist:root')
-    ownState = undefined
 
-    // TODO: consider removing only necessary data
-    // ownState.userReducer = undefined
+    // Remove only necessary data
+    ownState.userReducer = undefined
+    ownState.userReducer = undefined
+    ownState.postsReducer = undefined
+    ownState.notificationsReducer = undefined
   }
   return rootReducer(ownState, action)
 })
