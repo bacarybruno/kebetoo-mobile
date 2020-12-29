@@ -1,18 +1,19 @@
+/* eslint-disable import/default */
 import React, {
   useEffect, useState, useCallback, useMemo,
 } from 'react'
 import {
-  View, FlatList, RefreshControl, AppState, Platform,
+  View, FlatList, RefreshControl, Platform,
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
-import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
+import ShareMenu from 'react-native-share-menu'
 import RNFetchBlob from 'rn-fetch-blob'
 
 import * as types from '@app/redux/types'
 import { postsSelector } from '@app/redux/selectors'
 import BasicPost from '@app/features/post/containers/basic-post'
-import { getFileName, getMimeType, getExtension } from '@app/shared/helpers/file'
+import { getFileName, getExtension } from '@app/shared/helpers/file'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
@@ -25,64 +26,49 @@ import createThemedStyles from './styles'
 
 const routeOptions = { title: strings.tabs.home }
 
-const getSharedFile = () => new Promise((resolve, reject) => {
-  ReceiveSharingIntent.getReceivedFiles(resolve, reject)
-  ReceiveSharingIntent.clearReceivedFiles()
-})
-
-
 // TODO: use local reducer
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
   const dispatch = useDispatch()
   const posts = useSelector(postsSelector) || []
   const [refreshing, setRefreshing] = useState(false)
   const [page, setPage] = useState(0)
   const [authors, setAuthors] = useState({})
-  const { trackReceiveIntent, reportError } = useAnalytics()
+  const { trackReceiveIntent } = useAnalytics()
   const { profile } = useUser()
   const { getRepostAuthors } = usePosts()
-  const { navigate } = useNavigation()
   const [postsSort, setPostsSort] = useState('score')
 
   const colors = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
-  const handleSharingIntent = useCallback(async () => {
-    try {
-      const files = await getSharedFile()
-      const sharedFile = files[0]
-      let sharedFileContentUri = sharedFile.contentUri
-      if (sharedFileContentUri) {
-        if (Platform.OS === 'android') {
-          const file = await RealPathUtils.getOriginalFilePath(sharedFileContentUri)
-          const filename = getFileName(file)
-          const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
-          await RNFetchBlob.fs.cp(file, dest)
-          sharedFileContentUri = dest
-        }
-        trackReceiveIntent(getMimeType(sharedFileContentUri), getExtension(sharedFileContentUri))
-        navigate(routes.CREATE_POST, { sharedFile: sharedFileContentUri })
-      } else {
-        navigate(routes.CREATE_POST, {
-          sharedText: sharedFile.text || sharedFile.weblink || '',
-        })
-        trackReceiveIntent(sharedFile.weblink ? 'weblink' : 'text', sharedFile.weblink)
+  const handleShare = useCallback(async (item) => {
+    if (!item?.data) return
+    const { mimeType, data } = item
+    if (mimeType.startsWith('text/')) {
+      // text
+      navigation.navigate(routes.CREATE_POST, { sharedText: data })
+      trackReceiveIntent(mimeType, data)
+    } else {
+      // other assets: image, audio and video
+      let sharedFile = data
+      if (Platform.OS === 'android') {
+        const file = await RealPathUtils.getOriginalFilePath(sharedFile)
+        const filename = getFileName(file)
+        const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
+        await RNFetchBlob.fs.cp(file, dest)
+        sharedFile = dest
       }
-    } catch (error) {
-      reportError(error)
+      trackReceiveIntent(mimeType, getExtension(sharedFile))
+      navigation.navigate(routes.CREATE_POST, { sharedFile })
     }
-  }, [navigate, trackReceiveIntent, reportError])
+  }, [navigation, trackReceiveIntent])
 
   useEffect(() => {
-    handleSharingIntent()
-    const appStateChange = (state) => {
-      if (state === 'active') handleSharingIntent()
-    }
-    AppState.addEventListener('change', appStateChange)
-    return () => {
-      AppState.removeEventListener('change', appStateChange)
-    }
-  }, [handleSharingIntent])
+    ShareMenu.getInitialShare(handleShare)
+
+    const listener = ShareMenu.addNewShareListener(handleShare)
+    return listener.remove
+  }, [])
 
   const onRefresh = useCallback(() => {
     setRefreshing(true)

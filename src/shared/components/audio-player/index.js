@@ -122,7 +122,6 @@ export const AudioPlayer = ({
     return true
   }, [onPress, onPlayPause])
 
-  const readableDuration = readableSeconds(duration)
   const { height, ...pressableStyle } = style
   return (
     <View style={[styles.audio, height && { height }]}>
@@ -138,7 +137,7 @@ export const AudioPlayer = ({
           <Waves />
           <Typography
             type={Typography.types.headline6}
-            text={readableDuration}
+            text={readableSeconds(duration)}
             style={styles.duration}
           />
         </View>
