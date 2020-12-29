@@ -157,11 +157,10 @@ const useReactions = ({
     if (post.author.id === author) return
     // if ((post.repost?.author === author) === true) return
     const repostId = post.repost?.id || post.id
-    const cancelButtonIndex = 2
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
-      cancelButtonIndex,
+      cancelButtonIndex: bottomSheetItems.length - 1,
       title: strings.general.share,
       textStyle: { color: colors.textPrimary },
       titleTextStyle: { color: colors.textSecondary },

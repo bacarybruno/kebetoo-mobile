@@ -1886,167 +1886,181 @@ exports[`renders Comments 1`] = `
     </RCTScrollView>
   </View>
   <View
+    onLayout={[Function]}
     style={
-      Object {
-        "backgroundColor": "rgba(255, 255, 255, 255)",
-        "flexDirection": "row",
-        "paddingBottom": 10,
-        "paddingHorizontal": 16,
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 255)",
+        },
+        Object {
+          "paddingBottom": 0,
+        },
+      ]
     }
   >
     <View
       style={
         Object {
-          "flex": 1,
+          "backgroundColor": "rgba(255, 255, 255, 255)",
+          "flexDirection": "row",
+          "paddingBottom": 10,
+          "paddingHorizontal": 16,
+          "width": "100%",
         }
       }
     >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#F5F5F5",
+                "borderBottomLeftRadius": 22.5,
+                "borderBottomRightRadius": 22.5,
+                "borderColor": "rgba(229, 229, 234, 255)",
+                "borderRadius": 15,
+                "borderTopLeftRadius": 22.5,
+                "borderTopRightRadius": 22.5,
+                "borderWidth": 0.5,
+                "elevation": 1,
+                "height": 0,
+                "minHeight": 45,
+                "overflow": "hidden",
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 0,
+                },
+                "shadowOpacity": 0.18,
+                "shadowRadius": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                blurOnSubmit={false}
+                editable={true}
+                multiline={false}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                onTouchStart={[Function]}
+                placeholder="Add a comment"
+                placeholderTextColor="rgba(174, 174, 178, 255)"
+                rejectResponderTermination={true}
+                showSoftInputOnFocus={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "flex": 1,
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                      "height": "100%",
+                      "letterSpacing": -0.32,
+                      "lineHeight": 21,
+                    },
+                    Object {
+                      "minHeight": 45,
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+          </View>
+        </View>
+      </View>
       <View>
         <View
           style={
             Object {
-              "backgroundColor": "#F5F5F5",
-              "borderBottomLeftRadius": 22.5,
-              "borderBottomRightRadius": 22.5,
-              "borderColor": "rgba(229, 229, 234, 255)",
-              "borderRadius": 15,
-              "borderTopLeftRadius": 22.5,
-              "borderTopRightRadius": 22.5,
-              "borderWidth": 0.5,
-              "elevation": 1,
-              "height": 0,
-              "minHeight": 45,
-              "overflow": "hidden",
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 0,
-              },
-              "shadowOpacity": 0.18,
-              "shadowRadius": 1,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }
         >
           <View
+            accessible={true}
+            focusable={false}
+            hitSlop={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "top": 0,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
                 "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "paddingLeft": 16,
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 22.5,
+                "elevation": 2,
+                "height": 45,
+                "justifyContent": "center",
+                "marginLeft": 5,
+                "maxHeight": 45,
+                "maxWidth": 45,
+                "opacity": 1,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 1,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 1.41,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": 45,
               }
             }
           >
-            <TextInput
-              allowFontScaling={true}
-              blurOnSubmit={false}
-              editable={true}
-              multiline={false}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onContentSizeChange={[Function]}
-              onFocus={[Function]}
-              onTouchStart={[Function]}
-              placeholder="Add a comment"
-              placeholderTextColor="rgba(174, 174, 178, 255)"
-              rejectResponderTermination={true}
-              showSoftInputOnFocus={true}
+            <Text
+              allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "flex": 1,
-                    "fontFamily": "System",
-                    "fontSize": 16,
-                    "fontWeight": "400",
-                    "height": "100%",
-                    "letterSpacing": -0.32,
-                    "lineHeight": 21,
-                  },
-                  Object {
-                    "minHeight": 45,
-                  },
-                  undefined,
-                ]
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "icomoon",
+                  "fontSize": 22.52252252252252,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-              underlineColorAndroid="transparent"
-              value=""
+              text="kebeticon-microphone"
             />
           </View>
-        </View>
-      </View>
-    </View>
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          }
-        }
-      >
-        <View
-          accessible={true}
-          focusable={false}
-          hitSlop={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-              "top": 0,
-            }
-          }
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 22.5,
-              "elevation": 2,
-              "height": 45,
-              "justifyContent": "center",
-              "marginLeft": 5,
-              "maxHeight": 45,
-              "maxWidth": 45,
-              "opacity": 1,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 1,
-              },
-              "shadowOpacity": 0.2,
-              "shadowRadius": 1.41,
-              "transform": Array [
-                Object {
-                  "scale": 1,
-                },
-              ],
-              "width": 45,
-            }
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            style={
-              Object {
-                "color": "rgba(255, 255, 255, 255)",
-                "fontFamily": "icomoon",
-                "fontSize": 22.52252252252252,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              }
-            }
-            text="kebeticon-microphone"
-          />
         </View>
       </View>
     </View>
@@ -3940,167 +3954,181 @@ exports[`renders Comments in loading state 1`] = `
     </RCTScrollView>
   </View>
   <View
+    onLayout={[Function]}
     style={
-      Object {
-        "backgroundColor": "rgba(255, 255, 255, 255)",
-        "flexDirection": "row",
-        "paddingBottom": 10,
-        "paddingHorizontal": 16,
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 255)",
+        },
+        Object {
+          "paddingBottom": 0,
+        },
+      ]
     }
   >
     <View
       style={
         Object {
-          "flex": 1,
+          "backgroundColor": "rgba(255, 255, 255, 255)",
+          "flexDirection": "row",
+          "paddingBottom": 10,
+          "paddingHorizontal": 16,
+          "width": "100%",
         }
       }
     >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#F5F5F5",
+                "borderBottomLeftRadius": 22.5,
+                "borderBottomRightRadius": 22.5,
+                "borderColor": "rgba(229, 229, 234, 255)",
+                "borderRadius": 15,
+                "borderTopLeftRadius": 22.5,
+                "borderTopRightRadius": 22.5,
+                "borderWidth": 0.5,
+                "elevation": 1,
+                "height": 0,
+                "minHeight": 45,
+                "overflow": "hidden",
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 0,
+                },
+                "shadowOpacity": 0.18,
+                "shadowRadius": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                blurOnSubmit={false}
+                editable={true}
+                multiline={false}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                onTouchStart={[Function]}
+                placeholder="Add a comment"
+                placeholderTextColor="rgba(174, 174, 178, 255)"
+                rejectResponderTermination={true}
+                showSoftInputOnFocus={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "flex": 1,
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                      "height": "100%",
+                      "letterSpacing": -0.32,
+                      "lineHeight": 21,
+                    },
+                    Object {
+                      "minHeight": 45,
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+          </View>
+        </View>
+      </View>
       <View>
         <View
           style={
             Object {
-              "backgroundColor": "#F5F5F5",
-              "borderBottomLeftRadius": 22.5,
-              "borderBottomRightRadius": 22.5,
-              "borderColor": "rgba(229, 229, 234, 255)",
-              "borderRadius": 15,
-              "borderTopLeftRadius": 22.5,
-              "borderTopRightRadius": 22.5,
-              "borderWidth": 0.5,
-              "elevation": 1,
-              "height": 0,
-              "minHeight": 45,
-              "overflow": "hidden",
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 0,
-              },
-              "shadowOpacity": 0.18,
-              "shadowRadius": 1,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }
         >
           <View
+            accessible={true}
+            focusable={false}
+            hitSlop={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "top": 0,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
                 "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "paddingLeft": 16,
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 22.5,
+                "elevation": 2,
+                "height": 45,
+                "justifyContent": "center",
+                "marginLeft": 5,
+                "maxHeight": 45,
+                "maxWidth": 45,
+                "opacity": 1,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 1,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 1.41,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": 45,
               }
             }
           >
-            <TextInput
-              allowFontScaling={true}
-              blurOnSubmit={false}
-              editable={true}
-              multiline={false}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onContentSizeChange={[Function]}
-              onFocus={[Function]}
-              onTouchStart={[Function]}
-              placeholder="Add a comment"
-              placeholderTextColor="rgba(174, 174, 178, 255)"
-              rejectResponderTermination={true}
-              showSoftInputOnFocus={true}
+            <Text
+              allowFontScaling={false}
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "flex": 1,
-                    "fontFamily": "System",
-                    "fontSize": 16,
-                    "fontWeight": "400",
-                    "height": "100%",
-                    "letterSpacing": -0.32,
-                    "lineHeight": 21,
-                  },
-                  Object {
-                    "minHeight": 45,
-                  },
-                  undefined,
-                ]
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "icomoon",
+                  "fontSize": 22.52252252252252,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
               }
-              underlineColorAndroid="transparent"
-              value=""
+              text="kebeticon-microphone"
             />
           </View>
-        </View>
-      </View>
-    </View>
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          }
-        }
-      >
-        <View
-          accessible={true}
-          focusable={false}
-          hitSlop={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-              "top": 0,
-            }
-          }
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 22.5,
-              "elevation": 2,
-              "height": 45,
-              "justifyContent": "center",
-              "marginLeft": 5,
-              "maxHeight": 45,
-              "maxWidth": 45,
-              "opacity": 1,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 1,
-              },
-              "shadowOpacity": 0.2,
-              "shadowRadius": 1.41,
-              "transform": Array [
-                Object {
-                  "scale": 1,
-                },
-              ],
-              "width": 45,
-            }
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            style={
-              Object {
-                "color": "rgba(255, 255, 255, 255)",
-                "fontFamily": "icomoon",
-                "fontSize": 22.52252252252252,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              }
-            }
-            text="kebeticon-microphone"
-          />
         </View>
       </View>
     </View>
