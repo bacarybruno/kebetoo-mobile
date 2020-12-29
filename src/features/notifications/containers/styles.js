@@ -7,12 +7,13 @@ export default (colors) => StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
+  content: {
+    paddingBottom: metrics.marginVertical,
+    flexGrow: 1,
+  },
   pageTitle: {
     paddingHorizontal: metrics.marginHorizontal,
     marginBottom: metrics.marginVertical / 2,
-  },
-  content: {
-    paddingBottom: metrics.marginVertical,
   },
   section: {
     marginBottom: metrics.marginVertical * 1.2,

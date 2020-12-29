@@ -124,6 +124,7 @@ const locales = Object.freeze({
     recent_searches: 'Recent searches',
     clear_all: 'Clear all',
     no_result: 'No results found for search term "{0}"',
+    no_content: 'Your search history will appear here',
   },
   user_profile: {
     profile: 'Profile',
@@ -136,6 +137,7 @@ const locales = Object.freeze({
     recent: 'Recent',
     already_seen: 'Already seen',
     replied_comment: 'replied to your comment',
+    no_content: 'Your notifications will appear here',
   },
   dates: {
     format_month_year: 'MMMM YYYY',

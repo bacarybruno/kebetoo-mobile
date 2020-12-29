@@ -698,6 +698,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                             <RCTScrollView
                               contentContainerStyle={
                                 Object {
+                                  "flexGrow": 1,
                                   "paddingBottom": 24,
                                 }
                               }
@@ -832,6 +833,87 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                                       />
                                     </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Object {
+                                      "backgroundColor": "rgba(255, 255, 255, 255)",
+                                      "flex": 1,
+                                    }
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "alignItems": "center",
+                                        "flex": 1,
+                                        "justifyContent": "center",
+                                      }
+                                    }
+                                  >
+                                    <Text
+                                      style={
+                                        Array [
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "color": "#000000",
+                                            "fontFamily": "System",
+                                            "fontSize": 20,
+                                            "fontWeight": "400",
+                                            "letterSpacing": 0.361328,
+                                            "lineHeight": 25,
+                                          },
+                                          false,
+                                          false,
+                                          false,
+                                          Array [
+                                            Object {
+                                              "color": "rgba(0, 122, 255, 255)",
+                                            },
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "fontFamily": "System",
+                                              "fontWeight": "600",
+                                            },
+                                            undefined,
+                                          ],
+                                        ]
+                                      }
+                                    >
+                                      No content yet
+                                    </Text>
+                                    <Text
+                                      style={
+                                        Array [
+                                          false,
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "color": "#000000",
+                                            "fontFamily": "System",
+                                            "fontSize": 17,
+                                            "fontWeight": "600",
+                                            "letterSpacing": -0.408,
+                                            "lineHeight": 22,
+                                          },
+                                          false,
+                                          false,
+                                          Array [
+                                            Object {
+                                              "color": "rgba(0,0,0,0.87)",
+                                            },
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                            },
+                                            undefined,
+                                          ],
+                                        ]
+                                      }
+                                    >
+                                      Your notifications will appear here
+                                    </Text>
                                   </View>
                                 </View>
                               </View>
