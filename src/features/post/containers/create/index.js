@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
-import { View, TouchableWithoutFeedback } from 'react-native'
+import { View, TouchableWithoutFeedback, Platform, Keyboard } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
+import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 import {
   TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer,
@@ -17,7 +18,7 @@ import { metrics } from '@app/theme'
 import useFilePicker from '@app/features/post/hooks/file-picker'
 import routes from '@app/navigation/routes'
 import {
-  useAppColors, useAppStyles, useAudioRecorder, useUser,
+  useAppColors, useAppStyles, useAudioRecorder, useKeyboard, useUser,
 } from '@app/shared/hooks'
 import iosColors from '@app/theme/ios-colors'
 import { VideoMarker } from '@app/shared/components/camera-roll-picker'
@@ -125,6 +126,7 @@ const CreatePostPage = ({ route, navigation }) => {
   const filePicker = useFilePicker(['image', 'video'].includes(mediaType) ? params.sharedFile : undefined)
   const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
   const [text, setText] = useState((value) => value || payload)
+  const { keyboardHeight, keyboardShown } = useKeyboard()
 
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
@@ -244,8 +246,8 @@ const CreatePostPage = ({ route, navigation }) => {
   }, [filePicker.file, navigation])
 
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.container}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom: keyboardHeight - getBottomSpace() + metrics.marginHorizontal }]}>
         <PostTextMessage onChange={setText} text={text} />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
@@ -294,7 +296,7 @@ const CreatePostPage = ({ route, navigation }) => {
           </View>
         )}
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 

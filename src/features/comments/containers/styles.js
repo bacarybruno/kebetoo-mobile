@@ -69,4 +69,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.backgroundSecondary,
     ...elevation(1),
   },
+  keyboard: {
+    backgroundColor: colors.background,
+  },
 })

@@ -7,11 +7,11 @@ export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,
-    paddingBottom: metrics.marginVertical,
   },
   container: {
     flex: 1,
     marginHorizontal: metrics.marginHorizontal,
+    marginBottom: metrics.marginVertical,
   },
   header: {
     backgroundColor: colors.background,
