@@ -1,7 +1,9 @@
 import React, { useCallback, useRef, useMemo } from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
+import { getBottomSpace } from 'react-native-iphone-x-helper'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Content, Header } from '@app/features/post/containers/basic-post'
 import { HeaderBack, NoContent } from '@app/shared/components'
@@ -9,6 +11,7 @@ import { strings } from '@app/config'
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
+import { metrics } from '@app/theme'
 
 import createThemedStyles from './styles'
 import CommentInput from '../components/comment-input'
@@ -63,6 +66,7 @@ const Comments = () => {
     replies,
     comment,
   } = useComments(navigation, post, commentInput)
+  const insets = useSafeAreaInsets()
 
   const styles = useAppStyles(createThemedStyles)
   const colors = useAppColors()
@@ -151,16 +155,23 @@ const Comments = () => {
           ref={scrollView}
         />
       </View>
-      <CommentInput
-        onChange={setComment}
-        onSend={onSend}
-        inputRef={commentInput}
-        audioRecorder={audioRecorder}
-        value={comment}
-        isLoading={isLoading}
-        reply={toReply}
-        onReplyClose={clearToReply}
-      />
+      <KeyboardAvoidingView
+        style={styles.keyboard}
+        enabled={Platform.OS === 'ios'}
+        keyboardVerticalOffset={insets.bottom + metrics.marginVertical + getBottomSpace()}
+        behavior="padding"
+      >
+        <CommentInput
+          onChange={setComment}
+          onSend={onSend}
+          inputRef={commentInput}
+          audioRecorder={audioRecorder}
+          value={comment}
+          isLoading={isLoading}
+          reply={toReply}
+          onReplyClose={clearToReply}
+        />
+      </KeyboardAvoidingView>
     </View>
   )
 }

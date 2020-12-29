@@ -293,19 +293,19 @@ const ProfilePage = React.memo(() => {
   }, [])
 
   const updateAppearance = useCallback(() => {
-    const cancelButtonIndex = 3
-
     const bottomSheetItems = [{
       title: strings.general.system_default,
     }, {
       title: strings.profile.dark,
     }, {
       title: strings.profile.light,
+    }, {
+      title: strings.general.cancel,
     }]
 
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
-      cancelButtonIndex,
+      cancelButtonIndex: bottomSheetItems.length - 1,
       title: strings.general.options,
       textStyle: { color: colors.textPrimary },
       titleTextStyle: { color: colors.textSecondary },

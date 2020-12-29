@@ -27,4 +27,7 @@ export default (colors) => StyleSheet.create({
   flatlistContent: {
     paddingBottom: metrics.tabBarFullHeight - metrics.tabBarHeight,
   },
+  noContent: {
+    height: '100%',
+  },
 })

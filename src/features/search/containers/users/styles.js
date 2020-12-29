@@ -42,4 +42,7 @@ export default (colors) => StyleSheet.create({
   metadata: {
     justifyContent: 'center',
   },
+  noContent: {
+    height: '100%',
+  },
 })

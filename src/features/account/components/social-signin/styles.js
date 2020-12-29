@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import { metrics } from '@app/theme'
 
-export default StyleSheet.create({
+export default (colors) => StyleSheet.create({
   socialSignUp: {
     flex: 1,
   },
@@ -23,4 +23,8 @@ export default StyleSheet.create({
     height: 33,
     marginHorizontal: metrics.marginHorizontal / 2,
   },
+  facebookIconWrapper: {
+    backgroundColor: colors.white,
+    borderRadius: 32,
+  }
 })

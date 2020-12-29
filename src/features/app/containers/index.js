@@ -1,21 +1,25 @@
 import React, { useEffect } from 'react'
-import { StatusBar, AppState } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar, AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
 import changeNavigationBarColor from 'react-native-navigation-bar-color'
 
 import AppNavigation from '@app/navigation'
-import { useAnalytics, useAppColors, useNotifications } from '@app/shared/hooks'
+import { useAnalytics, useAppColors, useAppStyles, useNotifications } from '@app/shared/hooks'
 import { rgbaToHex } from '@app/theme/colors'
 
-import styles from './styles'
+import createThemedStyles from './styles'
 
+LogBox.ignoreLogs([
+'`setBackgroundColor` is only available on Android'
+])
 enableScreens()
 
 const RootContainer = () => {
   const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
 
+  const styles = useAppStyles(createThemedStyles)
   const colors = useAppColors()
 
   useEffect(() => {
@@ -46,9 +50,15 @@ const RootContainer = () => {
   }, [setupNotifications])
 
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <AppNavigation />
-    </SafeAreaView>
+    <>
+      <RNSafeAreaView style={styles.topSafeArea} />
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.wrapper}>
+          <AppNavigation />
+        </SafeAreaView>
+      </SafeAreaProvider>
+      <RNSafeAreaView style={styles.bottomSafeArea} />
+    </>
   )
 }
 

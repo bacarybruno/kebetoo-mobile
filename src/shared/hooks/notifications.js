@@ -88,6 +88,7 @@ const useNotifications = () => {
     newItems,
     seenItems,
     badgeCount,
+    isEmpty: notifications.length === 0,
     updateSeenStatus,
     updateOpenStatus,
     setupNotifications,

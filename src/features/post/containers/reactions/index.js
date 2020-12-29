@@ -18,17 +18,6 @@ export const REACTION_TYPES = {
   SHARE: 'share',
 }
 
-export const bottomSheetItems = [{
-  title: strings.reactions.share_now,
-  icon: 'ios-share-alt',
-}, {
-  title: strings.reactions.write_post,
-  icon: 'ios-share',
-}, {
-  title: strings.general.cancel,
-  icon: 'md-close',
-}]
-
 const Reactions = ({
   post: givenPost, author, comments, onComment,
 }) => {
