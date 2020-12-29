@@ -7593,11 +7593,6 @@ react-native-reanimated@^1.8.0:
   dependencies:
     fbjs "^1.0.0"
 
-react-native-receive-sharing-intent@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-receive-sharing-intent/-/react-native-receive-sharing-intent-1.0.3.tgz#16b6d95beea18a7fe00f26a6ecd83d209c98390d"
-  integrity sha512-LFn8SjTNMeiaRrdHUzQddgb6lSnsPJPsKjlGsuh0JG7GtRnxzS+qJQMhlX7vxRIXQU3bFw9vRbumflV8ZhRPlg==
-
 react-native-redash@^12.0.3:
   version "12.6.1"
   resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-12.6.1.tgz#26ca12ce01eaafc154fe322b506c48ef1a76197f"
@@ -7626,6 +7621,11 @@ react-native-screens@^2.4.0:
   integrity sha512-7GcXlaj7IIrM4l5Ub7BPTkNQJ2slHGt2bhmfWmW73NTXEv+7pjHlp+JpQO32Yn+O8UQGPFf0rsesfYUdER7ppQ==
   dependencies:
     debounce "^1.2.0"
+
+react-native-share-menu@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-share-menu/-/react-native-share-menu-5.0.2.tgz#e755f44f174850296a4f08d25ea0019d57187eee"
+  integrity sha512-YO9YVd5u/EGL90xSRDueD1ncmQ+fHyxPd2hg0qFWLDk/73OmuWY9ImxpoTMlbUyHO/epX9hgddZrdCa5kmgBAg==
 
 react-native-slider@^0.11.0:
   version "0.11.0"

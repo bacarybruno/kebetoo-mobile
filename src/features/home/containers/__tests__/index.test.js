@@ -1,8 +1,7 @@
 import { act } from 'react-test-renderer'
-import ReceiveSharingIntent from 'react-native-receive-sharing-intent'
 import auth from '@react-native-firebase/auth'
-import { AppState, Platform } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { Platform } from 'react-native'
+import ShareMenu from 'react-native-share-menu'
 
 import setupTest from '@app/config/jest-setup'
 import { postsList } from '@fixtures/posts'
@@ -13,6 +12,7 @@ import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
 
 import HomePage from '../index'
 
+const navigate = jest.fn()
 const givenHomePage = setupTest(HomePage)({
   __storeState__: {
     postsReducer: {
@@ -23,7 +23,7 @@ const givenHomePage = setupTest(HomePage)({
     },
   },
   navigation: {
-    navigate: jest.fn(),
+    navigate,
   },
 })
 
@@ -39,96 +39,75 @@ it('renders HomePage', async () => {
 })
 
 it('search for shared file', () => {
-  act(() => {
-    givenHomePage()
-  })
-  expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(1)
-  expect(ReceiveSharingIntent.clearReceivedFiles).toBeCalledTimes(1)
+  act(givenHomePage)
+  expect(ShareMenu.getInitialShare).toBeCalledTimes(1)
+  expect(ShareMenu.addNewShareListener).toBeCalledTimes(1)
 })
 
 describe('incoming file sharing', () => {
   it('receives android shared files intent', async () => {
     Platform.OS = 'android'
     const receivedFile = {
-      contentUri: 'shared-file1',
+      data: 'kebetoo.app/shares/shared-file1.png',
+      mimeType: 'image/png',
       realPath: 'jest://kebetoo.app/shares/shared-file1.png',
+      copiedPath: 'jest://rnfs:DocumentDir/shared-file1.png',
     }
-    RealPathUtils.getOriginalFilePath.mockResolvedValueOnce(receivedFile.realPath)
-    ReceiveSharingIntent
-      .getReceivedFiles
-      .mockImplementation((resolve) => resolve([receivedFile]))
+    RealPathUtils
+      .getOriginalFilePath
+      .mockResolvedValueOnce(receivedFile.realPath)
+    ShareMenu
+      .getInitialShare
+      .mockImplementation((resolve) => resolve(receivedFile))
     await act(async () => {
       await givenHomePage()
     })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(routes.CREATE_POST, { sharedFile: 'jest://rnfs:DocumentDir/shared-file1.png' })
+    expect(navigate).toBeCalledTimes(1)
+    expect(navigate).toBeCalledWith(routes.CREATE_POST, {
+      sharedFile: receivedFile.copiedPath,
+    })
   })
 
   it('receives ios shared files intent', async () => {
     Platform.OS = 'ios'
     const receivedFile = {
-      contentUri: 'jest://kebetoo.app/shares/shared-file1.png',
+      data: 'kebetoo.app/shares/shared-file1.png',
+      mimeType: 'image/png',
     }
-    ReceiveSharingIntent
-      .getReceivedFiles
-      .mockImplementation((resolve) => resolve([receivedFile]))
+    ShareMenu
+      .getInitialShare
+      .mockImplementation((resolve) => resolve(receivedFile))
     await act(async () => {
       await givenHomePage()
     })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(
-      routes.CREATE_POST, { sharedFile: receivedFile.contentUri },
-    )
-  })
-
-  it('receives weblink', async () => {
-    Platform.OS = 'ios'
-    const receivedFile = {
-      weblink: 'jest://kebetoo.app/shares/shared-file1.png',
-    }
-    ReceiveSharingIntent
-      .getReceivedFiles
-      .mockImplementation((resolve) => resolve([receivedFile]))
-    await act(async () => {
-      await givenHomePage()
+    expect(navigate).toBeCalledTimes(1)
+    expect(navigate).toBeCalledWith(routes.CREATE_POST, {
+      sharedFile: receivedFile.data,
     })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(
-      routes.CREATE_POST, { sharedText: receivedFile.weblink },
-    )
   })
 
   it('receives text', async () => {
     Platform.OS = 'ios'
     const receivedFile = {
-      text: 'jest://kebetoo.app/shares/shared-file1.png',
+      data: 'jest://kebetoo.app/shares/shared-file1.png',
+      mimeType: 'text/plain',
     }
-    ReceiveSharingIntent
-      .getReceivedFiles
-      .mockImplementation((resolve) => resolve([receivedFile]))
-    await act(async () => {
-      await givenHomePage()
-    })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(
-      routes.CREATE_POST, { sharedText: receivedFile.text },
+    ShareMenu
+      .getInitialShare
+      .mockImplementation((resolve) => resolve(receivedFile))
+    await act(givenHomePage)
+    expect(navigate).toBeCalledTimes(1)
+    expect(navigate).toBeCalledWith(
+      routes.CREATE_POST, { sharedText: receivedFile.data },
     )
   })
 
-  it('received sharing intent when app is open', () => {
-    AppState.addEventListener = jest.fn()
-    act(() => {
-      givenHomePage()
-    })
-    expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(1)
-    const appStateChange = AppState.addEventListener.mock.calls[0][1]
-    act(() => {
-      appStateChange('active')
-    })
-    expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(2)
-    act(() => {
-      appStateChange('inactive')
-    })
-    expect(ReceiveSharingIntent.getReceivedFiles).toBeCalledTimes(2)
+  it('removes listener', () => {
+    Platform.OS = 'ios'
+    const removeSpy = jest.fn()
+    ShareMenu.addNewShareListener = jest.fn().mockReturnValue({ remove: removeSpy })
+    const { wrapper } = givenHomePage()
+    wrapper.unmount()
+    expect(removeSpy).toBeCalledTimes(1)
   })
 })

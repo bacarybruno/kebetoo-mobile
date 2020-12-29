@@ -245,9 +245,10 @@ const CreatePostPage = ({ route, navigation }) => {
     })
   }, [filePicker.file, navigation])
 
+  const marginBottom = keyboardHeight - getBottomSpace() + metrics.marginHorizontal
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom: keyboardHeight - getBottomSpace() + metrics.marginHorizontal }]}>
+      <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
         <PostTextMessage onChange={setText} text={text} />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
