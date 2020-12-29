@@ -76,6 +76,8 @@ exports[`renders SocialSignin 1`] = `
           onStartShouldSetResponder={[Function]}
           style={
             Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderRadius": 32,
               "opacity": 1,
             }
           }
