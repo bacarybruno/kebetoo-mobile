@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { api } from '@app/shared/services'
-import { Typography } from '@app/shared/components'
+import { NoContent, Typography } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
@@ -135,6 +135,11 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
       )}
       {posts.length === 0 && searchQuery.length > 0 && !isLoading && (
         <NoResult query={searchQuery} />
+      )}
+      {posts.length === 0 && postsHistory.length === 0 && (
+        <View style={styles.noContent}>
+          <NoContent text={strings.search.no_content} title={strings.general.no_content} />
+        </View>
       )}
       {posts.length > 0 && (
         <FlatList

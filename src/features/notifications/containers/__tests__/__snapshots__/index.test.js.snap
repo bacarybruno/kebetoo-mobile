@@ -4,6 +4,7 @@ exports[`renders NotificationsPage 1`] = `
 <RCTScrollView
   contentContainerStyle={
     Object {
+      "flexGrow": 1,
       "paddingBottom": 24,
     }
   }

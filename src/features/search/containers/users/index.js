@@ -5,7 +5,9 @@ import { useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { api } from '@app/shared/services'
-import { Typography, Avatar, Pressable } from '@app/shared/components'
+import {
+  Typography, Avatar, Pressable, NoContent,
+} from '@app/shared/components'
 import * as types from '@app/redux/types'
 import { recentSearchHistory } from '@app/redux/selectors'
 import { strings } from '@app/config'
@@ -162,6 +164,11 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
       )}
       {users.length === 0 && searchQuery.length > 0 && !isLoading && (
         <NoResult query={searchQuery} />
+      )}
+      {users.length === 0 && usersHistory.length === 0 && (
+        <View style={styles.noContent}>
+          <NoContent text={strings.search.no_content} title={strings.general.no_content} />
+        </View>
       )}
       {users.length > 0 && (
         <FlatList

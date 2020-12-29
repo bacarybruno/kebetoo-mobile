@@ -8,11 +8,12 @@ import { useUser, useNotifications, useAppStyles } from '@app/shared/hooks'
 import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
 import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
-import { AppHeader } from '@app/shared/components'
+import { AppHeader, NoContent } from '@app/shared/components'
 
 import Notification from '../components/notification'
 import Heading from '../components/heading'
 import createThemedStyles from './styles'
+import { metrics } from '@app/theme'
 
 const routeOptions = { title: strings.tabs.notifications }
 
@@ -37,7 +38,7 @@ const Section = ({ title, items, renderItem }) => {
 
 const NotificationsPage = () => {
   const {
-    newItems, seenItems, updateSeenStatus, updateOpenStatus,
+    newItems, seenItems, isEmpty, updateSeenStatus, updateOpenStatus,
   } = useNotifications()
   const { addListener, navigate } = useNavigation()
   const { profile } = useUser()
@@ -153,6 +154,11 @@ const NotificationsPage = () => {
         items={seenItems}
         renderItem={renderNotification}
       />
+      {isEmpty && (
+        <View style={styles.wrapper}>
+          <NoContent text={strings.notifications.no_content} title={strings.general.no_content} />
+        </View>
+      )}
     </ScrollView>
   )
 }
