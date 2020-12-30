@@ -22,105 +22,116 @@ exports[`renders CreatePost 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Object {
-        "backgroundColor": "#F5F5F5",
-        "borderColor": "transparent",
-        "borderRadius": 15,
-        "borderWidth": 1,
-        "height": 381.14285714285717,
-        "marginTop": 8,
-        "minHeight": 200,
-        "overflow": "hidden",
-        "paddingRight": 16,
-        "paddingVertical": 6,
+  <View>
+    <Text
+      style={
+        Array [
+          false,
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            Object {
+              "marginLeft": 5,
+            },
+          ],
+        ]
       }
-    }
-  >
+    >
+      169 characters
+    </Text>
     <View
       style={
         Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "paddingLeft": 16,
+          "backgroundColor": "rgba(255, 255, 255, 255)",
+          "borderColor": "transparent",
+          "borderRadius": 0,
+          "borderWidth": 1,
+          "height": 381.14285714285717,
+          "minHeight": 200,
+          "overflow": "hidden",
         }
       }
     >
-      <TextInput
-        allowFontScaling={true}
-        autoFocus={true}
-        blurOnSubmit={false}
-        defaultValue="hello world"
-        maxLength={180}
-        multiline={true}
-        numberOfLines={8}
-        onBlur={[Function]}
-        onChangeText={[Function]}
-        onFocus={[Function]}
-        placeholder="What's on your mind?"
-        placeholderTextColor="rgba(174, 174, 178, 255)"
-        rejectResponderTermination={true}
-        returnKeyType="done"
+      <View
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgba(0,0,0,0.87)",
+              "alignItems": "center",
               "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-              "fontWeight": "400",
-              "height": "100%",
-              "letterSpacing": -0.32,
-              "lineHeight": 21,
+              "flexDirection": "row",
+              "paddingLeft": 16,
             },
             Object {
-              "fontSize": 16,
-              "textAlignVertical": "top",
+              "paddingLeft": 0,
             },
-            undefined,
           ]
         }
-        underlineColorAndroid="transparent"
-        value={null}
-      />
+      >
+        <TextInput
+          allowFontScaling={true}
+          autoFocus={true}
+          blurOnSubmit={false}
+          defaultValue="hello world"
+          maxLength={180}
+          multiline={true}
+          numberOfLines={8}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onFocus={[Function]}
+          placeholder="What's on your mind?"
+          placeholderTextColor="rgba(174, 174, 178, 255)"
+          rejectResponderTermination={true}
+          returnKeyType="done"
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgba(0,0,0,0.87)",
+                "flex": 1,
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "height": "100%",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgba(0,0,0,0.87)",
+                "fontFamily": "System",
+                "fontSize": 19,
+                "fontWeight": "400",
+                "letterSpacing": -0.408,
+                "lineHeight": 22,
+                "marginTop": 0,
+                "textAlignVertical": "top",
+              },
+              undefined,
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value={null}
+        />
+      </View>
     </View>
   </View>
-  <Text
-    style={
-      Array [
-        false,
-        false,
-        false,
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#000000",
-          "fontFamily": "System",
-          "fontSize": 12,
-          "fontWeight": "400",
-          "letterSpacing": 0,
-          "lineHeight": 16,
-        },
-        Array [
-          Object {
-            "color": "rgba(0,0,0,0.54)",
-          },
-          Object {
-            "backgroundColor": "transparent",
-            "fontFamily": "System",
-            "fontWeight": "400",
-          },
-          Object {
-            "marginTop": 8,
-          },
-        ],
-      ]
-    }
-  >
-    169 characters
-  </Text>
   <View
     style={
       Object {

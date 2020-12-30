@@ -93,12 +93,15 @@ exports[`renders SignUp 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "paddingLeft": 16,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                undefined,
+              ]
             }
           >
             <TextInput
@@ -148,12 +151,15 @@ exports[`renders SignUp 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "paddingLeft": 16,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                undefined,
+              ]
             }
           >
             <TextInput
@@ -204,12 +210,15 @@ exports[`renders SignUp 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "paddingLeft": 16,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                undefined,
+              ]
             }
           >
             <TextInput
