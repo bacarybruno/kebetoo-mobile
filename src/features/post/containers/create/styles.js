@@ -37,7 +37,7 @@ export default (colors) => StyleSheet.create({
     borderRadius: 0,
   },
   textCount: {
-    marginLeft: 5,
+    marginLeft: Platform.select({ android: 5, ios: 0 }),
   },
   buttonsWrapper: {
     flexDirection: 'row',
