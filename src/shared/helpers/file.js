@@ -39,7 +39,8 @@ export const getExtension = (filename) => {
 
 export const getMimeType = (filename) => {
   const extension = getExtension(filename)
-  return mimeTypes[extension]
+  if (!extension) return undefined
+  return mimeTypes[extension.toLowerCase()]
 }
 
 export const getMediaType = (filename) => {
