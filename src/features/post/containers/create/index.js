@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
-import { View, TouchableWithoutFeedback, Platform, Keyboard } from 'react-native'
+import {
+  View, TouchableWithoutFeedback, Platform, Keyboard,
+} from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
@@ -45,10 +47,24 @@ const TEXT_MAX_LENGHT = 180
 
 const noop = () => { }
 
-export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => {
+export const PostTextMessage = ({
+  onChange, text, maxNumberOfLines = 8, displayCounter,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
-    <>
+    <View style={styles.postTextMessage}>
+      <Typography
+        style={styles.textCount}
+        type={Typography.types.headline6}
+        text={
+          displayCounter
+            ? strings.formatString(
+              strings.create_post.characters,
+              TEXT_MAX_LENGHT - text.length,
+            )
+            : strings.create_post.caption
+        }
+      />
       <TextInput
         autoFocus
         multiline
@@ -57,6 +73,7 @@ export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => {
         returnKeyType="done"
         textStyle={styles.textInput}
         wrapperStyle={styles.textInputWrapper}
+        inputWrapperStyle={styles.inputWrapper}
         maxLength={TEXT_MAX_LENGHT}
         defaultValue={text}
         numberOfLines={Math.min(
@@ -64,15 +81,7 @@ export const PostTextMessage = ({ onChange, text, maxNumberOfLines = 8 }) => {
           maxNumberOfLines,
         )}
       />
-      <Typography
-        style={styles.textCount}
-        type={Typography.types.headline6}
-        text={strings.formatString(
-          strings.create_post.characters,
-          TEXT_MAX_LENGHT - text.length,
-        )}
-      />
-    </>
+    </View>
   )
 }
 
@@ -249,7 +258,7 @@ const CreatePostPage = ({ route, navigation }) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
-        <PostTextMessage onChange={setText} text={text} />
+        <PostTextMessage onChange={setText} text={text} displayCounter={text.length > 0} />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
             <AudioPlayer

@@ -110,6 +110,7 @@ const locales = Object.freeze({
     post_edited: 'Votre post a bien été modifié!',
     post_deleted: 'Votre post a bien été supprimé!',
     show_post_created: 'Voir',
+    caption: 'Votre message',
   },
   reactions: {
     share_now: 'Partager maintenant',

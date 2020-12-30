@@ -46,6 +46,7 @@ const InputText = forwardRef((props, ref) => {
     Right,
     children,
     height,
+    inputWrapperStyle,
     ...otherProps
   } = props
   const [value, setValue] = useState(null)
@@ -64,7 +65,7 @@ const InputText = forwardRef((props, ref) => {
       style={[styles.wrapper, wrapperStyle, height && { height }, error && styles.error]}
     >
       {children}
-      <View style={styles.inputWrapper}>
+      <View style={[styles.inputWrapper, inputWrapperStyle]}>
         {Left && <Left />}
         <TextInput
           style={[
