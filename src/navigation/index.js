@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useRef } from 'react'
 import { Image, Platform, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
 import RNBootSplash from 'react-native-bootsplash'
 import messaging from '@react-native-firebase/messaging'
@@ -52,8 +52,10 @@ const EmptyPage = () => null
 const defaultScreenOptions = {
   safeAreaInsets: Platform.select({
     ios: { top: 10, bottom: 0 },
-    default: {}
-  })
+    default: {},
+  }),
+  gestureEnabled: true,
+  ...TransitionPresets.ModalSlideFromBottomIOS,
 }
 
 const defaultOnboardingScreenOptions = (styles, colors) => ({

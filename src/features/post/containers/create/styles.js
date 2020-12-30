@@ -66,4 +66,7 @@ export default (colors) => StyleSheet.create({
   inputWrapper: {
     paddingLeft: 0,
   },
+  postTextMessage: {
+    marginTop: metrics.screenHeight * 0.02,
+  },
 })
