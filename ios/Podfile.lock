@@ -386,8 +386,6 @@ PODS:
     - React
   - react-native-netinfo (5.7.1):
     - React
-  - react-native-receive-sharing-intent (1.0.3):
-    - React
   - react-native-safe-area-context (3.1.7):
     - React
   - react-native-video (5.1.0-alpha8):
@@ -512,6 +510,8 @@ PODS:
     - React
   - RNScreens (2.4.0):
     - React
+  - RNShareMenu (5.0.2):
+    - React
   - RNSnackbar (2.3.0):
     - React-Core
   - RNSound (0.11.0):
@@ -567,7 +567,6 @@ DEPENDENCIES:
   - "react-native-cameraroll (from `../node_modules/@react-native-community/cameraroll`)"
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
-  - react-native-receive-sharing-intent (from `../node_modules/react-native-receive-sharing-intent`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-video (from `../node_modules/react-native-video`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -600,6 +599,7 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNShareMenu (from `../node_modules/react-native-share-menu`)
   - RNSnackbar (from `../node_modules/react-native-snackbar`)
   - RNSound (from `../node_modules/react-native-sound`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -683,8 +683,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fbsdk"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
-  react-native-receive-sharing-intent:
-    :path: "../node_modules/react-native-receive-sharing-intent"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-video:
@@ -749,6 +747,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNShareMenu:
+    :path: "../node_modules/react-native-share-menu"
   RNSnackbar:
     :path: "../node_modules/react-native-snackbar"
   RNSound:
@@ -810,7 +810,6 @@ SPEC CHECKSUMS:
   react-native-cameraroll: 60ba0068826eab1c8d43146191bafd4363ea58a7
   react-native-fbsdk: c35d42169e64aaf66f01713c1e18d0674f7f6519
   react-native-netinfo: 4fa023c153d582aeae8435df95c9a975c5986449
-  react-native-receive-sharing-intent: 337cd21a0a418a15720e3efac1bcf1e5f1990120
   react-native-safe-area-context: 955ecfce672683b495d9294d2f154a9ad1d9796b
   react-native-video: dbb8df4f0bbdf80de6797c90fcad8bc12b19401d
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
@@ -843,12 +842,13 @@ SPEC CHECKSUMS:
   RNPermissions: 3635b407c15f2fe591bd2101c8f20aa0912caba8
   RNReanimated: 955cf4068714003d2f1a6e2bae3fb1118f359aff
   RNScreens: b5c0e1b2b04512919e78bd3898e144a157ce2363
+  RNShareMenu: fefca627ce5cbe7999655b7126ba4d07193fd2b9
   RNSnackbar: 00dce395cc4599bc56234cd10bd20ddd9b1ccb92
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   TOCropViewController: da59f531f8ac8a94ef6d6c0fc34009350f9e8bfe
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 4d73793007fd47c5083eb95e34e0c5b91e60a4c1
+PODFILE CHECKSUM: 778175e823d736fbc4aef7e0f30d03fae579485b
 
 COCOAPODS: 1.10.0

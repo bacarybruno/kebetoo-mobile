@@ -1,5 +1,6 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative './kebetoo_pods'
 
 # Post Install processing for Flipper
 def flipper_post_install(installer)
@@ -18,12 +19,7 @@ target 'Kebetoo' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  # react-native-permissions
-  permissions_path = '../node_modules/react-native-permissions/ios'
-  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone.podspec"
-
-  # react-native-google-signin
-  pod 'GoogleSignIn', '~> 5.0.2'
+  use_kebetoo_pods!
 
   target 'KebetooTests' do
     inherit! :complete
@@ -37,6 +33,7 @@ target 'Kebetoo' do
   use_flipper!
   post_install do |installer|
     flipper_post_install(installer)
+    react_native_share_menu_post_install(installer)
   end
 end
 
@@ -47,4 +44,11 @@ target 'Kebetoo-tvOS' do
     inherit! :search_paths
     # Pods for testing
   end
+end
+
+target 'ShareExtension' do
+  use_react_native!
+
+  pod 'RNShareMenu', :path => '../node_modules/react-native-share-menu'
+  # Manually link packages here to keep your extension bundle size minimal
 end

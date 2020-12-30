@@ -27,6 +27,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>kebetoo</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
 				<string>com.googleusercontent.apps.355888072499-uqoqu8r3cejftmih8akhpc1dfa6r6vki</string>
 			</array>
 		</dict>
@@ -89,6 +97,8 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>BootSplash</string>
+	<key>UIMainStoryboardFile</key>
+	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -101,7 +111,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSPhotoLibraryUsageDescription</key>
+		<key>NSPhotoLibraryUsageDescription</key>
 	<string>Kebetoo would like to select photos from your camera roll.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Kebetoo will need access to your camera roll to cache images.</string>

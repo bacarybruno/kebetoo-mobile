@@ -9,6 +9,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <RNGoogleSignin/RNGoogleSignin.h>
 
+#import <RNShareMenu/ShareMenuManager.h>
+
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
 #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
@@ -70,15 +72,19 @@ static void InitializeFlipper(UIApplication *application) {
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-  if ([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options]) {
-    return YES;
-  }
+  return [ShareMenuManager application:app openURL:url options:options];
 
-  if ([RNGoogleSignin application:app openURL:url options:options]) {
-    return YES;
-  }
+  // // facebook signin
+  // if ([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options]) {
+  //   return YES;
+  // }
 
-  return NO;
+  // // google signin
+  // if ([RNGoogleSignin application:app openURL:url options:options]) {
+  //   return YES;
+  // }
+
+  // return NO;
 }
 
 @end

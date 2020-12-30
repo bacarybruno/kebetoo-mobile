@@ -18,6 +18,10 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* KebetooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KebetooTests.m */; };
 		5B14CE276987E39D3F9DBCAD /* libPods-Kebetoo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BC3B75A3B420CAA243CEFF /* libPods-Kebetoo-tvOS.a */; };
+		60FCB683DB83B6EB0FC2D419 /* libPods-ShareExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 043F658FDF254E4C62D0FBE5 /* libPods-ShareExtension.a */; };
+		6D5FD6EE259C03FB007FD0B4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FD6EC259C03FB007FD0B4 /* MainInterface.storyboard */; };
+		6D5FD6F2259C03FB007FD0B4 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D5FD6E8259C03FB007FD0B4 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6D5FD7B2259C0709007FD0B4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FD7B1259C0708007FD0B4 /* ShareViewController.swift */; };
 		6D9EBF3A2544B1ED004EC5FF /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EBF382544B1ED004EC5FF /* icomoon.ttf */; };
 		6D9EBF3B2544B1ED004EC5FF /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EBF392544B1ED004EC5FF /* Ionicons.ttf */; };
 		6D9EBF452544B3F7004EC5FF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EBF442544B3F7004EC5FF /* File.swift */; };
@@ -42,13 +46,35 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "Kebetoo-tvOS";
 		};
+		6D5FD6F0259C03FB007FD0B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D5FD6E7259C03FB007FD0B4;
+			remoteInfo = ShareExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6D5FD2F7259BF57D007FD0B4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6D5FD6F2259C03FB007FD0B4 /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* KebetooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KebetooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* KebetooTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KebetooTests.m; sourceTree = "<group>"; };
+		043F658FDF254E4C62D0FBE5 /* libPods-ShareExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Kebetoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kebetoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Kebetoo/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Kebetoo/AppDelegate.m; sourceTree = "<group>"; };
@@ -64,19 +90,31 @@
 		471904DF7EB7EE45383F7F65 /* Pods-Kebetoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo.release.xcconfig"; path = "Target Support Files/Pods-Kebetoo/Pods-Kebetoo.release.xcconfig"; sourceTree = "<group>"; };
 		47D700EB5F65D769B069684E /* Pods-Kebetoo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Kebetoo-tvOSTests/Pods-Kebetoo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F491776E74136D49E75F36B /* libPods-Kebetoo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kebetoo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		549FFBC3C2C59B8EC76D7015 /* Pods-ShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-ShareExtension/Pods-ShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		61AE95C39E2EA7DCF2A1C001 /* Pods-Kebetoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo.debug.xcconfig"; path = "Target Support Files/Pods-Kebetoo/Pods-Kebetoo.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA6A16AA5A922A2C4648D3B /* Pods-Kebetoo-KebetooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo-KebetooTests.release.xcconfig"; path = "Target Support Files/Pods-Kebetoo-KebetooTests/Pods-Kebetoo-KebetooTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D5FD593259BFF0A007FD0B4 /* Kebetoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Kebetoo.entitlements; path = Kebetoo/Kebetoo.entitlements; sourceTree = "<group>"; };
+		6D5FD6E8259C03FB007FD0B4 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5FD6ED259C03FB007FD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		6D5FD6EF259C03FB007FD0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D5FD70A259C0426007FD0B4 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		6D5FD71F259C04E5007FD0B4 /* ShareExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShareExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		6D5FD7B1259C0708007FD0B4 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = "../../node_modules/react-native-share-menu/ios/ShareViewController.swift"; sourceTree = "<group>"; };
 		6D9EBF382544B1ED004EC5FF /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../../assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		6D9EBF392544B1ED004EC5FF /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = ../../assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		6D9EBF442544B3F7004EC5FF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		6D9EBF582544C130004EC5FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D9EBF672544C7BB004EC5FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Kebetoo/BootSplash.storyboard; sourceTree = "<group>"; };
+		6DE9C9524F95F32D2FCC5A6F /* Pods-KebetooShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KebetooShare.release.xcconfig"; path = "Target Support Files/Pods-KebetooShare/Pods-KebetooShare.release.xcconfig"; sourceTree = "<group>"; };
 		89750180BF1A786ED4D68801 /* Pods-Kebetoo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Kebetoo-tvOS/Pods-Kebetoo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A48D98CEF565367F89C80BB9 /* Pods-Kebetoo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Kebetoo-tvOS/Pods-Kebetoo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A5E7CA063B2EBBB0016703F9 /* libPods-Kebetoo-KebetooTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kebetoo-KebetooTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB3E016BAF83C3A16FDA638B /* Pods-KebetooShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KebetooShare.debug.xcconfig"; path = "Target Support Files/Pods-KebetooShare/Pods-KebetooShare.debug.xcconfig"; sourceTree = "<group>"; };
 		D440DD67E4786EB5F34BAA44 /* libPods-Kebetoo-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kebetoo-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8EFF57CE20007000F3D0895 /* libPods-KebetooShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KebetooShare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FD22A2D09FE2B2AEEB138AAF /* Pods-ShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareExtension.release.xcconfig"; path = "Target Support Files/Pods-ShareExtension/Pods-ShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +150,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D5FD6E5259C03FB007FD0B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60FCB683DB83B6EB0FC2D419 /* libPods-ShareExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +181,7 @@
 		13B07FAE1A68108700A75B9A /* Kebetoo */ = {
 			isa = PBXGroup;
 			children = (
+				6D5FD593259BFF0A007FD0B4 /* Kebetoo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				6D9EBF582544C130004EC5FF /* GoogleService-Info.plist */,
@@ -160,6 +207,10 @@
 				89750180BF1A786ED4D68801 /* Pods-Kebetoo-tvOS.release.xcconfig */,
 				26AB04AA847DEAD5A6C63E58 /* Pods-Kebetoo-tvOSTests.debug.xcconfig */,
 				47D700EB5F65D769B069684E /* Pods-Kebetoo-tvOSTests.release.xcconfig */,
+				AB3E016BAF83C3A16FDA638B /* Pods-KebetooShare.debug.xcconfig */,
+				6DE9C9524F95F32D2FCC5A6F /* Pods-KebetooShare.release.xcconfig */,
+				549FFBC3C2C59B8EC76D7015 /* Pods-ShareExtension.debug.xcconfig */,
+				FD22A2D09FE2B2AEEB138AAF /* Pods-ShareExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -173,8 +224,22 @@
 				A5E7CA063B2EBBB0016703F9 /* libPods-Kebetoo-KebetooTests.a */,
 				17BC3B75A3B420CAA243CEFF /* libPods-Kebetoo-tvOS.a */,
 				D440DD67E4786EB5F34BAA44 /* libPods-Kebetoo-tvOSTests.a */,
+				E8EFF57CE20007000F3D0895 /* libPods-KebetooShare.a */,
+				043F658FDF254E4C62D0FBE5 /* libPods-ShareExtension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D5FD6E9259C03FB007FD0B4 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FD70A259C0426007FD0B4 /* ShareExtension.entitlements */,
+				6D5FD6EC259C03FB007FD0B4 /* MainInterface.storyboard */,
+				6D5FD6EF259C03FB007FD0B4 /* Info.plist */,
+				6D5FD71F259C04E5007FD0B4 /* ShareExtension-Bridging-Header.h */,
+				6D5FD7B1259C0708007FD0B4 /* ShareViewController.swift */,
+			);
+			path = ShareExtension;
 			sourceTree = "<group>";
 		};
 		6D9EBF372544B1CC004EC5FF /* Resources */ = {
@@ -200,6 +265,7 @@
 				13B07FAE1A68108700A75B9A /* Kebetoo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* KebetooTests */,
+				6D5FD6E9259C03FB007FD0B4 /* ShareExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1EAC792BBDB11F091855FC7B /* Pods */,
@@ -216,6 +282,7 @@
 				00E356EE1AD99517003FC87E /* KebetooTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* Kebetoo-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* Kebetoo-tvOSTests.xctest */,
+				6D5FD6E8259C03FB007FD0B4 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,10 +324,12 @@
 				E712F2B3E98C95D7ACA52D51 /* [CP-User] [RNFB] Core Configuration */,
 				7B385FAE304B35BFCEC5F571 /* [CP-User] [RNFB] Crashlytics Configuration */,
 				6D9EBF622544C49A004EC5FF /* ShellScript */,
+				6D5FD2F7259BF57D007FD0B4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6D5FD6F1259C03FB007FD0B4 /* PBXTargetDependency */,
 			);
 			name = Kebetoo;
 			productName = Kebetoo;
@@ -306,12 +375,32 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* Kebetoo-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6D5FD6E7259C03FB007FD0B4 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D5FD6F3259C03FB007FD0B4 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				581A2F52381F280A0355C9E1 /* [CP] Check Pods Manifest.lock */,
+				6D5FD6E4259C03FB007FD0B4 /* Sources */,
+				6D5FD6E5259C03FB007FD0B4 /* Frameworks */,
+				6D5FD6E6259C03FB007FD0B4 /* Resources */,
+				A2A8A8587CBBFDC87FF85AF1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 6D5FD6E8259C03FB007FD0B4 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -330,6 +419,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+					6D5FD6E7259C03FB007FD0B4 = {
+						CreatedOnToolsVersion = 12.0.1;
+						DevelopmentTeam = JAMLJPMM9H;
+						LastSwiftMigration = 1200;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -350,6 +445,7 @@
 				00E356ED1AD99517003FC87E /* KebetooTests */,
 				2D02E47A1E0B4A5D006451C7 /* Kebetoo-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* Kebetoo-tvOSTests */,
+				6D5FD6E7259C03FB007FD0B4 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -387,6 +483,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D5FD6E6259C03FB007FD0B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FD6EE259C03FB007FD0B4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +569,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		581A2F52381F280A0355C9E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShareExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6A2557ED28857460065508FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +644,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
+		};
+		A2A8A8587CBBFDC87FF85AF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareExtension/Pods-ShareExtension-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareExtension/Pods-ShareExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		CF757298CC0F937DC5CFDEDB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -675,6 +819,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D5FD6E4259C03FB007FD0B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FD7B2259C0709007FD0B4 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -688,6 +840,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* Kebetoo-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		6D5FD6F1259C03FB007FD0B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D5FD6E7259C03FB007FD0B4 /* ShareExtension */;
+			targetProxy = 6D5FD6F0259C03FB007FD0B4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -698,6 +855,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = Kebetoo;
+			sourceTree = "<group>";
+		};
+		6D5FD6EC259C03FB007FD0B4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D5FD6ED259C03FB007FD0B4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -752,8 +917,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61AE95C39E2EA7DCF2A1C001 /* Pods-Kebetoo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Kebetoo/Kebetoo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JAMLJPMM9H;
 				ENABLE_BITCODE = NO;
@@ -762,6 +929,7 @@
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = Kebetoo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -780,11 +948,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 471904DF7EB7EE45383F7F65 /* Pods-Kebetoo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Kebetoo/Kebetoo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JAMLJPMM9H;
 				INFOPLIST_FILE = Kebetoo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -905,6 +1076,71 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kebetoo-tvOS.app/Kebetoo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		6D5FD6F4259C03FB007FD0B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 549FFBC3C2C59B8EC76D7015 /* Pods-ShareExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JAMLJPMM9H;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kebetoo.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShareExtension/ShareExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6D5FD6F5259C03FB007FD0B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD22A2D09FE2B2AEEB138AAF /* Pods-ShareExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JAMLJPMM9H;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kebetoo.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShareExtension/ShareExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1056,6 +1292,15 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D5FD6F3259C03FB007FD0B4 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D5FD6F4259C03FB007FD0B4 /* Debug */,
+				6D5FD6F5259C03FB007FD0B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
