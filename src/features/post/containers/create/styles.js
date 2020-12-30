@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
+import { human, systemWeights } from 'react-native-typography'
 
 import { metrics, elevation } from '@app/theme'
 import Typography from '@app/shared/components/typography'
@@ -22,19 +23,21 @@ export default (colors) => StyleSheet.create({
   },
   textInput: {
     textAlignVertical: 'top',
-    fontSize: Typography.fontSizes.md,
+    ...human.headline,
+    ...systemWeights.regular,
+    fontSize: Typography.fontSizes.md + 3,
+    color: colors.textPrimary,
+    marginTop: Platform.select({ android: -10, default: 0 }),
   },
   textInputWrapper: {
-    marginTop: 8,
-    backgroundColor: colors.backgroundSecondary,
-    paddingRight: metrics.marginHorizontal,
+    backgroundColor: colors.background,
     height: metrics.screenHeight / 3.5,
     minHeight: 200,
-    paddingVertical: metrics.marginVertical / 4,
     borderColor: 'transparent',
+    borderRadius: 0,
   },
   textCount: {
-    marginTop: 8,
+    marginLeft: 5,
   },
   buttonsWrapper: {
     flexDirection: 'row',
@@ -59,5 +62,8 @@ export default (colors) => StyleSheet.create({
   },
   imagePreviewer: {
     width: '50%',
+  },
+  inputWrapper: {
+    paddingLeft: 0,
   },
 })

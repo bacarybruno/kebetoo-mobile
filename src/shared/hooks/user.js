@@ -43,8 +43,8 @@ const useUser = () => {
       if (!profile.uid && authenticatedUser?.uid) {
         const author = await getUser(authenticatedUser.uid)
         if (!author) {
-          console.log('User not yet created. Retrying in 30s')
-          setTimeout(refreshUserId, 30000)
+          // console.log('User not yet created. Retrying in 30s')
+          // setTimeout(refreshUserId, 30000)
           return
         }
         await setUserId(author.id)
