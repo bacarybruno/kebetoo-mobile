@@ -33,7 +33,6 @@
 
 # Generate assets
 $ `react-native generate-bootsplash --logo-width=200 --background-color=FFFFFF ./splash.png`
-$ `react-native set-icon --path ./icon.png`
-
-# Generate notification icons
-http://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&source.space.trim=1&source.space.pad=0&name=ic_stat_ic_notification
+$ `react-native set-icon --platform ios --path ./icon.png`
+Generate [android icon here](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=image&foreground.space.trim=1&foreground.space.pad=0&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(255%2C%20255%2C%20255)&crop=0&backgroundShape=none&effects=none&name=ic_launcher)
+Generate [notifications icons here](http://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&source.space.trim=1&source.space.pad=0&name=ic_stat_ic_notification)
