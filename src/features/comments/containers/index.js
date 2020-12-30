@@ -1,5 +1,7 @@
 import React, { useCallback, useRef, useMemo } from 'react'
-import { View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
+import {
+  View, FlatList, KeyboardAvoidingView, Platform,
+} from 'react-native'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { HeaderBackButton } from '@react-navigation/stack'
 import { getBottomSpace } from 'react-native-iphone-x-helper'

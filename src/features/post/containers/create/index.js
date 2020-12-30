@@ -1,8 +1,7 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
 import {
-  View, TouchableWithoutFeedback, Platform, Keyboard,
+  View, TouchableWithoutFeedback, Platform, ScrollView,
 } from 'react-native'
-import { TransitionPresets } from '@react-navigation/stack'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
@@ -34,7 +33,6 @@ export const routeOptions = (styles, colors) => ({
   ),
   headerStyle: styles.header,
   headerTitleStyle: { color: colors.textPrimary },
-  ...TransitionPresets.ModalSlideFromBottomIOS,
 })
 
 export const actionTypes = {
@@ -256,7 +254,7 @@ const CreatePostPage = ({ route, navigation }) => {
 
   const marginBottom = keyboardHeight - getBottomSpace() + metrics.marginHorizontal
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
       <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
         <PostTextMessage onChange={setText} text={text} displayCounter={text.length > 0} />
         <View style={styles.preview}>
@@ -306,7 +304,7 @@ const CreatePostPage = ({ route, navigation }) => {
           </View>
         )}
       </View>
-    </TouchableWithoutFeedback>
+    </ScrollView>
   )
 }
 

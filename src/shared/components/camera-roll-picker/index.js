@@ -5,7 +5,7 @@ import {
   FlatList, Image, Platform, View, Animated,
 } from 'react-native'
 import { useRoute } from '@react-navigation/native'
-import { TransitionPresets, useHeaderHeight } from '@react-navigation/stack'
+import { useHeaderHeight } from '@react-navigation/stack'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import CameraRoll from '@react-native-community/cameraroll'
 import RNCameraRollPicker from '@kebetoo/camera-roll-picker'
@@ -38,7 +38,6 @@ const routeOptions = (title, colors) => ({
   headerStyle: {
     backgroundColor: colors.background,
   },
-  ...TransitionPresets.ModalSlideFromBottomIOS,
 })
 
 const ImagePreview = React.memo(({ item }) => {

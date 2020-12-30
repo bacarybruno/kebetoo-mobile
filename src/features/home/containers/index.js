@@ -5,7 +5,6 @@ import React, {
 import {
   View, FlatList, RefreshControl, Platform,
 } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import ShareMenu from 'react-native-share-menu'
 import RNFetchBlob from 'rn-fetch-blob'
