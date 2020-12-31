@@ -40,7 +40,7 @@ export const TextAvatar = ({
         <Text
           style={{ fontSize, ...systemWeights.semibold, color: colors.white }}
         >
-          {text[0].toUpperCase()}
+          {text ? text[0].toUpperCase() : ''}
         </Text>
       </View>
     </View>

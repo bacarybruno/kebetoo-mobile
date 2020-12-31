@@ -15,6 +15,7 @@ const initialState = {
     email: null,
     displayName: ' ',
     photoURL: null,
+    isLoggedIn: false,
   },
 }
 

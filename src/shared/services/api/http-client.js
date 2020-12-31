@@ -13,8 +13,7 @@ class HttpClient {
   }
 
   setBearerAuth(token) {
-    this.headers.Authorization = `Bearer ${token}`
-    return this
+    return this.setHeader('Authorization', `Bearer ${token}`)
   }
 
   async fetchJSON(endpoint, options = {}) {

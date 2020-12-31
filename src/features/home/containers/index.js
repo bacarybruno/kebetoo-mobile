@@ -64,9 +64,10 @@ const HomePage = ({ navigation }) => {
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare)
-
     const listener = ShareMenu.addNewShareListener(handleShare)
-    return listener.remove
+    return () => {
+      if (listener.remove) listener.remove()
+    }
   }, [])
 
   const onRefresh = useCallback(() => {

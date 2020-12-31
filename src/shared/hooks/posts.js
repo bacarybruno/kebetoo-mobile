@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { getUsers } from '../services/users'
+import { getUsers } from '@app/shared/services'
 
 const usePosts = () => {
   const getAuthors = useCallback(async (authorsToFetch) => {

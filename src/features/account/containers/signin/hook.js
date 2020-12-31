@@ -1,10 +1,9 @@
-import { useCallback, useReducer } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 import auth from '@react-native-firebase/auth'
 import * as yup from 'yup'
 
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import { createUser } from '@app/shared/services/users'
 import { useAnalytics } from '@app/shared/hooks'
 
 import reducer, { actionTypes } from '../../reducer'
@@ -86,24 +85,40 @@ const useSignIn = (navigation, passwordRef) => {
       //   //TODO: handler network request fail
       //   break
       default:
-        reportError(error)
+        if (error.name === 'ValidationError') {
+          dispatch({
+            type: actionTypes.SET_ERROR,
+            payload: {
+              field: error.path,
+              value: error.message,
+            },
+          })
+        } else {
+          reportError(error)
+        }
         break
     }
+    dispatch({ type: actionTypes.END_LOADING })
   }, [reportError])
 
   const onSubmit = useCallback(async () => {
     try {
       dispatch({ type: actionTypes.START_LOADING })
       await schema.validate(values)
-      const { user } = await auth().signInWithEmailAndPassword(values.email, values.password)
+      await auth().signInWithEmailAndPassword(values.email, values.password)
       trackSignIn('password')
-      await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
     } catch (error) {
       handleAuthError(error)
-    } finally {
-      dispatch({ type: actionTypes.END_LOADING })
     }
   }, [schema, values, trackSignIn, handleAuthError])
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('blur', () => {
+      dispatch({ type: actionTypes.END_LOADING })
+    })
+
+    return unsubscribe
+  }, [])
 
   const navigateToSignUp = useCallback(() => {
     navigation.navigate(routes.SIGNUP)
@@ -122,9 +137,8 @@ const useSignIn = (navigation, passwordRef) => {
     }
   }, [values, schema])
 
-  const onLoading = useCallback((loading) => {
-    if (loading) dispatch({ type: actionTypes.START_LOADING })
-    else dispatch({ type: actionTypes.END_LOADING })
+  const onLoading = useCallback(() => {
+    dispatch({ type: actionTypes.START_LOADING })
   }, [])
 
   return {

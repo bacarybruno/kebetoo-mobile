@@ -20,6 +20,7 @@ const givenSignUp = setupTest(SignUp, render)({
   navigation: {
     setOptions: jest.fn(),
     navigate: jest.fn(),
+    addListener: jest.fn().mockReturnValue(jest.fn()),
   },
 })
 
@@ -27,6 +28,7 @@ const givenSignUpTestRenderer = setupTest(SignUp)({
   navigation: {
     setOptions: jest.fn(),
     navigate: jest.fn(),
+    addListener: jest.fn().mockReturnValue(jest.fn()),
   },
 })
 
