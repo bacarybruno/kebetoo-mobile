@@ -12,7 +12,8 @@
     "test": "jest",
     "lint": "eslint .",
     "coverage": "yarn test src --coverage --silent --ci --no-cache",
-    "coverage:open": "start ./coverage/lcov-report/index.html"
+    "coverage:open": "start ./coverage/lcov-report/index.html",
+    "postversion": "react-native-version"
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.6.0",
@@ -97,6 +98,7 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "mockdate": "^3.0.2",
     "react-native-testing-library": "^2.1.0",
+    "react-native-version": "^4.0.0",
     "react-test-renderer": "16.11.0",
     "redux-mock-store": "^1.5.4"
   }
