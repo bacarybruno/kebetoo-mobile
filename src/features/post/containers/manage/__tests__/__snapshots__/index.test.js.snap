@@ -3272,6 +3272,7 @@ exports[`renders ManagePost 1`] = `
                         },
                       ]
                     }
+                    testID="badge"
                   >
                     <Text
                       style={

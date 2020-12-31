@@ -87,7 +87,7 @@ const VideoPlayer = ({
           <Ionicon name="ios-play" size={45} color={colors.white} />
         </TouchableOpacity>
         {Boolean(videoDuration) && (
-          <Badge primary text={readableSeconds(videoDuration)} style={styles.badge} />
+          <Badge primary testID="badge" text={readableSeconds(videoDuration)} style={styles.badge} />
         )}
         {!videoDuration && (
           <VideoDurationChecker uri={source} onChange={setVideoDuration} />

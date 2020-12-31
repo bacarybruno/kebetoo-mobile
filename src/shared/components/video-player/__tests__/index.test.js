@@ -3,6 +3,7 @@ import routes from '@app/navigation/routes'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native'
 import { fireEvent } from 'react-native-testing-library'
+import Video from 'react-native-video'
 
 import VideoPlayer from '../index'
 
@@ -16,6 +17,15 @@ const givenVideoPlayer = setupTest(VideoPlayer)({
 
 it('renders VideoPlayer', () => {
   const { wrapper } = givenVideoPlayer()
+  expect(wrapper.toJSON()).toMatchSnapshot()
+})
+
+it('computes video duration if not available', () => {
+  const { wrapper } = givenVideoPlayer({ duration: 0 })
+  expect(wrapper.root.findAllByProps({ testID: 'badge' }).length).toBe(0)
+  const video = wrapper.root.findByType(Video)
+  video.props.onLoad({ duration: 10 })
+  expect(wrapper.root.findByProps({ testID: 'badge' }).props.text).toBe('0:10')
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
