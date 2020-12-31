@@ -9297,6 +9297,7 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                 },
               ]
             }
+            testID="badge"
           >
             <Text
               style={
@@ -10279,6 +10280,7 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
                 },
               ]
             }
+            testID="badge"
           >
             <Text
               style={
@@ -11098,6 +11100,7 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                 },
               ]
             }
+            testID="badge"
           >
             <Text
               style={

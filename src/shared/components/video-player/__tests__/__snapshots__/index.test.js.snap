@@ -1,5 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`computes video duration if not available 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "borderRadius": 12,
+      "elevation": 1,
+      "flex": 1,
+      "shadowColor": "rgba(0, 0, 0, 255)",
+      "shadowOffset": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "shadowOpacity": 0.18,
+      "shadowRadius": 1,
+    }
+  }
+>
+  <Image
+    borderRadius={12}
+    fadeDuration={0}
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "rnfs://video-source.mp4",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 12,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "borderColor": "rgba(229, 229, 234, 255)",
+          "borderRadius": 35,
+          "borderWidth": 0.5,
+          "height": 70,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingLeft": 5,
+          "width": 70,
+          "zIndex": 1,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 255)",
+            "fontFamily": "Ionicons",
+            "fontSize": 45,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-ios-play"
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 50,
+            "paddingHorizontal": 15,
+            "paddingVertical": 3,
+          },
+          Object {
+            "backgroundColor": "rgba(0, 122, 255, 255)",
+          },
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "borderColor": "rgba(229, 229, 234, 255)",
+            "bottom": 10,
+            "position": "absolute",
+            "right": 10,
+          },
+        ]
+      }
+      testID="badge"
+    >
+      <Text
+        style={
+          Array [
+            false,
+            false,
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "letterSpacing": -0.24,
+              "lineHeight": 20,
+            },
+            false,
+            Array [
+              Object {
+                "color": "rgba(255, 255, 255, 255)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        0:10
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`renders VideoPlayer 1`] = `
 <View
   style={
@@ -105,6 +248,7 @@ exports[`renders VideoPlayer 1`] = `
           },
         ]
       }
+      testID="badge"
     >
       <Text
         style={

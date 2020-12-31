@@ -8,6 +8,7 @@ const messaging = () => ({
   onTokenRefresh: jest.fn().mockReturnValue(() => {}),
   getInitialNotification: jest.fn().mockResolvedValue({}),
   onMessage: jest.fn().mockReturnValue(() => {}),
+  isDeviceRegisteredForRemoteMessages: true,
 })
 
 export default messaging

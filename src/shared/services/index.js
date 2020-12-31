@@ -5,9 +5,6 @@ export { default as api } from './api'
 export {
   getUser,
   getUsers,
-  getUserId,
-  setUserId,
   createOrUpdateUser,
-  clearUserAttributes,
   getNotificationToken,
 } from './users'

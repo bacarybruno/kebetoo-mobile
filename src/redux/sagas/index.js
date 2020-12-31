@@ -7,7 +7,6 @@ import {
   api,
   getFacebookPicture,
   createOrUpdateUser,
-  clearUserAttributes,
   getNotificationToken,
 } from '@app/shared/services'
 
@@ -67,14 +66,9 @@ function* addEmojiHistory(action) {
 
 function* setUserProfile(action) {
   try {
-    const profile = yield select(userProfileSelector)
-
     if (!action.payload.isLoggedIn) {
       // handle signout
-      if (profile.uid) {
-        yield call(clearUserAttributes)
-        yield put({ type: types.SET_USER_PROFILE, payload: action.payload })
-      }
+      yield put({ type: types.SET_USER_PROFILE, payload: action.payload })
       yield put({ type: types.LOGOUT })
       return
     }
@@ -95,6 +89,7 @@ function* setUserProfile(action) {
       photoURL = getFacebookPicture(providerUid)
     }
 
+    const profile = yield select(userProfileSelector)
     if (profile.displayName === displayName
       && profile.email === email
       && profile.photoURL === photoURL) {
