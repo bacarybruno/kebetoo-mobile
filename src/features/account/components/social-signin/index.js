@@ -10,7 +10,7 @@ import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 import createThemedStyles from './styles'
 
 const SocialSignIn = ({
-  sectionText, children, onSignIn, onLoading, disabled, type, onError = () => {},
+  sectionText, children, onSignIn, onLoading, disabled, type, onError = () => { },
 }) => {
   const colors = useAppColors()
   const styles = useAppStyles(createThemedStyles)
@@ -27,27 +27,25 @@ const SocialSignIn = ({
 
   const signInWithGoogle = useCallback(async () => {
     if (disabled) return false
-    onLoading(true)
+    onLoading()
     const result = await googleLogin()
     if (result.error) {
       onError(result.error)
     } else {
       trackAuthEvent('google.com')
     }
-    onLoading(false)
     return onSignIn(result)
   }, [disabled, onLoading, onSignIn, onError, trackAuthEvent])
 
   const signInWithFacebook = useCallback(async () => {
     if (disabled) return false
-    onLoading(true)
+    onLoading()
     const result = await facebookLogin()
     if (result.error) {
       onError(result.error)
     } else {
       trackAuthEvent('facebook.com')
     }
-    onLoading(false)
     return onSignIn(result)
   }, [onLoading, onSignIn, disabled, trackAuthEvent, onError])
 
@@ -72,8 +70,8 @@ const SocialSignIn = ({
 }
 
 SocialSignIn.defaultProps = {
-  onSignIn: () => {},
-  onLoading: () => {},
+  onSignIn: () => { },
+  onLoading: () => { },
 }
 
 export default SocialSignIn

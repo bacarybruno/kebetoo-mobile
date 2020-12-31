@@ -32,7 +32,10 @@ const mockedStoreState = {
     notifications: [],
   },
   userReducer: {
-    profile: auth().currentUser,
+    profile: {
+      ...auth().currentUser,
+      isLoggedIn: true,
+    },
   },
   appReducer: {
     theme: 'system',

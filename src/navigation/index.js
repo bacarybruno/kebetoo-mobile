@@ -86,9 +86,16 @@ const defaultTabOptions = ({ route }) => ({
     }
     const size = focused ? 24 : 18
     const iconName = iconNames[route.name]
-    return iconName === 'ios-notifications-outline'
-      ? <Ionicon name={iconName} size={size * 1.5} color={color} style={{ marginTop: focused ? -8 : 0 }} />
-      : <Kebeticon name={iconName} size={size} color={color} />
+    return iconName !== 'ios-notifications-outline'
+      ? <Kebeticon name={iconName} size={size} color={color} />
+      : (
+        <Ionicon
+          name={iconName}
+          size={size * 1.5}
+          color={color}
+          style={{ marginTop: focused ? -8 : 0 }}
+        />
+      )
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {
@@ -246,15 +253,6 @@ const AppNavigation = () => {
   }, [persistNotification])
 
   useEffect(() => {
-    const updateUserNotificationId = async () => {
-      const deviceRegistered = messaging().isDeviceRegisteredForRemoteMessages
-      if (isLoggedIn && profile.uid && deviceRegistered) {
-        const notificationToken = await messaging().getToken()
-        api.authors.update(profile.uid, { notificationToken })
-      }
-    }
-
-    updateUserNotificationId()
     messaging().getInitialNotification().then(handleInitialNotification)
     messaging().onNotificationOpenedApp(handleInitialNotification)
     const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
@@ -266,7 +264,7 @@ const AppNavigation = () => {
       unsubscribeForegroundNotification()
       unsubscribeTokenRefresh()
     }
-  }, [isLoggedIn, profile.uid, handleInitialNotification, persistNotification])
+  }, [handleInitialNotification, persistNotification, profile.uid])
 
   const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name
 

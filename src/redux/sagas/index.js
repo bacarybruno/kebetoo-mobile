@@ -2,11 +2,18 @@ import {
   takeLeading, call, put, all, select, debounce,
 } from 'redux-saga/effects'
 
-import { api } from '@app/shared/services'
 import helpers from '@app/shared/components/emoji-selector/helpers'
+import {
+  api,
+  getFacebookPicture,
+  createOrUpdateUser,
+  clearUserAttributes,
+  getNotificationToken,
+} from '@app/shared/services'
 
+import channels from './channels'
 import * as types from '../types'
-import { emojiHistorySelector } from '../selectors'
+import { emojiHistorySelector, userProfileSelector } from '../selectors'
 
 function* fetchPosts(action) {
   try {
@@ -58,9 +65,74 @@ function* addEmojiHistory(action) {
   }
 }
 
+function* setUserProfile(action) {
+  try {
+    const profile = yield select(userProfileSelector)
+
+    if (!action.payload.isLoggedIn) {
+      // handle signout
+      if (profile.uid) {
+        yield call(clearUserAttributes)
+        yield put({ type: types.SET_USER_PROFILE, payload: action.payload })
+      }
+      yield put({ type: types.LOGOUT })
+      return
+    }
+
+    // returned from auth channel
+    const {
+      uid,
+      email,
+      provider,
+      isLoggedIn,
+      providerUid,
+      displayName,
+    } = action.payload
+
+    // get photo URL
+    let { photoURL } = action.payload
+    if (provider.startsWith('facebook')) {
+      photoURL = getFacebookPicture(providerUid)
+    }
+
+    if (profile.displayName === displayName
+      && profile.email === email
+      && profile.photoURL === photoURL) {
+      // nothing changed
+      return
+    }
+
+    // create author in the backend
+    const authorId = yield call(createOrUpdateUser, {
+      id: uid, displayName, photoURL,
+    })
+
+    // save infos in redux
+    yield put({
+      type: types.SET_USER_PROFILE,
+      payload: {
+        uid: authorId, email, photoURL, isLoggedIn, displayName,
+      },
+    })
+
+    // fetch notification token
+    const notificationToken = yield call(getNotificationToken)
+    if (notificationToken) {
+      yield call([api.authors, 'update'], authorId, { notificationToken })
+    }
+
+    // save token in the backend
+  } catch (error) {
+    console.log({ type: types.SET_USER_PROFILE_ERROR, payload: error })
+    yield put({ type: types.SET_USER_PROFILE_ERROR, payload: error })
+  }
+}
+
 export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
     yield debounce(3000, types.ADD_EMOJI_HISTORY, addEmojiHistory),
+    yield takeLeading(types.SET_USER_PROFILE_REQUEST, setUserProfile),
+    yield call(channels),
   ])
 }

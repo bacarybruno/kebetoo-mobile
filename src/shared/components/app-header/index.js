@@ -18,10 +18,14 @@ export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
 )
 
 const Header = ({
-  displayName = ' ',
+  displayName = '',
   imageSrc,
   style,
-  title = strings.formatString(strings.home.welcome, displayName.split(' ')[0]),
+  title = strings.formatString(strings.home.welcome, (
+    displayName && displayName.trim()
+      ? displayName.trim().split(' ')[0]
+      : ''
+  )),
   text = strings.home.whats_new,
   loading = false,
   showAvatar = true,
@@ -38,7 +42,7 @@ const Header = ({
     <View style={[styles.header, style]}>
       <View style={styles.greetings}>
         <View style={styles.section}>
-          <Typography text={title} type={Typography.types.headline2} />
+          <Typography text={title.replace(' ,', ',')} type={Typography.types.headline2} />
           <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
         </View>
         {text.length > 0 && (

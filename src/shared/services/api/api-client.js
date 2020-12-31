@@ -5,7 +5,8 @@ class ApiClient extends HttpClient {
     super({
       baseURL,
       headers: {
-        lang: langCode,
+        'Content-Type': 'application/json',
+        'Accept-Language': langCode,
       },
     })
   }

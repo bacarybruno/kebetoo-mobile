@@ -1,8 +1,6 @@
 import { GoogleSignin } from '@react-native-community/google-signin'
 import auth from '@react-native-firebase/auth'
 
-import { createUser } from '@app/shared/services/users'
-
 const googleLogin = async () => {
   const result = { error: null, data: null }
   try {
@@ -10,13 +8,7 @@ const googleLogin = async () => {
     await GoogleSignin.signOut()
     const { idToken } = await GoogleSignin.signIn()
     const googleCredential = auth.GoogleAuthProvider.credential(idToken)
-
     const data = await auth().signInWithCredential(googleCredential)
-
-    const { user } = data
-
-    await createUser({ id: user.uid, displayName: user.displayName, photoURL: user.photoURL })
-
     result.data = data
   } catch (error) {
     // if (error.code === statusCodes.SIGN_IN_CANCELLED) {

@@ -18,9 +18,9 @@ import { strings } from '@app/config'
 import {
   useAnalytics, useAppColors, useAppStyles, useUser,
 } from '@app/shared/hooks'
+import { rgbaToHex } from '@app/theme/colors'
 
 import createThemedStyles, { imageSize } from './styles'
-import { rgbaToHex } from '@app/theme/colors'
 
 const routeOptions = { title: strings.tabs.profile }
 

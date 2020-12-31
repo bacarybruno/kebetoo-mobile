@@ -1,8 +1,6 @@
 import { LoginManager, AccessToken } from 'react-native-fbsdk'
 import auth from '@react-native-firebase/auth'
 
-import { createUser } from '@app/shared/services/users'
-
 export const getFacebookPicture = (profileId) => `https://graph.facebook.com/${profileId}/picture?type=large`
 
 const facebookLogin = async () => {
@@ -13,15 +11,6 @@ const facebookLogin = async () => {
     const { accessToken } = await AccessToken.getCurrentAccessToken()
     const facebookCredential = auth.FacebookAuthProvider.credential(accessToken)
     const data = await auth().signInWithCredential(facebookCredential)
-
-    const { additionalUserInfo, user } = data
-    const { profile } = additionalUserInfo
-    const { id: profileId } = profile
-
-    const photoURL = getFacebookPicture(profileId)
-    await createUser({ id: user.uid, displayName: user.displayName, photoURL })
-
-    user.updateProfile({ photoURL })
 
     result.data = data
   } catch (error) {

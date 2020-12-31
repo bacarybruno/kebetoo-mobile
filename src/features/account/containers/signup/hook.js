@@ -1,13 +1,10 @@
-import { useCallback, useReducer } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 import auth from '@react-native-firebase/auth'
 import * as yup from 'yup'
-import { useDispatch } from 'react-redux'
 
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
-import { createUser } from '@app/shared/services/users'
 import { useAnalytics } from '@app/shared/hooks'
-import { SET_USER_PROFILE } from '@app/redux/types'
 
 import reducer, { actionTypes } from '../../reducer'
 
@@ -26,7 +23,6 @@ export const initialState = {
 
 const useSignUp = (navigation, emailRef, passwordRef) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const reduxDispatch = useDispatch()
 
   const { values, errors, isLoading } = state
 
@@ -76,28 +72,41 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
       //   //TODO: handler network request fail
       //   break
       default:
-        reportError(error)
+        if (error.name === 'ValidationError') {
+          dispatch({
+            type: actionTypes.SET_ERROR,
+            payload: {
+              field: error.path,
+              value: error.message,
+            },
+          })
+        } else {
+          reportError(error)
+        }
         break
     }
+    dispatch({ type: actionTypes.END_LOADING })
   }, [reportError])
 
   const onSubmit = useCallback(async () => {
     try {
       dispatch({ type: actionTypes.START_LOADING })
       await schema.validate(values)
-      const displayName = values.fullName
-      reduxDispatch({ type: SET_USER_PROFILE, payload: { displayName } })
-      const { user } = await auth().createUserWithEmailAndPassword(values.email, values.password)
+      const created = await auth().createUserWithEmailAndPassword(values.email, values.password)
+      await created.user.updateProfile({ displayName: values.fullName })
       trackSignUp('password')
-      await user.updateProfile({ displayName, photoURL: null })
-      auth().currentUser = user
-      await createUser({ id: user.uid, displayName, photoURL: null })
     } catch (error) {
       handleAuthError(error)
-    } finally {
-      dispatch({ type: actionTypes.END_LOADING })
     }
-  }, [schema, values, reduxDispatch, trackSignUp, handleAuthError])
+  }, [schema, values, trackSignUp, handleAuthError])
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('blur', () => {
+      dispatch({ type: actionTypes.END_LOADING })
+    })
+
+    return unsubscribe
+  }, [])
 
   const navigateToSignIn = useCallback(() => {
     navigation.navigate(routes.SIGNIN)
@@ -120,9 +129,8 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
     }
   }, [values, schema])
 
-  const onLoading = useCallback((loading) => {
-    if (loading) dispatch({ type: actionTypes.START_LOADING })
-    else dispatch({ type: actionTypes.END_LOADING })
+  const onLoading = useCallback(() => {
+    dispatch({ type: actionTypes.START_LOADING })
   }, [])
 
   return {
