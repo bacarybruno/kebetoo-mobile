@@ -9,7 +9,7 @@ export const dotHeight = 8
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.onboarding,
   },
   container: {
     flex: 1,

@@ -1,14 +1,17 @@
 import React, {
   useCallback, useState, useRef, useEffect,
 } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import {
+  View, TouchableOpacity, ImageBackground, StatusBar,
+} from 'react-native'
 import Swiper from 'react-native-swiper'
+import changeNavigationBarColor from 'react-native-navigation-bar-color'
 
 import { IconButton, FullButton, Typography } from '@app/shared/components'
 import OnbordingSlide from '@app/features/onboarding/components'
 import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
-import { useAnalytics, useAppStyles } from '@app/shared/hooks'
+import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 import { strings } from '@app/config'
 
 import createThemedStyles from './styles'
@@ -31,7 +34,11 @@ export const SkipButton = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <TouchableOpacity style={styles.skipButton} onPress={onPress}>
-      <Typography type={Typography.types.textButtonLight} text={strings.general.skip} />
+      <Typography
+        type={Typography.types.textButton}
+        color={Typography.colors.secondary}
+        text={strings.general.skip}
+      />
     </TouchableOpacity>
   )
 }
@@ -39,6 +46,7 @@ export const SkipButton = ({ onPress }) => {
 const OnboardingPage = ({ navigation }) => {
   navigation.setOptions({ headerShown: false })
   const styles = useAppStyles(createThemedStyles)
+  const { colors, resetAppBars } = useAppColors()
 
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
@@ -48,11 +56,17 @@ const OnboardingPage = ({ navigation }) => {
 
   useEffect(() => {
     trackOnboardingStart()
-  }, [trackOnboardingStart])
 
-  const onSlideIndexChanged = useCallback((index) => {
-    setSlideIndex(index)
-  }, [setSlideIndex])
+    const removeFocusListener = navigation.addListener('focus', () => {
+      StatusBar.setBackgroundColor(colors.onboarding)
+      changeNavigationBarColor(colors.onboarding)
+    })
+    const removeBlurListener = navigation.addListener('blur', resetAppBars)
+    return () => {
+      removeFocusListener()
+      removeBlurListener()
+    }
+  }, [])
 
   const onSlideNext = useCallback(() => {
     swiperRef.current.scrollBy(1)
@@ -67,7 +81,6 @@ const OnboardingPage = ({ navigation }) => {
     setSlides(
       slideItems.map((slideItem, index) => (
         <OnbordingSlide
-          imageSrc={slideItem.imageSrc}
           slideTitle={slideItem.title}
           slideDescription={slideItem.description}
           key={`onboarding-slide-item-${index}`}
@@ -77,7 +90,7 @@ const OnboardingPage = ({ navigation }) => {
   }, [])
 
   return (
-    <View style={styles.wrapper}>
+    <ImageBackground source={slideItems[slideIndex].imageSrc} style={styles.wrapper}>
       <View style={styles.container}>
         <View style={styles.skipButtonWrapper}>
           {!isLastSlideItem && <SkipButton onPress={onGetStarted} />}
@@ -87,7 +100,7 @@ const OnboardingPage = ({ navigation }) => {
           dotStyle={styles.dotStyle}
           activeDotStyle={styles.activeDotStyle}
           paginationStyle={styles.paginationStyle}
-          onIndexChanged={onSlideIndexChanged}
+          onIndexChanged={setSlideIndex}
           showsPagination={!isLastSlideItem}
           ref={swiperRef}
           scrollEnabled={false}
@@ -108,7 +121,7 @@ const OnboardingPage = ({ navigation }) => {
           )}
         </View>
       </View>
-    </View>
+    </ImageBackground>
   )
 }
 

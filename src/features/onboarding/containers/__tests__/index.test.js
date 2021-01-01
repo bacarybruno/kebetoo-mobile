@@ -13,6 +13,7 @@ const givenOnboarding = setupTest(Onboarding, render)({
   navigation: {
     setOptions: jest.fn(),
     navigate: jest.fn(),
+    addListener: jest.fn().mockReturnValue(jest.fn()),
   },
 })
 

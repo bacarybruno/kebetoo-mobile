@@ -151,7 +151,7 @@ export const TabBar = (styles, colors) => (props) => (
 export const TabPage = () => {
   const { badgeCount } = useNotifications()
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <Tab.Navigator
       screenOptions={defaultTabOptions}
@@ -180,7 +180,7 @@ export const onboardingPages = [
 
 export const OnboardingStack = () => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <Stack.Navigator screenOptions={defaultOnboardingScreenOptions(styles, colors)}>
       {onboardingPages.map(createPage)}
@@ -211,7 +211,7 @@ const AppNavigation = () => {
   const navigationRef = useRef()
   const routeNameRef = useRef()
 
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const navigationTheme = {
     dark: colors.colorScheme === 'dark',
