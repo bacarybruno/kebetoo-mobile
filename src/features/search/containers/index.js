@@ -19,7 +19,7 @@ const routeOptions = { title: strings.tabs.search }
 
 export const SearchIcon = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity
       style={styles.searchIcon}
@@ -33,7 +33,7 @@ export const SearchIcon = ({ onPress }) => {
 
 export const CancelIcon = ({ isLoading, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <View style={styles.cancelIcon}>
       {!isLoading && (

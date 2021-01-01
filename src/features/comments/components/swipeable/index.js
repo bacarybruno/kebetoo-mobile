@@ -12,7 +12,7 @@ const swipeableOptions = { restSpeedThreshold: 100, restDisplacementThreshold: 4
 const SwipeableComment = ({ children, style, onFulfilled }) => {
   const swipeableRef = useRef()
 
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
   const mapRef = (ref) => {

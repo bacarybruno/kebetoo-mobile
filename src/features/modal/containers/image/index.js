@@ -26,7 +26,7 @@ const isGoogleImageUrl = (url) => url.includes('googleusercontent.com')
 
 const ImageModal = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors, resetAppBars } = useAppColors()
   navigation.setOptions(routeOptions(colors))
 
   const [controlsHidden, setControlsHidden] = useState(true)
@@ -59,12 +59,7 @@ const ImageModal = ({ route, navigation }) => {
   }, [hideControls])
 
   useEffect(() => {
-    return () => {
-      StatusBar.setBarStyle(colors.colorScheme === 'dark' ? 'light-content' : 'dark-content')
-      StatusBar.setBackgroundColor(colors.background)
-      StatusBar.setHidden(false)
-      changeNavigationBarColor(rgbaToHex(colors.background))
-    }
+    return resetAppBars
   }, [])
 
   useEffect(() => {

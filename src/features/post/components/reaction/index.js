@@ -11,7 +11,7 @@ import styles from './styles'
 const Reaction = ({
   iconName, count, onPress, color = 'reactions', ...otherProps
 }) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity
       style={styles.reaction}

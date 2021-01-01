@@ -32,7 +32,7 @@ const Header = ({
   Right,
 }) => {
   const { navigate } = useNavigation()
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const onHeaderPress = useCallback(() => {
     navigate(routes.PROFILE)

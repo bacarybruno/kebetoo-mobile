@@ -28,7 +28,7 @@ export const TextAvatar = ({
   text, size, style, fontSize, noRadius,
 }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <View style={[styles.wrapper, dimensions(size), style]}>
       <View style={[

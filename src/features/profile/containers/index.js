@@ -95,7 +95,7 @@ export const IconButton = React.memo(({
   icon, text, message, onPress, children, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <View style={styles.iconButtonWrapper}>
       <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
@@ -250,7 +250,7 @@ const ProfilePage = React.memo(() => {
   const [reactionsCount, setReactionsCount] = useState(stats.reactions)
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const { showActionSheetWithOptions } = useActionSheet()
 

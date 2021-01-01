@@ -37,7 +37,7 @@ const HomePage = ({ navigation }) => {
   const { getRepostAuthors } = usePosts()
   const [postsSort, setPostsSort] = useState('score')
 
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
   const handleShare = useCallback(async (item) => {

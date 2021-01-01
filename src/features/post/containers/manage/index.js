@@ -54,7 +54,7 @@ const bottomSheetItems = [{
 
 const ManagePostsPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   navigation.setOptions(routeOptions(colors))
 
   const { profile } = useUser()

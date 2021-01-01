@@ -26,7 +26,7 @@ const Waves = () => {
 
 export const PlayButton = ({ onPress, state, ...otherProps }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity style={styles.iconWrapper} onPress={onPress} {...otherProps}>
       {state === MediaStates.PREPARING
@@ -45,7 +45,7 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => {
 
 export const DeleteIconButton = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity style={styles.deleteWrapper} onPress={onPress} hitSlop={edgeInsets.all(50)}>
       <Ionicon name="ios-close" size={20} color={colors.textPrimary} />

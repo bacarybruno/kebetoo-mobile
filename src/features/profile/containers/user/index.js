@@ -46,7 +46,7 @@ const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
 const UserProfile = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   navigation.setOptions(routeOptions(styles, colors))
 
   const { params: { userId } } = route

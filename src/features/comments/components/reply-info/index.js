@@ -11,7 +11,7 @@ import createThemedStyles from './styles'
 
 export const DeleteIconButton = ({ onPress }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity style={styles.deleteWrapper} onPress={onPress}>
       <Ionicon name="ios-close" size={20} color={colors.textPrimary} />

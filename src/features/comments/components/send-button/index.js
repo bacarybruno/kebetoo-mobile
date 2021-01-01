@@ -9,7 +9,7 @@ import createThemedStyles from './styles'
 
 export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress} {...otherProps}>
       {isLoading
@@ -23,7 +23,7 @@ export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => 
 
 export const RecordButton = React.memo(({ isRecording, start, stop }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <IconButton
       activable

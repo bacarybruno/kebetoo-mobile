@@ -13,7 +13,7 @@ const getBackgroundColor = (primary, colors) => ({
 const Badge = ({
   text, style, primary, typography, testID,
 }) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <View style={[styles.wrapper, getBackgroundColor(primary, colors), style]} testID={testID}>
       <Typography

@@ -9,7 +9,7 @@ import styles, { size } from './styles'
 
 const TabBarActionButton = ({ route }) => {
   const { navigate } = useNavigation()
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const navigateToPage = useCallback(() => {
     navigate(route)

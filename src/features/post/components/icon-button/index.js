@@ -26,7 +26,7 @@ const IconButton = ({
 }) => {
   const [animatedScale] = useState(new Animated.Value(1))
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   useEffect(() => {
     if (activable && isActive) {

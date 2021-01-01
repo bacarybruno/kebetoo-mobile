@@ -126,7 +126,7 @@ const createTypography = (
 const Typography = ({
   type = types.body, text, style, color, onPress, ...otherProps
 }) => {
-  const themeColors = useAppColors()
+  const { colors: themeColors } = useAppColors()
 
   if (text === null || text === undefined) return null
 

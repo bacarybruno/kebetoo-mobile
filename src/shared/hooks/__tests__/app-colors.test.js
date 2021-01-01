@@ -6,7 +6,7 @@ import useAppColors from '../app-colors'
 
 const givenAppColors = () => {
   const rendered = setupHook(useAppColors)
-  return { appColors: rendered.result.current, rerender: rendered.rerender }
+  return { appColors: rendered.result.current.colors, rerender: rendered.rerender }
 }
 
 it('is defined', () => {

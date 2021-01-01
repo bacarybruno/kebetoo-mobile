@@ -34,7 +34,7 @@ const VideoPlayer = ({
 }) => {
   const navigation = useNavigation()
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const componentRef = useRef()
 
   const intervalDelay = 300
