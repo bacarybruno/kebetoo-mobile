@@ -23,7 +23,7 @@ let didSetUserAttributes = false
 
 const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModule) => {
   const { profile } = useUser()
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   useEffect(() => {
     const declareUserProperties = async () => {

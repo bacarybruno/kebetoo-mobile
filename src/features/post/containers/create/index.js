@@ -119,7 +119,7 @@ const VideoPreviewer = ({ uri, onDelete, onPress }) => {
 // or use redux-saga to handle post creation
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   navigation.setOptions(routeOptions(styles, colors))
 
   const { profile } = useUser()

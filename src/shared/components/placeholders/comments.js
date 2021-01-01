@@ -38,7 +38,7 @@ const PlaceholderAvatar = () => {
 }
 
 export const Animation = (props) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <Fade
       {...props}

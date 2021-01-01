@@ -13,7 +13,7 @@ export const getSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.
 
 export const DeleteIconButton = ({ onPress }) => {
   const styles = useAppStyles(createThemeColors)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity
       style={styles.deleteWrapper}

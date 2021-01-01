@@ -12,7 +12,7 @@ import TextInput from '../text'
 
 export const EmojiPickerToggler = ({ onPress, isActive }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity onPress={onPress} style={styles.emojiPicker} hitSlop={edgeInsets.all(20)}>
       <Ionicon

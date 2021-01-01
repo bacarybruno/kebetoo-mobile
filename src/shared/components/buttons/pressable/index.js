@@ -25,7 +25,7 @@ export const getTouchableComponent = (platform) => (
 const Pressable = ({
   children, style, borderless, foreground, platform = Platform, ...otherProps
 }) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const TouchableComponent = getTouchableComponent(platform)
 
   if (TouchableComponent === TouchableNativeFeedback) {

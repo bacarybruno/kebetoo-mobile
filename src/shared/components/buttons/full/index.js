@@ -15,7 +15,7 @@ const FullButton = ({
   ...rest
 }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity
       disabled={disabled}

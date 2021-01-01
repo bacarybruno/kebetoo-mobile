@@ -33,7 +33,7 @@ export const Reactions = ({
   ))
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   return (
     <View style={styles.reactionsWrapper}>

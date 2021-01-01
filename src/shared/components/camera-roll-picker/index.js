@@ -68,7 +68,7 @@ const Albums = React.memo(({ previews, onSelect }) => {
   const imageMargin = 6
   const itemSize = (metrics.screenWidth - (numColumns - 1) * imageMargin) / numColumns
 
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
   const pressableStyle = {
@@ -117,7 +117,7 @@ export const VideoMarker = ({ style }) => (
 
 const CameraRollPicker = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const groupTypes = 'All'
 

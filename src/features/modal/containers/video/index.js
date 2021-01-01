@@ -15,7 +15,7 @@ export const routeOptions = {
 }
 
 const VideoModal = ({ route, navigation }) => {
-  const colors = useAppColors()
+  const { colors, resetAppBars } = useAppColors()
   navigation.setOptions(routeOptions)
   const playerRef = useRef()
   const { source, poster } = route.params
@@ -36,12 +36,9 @@ const VideoModal = ({ route, navigation }) => {
 
   const onBack = useCallback((unmount) => {
     showControls()
-    StatusBar.setBarStyle(colors.colorScheme === 'dark' ? 'light-content' : 'dark-content')
-    StatusBar.setBackgroundColor(colors.background)
-    StatusBar.setHidden(false)
-    changeNavigationBarColor(rgbaToHex(colors.background))
+    resetAppBars()
     if (!unmount) navigation.goBack()
-  }, [colors.background, colors.colorScheme, navigation, showControls])
+  }, [navigation, resetAppBars, showControls])
 
   // componentWillUnmount
   useEffect(() => () => {

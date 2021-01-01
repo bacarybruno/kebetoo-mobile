@@ -65,7 +65,7 @@ const InfoBadge = ({ text }) => (
 )
 
 const MoreButton = ({ onPress }) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <TouchableOpacity
       onPress={onPress}

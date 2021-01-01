@@ -12,7 +12,7 @@ import createThemedStyles from './styles'
 const SocialSignIn = ({
   sectionText, children, onSignIn, onLoading, disabled, type, onError = () => { },
 }) => {
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
   const { trackSignIn, trackSignUp } = useAnalytics()

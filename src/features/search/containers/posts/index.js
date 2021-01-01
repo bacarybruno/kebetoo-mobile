@@ -17,7 +17,7 @@ import NoResult from '../../components/no-result'
 
 export const SearchHistoryHeader = ({ onClear }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <View style={[styles.historyHeader, styles.paddingHorizontal]}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>

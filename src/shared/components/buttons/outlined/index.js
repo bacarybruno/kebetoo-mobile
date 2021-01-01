@@ -11,7 +11,7 @@ const OutlinedButton = ({
   text, onPress, style, disabled, loading = false,
 }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
   return (
     <Pressable
       style={[styles.wrapper, style, disabled && { borderColor: colors.inactive }]}

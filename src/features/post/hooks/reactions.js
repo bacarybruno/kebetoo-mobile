@@ -52,7 +52,7 @@ const useReactions = ({
   const { navigate } = useNavigation()
   const { trackSelectPost } = useAnalytics()
 
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const findUserReaction = useCallback((reaction) => reaction.author === author, [author])
 

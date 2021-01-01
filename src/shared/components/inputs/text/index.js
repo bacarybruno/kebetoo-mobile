@@ -19,7 +19,7 @@ export const ErrorTooltip = (styles, colors) => (
 
 export const PopoverTooltip = ({ message, from = ErrorTooltip }) => {
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   return (
     <Popover

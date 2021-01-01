@@ -71,7 +71,7 @@ const Comments = () => {
   const insets = useSafeAreaInsets()
 
   const styles = useAppStyles(createThemedStyles)
-  const colors = useAppColors()
+  const { colors } = useAppColors()
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null
