@@ -3793,13 +3793,37 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                   }
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
                       Object {
-                        "backgroundColor": "rgba(255, 255, 255, 255)",
+                        "backgroundColor": "#E0F2F8",
                         "flex": 1,
                       }
                     }
                   >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/onboarding1.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                    />
                     <View
                       style={
                         Object {
@@ -3843,12 +3867,12 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 },
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
+                                    "color": "rgba(0,0,0,0.54)",
                                   },
                                   Object {
                                     "backgroundColor": "transparent",
                                     "fontFamily": "System",
-                                    "fontWeight": "300",
+                                    "fontWeight": "400",
                                   },
                                   undefined,
                                 ],
@@ -3952,23 +3976,10 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 style={
                                   Object {
                                     "marginHorizontal": 16,
+                                    "marginTop": 733.7,
                                   }
                                 }
                               >
-                                <Image
-                                  source={
-                                    Object {
-                                      "testUri": "../../../assets/images/onboarding3.png",
-                                    }
-                                  }
-                                  style={
-                                    Object {
-                                      "alignSelf": "center",
-                                      "height": 600.3000000000001,
-                                      "resizeMode": "contain",
-                                    }
-                                  }
-                                />
                                 <Text
                                   bold={true}
                                   style={
@@ -3994,14 +4005,13 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                           "fontFamily": "System",
                                           "fontWeight": "600",
                                         },
-                                        Object {
-                                          "marginTop": 93.38000000000001,
-                                        },
+                                        undefined,
                                       ],
                                     ]
                                   }
                                 >
-                                  Have a Fun With Your Friends
+                                  React to the Contents
+You Care About
                                 </Text>
                                 <Text
                                   style={
@@ -4031,7 +4041,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     ]
                                   }
                                 >
-                                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+                                  React and comment on the posts that interest you the most in a simple and intuitive way ❤️
                                 </Text>
                               </View>
                             </View>
@@ -4052,23 +4062,10 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 style={
                                   Object {
                                     "marginHorizontal": 16,
+                                    "marginTop": 733.7,
                                   }
                                 }
                               >
-                                <Image
-                                  source={
-                                    Object {
-                                      "testUri": "../../../assets/images/onboarding1.png",
-                                    }
-                                  }
-                                  style={
-                                    Object {
-                                      "alignSelf": "center",
-                                      "height": 600.3000000000001,
-                                      "resizeMode": "contain",
-                                    }
-                                  }
-                                />
                                 <Text
                                   bold={true}
                                   style={
@@ -4094,9 +4091,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                           "fontFamily": "System",
                                           "fontWeight": "600",
                                         },
-                                        Object {
-                                          "marginTop": 93.38000000000001,
-                                        },
+                                        undefined,
                                       ],
                                     ]
                                   }
@@ -4131,7 +4126,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     ]
                                   }
                                 >
-                                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+                                  Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪
                                 </Text>
                               </View>
                             </View>
@@ -4152,23 +4147,10 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 style={
                                   Object {
                                     "marginHorizontal": 16,
+                                    "marginTop": 733.7,
                                   }
                                 }
                               >
-                                <Image
-                                  source={
-                                    Object {
-                                      "testUri": "../../../assets/images/onboarding2.png",
-                                    }
-                                  }
-                                  style={
-                                    Object {
-                                      "alignSelf": "center",
-                                      "height": 600.3000000000001,
-                                      "resizeMode": "contain",
-                                    }
-                                  }
-                                />
                                 <Text
                                   bold={true}
                                   style={
@@ -4194,14 +4176,12 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                           "fontFamily": "System",
                                           "fontWeight": "600",
                                         },
-                                        Object {
-                                          "marginTop": 93.38000000000001,
-                                        },
+                                        undefined,
                                       ],
                                     ]
                                   }
                                 >
-                                  Create Your Account
+                                  It's your turn to speak
                                 </Text>
                                 <Text
                                   style={
@@ -4231,7 +4211,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     ]
                                   }
                                 >
-                                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+                                  With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... voice messages 🎤
                                 </Text>
                               </View>
                             </View>
@@ -4252,23 +4232,10 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 style={
                                   Object {
                                     "marginHorizontal": 16,
+                                    "marginTop": 733.7,
                                   }
                                 }
                               >
-                                <Image
-                                  source={
-                                    Object {
-                                      "testUri": "../../../assets/images/onboarding3.png",
-                                    }
-                                  }
-                                  style={
-                                    Object {
-                                      "alignSelf": "center",
-                                      "height": 600.3000000000001,
-                                      "resizeMode": "contain",
-                                    }
-                                  }
-                                />
                                 <Text
                                   bold={true}
                                   style={
@@ -4294,14 +4261,13 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                           "fontFamily": "System",
                                           "fontWeight": "600",
                                         },
-                                        Object {
-                                          "marginTop": 93.38000000000001,
-                                        },
+                                        undefined,
                                       ],
                                     ]
                                   }
                                 >
-                                  Have a Fun With Your Friends
+                                  React to the Contents
+You Care About
                                 </Text>
                                 <Text
                                   style={
@@ -4331,7 +4297,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     ]
                                   }
                                 >
-                                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+                                  React and comment on the posts that interest you the most in a simple and intuitive way ❤️
                                 </Text>
                               </View>
                             </View>
@@ -4352,23 +4318,10 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 style={
                                   Object {
                                     "marginHorizontal": 16,
+                                    "marginTop": 733.7,
                                   }
                                 }
                               >
-                                <Image
-                                  source={
-                                    Object {
-                                      "testUri": "../../../assets/images/onboarding1.png",
-                                    }
-                                  }
-                                  style={
-                                    Object {
-                                      "alignSelf": "center",
-                                      "height": 600.3000000000001,
-                                      "resizeMode": "contain",
-                                    }
-                                  }
-                                />
                                 <Text
                                   bold={true}
                                   style={
@@ -4394,9 +4347,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                           "fontFamily": "System",
                                           "fontWeight": "600",
                                         },
-                                        Object {
-                                          "marginTop": 93.38000000000001,
-                                        },
+                                        undefined,
                                       ],
                                     ]
                                   }
@@ -4431,7 +4382,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                     ]
                                   }
                                 >
-                                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.
+                                  Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪
                                 </Text>
                               </View>
                             </View>

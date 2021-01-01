@@ -21,11 +21,11 @@ const locales = Object.freeze({
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
-    screen_one_description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
-    screen_two_title: 'Create Your Account',
-    screen_two_description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
-    screen_three_title: 'Have a Fun With Your Friends',
-    screen_three_description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
+    screen_one_description: 'Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪',
+    screen_two_title: 'It\'s your turn to speak',
+    screen_two_description: 'With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... voice messages 🎤',
+    screen_three_title: 'React to the Contents\nYou Care About',
+    screen_three_description: 'React and comment on the posts that interest you the most in a simple and intuitive way ❤️',
   },
   auth: {
     email: 'Email',

@@ -3,6 +3,10 @@ import { StyleSheet } from 'react-native'
 import { metrics, elevation } from '@app/theme'
 
 export default (colors) => StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
   headerStyle: {
     ...elevation(0),
     shadowOpacity: 0,
