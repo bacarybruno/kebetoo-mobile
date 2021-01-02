@@ -250,7 +250,36 @@ You Care About
                   ]
                 }
               >
-                React and comment on the posts that interest you the most in a simple and intuitive way ❤️
+                React and comment in a 
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 17,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
+                      },
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  simple and intuitive
+                </Text>
+                 way the posts that interest you the most ❤️
               </Text>
             </View>
           </View>
@@ -335,7 +364,36 @@ You Care About
                   ]
                 }
               >
-                Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪
+                Kebetoo is a microblogging app with 
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 17,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
+                      },
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  African DNA
+                </Text>
+                . Be one of the first to join the adventure 💪
               </Text>
             </View>
           </View>
@@ -420,7 +478,36 @@ You Care About
                   ]
                 }
               >
-                With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... voice messages 🎤
+                With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 17,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
+                      },
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  voice messages
+                </Text>
+                 🎤
               </Text>
             </View>
           </View>
@@ -506,7 +593,36 @@ You Care About
                   ]
                 }
               >
-                React and comment on the posts that interest you the most in a simple and intuitive way ❤️
+                React and comment in a 
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 17,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
+                      },
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  simple and intuitive
+                </Text>
+                 way the posts that interest you the most ❤️
               </Text>
             </View>
           </View>
@@ -591,7 +707,36 @@ You Care About
                   ]
                 }
               >
-                Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪
+                Kebetoo is a microblogging app with 
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontSize": 17,
+                        "fontWeight": "400",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
+                      },
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  African DNA
+                </Text>
+                . Be one of the first to join the adventure 💪
               </Text>
             </View>
           </View>

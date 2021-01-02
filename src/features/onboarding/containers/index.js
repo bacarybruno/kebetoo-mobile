@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useState, useRef, useEffect,
+  useCallback, useState, useRef, useEffect, useMemo,
 } from 'react'
 import {
   View, TouchableOpacity, ImageBackground, StatusBar,
@@ -16,18 +16,43 @@ import { strings } from '@app/config'
 
 import createThemedStyles from './styles'
 
+const routeOptions = {
+  headerShown: false,
+}
+
+const createKeyword = (word) => (
+  <Typography
+    type={Typography.types.subheading}
+    systemWeight={Typography.weights.semibold}
+    text={word}
+  />
+)
+
+const withKeyword = (string, keyword) => (
+  strings.formatString(string, createKeyword(keyword))
+)
+
 export const slideItems = [{
   imageSrc: images.onboarding1,
   title: strings.onboarding.screen_one_title,
-  description: strings.onboarding.screen_one_description,
+  description: withKeyword(
+    strings.onboarding.screen_one_description,
+    strings.onboarding.keyword_african_dna,
+  ),
 }, {
   imageSrc: images.onboarding2,
   title: strings.onboarding.screen_two_title,
-  description: strings.onboarding.screen_two_description,
+  description: withKeyword(
+    strings.onboarding.screen_two_description,
+    strings.onboarding.keyword_voice_messages,
+  ),
 }, {
   imageSrc: images.onboarding3,
   title: strings.onboarding.screen_three_title,
-  description: strings.onboarding.screen_three_description,
+  description: withKeyword(
+    strings.onboarding.screen_three_description,
+    strings.onboarding.keyword_simple_intuitive,
+  ),
 }]
 
 export const SkipButton = ({ onPress }) => {
@@ -44,13 +69,12 @@ export const SkipButton = ({ onPress }) => {
 }
 
 const OnboardingPage = ({ navigation }) => {
-  navigation.setOptions({ headerShown: false })
+  navigation.setOptions(routeOptions)
   const styles = useAppStyles(createThemedStyles)
   const { colors, resetAppBars } = useAppColors()
 
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
-  const [slides, setSlides] = useState([])
   const isLastSlideItem = slideItems.length - 1 === slideIndex
   const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
 
@@ -77,17 +101,15 @@ const OnboardingPage = ({ navigation }) => {
     navigation.navigate(routes.SIGNUP)
   }, [navigation, trackOnboardingEnd])
 
-  useEffect(() => {
-    setSlides(
-      slideItems.map((slideItem, index) => (
-        <OnbordingSlide
-          slideTitle={slideItem.title}
-          slideDescription={slideItem.description}
-          key={`onboarding-slide-item-${index}`}
-        />
-      )),
-    )
-  }, [])
+  const slides = useMemo(() => (
+    slideItems.map((slideItem, index) => (
+      <OnbordingSlide
+        slideTitle={slideItem.title}
+        slideDescription={slideItem.description}
+        key={`onboarding-slide-item-${index}`}
+      />
+    ))
+  ), [])
 
   return (
     <ImageBackground source={slideItems[slideIndex].imageSrc} style={styles.wrapper}>
