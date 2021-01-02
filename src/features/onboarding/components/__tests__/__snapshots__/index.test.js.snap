@@ -69,7 +69,7 @@ exports[`renders OnboardingSlide 1`] = `
       ]
     }
   >
-    Kebetoo is a microblogging app with African DNA. Be one of the first to join the adventure 💪
+    Kebetoo is a microblogging app with {0}. Be one of the first to join the adventure 💪
   </Text>
 </View>
 `;
