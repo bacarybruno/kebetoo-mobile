@@ -19,7 +19,12 @@ import { metrics } from '@app/theme'
 import useFilePicker from '@app/features/post/hooks/file-picker'
 import routes from '@app/navigation/routes'
 import {
-  useAppColors, useAppStyles, useAudioRecorder, useKeyboard, useUser,
+  useAnalytics,
+  useAppColors,
+  useAppStyles,
+  useAudioRecorder,
+  useKeyboard,
+  useUser,
 } from '@app/shared/hooks'
 import iosColors from '@app/theme/ios-colors'
 import { VideoMarker } from '@app/shared/components/camera-roll-picker'
@@ -123,6 +128,7 @@ const CreatePostPage = ({ route, navigation }) => {
   navigation.setOptions(routeOptions(styles, colors))
 
   const { profile } = useUser()
+  const { reportError } = useAnalytics()
 
   const { params } = route
   const [isLoading, setIsLoading] = useState(false)
@@ -150,7 +156,11 @@ const CreatePostPage = ({ route, navigation }) => {
         post = await api.posts.create({ content: text, repost, author: profile.uid })
       }
 
-      const updatedPost = { ...post, localFileUri: filePicker.file.uri }
+      const updatedPost = { ...post }
+      if (filePicker?.file?.uri) {
+        updatedPost.localFileUri = filePicker.file?.uri
+      }
+
       setIsLoading(false)
       if (params && params.onGoBack) params.onGoBack(updatedPost)
 
@@ -189,6 +199,7 @@ const CreatePostPage = ({ route, navigation }) => {
 
       return navigation.goBack()
     } catch (error) {
+      reportError(error)
       Snackbar.show({
         text: strings.errors.create_post_error,
         duration: Snackbar.LENGTH_LONG,
@@ -200,7 +211,7 @@ const CreatePostPage = ({ route, navigation }) => {
       })
       return setIsLoading(false)
     }
-  }, [params, editMode, audioRecorder, filePicker, navigation, text, profile.uid])
+  }, [params, editMode, audioRecorder, filePicker, navigation, text, profile.uid, reportError])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
