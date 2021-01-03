@@ -121,7 +121,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
       dispatch({ type: actionTypes.CLEAR_TO_REPLY })
     } else {
       dispatch({ type: actionTypes.ADD_COMMENT, payload: result })
-      setTimeout(() => scrollView.current?.scrollToEnd(), 200)
+      setTimeout(() => scrollView?.current?.scrollToEnd(), 200)
     }
     setLoading(false)
   }, [setLoading, toReply, audioRecorder, comment, post.id, profile.uid, commentInput, scrollView])

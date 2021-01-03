@@ -443,108 +443,108 @@ exports[`renders Comments 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "marginBottom": 8,
-                    },
-                    undefined,
-                  ]
+                  Object {
+                    "opacity": 1,
+                  }
                 }
               >
                 <View
                   style={
-                    Object {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "marginBottom": 8,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <View
                     style={
                       Object {
                         "flexDirection": "row",
+                        "justifyContent": "space-between",
                       }
                     }
                   >
-                    <RNGestureHandlerButton
-                      accessibilityComponentType="button"
-                      accessibilityLabel="Go back"
-                      accessibilityRole="button"
-                      accessibilityTraits="button"
-                      accessible={true}
-                      activeOpacity={0.3}
-                      borderless={true}
-                      collapsable={false}
-                      delayPressIn={0}
-                      onActiveStateChange={[Function]}
-                      onGestureEvent={[Function]}
-                      onGestureHandlerEvent={[Function]}
-                      onGestureHandlerStateChange={[Function]}
-                      onHandlerStateChange={[Function]}
-                      onPress={[Function]}
-                      pressColor="rgba(0, 0, 0, .32)"
+                    <View
                       style={
-                        Array [
-                          Object {
-                            "overflow": "hidden",
-                          },
-                          Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "opacity": 1,
-                          },
-                        ]
+                        Object {
+                          "flexDirection": "row",
+                        }
                       }
-                      testID="header-back"
                     >
-                      <View
+                      <RNGestureHandlerButton
+                        accessibilityComponentType="button"
+                        accessibilityLabel="Go back"
+                        accessibilityRole="button"
+                        accessibilityTraits="button"
+                        accessible={true}
+                        activeOpacity={0.3}
+                        borderless={true}
+                        collapsable={false}
+                        delayPressIn={0}
+                        onActiveStateChange={[Function]}
+                        onGestureEvent={[Function]}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
+                        onHandlerStateChange={[Function]}
+                        onPress={[Function]}
+                        pressColor="rgba(0, 0, 0, .32)"
                         style={
                           Array [
                             Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "marginLeft": 16,
-                              "width": 24,
+                              "overflow": "hidden",
                             },
-                            undefined,
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "opacity": 1,
+                            },
                           ]
                         }
+                        testID="header-back"
                       >
-                        <Text
-                          allowFontScaling={false}
+                        <View
                           style={
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                              "fontFamily": "icomoon",
-                              "fontSize": 20,
-                              "fontStyle": "normal",
-                              "fontWeight": "normal",
-                            }
+                            Array [
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "marginLeft": 16,
+                                "width": 24,
+                              },
+                              undefined,
+                            ]
                           }
-                          text="kebeticon-chevron-left"
-                        />
-                      </View>
-                    </RNGestureHandlerButton>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
-                    >
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            style={
+                              Object {
+                                "color": "rgba(0,0,0,0.87)",
+                                "fontFamily": "icomoon",
+                                "fontSize": 20,
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              }
+                            }
+                            text="kebeticon-chevron-left"
+                          />
+                        </View>
+                      </RNGestureHandlerButton>
                       <View
                         style={
                           Array [
@@ -584,57 +584,20 @@ exports[`renders Comments 1`] = `
                         />
                       </View>
                     </View>
-                  </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "justifyContent": "space-between",
-                          "marginLeft": 5,
-                        },
-                        Object {
-                          "height": 35,
-                        },
-                        undefined,
-                      ]
-                    }
-                  >
-                    <Text
+                    <View
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 16,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.32,
-                            "lineHeight": 21,
+                            "justifyContent": "space-between",
+                            "marginLeft": 5,
                           },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "600",
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "height": 35,
+                          },
+                          undefined,
                         ]
                       }
                     >
-                      Bruno Bodian
-                    </Text>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flexDirection": "row",
-                        }
-                      }
-                    >
                       <Text
                         style={
                           Array [
@@ -642,10 +605,10 @@ exports[`renders Comments 1`] = `
                               "backgroundColor": "transparent",
                               "color": "#000000",
                               "fontFamily": "System",
-                              "fontSize": 12,
+                              "fontSize": 16,
                               "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
+                              "letterSpacing": -0.32,
+                              "lineHeight": 21,
                             },
                             Array [
                               Object {
@@ -654,71 +617,108 @@ exports[`renders Comments 1`] = `
                               Object {
                                 "backgroundColor": "transparent",
                                 "fontFamily": "System",
-                                "fontWeight": "400",
+                                "fontWeight": "600",
                               },
                               undefined,
                             ],
                           ]
                         }
                       >
-                        5 days ago
+                        Bruno Bodian
                       </Text>
-                      <Text
+                      <View
                         style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontSize": 12,
-                              "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
-                            },
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
                             Array [
                               Object {
-                                "color": "rgba(0,0,0,0.87)",
-                              },
-                              Object {
                                 "backgroundColor": "transparent",
+                                "color": "#000000",
                                 "fontFamily": "System",
+                                "fontSize": 12,
                                 "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                         • 
-                      </Text>
-                      <Text
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontSize": 12,
-                              "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
-                            },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          5 days ago
+                        </Text>
+                        <Text
+                          style={
                             Array [
                               Object {
-                                "color": "rgba(0,0,0,0.87)",
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontSize": 12,
+                                "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                           • 
+                        </Text>
+                        <Text
+                          style={
+                            Array [
                               Object {
                                 "backgroundColor": "transparent",
+                                "color": "#000000",
                                 "fontFamily": "System",
+                                "fontSize": 12,
                                 "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                        Edited
-                      </Text>
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          Edited
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -2514,108 +2514,108 @@ exports[`renders Comments in loading state 1`] = `
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "marginBottom": 8,
-                    },
-                    undefined,
-                  ]
+                  Object {
+                    "opacity": 1,
+                  }
                 }
               >
                 <View
                   style={
-                    Object {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "marginBottom": 8,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <View
                     style={
                       Object {
                         "flexDirection": "row",
+                        "justifyContent": "space-between",
                       }
                     }
                   >
-                    <RNGestureHandlerButton
-                      accessibilityComponentType="button"
-                      accessibilityLabel="Go back"
-                      accessibilityRole="button"
-                      accessibilityTraits="button"
-                      accessible={true}
-                      activeOpacity={0.3}
-                      borderless={true}
-                      collapsable={false}
-                      delayPressIn={0}
-                      onActiveStateChange={[Function]}
-                      onGestureEvent={[Function]}
-                      onGestureHandlerEvent={[Function]}
-                      onGestureHandlerStateChange={[Function]}
-                      onHandlerStateChange={[Function]}
-                      onPress={[Function]}
-                      pressColor="rgba(0, 0, 0, .32)"
+                    <View
                       style={
-                        Array [
-                          Object {
-                            "overflow": "hidden",
-                          },
-                          Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "opacity": 1,
-                          },
-                        ]
+                        Object {
+                          "flexDirection": "row",
+                        }
                       }
-                      testID="header-back"
                     >
-                      <View
+                      <RNGestureHandlerButton
+                        accessibilityComponentType="button"
+                        accessibilityLabel="Go back"
+                        accessibilityRole="button"
+                        accessibilityTraits="button"
+                        accessible={true}
+                        activeOpacity={0.3}
+                        borderless={true}
+                        collapsable={false}
+                        delayPressIn={0}
+                        onActiveStateChange={[Function]}
+                        onGestureEvent={[Function]}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
+                        onHandlerStateChange={[Function]}
+                        onPress={[Function]}
+                        pressColor="rgba(0, 0, 0, .32)"
                         style={
                           Array [
                             Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "marginLeft": 16,
-                              "width": 24,
+                              "overflow": "hidden",
                             },
-                            undefined,
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "opacity": 1,
+                            },
                           ]
                         }
+                        testID="header-back"
                       >
-                        <Text
-                          allowFontScaling={false}
+                        <View
                           style={
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                              "fontFamily": "icomoon",
-                              "fontSize": 20,
-                              "fontStyle": "normal",
-                              "fontWeight": "normal",
-                            }
+                            Array [
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "marginLeft": 16,
+                                "width": 24,
+                              },
+                              undefined,
+                            ]
                           }
-                          text="kebeticon-chevron-left"
-                        />
-                      </View>
-                    </RNGestureHandlerButton>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
-                    >
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            style={
+                              Object {
+                                "color": "rgba(0,0,0,0.87)",
+                                "fontFamily": "icomoon",
+                                "fontSize": 20,
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              }
+                            }
+                            text="kebeticon-chevron-left"
+                          />
+                        </View>
+                      </RNGestureHandlerButton>
                       <View
                         style={
                           Array [
@@ -2655,57 +2655,20 @@ exports[`renders Comments in loading state 1`] = `
                         />
                       </View>
                     </View>
-                  </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "justifyContent": "space-between",
-                          "marginLeft": 5,
-                        },
-                        Object {
-                          "height": 35,
-                        },
-                        undefined,
-                      ]
-                    }
-                  >
-                    <Text
+                    <View
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 16,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.32,
-                            "lineHeight": 21,
+                            "justifyContent": "space-between",
+                            "marginLeft": 5,
                           },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "600",
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "height": 35,
+                          },
+                          undefined,
                         ]
                       }
                     >
-                      Bruno Bodian
-                    </Text>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flexDirection": "row",
-                        }
-                      }
-                    >
                       <Text
                         style={
                           Array [
@@ -2713,10 +2676,10 @@ exports[`renders Comments in loading state 1`] = `
                               "backgroundColor": "transparent",
                               "color": "#000000",
                               "fontFamily": "System",
-                              "fontSize": 12,
+                              "fontSize": 16,
                               "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
+                              "letterSpacing": -0.32,
+                              "lineHeight": 21,
                             },
                             Array [
                               Object {
@@ -2725,71 +2688,108 @@ exports[`renders Comments in loading state 1`] = `
                               Object {
                                 "backgroundColor": "transparent",
                                 "fontFamily": "System",
-                                "fontWeight": "400",
+                                "fontWeight": "600",
                               },
                               undefined,
                             ],
                           ]
                         }
                       >
-                        5 days ago
+                        Bruno Bodian
                       </Text>
-                      <Text
+                      <View
                         style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontSize": 12,
-                              "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
-                            },
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
                             Array [
                               Object {
-                                "color": "rgba(0,0,0,0.87)",
-                              },
-                              Object {
                                 "backgroundColor": "transparent",
+                                "color": "#000000",
                                 "fontFamily": "System",
+                                "fontSize": 12,
                                 "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                         • 
-                      </Text>
-                      <Text
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontSize": 12,
-                              "fontWeight": "400",
-                              "letterSpacing": 0,
-                              "lineHeight": 16,
-                            },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          5 days ago
+                        </Text>
+                        <Text
+                          style={
                             Array [
                               Object {
-                                "color": "rgba(0,0,0,0.87)",
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontSize": 12,
+                                "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                           • 
+                        </Text>
+                        <Text
+                          style={
+                            Array [
                               Object {
                                 "backgroundColor": "transparent",
+                                "color": "#000000",
                                 "fontFamily": "System",
+                                "fontSize": 12,
                                 "fontWeight": "400",
+                                "letterSpacing": 0,
+                                "lineHeight": 16,
                               },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                        Edited
-                      </Text>
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.87)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "400",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          Edited
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>

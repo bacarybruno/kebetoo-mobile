@@ -12,46 +12,46 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -106,57 +106,20 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -164,10 +127,10 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -176,112 +139,21 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            5 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Edited
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -298,20 +170,148 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              5 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Edited
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -1168,48 +1168,48 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        Object {
-          "marginBottom": 4,
-        },
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          Object {
+            "marginBottom": 4,
+          },
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -1264,51 +1264,51 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 24,
-            },
-            Object {
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 24,
+              },
+              Object {
+                "justifyContent": "center",
+              },
             ]
           }
         >
-          John Doe
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            John Doe
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -1839,46 +1839,46 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -1933,57 +1933,20 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -1991,10 +1954,10 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -2003,112 +1966,21 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            5 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Edited
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -2125,20 +1997,148 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              5 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Edited
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -2355,46 +2355,46 @@ exports[`renders component [image]: renders BasicPost 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -2449,57 +2449,20 @@ exports[`renders component [image]: renders BasicPost 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -2507,10 +2470,10 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -2519,56 +2482,21 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -2585,20 +2513,92 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -3371,48 +3371,48 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        Object {
-          "marginBottom": 4,
-        },
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          Object {
+            "marginBottom": 4,
+          },
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -3467,51 +3467,51 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 24,
-            },
-            Object {
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 24,
+              },
+              Object {
+                "justifyContent": "center",
+              },
             ]
           }
         >
-          John Doe
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            John Doe
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -3942,46 +3942,46 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -4036,57 +4036,20 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -4094,10 +4057,10 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -4106,56 +4069,21 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -4172,20 +4100,92 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -4318,46 +4318,46 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -4412,57 +4412,20 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -4470,10 +4433,10 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -4482,56 +4445,21 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -4548,20 +4476,92 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -4615,48 +4615,48 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                Object {
-                  "marginBottom": 4,
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  Object {
+                    "marginBottom": 4,
+                  },
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -4699,51 +4699,51 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 24,
-                    },
-                    Object {
-                      "justifyContent": "center",
-                    },
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 24,
+                      },
+                      Object {
+                        "justifyContent": "center",
+                      },
                     ]
                   }
                 >
-                  Bruno Bodian
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 16,
+                          "fontWeight": "400",
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "600",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    Bruno Bodian
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -5521,48 +5521,48 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        Object {
-          "marginBottom": 4,
-        },
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          Object {
+            "marginBottom": 4,
+          },
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -5617,51 +5617,51 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 24,
-            },
-            Object {
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 24,
+              },
+              Object {
+                "justifyContent": "center",
+              },
             ]
           }
         >
-          John Doe
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            John Doe
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -5713,48 +5713,48 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                Object {
-                  "marginBottom": 4,
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  Object {
+                    "marginBottom": 4,
+                  },
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -5797,51 +5797,51 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 24,
-                    },
-                    Object {
-                      "justifyContent": "center",
-                    },
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 24,
+                      },
+                      Object {
+                        "justifyContent": "center",
+                      },
                     ]
                   }
                 >
-                  Bruno Bodian
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 16,
+                          "fontWeight": "400",
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "600",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    Bruno Bodian
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -6295,46 +6295,46 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -6389,57 +6389,20 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -6447,10 +6410,10 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -6459,56 +6422,21 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -6525,20 +6453,92 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -6592,48 +6592,48 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                Object {
-                  "marginBottom": 4,
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  Object {
+                    "marginBottom": 4,
+                  },
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -6676,51 +6676,51 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 24,
-                    },
-                    Object {
-                      "justifyContent": "center",
-                    },
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 24,
+                      },
+                      Object {
+                        "justifyContent": "center",
+                      },
                     ]
                   }
                 >
-                  Bruno Bodian
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 16,
+                          "fontWeight": "400",
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
+                        },
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "600",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    Bruno Bodian
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -6858,46 +6858,46 @@ exports[`renders component [text]: renders BasicPost 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -6952,57 +6952,20 @@ exports[`renders component [text]: renders BasicPost 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -7010,10 +6973,10 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -7022,56 +6985,21 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -7088,20 +7016,92 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -7877,48 +7877,48 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        Object {
-          "marginBottom": 4,
-        },
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          Object {
+            "marginBottom": 4,
+          },
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -7973,51 +7973,51 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 24,
-            },
-            Object {
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 24,
+              },
+              Object {
+                "justifyContent": "center",
+              },
             ]
           }
         >
-          John Doe
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            John Doe
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -8467,46 +8467,46 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -8561,57 +8561,20 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -8619,10 +8582,10 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -8631,56 +8594,21 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            7 days ago
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -8697,20 +8625,92 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              7 days ago
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -8846,46 +8846,46 @@ exports[`renders component [video]: renders BasicPost 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -8940,57 +8940,20 @@ exports[`renders component [video]: renders BasicPost 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -8998,10 +8961,10 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -9010,112 +8973,21 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            in 6 months
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Edited
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -9132,20 +9004,148 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              in 6 months
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Edited
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -9990,48 +9990,48 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        Object {
-          "marginBottom": 4,
-        },
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          Object {
+            "marginBottom": 4,
+          },
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -10086,51 +10086,51 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 24,
-            },
-            Object {
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 24,
+              },
+              Object {
+                "justifyContent": "center",
+              },
             ]
           }
         >
-          John Doe
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            John Doe
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -10649,46 +10649,46 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginBottom": 8,
-        },
-        false,
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
   >
     <View
       style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 8,
+          },
+          false,
+        ]
       }
     >
       <View
         style={
           Object {
             "flexDirection": "row",
+            "justifyContent": "space-between",
           }
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
             }
           }
         >
@@ -10743,57 +10743,20 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
             </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "justifyContent": "space-between",
-              "marginLeft": 5,
-            },
-            Object {
-              "height": 35,
-            },
-            false,
-          ]
-        }
-      >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+                "justifyContent": "space-between",
+                "marginLeft": 5,
               },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
+              Object {
+                "height": 35,
+              },
+              false,
             ]
           }
         >
-          John Doe
-        </Text>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
           <Text
             style={
               Array [
@@ -10801,10 +10764,10 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
+                  "fontSize": 16,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "letterSpacing": -0.32,
+                  "lineHeight": 21,
                 },
                 Array [
                   Object {
@@ -10813,112 +10776,21 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "400",
+                    "fontWeight": "600",
                   },
                   undefined,
                 ],
               ]
             }
           >
-            in 6 months
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Edited
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
-                },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-             • 
+            John Doe
           </Text>
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 3,
-                },
-                Object {
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                },
-                undefined,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
             }
           >
             <Text
@@ -10935,20 +10807,148 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                   },
                   Array [
                     Object {
-                      "color": "rgba(255, 255, 255, 255)",
+                      "color": "rgba(0,0,0,0.87)",
                     },
                     Object {
                       "backgroundColor": "transparent",
                       "fontFamily": "System",
-                      "fontWeight": "700",
+                      "fontWeight": "400",
                     },
                     undefined,
                   ],
                 ]
               }
             >
-              New
+              in 6 months
             </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Edited
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+               • 
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 50,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 3,
+                  },
+                  Object {
+                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 12,
+                      "fontWeight": "400",
+                      "letterSpacing": 0,
+                      "lineHeight": 16,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgba(255, 255, 255, 255)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "700",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                New
+              </Text>
+            </View>
           </View>
         </View>
       </View>

@@ -441,46 +441,46 @@ exports[`renders ManagePost 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                undefined,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  undefined,
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -523,57 +523,20 @@ exports[`renders ManagePost 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 35,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 35,
+                      },
+                      undefined,
                     ]
                   }
                 >
-                  Bruno Bodian
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    }
-                  }
-                >
                   <Text
                     style={
                       Array [
@@ -581,10 +544,10 @@ exports[`renders ManagePost 1`] = `
                           "backgroundColor": "transparent",
                           "color": "#000000",
                           "fontFamily": "System",
-                          "fontSize": 12,
+                          "fontSize": 16,
                           "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
                         },
                         Array [
                           Object {
@@ -593,122 +556,159 @@ exports[`renders ManagePost 1`] = `
                           Object {
                             "backgroundColor": "transparent",
                             "fontFamily": "System",
-                            "fontWeight": "400",
+                            "fontWeight": "600",
                           },
                           undefined,
                         ],
                       ]
                     }
                   >
-                    5 days ago
+                    Bruno Bodian
                   </Text>
-                  <Text
+                  <View
                     style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
                         Array [
                           Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
                             "backgroundColor": "transparent",
+                            "color": "#000000",
                             "fontFamily": "System",
+                            "fontSize": 12,
                             "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                     • 
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      5 days ago
+                    </Text>
+                    <Text
+                      style={
                         Array [
                           Object {
-                            "color": "rgba(0,0,0,0.87)",
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 12,
+                            "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                       • 
+                    </Text>
+                    <Text
+                      style={
+                        Array [
                           Object {
                             "backgroundColor": "transparent",
+                            "color": "#000000",
                             "fontFamily": "System",
+                            "fontSize": 12,
                             "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Edited
-                  </Text>
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      Edited
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "width": 30,
-                }
-              }
-            >
               <View
-                accessible={true}
-                focusable={true}
-                hitSlop={
-                  Object {
-                    "bottom": 50,
-                    "left": 50,
-                    "right": 50,
-                    "top": 50,
-                  }
-                }
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "alignItems": "center",
-                    "opacity": 1,
                     "width": 30,
                   }
                 }
-                testID="more-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  style={
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
                     Object {
-                      "color": "rgba(0,0,0,0.38)",
-                      "fontFamily": "Ionicons",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
                     }
                   }
-                  text="ionicon-ios-more"
-                />
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1241,46 +1241,46 @@ exports[`renders ManagePost 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                undefined,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  undefined,
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -1323,55 +1323,18 @@ exports[`renders ManagePost 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 35,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 35,
+                      },
+                      undefined,
                     ]
-                  }
-                >
-                  Bruno Bodian
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    }
                   }
                 >
                   <Text
@@ -1381,10 +1344,10 @@ exports[`renders ManagePost 1`] = `
                           "backgroundColor": "transparent",
                           "color": "#000000",
                           "fontFamily": "System",
-                          "fontSize": 12,
+                          "fontSize": 16,
                           "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
                         },
                         Array [
                           Object {
@@ -1393,66 +1356,103 @@ exports[`renders ManagePost 1`] = `
                           Object {
                             "backgroundColor": "transparent",
                             "fontFamily": "System",
-                            "fontWeight": "400",
+                            "fontWeight": "600",
                           },
                           undefined,
                         ],
                       ]
                     }
                   >
-                    7 days ago
+                    Bruno Bodian
                   </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 12,
+                            "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
+                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      7 days ago
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "width": 30,
-                }
-              }
-            >
               <View
-                accessible={true}
-                focusable={true}
-                hitSlop={
-                  Object {
-                    "bottom": 50,
-                    "left": 50,
-                    "right": 50,
-                    "top": 50,
-                  }
-                }
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "alignItems": "center",
-                    "opacity": 1,
                     "width": 30,
                   }
                 }
-                testID="more-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  style={
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
                     Object {
-                      "color": "rgba(0,0,0,0.38)",
-                      "fontFamily": "Ionicons",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
                     }
                   }
-                  text="ionicon-ios-more"
-                />
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1901,46 +1901,46 @@ exports[`renders ManagePost 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                undefined,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  undefined,
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -1983,55 +1983,18 @@ exports[`renders ManagePost 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 35,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 35,
+                      },
+                      undefined,
                     ]
-                  }
-                >
-                  Bruno Bodian
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    }
                   }
                 >
                   <Text
@@ -2041,10 +2004,10 @@ exports[`renders ManagePost 1`] = `
                           "backgroundColor": "transparent",
                           "color": "#000000",
                           "fontFamily": "System",
-                          "fontSize": 12,
+                          "fontSize": 16,
                           "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
                         },
                         Array [
                           Object {
@@ -2053,66 +2016,103 @@ exports[`renders ManagePost 1`] = `
                           Object {
                             "backgroundColor": "transparent",
                             "fontFamily": "System",
-                            "fontWeight": "400",
+                            "fontWeight": "600",
                           },
                           undefined,
                         ],
                       ]
                     }
                   >
-                    7 days ago
+                    Bruno Bodian
                   </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 12,
+                            "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
+                          },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      7 days ago
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "width": 30,
-                }
-              }
-            >
               <View
-                accessible={true}
-                focusable={true}
-                hitSlop={
-                  Object {
-                    "bottom": 50,
-                    "left": 50,
-                    "right": 50,
-                    "top": 50,
-                  }
-                }
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "alignItems": "center",
-                    "opacity": 1,
                     "width": 30,
                   }
                 }
-                testID="more-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  style={
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
                     Object {
-                      "color": "rgba(0,0,0,0.38)",
-                      "fontFamily": "Ionicons",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
                     }
                   }
-                  text="ionicon-ios-more"
-                />
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -2164,48 +2164,48 @@ exports[`renders ManagePost 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "flexDirection": "row",
-                          "justifyContent": "space-between",
-                          "marginBottom": 8,
-                        },
-                        Object {
-                          "marginBottom": 4,
-                        },
-                      ]
+                      Object {
+                        "opacity": 1,
+                      }
                     }
                   >
                     <View
                       style={
-                        Object {
-                          "flexDirection": "row",
-                          "justifyContent": "space-between",
-                        }
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "justifyContent": "space-between",
+                            "marginBottom": 8,
+                          },
+                          Object {
+                            "marginBottom": 4,
+                          },
+                        ]
                       }
                     >
                       <View
                         style={
                           Object {
                             "flexDirection": "row",
+                            "justifyContent": "space-between",
                           }
                         }
                       >
                         <View
-                          accessible={true}
-                          focusable={true}
-                          onClick={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Object {
-                              "opacity": 1,
+                              "flexDirection": "row",
                             }
                           }
                         >
@@ -2260,51 +2260,51 @@ exports[`renders ManagePost 1`] = `
                             </View>
                           </View>
                         </View>
-                      </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "justifyContent": "space-between",
-                              "marginLeft": 5,
-                            },
-                            Object {
-                              "height": 24,
-                            },
-                            Object {
-                              "justifyContent": "center",
-                            },
-                          ]
-                        }
-                      >
-                        <Text
+                        <View
                           style={
                             Array [
                               Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 16,
-                                "fontWeight": "400",
-                                "letterSpacing": -0.32,
-                                "lineHeight": 21,
+                                "justifyContent": "space-between",
+                                "marginLeft": 5,
                               },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "600",
-                                },
-                                undefined,
-                              ],
+                              Object {
+                                "height": 24,
+                              },
+                              Object {
+                                "justifyContent": "center",
+                              },
                             ]
                           }
                         >
-                          John Doe
-                        </Text>
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.32,
+                                  "lineHeight": 21,
+                                },
+                                Array [
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "600",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            John Doe
+                          </Text>
+                        </View>
                       </View>
                     </View>
                   </View>
@@ -2855,46 +2855,46 @@ exports[`renders ManagePost 1`] = `
           }
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "marginBottom": 8,
-                },
-                undefined,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "marginBottom": 8,
+                  },
+                  undefined,
+                ]
               }
             >
               <View
                 style={
                   Object {
                     "flexDirection": "row",
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "opacity": 1,
+                      "flexDirection": "row",
                     }
                   }
                 >
@@ -2937,57 +2937,20 @@ exports[`renders ManagePost 1`] = `
                     />
                   </View>
                 </View>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "space-between",
-                      "marginLeft": 5,
-                    },
-                    Object {
-                      "height": 35,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <Text
+                <View
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.32,
-                        "lineHeight": 21,
+                        "justifyContent": "space-between",
+                        "marginLeft": 5,
                       },
-                      Array [
-                        Object {
-                          "color": "rgba(0,0,0,0.87)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
+                      Object {
+                        "height": 35,
+                      },
+                      undefined,
                     ]
                   }
                 >
-                  Bruno Bodian
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    }
-                  }
-                >
                   <Text
                     style={
                       Array [
@@ -2995,10 +2958,10 @@ exports[`renders ManagePost 1`] = `
                           "backgroundColor": "transparent",
                           "color": "#000000",
                           "fontFamily": "System",
-                          "fontSize": 12,
+                          "fontSize": 16,
                           "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
+                          "letterSpacing": -0.32,
+                          "lineHeight": 21,
                         },
                         Array [
                           Object {
@@ -3007,122 +2970,159 @@ exports[`renders ManagePost 1`] = `
                           Object {
                             "backgroundColor": "transparent",
                             "fontFamily": "System",
-                            "fontWeight": "400",
+                            "fontWeight": "600",
                           },
                           undefined,
                         ],
                       ]
                     }
                   >
-                    in 6 months
+                    Bruno Bodian
                   </Text>
-                  <Text
+                  <View
                     style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
                         Array [
                           Object {
-                            "color": "rgba(0,0,0,0.87)",
-                          },
-                          Object {
                             "backgroundColor": "transparent",
+                            "color": "#000000",
                             "fontFamily": "System",
+                            "fontSize": 12,
                             "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                     • 
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontSize": 12,
-                          "fontWeight": "400",
-                          "letterSpacing": 0,
-                          "lineHeight": 16,
-                        },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      in 6 months
+                    </Text>
+                    <Text
+                      style={
                         Array [
                           Object {
-                            "color": "rgba(0,0,0,0.87)",
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontSize": 12,
+                            "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                       • 
+                    </Text>
+                    <Text
+                      style={
+                        Array [
                           Object {
                             "backgroundColor": "transparent",
+                            "color": "#000000",
                             "fontFamily": "System",
+                            "fontSize": 12,
                             "fontWeight": "400",
+                            "letterSpacing": 0,
+                            "lineHeight": 16,
                           },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Edited
-                  </Text>
+                          Array [
+                            Object {
+                              "color": "rgba(0,0,0,0.87)",
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      Edited
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "width": 30,
-                }
-              }
-            >
               <View
-                accessible={true}
-                focusable={true}
-                hitSlop={
-                  Object {
-                    "bottom": 50,
-                    "left": 50,
-                    "right": 50,
-                    "top": 50,
-                  }
-                }
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "alignItems": "center",
-                    "opacity": 1,
                     "width": 30,
                   }
                 }
-                testID="more-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  style={
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
                     Object {
-                      "color": "rgba(0,0,0,0.38)",
-                      "fontFamily": "Ionicons",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
                     }
                   }
-                  text="ionicon-ios-more"
-                />
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
               </View>
             </View>
           </View>
