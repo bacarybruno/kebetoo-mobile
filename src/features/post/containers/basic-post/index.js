@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react'
-import { View, TouchableOpacity, Platform } from 'react-native'
+import {
+  View, TouchableOpacity, Platform, TouchableWithoutFeedback,
+} from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
@@ -95,44 +97,44 @@ export const Header = ({
   }, [author.id, navigate])
 
   return (
-    <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
-      <View style={styles.left}>
-        <View style={styles.headerContent}>
-          {Left && <Left />}
-          {author ? (
-            <TouchableOpacity onPress={onShowProfile}>
+    <TouchableOpacity onPress={onShowProfile}>
+      <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
+        <View style={styles.left}>
+          <View style={styles.headerContent}>
+            {Left && <Left />}
+            {author ? (
               <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
-            </TouchableOpacity>
-          ) : (
-            <PlaceholderAvatar size={avatarSize} />
+            ) : (
+              <PlaceholderAvatar size={avatarSize} />
+            )}
+          </View>
+          {author && (
+            <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
+              <Typography
+                text={author.displayName}
+                type={Typography.types.textButton}
+                systemWeight={Typography.weights.semibold}
+              />
+              {!isRepost && (
+                <View style={styles.smallMeta}>
+                  <Typography
+                    text={dayjs(post.createdAt).fromNow()}
+                    type={Typography.types.caption}
+                  />
+                  {isUpdated(post) && <Edited />}
+                  {badge && <InfoBadge text={badge} />}
+                </View>
+              )}
+            </View>
           )}
         </View>
-        {author && (
-          <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
-            <Typography
-              text={author.displayName}
-              type={Typography.types.textButton}
-              systemWeight={Typography.weights.semibold}
-            />
-            {!isRepost && (
-              <View style={styles.smallMeta}>
-                <Typography
-                  text={dayjs(post.createdAt).fromNow()}
-                  type={Typography.types.caption}
-                />
-                {isUpdated(post) && <Edited />}
-                {badge && <InfoBadge text={badge} />}
-              </View>
-            )}
+        {onOptions && (
+          <View style={styles.moreButton}>
+            <MoreButton onPress={() => onOptions(post.id)} />
           </View>
         )}
       </View>
-      {onOptions && (
-        <View style={styles.moreButton}>
-          <MoreButton onPress={() => onOptions(post.id)} />
-        </View>
-      )}
-    </View>
+    </TouchableOpacity>
   )
 }
 

@@ -67,7 +67,7 @@ const Comments = () => {
     toReply,
     replies,
     comment,
-  } = useComments(navigation, post, commentInput)
+  } = useComments(navigation, post, commentInput, scrollView)
   const insets = useSafeAreaInsets()
 
   const styles = useAppStyles(createThemedStyles)
