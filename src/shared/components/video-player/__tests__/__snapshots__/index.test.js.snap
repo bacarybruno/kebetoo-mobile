@@ -5,6 +5,7 @@ exports[`computes video duration if not available 1`] = `
   style={
     Object {
       "aspectRatio": 1,
+      "backgroundColor": "rgba(199, 199, 204, 255)",
       "borderRadius": 12,
       "elevation": 1,
       "flex": 1,
@@ -148,6 +149,7 @@ exports[`renders VideoPlayer 1`] = `
   style={
     Object {
       "aspectRatio": 1,
+      "backgroundColor": "rgba(199, 199, 204, 255)",
       "borderRadius": 12,
       "elevation": 1,
       "flex": 1,

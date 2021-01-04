@@ -156,6 +156,8 @@ const CreatePostPage = ({ route, navigation }) => {
         post = await api.posts.create({ content: text, repost, author: profile.uid })
       }
 
+      if (post.error) throw new Error(post.error)
+
       const updatedPost = { ...post }
       if (filePicker?.file?.uri) {
         updatedPost.localFileUri = filePicker.file?.uri

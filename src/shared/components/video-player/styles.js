@@ -10,6 +10,7 @@ export default (colors) => StyleSheet.create({
     flex: 1,
     aspectRatio: metrics.aspectRatio.square,
     borderRadius,
+    backgroundColor: colors.inactive,
     ...elevation(1),
   },
   thumbnail: {
