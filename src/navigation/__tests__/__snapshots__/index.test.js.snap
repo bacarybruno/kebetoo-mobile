@@ -46,21 +46,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransition={[Function]}
+        onTransitionStart={[Function]}
         pointerEvents="box-none"
         style={
-          Array [
-            Object {
-              "overflow": undefined,
-            },
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-          ]
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
         }
         transitionSpec={
           Object {
@@ -90,7 +85,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
         }
       >
         <View
-          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -163,7 +157,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                     >
                       <View
                         collapsable={false}
-                        enabled={true}
                         pointerEvents="none"
                         removeClippedSubviews={true}
                         style={
@@ -202,7 +195,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -640,7 +632,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                       </View>
                       <View
                         collapsable={false}
-                        enabled={true}
                         pointerEvents="auto"
                         removeClippedSubviews={false}
                         style={
@@ -678,7 +669,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -1820,14 +1810,17 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Object {
-        "height": 54,
-        "left": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-        "zIndex": 1,
-      }
+      Array [
+        Object {
+          "zIndex": 1,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -1879,21 +1872,16 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransition={[Function]}
+        onTransitionStart={[Function]}
         pointerEvents="box-none"
         style={
-          Array [
-            Object {
-              "overflow": undefined,
-            },
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-          ]
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
         }
         transitionSpec={
           Object {
@@ -1923,7 +1911,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
         }
       >
         <View
-          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -1996,7 +1983,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                     >
                       <View
                         collapsable={false}
-                        enabled={true}
                         pointerEvents="none"
                         removeClippedSubviews={true}
                         style={
@@ -2035,7 +2021,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -2473,7 +2458,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                       </View>
                       <View
                         collapsable={false}
-                        enabled={true}
                         pointerEvents="auto"
                         removeClippedSubviews={false}
                         style={
@@ -2511,7 +2495,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -3653,14 +3636,17 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Object {
-        "height": 54,
-        "left": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-        "zIndex": 1,
-      }
+      Array [
+        Object {
+          "zIndex": 1,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -3712,21 +3698,16 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransition={[Function]}
+        onTransitionStart={[Function]}
         pointerEvents="box-none"
         style={
-          Array [
-            Object {
-              "overflow": undefined,
-            },
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-          ]
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
         }
         transitionSpec={
           Object {
@@ -3756,7 +3737,6 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
         }
       >
         <View
-          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -4713,14 +4693,17 @@ You Care About
   <View
     pointerEvents="box-none"
     style={
-      Object {
-        "height": 54,
-        "left": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-        "zIndex": 1,
-      }
+      Array [
+        Object {
+          "zIndex": 1,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -4744,7 +4727,6 @@ exports[`tabs renders TabNavigation 1`] = `
   >
     <View
       collapsable={false}
-      enabled={true}
       pointerEvents="auto"
       removeClippedSubviews={false}
       style={
@@ -4782,7 +4764,6 @@ exports[`tabs renders TabNavigation 1`] = `
               Object {
                 "backgroundColor": "rgb(242, 242, 242)",
               },
-              undefined,
             ]
           }
         >

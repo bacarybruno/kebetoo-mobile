@@ -838,11 +838,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -954,11 +954,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -1006,11 +1006,11 @@ Array [
     style={
       Array [
         Object {
-          "flexDirection": "row",
-          "width": "100%",
+          "marginBottom": 30,
         },
         Object {
-          "marginBottom": 30,
+          "flexDirection": "row",
+          "width": "100%",
         },
       ]
     }
@@ -3044,11 +3044,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -3160,11 +3160,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -3212,11 +3212,11 @@ Array [
     style={
       Array [
         Object {
-          "flexDirection": "row",
-          "width": "100%",
+          "marginBottom": 30,
         },
         Object {
-          "marginBottom": 30,
+          "flexDirection": "row",
+          "width": "100%",
         },
       ]
     }
@@ -5198,11 +5198,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -5314,11 +5314,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -5366,11 +5366,11 @@ Array [
     style={
       Array [
         Object {
-          "flexDirection": "row",
-          "width": "100%",
+          "marginBottom": 30,
         },
         Object {
-          "marginBottom": 30,
+          "flexDirection": "row",
+          "width": "100%",
         },
       ]
     }
@@ -7559,11 +7559,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -7675,11 +7675,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -7727,11 +7727,11 @@ Array [
     style={
       Array [
         Object {
-          "flexDirection": "row",
-          "width": "100%",
+          "marginBottom": 30,
         },
         Object {
-          "marginBottom": 30,
+          "flexDirection": "row",
+          "width": "100%",
         },
       ]
     }
@@ -9639,11 +9639,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -9755,11 +9755,11 @@ Array [
   <View
     style={
       Array [
+        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -9807,11 +9807,11 @@ Array [
     style={
       Array [
         Object {
-          "flexDirection": "row",
-          "width": "100%",
+          "marginBottom": 30,
         },
         Object {
-          "marginBottom": 30,
+          "flexDirection": "row",
+          "width": "100%",
         },
       ]
     }
