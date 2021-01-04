@@ -3998,7 +3998,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4027,7 +4027,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4113,7 +4113,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4141,7 +4141,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4227,7 +4227,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4255,7 +4255,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4341,7 +4341,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4370,7 +4370,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4456,7 +4456,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4484,7 +4484,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
