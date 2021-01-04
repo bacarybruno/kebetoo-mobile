@@ -45,8 +45,8 @@ static void InitializeFlipper(UIApplication *application) {
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"Kebetoo"
-                                            initialProperties:nil];
+                                                  moduleName:@"Kebetoo"
+                                                  initialProperties:nil];
 
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
@@ -72,19 +72,22 @@ static void InitializeFlipper(UIApplication *application) {
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-  return [ShareMenuManager application:app openURL:url options:options];
+  // facebook signin
+  if ([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options]) {
+    return YES;
+  }
 
-  // // facebook signin
-  // if ([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options]) {
-  //   return YES;
-  // }
+  // google signin
+  if ([RNGoogleSignin application:app openURL:url options:options]) {
+    return YES;
+  }
 
-  // // google signin
-  // if ([RNGoogleSignin application:app openURL:url options:options]) {
-  //   return YES;
-  // }
+  // share extension
+  if ([ShareMenuManager application:app openURL:url options:options]) {
+    return YES;
+  }
 
-  // return NO;
+  return NO;
 }
 
 @end
