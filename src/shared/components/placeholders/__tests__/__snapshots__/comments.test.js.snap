@@ -5,11 +5,11 @@ exports[`renders CommentPlaceholder 1`] = `
   style={
     Array [
       Object {
-        "flexDirection": "row",
-        "width": "100%",
+        "height": 60,
       },
       Object {
-        "height": 60,
+        "flexDirection": "row",
+        "width": "100%",
       },
     ]
   }

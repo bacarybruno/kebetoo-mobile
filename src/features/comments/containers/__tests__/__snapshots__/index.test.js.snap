@@ -504,11 +504,16 @@ exports[`renders Comments 1`] = `
                         onPress={[Function]}
                         pressColor="rgba(0, 0, 0, .32)"
                         style={
-                          Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "opacity": 1,
-                          }
+                          Array [
+                            Object {
+                              "overflow": "hidden",
+                            },
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "opacity": 1,
+                            },
+                          ]
                         }
                         testID="header-back"
                       >
@@ -1403,11 +1408,11 @@ exports[`renders Comments 1`] = `
                   style={
                     Array [
                       Object {
-                        "flexDirection": "row",
-                        "width": "100%",
+                        "height": 60,
                       },
                       Object {
-                        "height": 60,
+                        "flexDirection": "row",
+                        "width": "100%",
                       },
                     ]
                   }
@@ -1695,11 +1700,11 @@ exports[`renders Comments 1`] = `
                   style={
                     Array [
                       Object {
-                        "flexDirection": "row",
-                        "width": "100%",
+                        "height": 60,
                       },
                       Object {
-                        "height": 60,
+                        "flexDirection": "row",
+                        "width": "100%",
                       },
                     ]
                   }
@@ -2570,11 +2575,16 @@ exports[`renders Comments in loading state 1`] = `
                         onPress={[Function]}
                         pressColor="rgba(0, 0, 0, .32)"
                         style={
-                          Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "opacity": 1,
-                          }
+                          Array [
+                            Object {
+                              "overflow": "hidden",
+                            },
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "opacity": 1,
+                            },
+                          ]
                         }
                         testID="header-back"
                       >
@@ -3469,11 +3479,11 @@ exports[`renders Comments in loading state 1`] = `
                   style={
                     Array [
                       Object {
-                        "flexDirection": "row",
-                        "width": "100%",
+                        "height": 60,
                       },
                       Object {
-                        "height": 60,
+                        "flexDirection": "row",
+                        "width": "100%",
                       },
                     ]
                   }
@@ -3761,11 +3771,11 @@ exports[`renders Comments in loading state 1`] = `
                   style={
                     Array [
                       Object {
-                        "flexDirection": "row",
-                        "width": "100%",
+                        "height": 60,
                       },
                       Object {
-                        "height": 60,
+                        "flexDirection": "row",
+                        "width": "100%",
                       },
                     ]
                   }
