@@ -832,12 +832,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Kebetoo/Kebetoo.entitlements;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 10;
 =======
 				CURRENT_PROJECT_VERSION = 5;
 >>>>>>> 5825c2b... chore: update app version to 0.0.7
+=======
+				CURRENT_PROJECT_VERSION = 6;
+>>>>>>> 798c314... chore: bump app version to 0.0.8
 				DEVELOPMENT_TEAM = JAMLJPMM9H;
 				INFOPLIST_FILE = Kebetoo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
