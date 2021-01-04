@@ -5,11 +5,11 @@ Array [
   <View
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
+        undefined,
       ]
     }
   >
@@ -121,11 +121,11 @@ Array [
   <View
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
+        undefined,
       ]
     }
   >
@@ -173,11 +173,11 @@ Array [
     style={
       Array [
         Object {
-          "marginBottom": 30,
-        },
-        Object {
           "flexDirection": "row",
           "width": "100%",
+        },
+        Object {
+          "marginBottom": 30,
         },
       ]
     }
@@ -327,11 +327,11 @@ Array [
   <View
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
+        undefined,
       ]
     }
   >
@@ -443,11 +443,11 @@ Array [
   <View
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "row",
           "width": "100%",
         },
+        undefined,
       ]
     }
   >

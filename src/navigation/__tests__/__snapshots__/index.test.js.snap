@@ -46,16 +46,21 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransitionStart={[Function]}
+        onTransition={[Function]}
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
+          Array [
+            Object {
+              "overflow": undefined,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
         }
         transitionSpec={
           Object {
@@ -85,6 +90,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
         }
       >
         <View
+          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -157,6 +163,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                     >
                       <View
                         collapsable={false}
+                        enabled={true}
                         pointerEvents="none"
                         removeClippedSubviews={true}
                         style={
@@ -195,6 +202,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
+                                undefined,
                               ]
                             }
                           >
@@ -632,6 +640,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                       </View>
                       <View
                         collapsable={false}
+                        enabled={true}
                         pointerEvents="auto"
                         removeClippedSubviews={false}
                         style={
@@ -669,6 +678,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
+                                undefined,
                               ]
                             }
                           >
@@ -1810,17 +1820,14 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Array [
-        Object {
-          "zIndex": 1,
-        },
-        Object {
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
+      Object {
+        "height": 54,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
     }
   />
 </View>
@@ -1872,16 +1879,21 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransitionStart={[Function]}
+        onTransition={[Function]}
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
+          Array [
+            Object {
+              "overflow": undefined,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
         }
         transitionSpec={
           Object {
@@ -1911,6 +1923,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
         }
       >
         <View
+          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -1983,6 +1996,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                     >
                       <View
                         collapsable={false}
+                        enabled={true}
                         pointerEvents="none"
                         removeClippedSubviews={true}
                         style={
@@ -2021,6 +2035,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
+                                undefined,
                               ]
                             }
                           >
@@ -2458,6 +2473,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                       </View>
                       <View
                         collapsable={false}
+                        enabled={true}
                         pointerEvents="auto"
                         removeClippedSubviews={false}
                         style={
@@ -2495,6 +2511,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 Object {
                                   "backgroundColor": "rgba(255, 255, 255, 255)",
                                 },
+                                undefined,
                               ]
                             }
                           >
@@ -3636,17 +3653,14 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Array [
-        Object {
-          "zIndex": 1,
-        },
-        Object {
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
+      Object {
+        "height": 54,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
     }
   />
 </View>
@@ -3698,16 +3712,21 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransitionStart={[Function]}
+        onTransition={[Function]}
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
+          Array [
+            Object {
+              "overflow": undefined,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
         }
         transitionSpec={
           Object {
@@ -3737,6 +3756,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
         }
       >
         <View
+          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -3867,7 +3887,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 },
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.54)",
+                                    "color": "rgba(0, 0, 0, 255)",
                                   },
                                   Object {
                                     "backgroundColor": "transparent",
@@ -3899,7 +3919,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                         <RCTScrollView
                           activeDotStyle={
                             Object {
-                              "backgroundColor": "rgba(0,0,0,0.87)",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
                               "height": 8,
                               "width": 15,
                             }
@@ -4056,7 +4076,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4170,7 +4190,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4284,7 +4304,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4399,7 +4419,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4513,7 +4533,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4569,7 +4589,7 @@ You Care About
                                   "width": 8,
                                 },
                                 Object {
-                                  "backgroundColor": "rgba(0,0,0,0.87)",
+                                  "backgroundColor": "rgba(0, 122, 255, 255)",
                                   "height": 8,
                                   "width": 15,
                                 },
@@ -4693,17 +4713,14 @@ You Care About
   <View
     pointerEvents="box-none"
     style={
-      Array [
-        Object {
-          "zIndex": 1,
-        },
-        Object {
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
+      Object {
+        "height": 54,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
     }
   />
 </View>
@@ -4727,6 +4744,7 @@ exports[`tabs renders TabNavigation 1`] = `
   >
     <View
       collapsable={false}
+      enabled={true}
       pointerEvents="auto"
       removeClippedSubviews={false}
       style={
@@ -4764,6 +4782,7 @@ exports[`tabs renders TabNavigation 1`] = `
               Object {
                 "backgroundColor": "rgb(242, 242, 242)",
               },
+              undefined,
             ]
           }
         >

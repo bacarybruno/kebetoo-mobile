@@ -167,6 +167,7 @@ exports[`renders CommentInput 1`] = `
               "top": undefined,
             }
           }
+          useSafeArea={true}
         />
       </View>
     </View>

@@ -130,6 +130,7 @@ exports[`renders EmojiTextInput 1`] = `
           "top": undefined,
         }
       }
+      useSafeArea={true}
     />
   </View>
 </View>

@@ -76,7 +76,7 @@ exports[`renders Onboarding 1`] = `
               },
               Array [
                 Object {
-                  "color": "rgba(0,0,0,0.54)",
+                  "color": "rgba(0, 0, 0, 255)",
                 },
                 Object {
                   "backgroundColor": "transparent",
@@ -108,7 +108,7 @@ exports[`renders Onboarding 1`] = `
       <RCTScrollView
         activeDotStyle={
           Object {
-            "backgroundColor": "rgba(0,0,0,0.87)",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
             "height": 8,
             "width": 15,
           }
@@ -265,7 +265,7 @@ You Care About
                       },
                       Array [
                         Object {
-                          "color": "rgba(0,0,0,0.87)",
+                          "color": "rgba(0, 0, 0, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -379,7 +379,7 @@ You Care About
                       },
                       Array [
                         Object {
-                          "color": "rgba(0,0,0,0.87)",
+                          "color": "rgba(0, 0, 0, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -493,7 +493,7 @@ You Care About
                       },
                       Array [
                         Object {
-                          "color": "rgba(0,0,0,0.87)",
+                          "color": "rgba(0, 0, 0, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -608,7 +608,7 @@ You Care About
                       },
                       Array [
                         Object {
-                          "color": "rgba(0,0,0,0.87)",
+                          "color": "rgba(0, 0, 0, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -722,7 +722,7 @@ You Care About
                       },
                       Array [
                         Object {
-                          "color": "rgba(0,0,0,0.87)",
+                          "color": "rgba(0, 0, 0, 255)",
                         },
                         Object {
                           "backgroundColor": "transparent",
@@ -778,7 +778,7 @@ You Care About
                 "width": 8,
               },
               Object {
-                "backgroundColor": "rgba(0,0,0,0.87)",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
                 "height": 8,
                 "width": 15,
               },

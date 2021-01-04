@@ -19,14 +19,6 @@ exports[`renders Comment 1`] = `
     onGestureHandlerStateChange={[Function]}
     onHandlerStateChange={[Function]}
     rippleColor={0}
-    style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
   >
     <View
       accessible={true}
