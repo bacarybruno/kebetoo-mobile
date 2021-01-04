@@ -26,7 +26,7 @@ export default (colors) => StyleSheet.create({
   activeDotStyle: {
     width: 15,
     height: dotHeight,
-    backgroundColor: colors.textPrimary,
+    backgroundColor: colors.primary,
   },
   paginationStyle: {
     marginHorizontal: metrics.marginHorizontal,

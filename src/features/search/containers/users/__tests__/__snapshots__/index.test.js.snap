@@ -11,12 +11,9 @@ exports[`renders SearchUsers history 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Array [
-        Object {
-          "zIndex": 1,
-        },
-        false,
-      ]
+      Object {
+        "zIndex": 1,
+      }
     }
   >
     <View
@@ -99,6 +96,7 @@ exports[`renders SearchUsers history 1`] = `
           >
             <Text
               accessibilityRole="header"
+              aria-level="1"
               numberOfLines={1}
               onLayout={[Function]}
               style={
@@ -154,16 +152,21 @@ exports[`renders SearchUsers history 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransitionStart={[Function]}
+        onTransition={[Function]}
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
+          Array [
+            Object {
+              "overflow": undefined,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
         }
         transitionSpec={
           Object {
@@ -193,6 +196,7 @@ exports[`renders SearchUsers history 1`] = `
         }
       >
         <View
+          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {
@@ -685,12 +689,9 @@ exports[`renders SearchUsers results 1`] = `
   <View
     pointerEvents="box-none"
     style={
-      Array [
-        Object {
-          "zIndex": 1,
-        },
-        false,
-      ]
+      Object {
+        "zIndex": 1,
+      }
     }
   >
     <View
@@ -773,6 +774,7 @@ exports[`renders SearchUsers results 1`] = `
           >
             <Text
               accessibilityRole="header"
+              aria-level="1"
               numberOfLines={1}
               onLayout={[Function]}
               style={
@@ -828,16 +830,21 @@ exports[`renders SearchUsers results 1`] = `
         onGestureCanceled={[Function]}
         onGestureEnd={[Function]}
         onOpen={[Function]}
-        onTransitionStart={[Function]}
+        onTransition={[Function]}
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
+          Array [
+            Object {
+              "overflow": undefined,
+            },
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
         }
         transitionSpec={
           Object {
@@ -867,6 +874,7 @@ exports[`renders SearchUsers results 1`] = `
         }
       >
         <View
+          needsOffscreenAlphaCompositing={false}
           pointerEvents="box-none"
           style={
             Object {

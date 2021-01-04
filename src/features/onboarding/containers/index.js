@@ -25,6 +25,7 @@ const createKeyword = (word) => (
     type={Typography.types.subheading}
     systemWeight={Typography.weights.semibold}
     text={word}
+    color='black'
   />
 )
 
@@ -61,7 +62,7 @@ export const SkipButton = ({ onPress }) => {
     <TouchableOpacity style={styles.skipButton} onPress={onPress}>
       <Typography
         type={Typography.types.textButton}
-        color={Typography.colors.secondary}
+        color='black'
         text={strings.general.skip}
       />
     </TouchableOpacity>
