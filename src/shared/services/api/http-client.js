@@ -16,13 +16,17 @@ class HttpClient {
     return this.setHeader('Authorization', `Bearer ${token}`)
   }
 
-  async fetchJSON(endpoint, options = {}) {
+  async updateToken(endpoint, options) {
     try {
       const token = await auth().currentUser.getIdToken()
       this.setBearerAuth(token)
     } catch (error) {
       console.log('No token was given for request', endpoint, options)
     }
+  }
+
+  async fetchJSON(endpoint, options = {}) {
+    await this.updateToken(endpoint, options)
     // eslint-disable-next-line no-undef
     const res = await fetch(this.baseURL + endpoint, {
       ...options,
@@ -67,8 +71,12 @@ class HttpClient {
     })
   }
 
-  postAsset(endpoint, field, asset, data) {
-    const headers = { 'Content-Type': 'multipart/form-data' }
+  async postAsset(endpoint, field, asset, data) {
+    await this.updateToken(endpoint, { field, asset, data })
+    const headers = {
+      ...this.headers,
+      'Content-Type': 'multipart/form-data',
+    }
     const payload = {
       name: 'data',
       data: JSON.stringify(data),

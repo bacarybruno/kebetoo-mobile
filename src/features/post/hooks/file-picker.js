@@ -4,15 +4,16 @@ import RNFetchBlob from 'rn-fetch-blob'
 import { useNavigation } from '@react-navigation/native'
 
 import { api } from '@app/shared/services'
-import { getMimeType, isVideo } from '@app/shared/helpers/file'
+import { getExtension, getMimeType, isVideo } from '@app/shared/helpers/file'
 import { CameraRollPicker } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 
-export const constructFileName = (time, prefix = 'IMG', duration) => {
+export const constructFileName = (time, prefix = 'IMG', duration, extension) => {
   let fileName = `${prefix}-${time}`
   if (duration) {
     fileName = `${fileName}-${duration}`
   }
+  fileName = `${fileName}.${extension}`
   return fileName
 }
 
@@ -69,15 +70,16 @@ const useFilePicker = (uri) => {
   const savePost = useCallback(async (author, content, repost) => {
     // TODO: check if it's necessary to have unique file names
     const time = dayjs().format('YYYYMMDD')
+    const fileUri = file.uri.replace('file://', '')
     let response
     if (isVideo(file.uri)) {
       response = await api.posts.createVideo({
         author,
         content,
         video: {
-          uri: file.uri.replace('file://', ''),
+          uri: fileUri,
           mimeType: file.type,
-          name: constructFileName(time, 'VID', file.duration),
+          name: constructFileName(time, 'VID', file.duration, getExtension(file.uri)),
         },
         repost,
       })
@@ -86,9 +88,9 @@ const useFilePicker = (uri) => {
         author,
         content,
         image: {
-          uri: file.uri.replace('file://', ''),
+          uri: fileUri,
           mimeType: file.type,
-          name: constructFileName(time, 'IMG'),
+          name: constructFileName(time, 'IMG', getExtension(file.uri)),
         },
         repost,
       })

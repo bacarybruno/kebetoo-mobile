@@ -903,7 +903,7 @@ exports[`renders ManagePost 1`] = `
                       ]
                     }
                   >
-                    0:06
+                    0:00
                   </Text>
                 </View>
               </View>
@@ -3177,6 +3177,7 @@ exports[`renders ManagePost 1`] = `
                 style={
                   Object {
                     "aspectRatio": 1,
+                    "backgroundColor": "rgba(199, 199, 204, 255)",
                     "borderRadius": 12,
                     "elevation": 1,
                     "flex": 1,
@@ -3257,60 +3258,23 @@ exports[`renders ManagePost 1`] = `
                       text="ionicon-ios-play"
                     />
                   </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "borderRadius": 50,
-                          "paddingHorizontal": 15,
-                          "paddingVertical": 3,
-                        },
-                        Object {
-                          "backgroundColor": "rgba(0, 122, 255, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "rgba(0, 0, 0, 0.5)",
-                          "borderColor": "rgba(229, 229, 234, 255)",
-                          "bottom": 10,
-                          "position": "absolute",
-                          "right": 10,
-                        },
-                      ]
-                    }
-                    testID="badge"
-                  >
-                    <Text
-                      style={
-                        Array [
-                          false,
-                          false,
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                            "letterSpacing": -0.24,
-                            "lineHeight": 20,
-                          },
-                          false,
-                          Array [
-                            Object {
-                              "color": "rgba(255, 255, 255, 255)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "700",
-                            },
-                            undefined,
-                          ],
-                        ]
+                  <Video
+                    audioOnly={true}
+                    muted={true}
+                    onLoad={[Function]}
+                    paused={true}
+                    source={
+                      Object {
+                        "uri": "http://localhost:4569/local-bucket/VID_20201225_6059_0938913cfc.mp4",
                       }
-                    >
-                      0:06
-                    </Text>
-                  </View>
+                    }
+                    style={
+                      Object {
+                        "height": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
                 </View>
               </View>
             </View>

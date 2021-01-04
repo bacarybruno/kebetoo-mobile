@@ -933,7 +933,7 @@ exports[`renders Comments 1`] = `
                           ]
                         }
                       >
-                        0:06
+                        0:00
                       </Text>
                     </View>
                   </View>
@@ -3004,7 +3004,7 @@ exports[`renders Comments in loading state 1`] = `
                           ]
                         }
                       >
-                        0:06
+                        0:00
                       </Text>
                     </View>
                   </View>
