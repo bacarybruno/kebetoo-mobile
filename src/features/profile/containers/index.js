@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react'
 import {
-  View, ScrollView, Platform, Share, TouchableOpacity,
+  View, ScrollView, Platform, Share, TouchableOpacity, Linking,
 } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useActionSheet } from '@expo/react-native-action-sheet'
+import DeviceInfo from 'react-native-device-info'
 
 import {
   Pressable, Typography, Avatar, AppHeader,
@@ -172,7 +173,7 @@ const AccountSection = React.memo(({ signOut }) => {
   )
 })
 
-const PreferencesSection = React.memo(({ shareApp, updateAppearance }) => {
+const PreferencesSection = React.memo(({ updateAppearance }) => {
   const styles = useAppStyles(createThemedStyles)
   const { theme } = useSelector(appSelector)
 
@@ -193,11 +194,6 @@ const PreferencesSection = React.memo(({ shareApp, updateAppearance }) => {
     <View style={styles.section}>
       <SectionTitle text={strings.profile.preferences} />
       <IconButton
-        icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
-        text={strings.profile.invite_fiend_title}
-        onPress={shareApp}
-      />
-      <IconButton
         onPress={updateAppearance}
         icon="ios-color-palette"
         text={strings.profile.dark_mode}
@@ -214,6 +210,26 @@ const PreferencesSection = React.memo(({ shareApp, updateAppearance }) => {
         icon="ios-globe"
         text={strings.profile.language}
         message={strings.languages[strings.getLanguage()]}
+      />
+    </View>
+  )
+})
+
+const AppInfosSection = React.memo(({ name, version, shareApp }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <View style={styles.section}>
+      <SectionTitle text={strings.profile.application} />
+      <IconButton
+        icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
+        text={strings.profile.invite_fiend_title}
+        onPress={shareApp}
+      />
+      <IconButton
+        icon={Platform.select({ ios: 'ios-appstore', android: 'md-appstore' })}
+        text={name}
+        onPress={() => Linking.openURL(strings.profile.share_url)}
+        message={`version ${version}`}
       />
     </View>
   )
@@ -288,7 +304,7 @@ const ProfilePage = React.memo(() => {
     Share.share({
       title: strings.profile.share_title,
       url: strings.profile.share_url,
-      message: strings.profile.share_message,
+      message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
     })
   }, [])
 
@@ -341,8 +357,13 @@ const ProfilePage = React.memo(() => {
           />
         </View>
         <ProfileSection managePosts={managePosts} />
-        <PreferencesSection shareApp={shareApp} updateAppearance={updateAppearance} />
+        <PreferencesSection updateAppearance={updateAppearance} />
         <AccountSection signOut={requestSignOut} />
+        <AppInfosSection
+          name={DeviceInfo.getApplicationName()}
+          version={DeviceInfo.getVersion()}
+          shareApp={shareApp}
+        />
       </ScrollView>
     </View>
   )
