@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
 import {
-  View, TouchableWithoutFeedback, Platform, ScrollView,
+  View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard,
 } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
@@ -51,7 +51,7 @@ const TEXT_MAX_LENGHT = 180
 const noop = () => { }
 
 export const PostTextMessage = ({
-  onChange, text, maxNumberOfLines = 8, displayCounter,
+  onChange, text, displayCounter, editable = true, maxNumberOfLines = 8,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -78,6 +78,7 @@ export const PostTextMessage = ({
         wrapperStyle={styles.textInputWrapper}
         inputWrapperStyle={styles.inputWrapper}
         maxLength={TEXT_MAX_LENGHT}
+        editable={editable}
         defaultValue={text}
         numberOfLines={Math.min(
           Math.floor(metrics.screenHeight / 75),
@@ -144,6 +145,7 @@ const CreatePostPage = ({ route, navigation }) => {
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
     try {
+      Keyboard.dismiss()
       let post = null
       const repost = params?.post ?? undefined
       if (editMode) {
@@ -269,7 +271,12 @@ const CreatePostPage = ({ route, navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
       <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
-        <PostTextMessage onChange={setText} text={text} displayCounter={text.length > 0} />
+        <PostTextMessage
+          onChange={setText}
+          text={text}
+          editable={!isLoading}
+          displayCounter={text.length > 0}
+        />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
             <AudioPlayer

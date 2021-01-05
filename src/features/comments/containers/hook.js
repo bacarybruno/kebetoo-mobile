@@ -83,7 +83,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
   }, [])
 
   const endLoading = useCallback(() => {
-    dispatch({ type: actionTypes.START_LOADING })
+    dispatch({ type: actionTypes.END_LOADING })
   }, [])
 
   const setLoading = useCallback((loading) => {
@@ -92,38 +92,42 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
   }, [endLoading, startLoading])
 
   const onSend = useCallback(async () => {
-    let result = null
     setLoading(true)
 
-    let replyThread = null
-    if (toReply) {
-      // use the comment reply thread or the base comment
-      replyThread = toReply.thread || toReply
-    }
+    try {
+      let result = null
+      let replyThread = null
+      if (toReply) {
+        // use the comment reply thread or the base comment
+        replyThread = toReply.thread || toReply
+      }
 
-    if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
-    } else if (comment.length > 0) {
-      result = await api.comments.create({
-        author: profile.uid,
-        content: comment,
-        thread: replyThread ? replyThread.id : null,
-        post: replyThread ? null : post.id,
-      })
+      if (audioRecorder.hasRecording) {
+        result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
+      } else if (comment.length > 0) {
+        result = await api.comments.create({
+          author: profile.uid,
+          content: comment,
+          thread: replyThread ? replyThread.id : null,
+          post: replyThread ? null : post.id,
+        })
+      }
+      if (replyThread) {
+        dispatch({
+          type: actionTypes.ADD_REPLIES,
+          payload: { threadId: replyThread.id, replies: result },
+        })
+      } else {
+        dispatch({ type: actionTypes.ADD_COMMENT, payload: result })
+        setTimeout(() => scrollView?.current?.scrollToEnd(), 200)
+      }
+    } finally {
+      // cleanup
       commentInput.current?.clear()
-      dispatch({ type: actionTypes.CLEAR_COMMENT })
-    }
-    if (replyThread) {
-      dispatch({
-        type: actionTypes.ADD_REPLIES,
-        payload: { threadId: replyThread.id, replies: result },
-      })
       dispatch({ type: actionTypes.CLEAR_TO_REPLY })
-    } else {
-      dispatch({ type: actionTypes.ADD_COMMENT, payload: result })
-      setTimeout(() => scrollView?.current?.scrollToEnd(), 200)
+      dispatch({ type: actionTypes.CLEAR_COMMENT })
+      setLoading(false)
     }
-    setLoading(false)
   }, [setLoading, toReply, audioRecorder, comment, post.id, profile.uid, commentInput, scrollView])
 
   const onSetReply = useCallback((item) => {
