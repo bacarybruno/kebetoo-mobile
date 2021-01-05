@@ -96,6 +96,7 @@ exports[`renders CreatePost 1`] = `
               autoFocus={true}
               blurOnSubmit={false}
               defaultValue="hello world"
+              editable={true}
               maxLength={180}
               multiline={true}
               numberOfLines={8}
