@@ -20,6 +20,7 @@ import {
   useAnalytics, useAppColors, useAppStyles, useUser,
 } from '@app/shared/hooks'
 import { rgbaToHex } from '@app/theme/colors'
+import { actionTypes } from '@app/features/post/containers/create'
 
 import createThemedStyles, { imageSize } from './styles'
 
@@ -215,7 +216,9 @@ const PreferencesSection = React.memo(({ updateAppearance }) => {
   )
 })
 
-const AppInfosSection = React.memo(({ name, version, shareApp }) => {
+const AppInfosSection = React.memo(({
+  name, version, shareApp, reportIssue,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.section}>
@@ -224,6 +227,12 @@ const AppInfosSection = React.memo(({ name, version, shareApp }) => {
         icon={Platform.select({ ios: 'ios-happy', android: 'md-happy' })}
         text={strings.profile.invite_fiend_title}
         onPress={shareApp}
+      />
+      <IconButton
+        icon="ios-warning"
+        text={strings.general.support}
+        onPress={reportIssue}
+        message={strings.profile.issue_or_feedback}
       />
       <IconButton
         icon={Platform.select({ ios: 'ios-appstore', android: 'md-appstore' })}
@@ -344,6 +353,10 @@ const ProfilePage = React.memo(() => {
     trackSignOut()
   }, [signOut, trackSignOut])
 
+  const reportIssue = useCallback(() => {
+    navigate(routes.CREATE_POST, { action: actionTypes.REPORT })
+  }, [navigate])
+
   return (
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -363,6 +376,7 @@ const ProfilePage = React.memo(() => {
           name={DeviceInfo.getApplicationName()}
           version={DeviceInfo.getVersion()}
           shareApp={shareApp}
+          reportIssue={reportIssue}
         />
       </ScrollView>
     </View>

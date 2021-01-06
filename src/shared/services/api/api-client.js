@@ -63,6 +63,13 @@ class ApiClient extends HttpClient {
       countByAuthor: (author) => this.get(`/reactions/count?author.id=${author}`),
     }
   }
+
+  get feedbacks() {
+    return {
+      create: (feedback) => this.post('/feedbacks', feedback),
+      createImage: ({ image, ...payload }) => this.postAsset('/feedbacks', 'image', image, payload),
+    }
+  }
 }
 
 

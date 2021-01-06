@@ -24,3 +24,14 @@ it('renders CreatePost', () => {
   const { wrapper } = givenCreatePost()
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
+
+it('renders CreatePost with report mode', () => {
+  const { wrapper } = givenCreatePost({
+    route: {
+      params: {
+        action: actionTypes.REPORT,
+      },
+    },
+  })
+  expect(wrapper.toJSON()).toMatchSnapshot()
+})

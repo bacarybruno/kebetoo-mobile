@@ -18,6 +18,8 @@ const locales = Object.freeze({
     off: 'Off',
     read_more: 'Read more',
     show_less: 'Show less',
+    send: 'Send',
+    support: 'Support',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -77,6 +79,7 @@ const locales = Object.freeze({
     dark: 'Dark',
     light: 'Light',
     application: 'Application',
+    issue_or_feedback: 'Issue or Feedback',
   },
   manage_posts: {
     my_posts: 'Manage posts',
@@ -103,6 +106,7 @@ const locales = Object.freeze({
     share_post: 'Share post',
     publish: 'Post',
     placeholder: 'What\'s on your mind?',
+    report_mode_placeholder: 'Please describe your issue or feedback. This will not appear in posts.',
     characters: '{0} characters',
     all_videos: 'All Videos',
     all_photos: 'All Photos',
@@ -113,6 +117,7 @@ const locales = Object.freeze({
     post_created: 'Your post has successfully been created!',
     post_edited: 'Your post has successfully beed edited!',
     post_deleted: 'Your post has successfully beed deleted!',
+    feedback_sent: 'Thanks for you feedback! We will examine it as soon as possible.',
     show_post_created: 'Show',
     caption: 'Your message',
   },

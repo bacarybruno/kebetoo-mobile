@@ -18,6 +18,8 @@ const locales = Object.freeze({
     off: 'Inactif',
     read_more: 'Lire la suite',
     show_less: 'Moins',
+    send: 'Envoyer',
+    support: 'Support',
   },
   onboarding: {
     screen_one_title: 'Rejoingnez Notre Réseau Social',
@@ -77,6 +79,7 @@ const locales = Object.freeze({
     dark: 'Sombre',
     light: 'Clair',
     application: 'Application',
+    issue_or_feedback: 'Problème ou Feedback',
   },
   manage_posts: {
     my_posts: 'Mes publications',
@@ -103,6 +106,7 @@ const locales = Object.freeze({
     share_post: 'Partager le post',
     publish: 'Publier',
     placeholder: 'Qu\'avez-vous à l\'esprit ?',
+    report_mode_placeholder: 'Veuillez décrire votre problème ou vos suggestions. Cela n\'apparaîtra pas dans les posts.',
     characters: '{0} caractères',
     all_videos: 'Toutes les Videos',
     all_photos: 'Toutes les Photos',
@@ -113,6 +117,7 @@ const locales = Object.freeze({
     post_created: 'Votre post a bien été créé!',
     post_edited: 'Votre post a bien été modifié!',
     post_deleted: 'Votre post a bien été supprimé!',
+    feedback_sent: 'Merci pour votre feedback! Nous allons l\'examiner dans les plus brefs délais.',
     show_post_created: 'Voir',
     caption: 'Votre message',
   },

@@ -13,7 +13,6 @@ import { AppHeader, NoContent } from '@app/shared/components'
 import Notification from '../components/notification'
 import Heading from '../components/heading'
 import createThemedStyles from './styles'
-import { metrics } from '@app/theme'
 
 const routeOptions = { title: strings.tabs.notifications }
 
