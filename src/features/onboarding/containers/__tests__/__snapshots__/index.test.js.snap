@@ -81,7 +81,7 @@ exports[`renders Onboarding 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "300",
                 },
                 undefined,
               ],
