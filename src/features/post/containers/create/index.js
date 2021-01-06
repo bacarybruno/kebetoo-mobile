@@ -101,7 +101,7 @@ const Button = ({ name, onPress }) => {
   )
 }
 
-const ImagePreviewer = ({ uri, onDelete, onPress }) => {
+export const ImagePreviewer = ({ uri, onDelete, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.imagePreviewer}>
@@ -112,7 +112,7 @@ const ImagePreviewer = ({ uri, onDelete, onPress }) => {
   )
 }
 
-const VideoPreviewer = ({ uri, onDelete, onPress }) => {
+export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.imagePreviewer}>
@@ -220,7 +220,6 @@ const CreatePostPage = ({ route, navigation }) => {
 
       return navigation.goBack()
     } catch (error) {
-      console.log(error)
       reportError(error)
       Snackbar.show({
         text: reportMode ? strings.errors.generic : strings.errors.create_post_error,

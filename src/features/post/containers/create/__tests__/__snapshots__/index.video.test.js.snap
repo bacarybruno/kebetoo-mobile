@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders VideoPreviewer if post has video file 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 255)",
+      "flex": 1,
+    }
+  }
+  keyboardShouldPersistTaps="always"
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "marginBottom": 24,
+            "marginHorizontal": 16,
+          },
+          false,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginTop": 26.68,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          175 characters
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "height": 381.14285714285717,
+              "minHeight": 200,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                Object {
+                  "paddingLeft": 0,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={true}
+              blurOnSubmit={false}
+              defaultValue="Hello"
+              editable={true}
+              maxLength={180}
+              multiline={true}
+              numberOfLines={8}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="What's on your mind?"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="done"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "flex": 1,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "fontFamily": "System",
+                    "fontSize": 19,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
+                    "marginTop": 0,
+                    "textAlignVertical": "top",
+                  },
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "width": "50%",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "aspectRatio": 1.3333333333333333,
+                    "backgroundColor": "rgba(255, 255, 255, 255)",
+                    "borderColor": "rgba(229, 229, 234, 255)",
+                    "borderWidth": 1,
+                    "width": "100%",
+                  },
+                  undefined,
+                  Object {
+                    "borderRadius": 15,
+                  },
+                ]
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <Image
+                  borderRadius={15}
+                  source={
+                    Object {
+                      "uri": "file://fake-video.mp4",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+            </View>
+            <View
+              accessible={true}
+              focusable={true}
+              hitSlop={
+                Object {
+                  "bottom": 20,
+                  "left": 20,
+                  "right": 20,
+                  "top": 20,
+                }
+              }
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(199, 199, 204, 255)",
+                  "borderRadius": 15,
+                  "elevation": 2,
+                  "height": 25,
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "position": "absolute",
+                  "right": -10,
+                  "shadowColor": "rgba(0, 0, 0, 255)",
+                  "shadowOffset": Object {
+                    "x": 0,
+                    "y": 1,
+                  },
+                  "shadowOpacity": 0.2,
+                  "shadowRadius": 1.41,
+                  "top": -10,
+                  "width": 25,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 25,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
+                }
+                text="ionicon-ios-close"
+              />
+            </View>
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "bottom": 5,
+                  "color": "rgba(209, 209, 214, 255)",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 15,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "left": 10,
+                  "position": "absolute",
+                }
+              }
+              text="ionicon-md-videocam"
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
