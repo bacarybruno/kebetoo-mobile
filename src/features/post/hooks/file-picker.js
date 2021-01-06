@@ -99,6 +99,24 @@ const useFilePicker = (uri) => {
     return response
   }, [file, reset])
 
+  const saveFeedback = useCallback(async (author, content, repost) => {
+    // TODO: check if it's necessary to have unique file names
+    const time = dayjs().format('YYYYMMDD')
+    const fileUri = file.uri.replace('file://', '')
+    const response = await api.feedbacks.createImage({
+      author,
+      content,
+      image: {
+        uri: fileUri,
+        mimeType: file.type,
+        name: constructFileName(time, 'IMG', getExtension(file.uri)),
+      },
+      repost,
+    })
+    await reset()
+    return response
+  }, [file, reset])
+
   return {
     pickImage,
     pickVideo,
@@ -107,6 +125,7 @@ const useFilePicker = (uri) => {
     file,
     reset,
     savePost,
+    saveFeedback,
   }
 }
 
