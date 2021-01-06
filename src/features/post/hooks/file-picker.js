@@ -8,7 +8,7 @@ import { getExtension, getMimeType, isVideo } from '@app/shared/helpers/file'
 import { CameraRollPicker } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 
-export const constructFileName = (time, prefix = 'IMG', duration, extension) => {
+export const constructFileName = (time, prefix = 'IMG', extension, duration) => {
   let fileName = `${prefix}-${time}`
   if (duration) {
     fileName = `${fileName}-${duration}`
@@ -79,7 +79,7 @@ const useFilePicker = (uri) => {
         video: {
           uri: fileUri,
           mimeType: file.type,
-          name: constructFileName(time, 'VID', file.duration, getExtension(file.uri)),
+          name: constructFileName(time, 'VID', getExtension(fileUri), file.duration),
         },
         repost,
       })
@@ -90,7 +90,7 @@ const useFilePicker = (uri) => {
         image: {
           uri: fileUri,
           mimeType: file.type,
-          name: constructFileName(time, 'IMG', getExtension(file.uri)),
+          name: constructFileName(time, 'IMG', getExtension(fileUri)),
         },
         repost,
       })
@@ -109,7 +109,7 @@ const useFilePicker = (uri) => {
       image: {
         uri: fileUri,
         mimeType: file.type,
-        name: constructFileName(time, 'IMG', getExtension(file.uri)),
+        name: constructFileName(time, 'IMG', getExtension(fileUri)),
       },
       repost,
     })

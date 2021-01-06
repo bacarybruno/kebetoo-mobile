@@ -94,7 +94,7 @@ const useAudioRecorder = (
       audio: {
         uri: fileUri,
         mimeType: getMimeType(fileUri),
-        name: constructFileName(time, elapsedTime),
+        name: constructFileName(time, elapsedTime, getExtension(fileUri)),
       },
     })
     setHasRecording(false)

@@ -62,6 +62,7 @@ export const SkipButton = ({ onPress }) => {
     <TouchableOpacity style={styles.skipButton} onPress={onPress}>
       <Typography
         type={Typography.types.textButton}
+        systemWeight={Typography.weights.light}
         color="black"
         text={strings.general.skip}
       />
