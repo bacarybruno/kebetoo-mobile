@@ -65,7 +65,7 @@ const ImagePreview = React.memo(({ item }) => {
 
 const Albums = React.memo(({ previews, onSelect }) => {
   const numColumns = 2
-  const imageMargin = 6
+  const imageMargin = metrics.spacing.xs
   const itemSize = (metrics.screenWidth - (numColumns - 1) * imageMargin) / numColumns
 
   const { colors } = useAppColors()

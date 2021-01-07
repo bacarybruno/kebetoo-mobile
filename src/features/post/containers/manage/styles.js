@@ -9,7 +9,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.background,
   },
   sectionHeader: {
-    marginBottom: 27,
+    marginBottom: metrics.spacing.xl,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

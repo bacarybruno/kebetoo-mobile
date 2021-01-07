@@ -7,7 +7,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.backgroundSecondary,
     minHeight: 52,
     padding: metrics.marginHorizontal,
-    borderRadius: 5,
+    borderRadius: metrics.radius.sm,
   },
   repost: {
     backgroundColor: colors.background,

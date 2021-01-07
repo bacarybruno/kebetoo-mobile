@@ -86,7 +86,7 @@ exports[`renders HistoryItem 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#F5F5F5",
-          "borderRadius": 11,
+          "borderRadius": 10,
           "height": 22,
           "justifyContent": "center",
           "opacity": 1,

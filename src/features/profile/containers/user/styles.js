@@ -18,7 +18,7 @@ export default (colors) => StyleSheet.create({
   },
   userInfos: {
     width: '100%',
-    marginTop: 30,
+    marginTop: metrics.spacing.xl,
     justifyContent: 'center',
     paddingHorizontal: metrics.marginHorizontal,
   },
@@ -26,7 +26,7 @@ export default (colors) => StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
   },
   sectionHeader: {
-    marginBottom: 27,
+    marginBottom: metrics.spacing.lg,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -41,7 +41,7 @@ export default (colors) => StyleSheet.create({
   profileInfos: {
     backgroundColor: hexToRgba(rgbaToHex(colors.backgroundSecondary), 0.95),
     ...elevation(3),
-    borderRadius: 8,
+    borderRadius: metrics.radius.md,
     height: profileInfoSize,
     marginTop: -profileInfoSize / 2,
     marginHorizontal: metrics.marginHorizontal,

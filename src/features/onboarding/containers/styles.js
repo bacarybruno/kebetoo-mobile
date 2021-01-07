@@ -16,7 +16,7 @@ export default (colors) => StyleSheet.create({
     marginVertical: metrics.marginVertical,
   },
   swiper: {
-    marginTop: 11,
+    marginTop: metrics.spacing.md,
   },
   dotStyle: {
     width: 8,

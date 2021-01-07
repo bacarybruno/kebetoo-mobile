@@ -31,7 +31,7 @@ exports[`renders IconButton 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#F5F5F5",
-        "borderRadius": 20,
+        "borderRadius": 1000,
         "elevation": 5,
         "height": 40,
         "justifyContent": "center",

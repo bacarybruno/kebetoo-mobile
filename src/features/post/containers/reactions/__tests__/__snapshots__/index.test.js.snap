@@ -71,7 +71,7 @@ exports[`renders Reactions 1`] = `
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "marginRight": 15,
+        "marginRight": 16,
         "minWidth": 35,
         "opacity": 1,
       }
@@ -146,7 +146,7 @@ exports[`renders Reactions 1`] = `
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "marginRight": 15,
+        "marginRight": 16,
         "minWidth": 35,
         "opacity": 1,
       }
@@ -221,7 +221,7 @@ exports[`renders Reactions 1`] = `
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "marginRight": 15,
+        "marginRight": 16,
         "minWidth": 35,
         "opacity": 1,
       }
@@ -296,7 +296,7 @@ exports[`renders Reactions 1`] = `
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "marginRight": 15,
+        "marginRight": 16,
         "minWidth": 35,
         "opacity": 1,
       }

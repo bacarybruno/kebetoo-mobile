@@ -8,7 +8,7 @@ export default (colors) => StyleSheet.create({
     height: 36,
     paddingHorizontal: metrics.marginHorizontal,
     borderColor: colors.primary,
-    borderRadius: 3,
+    borderRadius: metrics.radius.sm,
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',

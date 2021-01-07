@@ -11,7 +11,7 @@ export default (colors) => StyleSheet.create({
     color: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 15,
+    borderRadius: metrics.radius.mid,
     ...elevation(2),
   },
   disabledButton: {

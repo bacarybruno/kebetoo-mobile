@@ -124,7 +124,7 @@ exports[`renders Onboarding 1`] = `
               "backgroundColor": "transparent",
             },
             Object {
-              "marginTop": 11,
+              "marginTop": 16,
             },
           ]
         }

@@ -5,9 +5,9 @@ exports[`renders Badge 1`] = `
   style={
     Array [
       Object {
-        "borderRadius": 50,
-        "paddingHorizontal": 15,
-        "paddingVertical": 3,
+        "borderRadius": 1000,
+        "paddingHorizontal": 16,
+        "paddingVertical": 4,
       },
       Object {
         "backgroundColor": "#F0F6FE",

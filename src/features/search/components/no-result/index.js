@@ -12,7 +12,7 @@ const NoResult = ({ query }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.title}>🙄</Text>
+      <Text style={styles.title}>🔎</Text>
       <Typography
         type={Typography.types.headline4}
         style={styles.message}

@@ -3,13 +3,15 @@ import { View } from 'react-native'
 import { Placeholder, PlaceholderMedia, PlaceholderLine } from 'rn-placeholder'
 
 import { useAppStyles } from '@app/shared/hooks'
+import { metrics } from '@app/theme'
 
 import { Animation, createThemedStyles } from './comments'
 
 export const PlaceholderAvatar = ({ size }) => {
   const styles = useAppStyles(createThemedStyles)
+  const style = { marginRight: metrics.spacing.sm, ...styles.background }
   return (
-    <PlaceholderMedia size={size} isRound style={{ marginRight: 10, ...styles.background }} />
+    <PlaceholderMedia size={size} isRound style={style} />
   )
 }
 
@@ -21,7 +23,7 @@ export const PlaceholderHeader = ({ avatarSize }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <Placeholder Animation={Animation} Left={createAvatar(avatarSize)}>
-      <View style={{ height: avatarSize, marginBottom: 8 }}>
+      <View style={{ height: avatarSize, marginBottom: metrics.spacing.sm }}>
         <PlaceholderLine style={styles.background} height={10} width={50} />
         <PlaceholderLine style={styles.background} height={10} width={30} />
       </View>
@@ -31,11 +33,16 @@ export const PlaceholderHeader = ({ avatarSize }) => {
 
 const PlaceholderContent = () => {
   const styles = useAppStyles(createThemedStyles)
+  const style = {
+    marginBottom: metrics.spacing.sm,
+    borderRadius: metrics.radius.sm,
+    ...styles.background,
+  }
   return (
     <Placeholder Animation={Animation}>
       <PlaceholderLine
         height={52}
-        style={{ marginBottom: 8, borderRadius: 5, ...styles.background }}
+        style={style}
       />
     </Placeholder>
   )
@@ -43,13 +50,14 @@ const PlaceholderContent = () => {
 
 const PlaceholderReaction = () => {
   const styles = useAppStyles(createThemedStyles)
+  const style = { marginRight: metrics.spacing.sm, ...styles.background }
   return (
-    <PlaceholderLine width={15} height={20} style={{ marginRight: 10, ...styles.background }} />
+    <PlaceholderLine width={15} height={20} style={style} />
   )
 }
 
 const PlaceholderReactions = () => (
-  <Placeholder Animation={Animation} style={{ marginBottom: 30 }}>
+  <Placeholder Animation={Animation} style={{ marginBottom: metrics.spacing.xl }}>
     <View style={{ flexDirection: 'row' }}>
       <PlaceholderReaction />
       <PlaceholderReaction />

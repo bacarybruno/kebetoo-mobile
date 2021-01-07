@@ -50,7 +50,7 @@ exports[`renders VideoContent 1`] = `
         Object {
           "aspectRatio": 1,
           "backgroundColor": "rgba(199, 199, 204, 255)",
-          "borderRadius": 12,
+          "borderRadius": 10,
           "elevation": 1,
           "flex": 1,
           "shadowColor": "rgba(0, 0, 0, 255)",
@@ -64,7 +64,7 @@ exports[`renders VideoContent 1`] = `
       }
     >
       <Image
-        borderRadius={12}
+        borderRadius={10}
         fadeDuration={0}
         resizeMode="cover"
         source={
@@ -74,7 +74,7 @@ exports[`renders VideoContent 1`] = `
         }
         style={
           Object {
-            "borderRadius": 12,
+            "borderRadius": 10,
             "flex": 1,
           }
         }
@@ -105,12 +105,12 @@ exports[`renders VideoContent 1`] = `
               "alignItems": "center",
               "backgroundColor": "rgba(0, 0, 0, 0.5)",
               "borderColor": "rgba(229, 229, 234, 255)",
-              "borderRadius": 35,
+              "borderRadius": 1000,
               "borderWidth": 0.5,
               "height": 70,
               "justifyContent": "center",
               "opacity": 1,
-              "paddingLeft": 5,
+              "paddingLeft": 4,
               "width": 70,
               "zIndex": 1,
             }

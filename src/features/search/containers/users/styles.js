@@ -29,7 +29,7 @@ export default (colors) => StyleSheet.create({
   },
   searchResult: {
     flexDirection: 'row',
-    paddingVertical: 8,
+    paddingVertical: metrics.spacing.sm,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -37,12 +37,19 @@ export default (colors) => StyleSheet.create({
     flexDirection: 'row',
   },
   avatar: {
-    marginRight: 8,
+    marginRight: metrics.spacing.sm,
   },
   metadata: {
     justifyContent: 'center',
   },
   noContent: {
     height: '100%',
+  },
+  icon: {
+    marginRight: metrics.spacing.sm,
+  },
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 })

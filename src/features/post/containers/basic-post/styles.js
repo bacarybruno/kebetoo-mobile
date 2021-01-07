@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 export default StyleSheet.create({
   wrapper: {
-    marginBottom: 30,
+    marginBottom: metrics.spacing.xxl,
   },
   noMargin: {
     marginBottom: 0,
@@ -10,10 +12,10 @@ export default StyleSheet.create({
   headerWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: metrics.spacing.sm,
   },
   repostHeaderWrapper: {
-    marginBottom: 4,
+    marginBottom: metrics.spacing.xs,
   },
   headerContent: {
     flexDirection: 'row',
@@ -24,7 +26,7 @@ export default StyleSheet.create({
   },
   meta: {
     justifyContent: 'space-between',
-    marginLeft: 5,
+    marginLeft: metrics.spacing.sm,
   },
   repostMeta: {
     justifyContent: 'center',
@@ -38,7 +40,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   reactions: {
-    marginTop: 8,
+    marginTop: metrics.spacing.sm,
   },
   content: {
     flex: 1,

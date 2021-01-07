@@ -14,7 +14,7 @@ export default (colors) => StyleSheet.create({
   iconWrapper: {
     width: 30,
     height: 30,
-    borderRadius: 15,
+    borderRadius: metrics.radius.round,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.backgroundSecondary,
@@ -30,7 +30,7 @@ export default (colors) => StyleSheet.create({
     right: -5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 15,
+    borderRadius: metrics.radius.round,
     ...elevation(2),
   },
   audio: {
@@ -41,7 +41,7 @@ export default (colors) => StyleSheet.create({
   audioWrapper: {
     flex: 1,
     overflow: 'hidden',
-    borderRadius: 5,
+    borderRadius: metrics.radius.sm,
     backgroundColor: colors.backgroundSecondary,
   },
   audioContent: {
@@ -50,7 +50,7 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
   },
   round: {
-    borderRadius: 22,
+    borderRadius: metrics.radius.lg,
   },
   progress: {
     position: 'absolute',

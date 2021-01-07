@@ -12,8 +12,8 @@ export default (colors) => StyleSheet.create({
     borderColor: 'transparent',
     backgroundColor: colors.backgroundSecondary,
     paddingLeft: 0,
-    margin: 10,
-    borderRadius: 8,
+    margin: metrics.spacing.md,
+    borderRadius: metrics.radius.sm,
   },
   textInputStyle: {
     ...systemWeights.regular,
@@ -26,7 +26,7 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
   },
   searchIcon: {
-    marginRight: 10,
+    marginRight: metrics.spacing.sm,
     justifyContent: 'center',
     alignItems: 'center',
   },

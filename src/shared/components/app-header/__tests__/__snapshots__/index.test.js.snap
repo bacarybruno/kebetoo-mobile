@@ -172,7 +172,7 @@ exports[`renders Header 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 15,
+              "borderRadius": 1000,
               "flex": 1,
               "justifyContent": "center",
             },

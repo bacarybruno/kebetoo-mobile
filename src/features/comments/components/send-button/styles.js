@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { elevation } from '@app/theme'
+import { elevation, metrics } from '@app/theme'
 
 export const bottomBarSize = 45
 
@@ -9,8 +9,8 @@ const defaultButtonStyle = {
   maxWidth: bottomBarSize,
   height: bottomBarSize,
   maxHeight: bottomBarSize,
-  borderRadius: bottomBarSize / 2,
-  marginLeft: 5,
+  borderRadius: metrics.radius.round,
+  marginLeft: metrics.spacing.sm,
   justifyContent: 'center',
   alignItems: 'center',
   ...elevation(2),

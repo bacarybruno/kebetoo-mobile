@@ -27,7 +27,7 @@ export default (colors) => StyleSheet.create({
     ...systemWeights.regular,
     fontSize: Typography.fontSizes.md + 3,
     color: colors.textPrimary,
-    marginTop: Platform.select({ android: -10, default: 0 }),
+    marginTop: Platform.select({ android: -metrics.spacing.sm, default: 0 }),
   },
   textInputWrapper: {
     backgroundColor: colors.background,
@@ -37,7 +37,7 @@ export default (colors) => StyleSheet.create({
     borderRadius: 0,
   },
   textCount: {
-    marginLeft: Platform.select({ android: 5, ios: 0 }),
+    marginLeft: Platform.select({ android: metrics.spacing.xs, ios: 0 }),
   },
   buttonsWrapper: {
     flexDirection: 'row',
@@ -57,7 +57,7 @@ export default (colors) => StyleSheet.create({
     justifyContent: 'flex-end',
   },
   audioPlayer: {
-    borderRadius: 15,
+    borderRadius: metrics.radius.md,
     ...elevation(1),
   },
   imagePreviewer: {

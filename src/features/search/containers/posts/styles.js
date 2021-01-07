@@ -30,4 +30,11 @@ export default (colors) => StyleSheet.create({
   noContent: {
     height: '100%',
   },
+  icon: {
+    marginRight: metrics.spacing.sm,
+  },
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 })

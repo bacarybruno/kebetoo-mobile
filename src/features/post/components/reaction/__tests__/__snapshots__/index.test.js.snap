@@ -23,7 +23,7 @@ exports[`renders Reaction 1`] = `
     Object {
       "alignItems": "center",
       "flexDirection": "row",
-      "marginRight": 15,
+      "marginRight": 16,
       "minWidth": 35,
       "opacity": 1,
     }
