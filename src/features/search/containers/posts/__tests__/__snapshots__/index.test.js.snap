@@ -521,7 +521,7 @@ exports[`renders SearchPosts history 1`] = `
                                   Object {
                                     "alignItems": "center",
                                     "backgroundColor": "#F5F5F5",
-                                    "borderRadius": 11,
+                                    "borderRadius": 10,
                                     "height": 22,
                                     "justifyContent": "center",
                                     "opacity": 1,
@@ -635,7 +635,7 @@ exports[`renders SearchPosts history 1`] = `
                                   Object {
                                     "alignItems": "center",
                                     "backgroundColor": "#F5F5F5",
-                                    "borderRadius": 11,
+                                    "borderRadius": 10,
                                     "height": 22,
                                     "justifyContent": "center",
                                     "opacity": 1,
@@ -1061,7 +1061,7 @@ exports[`renders SearchPosts results 1`] = `
                             style={
                               Array [
                                 Object {
-                                  "marginBottom": 30,
+                                  "marginBottom": 40,
                                 },
                                 undefined,
                               ]
@@ -1137,7 +1137,7 @@ exports[`renders SearchPosts results 1`] = `
                                             Object {
                                               "alignItems": "center",
                                               "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 15,
+                                              "borderRadius": 1000,
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
@@ -1155,7 +1155,7 @@ exports[`renders SearchPosts results 1`] = `
                                       Array [
                                         Object {
                                           "justifyContent": "space-between",
-                                          "marginLeft": 5,
+                                          "marginLeft": 8,
                                         },
                                         Object {
                                           "height": 35,
@@ -1384,7 +1384,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -1459,7 +1459,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -1534,7 +1534,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -1609,7 +1609,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -1674,7 +1674,7 @@ exports[`renders SearchPosts results 1`] = `
                             style={
                               Array [
                                 Object {
-                                  "marginBottom": 30,
+                                  "marginBottom": 40,
                                 },
                                 undefined,
                               ]
@@ -1745,7 +1745,7 @@ exports[`renders SearchPosts results 1`] = `
                                             Object {
                                               "alignItems": "center",
                                               "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 15,
+                                              "borderRadius": 1000,
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
@@ -1780,7 +1780,7 @@ exports[`renders SearchPosts results 1`] = `
                                       Array [
                                         Object {
                                           "justifyContent": "space-between",
-                                          "marginLeft": 5,
+                                          "marginLeft": 8,
                                         },
                                         Object {
                                           "height": 35,
@@ -2009,7 +2009,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -2084,7 +2084,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -2159,7 +2159,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }
@@ -2234,7 +2234,7 @@ exports[`renders SearchPosts results 1`] = `
                                     Object {
                                       "alignItems": "center",
                                       "flexDirection": "row",
-                                      "marginRight": 15,
+                                      "marginRight": 16,
                                       "minWidth": 35,
                                       "opacity": 1,
                                     }

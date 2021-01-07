@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import { metrics } from '@app/theme'
 
 export const paddingHorizontal = metrics.marginHorizontal * 1.5
-export const borderRadiusSize = 35
+export const borderRadiusSize = metrics.radius.xl
 export const summaryHeight = 35
 export const bottomBarSize = 45
 export const reactionsHeight = borderRadiusSize + 30
@@ -32,21 +32,21 @@ export default (colors) => StyleSheet.create({
   },
   imgs: {
     flexDirection: 'row',
-    marginRight: 5,
+    marginRight: metrics.spacing.xs,
   },
   imgWrapper: {
     width: imgSize,
     height: imgSize,
     backgroundColor: colors.background,
-    borderRadius: imgSize / 2,
-    padding: 2,
+    borderRadius: metrics.radius.round,
+    padding: metrics.spacing.xs / 2,
     zIndex: 1,
   },
   img: {
     width: '100%',
     height: '100%',
     backgroundColor: colors.primary,
-    borderRadius: imgSize / 2,
+    borderRadius: metrics.radius.round,
   },
   img2Wrapper: {
     marginLeft: -imgSize / 2.5,

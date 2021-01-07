@@ -34,7 +34,7 @@ export default (colors) => StyleSheet.create({
   headerBack: {
     width: 24,
     height: 24,
-    margin: 3,
+    margin: metrics.spacing.xs,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -57,7 +57,7 @@ export default (colors) => StyleSheet.create({
   backHandler: {
     width: 24,
     height: 24,
-    margin: 3,
+    margin: metrics.spacing.xs,
     justifyContent: 'center',
     alignItems: 'center',
   },

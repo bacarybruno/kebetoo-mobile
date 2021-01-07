@@ -126,7 +126,7 @@ exports[`renders ImageContent on comments mode 1`] = `
         "elevation": 3,
       },
       Object {
-        "marginBottom": -65,
+        "marginBottom": -70,
       },
     ]
   }

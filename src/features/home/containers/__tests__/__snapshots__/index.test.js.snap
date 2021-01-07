@@ -17,7 +17,7 @@ exports[`renders HomePage 1`] = `
           imageSrc="https://avatars1.githubusercontent.com/u/14147533"
           style={
             Object {
-              "marginBottom": 20,
+              "marginBottom": 16,
             }
           }
         />
@@ -38,7 +38,7 @@ exports[`renders HomePage 1`] = `
           selectedValue="score"
           style={
             Object {
-              "marginBottom": 20,
+              "marginBottom": 16,
             }
           }
         />
@@ -345,7 +345,7 @@ exports[`renders HomePage 1`] = `
                 "height": 60,
               },
               Object {
-                "marginBottom": 20,
+                "marginBottom": 16,
               },
             ]
           }
@@ -507,7 +507,7 @@ exports[`renders HomePage 1`] = `
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "rgba(0, 122, 255, 255)",
-                      "borderRadius": 15,
+                      "borderRadius": 1000,
                       "flex": 1,
                       "justifyContent": "center",
                     },
@@ -544,7 +544,7 @@ exports[`renders HomePage 1`] = `
                 "borderTopRightRadius": 20,
               },
               Object {
-                "marginBottom": 20,
+                "marginBottom": 16,
               },
             ]
           }
@@ -680,7 +680,7 @@ exports[`renders HomePage 1`] = `
           style={
             Array [
               Object {
-                "marginBottom": 30,
+                "marginBottom": 40,
               },
               undefined,
             ]
@@ -756,7 +756,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "flex": 1,
                             "justifyContent": "center",
                           },
@@ -774,7 +774,7 @@ exports[`renders HomePage 1`] = `
                     Array [
                       Object {
                         "justifyContent": "space-between",
-                        "marginLeft": 5,
+                        "marginLeft": 8,
                       },
                       Object {
                         "height": 35,
@@ -1012,7 +1012,7 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "alignItems": "center",
                         "backgroundColor": "#F5F5F5",
-                        "borderRadius": 15,
+                        "borderRadius": 1000,
                         "elevation": 2,
                         "height": 30,
                         "justifyContent": "center",
@@ -1140,7 +1140,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1215,7 +1215,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1290,7 +1290,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1365,7 +1365,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1430,7 +1430,7 @@ exports[`renders HomePage 1`] = `
           style={
             Array [
               Object {
-                "marginBottom": 30,
+                "marginBottom": 40,
               },
               undefined,
             ]
@@ -1506,7 +1506,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "flex": 1,
                             "justifyContent": "center",
                           },
@@ -1524,7 +1524,7 @@ exports[`renders HomePage 1`] = `
                     Array [
                       Object {
                         "justifyContent": "space-between",
-                        "marginLeft": 5,
+                        "marginLeft": 8,
                       },
                       Object {
                         "height": 35,
@@ -1750,7 +1750,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1825,7 +1825,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1900,7 +1900,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -1975,7 +1975,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -2040,7 +2040,7 @@ exports[`renders HomePage 1`] = `
           style={
             Array [
               Object {
-                "marginBottom": 30,
+                "marginBottom": 40,
               },
               undefined,
             ]
@@ -2116,7 +2116,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "flex": 1,
                             "justifyContent": "center",
                           },
@@ -2134,7 +2134,7 @@ exports[`renders HomePage 1`] = `
                     Array [
                       Object {
                         "justifyContent": "space-between",
-                        "marginLeft": 5,
+                        "marginLeft": 8,
                       },
                       Object {
                         "height": 35,
@@ -2315,7 +2315,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "aspectRatio": 1,
                     "backgroundColor": "rgba(199, 199, 204, 255)",
-                    "borderRadius": 12,
+                    "borderRadius": 10,
                     "elevation": 1,
                     "flex": 1,
                     "shadowColor": "rgba(0, 0, 0, 255)",
@@ -2329,7 +2329,7 @@ exports[`renders HomePage 1`] = `
                 }
               >
                 <Image
-                  borderRadius={12}
+                  borderRadius={10}
                   fadeDuration={0}
                   resizeMode="cover"
                   source={
@@ -2339,7 +2339,7 @@ exports[`renders HomePage 1`] = `
                   }
                   style={
                     Object {
-                      "borderRadius": 12,
+                      "borderRadius": 10,
                       "flex": 1,
                     }
                   }
@@ -2370,12 +2370,12 @@ exports[`renders HomePage 1`] = `
                         "alignItems": "center",
                         "backgroundColor": "rgba(0, 0, 0, 0.5)",
                         "borderColor": "rgba(229, 229, 234, 255)",
-                        "borderRadius": 35,
+                        "borderRadius": 1000,
                         "borderWidth": 0.5,
                         "height": 70,
                         "justifyContent": "center",
                         "opacity": 1,
-                        "paddingLeft": 5,
+                        "paddingLeft": 4,
                         "width": 70,
                         "zIndex": 1,
                       }
@@ -2452,7 +2452,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -2527,7 +2527,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -2602,7 +2602,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -2677,7 +2677,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -2742,7 +2742,7 @@ exports[`renders HomePage 1`] = `
           style={
             Array [
               Object {
-                "marginBottom": 30,
+                "marginBottom": 40,
               },
               undefined,
             ]
@@ -2813,7 +2813,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "flex": 1,
                             "justifyContent": "center",
                           },
@@ -2848,7 +2848,7 @@ exports[`renders HomePage 1`] = `
                     Array [
                       Object {
                         "justifyContent": "space-between",
-                        "marginLeft": 5,
+                        "marginLeft": 8,
                       },
                       Object {
                         "height": 35,
@@ -3077,7 +3077,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -3152,7 +3152,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -3227,7 +3227,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -3302,7 +3302,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -3367,7 +3367,7 @@ exports[`renders HomePage 1`] = `
           style={
             Array [
               Object {
-                "marginBottom": 30,
+                "marginBottom": 40,
               },
               undefined,
             ]
@@ -3443,7 +3443,7 @@ exports[`renders HomePage 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "flex": 1,
                             "justifyContent": "center",
                           },
@@ -3461,7 +3461,7 @@ exports[`renders HomePage 1`] = `
                     Array [
                       Object {
                         "justifyContent": "space-between",
-                        "marginLeft": 5,
+                        "marginLeft": 8,
                       },
                       Object {
                         "height": 35,
@@ -3578,7 +3578,7 @@ exports[`renders HomePage 1`] = `
                   style={
                     Array [
                       Object {
-                        "marginBottom": 30,
+                        "marginBottom": 40,
                       },
                       Object {
                         "marginBottom": 0,
@@ -3653,7 +3653,7 @@ exports[`renders HomePage 1`] = `
                                   Object {
                                     "alignItems": "center",
                                     "backgroundColor": "rgba(0, 122, 255, 255)",
-                                    "borderRadius": 15,
+                                    "borderRadius": 1000,
                                     "flex": 1,
                                     "justifyContent": "center",
                                   },
@@ -3688,7 +3688,7 @@ exports[`renders HomePage 1`] = `
                             Array [
                               Object {
                                 "justifyContent": "space-between",
-                                "marginLeft": 5,
+                                "marginLeft": 8,
                               },
                               Object {
                                 "height": 24,
@@ -3886,7 +3886,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -3961,7 +3961,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -4036,7 +4036,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }
@@ -4111,7 +4111,7 @@ exports[`renders HomePage 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "marginRight": 15,
+                    "marginRight": 16,
                     "minWidth": 35,
                     "opacity": 1,
                   }

@@ -111,7 +111,7 @@ exports[`renders AudioContent 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#F5F5F5",
-              "borderRadius": 15,
+              "borderRadius": 1000,
               "elevation": 2,
               "height": 30,
               "justifyContent": "center",

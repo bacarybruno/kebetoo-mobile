@@ -6,7 +6,7 @@ exports[`renders CommentInput 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 255)",
       "flexDirection": "row",
-      "paddingBottom": 10,
+      "paddingBottom": 8,
       "paddingHorizontal": 16,
       "width": "100%",
     }
@@ -78,7 +78,7 @@ exports[`renders CommentInput 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "marginRight": 5,
+                "marginRight": 4,
                 "opacity": 1,
               }
             }
@@ -141,9 +141,9 @@ exports[`renders CommentInput 1`] = `
             Object {
               "backgroundColor": "#F0F6FE",
               "display": "flex",
-              "marginBottom": -10,
+              "marginBottom": -8,
               "marginLeft": -16,
-              "marginTop": 15,
+              "marginTop": 16,
               "width": 750,
             },
             false,
@@ -202,11 +202,11 @@ exports[`renders CommentInput 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "rgba(0, 122, 255, 255)",
-            "borderRadius": 22.5,
+            "borderRadius": 1000,
             "elevation": 2,
             "height": 45,
             "justifyContent": "center",
-            "marginLeft": 5,
+            "marginLeft": 8,
             "maxHeight": 45,
             "maxWidth": 45,
             "opacity": 1,
@@ -251,7 +251,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 255)",
       "flexDirection": "row",
-      "paddingBottom": 10,
+      "paddingBottom": 8,
       "paddingHorizontal": 16,
       "width": "100%",
     }
@@ -316,7 +316,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
                 "shadowRadius": 1,
               },
               Object {
-                "borderRadius": 22,
+                "borderRadius": 20,
               },
             ]
           }
@@ -359,7 +359,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#F5F5F5",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "elevation": 2,
                   "height": 30,
                   "justifyContent": "center",
@@ -466,11 +466,11 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(0, 122, 255, 255)",
-        "borderRadius": 22.5,
+        "borderRadius": 1000,
         "elevation": 2,
         "height": 45,
         "justifyContent": "center",
-        "marginLeft": 5,
+        "marginLeft": 8,
         "maxHeight": 45,
         "maxWidth": 45,
         "opacity": 1,

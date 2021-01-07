@@ -6,7 +6,7 @@ exports[`renders Heading 1`] = `
     Object {
       "alignItems": "center",
       "flexDirection": "row",
-      "marginBottom": 12,
+      "marginBottom": 16,
       "paddingHorizontal": 16,
     }
   }
@@ -43,9 +43,9 @@ exports[`renders Heading 1`] = `
     style={
       Array [
         Object {
-          "borderRadius": 50,
-          "paddingHorizontal": 15,
-          "paddingVertical": 3,
+          "borderRadius": 1000,
+          "paddingHorizontal": 16,
+          "paddingVertical": 4,
         },
         Object {
           "backgroundColor": "#F0F6FE",

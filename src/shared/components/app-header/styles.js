@@ -1,3 +1,4 @@
+import { metrics } from '@app/theme'
 import { StyleSheet } from 'react-native'
 import Typography from '../typography'
 
@@ -15,11 +16,11 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   loading: {
-    marginLeft: 8,
+    marginLeft: metrics.spacing.sm,
   },
   icon: {
     width: Typography.fontSizes.header,
     height: Typography.fontSizes.header,
-    marginLeft: 4,
+    marginLeft: metrics.spacing.xs,
   },
 })

@@ -4,17 +4,17 @@ import { metrics } from '@app/theme'
 
 export default (colors) => StyleSheet.create({
   notificationWrapper: {
-    paddingVertical: 14,
+    paddingVertical: metrics.spacing.md,
     flexDirection: 'row',
     paddingHorizontal: metrics.marginHorizontal,
   },
   notificationInfos: {
     justifyContent: 'center',
-    marginLeft: 12,
+    marginLeft: metrics.spacing.md,
     flex: 1,
   },
   notificationCaption: {
-    marginTop: 2,
+    marginTop: metrics.spacing.xs / 2,
   },
   headerTitleWrapper: {
     flexDirection: 'row',
@@ -22,14 +22,14 @@ export default (colors) => StyleSheet.create({
   headerTitle: {
     flex: 1,
     flexDirection: 'row',
-    marginBottom: 5,
+    marginBottom: metrics.spacing.xs,
   },
   dot: {
     width: 8,
     height: 8,
-    borderRadius: 4,
-    marginTop: 6,
-    marginLeft: 5,
+    borderRadius: metrics.radius.round,
+    marginTop: metrics.spacing.sm,
+    marginLeft: metrics.spacing.xs,
     backgroundColor: colors.primary,
   },
   captionWrapper: {

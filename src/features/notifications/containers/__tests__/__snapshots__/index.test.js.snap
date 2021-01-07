@@ -129,7 +129,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "flex": 1,
                   "justifyContent": "center",
                 },
@@ -153,7 +153,7 @@ exports[`renders NotificationsPage 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "marginBottom": 12,
+            "marginBottom": 16,
             "paddingHorizontal": 16,
           }
         }
@@ -190,9 +190,9 @@ exports[`renders NotificationsPage 1`] = `
           style={
             Array [
               Object {
-                "borderRadius": 50,
-                "paddingHorizontal": 15,
-                "paddingVertical": 3,
+                "borderRadius": 1000,
+                "paddingHorizontal": 16,
+                "paddingVertical": 4,
               },
               Object {
                 "backgroundColor": "#F0F6FE",
@@ -251,7 +251,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flexDirection": "row",
               "paddingHorizontal": 16,
-              "paddingVertical": 14,
+              "paddingVertical": 16,
             },
             Object {
               "backgroundColor": "#F0F6FE",
@@ -285,7 +285,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "flex": 1,
                   "justifyContent": "center",
                 },
@@ -302,7 +302,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flex": 1,
               "justifyContent": "center",
-              "marginLeft": 12,
+              "marginLeft": 16,
             }
           }
         >
@@ -319,7 +319,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "flex": 1,
                   "flexDirection": "row",
-                  "marginBottom": 5,
+                  "marginBottom": 4,
                 }
               }
             >
@@ -390,10 +390,10 @@ exports[`renders NotificationsPage 1`] = `
               style={
                 Object {
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 4,
+                  "borderRadius": 1000,
                   "height": 8,
-                  "marginLeft": 5,
-                  "marginTop": 6,
+                  "marginLeft": 4,
+                  "marginTop": 8,
                   "width": 8,
                 }
               }
@@ -481,7 +481,7 @@ exports[`renders NotificationsPage 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "marginBottom": 12,
+            "marginBottom": 16,
             "paddingHorizontal": 16,
           }
         }
@@ -518,9 +518,9 @@ exports[`renders NotificationsPage 1`] = `
           style={
             Array [
               Object {
-                "borderRadius": 50,
-                "paddingHorizontal": 15,
-                "paddingVertical": 3,
+                "borderRadius": 1000,
+                "paddingHorizontal": 16,
+                "paddingVertical": 4,
               },
               Object {
                 "backgroundColor": "#F0F6FE",
@@ -579,7 +579,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flexDirection": "row",
               "paddingHorizontal": 16,
-              "paddingVertical": 14,
+              "paddingVertical": 16,
             },
             Object {
               "backgroundColor": "#F0F6FE",
@@ -613,7 +613,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "flex": 1,
                   "justifyContent": "center",
                 },
@@ -630,7 +630,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flex": 1,
               "justifyContent": "center",
-              "marginLeft": 12,
+              "marginLeft": 16,
             }
           }
         >
@@ -647,7 +647,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "flex": 1,
                   "flexDirection": "row",
-                  "marginBottom": 5,
+                  "marginBottom": 4,
                 }
               }
             >
@@ -718,10 +718,10 @@ exports[`renders NotificationsPage 1`] = `
               style={
                 Object {
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 4,
+                  "borderRadius": 1000,
                   "height": 8,
-                  "marginLeft": 5,
-                  "marginTop": 6,
+                  "marginLeft": 4,
+                  "marginTop": 8,
                   "width": 8,
                 }
               }
@@ -811,7 +811,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flexDirection": "row",
               "paddingHorizontal": 16,
-              "paddingVertical": 14,
+              "paddingVertical": 16,
             },
             false,
           ]
@@ -838,7 +838,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "flex": 1,
                   "justifyContent": "center",
                 },
@@ -872,7 +872,7 @@ exports[`renders NotificationsPage 1`] = `
             Object {
               "flex": 1,
               "justifyContent": "center",
-              "marginLeft": 12,
+              "marginLeft": 16,
             }
           }
         >
@@ -889,7 +889,7 @@ exports[`renders NotificationsPage 1`] = `
                 Object {
                   "flex": 1,
                   "flexDirection": "row",
-                  "marginBottom": 5,
+                  "marginBottom": 4,
                 }
               }
             >

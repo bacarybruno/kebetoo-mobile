@@ -8,7 +8,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.backgroundSecondary,
     minHeight: 48,
     borderColor: colors.border,
-    borderRadius: 15,
+    borderRadius: metrics.radius.mid,
     borderWidth: 1,
     overflow: 'hidden',
   },
@@ -38,13 +38,13 @@ export default (colors) => StyleSheet.create({
     borderColor: colors.pink,
   },
   trailing: {
-    paddingRight: 38,
+    paddingRight: metrics.spacing.xxl,
   },
   emojiSelector: {
-    marginTop: 15,
+    marginTop: metrics.spacing.md,
     width: metrics.screenWidth,
     marginLeft: -metrics.marginHorizontal,
-    marginBottom: -10,
+    marginBottom: -metrics.spacing.sm,
     display: 'flex',
     backgroundColor: colors.secondary,
   },
@@ -52,7 +52,7 @@ export default (colors) => StyleSheet.create({
     display: 'none',
   },
   emojiPicker: {
-    marginRight: 5,
+    marginRight: metrics.spacing.xs,
   },
   inputWrapper: {
     flexDirection: 'row',

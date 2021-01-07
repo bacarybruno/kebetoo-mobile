@@ -37,7 +37,7 @@ export const CommentInput = ({
         event.nativeEvent.contentSize.height,
       ),
     )
-  }, [])
+  }, [styles.textInputSize.minHeight])
 
   // FIXME: handle ios keyboard on comments
   return (

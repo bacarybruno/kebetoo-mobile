@@ -1,13 +1,15 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 export default StyleSheet.create({
   reaction: {
     flexDirection: 'row',
     minWidth: 35,
-    marginRight: 15,
+    marginRight: metrics.spacing.md,
     alignItems: 'center',
   },
   icon: {
-    marginRight: 4,
+    marginRight: metrics.spacing.xs,
   },
 })

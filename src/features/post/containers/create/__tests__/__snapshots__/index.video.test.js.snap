@@ -178,7 +178,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                   },
                   undefined,
                   Object {
-                    "borderRadius": 15,
+                    "borderRadius": 10,
                   },
                 ]
               }
@@ -192,7 +192,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                 }
               >
                 <Image
-                  borderRadius={15}
+                  borderRadius={10}
                   source={
                     Object {
                       "uri": "file://fake-video.mp4",
@@ -239,7 +239,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(199, 199, 204, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "elevation": 2,
                   "height": 25,
                   "justifyContent": "center",

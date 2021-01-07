@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-import { elevation } from '@app/theme'
+import { elevation, metrics } from '@app/theme'
 
 export default (colors) => StyleSheet.create({
   text: {
-    marginBottom: 8,
+    marginBottom: metrics.spacing.sm,
   },
   comment: {
     backgroundColor: colors.backgroundTertiary,

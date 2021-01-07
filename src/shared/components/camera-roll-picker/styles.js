@@ -31,7 +31,7 @@ export default (colors) => StyleSheet.create({
   },
   previewDesc: {
     flex: 0.2,
-    padding: 8,
+    padding: metrics.spacing.sm,
     justifyContent: 'space-around',
   },
   flatlistColumn: {

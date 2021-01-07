@@ -34,7 +34,7 @@ exports[`renders Comment 1`] = `
       <View
         style={
           Object {
-            "marginRight": 10,
+            "marginRight": 8,
           }
         }
       >
@@ -64,7 +64,7 @@ exports[`renders Comment 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 15,
+                  "borderRadius": 1000,
                   "flex": 1,
                   "justifyContent": "center",
                 },
@@ -92,7 +92,7 @@ exports[`renders Comment 1`] = `
           "alignItems": "center",
           "flex": 1,
           "flexDirection": "row",
-          "marginBottom": 5,
+          "marginBottom": 4,
         }
       }
     >
@@ -242,8 +242,8 @@ exports[`renders Comment 1`] = `
             "alignItems": "center",
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 5,
-            "paddingTop": 5,
+            "paddingHorizontal": 8,
+            "paddingTop": 8,
           }
         }
         testID="reaction-button"

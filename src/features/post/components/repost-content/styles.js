@@ -8,7 +8,7 @@ export default (colors) => StyleSheet.create({
   },
   content: {
     minHeight: 52,
-    marginVertical: 8,
+    marginVertical: metrics.spacing.sm,
     borderLeftWidth: 2,
     borderColor: colors.border,
     paddingLeft: metrics.marginHorizontal / 2,

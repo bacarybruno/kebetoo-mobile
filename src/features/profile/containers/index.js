@@ -371,13 +371,13 @@ const ProfilePage = React.memo(() => {
         </View>
         <ProfileSection managePosts={managePosts} />
         <PreferencesSection updateAppearance={updateAppearance} />
-        <AccountSection signOut={requestSignOut} />
         <AppInfosSection
           name={DeviceInfo.getApplicationName()}
           version={DeviceInfo.getVersion()}
           shareApp={shareApp}
           reportIssue={reportIssue}
         />
+        <AccountSection signOut={requestSignOut} />
       </ScrollView>
     </View>
   )

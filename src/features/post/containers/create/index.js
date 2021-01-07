@@ -106,7 +106,7 @@ export const ImagePreviewer = ({ uri, onDelete, onPress }) => {
   return (
     <View style={styles.imagePreviewer}>
       <TouchableWithoutFeedback onPress={onPress}>
-        <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+        <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
       </TouchableWithoutFeedback>
     </View>
   )
@@ -118,7 +118,7 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
     <View style={styles.imagePreviewer}>
       <TouchableWithoutFeedback onPress={onPress}>
         <View>
-          <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+          <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
           <VideoMarker style={{ position: 'absolute', left: 10, bottom: 5 }} />
         </View>
       </TouchableWithoutFeedback>

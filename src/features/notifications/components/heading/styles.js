@@ -6,10 +6,10 @@ export default StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: metrics.spacing.md,
     paddingHorizontal: metrics.marginHorizontal,
   },
   headerBadge: {
-    marginLeft: 8,
+    marginLeft: metrics.spacing.sm,
   },
 })

@@ -5,6 +5,7 @@ import {
 } from 'rn-placeholder'
 
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { metrics } from '@app/theme'
 
 export const createThemedStyles = (colors) => StyleSheet.create({
   placeholderIcon: {
@@ -13,7 +14,7 @@ export const createThemedStyles = (colors) => StyleSheet.create({
     bottom: 0,
   },
   placeholderAvatar: {
-    marginRight: 10,
+    marginRight: metrics.spacing.sm,
   },
   placeholder: {
     height: 60,

@@ -10,21 +10,21 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.border,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 9,
+    borderRadius: metrics.radius.round,
   },
   caption: {
-    marginBottom: 6,
+    marginBottom: metrics.spacing.xs,
   },
   replyInfoWrapper: {
     marginHorizontal: metrics.marginHorizontal / 3,
   },
   replyInfoContainer: {
     flexDirection: 'row',
-    borderRadius: 4,
-    marginTop: 8,
+    borderRadius: metrics.radius.sm,
+    marginTop: metrics.spacing.sm,
     borderLeftWidth: 3,
     paddingHorizontal: metrics.marginHorizontal / 2,
-    paddingVertical: 10,
+    paddingVertical: metrics.spacing.sm,
     backgroundColor: hexToRgba(rgbaToHex(colors.border), 0.5),
   },
   replyInfoContent: {

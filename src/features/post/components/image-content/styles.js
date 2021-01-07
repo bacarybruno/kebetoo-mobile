@@ -30,11 +30,11 @@ export default (colors) => StyleSheet.create({
     right: -10,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 15,
+    borderRadius: metrics.radius.round,
     ...elevation(2),
   },
   text: {
-    marginBottom: 8,
+    marginBottom: metrics.spacing.sm,
     flex: 1,
   },
 })

@@ -24,14 +24,32 @@ export const getDefaultHeaderHeight = (
   return headerHeight + statusBarHeight
 }
 
+const spacing = {
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 40,
+}
 const metrics = {
-  marginHorizontal: 16,
-  marginVertical: 24,
   screenWidth: width,
   screenHeight: height,
+  marginVertical: spacing.lg,
+  marginHorizontal: spacing.md,
   tabBarHeight: 50,
   tabBarFullHeight: 80,
   headerHeight: getDefaultHeaderHeight(),
+  spacing,
+  radius: {
+    sm: 5,
+    md: 10,
+    mid: 15,
+    lg: 20,
+    xl: 40,
+    xxl: 80,
+    round: 1000,
+  },
   aspectRatio: {
     feed: 4 / 3,
     square: 1 / 1,

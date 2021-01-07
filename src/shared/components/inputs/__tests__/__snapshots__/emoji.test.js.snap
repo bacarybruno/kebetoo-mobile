@@ -47,7 +47,7 @@ exports[`renders EmojiTextInput 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "marginRight": 5,
+            "marginRight": 4,
             "opacity": 1,
           }
         }
@@ -104,9 +104,9 @@ exports[`renders EmojiTextInput 1`] = `
         Object {
           "backgroundColor": "#F0F6FE",
           "display": "flex",
-          "marginBottom": -10,
+          "marginBottom": -8,
           "marginLeft": -16,
-          "marginTop": 15,
+          "marginTop": 16,
           "width": 750,
         },
         false,
