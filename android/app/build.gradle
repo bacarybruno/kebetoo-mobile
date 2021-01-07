@@ -203,6 +203,9 @@ android {
 }
 
 dependencies {
+    // https://github.com/facebook/SoLoader/issues/55#issuecomment-653890808
+    implementation'com.facebook.soloader:soloader:0.9.0+'
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
