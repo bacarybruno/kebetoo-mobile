@@ -22,7 +22,7 @@ const locales = Object.freeze({
     support: 'Support',
   },
   onboarding: {
-    screen_one_title: 'Rejoingnez Notre Réseau Social',
+    screen_one_title: 'Rejoignez Notre Réseau Social',
     screen_one_description: 'Kebetoo est une application de microblogging à l\'{0}. Soyez parmi les premiers à rejoindre l\'aventure 💪',
     screen_two_title: 'A Vous la Parole',
     screen_two_description: 'Avec Kebetoo, vous pouvez créer et partager des posts publics de tous types: vidéos, images, textes mais aussi des... {0}! 🎤',
