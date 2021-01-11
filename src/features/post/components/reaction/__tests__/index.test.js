@@ -4,7 +4,7 @@ import Reaction from '../index'
 
 const givenReaction = setupTest(Reaction)({
   iconName: 'like',
-  count: 1,
+  count: 1100,
   onPress: jest.fn(),
   color: 'reactions',
 })

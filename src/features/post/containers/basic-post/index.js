@@ -1,7 +1,5 @@
 import React, { useCallback } from 'react'
-import {
-  View, TouchableOpacity, Platform, TouchableWithoutFeedback,
-} from 'react-native'
+import { View, TouchableOpacity, Platform } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'

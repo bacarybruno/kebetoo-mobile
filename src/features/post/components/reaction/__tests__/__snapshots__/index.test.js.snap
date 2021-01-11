@@ -72,7 +72,7 @@ exports[`renders Reaction 1`] = `
       ]
     }
   >
-    1
+    1.1k
   </Text>
 </View>
 `;

@@ -21,6 +21,7 @@ import {
 } from '@app/shared/hooks'
 import { rgbaToHex } from '@app/theme/colors'
 import { actionTypes } from '@app/features/post/containers/create'
+import { abbreviateNumber } from '@app/shared/helpers/strings'
 
 import createThemedStyles, { imageSize } from './styles'
 
@@ -80,7 +81,7 @@ export const Stat = React.memo(({ title, value }) => {
     <View style={styles.stat}>
       <Typography
         type={Typography.types.subheading}
-        text={value}
+        text={abbreviateNumber(value)}
         systemWeight={Typography.weights.bold}
         color="primary"
       />
