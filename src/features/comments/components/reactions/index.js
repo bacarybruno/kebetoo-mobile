@@ -5,6 +5,7 @@ import BaseReactions from '@app/features/post/containers/reactions'
 import { Typography, Avatar } from '@app/shared/components'
 import { useAppStyles, usePosts } from '@app/shared/hooks'
 import { strings } from '@app/config'
+import { abbreviateNumber } from '@app/shared/helpers/strings'
 
 import DraggableIndicator from '../draggable-indicator'
 import createThemedStyles, { reactionsHeight, summaryHeight } from './styles'
@@ -69,7 +70,8 @@ const Summary = React.memo(({ comments }) => {
       <Typography
         type={Typography.types.headline5}
         text={strings.formatString(
-          strings.comments.people_reacted, reactors.length,
+          strings.comments.people_reacted,
+          abbreviateNumber(reactors.length),
         )}
       />
     </View>

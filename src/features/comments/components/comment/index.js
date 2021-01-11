@@ -16,6 +16,7 @@ import routes from '@app/navigation/routes'
 import { env } from '@app/config'
 import Kebeticon from '@app/shared/icons/kebeticons'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { abbreviateNumber } from '@app/shared/helpers/strings'
 
 import createThemedStyles from './styles'
 
@@ -41,7 +42,7 @@ export const Reactions = ({
         <Pressable borderless style={styles.reactionsButton} onPress={onShowReplies}>
           <Typography
             type={Typography.types.headline5}
-            text={repliesCount}
+            text={abbreviateNumber(repliesCount)}
             systemColor={Typography.colors.primary}
           />
           <Typography type={Typography.types.body} text=" " />
