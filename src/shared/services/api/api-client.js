@@ -44,8 +44,9 @@ class ApiClient extends HttpClient {
   }
 
   get comments() {
+    const pageSize = -1
     return {
-      getByPostId: (postId) => this.get(`/comments?post.id=${postId}`),
+      getByPostId: (postId) => this.get(`/comments?post.id=${postId}&_limit=${pageSize}`),
       getReplies: (commentId) => this.get(`/comments?thread=${commentId}&_sort=createdAt`),
       create: (comment) => this.post('/comments', comment),
       createAudio: ({ audio, ...payload }) => this.postAsset('/comments', 'audio', audio, payload),
