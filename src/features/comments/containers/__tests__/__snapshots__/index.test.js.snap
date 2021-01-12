@@ -140,6 +140,7 @@ exports[`renders Comments 1`] = `
             />
             <Content
               mode="comments"
+              onPress={[Function]}
               originalAuthor={
                 Object {
                   "displayName": "Bruno Bodian",
@@ -2210,6 +2211,7 @@ exports[`renders Comments in loading state 1`] = `
             />
             <Content
               mode="comments"
+              onPress={[Function]}
               originalAuthor={
                 Object {
                   "displayName": "Bruno Bodian",

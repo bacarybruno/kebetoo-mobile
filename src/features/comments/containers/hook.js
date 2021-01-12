@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useReducer } from 'react'
 
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
-import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
+import { useUser, usePosts } from '@app/shared/hooks'
 import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 import { getSource } from '@app/features/post/components/image-content'
@@ -149,7 +149,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder
 
   const onComment = useCallback(() => commentInput.current?.focus(), [])
 
-  const onCommentContentPress = useCallback(() => {
+  const onCommentPress = useCallback(() => {
     const type = getPostType(post)
     if (type === POST_TYPES.IMAGE) {
       navigate(routes.MODAL_IMAGE, {
@@ -158,6 +158,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder
       })
       return false
     }
+    // TODO: handle video
     return true
   }, [navigate, post])
 
@@ -171,12 +172,12 @@ const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder
 
   return {
     onSend,
-    onSetReply,
-    loadReplies,
     onComment,
-    onCommentContentPress,
-    clearToReply,
+    onSetReply,
     setComment,
+    loadReplies,
+    clearToReply,
+    onCommentPress,
     isLoading,
     authors,
     comments,
