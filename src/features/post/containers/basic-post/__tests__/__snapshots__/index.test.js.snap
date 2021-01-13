@@ -12,39 +12,40 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -1168,41 +1169,42 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          Object {
-            "marginBottom": 4,
-          },
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -1839,39 +1841,40 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -2355,39 +2358,40 @@ exports[`renders component [image]: renders BasicPost 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -3371,41 +3375,42 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          Object {
-            "marginBottom": 4,
-          },
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -3942,39 +3947,40 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -4318,39 +4324,40 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -4615,41 +4622,42 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
           }
         >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "opacity": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "space-between",
-                    "marginBottom": 8,
-                  },
-                  Object {
-                    "marginBottom": 4,
-                  },
-                ]
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
+                    "flex": 1,
                     "flexDirection": "row",
-                    "justifyContent": "space-between",
+                    "opacity": 1,
                   }
                 }
               >
@@ -5521,41 +5529,42 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          Object {
-            "marginBottom": 4,
-          },
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -5713,41 +5722,42 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
           }
         >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "opacity": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "space-between",
-                    "marginBottom": 8,
-                  },
-                  Object {
-                    "marginBottom": 4,
-                  },
-                ]
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
+                    "flex": 1,
                     "flexDirection": "row",
-                    "justifyContent": "space-between",
+                    "opacity": 1,
                   }
                 }
               >
@@ -6295,39 +6305,40 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -6592,41 +6603,42 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
           }
         >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "opacity": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginBottom": 8,
+                },
+                Object {
+                  "marginBottom": 4,
+                },
+              ]
             }
           >
             <View
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "space-between",
-                    "marginBottom": 8,
-                  },
-                  Object {
-                    "marginBottom": 4,
-                  },
-                ]
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
               }
             >
               <View
+                accessible={true}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
+                    "flex": 1,
                     "flexDirection": "row",
-                    "justifyContent": "space-between",
+                    "opacity": 1,
                   }
                 }
               >
@@ -6858,39 +6870,40 @@ exports[`renders component [text]: renders BasicPost 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -7877,41 +7890,42 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          Object {
-            "marginBottom": 4,
-          },
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -8467,39 +8481,40 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -8846,39 +8861,40 @@ exports[`renders component [video]: renders BasicPost 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -9990,41 +10006,42 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        Object {
+          "marginBottom": 4,
+        },
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          Object {
-            "marginBottom": 4,
-          },
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >
@@ -10649,39 +10666,40 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
   }
 >
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginBottom": 8,
+        },
+        false,
+      ]
     }
   >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginBottom": 8,
-          },
-          false,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }
     >
       <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "space-between",
+            "opacity": 1,
           }
         }
       >

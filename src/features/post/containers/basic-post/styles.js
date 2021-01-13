@@ -9,7 +9,6 @@ export default StyleSheet.create({
   },
   headerWrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 8,
   },
@@ -20,8 +19,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   left: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   meta: {
     justifyContent: 'space-between',
@@ -40,5 +39,9 @@ export default StyleSheet.create({
   },
   reactions: {
     marginTop: 8,
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'row',
   },
 })
