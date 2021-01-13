@@ -16,7 +16,7 @@ export default (colors) => StyleSheet.create({
     marginVertical: metrics.marginVertical,
   },
   swiper: {
-    marginTop: 11,
+    marginTop: metrics.spacing.md,
   },
   dotStyle: {
     width: 8,
@@ -26,7 +26,7 @@ export default (colors) => StyleSheet.create({
   activeDotStyle: {
     width: 15,
     height: dotHeight,
-    backgroundColor: colors.textPrimary,
+    backgroundColor: colors.primary,
   },
   paginationStyle: {
     marginHorizontal: metrics.marginHorizontal,

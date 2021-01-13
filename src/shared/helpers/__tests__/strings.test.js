@@ -21,3 +21,31 @@ it('capitalizes string', () => {
     expect(strings.capitalize(testCase.actual)).toBe(testCase.expected)
   })
 })
+
+it('abbreviates number', () => {
+  const testCases = [{
+    actual: 0,
+    expected: 0,
+  }, {
+    actual: 1,
+    expected: 1,
+  }, {
+    actual: 10,
+    expected: 10,
+  }, {
+    actual: 1000,
+    expected: '1k',
+  }, {
+    actual: 1001,
+    expected: '1k',
+  }, {
+    actual: 1100,
+    expected: '1.1k',
+  }, {
+    actual: 1000000,
+    expected: '1M',
+  }]
+  testCases.forEach((testCase) => {
+    expect(strings.abbreviateNumber(testCase.actual, 1)).toBe(testCase.expected)
+  })
+})

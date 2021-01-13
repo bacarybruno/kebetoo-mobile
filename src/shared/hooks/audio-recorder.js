@@ -8,7 +8,7 @@ import { LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
-import { getMimeType } from '@app/shared/helpers/file'
+import { getExtension, getMimeType } from '@app/shared/helpers/file'
 
 LogBox.ignoreLogs([
   'Warning: Cannot update a component from inside the function body of a different component.',
@@ -23,12 +23,13 @@ export const RECORD_CONFIG = Object.freeze({
   channels: 1,
   quality: 'min',
 })
-export const constructFileName = (time, duration) => (
+export const constructFileName = (time, duration, extension) => (
   // TODO: check if it's necessary to have unique file names
-  `PTT-${time}-${duration}`
+  `PTT-${time}-${duration}.${extension}`
 )
 export const extractMetadataFromName = (name) => {
-  const [prefix, time, duration] = name.split('-')
+  const extension = getExtension(name)
+  const [prefix, time, duration] = name.replace(extension, '').split('-')
   return {
     prefix, time, duration,
   }
@@ -74,7 +75,7 @@ const useAudioRecorder = (
       audio: {
         uri: fileUri,
         mimeType: getMimeType(fileUri),
-        name: constructFileName(time, duration || elapsedTime),
+        name: constructFileName(time, duration || elapsedTime, getExtension(fileUri)),
       },
       repost,
     })
@@ -93,7 +94,7 @@ const useAudioRecorder = (
       audio: {
         uri: fileUri,
         mimeType: getMimeType(fileUri),
-        name: constructFileName(time, elapsedTime),
+        name: constructFileName(time, elapsedTime, getExtension(fileUri)),
       },
     })
     setHasRecording(false)

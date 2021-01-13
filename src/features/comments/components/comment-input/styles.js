@@ -12,7 +12,7 @@ export default (colors) => StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
     width: '100%',
     flexDirection: 'row',
-    paddingBottom: 10,
+    paddingBottom: metrics.spacing.sm,
   },
   textInputSize: {
     minHeight: bottomBarSize,
@@ -31,7 +31,7 @@ export default (colors) => StyleSheet.create({
     borderTopRightRadius: bottomBarSize / 4,
   },
   audioWrapper: {
-    marginRight: 4,
+    marginRight: metrics.spacing.xs,
     flex: 1,
   },
   audioPlayer: {

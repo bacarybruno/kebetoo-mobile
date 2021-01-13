@@ -16,7 +16,7 @@ exports[`renders DraggableIndicator 1`] = `
         "backgroundColor": "rgba(229, 229, 234, 255)",
         "borderRadius": 5,
         "height": 5,
-        "margin": 10,
+        "margin": 8,
         "width": 60,
       }
     }

@@ -18,7 +18,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: 'transparent',
     borderTopColor: 'transparent',
     borderTopWidth: 0,
-    paddingBottom: 10,
+    paddingBottom: metrics.spacing.sm,
   },
   bottomTabOverlay: {
     position: 'absolute',

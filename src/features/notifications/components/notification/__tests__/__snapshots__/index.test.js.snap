@@ -16,7 +16,7 @@ exports[`renders Notification 1`] = `
       Object {
         "flexDirection": "row",
         "paddingHorizontal": 16,
-        "paddingVertical": 14,
+        "paddingVertical": 16,
       },
       false,
     ]
@@ -48,7 +48,7 @@ exports[`renders Notification 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "rgba(0, 122, 255, 255)",
-            "borderRadius": 15,
+            "borderRadius": 1000,
             "flex": 1,
             "justifyContent": "center",
           },
@@ -65,7 +65,7 @@ exports[`renders Notification 1`] = `
       Object {
         "flex": 1,
         "justifyContent": "center",
-        "marginLeft": 12,
+        "marginLeft": 16,
       }
     }
   >
@@ -82,7 +82,7 @@ exports[`renders Notification 1`] = `
           Object {
             "flex": 1,
             "flexDirection": "row",
-            "marginBottom": 5,
+            "marginBottom": 4,
           }
         }
       >

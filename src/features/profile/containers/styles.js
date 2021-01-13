@@ -14,7 +14,7 @@ export default (colors) => StyleSheet.create({
   },
   header: {
     width: '100%',
-    marginTop: 15,
+    marginTop: metrics.spacing.md,
     justifyContent: 'center',
   },
   summary: {
@@ -24,7 +24,7 @@ export default (colors) => StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    marginLeft: 20,
+    marginLeft: metrics.spacing.md,
   },
   imageWrapper: {
     width: imageSize,
@@ -42,9 +42,9 @@ export default (colors) => StyleSheet.create({
     width: '99%',
     alignSelf: 'center',
     height: 68,
-    marginTop: 27,
+    marginTop: metrics.spacing.lg,
     backgroundColor: colors.backgroundSecondary,
-    borderRadius: 16,
+    borderRadius: metrics.radius.lg,
     flexDirection: 'row',
     ...elevation(1),
   },
@@ -61,22 +61,22 @@ export default (colors) => StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
   },
   iconButtonTitle: {
-    marginBottom: 2,
+    marginBottom: metrics.spacing.xs / 2,
   },
   iconWrapper: {
     width: 40,
     height: 40,
-    borderRadius: 20,
+    borderRadius: metrics.radius.round,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.backgroundSecondary,
-    marginRight: 20,
+    marginRight: metrics.spacing.md,
   },
   section: {
-    marginTop: 27,
+    marginTop: metrics.spacing.lg,
   },
   sectionTitle: {
-    marginBottom: 10,
+    marginBottom: metrics.spacing.sm,
     paddingHorizontal: metrics.marginHorizontal,
   },
   iconButtonWrapper: {

@@ -16,7 +16,7 @@ exports[`renders OutlinedButton 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgba(0, 122, 255, 255)",
-        "borderRadius": 3,
+        "borderRadius": 5,
         "borderWidth": 1,
         "height": 36,
         "justifyContent": "center",
@@ -78,7 +78,7 @@ exports[`renders disabled OutlinedButton 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgba(0, 122, 255, 255)",
-        "borderRadius": 3,
+        "borderRadius": 5,
         "borderWidth": 1,
         "height": 36,
         "justifyContent": "center",

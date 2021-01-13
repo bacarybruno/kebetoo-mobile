@@ -214,7 +214,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       imageSrc="https://avatars1.githubusercontent.com/u/14147533"
                                       style={
                                         Object {
-                                          "marginBottom": 20,
+                                          "marginBottom": 16,
                                         }
                                       }
                                     />
@@ -235,7 +235,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       selectedValue="score"
                                       style={
                                         Object {
-                                          "marginBottom": 20,
+                                          "marginBottom": 16,
                                         }
                                       }
                                     />
@@ -297,7 +297,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             "height": 60,
                                           },
                                           Object {
-                                            "marginBottom": 20,
+                                            "marginBottom": 16,
                                           },
                                         ]
                                       }
@@ -459,7 +459,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                 Object {
                                                   "alignItems": "center",
                                                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                  "borderRadius": 15,
+                                                  "borderRadius": 1000,
                                                   "flex": 1,
                                                   "justifyContent": "center",
                                                 },
@@ -496,7 +496,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             "borderTopRightRadius": 20,
                                           },
                                           Object {
-                                            "marginBottom": 20,
+                                            "marginBottom": 16,
                                           },
                                         ]
                                       }
@@ -800,7 +800,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             Object {
                                               "alignItems": "center",
                                               "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 15,
+                                              "borderRadius": 1000,
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
@@ -1095,7 +1095,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               "elevation": 0,
                               "height": 50,
                               "left": 0,
-                              "paddingBottom": 10,
+                              "paddingBottom": 8,
                               "paddingHorizontal": 0,
                               "position": null,
                               "right": 0,
@@ -2040,7 +2040,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       imageSrc="https://avatars1.githubusercontent.com/u/14147533"
                                       style={
                                         Object {
-                                          "marginBottom": 20,
+                                          "marginBottom": 16,
                                         }
                                       }
                                     />
@@ -2061,7 +2061,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       selectedValue="score"
                                       style={
                                         Object {
-                                          "marginBottom": 20,
+                                          "marginBottom": 16,
                                         }
                                       }
                                     />
@@ -2123,7 +2123,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             "height": 60,
                                           },
                                           Object {
-                                            "marginBottom": 20,
+                                            "marginBottom": 16,
                                           },
                                         ]
                                       }
@@ -2285,7 +2285,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                 Object {
                                                   "alignItems": "center",
                                                   "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                  "borderRadius": 15,
+                                                  "borderRadius": 1000,
                                                   "flex": 1,
                                                   "justifyContent": "center",
                                                 },
@@ -2322,7 +2322,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             "borderTopRightRadius": 20,
                                           },
                                           Object {
-                                            "marginBottom": 20,
+                                            "marginBottom": 16,
                                           },
                                         ]
                                       }
@@ -2626,7 +2626,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             Object {
                                               "alignItems": "center",
                                               "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 15,
+                                              "borderRadius": 1000,
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
@@ -2921,7 +2921,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                               "elevation": 0,
                               "height": 50,
                               "left": 0,
-                              "paddingBottom": 10,
+                              "paddingBottom": 8,
                               "paddingHorizontal": 0,
                               "position": null,
                               "right": 0,
@@ -3867,12 +3867,12 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 },
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.54)",
+                                    "color": "rgba(0, 0, 0, 255)",
                                   },
                                   Object {
                                     "backgroundColor": "transparent",
                                     "fontFamily": "System",
-                                    "fontWeight": "400",
+                                    "fontWeight": "300",
                                   },
                                   undefined,
                                 ],
@@ -3899,7 +3899,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                         <RCTScrollView
                           activeDotStyle={
                             Object {
-                              "backgroundColor": "rgba(0,0,0,0.87)",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
                               "height": 8,
                               "width": 15,
                             }
@@ -3915,7 +3915,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                 "backgroundColor": "transparent",
                               },
                               Object {
-                                "marginTop": 11,
+                                "marginTop": 16,
                               },
                             ]
                           }
@@ -3998,7 +3998,7 @@ exports[`onboarding renders OnboardingNavigation 1`] = `
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4027,7 +4027,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4056,7 +4056,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4113,7 +4113,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4141,7 +4141,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4170,7 +4170,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4227,7 +4227,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4255,7 +4255,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4284,7 +4284,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4341,7 +4341,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4370,7 +4370,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4399,7 +4399,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4456,7 +4456,7 @@ You Care About
                                       false,
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4484,7 +4484,7 @@ You Care About
                                       },
                                       Array [
                                         Object {
-                                          "color": "rgba(0,0,0,0.87)",
+                                          "color": "rgba(0, 0, 0, 255)",
                                         },
                                         Object {
                                           "backgroundColor": "transparent",
@@ -4513,7 +4513,7 @@ You Care About
                                         },
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
+                                            "color": "rgba(0, 0, 0, 255)",
                                           },
                                           Object {
                                             "backgroundColor": "transparent",
@@ -4569,7 +4569,7 @@ You Care About
                                   "width": 8,
                                 },
                                 Object {
-                                  "backgroundColor": "rgba(0,0,0,0.87)",
+                                  "backgroundColor": "rgba(0, 122, 255, 255)",
                                   "height": 8,
                                   "width": 15,
                                 },
@@ -4783,7 +4783,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     imageSrc="https://avatars1.githubusercontent.com/u/14147533"
                     style={
                       Object {
-                        "marginBottom": 20,
+                        "marginBottom": 16,
                       }
                     }
                   />
@@ -4804,7 +4804,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     selectedValue="score"
                     style={
                       Object {
-                        "marginBottom": 20,
+                        "marginBottom": 16,
                       }
                     }
                   />
@@ -4866,7 +4866,7 @@ exports[`tabs renders TabNavigation 1`] = `
                           "height": 60,
                         },
                         Object {
-                          "marginBottom": 20,
+                          "marginBottom": 16,
                         },
                       ]
                     }
@@ -5028,7 +5028,7 @@ exports[`tabs renders TabNavigation 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "rgba(0, 122, 255, 255)",
-                                "borderRadius": 15,
+                                "borderRadius": 1000,
                                 "flex": 1,
                                 "justifyContent": "center",
                               },
@@ -5065,7 +5065,7 @@ exports[`tabs renders TabNavigation 1`] = `
                           "borderTopRightRadius": 20,
                         },
                         Object {
-                          "marginBottom": 20,
+                          "marginBottom": 16,
                         },
                       ]
                     }
@@ -5396,7 +5396,7 @@ exports[`tabs renders TabNavigation 1`] = `
             "elevation": 0,
             "height": 50,
             "left": 0,
-            "paddingBottom": 10,
+            "paddingBottom": 8,
             "paddingHorizontal": 0,
             "position": null,
             "right": 0,

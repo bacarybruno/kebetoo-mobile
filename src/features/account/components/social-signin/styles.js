@@ -25,6 +25,6 @@ export default (colors) => StyleSheet.create({
   },
   facebookIconWrapper: {
     backgroundColor: colors.white,
-    borderRadius: 32,
-  }
+    borderRadius: metrics.radius.md,
+  },
 })

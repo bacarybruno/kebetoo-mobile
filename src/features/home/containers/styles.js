@@ -8,7 +8,7 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.background,
   },
   header: {
-    marginBottom: 20,
+    marginBottom: metrics.spacing.md,
   },
   flatlistContent: {
     paddingHorizontal: metrics.marginHorizontal,

@@ -571,7 +571,7 @@ exports[`renders Comments 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "rgba(0, 122, 255, 255)",
-                                "borderRadius": 15,
+                                "borderRadius": 1000,
                                 "flex": 1,
                                 "justifyContent": "center",
                               },
@@ -589,7 +589,7 @@ exports[`renders Comments 1`] = `
                         Array [
                           Object {
                             "justifyContent": "space-between",
-                            "marginLeft": 5,
+                            "marginLeft": 8,
                           },
                           Object {
                             "height": 35,
@@ -847,7 +847,7 @@ exports[`renders Comments 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "elevation": 2,
                             "height": 30,
                             "justifyContent": "center",
@@ -933,7 +933,7 @@ exports[`renders Comments 1`] = `
                           ]
                         }
                       >
-                        0:06
+                        0:00
                       </Text>
                     </View>
                   </View>
@@ -949,10 +949,10 @@ exports[`renders Comments 1`] = `
                   "borderRightColor": "rgba(229, 229, 234, 255)",
                   "borderRightWidth": 1,
                   "borderTopColor": "rgba(229, 229, 234, 255)",
-                  "borderTopLeftRadius": 35,
-                  "borderTopRightRadius": 35,
+                  "borderTopLeftRadius": 40,
+                  "borderTopRightRadius": 40,
                   "borderTopWidth": 1,
-                  "height": 65,
+                  "height": 70,
                   "paddingHorizontal": 24,
                 }
               }
@@ -972,7 +972,7 @@ exports[`renders Comments 1`] = `
                       "backgroundColor": "rgba(229, 229, 234, 255)",
                       "borderRadius": 5,
                       "height": 5,
-                      "margin": 10,
+                      "margin": 8,
                       "width": 60,
                     }
                   }
@@ -1015,7 +1015,7 @@ exports[`renders Comments 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -1090,7 +1090,7 @@ exports[`renders Comments 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -1165,7 +1165,7 @@ exports[`renders Comments 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -1240,7 +1240,7 @@ exports[`renders Comments 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -1428,7 +1428,7 @@ exports[`renders Comments 1`] = `
                         },
                         Array [
                           Object {
-                            "marginRight": 10,
+                            "marginRight": 8,
                           },
                           Object {
                             "backgroundColor": undefined,
@@ -1720,7 +1720,7 @@ exports[`renders Comments 1`] = `
                         },
                         Array [
                           Object {
-                            "marginRight": 10,
+                            "marginRight": 8,
                           },
                           Object {
                             "backgroundColor": undefined,
@@ -1903,7 +1903,7 @@ exports[`renders Comments 1`] = `
         Object {
           "backgroundColor": "rgba(255, 255, 255, 255)",
           "flexDirection": "row",
-          "paddingBottom": 10,
+          "paddingBottom": 8,
           "paddingHorizontal": 16,
           "width": "100%",
         }
@@ -2026,11 +2026,11 @@ exports[`renders Comments 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "rgba(0, 122, 255, 255)",
-                "borderRadius": 22.5,
+                "borderRadius": 1000,
                 "elevation": 2,
                 "height": 45,
                 "justifyContent": "center",
-                "marginLeft": 5,
+                "marginLeft": 8,
                 "maxHeight": 45,
                 "maxWidth": 45,
                 "opacity": 1,
@@ -2642,7 +2642,7 @@ exports[`renders Comments in loading state 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "rgba(0, 122, 255, 255)",
-                                "borderRadius": 15,
+                                "borderRadius": 1000,
                                 "flex": 1,
                                 "justifyContent": "center",
                               },
@@ -2660,7 +2660,7 @@ exports[`renders Comments in loading state 1`] = `
                         Array [
                           Object {
                             "justifyContent": "space-between",
-                            "marginLeft": 5,
+                            "marginLeft": 8,
                           },
                           Object {
                             "height": 35,
@@ -2918,7 +2918,7 @@ exports[`renders Comments in loading state 1`] = `
                           Object {
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
-                            "borderRadius": 15,
+                            "borderRadius": 1000,
                             "elevation": 2,
                             "height": 30,
                             "justifyContent": "center",
@@ -3004,7 +3004,7 @@ exports[`renders Comments in loading state 1`] = `
                           ]
                         }
                       >
-                        0:06
+                        0:00
                       </Text>
                     </View>
                   </View>
@@ -3020,10 +3020,10 @@ exports[`renders Comments in loading state 1`] = `
                   "borderRightColor": "rgba(229, 229, 234, 255)",
                   "borderRightWidth": 1,
                   "borderTopColor": "rgba(229, 229, 234, 255)",
-                  "borderTopLeftRadius": 35,
-                  "borderTopRightRadius": 35,
+                  "borderTopLeftRadius": 40,
+                  "borderTopRightRadius": 40,
                   "borderTopWidth": 1,
-                  "height": 65,
+                  "height": 70,
                   "paddingHorizontal": 24,
                 }
               }
@@ -3043,7 +3043,7 @@ exports[`renders Comments in loading state 1`] = `
                       "backgroundColor": "rgba(229, 229, 234, 255)",
                       "borderRadius": 5,
                       "height": 5,
-                      "margin": 10,
+                      "margin": 8,
                       "width": 60,
                     }
                   }
@@ -3086,7 +3086,7 @@ exports[`renders Comments in loading state 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -3161,7 +3161,7 @@ exports[`renders Comments in loading state 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -3236,7 +3236,7 @@ exports[`renders Comments in loading state 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -3311,7 +3311,7 @@ exports[`renders Comments in loading state 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "marginRight": 15,
+                        "marginRight": 16,
                         "minWidth": 35,
                         "opacity": 1,
                       }
@@ -3499,7 +3499,7 @@ exports[`renders Comments in loading state 1`] = `
                         },
                         Array [
                           Object {
-                            "marginRight": 10,
+                            "marginRight": 8,
                           },
                           Object {
                             "backgroundColor": undefined,
@@ -3791,7 +3791,7 @@ exports[`renders Comments in loading state 1`] = `
                         },
                         Array [
                           Object {
-                            "marginRight": 10,
+                            "marginRight": 8,
                           },
                           Object {
                             "backgroundColor": undefined,
@@ -3974,7 +3974,7 @@ exports[`renders Comments in loading state 1`] = `
         Object {
           "backgroundColor": "rgba(255, 255, 255, 255)",
           "flexDirection": "row",
-          "paddingBottom": 10,
+          "paddingBottom": 8,
           "paddingHorizontal": 16,
           "width": "100%",
         }
@@ -4097,11 +4097,11 @@ exports[`renders Comments in loading state 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "rgba(0, 122, 255, 255)",
-                "borderRadius": 22.5,
+                "borderRadius": 1000,
                 "elevation": 2,
                 "height": 45,
                 "justifyContent": "center",
-                "marginLeft": 5,
+                "marginLeft": 8,
                 "maxHeight": 45,
                 "maxWidth": 45,
                 "opacity": 1,

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native'
 
-import { elevation } from '@app/theme'
+import { elevation, metrics } from '@app/theme'
 
 export const getDimensions = (size) => ({
   width: size,
   height: size,
-  borderRadius: size / 2,
+  borderRadius: metrics.radius.round,
 })
 
 export const getIconSize = (size) => size / 2.22
@@ -32,6 +32,6 @@ export default (colors) => StyleSheet.create({
     ...elevation(10),
   },
   badge: {
-    marginRight: 30,
+    marginRight: metrics.spacing.lg,
   },
 })

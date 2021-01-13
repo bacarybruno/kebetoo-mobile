@@ -43,7 +43,6 @@ export const CommentReply = ({ reply, profile }) => {
 }
 
 // TODO: paginate comments
-// TODO: create custom hook
 const Comments = () => {
   const audioRecorder = useAudioRecorder()
   const { params: { post } } = useRoute()
@@ -57,7 +56,7 @@ const Comments = () => {
     clearToReply,
     loadReplies,
     onComment,
-    onCommentContentPress: onCommentPress,
+    onCommentPress,
     onSend,
     onSetReply,
     setComment,
@@ -67,7 +66,7 @@ const Comments = () => {
     toReply,
     replies,
     comment,
-  } = useComments(navigation, post, commentInput, scrollView)
+  } = useComments(navigation, post, commentInput, scrollView, audioRecorder)
   const insets = useSafeAreaInsets()
 
   const styles = useAppStyles(createThemedStyles)

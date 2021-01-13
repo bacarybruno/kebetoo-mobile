@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 export default (colors) => StyleSheet.create({
   wrapper: {
     alignItems: 'center',
@@ -12,6 +14,6 @@ export default (colors) => StyleSheet.create({
     borderColor: colors.border,
   },
   text: {
-    marginHorizontal: 10,
+    marginHorizontal: metrics.spacing.sm,
   },
 })

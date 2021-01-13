@@ -5,6 +5,7 @@ import Kebeticon from '@app/shared/icons/kebeticons'
 import { edgeInsets } from '@app/theme'
 import { Typography } from '@app/shared/components'
 import { useAppColors } from '@app/shared/hooks'
+import { abbreviateNumber } from '@app/shared/helpers/strings'
 
 import styles from './styles'
 
@@ -23,7 +24,7 @@ const Reaction = ({
       <Typography
         type={Typography.types.headline6}
         systemWeight={Typography.weights.bold}
-        text={count}
+        text={abbreviateNumber(count)}
         color={color}
       />
     </TouchableOpacity>

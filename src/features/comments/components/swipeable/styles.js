@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import { metrics } from '@app/theme'
 
 export const swipeableThresold = metrics.screenWidth / 3.5
-export const swipeableMargin = 80
+export const swipeableMargin = metrics.spacing.xxl * 2
 const iconWrapperSize = 40
 
 export default (colors) => StyleSheet.create({

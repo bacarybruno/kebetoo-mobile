@@ -8,14 +8,16 @@ import styles from './styles'
 const OnboardingSlide = ({ slideTitle, slideDescription }) => (
   <View style={styles.wrapper}>
     <Typography
-      type={Typography.types.headline1}
-      text={slideTitle}
       bold
+      text={slideTitle}
+      type={Typography.types.headline1}
+      color="black"
     />
     <Typography
-      type={Typography.types.subheading}
       text={slideDescription}
       style={styles.description}
+      type={Typography.types.subheading}
+      color="black"
     />
   </View>
 )

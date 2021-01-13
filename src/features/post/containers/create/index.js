@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react'
 import {
-  View, TouchableWithoutFeedback, Platform, ScrollView,
+  View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard,
 } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
@@ -44,14 +44,19 @@ export const actionTypes = {
   EDIT: 'edit',
   CREATE: 'create',
   SHARE: 'share',
+  REPORT: 'report',
 }
-
-const TEXT_MAX_LENGHT = 180
 
 const noop = () => { }
 
 export const PostTextMessage = ({
-  onChange, text, maxNumberOfLines = 8, displayCounter,
+  onChange,
+  text,
+  displayCounter,
+  editable = true,
+  maxNumberOfLines = 8,
+  placeholder = strings.create_post.placeholder,
+  maxLength = 180,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -63,7 +68,7 @@ export const PostTextMessage = ({
           displayCounter
             ? strings.formatString(
               strings.create_post.characters,
-              TEXT_MAX_LENGHT - text.length,
+              maxLength - text.length,
             )
             : strings.create_post.caption
         }
@@ -71,13 +76,14 @@ export const PostTextMessage = ({
       <TextInput
         autoFocus
         multiline
-        placeholder={strings.create_post.placeholder}
+        placeholder={placeholder}
         onValueChange={onChange}
         returnKeyType="done"
         textStyle={styles.textInput}
         wrapperStyle={styles.textInputWrapper}
         inputWrapperStyle={styles.inputWrapper}
-        maxLength={TEXT_MAX_LENGHT}
+        maxLength={maxLength}
+        editable={editable}
         defaultValue={text}
         numberOfLines={Math.min(
           Math.floor(metrics.screenHeight / 75),
@@ -95,24 +101,24 @@ const Button = ({ name, onPress }) => {
   )
 }
 
-const ImagePreviewer = ({ uri, onDelete, onPress }) => {
+export const ImagePreviewer = ({ uri, onDelete, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.imagePreviewer}>
       <TouchableWithoutFeedback onPress={onPress}>
-        <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+        <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
       </TouchableWithoutFeedback>
     </View>
   )
 }
 
-const VideoPreviewer = ({ uri, onDelete, onPress }) => {
+export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.imagePreviewer}>
       <TouchableWithoutFeedback onPress={onPress}>
         <View>
-          <ImageViewer source={{ uri }} borderRadius={15} onDelete={onDelete} />
+          <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
           <VideoMarker style={{ position: 'absolute', left: 10, bottom: 5 }} />
         </View>
       </TouchableWithoutFeedback>
@@ -134,6 +140,7 @@ const CreatePostPage = ({ route, navigation }) => {
   const [isLoading, setIsLoading] = useState(false)
   const editMode = params && params.action === actionTypes.EDIT
   const shareMode = params && params.action === actionTypes.SHARE
+  const reportMode = params && params.action === actionTypes.REPORT
   const mediaType = getMediaType(params && params.sharedFile)
   const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
   const filePicker = useFilePicker(['image', 'video'].includes(mediaType) ? params.sharedFile : undefined)
@@ -144,10 +151,14 @@ const CreatePostPage = ({ route, navigation }) => {
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
     try {
+      Keyboard.dismiss()
       let post = null
       const repost = params?.post ?? undefined
       if (editMode) {
         post = await api.posts.update({ id: params.payload.id, content: text })
+      } else if (reportMode) {
+        if (filePicker.hasFile) post = await filePicker.saveFeedback(profile.uid, text)
+        else post = api.feedbacks.create({ content: text, author: profile.uid })
       } else if (audioRecorder.hasRecording) {
         post = await audioRecorder.savePost(profile.uid, text, repost)
       } else if (filePicker.hasFile) {
@@ -155,6 +166,8 @@ const CreatePostPage = ({ route, navigation }) => {
       } else {
         post = await api.posts.create({ content: text, repost, author: profile.uid })
       }
+
+      if (post.error) throw new Error(post.error)
 
       const updatedPost = { ...post }
       if (filePicker?.file?.uri) {
@@ -185,6 +198,14 @@ const CreatePostPage = ({ route, navigation }) => {
         })
       }
 
+      if (reportMode) {
+        Snackbar.show({
+          text: strings.create_post.feedback_sent,
+          duration: Snackbar.LENGTH_LONG,
+        })
+        return navigation.goBack()
+      }
+
       Snackbar.show({
         text: strings.create_post.post_created,
         duration: Snackbar.LENGTH_LONG,
@@ -201,7 +222,7 @@ const CreatePostPage = ({ route, navigation }) => {
     } catch (error) {
       reportError(error)
       Snackbar.show({
-        text: strings.errors.create_post_error,
+        text: reportMode ? strings.errors.generic : strings.errors.create_post_error,
         duration: Snackbar.LENGTH_LONG,
         action: {
           text: strings.errors.retry.toUpperCase(),
@@ -211,7 +232,7 @@ const CreatePostPage = ({ route, navigation }) => {
       })
       return setIsLoading(false)
     }
-  }, [params, editMode, audioRecorder, filePicker, navigation, text, profile.uid, reportError])
+  }, [params, editMode, audioRecorder, filePicker, reportMode, navigation, text, profile.uid, reportError])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
@@ -226,11 +247,17 @@ const CreatePostPage = ({ route, navigation }) => {
         title: strings.create_post.share_post,
       }
     }
+    if (reportMode) {
+      return {
+        post: strings.general.send,
+        title: strings.general.support,
+      }
+    }
     return {
       post: strings.general.post,
       title: strings.create_post.create_post,
     }
-  }, [editMode, shareMode])
+  }, [editMode, shareMode, reportMode])
 
   useLayoutEffect(() => {
     const headerMessages = getHeaderMessages()
@@ -267,7 +294,14 @@ const CreatePostPage = ({ route, navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
       <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
-        <PostTextMessage onChange={setText} text={text} displayCounter={text.length > 0} />
+        <PostTextMessage
+          onChange={setText}
+          text={text}
+          editable={!isLoading}
+          displayCounter={text.length > 0}
+          placeholder={reportMode ? strings.create_post.report_mode_placeholder : undefined}
+          maxLength={reportMode ? 1000 : undefined}
+        />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
             <AudioPlayer
@@ -297,21 +331,23 @@ const CreatePostPage = ({ route, navigation }) => {
             <View style={styles.buttonsContainer}>
               {!audioRecorder.isRecording && !shareMode && (
                 <>
-                  <Button name="camera" onPress={filePicker.pickVideo} />
+                  {!reportMode && <Button name="camera" onPress={filePicker.pickVideo} />}
                   <Button name="photo" onPress={filePicker.pickImage} />
-                  <Button name="more-h" onPress={noop} />
+                  {!reportMode && <Button name="more-h" onPress={noop} />}
                 </>
               )}
             </View>
-            <IconButton
-              activable
-              name="microphone"
-              style={styles.iconButton}
-              onPressIn={audioRecorder.start}
-              onPressOut={audioRecorder.stop}
-              isActive={audioRecorder.isRecording}
-              text={readableSeconds(audioRecorder.elapsedTime)}
-            />
+            {!reportMode && (
+              <IconButton
+                activable
+                name="microphone"
+                style={styles.iconButton}
+                onPressIn={audioRecorder.start}
+                onPressOut={audioRecorder.stop}
+                isActive={audioRecorder.isRecording}
+                text={readableSeconds(audioRecorder.elapsedTime)}
+              />
+            )}
           </View>
         )}
       </View>

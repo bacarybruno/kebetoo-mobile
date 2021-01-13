@@ -29,6 +29,7 @@ const VideoDurationChecker = ({ uri, onChange }) => {
   )
 }
 
+// TODO: prefetch images
 const VideoPlayer = ({
   source, localSource, duration, thumbnail, preview,
 }) => {
@@ -37,8 +38,8 @@ const VideoPlayer = ({
   const { colors } = useAppColors()
   const componentRef = useRef()
 
-  const intervalDelay = 300
-  const videoPreviewShowDelay = 3000
+  const intervalDelay = 500
+  const videoPreviewShowDelay = 5000
 
   const [videoDuration, setVideoDuration] = useState(duration)
   const [visibilityThresold, setVisibilityThresold] = useState(0)

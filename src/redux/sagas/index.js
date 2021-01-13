@@ -25,7 +25,6 @@ function* fetchPosts(action) {
 
     yield put({ type: postActionType, payload: data || [] })
   } catch (error) {
-    console.log(error)
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })
   }
 }

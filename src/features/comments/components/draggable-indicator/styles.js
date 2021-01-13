@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 export default (colors) => StyleSheet.create({
   draggableContainer: {
     width: '100%',
@@ -9,8 +11,8 @@ export default (colors) => StyleSheet.create({
   draggableIcon: {
     width: 60,
     height: 5,
-    borderRadius: 5,
-    margin: 10,
+    borderRadius: metrics.radius.sm,
+    margin: metrics.spacing.sm,
     backgroundColor: colors.border,
   },
 })

@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 export const bottomBarSize = 45
 
 export default (colors) => StyleSheet.create({
@@ -7,7 +9,7 @@ export default (colors) => StyleSheet.create({
     flex: 1,
   },
   audio: {
-    marginTop: 5,
+    marginTop: metrics.spacing.xs,
     backgroundColor: colors.backgroundSecondary,
   },
   reactionsWrapper: {
@@ -19,20 +21,20 @@ export default (colors) => StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 5,
-    paddingHorizontal: 5,
+    paddingTop: metrics.spacing.sm,
+    paddingHorizontal: metrics.spacing.sm,
   },
   row: {
     flex: 1,
     flexDirection: 'row',
   },
   avatarWrapper: {
-    marginRight: 10,
+    marginRight: metrics.spacing.sm,
   },
   header: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 5,
+    marginBottom: metrics.spacing.xs,
   },
 })

@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useReducer } from 'react'
 
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
-import { useAudioRecorder, useUser, usePosts } from '@app/shared/hooks'
+import { useUser, usePosts } from '@app/shared/hooks'
 import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 import { getSource } from '@app/features/post/components/image-content'
@@ -44,9 +44,7 @@ const mapComments = (comment) => ({
 })
 
 // TODO: paginate comments
-const useComments = ({ navigate }, post, commentInput, scrollView) => {
-  const audioRecorder = useAudioRecorder()
-
+const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder) => {
   const initialComments = post.comments?.map(mapComments)
   if (initialComments) {
     initialState.comments = initialComments
@@ -83,7 +81,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
   }, [])
 
   const endLoading = useCallback(() => {
-    dispatch({ type: actionTypes.START_LOADING })
+    dispatch({ type: actionTypes.END_LOADING })
   }, [])
 
   const setLoading = useCallback((loading) => {
@@ -92,38 +90,42 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
   }, [endLoading, startLoading])
 
   const onSend = useCallback(async () => {
-    let result = null
     setLoading(true)
 
-    let replyThread = null
-    if (toReply) {
-      // use the comment reply thread or the base comment
-      replyThread = toReply.thread || toReply
-    }
+    try {
+      let result = null
+      let replyThread = null
+      if (toReply) {
+        // use the comment reply thread or the base comment
+        replyThread = toReply.thread || toReply
+      }
 
-    if (audioRecorder.hasRecording) {
-      result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
-    } else if (comment.length > 0) {
-      result = await api.comments.create({
-        author: profile.uid,
-        content: comment,
-        thread: replyThread ? replyThread.id : null,
-        post: replyThread ? null : post.id,
-      })
+      if (audioRecorder.hasRecording) {
+        result = await audioRecorder.saveComment(post.id, profile.uid, replyThread)
+      } else if (comment.length > 0) {
+        result = await api.comments.create({
+          author: profile.uid,
+          content: comment,
+          thread: replyThread ? replyThread.id : null,
+          post: replyThread ? null : post.id,
+        })
+      }
+      if (replyThread) {
+        dispatch({
+          type: actionTypes.ADD_REPLIES,
+          payload: { threadId: replyThread.id, replies: result },
+        })
+      } else {
+        dispatch({ type: actionTypes.ADD_COMMENT, payload: result })
+        setTimeout(() => scrollView?.current?.scrollToEnd(), 200)
+      }
+    } finally {
+      // cleanup
       commentInput.current?.clear()
-      dispatch({ type: actionTypes.CLEAR_COMMENT })
-    }
-    if (replyThread) {
-      dispatch({
-        type: actionTypes.ADD_REPLIES,
-        payload: { threadId: replyThread.id, replies: result },
-      })
       dispatch({ type: actionTypes.CLEAR_TO_REPLY })
-    } else {
-      dispatch({ type: actionTypes.ADD_COMMENT, payload: result })
-      setTimeout(() => scrollView?.current?.scrollToEnd(), 200)
+      dispatch({ type: actionTypes.CLEAR_COMMENT })
+      setLoading(false)
     }
-    setLoading(false)
   }, [setLoading, toReply, audioRecorder, comment, post.id, profile.uid, commentInput, scrollView])
 
   const onSetReply = useCallback((item) => {
@@ -147,7 +149,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
 
   const onComment = useCallback(() => commentInput.current?.focus(), [])
 
-  const onCommentContentPress = useCallback(() => {
+  const onCommentPress = useCallback(() => {
     const type = getPostType(post)
     if (type === POST_TYPES.IMAGE) {
       navigate(routes.MODAL_IMAGE, {
@@ -156,6 +158,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
       })
       return false
     }
+    // TODO: handle video
     return true
   }, [navigate, post])
 
@@ -169,12 +172,12 @@ const useComments = ({ navigate }, post, commentInput, scrollView) => {
 
   return {
     onSend,
-    onSetReply,
-    loadReplies,
     onComment,
-    onCommentContentPress,
-    clearToReply,
+    onSetReply,
     setComment,
+    loadReplies,
+    clearToReply,
+    onCommentPress,
     isLoading,
     authors,
     comments,

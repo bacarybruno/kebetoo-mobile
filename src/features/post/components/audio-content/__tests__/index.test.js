@@ -2,6 +2,7 @@ import { render, fireEvent } from 'react-native-testing-library'
 
 import { constructFileName } from '@app/shared/hooks/audio-recorder'
 import setupTest from '@app/config/jest-setup'
+import { getExtension } from '@app/shared/helpers/file'
 
 import AudioContent from '../index'
 
@@ -11,7 +12,7 @@ const givenAudioContent = setupTest(AudioContent, render)({
   style: { elevation: 3 },
   onPress: jest.fn(),
   // date format: YYYYMMDD
-  audioName: constructFileName(20200625, 10),
+  audioName: constructFileName(20200625, 10, getExtension('/fake-audio.mp3')),
 })
 
 it('renders AudioContent', () => {

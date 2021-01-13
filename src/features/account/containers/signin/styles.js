@@ -27,7 +27,7 @@ export default (colors) => StyleSheet.create({
   },
   forgotPassword: {
     textAlign: 'right',
-    marginTop: 10,
+    marginTop: metrics.spacing.sm,
   },
   keyboard: {
     backgroundColor: colors.background,

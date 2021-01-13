@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import { metrics } from '@app/theme'
+
 const imageSize = 30
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -10,7 +12,7 @@ export default (colors) => StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: imageSize / 2,
+    borderRadius: metrics.radius.round,
     backgroundColor: colors.primary,
   },
 })

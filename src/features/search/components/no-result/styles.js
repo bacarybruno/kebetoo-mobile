@@ -12,7 +12,7 @@ export default (colors) => StyleSheet.create({
   },
   title: {
     fontSize: 40,
-    marginBottom: 10,
+    marginBottom: metrics.spacing.sm,
   },
   message: {
     textAlign: 'center',

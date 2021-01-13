@@ -579,8 +579,8 @@ exports[`renders CameraRollPicker 1`] = `
                                     "backgroundColor": "#F5F5F5",
                                     "elevation": 3,
                                     "flexDirection": "column",
-                                    "height": 372,
-                                    "marginBottom": 6,
+                                    "height": 373,
+                                    "marginBottom": 4,
                                     "shadowColor": "rgba(0, 0, 0, 255)",
                                     "shadowOffset": Object {
                                       "x": 0,
@@ -588,7 +588,7 @@ exports[`renders CameraRollPicker 1`] = `
                                     },
                                     "shadowOpacity": 0.22,
                                     "shadowRadius": 2.22,
-                                    "width": 372,
+                                    "width": 373,
                                   }
                                 }
                                 testID="All Photos"
@@ -687,8 +687,8 @@ exports[`renders CameraRollPicker 1`] = `
                                     "backgroundColor": "#F5F5F5",
                                     "elevation": 3,
                                     "flexDirection": "column",
-                                    "height": 372,
-                                    "marginBottom": 6,
+                                    "height": 373,
+                                    "marginBottom": 4,
                                     "shadowColor": "rgba(0, 0, 0, 255)",
                                     "shadowOffset": Object {
                                       "x": 0,
@@ -696,7 +696,7 @@ exports[`renders CameraRollPicker 1`] = `
                                     },
                                     "shadowOpacity": 0.22,
                                     "shadowRadius": 2.22,
-                                    "width": 372,
+                                    "width": 373,
                                   }
                                 }
                                 testID="Pictures"
@@ -814,8 +814,8 @@ exports[`renders CameraRollPicker 1`] = `
                                     "backgroundColor": "#F5F5F5",
                                     "elevation": 3,
                                     "flexDirection": "column",
-                                    "height": 372,
-                                    "marginBottom": 6,
+                                    "height": 373,
+                                    "marginBottom": 4,
                                     "shadowColor": "rgba(0, 0, 0, 255)",
                                     "shadowOffset": Object {
                                       "x": 0,
@@ -823,7 +823,7 @@ exports[`renders CameraRollPicker 1`] = `
                                     },
                                     "shadowOpacity": 0.22,
                                     "shadowRadius": 2.22,
-                                    "width": 372,
+                                    "width": 373,
                                   }
                                 }
                                 testID="Camera"

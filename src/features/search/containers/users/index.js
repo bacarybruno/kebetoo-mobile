@@ -61,8 +61,8 @@ export const SearchHistoryHeader = ({ onClear }) => {
   const { colors } = useAppColors()
   return (
     <View style={[styles.historyHeader, styles.paddingHorizontal]}>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Ionicon name="md-time" size={18} style={{ marginRight: 8 }} color={colors.textPrimary} />
+      <View style={styles.container}>
+        <Ionicon name="md-time" size={18} style={styles.icon} color={colors.textPrimary} />
         <Typography
           type={Typography.types.subheading}
           systemWeight={Typography.weights.semibold}

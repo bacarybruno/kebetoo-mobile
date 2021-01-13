@@ -7,7 +7,7 @@ export default (colors) => StyleSheet.create({
     width: 22,
     height: 22,
     backgroundColor: colors.backgroundSecondary,
-    borderRadius: 11,
+    borderRadius: metrics.radius.md,
     justifyContent: 'center',
     alignItems: 'center',
   },

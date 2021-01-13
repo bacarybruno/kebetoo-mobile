@@ -14,7 +14,7 @@ import Kebeticon from '@app/shared/icons/kebeticons'
 import {
   TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
 } from '@app/shared/components'
-import { images } from '@app/theme'
+import { images, metrics } from '@app/theme'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
@@ -93,7 +93,7 @@ const defaultTabOptions = ({ route }) => ({
           name={iconName}
           size={size * 1.5}
           color={color}
-          style={{ marginTop: focused ? -8 : 0 }}
+          style={{ marginTop: focused ? -metrics.spacing.sm : 0 }}
         />
       )
   },
