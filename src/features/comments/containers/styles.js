@@ -72,4 +72,9 @@ export default (colors) => StyleSheet.create({
   keyboard: {
     backgroundColor: colors.background,
   },
+  headerBackButton: {
+    width: metrics.spacing.xl,
+    paddingVertical: metrics.spacing.sm,
+    alignItems: 'flex-start'
+  },
 })

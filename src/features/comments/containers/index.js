@@ -116,7 +116,7 @@ const Comments = () => {
       onPress={navigation.goBack}
       labelVisible={false}
       backImage={() => (
-        <HeaderBack tintColor={colors.textPrimary} />
+        <HeaderBack tintColor={colors.textPrimary} style={styles.headerBackButton} />
       )}
     />
   ), [colors.textPrimary, navigation.goBack])

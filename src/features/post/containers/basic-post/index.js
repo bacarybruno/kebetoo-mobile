@@ -97,16 +97,16 @@ export const Header = ({
   }, [author.id, navigate])
 
   return (
-    <TouchableOpacity onPress={onShowProfile}>
-      <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
-        <View style={styles.left}>
+    <View style={[styles.headerWrapper, isRepost && styles.repostHeaderWrapper]}>
+      {Left && <Left />}
+      <View style={styles.content}>
+        <TouchableOpacity style={styles.left} onPress={onShowProfile}>
           <View style={styles.headerContent}>
-            {Left && <Left />}
             {author ? (
               <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
             ) : (
-              <PlaceholderAvatar size={avatarSize} />
-            )}
+                <PlaceholderAvatar size={avatarSize} />
+              )}
           </View>
           {author && (
             <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
@@ -127,14 +127,14 @@ export const Header = ({
               )}
             </View>
           )}
-        </View>
+        </TouchableOpacity>
         {onOptions && (
           <View style={styles.moreButton}>
             <MoreButton onPress={() => onOptions(post.id)} />
           </View>
         )}
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
