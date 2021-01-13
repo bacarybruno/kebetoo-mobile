@@ -443,39 +443,103 @@ exports[`renders Comments 1`] = `
               }
             >
               <View
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
-                  Object {
-                    "opacity": 1,
-                  }
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "marginBottom": 8,
+                    },
+                    undefined,
+                  ]
                 }
               >
-                <View
+                <RNGestureHandlerButton
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Go back"
+                  accessibilityRole="button"
+                  accessibilityTraits="button"
+                  accessible={true}
+                  activeOpacity={0.3}
+                  borderless={true}
+                  collapsable={false}
+                  delayPressIn={0}
+                  onActiveStateChange={[Function]}
+                  onGestureEvent={[Function]}
+                  onGestureHandlerEvent={[Function]}
+                  onGestureHandlerStateChange={[Function]}
+                  onHandlerStateChange={[Function]}
+                  onPress={[Function]}
+                  pressColor="rgba(0, 0, 0, .32)"
                   style={
                     Array [
                       Object {
+                        "overflow": "hidden",
+                      },
+                      Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "justifyContent": "space-between",
-                        "marginBottom": 8,
+                        "opacity": 1,
                       },
-                      undefined,
                     ]
                   }
+                  testID="header-back"
                 >
                   <View
                     style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "justifyContent": "center",
+                          "marginLeft": 16,
+                          "width": 24,
+                        },
+                        Object {
+                          "alignItems": "flex-start",
+                          "paddingVertical": 8,
+                          "width": 32,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                          "fontFamily": "icomoon",
+                          "fontSize": 20,
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        }
+                      }
+                      text="kebeticon-chevron-left"
+                    />
+                  </View>
+                </RNGestureHandlerButton>
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
                       Object {
+                        "flex": 1,
                         "flexDirection": "row",
-                        "justifyContent": "space-between",
+                        "opacity": 1,
                       }
                     }
                   >
@@ -486,65 +550,6 @@ exports[`renders Comments 1`] = `
                         }
                       }
                     >
-                      <RNGestureHandlerButton
-                        accessibilityComponentType="button"
-                        accessibilityLabel="Go back"
-                        accessibilityRole="button"
-                        accessibilityTraits="button"
-                        accessible={true}
-                        activeOpacity={0.3}
-                        borderless={true}
-                        collapsable={false}
-                        delayPressIn={0}
-                        onActiveStateChange={[Function]}
-                        onGestureEvent={[Function]}
-                        onGestureHandlerEvent={[Function]}
-                        onGestureHandlerStateChange={[Function]}
-                        onHandlerStateChange={[Function]}
-                        onPress={[Function]}
-                        pressColor="rgba(0, 0, 0, .32)"
-                        style={
-                          Array [
-                            Object {
-                              "overflow": "hidden",
-                            },
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "opacity": 1,
-                            },
-                          ]
-                        }
-                        testID="header-back"
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "marginLeft": 16,
-                                "width": 24,
-                              },
-                              undefined,
-                            ]
-                          }
-                        >
-                          <Text
-                            allowFontScaling={false}
-                            style={
-                              Object {
-                                "color": "rgba(0,0,0,0.87)",
-                                "fontFamily": "icomoon",
-                                "fontSize": 20,
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              }
-                            }
-                            text="kebeticon-chevron-left"
-                          />
-                        </View>
-                      </RNGestureHandlerButton>
                       <View
                         style={
                           Array [
@@ -2514,39 +2519,103 @@ exports[`renders Comments in loading state 1`] = `
               }
             >
               <View
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
-                  Object {
-                    "opacity": 1,
-                  }
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "marginBottom": 8,
+                    },
+                    undefined,
+                  ]
                 }
               >
-                <View
+                <RNGestureHandlerButton
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Go back"
+                  accessibilityRole="button"
+                  accessibilityTraits="button"
+                  accessible={true}
+                  activeOpacity={0.3}
+                  borderless={true}
+                  collapsable={false}
+                  delayPressIn={0}
+                  onActiveStateChange={[Function]}
+                  onGestureEvent={[Function]}
+                  onGestureHandlerEvent={[Function]}
+                  onGestureHandlerStateChange={[Function]}
+                  onHandlerStateChange={[Function]}
+                  onPress={[Function]}
+                  pressColor="rgba(0, 0, 0, .32)"
                   style={
                     Array [
                       Object {
+                        "overflow": "hidden",
+                      },
+                      Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "justifyContent": "space-between",
-                        "marginBottom": 8,
+                        "opacity": 1,
                       },
-                      undefined,
                     ]
                   }
+                  testID="header-back"
                 >
                   <View
                     style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "justifyContent": "center",
+                          "marginLeft": 16,
+                          "width": 24,
+                        },
+                        Object {
+                          "alignItems": "flex-start",
+                          "paddingVertical": 8,
+                          "width": 32,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                          "fontFamily": "icomoon",
+                          "fontSize": 20,
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        }
+                      }
+                      text="kebeticon-chevron-left"
+                    />
+                  </View>
+                </RNGestureHandlerButton>
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
                       Object {
+                        "flex": 1,
                         "flexDirection": "row",
-                        "justifyContent": "space-between",
+                        "opacity": 1,
                       }
                     }
                   >
@@ -2557,65 +2626,6 @@ exports[`renders Comments in loading state 1`] = `
                         }
                       }
                     >
-                      <RNGestureHandlerButton
-                        accessibilityComponentType="button"
-                        accessibilityLabel="Go back"
-                        accessibilityRole="button"
-                        accessibilityTraits="button"
-                        accessible={true}
-                        activeOpacity={0.3}
-                        borderless={true}
-                        collapsable={false}
-                        delayPressIn={0}
-                        onActiveStateChange={[Function]}
-                        onGestureEvent={[Function]}
-                        onGestureHandlerEvent={[Function]}
-                        onGestureHandlerStateChange={[Function]}
-                        onHandlerStateChange={[Function]}
-                        onPress={[Function]}
-                        pressColor="rgba(0, 0, 0, .32)"
-                        style={
-                          Array [
-                            Object {
-                              "overflow": "hidden",
-                            },
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "opacity": 1,
-                            },
-                          ]
-                        }
-                        testID="header-back"
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "marginLeft": 16,
-                                "width": 24,
-                              },
-                              undefined,
-                            ]
-                          }
-                        >
-                          <Text
-                            allowFontScaling={false}
-                            style={
-                              Object {
-                                "color": "rgba(0,0,0,0.87)",
-                                "fontFamily": "icomoon",
-                                "fontSize": 20,
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              }
-                            }
-                            text="kebeticon-chevron-left"
-                          />
-                        </View>
-                      </RNGestureHandlerButton>
                       <View
                         style={
                           Array [
