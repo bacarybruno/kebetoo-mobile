@@ -16,10 +16,16 @@ import { getFileName, getExtension } from '@app/shared/helpers/file'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
+import { useActionSheet } from '@expo/react-native-action-sheet'
+import Ionicon from 'react-native-vector-icons/Ionicons'
+import Snackbar from 'react-native-snackbar'
+
 import { AppHeader, SegmentedControl } from '@app/shared/components'
+import { actionTypes } from '@app/features/post/containers/create'
 import {
   useAnalytics, useAppColors, useAppStyles, usePosts, useUser,
 } from '@app/shared/hooks'
+import { rgbaToHex } from '@app/theme/colors'
 
 import createThemedStyles from './styles'
 
@@ -39,6 +45,7 @@ const HomePage = ({ navigation }) => {
 
   const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
+  const { showActionSheetWithOptions } = useActionSheet()
 
   const handleShare = useCallback(async (item) => {
     if (!item?.data) return
@@ -102,17 +109,86 @@ const HomePage = ({ navigation }) => {
 
   const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
 
+  const hidePost = useCallback((post) => {
+    dispatch({ type: types.HIDE_POST, payload: post })
+    Snackbar.show({
+      text: strings.home.hide_post_done,
+      duration: Snackbar.LENGTH_SHORT,
+    })
+  }, [dispatch])
+
+  const reportPost = useCallback((post) => {
+    navigation.navigate(routes.CREATE_POST, {
+      action: actionTypes.REPORT,
+      sharedText: `[${post.id}]\n\n ${strings.home.report_post_message}`,
+      onGoBack: () => hidePost(post),
+    })
+  }, [hidePost, navigation])
+
+  const blockAuthor = useCallback((post) => {
+    dispatch({ type: types.BLOCK_AUTHOR, payload: post })
+    Snackbar.show({
+      text: strings.formatString(strings.home.block_author_done, post.author.displayName.split(' ')[0]),
+      duration: Snackbar.LENGTH_SHORT,
+    })
+  }, [dispatch])
+
+  const showPostOptions = useCallback((post) => {
+    const bottomSheetItems = [{
+      title: strings.home.hide_post,
+      icon: 'md-eye-off',
+    }, {
+      title: strings.home.report_post,
+      icon: 'md-flag',
+    }, {
+      title: strings.formatString(
+        strings.home.block_author,
+        post.author.displayName.split(' ')[0],
+      ),
+      icon: 'md-remove-circle',
+    }, {
+      title: strings.general.cancel,
+      icon: 'md-close',
+    }]
+
+    const cancelButtonIndex = 3
+    showActionSheetWithOptions({
+      options: bottomSheetItems.map((item) => item.title),
+      icons: bottomSheetItems.map((item) => (
+        <Ionicon
+          name={item.icon}
+          size={24}
+          color={colors.textPrimary}
+        />
+      )),
+      cancelButtonIndex,
+      title: strings.general.actions,
+      textStyle: { color: colors.textPrimary },
+      titleTextStyle: { color: colors.textSecondary },
+      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
+    }, (index) => {
+      if (index === 0) {
+        hidePost(post)
+      } else if (index === 1) {
+        reportPost(post)
+      } else if (index === 2) {
+        blockAuthor(post)
+      }
+    })
+  }, [colors, blockAuthor, hidePost, reportPost, showActionSheetWithOptions])
+
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
       post={item}
       author={item.author}
+      onOptions={() => showPostOptions(item)}
       originalAuthor={
         item.repost
           ? authors[item.repost.author]
           : item.author
       }
     />
-  ), [authors])
+  ), [authors, showPostOptions])
 
   const onSelectFilter = useCallback((item) => {
     setPostsSort(item.value)

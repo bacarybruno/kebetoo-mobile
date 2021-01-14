@@ -56,6 +56,12 @@ const locales = Object.freeze({
     whats_new: 'Happy to see you!',
     sort_trending: 'Trending',
     sort_recent: 'Recents',
+    hide_post: 'Hide this post',
+    hide_post_done: 'This post will no longer appear in your news feed',
+    report_post: 'Report this post',
+    report_post_message: 'I\'m reporting this post because ...',
+    block_author_done: 'You\'ll no longer see {0}\'s posts',
+    block_author: 'Block {0}',
   },
   profile: {
     posts: 'Posts',

@@ -17,6 +17,8 @@ const initialState = {
     photoURL: null,
     isLoggedIn: false,
   },
+  hiddenPosts: [],
+  blockedAuthors: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -90,6 +92,16 @@ const reducer = (state = initialState, action) => {
           ...state.searchHistory,
           users: state.searchHistory.users.filter((user) => user !== action.payload),
         },
+      }
+    case types.HIDE_POST:
+      return {
+        ...state,
+        hiddenPosts: [...(state.hiddenPosts || []), action.payload.id],
+      }
+    case types.BLOCK_AUTHOR:
+      return {
+        ...state,
+        blockedAuthors: [...(state.blockedAuthors || []), action.payload.author.id],
       }
     default:
       return state

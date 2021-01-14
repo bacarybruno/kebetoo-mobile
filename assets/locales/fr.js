@@ -56,6 +56,12 @@ const locales = Object.freeze({
     whats_new: 'Content de vous voir!',
     sort_trending: 'Tendance',
     sort_recent: 'Récents',
+    hide_post: 'Masquer ce post',
+    hide_post_done: 'Ce post n\'apparaîtra plus dans votre fil d\'actualité',
+    report_post: 'Signaler ce post',
+    report_post_message: 'Je signale ce post parce que ...',
+    block_author_done: 'Vous ne verrez plus les posts de {0}',
+    block_author: 'Bloquer {0}',
   },
   profile: {
     posts: 'Posts',
