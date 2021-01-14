@@ -907,6 +907,56 @@ exports[`renders HomePage 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "width": 30,
+                  }
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
+                    Object {
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
+                    }
+                  }
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
+              </View>
             </View>
           </View>
           <View>
@@ -1602,6 +1652,56 @@ exports[`renders HomePage 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "width": 30,
+                  }
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
+                    Object {
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
+                    }
+                  }
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
+              </View>
             </View>
           </View>
           <View
@@ -2269,6 +2369,56 @@ exports[`renders HomePage 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "width": 30,
+                  }
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
+                    Object {
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
+                    }
+                  }
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
+              </View>
             </View>
           </View>
           <View>
@@ -2928,6 +3078,56 @@ exports[`renders HomePage 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "width": 30,
+                  }
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
+                    Object {
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
+                    }
+                  }
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
+                </View>
+              </View>
             </View>
           </View>
           <View
@@ -3540,6 +3740,56 @@ exports[`renders HomePage 1`] = `
                       7 days ago
                     </Text>
                   </View>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "width": 30,
+                  }
+                }
+              >
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
+                    Object {
+                      "bottom": 50,
+                      "left": 50,
+                      "right": 50,
+                      "top": 50,
+                    }
+                  }
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "opacity": 1,
+                      "width": 30,
+                    }
+                  }
+                  testID="more-button"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.38)",
+                        "fontFamily": "Ionicons",
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-more"
+                  />
                 </View>
               </View>
             </View>

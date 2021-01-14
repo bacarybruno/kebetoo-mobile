@@ -12,18 +12,28 @@ import {
 
 import channels from './channels'
 import * as types from '../types'
-import { emojiHistorySelector, userProfileSelector } from '../selectors'
+import { blockedItemsSelector, emojiHistorySelector, userProfileSelector } from '../selectors'
 
 function* fetchPosts(action) {
   try {
-    const data = yield call([api.posts, 'get'], action.payload)
+    const posts = yield call([api.posts, 'get'], action.payload)
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
     if (action.payload.page === 0) {
       postActionType = types.REPLACE_POSTS
     }
 
-    yield put({ type: postActionType, payload: data || [] })
+    const blockedItems = yield select(blockedItemsSelector)
+
+    // allow only posts that are not blocked by user
+    // and those on which author is not blocked
+    let allowedPosts = posts
+    allowedPosts = posts.filter((post) => (
+      !blockedItems.posts.includes(post.id)
+      && !blockedItems.authors.includes(post.author.id)
+    ))
+
+    yield put({ type: postActionType, payload: allowedPosts || [] })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })
   }

@@ -14,6 +14,10 @@ const posts = (state = initialState.posts, action) => {
       return mergeArrays(state, action.payload)
     case types.REPLACE_POSTS:
       return mergeArrays([], action.payload)
+    case types.HIDE_POST:
+      return state.filter((post) => post.id !== action.payload.id)
+    case types.BLOCK_AUTHOR:
+      return state.filter((post) => post.author.id !== action.payload.author.id)
     default:
       return state
   }
