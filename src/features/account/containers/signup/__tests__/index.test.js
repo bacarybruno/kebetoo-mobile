@@ -1,6 +1,7 @@
 import { render, fireEvent } from 'react-native-testing-library'
 import auth from '@react-native-firebase/auth'
 import { act } from 'react-test-renderer'
+import { Linking } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
@@ -147,5 +148,21 @@ describe('auth errors', () => {
       expect(wrapper.root.findByProps({ fieldName: testCases[errorCode].fieldName }).props.error)
         .toBe(testCases[errorCode].fieldValue)
     })
+  })
+})
+
+
+describe('terms and privacy', () => {
+  it('opens terms and conditions on click', () => {
+    const { wrapper } = givenSignUpTestRenderer()
+    fireEvent.press(wrapper.root.findByProps({ text: strings.auth.terms_and_conditions }))
+    expect(Linking.openURL).toBeCalledTimes(1)
+    expect(Linking.openURL).toBeCalledWith(strings.auth.tos_url)
+  })
+  it('opens privacy policy on click', () => {
+    const { wrapper } = givenSignUpTestRenderer()
+    fireEvent.press(wrapper.root.findByProps({ text: strings.auth.privacy_policy }))
+    expect(Linking.openURL).toBeCalledTimes(1)
+    expect(Linking.openURL).toBeCalledWith(strings.auth.privacy_policy_url)
   })
 })

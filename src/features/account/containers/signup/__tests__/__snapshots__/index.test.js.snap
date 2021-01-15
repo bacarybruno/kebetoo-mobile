@@ -55,9 +55,9 @@ exports[`renders SignUp 1`] = `
       <View
         style={
           Object {
-            "height": 967.5,
+            "height": 1011.5,
             "justifyContent": "space-between",
-            "maxHeight": 380,
+            "maxHeight": 424,
           }
         }
       >
@@ -292,78 +292,179 @@ exports[`renders SignUp 1`] = `
             </View>
           </View>
         </View>
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0, 122, 255, 255)",
-              "borderRadius": 15,
-              "color": "rgba(255, 255, 255, 255)",
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 48,
-              "justifyContent": "center",
-              "opacity": 1,
-              "shadowColor": "rgba(0, 0, 0, 255)",
-              "shadowOffset": Object {
-                "x": 0,
-                "y": 1,
-              },
-              "shadowOpacity": 0.2,
-              "shadowRadius": 1.41,
-              "width": "100%",
+        <View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 15,
+                "color": "rgba(255, 255, 255, 255)",
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 48,
+                "justifyContent": "center",
+                "opacity": 1,
+                "shadowColor": "rgba(0, 0, 0, 255)",
+                "shadowOffset": Object {
+                  "x": 0,
+                  "y": 1,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 1.41,
+                "width": "100%",
+              }
             }
-          }
-        >
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(255, 255, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              SIGN UP
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 16,
+                }
+              }
+            />
+          </View>
           <Text
             style={
               Array [
+                false,
+                false,
                 Object {
                   "backgroundColor": "transparent",
-                  "color": "#FFFFFF",
+                  "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 16,
+                  "fontSize": 15,
                   "fontWeight": "400",
-                  "letterSpacing": -0.32,
-                  "lineHeight": 21,
+                  "letterSpacing": -0.24,
+                  "lineHeight": 20,
                 },
+                false,
                 Array [
                   Object {
-                    "color": "rgba(255, 255, 255, 255)",
+                    "color": "rgba(0,0,0,0.38)",
                   },
                   Object {
                     "backgroundColor": "transparent",
                     "fontFamily": "System",
-                    "fontWeight": "600",
+                    "fontWeight": "400",
                   },
-                  undefined,
+                  Object {
+                    "marginTop": 8,
+                    "textAlign": "center",
+                  },
                 ],
               ]
             }
           >
-            SIGN UP
-          </Text>
-          <ActivityIndicator
-            animating={false}
-            color="rgba(0, 122, 255, 255)"
-            hidesWhenStopped={true}
-            size="small"
-            style={
-              Object {
-                "position": "absolute",
-                "right": 16,
+            By signing up, you agree to Kebetoo's 
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0, 122, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
               }
-            }
-          />
+            >
+              Terms & Conditions
+            </Text>
+             and 
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0, 122, 255, 255)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Privacy Policy
+            </Text>
+          </Text>
         </View>
       </View>
       <View

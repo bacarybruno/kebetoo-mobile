@@ -1382,7 +1382,7 @@ exports[`renders Profile 1`] = `
                   ]
                 }
               >
-                Kebetoo
+                Kebetoo v0.0.8
               </Text>
               <Text
                 style={
@@ -1413,7 +1413,7 @@ exports[`renders Profile 1`] = `
                   ]
                 }
               >
-                version 0.0.8
+                Terms & Conditions
               </Text>
             </View>
           </View>

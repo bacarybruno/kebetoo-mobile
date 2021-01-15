@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { View } from 'react-native'
+import { Linking, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import {
@@ -18,6 +18,19 @@ export const fieldNames = {
   email: 'email',
   password: 'password',
 }
+
+const createKeyword = ({ word, link }) => (
+  <Typography
+    text={word}
+    type={Typography.types.headline5}
+    color={Typography.colors.link}
+    onPress={() => Linking.openURL(link)}
+  />
+)
+
+const withKeyword = (string, ...keywords) => (
+  strings.formatString(string, ...keywords.map(createKeyword))
+)
 
 const SignUp = ({ navigation }) => {
   navigation.setOptions({ title: strings.auth.signup })
@@ -83,11 +96,25 @@ const SignUp = ({ navigation }) => {
             ref={passwordRef}
             returnKeyType="done"
           />
-          <FullButton
-            text={strings.auth.signup.toUpperCase()}
-            onPress={onSubmit}
-            loading={isLoading}
-          />
+          <View>
+            <FullButton
+              text={strings.auth.signup.toUpperCase()}
+              onPress={onSubmit}
+              loading={isLoading}
+            />
+            <Typography
+              color={Typography.colors.tertiary}
+              style={styles.terms}
+              type={Typography.types.headline5}
+              text={
+                withKeyword(
+                  strings.auth.accept_terms,
+                  { word: strings.auth.terms_and_conditions, link: strings.auth.tos_url },
+                  { word: strings.auth.privacy_policy, link: strings.auth.privacy_policy_url },
+                )
+              }
+            />
+          </View>
         </View>
         <SocialSignIn
           sectionText={strings.auth.or_signin_with}
