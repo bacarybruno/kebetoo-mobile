@@ -93,6 +93,7 @@
 		6D5FD70A259C0426007FD0B4 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		6D5FD71F259C04E5007FD0B4 /* ShareExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShareExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D5FD7B1259C0708007FD0B4 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = "../../node_modules/react-native-share-menu/ios/ShareViewController.swift"; sourceTree = "<group>"; };
+		6D72095825B1F17100458323 /* KebetooRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = KebetooRelease.entitlements; path = Kebetoo/KebetooRelease.entitlements; sourceTree = "<group>"; };
 		6D9EBF382544B1ED004EC5FF /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../../assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		6D9EBF392544B1ED004EC5FF /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = ../../assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		6D9EBF442544B3F7004EC5FF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -167,7 +168,11 @@
 		13B07FAE1A68108700A75B9A /* Kebetoo */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				6D144F0725B3690A00CC940C /* KebetooRelease.entitlements */,
+=======
+				6D72095825B1F17100458323 /* KebetooRelease.entitlements */,
+>>>>>>> fc59280... chore(ios): prepare the app for release
 				6D5FD593259BFF0A007FD0B4 /* Kebetoo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -384,6 +389,7 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = JAMLJPMM9H;
 						LastSwiftMigration = 1200;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -805,9 +811,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Kebetoo/Kebetoo.entitlements;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = JAMLJPMM9H;
+=======
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = "";
+>>>>>>> fc59280... chore(ios): prepare the app for release
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -823,6 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kebetoo;
 				PRODUCT_NAME = Kebetoo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
