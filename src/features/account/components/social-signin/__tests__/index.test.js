@@ -7,18 +7,24 @@ import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 import { Typography } from '@app/shared/components'
 
-import SocialSignin from '../index'
+import SocialSignin, { SocialSignInSection } from '../index'
 
 const givenSocialSignin = setupTest(SocialSignin)({
   text: strings.auth.or_signin_with,
   onSignIn: jest.fn(),
   children: <Typography text={strings.auth.dont_have_account} type={Typography.types.textButton} />,
   type: 'signIn',
+  enabled: true,
 })
 
-it('renders SocialSignin', () => {
+it('renders enabled SocialSignin', () => {
   const { wrapper } = givenSocialSignin()
   expect(wrapper.toJSON()).toMatchSnapshot()
+})
+
+it('renders disabled SocialSignIn', () => {
+  const { wrapper } = givenSocialSignin({ enabled: false })
+  expect(wrapper.root.findAllByType(SocialSignInSection).length).toBe(0)
 })
 
 describe('sign in', () => {
