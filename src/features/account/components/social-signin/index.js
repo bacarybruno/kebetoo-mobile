@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react'
-import { View, TouchableOpacity, Image } from 'react-native'
+import {
+  View, TouchableOpacity, Image, Platform,
+} from 'react-native'
 
 import HrLine from '@app/features/account/components/hr-line'
 import { googleLogin, facebookLogin } from '@app/shared/services'
@@ -9,10 +11,34 @@ import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
-const SocialSignIn = ({
-  sectionText, children, onSignIn, onLoading, disabled, type, onError = () => { },
-}) => {
+export const SocialSignInSection = ({ sectionText, signInWithGoogle, signInWithFacebook }) => {
+  const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
+  return (
+    <>
+      <HrLine text={sectionText} />
+      <View style={styles.socialSignUpButtons}>
+        <TouchableOpacity style={styles.facebookIconWrapper} testID="facebook-signin" onPress={signInWithFacebook}>
+          <Kebeticon name="facebook" color={colors.facebook} size={33} />
+        </TouchableOpacity>
+        <TouchableOpacity testID="google-signin" onPress={signInWithGoogle}>
+          <Image style={styles.googleIcon} source={images.google_icon} />
+        </TouchableOpacity>
+      </View>
+    </>
+  )
+}
+
+const SocialSignIn = ({
+  sectionText,
+  children,
+  onSignIn,
+  onLoading,
+  disabled,
+  type,
+  enabled = Platform.OS !== 'ios',
+  onError,
+}) => {
   const styles = useAppStyles(createThemedStyles)
 
   const { trackSignIn, trackSignUp } = useAnalytics()
@@ -53,15 +79,13 @@ const SocialSignIn = ({
     <View style={styles.socialSignUp}>
       <View style={styles.socialSignUpContainer}>
         <View style={styles.socialSignUpContent}>
-          <HrLine text={sectionText} />
-          <View style={styles.socialSignUpButtons}>
-            <TouchableOpacity style={styles.facebookIconWrapper} testID="facebook-signin" onPress={signInWithFacebook}>
-              <Kebeticon name="facebook" color={colors.facebook} size={33} />
-            </TouchableOpacity>
-            <TouchableOpacity testID="google-signin" onPress={signInWithGoogle}>
-              <Image style={styles.googleIcon} source={images.google_icon} />
-            </TouchableOpacity>
-          </View>
+          {enabled && (
+            <SocialSignInSection
+              sectionText={sectionText}
+              signInWithFacebook={signInWithFacebook}
+              signInWithGoogle={signInWithGoogle}
+            />
+          )}
         </View>
         {children}
       </View>
@@ -72,6 +96,7 @@ const SocialSignIn = ({
 SocialSignIn.defaultProps = {
   onSignIn: () => { },
   onLoading: () => { },
+  onError: () => { },
 }
 
 export default SocialSignIn
