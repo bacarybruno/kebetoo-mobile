@@ -237,9 +237,9 @@ const AppInfosSection = React.memo(({
       />
       <IconButton
         icon={Platform.select({ ios: 'ios-appstore', android: 'md-appstore' })}
-        text={name}
-        onPress={() => Linking.openURL(strings.profile.share_url)}
-        message={`version ${version}`}
+        text={`${name} v${version}`}
+        onPress={() => Linking.openURL(strings.auth.tos_url)}
+        message={strings.auth.terms_and_conditions}
       />
     </View>
   )

@@ -4,6 +4,7 @@ import { metrics } from '@app/theme'
 
 const safeHeight = metrics.screenHeight - metrics.headerHeight
 
+const termsHeight = 40 + metrics.spacing.xs
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -15,9 +16,10 @@ export default (colors) => StyleSheet.create({
     flexGrow: 1,
   },
   normalSignUp: {
-    height: safeHeight * 0.75,
-    maxHeight: 380,
+    height: (safeHeight * 0.75) + termsHeight,
+    maxHeight: 380 + termsHeight,
     justifyContent: 'space-between',
+    // backgroundColor: 'red',
   },
   footerText: {
     flexDirection: 'row',
@@ -26,5 +28,9 @@ export default (colors) => StyleSheet.create({
   },
   keyboard: {
     backgroundColor: colors.background,
+  },
+  terms: {
+    marginTop: metrics.spacing.sm,
+    textAlign: 'center',
   },
 })
