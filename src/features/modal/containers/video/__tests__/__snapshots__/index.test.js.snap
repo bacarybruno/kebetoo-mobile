@@ -29,6 +29,7 @@ exports[`renders VideoModal 1`] = `
     controlTimeout={5000}
     disableVolume={true}
     doubleTapTime={200}
+    ignoreSilentSwitch="ignore"
     isFullscreen={false}
     muted={false}
     navigator={

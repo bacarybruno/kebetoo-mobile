@@ -1,3 +1,4 @@
+import React from 'react'
 import { AppRegistry } from 'react-native'
 import PushNotification from 'react-native-push-notification'
 import AsyncStorage from '@react-native-community/async-storage'
@@ -26,5 +27,10 @@ if (utils().isRunningInTestLab) {
   analytics().setAnalyticsCollectionEnabled(false)
 }
 
-AppRegistry.registerComponent(appName, () => App)
+const HeadlessCheck = ({ isHeadless }) => {
+  if (isHeadless) return null
+  return <App />
+}
+
+AppRegistry.registerComponent(appName, () => HeadlessCheck)
 KeyboardRegistry.registerKeyboard(keyboardName, () => EmojiSelector)

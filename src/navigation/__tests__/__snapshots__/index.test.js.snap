@@ -273,6 +273,8 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     onRefresh={[Function]}
                                     progressBackgroundColor="rgba(255, 255, 255, 255)"
                                     refreshing={false}
+                                    tintColor="rgba(0, 122, 255, 255)"
+                                    titleColor="rgba(0, 122, 255, 255)"
                                   />
                                 }
                                 removeClippedSubviews={true}
@@ -2099,6 +2101,8 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     onRefresh={[Function]}
                                     progressBackgroundColor="rgba(255, 255, 255, 255)"
                                     refreshing={false}
+                                    tintColor="rgba(0, 122, 255, 255)"
+                                    titleColor="rgba(0, 122, 255, 255)"
                                   />
                                 }
                                 removeClippedSubviews={true}
@@ -4842,6 +4846,8 @@ exports[`tabs renders TabNavigation 1`] = `
                   onRefresh={[Function]}
                   progressBackgroundColor="rgba(255, 255, 255, 255)"
                   refreshing={false}
+                  tintColor="rgba(0, 122, 255, 255)"
+                  titleColor="rgba(0, 122, 255, 255)"
                 />
               }
               removeClippedSubviews={true}

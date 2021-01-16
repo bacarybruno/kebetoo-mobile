@@ -20,6 +20,8 @@ const locales = Object.freeze({
     show_less: 'Moins',
     send: 'Envoyer',
     support: 'Support',
+    not_implemented_title: 'Information',
+    not_implemented_description: 'Cette fonctionnalité n\'a pas encore été activée. Elle le sera dans les prochaines versions de Kebetoo.',
   },
   onboarding: {
     screen_one_title: 'Rejoignez Notre Réseau Social',

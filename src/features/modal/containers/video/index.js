@@ -59,6 +59,7 @@ const VideoModal = ({ route, navigation }) => {
       navigator={navigation}
       source={{ uri: source }}
       seekColor={colors.primary}
+      ignoreSilentSwitch="ignore"
       onShowControls={showControls}
       onHideControls={hideControls}
     />

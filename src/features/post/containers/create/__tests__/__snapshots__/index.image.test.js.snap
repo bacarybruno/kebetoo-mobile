@@ -106,7 +106,7 @@ exports[`renders CreatePost 1`] = `
               placeholder="What's on your mind?"
               placeholderTextColor="rgba(174, 174, 178, 255)"
               rejectResponderTermination={true}
-              returnKeyType="done"
+              returnKeyType="default"
               style={
                 Array [
                   Object {
@@ -515,7 +515,7 @@ exports[`renders CreatePost with report mode 1`] = `
               placeholder="Please describe your issue or feedback. This will not appear in posts."
               placeholderTextColor="rgba(174, 174, 178, 255)"
               rejectResponderTermination={true}
-              returnKeyType="done"
+              returnKeyType="default"
               style={
                 Array [
                   Object {

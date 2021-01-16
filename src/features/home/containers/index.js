@@ -134,6 +134,9 @@ const HomePage = ({ navigation }) => {
   }, [dispatch])
 
   const showPostOptions = useCallback((post) => {
+    // user should not be able to block his own posts
+    if (post.author.id === profile.uid) return
+
     const bottomSheetItems = [{
       title: strings.home.hide_post,
       icon: 'md-eye-off',
@@ -151,7 +154,7 @@ const HomePage = ({ navigation }) => {
       icon: 'md-close',
     }]
 
-    const cancelButtonIndex = 3
+    const cancelButtonIndex = bottomSheetItems.length - 1
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map((item) => (
@@ -175,7 +178,7 @@ const HomePage = ({ navigation }) => {
         blockAuthor(post)
       }
     })
-  }, [colors, blockAuthor, hidePost, reportPost, showActionSheetWithOptions])
+  }, [profile, colors, showActionSheetWithOptions, hidePost, reportPost, blockAuthor])
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
@@ -224,6 +227,8 @@ const HomePage = ({ navigation }) => {
     <RefreshControl
       progressBackgroundColor={colors.background}
       colors={[colors.primary]}
+      tintColor={colors.primary}
+      titleColor={colors.primary}
       refreshing={refreshing}
       onRefresh={onRefresh}
     />
