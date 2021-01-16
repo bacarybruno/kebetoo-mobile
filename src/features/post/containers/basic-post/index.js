@@ -70,7 +70,7 @@ const MoreButton = ({ onPress }) => {
     <TouchableOpacity
       onPress={onPress}
       style={styles.moreButton}
-      hitSlop={edgeInsets.all(50)}
+      hitSlop={edgeInsets.symmetric({ horizontal: 30, vertical: 15 })}
       testID="more-button"
     >
       <Ionicon
@@ -103,8 +103,8 @@ export const Header = ({
             {author ? (
               <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
             ) : (
-                <PlaceholderAvatar size={avatarSize} />
-              )}
+              <PlaceholderAvatar size={avatarSize} />
+            )}
           </View>
           {author && (
             <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>

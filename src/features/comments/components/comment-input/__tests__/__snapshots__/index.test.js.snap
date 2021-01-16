@@ -110,6 +110,7 @@ exports[`renders CommentInput 1`] = `
             placeholder="Add a comment"
             placeholderTextColor="rgba(174, 174, 178, 255)"
             rejectResponderTermination={true}
+            returnKeyType="default"
             showSoftInputOnFocus={true}
             style={
               Array [

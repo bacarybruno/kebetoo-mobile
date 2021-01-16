@@ -102,6 +102,7 @@ const SearchPage = () => {
             title={strings.search.search}
             displayName={profile.displayName}
             imageSrc={profile.photoURL}
+            showAvatar={false}
             Right={() => <SearchIcon onPress={onShowSearchbar} />}
             style={{ marginHorizontal: metrics.marginHorizontal }}
           />

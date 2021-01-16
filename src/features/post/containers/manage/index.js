@@ -167,8 +167,8 @@ const ManagePostsPage = ({ route, navigation }) => {
   }, [confirmDeletePost])
 
   const showPostOptions = useCallback((post) => {
-    const cancelButtonIndex = 2
-    const destructiveButtonIndex = 1
+    const cancelButtonIndex = bottomSheetItems.length - 1
+    const destructiveButtonIndex = bottomSheetItems.length - 2
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map((item, index) => (
@@ -236,6 +236,7 @@ const ManagePostsPage = ({ route, navigation }) => {
         ListEmptyComponent={renderNoPost}
         contentContainerStyle={styles.sectionListContent}
         renderItem={renderItem}
+        stickySectionHeadersEnabled={false}
       />
       <ActionButton
         buttonColor={colors.primary}

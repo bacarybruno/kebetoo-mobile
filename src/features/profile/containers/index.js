@@ -22,6 +22,7 @@ import {
 import { rgbaToHex } from '@app/theme/colors'
 import { actionTypes } from '@app/features/post/containers/create'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { warnNotImplemented } from '@app/shared/components/no-content'
 
 import createThemedStyles, { imageSize } from './styles'
 
@@ -159,12 +160,12 @@ const AccountSection = React.memo(({ signOut }) => {
         icon="ios-at"
         text={strings.profile.edit_username}
         message={strings.profile.no_username_defined}
-        disabled
+        onPress={warnNotImplemented}
       />
       <IconButton
         icon="md-create"
         text={strings.profile.edit_profile}
-        disabled
+        onPress={warnNotImplemented}
       />
       <IconButton
         icon="ios-log-out"
@@ -205,13 +206,13 @@ const PreferencesSection = React.memo(({ updateAppearance }) => {
         icon="ios-notifications"
         text={strings.profile.notifications}
         message={strings.general.on}
-        disabled
+        onPress={warnNotImplemented}
       />
       <IconButton
-        disabled
         icon="ios-globe"
         text={strings.profile.language}
         message={strings.languages[strings.getLanguage()]}
+        onPress={warnNotImplemented}
       />
     </View>
   )

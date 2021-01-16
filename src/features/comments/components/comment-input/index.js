@@ -59,6 +59,7 @@ export const CommentInput = ({
             editable={!isLoading}
             onContentSizeChange={updateInputHeight}
             height={inputSize.current}
+            returnKeyType="default"
             wrapperStyle={[
               styles.textInputSize,
               styles.textInputWrapper,
