@@ -85,6 +85,7 @@
 		4F491776E74136D49E75F36B /* libPods-Kebetoo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kebetoo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		549FFBC3C2C59B8EC76D7015 /* Pods-ShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-ShareExtension/Pods-ShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		61AE95C39E2EA7DCF2A1C001 /* Pods-Kebetoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kebetoo.debug.xcconfig"; path = "Target Support Files/Pods-Kebetoo/Pods-Kebetoo.debug.xcconfig"; sourceTree = "<group>"; };
+		6D144F0725B3690A00CC940C /* KebetooRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = KebetooRelease.entitlements; path = Kebetoo/KebetooRelease.entitlements; sourceTree = "<group>"; };
 		6D5FD593259BFF0A007FD0B4 /* Kebetoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Kebetoo.entitlements; path = Kebetoo/Kebetoo.entitlements; sourceTree = "<group>"; };
 		6D5FD6E8259C03FB007FD0B4 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5FD6ED259C03FB007FD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 		13B07FAE1A68108700A75B9A /* Kebetoo */ = {
 			isa = PBXGroup;
 			children = (
+				6D144F0725B3690A00CC940C /* KebetooRelease.entitlements */,
 				6D5FD593259BFF0A007FD0B4 /* Kebetoo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -834,7 +836,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Kebetoo/Kebetoo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Kebetoo/KebetooRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 12;
