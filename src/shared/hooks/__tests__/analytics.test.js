@@ -66,7 +66,7 @@ it('tracks AppBackground', () => {
   const { analytics } = givenAnalytics()
   analytics.trackAppBackground()
   expect(analyticsMock.logEvent).toBeCalledTimes(1)
-  expect(analyticsMock.logEvent).toBeCalledWith('app_background')
+  expect(analyticsMock.logEvent).toBeCalledWith('background')
 })
 
 it('tracks PageView', () => {

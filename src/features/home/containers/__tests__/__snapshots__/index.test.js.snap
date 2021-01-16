@@ -313,14 +313,11 @@ exports[`renders HomePage 1`] = `
     onScrollEndDrag={[Function]}
     refreshControl={
       <RefreshControlMock
-        colors={
-          Array [
-            "rgba(0, 122, 255, 255)",
-          ]
-        }
         onRefresh={[Function]}
         progressBackgroundColor="rgba(255, 255, 255, 255)"
         refreshing={false}
+        tintColor="rgba(0, 122, 255, 255)"
+        titleColor="rgba(0, 122, 255, 255)"
       />
     }
     removeClippedSubviews={true}
