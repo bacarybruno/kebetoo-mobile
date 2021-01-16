@@ -265,6 +265,11 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 onScrollEndDrag={[Function]}
                                 refreshControl={
                                   <RefreshControlMock
+                                    colors={
+                                      Array [
+                                        "rgba(0, 122, 255, 255)",
+                                      ]
+                                    }
                                     onRefresh={[Function]}
                                     progressBackgroundColor="rgba(255, 255, 255, 255)"
                                     refreshing={false}
@@ -2088,6 +2093,11 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 onScrollEndDrag={[Function]}
                                 refreshControl={
                                   <RefreshControlMock
+                                    colors={
+                                      Array [
+                                        "rgba(0, 122, 255, 255)",
+                                      ]
+                                    }
                                     onRefresh={[Function]}
                                     progressBackgroundColor="rgba(255, 255, 255, 255)"
                                     refreshing={false}
@@ -4828,6 +4838,11 @@ exports[`tabs renders TabNavigation 1`] = `
               onScrollEndDrag={[Function]}
               refreshControl={
                 <RefreshControlMock
+                  colors={
+                    Array [
+                      "rgba(0, 122, 255, 255)",
+                    ]
+                  }
                   onRefresh={[Function]}
                   progressBackgroundColor="rgba(255, 255, 255, 255)"
                   refreshing={false}
