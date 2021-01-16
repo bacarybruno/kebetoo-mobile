@@ -15,6 +15,8 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import createThemedStyles from './styles'
 import Typography from '../typography'
 
+Player.setCategory('Playback')
+
 const Waves = () => {
   const styles = useAppStyles(createThemedStyles)
   return (
