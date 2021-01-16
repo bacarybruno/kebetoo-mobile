@@ -226,6 +226,7 @@ const HomePage = ({ navigation }) => {
   const renderRefreshControl = useMemo(() => (
     <RefreshControl
       progressBackgroundColor={colors.background}
+      colors={[colors.primary]}
       tintColor={colors.primary}
       titleColor={colors.primary}
       refreshing={refreshing}
