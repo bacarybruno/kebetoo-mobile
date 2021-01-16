@@ -106,7 +106,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
               placeholder="What's on your mind?"
               placeholderTextColor="rgba(174, 174, 178, 255)"
               rejectResponderTermination={true}
-              returnKeyType="done"
+              returnKeyType="default"
               style={
                 Array [
                   Object {

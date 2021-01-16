@@ -16,9 +16,9 @@ LogBox.ignoreLogs([
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'PTT.m4a'
+export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
-  bitrate: 20000,
+  bitrate: 24000,
   sampleRate: 16000,
   channels: 1,
   quality: 'min',
