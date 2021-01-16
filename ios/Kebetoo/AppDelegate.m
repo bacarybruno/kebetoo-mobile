@@ -1,3 +1,4 @@
+#import "RNFBMessagingModule.h"
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
@@ -34,6 +35,8 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSDictionary *appProperties = [RNFBMessagingModule addCustomPropsToUserProps:nil withLaunchOptions:launchOptions];
+
   // Firebase
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
@@ -46,7 +49,7 @@ static void InitializeFlipper(UIApplication *application) {
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                   moduleName:@"Kebetoo"
-                                                  initialProperties:nil];
+                                                  initialProperties:appProperties];
 
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
