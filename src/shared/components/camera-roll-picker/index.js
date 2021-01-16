@@ -129,6 +129,7 @@ const CameraRollPicker = ({ navigation }) => {
     cropperToolbarTitle: strings.create_post.edit_photo,
     cropperCancelText: strings.general.cancel,
     cropperChooseText: strings.general.confirm,
+    compressImageQuality: 0.9,
     enableRotationGesture: true,
   }
 

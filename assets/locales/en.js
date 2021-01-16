@@ -20,6 +20,8 @@ const locales = Object.freeze({
     show_less: 'Show less',
     send: 'Send',
     support: 'Support',
+    not_implemented_title: 'Information',
+    not_implemented_description: 'This feature has not been enabled yet. It will be available in the next versions of Kebetoo.',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',

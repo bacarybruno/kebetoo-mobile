@@ -28,6 +28,7 @@ import {
 } from '@app/shared/hooks'
 import iosColors from '@app/theme/ios-colors'
 import { VideoMarker } from '@app/shared/components/camera-roll-picker'
+import { warnNotImplemented } from '@app/shared/components/no-content'
 
 import createThemedStyles from './styles'
 
@@ -78,7 +79,7 @@ export const PostTextMessage = ({
         multiline
         placeholder={placeholder}
         onValueChange={onChange}
-        returnKeyType="done"
+        returnKeyType="default"
         textStyle={styles.textInput}
         wrapperStyle={styles.textInputWrapper}
         inputWrapperStyle={styles.inputWrapper}
@@ -333,7 +334,7 @@ const CreatePostPage = ({ route, navigation }) => {
                 <>
                   {!reportMode && <Button name="camera" onPress={filePicker.pickVideo} />}
                   <Button name="photo" onPress={filePicker.pickImage} />
-                  {!reportMode && <Button name="more-h" onPress={noop} />}
+                  {!reportMode && <Button name="more-h" onPress={warnNotImplemented} />}
                 </>
               )}
             </View>

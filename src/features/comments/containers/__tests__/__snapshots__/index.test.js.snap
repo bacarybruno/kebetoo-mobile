@@ -1973,6 +1973,7 @@ exports[`renders Comments 1`] = `
                 placeholder="Add a comment"
                 placeholderTextColor="rgba(174, 174, 178, 255)"
                 rejectResponderTermination={true}
+                returnKeyType="default"
                 showSoftInputOnFocus={true}
                 style={
                   Array [
@@ -4049,6 +4050,7 @@ exports[`renders Comments in loading state 1`] = `
                 placeholder="Add a comment"
                 placeholderTextColor="rgba(174, 174, 178, 255)"
                 rejectResponderTermination={true}
+                returnKeyType="default"
                 showSoftInputOnFocus={true}
                 style={
                   Array [
