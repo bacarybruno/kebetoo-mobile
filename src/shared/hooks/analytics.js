@@ -64,7 +64,7 @@ const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModu
   const trackSignUp = useCallback((method) => analytics.logSignUp({ method }), [analytics])
   const trackSignOut = useCallback(() => analytics.logEvent('sign_out'), [analytics])
   const trackAppOpen = useCallback(() => analytics.logAppOpen(), [analytics])
-  const trackAppBackground = useCallback(() => analytics.logEvent('app_background'), [analytics])
+  const trackAppBackground = useCallback(() => analytics.logEvent('background'), [analytics])
   const trackSearch = useCallback((term) => analytics.logSearch({ search_term: term }), [analytics])
   const trackSelectPost = useCallback((id) => (
     analytics.logSelectContent({ content_type: Types.POST, item_id: id })
