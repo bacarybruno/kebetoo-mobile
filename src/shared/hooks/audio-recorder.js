@@ -4,7 +4,7 @@ import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 import BackgroundTimer from 'react-native-background-timer'
-import { LogBox } from 'react-native'
+import { LogBox, Platform } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
@@ -20,8 +20,15 @@ export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 24000,
   sampleRate: 16000,
-  channels: 1,
-  quality: 'min',
+  channels: 2,
+  ...Platform.select({
+    ios: {
+      quality: 'medium',
+      format: 'aac',
+      encoder: 'aac',
+    },
+    default: {}
+  })
 })
 export const constructFileName = (time, duration, extension) => (
   // TODO: check if it's necessary to have unique file names
