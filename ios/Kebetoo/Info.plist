@@ -86,16 +86,16 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Kebetoo will need access to your camera to take photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>Your camera is used to attach photos or videos to your posts.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Kebetoo will need access to your microphone to record audio.</string>
+	<string>Your microphone is used to attach sound to your posts and comments that contain voice record or video attachments.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Kebetoo will need access to your camera roll to cache images.</string>
+	<string>Your camera roll is used to cache images.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Kebetoo would like to select photos from your camera roll.</string>
+	<string>Kebetoo will need access to your photo library to select and attach photos to your posts.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
