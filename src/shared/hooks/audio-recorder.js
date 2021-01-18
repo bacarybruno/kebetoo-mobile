@@ -1,11 +1,10 @@
-
 import { useState, useEffect, useCallback } from 'react'
-import { LogBox } from 'react-native'
 import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 import BackgroundTimer from 'react-native-background-timer'
+import { LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
@@ -19,12 +18,10 @@ export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
 export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
-  sampleRate: 44100,
-  numberOfChannels: 2,
-  bitRate: 128000,
-  audioQuality: 'medium',
-  format: 'mp4',
-  encoder: 'mp4',
+  bitrate: 24000,
+  sampleRate: 16000,
+  channels: 1,
+  quality: 'medium',
 })
 export const constructFileName = (time, duration, extension) => (
   // TODO: check if it's necessary to have unique file names
@@ -37,9 +34,6 @@ export const extractMetadataFromName = (name) => {
     prefix, time, duration,
   }
 }
-export const getRecordUri = (filename = RECORD_NAME) => (
-  `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
-)
 
 /**
  * Audio Recorder hook
@@ -56,9 +50,10 @@ const useAudioRecorder = (
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
   const [recorder, setRecorder] = useState(null)
+  const [recordUri, setRecordUri] = useState(null)
   const permissions = usePermissions()
 
-  const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
+  const getFileUri = () => uri || recordUri
 
   const savePost = useCallback(async (author, content, repost) => {
     const fileUri = getFileUri()
@@ -108,8 +103,14 @@ const useAudioRecorder = (
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
-    setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).toggleRecord())
-    setIsRecording(true)
+    const recorder = new Recorder(RECORD_NAME, RECORD_CONFIG)
+    recorder.prepare((err, path) => {
+      if (err) return
+      recorder.record()
+      setRecordUri(path)
+      setRecorder(recorder)
+      setIsRecording(true)
+    })
   }, [permissions])
 
   const reset = useCallback(async () => {
@@ -123,8 +124,7 @@ const useAudioRecorder = (
     BackgroundTimer.stopBackgroundTimer()
     setIsRecording(false)
     if (recorder) {
-      recorder.toggleRecord(() => {
-        RNFetchBlob.fs.stat(getFileUri()).then(console.log)
+      recorder.stop(() => {
         if (elapsedTime < minDurationInSeconds) return reset()
         return setHasRecording(true)
       })
@@ -157,7 +157,7 @@ const useAudioRecorder = (
     isRecording,
     hasRecording,
     elapsedTime,
-    recordUri: getFileUri(),
+    recordUri,
   }
 }
 
