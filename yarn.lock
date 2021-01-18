@@ -1448,10 +1448,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@kebetoo/camera-roll-picker@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@kebetoo/camera-roll-picker/-/camera-roll-picker-1.0.6.tgz#da66fd78f290944ca56298787a97f8a99864a27f"
-  integrity sha512-sTGFRSWq6NFG2/ienk/sZn7mWFh1cQFB+bSjv9Z6sEpaPf9YvoYq7HHX0JrvzlCBfttIwjzX5g/gCB61LquJ6g==
+"@kebetoo/camera-roll-picker@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@kebetoo/camera-roll-picker/-/camera-roll-picker-1.0.7.tgz#ed844120dabaa51008cb7548bd918523a466df68"
+  integrity sha512-y3zETNUW5ap34+ZdvwJj1LyX7PzO/hF5dcv7/fRhZ1SdWlM6PRy786DzxO7qwNPxl3O2hRz/FPIdUUrhiZ33ZA==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"

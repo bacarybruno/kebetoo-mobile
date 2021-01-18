@@ -17,7 +17,7 @@ import { elevation, metrics } from '@app/theme'
 import { strings } from '@app/config'
 import { rgbaToHex } from '@app/theme/colors'
 import iosColors from '@app/theme/ios-colors'
-import { getMimeType, isVideo } from '@app/shared/helpers/file'
+import { getMimeType } from '@app/shared/helpers/file'
 
 import createThemedStyles from './styles'
 import HeaderBack from '../header-back'
@@ -39,6 +39,8 @@ const routeOptions = (title, colors) => ({
     backgroundColor: colors.background,
   },
 })
+
+const isVideo = (type) => type.startsWith('video')
 
 const ImagePreview = React.memo(({ item }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -202,7 +204,7 @@ const CameraRollPicker = ({ navigation }) => {
       setSelected([])
       try {
         let payload = {}
-        if (isVideo(item.uri)) {
+        if (isVideo(item.type)) {
           // videos does not need image crop picker
           payload = {
             uri: item.uri,
