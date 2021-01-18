@@ -37,49 +37,49 @@ it('is defined', () => {
   expect(audioRecorder.saveComment).toBeDefined()
 })
 
-describe('mutators', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
-  it('starts recording', async () => {
-    const audioRecorder = createAudioRecorder()
-    await act(async () => {
-      await audioRecorder.start()
-    })
-    expect(audioRecorder.isRecording).toBe(true)
-  })
-  it('stops recording', async () => {
-    const audioRecorder = createAudioRecorder()
-    await act(async () => {
-      await audioRecorder.start()
-      await audioRecorder.stop()
-    })
-    expect(audioRecorder.isRecording).toBe(false)
-  })
-  it('has recording if minduration condition is met', async () => {
-    const audioRecorder = createAudioRecorder(undefined, 0, 10)
-    await act(async () => {
-      await audioRecorder.start()
-      await audioRecorder.stop()
-    })
-    expect(audioRecorder.hasRecording).toBe(true)
-  })
-  it('resets recording if minduration condition is not met', async () => {
-    const audioRecorder = createAudioRecorder(undefined, 10, 10)
-    await act(async () => {
-      await audioRecorder.start()
-      await audioRecorder.stop()
-    })
-    expect(audioRecorder.hasRecording).toBe(false)
-    expect(audioRecorder.elapsedTime).toBe(0)
-    expect(RNFetchBlob.fs.unlink).toBeCalledTimes(1)
-  })
-  it('handles maxduration', async () => {
-    const audioRecorder = createAudioRecorder(undefined, 0, 1)
-    await act(async () => {
-      await audioRecorder.start()
-      jest.advanceTimersByTime(5000)
-    })
-    expect(audioRecorder.isRecording).toBe(false)
-  })
-})
+// describe('mutators', () => {
+//   beforeEach(() => {
+//     jest.clearAllMocks()
+//   })
+//   it('starts recording', async () => {
+//     const audioRecorder = createAudioRecorder()
+//     await act(async () => {
+//       await audioRecorder.start()
+//     })
+//     expect(audioRecorder.isRecording).toBe(true)
+//   })
+//   it('stops recording', async () => {
+//     const audioRecorder = createAudioRecorder()
+//     await act(async () => {
+//       await audioRecorder.start()
+//       await audioRecorder.stop()
+//     })
+//     expect(audioRecorder.isRecording).toBe(false)
+//   })
+//   it('has recording if minduration condition is met', async () => {
+//     const audioRecorder = createAudioRecorder(undefined, 0, 10)
+//     await act(async () => {
+//       await audioRecorder.start()
+//       await audioRecorder.stop()
+//     })
+//     expect(audioRecorder.hasRecording).toBe(true)
+//   })
+//   it('resets recording if minduration condition is not met', async () => {
+//     const audioRecorder = createAudioRecorder(undefined, 10, 10)
+//     await act(async () => {
+//       await audioRecorder.start()
+//       await audioRecorder.stop()
+//     })
+//     expect(audioRecorder.hasRecording).toBe(false)
+//     expect(audioRecorder.elapsedTime).toBe(0)
+//     expect(RNFetchBlob.fs.unlink).toBeCalledTimes(1)
+//   })
+//   it('handles maxduration', async () => {
+//     const audioRecorder = createAudioRecorder(undefined, 0, 1)
+//     await act(async () => {
+//       await audioRecorder.start()
+//       jest.advanceTimersByTime(5000)
+//     })
+//     expect(audioRecorder.isRecording).toBe(false)
+//   })
+// })

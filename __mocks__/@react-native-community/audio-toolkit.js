@@ -12,6 +12,8 @@ export class Recorder {
   record = jest.fn().mockReturnValue(this)
 
   stop = jest.fn().mockImplementation((cb) => cb())
+
+  toggleRecord = jest.fn().mockImplementation((cb) => { if (cb) cb() })
 }
 
 export class Player {
