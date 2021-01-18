@@ -7,6 +7,7 @@ import { KeyboardRegistry } from 'react-native-ui-lib/keyboard'
 import { utils } from '@react-native-firebase/app'
 import analytics from '@react-native-firebase/analytics'
 
+import '@app/shared/helpers/polyfills'
 import { EmojiSelector } from '@app/shared/components'
 import { keyboardName } from '@app/shared/components/emoji-selector'
 
