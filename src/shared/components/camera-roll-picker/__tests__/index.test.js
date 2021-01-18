@@ -107,7 +107,10 @@ it('crops selected photo from picker', async () => {
   const { wrapper } = await givenCameraRollPicker({})
   const picker = wrapper.root.findByType(RNCameraRollPicker)
   await act(async () => {
-    await picker.props.callback(photosMock.edges, photosMock.edges[0].node.image)
+    await picker.props.callback(photosMock.edges, {
+      ...photosMock.edges[0].node.image,
+      type: photosMock.edges[0].node.type,
+    })
   })
   expect(ImageCropPicker.openCropper).toBeCalledTimes(1)
   expect(ImageCropPicker.openCropper).toBeCalledWith(
