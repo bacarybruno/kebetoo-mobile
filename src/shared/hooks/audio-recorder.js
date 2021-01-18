@@ -16,7 +16,7 @@ LogBox.ignoreLogs([
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'PTT.mp4'
+export const RECORD_NAME = 'PTT.aac'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 24000,
   sampleRate: 16000,
@@ -35,6 +35,8 @@ export const extractMetadataFromName = (name) => {
   }
 }
 
+let recorder = null
+
 /**
  * Audio Recorder hook
  * @param {String} uri a predefined audio uri
@@ -49,7 +51,6 @@ const useAudioRecorder = (
   const [isRecording, setIsRecording] = useState(false)
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
-  const [recorder, setRecorder] = useState(null)
   const [recordUri, setRecordUri] = useState(null)
   const permissions = usePermissions()
 
@@ -103,12 +104,11 @@ const useAudioRecorder = (
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
-    const recorder = new Recorder(RECORD_NAME, RECORD_CONFIG)
+    recorder = new Recorder(RECORD_NAME)
     recorder.prepare((err, path) => {
       if (err) return
       recorder.record()
       setRecordUri(path)
-      setRecorder(recorder)
       setIsRecording(true)
     })
   }, [permissions])
