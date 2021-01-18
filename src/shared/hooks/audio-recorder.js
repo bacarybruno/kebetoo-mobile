@@ -1,10 +1,11 @@
+
 import { useState, useEffect, useCallback } from 'react'
+import { LogBox } from 'react-native'
 import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 import BackgroundTimer from 'react-native-background-timer'
-import { LogBox, Platform } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
@@ -16,19 +17,14 @@ LogBox.ignoreLogs([
 
 export const MIN_DURATION_IN_SECONDS = 1
 export const MAX_DURATION_IN_SECONDS = 30
-export const RECORD_NAME = 'PTT.m4a'
+export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
-  bitrate: 24000,
-  sampleRate: 16000,
-  channels: 2,
-  ...Platform.select({
-    ios: {
-      quality: 'medium',
-      format: 'aac',
-      encoder: 'aac',
-    },
-    default: {}
-  })
+  sampleRate: 44100,
+  numberOfChannels: 2,
+  bitRate: 128000,
+  audioQuality: 'medium',
+  format: 'mp4',
+  encoder: 'mp4',
 })
 export const constructFileName = (time, duration, extension) => (
   // TODO: check if it's necessary to have unique file names
@@ -112,7 +108,7 @@ const useAudioRecorder = (
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
-    setRecorder(new Recorder(RECORD_NAME).record())
+    setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).toggleRecord())
     setIsRecording(true)
   }, [permissions])
 
@@ -127,7 +123,8 @@ const useAudioRecorder = (
     BackgroundTimer.stopBackgroundTimer()
     setIsRecording(false)
     if (recorder) {
-      recorder.stop(() => {
+      recorder.toggleRecord(() => {
+        RNFetchBlob.fs.stat(getFileUri()).then(console.log)
         if (elapsedTime < minDurationInSeconds) return reset()
         return setHasRecording(true)
       })

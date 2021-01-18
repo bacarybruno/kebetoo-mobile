@@ -130,8 +130,13 @@ const CameraRollPicker = ({ navigation }) => {
     cropperCancelText: strings.general.cancel,
     cropperChooseText: strings.general.confirm,
     compressImageQuality: 1,
-    width: 1200,
-    height: 1500,
+    ...Platform.select({
+      ios: {
+        width: 1200,
+        height: 1500,
+      },
+      default: {},
+    }),
     enableRotationGesture: true,
   }
 
