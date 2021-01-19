@@ -132,9 +132,9 @@ const useAudioRecorder = (
         RNFetchBlob.fs
           .cp(recordUri, RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
           .then(() => {
-            setRecordUri(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
+            setRecordUri('file://' + RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
             setHasRecording(true)
-            alert(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME + RECORD_NAME)
+            alert('file://' + RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
           })
       })
     }
