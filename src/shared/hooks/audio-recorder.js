@@ -103,14 +103,21 @@ const useAudioRecorder = (
   }, [elapsedTime, getFileUri])
 
   const start = useCallback(async () => {
+    // Alert.alert('Checking permissions')
     const { isNew, success } = await permissions.recordAudio()
+    // Alert.alert('Checking permissions', success ? 'success' : 'denied')
     if (isNew || !success) return
+    // Alert.alert('Creating recorder', RECORD_NAME)
     recorder = new Recorder(RECORD_NAME)
+    // Alert.alert('Recorder created', 'Preparing recorder')
     recorder.prepare((err, path) => {
-      // Alert.alert(path)
+      Alert.alert('Recorder prepared', JSON.stringify(err) + ' ' + path)
       if (err) return
+      Alert.alert('Starting recorder')
       recorder.record()
+      Alert.alert('Recorder started')
       setRecordUri(path)
+      Alert.alert('Setting record uri', path)
       setIsRecording(true)
     })
   }, [permissions])
@@ -126,15 +133,18 @@ const useAudioRecorder = (
     BackgroundTimer.clearInterval(timerId)
     timerId = null
     setIsRecording(false)
+    Alert.alert('Gonna stop recording')
     if (recorder) {
-      recorder.stop(() => {
+      recorder.stop(async (err) => {
+        Alert.alert('Stop recording', JSON.stringify(err))
         if (elapsedTime < minDurationInSeconds) return reset()
+        await RNFetchBlob.fs.unlink(RNFetchBlob.fs.dirs.LibraryDir + '/' + RECORD_NAME)
         RNFetchBlob.fs
-          .cp(recordUri, RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
+          .cp(recordUri, RNFetchBlob.fs.dirs.LibraryDir + '/' + RECORD_NAME)
           .then(() => {
             setRecordUri(RECORD_NAME)
             setHasRecording(true)
-          })
+          }).catch(console.log)
       })
     }
   }, [elapsedTime, minDurationInSeconds, recorder, reset])
