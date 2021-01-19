@@ -108,8 +108,7 @@ const useAudioRecorder = (
     // Alert.alert('Checking permissions', success ? 'success' : 'denied')
     if (isNew || !success) return
     // Alert.alert('Creating recorder', RECORD_NAME)
-    if (recorder) recorder.destroy()
-    recorder = new Recorder(RECORD_NAME, { autoDestroy: false })
+    recorder = new Recorder(RECORD_NAME)
     // Alert.alert('Recorder created', 'Preparing recorder')
     recorder.prepare((err, path) => {
       Alert.alert('Recorder prepared', JSON.stringify(err) + ' ' + path)
@@ -139,14 +138,7 @@ const useAudioRecorder = (
       recorder.stop(async (err) => {
         Alert.alert('Stop recording', JSON.stringify(err))
         if (elapsedTime < minDurationInSeconds) return reset()
-        await RNFetchBlob.fs.unlink(RNFetchBlob.fs.dirs.LibraryDir + '/' + RECORD_NAME)
-        RNFetchBlob.fs
-          .cp(recordUri, RNFetchBlob.fs.dirs.LibraryDir + '/' + RECORD_NAME)
-          .then(() => {
-            setRecordUri(RECORD_NAME)
-            setHasRecording(true)
-            recorder.destroy()
-          }).catch(console.log)
+        setHasRecording(true)
       })
     }
   }, [elapsedTime, minDurationInSeconds, recorder, reset])

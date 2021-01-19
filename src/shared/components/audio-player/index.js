@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import {
   TouchableOpacity, ActivityIndicator, View, Image, Platform, Alert,
 } from 'react-native'
@@ -11,6 +11,7 @@ import { Pressable } from '@app/shared/components'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import BackgroundTimer from '@app/shared/helpers/background-timer'
+import Video from 'react-native-video'
 
 import createThemedStyles from './styles'
 import Typography from '../typography'
@@ -64,44 +65,45 @@ export const AudioPlayer = ({
   const [player, setPlayer] = useState(instance)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
+  const videoRef = useRef()
 
   const styles = useAppStyles(createThemedStyles)
 
   const onEnd = useCallback((ended) => {
     if (ended) {
       setPlayerState(MediaStates.IDLE)
-      BackgroundTimer.clearInterval(timerId)
+      // BackgroundTimer.clearInterval(timerId)
       timerId = null
       setProgress(0)
       setPlayer(null)
     }
   }, [player])
 
-  const handleInterval = useCallback((soundPlayer) => {
-    let totalTime = soundPlayer.getDuration()
-    if (totalTime < 0) {
-      totalTime = parseInt(duration, 10)
-    }
+  // const handleInterval = useCallback((soundPlayer) => {
+  //   let totalTime = soundPlayer.getDuration()
+  //   if (totalTime < 0) {
+  //     totalTime = parseInt(duration, 10)
+  //   }
 
-    timerId = BackgroundTimer.setInterval(() => {
-      soundPlayer.getCurrentTime((currentTime) => {
-        const currentProgress = (currentTime / totalTime) * 100
-        setProgress(currentProgress < 100 ? currentProgress : 0)
-      })
-    }, 1)
+  //   timerId = BackgroundTimer.setInterval(() => {
+  //     soundPlayer.getCurrentTime((currentTime) => {
+  //       const currentProgress = (currentTime / totalTime) * 100
+  //       setProgress(currentProgress < 100 ? currentProgress : 0)
+  //     })
+  //   }, 1)
 
-    return () => {
-      BackgroundTimer.clearInterval(timerId)
-      timerId = null
-    }
-  }, [duration])
+  //   return () => {
+  //     BackgroundTimer.clearInterval(timerId)
+  //     timerId = null
+  //   }
+  // }, [duration])
 
   const onPlayPause = useCallback(async () => {
     let playerInstance = null
     if (!player?.isLoaded()) {
       setPlayerState(MediaStates.PREPARING)
       playerInstance = await new Promise((resolve, reject) => {
-        const newPlayer = new Player(source, !source.startsWith('http') ? Player.LIBRARY : '', (err) => {
+        const newPlayer = new Player(source, '', (err) => {
           Alert.alert('Created player', source　+ JSON.stringify(err))
           if (err) reject(err)
           else resolve(newPlayer)
@@ -112,19 +114,22 @@ export const AudioPlayer = ({
     Alert.alert('Player state', playerInstance._filename + playerInstance._loaded)
     // setTimeout(() => {
       const soundPlayer = player || playerInstance
-    if (soundPlayer.isPlaying()) {
-      soundPlayer.pause()
+    
+    if (playerState === MediaStates.PLAYING) {
       setPlayerState(MediaStates.PAUSED)
+      // soundPlayer.pause()
+      // setPlayerState(MediaStates.PAUSED)
     } else {
-      soundPlayer.play((ended) => {
-        onEnd(ended)
-        playerInstance.release()
-      })
-      handleInterval(soundPlayer)
+      if (playerState === MediaStates.IDLE) videoRef.current.seek(0)
       setPlayerState(MediaStates.PLAYING)
+      // soundPlayer.play(onEnd)
+      // handleInterval(soundPlayer)
+      // setPlayerState(MediaStates.PLAYING)
     }
     // }, 3000)
-  }, [handleInterval, onEnd, player, source])
+  }, [player, source])
+
+  console.log(playerState)
 
   const onPressDelegate = useCallback(() => {
     if (!onPress) return onPlayPause()
@@ -137,6 +142,18 @@ export const AudioPlayer = ({
 
   const { height, ...pressableStyle } = style
   return (
+    <>
+    <Video onProgress={(data) => {
+      const currentProgress = (data.currentTime / data.seekableDuration) * 100
+      setProgress(currentProgress < 100 ? currentProgress : 0)
+    }}
+    source={{ uri: source }}
+    paused={playerState !== MediaStates.PLAYING}
+    audioOnly
+    ignoreSilentSwitch="ignore"
+    onEnd={() => onEnd(true)}
+    ref={videoRef}
+    />
     <View style={[styles.audio, height && { height }]}>
       <Pressable
         foreground
@@ -157,6 +174,7 @@ export const AudioPlayer = ({
       </Pressable>
       {onDelete && <DeleteIconButton onPress={onDelete} />}
     </View>
+    </>
   )
 }
 
