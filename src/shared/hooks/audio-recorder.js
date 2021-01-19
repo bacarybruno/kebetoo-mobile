@@ -134,7 +134,7 @@ const useAudioRecorder = (
           .then(() => {
             setRecordUri(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
             setHasRecording(true)
-            console.log(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME + RECORD_NAME)
+            alert(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME + RECORD_NAME)
           })
       })
     }
