@@ -5,12 +5,12 @@ import {
 import { MediaStates } from '@react-native-community/audio-toolkit'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Player from 'react-native-sound'
-import BackgroundTimer from 'react-native-background-timer'
 
 import { edgeInsets, images } from '@app/theme'
 import { Pressable } from '@app/shared/components'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import BackgroundTimer from '@app/shared/helpers/background-timer'
 
 import createThemedStyles from './styles'
 import Typography from '../typography'
@@ -55,6 +55,8 @@ export const DeleteIconButton = ({ onPress }) => {
   )
 }
 
+let timerId = null
+
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
   duration, source, onDelete, round, onPress, player: instance, style = {},
@@ -68,7 +70,8 @@ export const AudioPlayer = ({
   const onEnd = useCallback((ended) => {
     if (ended) {
       setPlayerState(MediaStates.IDLE)
-      BackgroundTimer.stopBackgroundTimer()
+      BackgroundTimer.clearInterval(timerId)
+      timerId = null
       setProgress(0)
       setPlayer(null)
     }
@@ -80,7 +83,7 @@ export const AudioPlayer = ({
       totalTime = parseInt(duration, 10)
     }
 
-    BackgroundTimer.runBackgroundTimer(() => {
+    timerId = BackgroundTimer.setInterval(() => {
       soundPlayer.getCurrentTime((currentTime) => {
         const currentProgress = (currentTime / totalTime) * 100
         setProgress(currentProgress < 100 ? currentProgress : 0)
@@ -88,7 +91,8 @@ export const AudioPlayer = ({
     }, 1)
 
     return () => {
-      BackgroundTimer.stopBackgroundTimer()
+      BackgroundTimer.clearInterval(timerId)
+      timerId = null
     }
   }, [duration])
 
@@ -97,7 +101,7 @@ export const AudioPlayer = ({
     if (!player?.isLoaded()) {
       setPlayerState(MediaStates.PREPARING)
       playerInstance = await new Promise((resolve, reject) => {
-        const newPlayer = new Player(source, undefined, (err) => {
+        const newPlayer = new Player(source, '', (err) => {
           if (err) reject(err)
           else resolve(newPlayer)
         })

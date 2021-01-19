@@ -3,12 +3,12 @@ import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
-import BackgroundTimer from 'react-native-background-timer'
-import { LogBox } from 'react-native'
+import { Alert, LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
 import { getExtension, getMimeType } from '@app/shared/helpers/file'
+import BackgroundTimer from '@app/shared/helpers/background-timer'
 
 LogBox.ignoreLogs([
   'Warning: Cannot update a component from inside the function body of a different component.',
@@ -36,6 +36,7 @@ export const extractMetadataFromName = (name) => {
 }
 
 let recorder = null
+let timerId = null
 
 /**
  * Audio Recorder hook
@@ -106,6 +107,7 @@ const useAudioRecorder = (
     if (isNew || !success) return
     recorder = new Recorder(RECORD_NAME)
     recorder.prepare((err, path) => {
+      // Alert.alert(path)
       if (err) return
       recorder.record()
       setRecordUri(path)
@@ -121,24 +123,32 @@ const useAudioRecorder = (
   }, [getFileUri])
 
   const stop = useCallback(() => {
-    BackgroundTimer.stopBackgroundTimer()
+    BackgroundTimer.clearInterval(timerId)
+    timerId = null
     setIsRecording(false)
     if (recorder) {
       recorder.stop(() => {
         if (elapsedTime < minDurationInSeconds) return reset()
-        return setHasRecording(true)
+        RNFetchBlob.fs
+          .cp(recordUri, RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
+          .then(() => {
+            setRecordUri(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME)
+            setHasRecording(true)
+            console.log(RNFetchBlob.fs.dirs.DocumentDir + '/' + RECORD_NAME + RECORD_NAME)
+          })
       })
     }
   }, [elapsedTime, minDurationInSeconds, recorder, reset])
 
   useEffect(() => {
     if (isRecording) {
-      BackgroundTimer.runBackgroundTimer(() => {
+      timerId = BackgroundTimer.setInterval(() => {
         setElapsedTime((state) => state + 1)
       }, 1000)
     }
     return () => {
-      BackgroundTimer.stopBackgroundTimer()
+      BackgroundTimer.clearInterval(timerId)
+      timerId = null
     }
   }, [isRecording])
 
