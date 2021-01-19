@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import {
-  TouchableOpacity, ActivityIndicator, View, Image,
+  TouchableOpacity, ActivityIndicator, View, Image, Platform,
 } from 'react-native'
 import { MediaStates } from '@react-native-community/audio-toolkit'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -101,7 +101,8 @@ export const AudioPlayer = ({
     if (!player?.isLoaded()) {
       setPlayerState(MediaStates.PREPARING)
       playerInstance = await new Promise((resolve, reject) => {
-        const newPlayer = new Player(source, '', (err) => {
+        console.log(source)
+        const newPlayer = new Player(source, !source.startsWith('http') ? Player.DOCUMENT : '', (err) => {
           if (err) reject(err)
           else resolve(newPlayer)
         })
