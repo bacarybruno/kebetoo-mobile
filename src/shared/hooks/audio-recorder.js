@@ -108,7 +108,8 @@ const useAudioRecorder = (
     // Alert.alert('Checking permissions', success ? 'success' : 'denied')
     if (isNew || !success) return
     // Alert.alert('Creating recorder', RECORD_NAME)
-    recorder = new Recorder(RECORD_NAME)
+    if (recorder) recorder.destroy()
+    recorder = new Recorder(RECORD_NAME, { autoDestroy: false })
     // Alert.alert('Recorder created', 'Preparing recorder')
     recorder.prepare((err, path) => {
       Alert.alert('Recorder prepared', JSON.stringify(err) + ' ' + path)
@@ -144,6 +145,7 @@ const useAudioRecorder = (
           .then(() => {
             setRecordUri(RECORD_NAME)
             setHasRecording(true)
+            recorder.destroy()
           }).catch(console.log)
       })
     }

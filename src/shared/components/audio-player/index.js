@@ -75,7 +75,7 @@ export const AudioPlayer = ({
       setProgress(0)
       setPlayer(null)
     }
-  }, [])
+  }, [player])
 
   const handleInterval = useCallback((soundPlayer) => {
     let totalTime = soundPlayer.getDuration()
@@ -116,7 +116,10 @@ export const AudioPlayer = ({
       soundPlayer.pause()
       setPlayerState(MediaStates.PAUSED)
     } else {
-      soundPlayer.play(onEnd)
+      soundPlayer.play((ended) => {
+        onEnd(ended)
+        playerInstance.release()
+      })
       handleInterval(soundPlayer)
       setPlayerState(MediaStates.PLAYING)
     }
