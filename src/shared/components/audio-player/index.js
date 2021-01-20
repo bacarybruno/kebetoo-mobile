@@ -65,6 +65,7 @@ export const AudioPlayer = ({
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
   const [audioDuration, setAudioDuration] = useState(duration)
+  const [prepared, setPrepared] = useState(false)
 
   const videoRef = useRef()
 
@@ -73,16 +74,17 @@ export const AudioPlayer = ({
   const onEnd = useCallback(() => {
     setPlayerState(MediaStates.IDLE)
     setProgress(0)
-    videoRef.current?.seek(0)
+    if (videoRef.current) videoRef.current.seek(0)
   }, [])
 
   const onPlayPause = useCallback(() => {
+    if (!prepared) setPrepared(true)
     setPlayerState((state) => (
       state === MediaStates.PLAYING
         ? MediaStates.PAUSED
         : MediaStates.PLAYING
     ))
-  }, [])
+  }, [prepared])
 
   const onPressDelegate = useCallback(() => {
     if (!onPress) return onPlayPause()
@@ -100,27 +102,32 @@ export const AudioPlayer = ({
 
   const onLoad = useCallback((data) => {
     setPlayerState(MediaStates.PREPARED)
+    // we can play the audio right away
+    // because it is preloaded when the user clicks the play button
+    setPlayerState(MediaStates.PLAYING)
     setAudioDuration(data.duration)
   }, [])
 
   const { height, ...pressableStyle } = style
   return (
     <>
-      <Video
-        audioOnly
-        onEnd={onEnd}
-        ref={videoRef}
-        testID="audio-player"
-        onProgress={onProgress}
-        source={{ uri: source }}
-        ignoreSilentSwitch="ignore"
-        progressUpdateInterval={10}
-        onAudioBecomingNoisy={() => setPlayerState(MediaStates.PAUSED)}
-        paused={playerState !== MediaStates.PLAYING}
-        onLoadStart={() => setPlayerState(MediaStates.PREPARING)}
-        onError={() => setPlayerState(MediaStates.ERROR)}
-        onLoad={onLoad}
-      />
+      {prepared && (
+        <Video
+          audioOnly
+          onEnd={onEnd}
+          ref={videoRef}
+          testID="audio-player"
+          onProgress={onProgress}
+          source={{ uri: source }}
+          ignoreSilentSwitch="ignore"
+          progressUpdateInterval={10}
+          onAudioBecomingNoisy={() => setPlayerState(MediaStates.PAUSED)}
+          paused={playerState !== MediaStates.PLAYING}
+          onLoadStart={() => setPlayerState(MediaStates.PREPARING)}
+          onError={() => setPlayerState(MediaStates.ERROR)}
+          onLoad={onLoad}
+        />
+      )}
       <View style={[styles.audio, height && { height }]}>
         <Pressable
           foreground

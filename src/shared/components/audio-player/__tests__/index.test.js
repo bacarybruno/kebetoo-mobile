@@ -1,4 +1,4 @@
-import { fireEvent, act } from 'react-native-testing-library'
+import { fireEvent } from 'react-native-testing-library'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { ActivityIndicator } from 'react-native'
 
@@ -44,6 +44,7 @@ describe('player states', () => {
   })
   it('initialize player', () => {
     const { wrapper } = givenAudioPlayer()
+    fireEvent.press(wrapper.root.findByType(PlayButton))
     wrapper.root.findByProps({ testID: 'audio-player' }).props.onLoadStart()
     expect(wrapper.root.findAllByType(ActivityIndicator).length).toBe(1)
   })

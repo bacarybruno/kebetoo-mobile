@@ -38,24 +38,6 @@ exports[`renders AudioContent 1`] = `
   >
     test audio
   </Text>
-  <Video
-    audioOnly={true}
-    ignoreSilentSwitch="ignore"
-    onAudioBecomingNoisy={[Function]}
-    onEnd={[Function]}
-    onError={[Function]}
-    onLoad={[Function]}
-    onLoadStart={[Function]}
-    onProgress={[Function]}
-    paused={true}
-    progressUpdateInterval={10}
-    source={
-      Object {
-        "uri": "http://localhost:1337/fake-audio.mp3",
-      }
-    }
-    testID="audio-player"
-  />
   <View
     style={
       Array [

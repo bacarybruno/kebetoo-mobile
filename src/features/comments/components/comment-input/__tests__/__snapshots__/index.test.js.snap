@@ -273,24 +273,6 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
         }
       }
     >
-      <Video
-        audioOnly={true}
-        ignoreSilentSwitch="ignore"
-        onAudioBecomingNoisy={[Function]}
-        onEnd={[Function]}
-        onError={[Function]}
-        onLoad={[Function]}
-        onLoadStart={[Function]}
-        onProgress={[Function]}
-        paused={true}
-        progressUpdateInterval={10}
-        source={
-          Object {
-            "uri": undefined,
-          }
-        }
-        testID="audio-player"
-      />
       <View
         style={
           Array [

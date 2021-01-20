@@ -349,24 +349,6 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
     >
       Fhgjjyjj
     </Text>
-    <Video
-      audioOnly={true}
-      ignoreSilentSwitch="ignore"
-      onAudioBecomingNoisy={[Function]}
-      onEnd={[Function]}
-      onError={[Function]}
-      onLoad={[Function]}
-      onLoadStart={[Function]}
-      onProgress={[Function]}
-      paused={true}
-      progressUpdateInterval={10}
-      source={
-        Object {
-          "uri": "http://localhost:1337/uploads/PTT_20200620_6_5e895bdeae.mp3",
-        }
-      }
-      testID="audio-player"
-    />
     <View
       style={
         Array [
@@ -1371,24 +1353,6 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
     >
       Fhgjjyjj
     </Text>
-    <Video
-      audioOnly={true}
-      ignoreSilentSwitch="ignore"
-      onAudioBecomingNoisy={[Function]}
-      onEnd={[Function]}
-      onError={[Function]}
-      onLoad={[Function]}
-      onLoadStart={[Function]}
-      onProgress={[Function]}
-      paused={true}
-      progressUpdateInterval={10}
-      source={
-        Object {
-          "uri": "http://localhost:1337/uploads/PTT_20200620_6_5e895bdeae.mp3",
-        }
-      }
-      testID="audio-player"
-    />
     <View
       style={
         Array [
@@ -2230,24 +2194,6 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
     >
       Fhgjjyjj
     </Text>
-    <Video
-      audioOnly={true}
-      ignoreSilentSwitch="ignore"
-      onAudioBecomingNoisy={[Function]}
-      onEnd={[Function]}
-      onError={[Function]}
-      onLoad={[Function]}
-      onLoadStart={[Function]}
-      onProgress={[Function]}
-      paused={true}
-      progressUpdateInterval={10}
-      source={
-        Object {
-          "uri": "http://localhost:1337/uploads/PTT_20200620_6_5e895bdeae.mp3",
-        }
-      }
-      testID="audio-player"
-    />
     <View
       style={
         Array [
