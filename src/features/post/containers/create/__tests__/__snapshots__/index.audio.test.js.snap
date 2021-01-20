@@ -85,24 +85,6 @@ exports[`renders AudioPlayer if post has recording 1`] = `
         </View>
       </View>
       <View>
-        <Video
-          audioOnly={true}
-          ignoreSilentSwitch="ignore"
-          onAudioBecomingNoisy={[Function]}
-          onEnd={[Function]}
-          onError={[Function]}
-          onLoad={[Function]}
-          onLoadStart={[Function]}
-          onProgress={[Function]}
-          paused={true}
-          progressUpdateInterval={10}
-          source={
-            Object {
-              "uri": undefined,
-            }
-          }
-          testID="audio-player"
-        />
         <View
           style={
             Array [
