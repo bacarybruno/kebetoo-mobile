@@ -321,7 +321,7 @@ const CreatePostPage = ({ route, navigation }) => {
           )}
           {filePicker.hasFile && filePicker.type === 'video' && (
             <VideoPreviewer
-              uri={filePicker.file.uri}
+              uri={filePicker.file.originalUri || filePicker.file.uri}
               onDelete={filePicker.reset}
               onPress={openVideoPreview}
             />
