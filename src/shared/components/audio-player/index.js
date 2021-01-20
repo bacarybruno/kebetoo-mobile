@@ -74,7 +74,10 @@ export const AudioPlayer = ({
   const onEnd = useCallback(() => {
     setPlayerState(MediaStates.IDLE)
     setProgress(0)
-    if (videoRef.current) videoRef.current.seek(0)
+    // seek after a certain amount of time to avoid looping
+    setTimeout(() => {
+      videoRef.current?.seek(0)
+    }, 100)
   }, [])
 
   const onPlayPause = useCallback(() => {
