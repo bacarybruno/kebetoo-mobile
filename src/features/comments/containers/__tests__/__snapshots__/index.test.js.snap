@@ -667,62 +667,6 @@ exports[`renders Comments 1`] = `
                         >
                           5 days ago
                         </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 12,
-                                "fontWeight": "400",
-                                "letterSpacing": 0,
-                                "lineHeight": 16,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                           • 
-                        </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 12,
-                                "fontWeight": "400",
-                                "letterSpacing": 0,
-                                "lineHeight": 16,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                          Edited
-                        </Text>
                       </View>
                     </View>
                   </View>
@@ -2751,62 +2695,6 @@ exports[`renders Comments in loading state 1`] = `
                           }
                         >
                           5 days ago
-                        </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 12,
-                                "fontWeight": "400",
-                                "letterSpacing": 0,
-                                "lineHeight": 16,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                           • 
-                        </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 12,
-                                "fontWeight": "400",
-                                "letterSpacing": 0,
-                                "lineHeight": 16,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                          Edited
                         </Text>
                       </View>
                     </View>
