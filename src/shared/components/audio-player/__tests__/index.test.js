@@ -44,54 +44,24 @@ describe('player states', () => {
   })
   it('initialize player', () => {
     const { wrapper } = givenAudioPlayer()
-    fireEvent.press(wrapper.root.findByType(PlayButton))
+    wrapper.root.findByProps({ testID: 'audio-player' }).props.onLoadStart()
     expect(wrapper.root.findAllByType(ActivityIndicator).length).toBe(1)
   })
-  it('plays audio', () => {
-    const { wrapper, props } = givenAudioPlayer({
-      player: {
-        play: jest.fn(),
-        isLoaded: jest.fn().mockReturnValue(true),
-        isPlaying: jest.fn().mockReturnValue(false),
-        getDuration: jest.fn().mockReturnValue(60),
-        getCurrentTime: jest.fn((callback) => callback(10)),
-      },
-    })
-    act(() => {
-      fireEvent.press(wrapper.root.findByType(PlayButton))
-    })
-    expect(props.player.play).toBeCalledTimes(1)
+  it('play pause audio', () => {
+    const { wrapper } = givenAudioPlayer()
+    fireEvent.press(wrapper.root.findByType(PlayButton))
+    expect(wrapper.root.findByProps({ testID: 'audio-player' }).props.paused).toBe(false)
     expect(wrapper.root.findByType(Ionicon).props.name).toBe('ios-pause')
-  })
-  it('pause audio', () => {
-    const { wrapper, props } = givenAudioPlayer({
-      player: {
-        pause: jest.fn(),
-        isLoaded: jest.fn().mockReturnValue(true),
-        isPlaying: jest.fn().mockReturnValue(true),
-      },
-    })
-    act(() => {
-      fireEvent.press(wrapper.root.findByType(PlayButton))
-    })
-    expect(props.player.pause).toBeCalledTimes(1)
+    fireEvent.press(wrapper.root.findByType(PlayButton))
+    expect(wrapper.root.findByProps({ testID: 'audio-player' }).props.paused).toBe(true)
     expect(wrapper.root.findByType(Ionicon).props.name).toBe('ios-play')
   })
   it('end playing', () => {
-    const { wrapper } = givenAudioPlayer({
-      player: {
-        play: jest.fn().mockImplementation((callback) => callback(true)),
-        isLoaded: jest.fn().mockReturnValue(true),
-        isPlaying: jest.fn().mockReturnValue(false),
-        getDuration: jest.fn().mockReturnValue(5000),
-        getCurrentTime: jest.fn().mockReturnValue((callback) => {
-          callback(1000)
-        }),
-      },
-    })
-    act(() => {
-      fireEvent.press(wrapper.root.findByType(PlayButton))
-    })
+    const { wrapper } = givenAudioPlayer()
+    fireEvent.press(wrapper.root.findByType(PlayButton))
+    expect(wrapper.root.findByProps({ testID: 'audio-player' }).props.paused).toBe(false)
+    expect(wrapper.root.findByType(Ionicon).props.name).toBe('ios-pause')
+    wrapper.root.findByProps({ testID: 'audio-player' }).props.onEnd()
     expect(wrapper.root.findByProps({ text: readableSeconds(0) })).toBeTruthy()
     expect(wrapper.root.findByProps({ testID: 'progress' }).props.style).toMatchObject({ width: '0%' })
   })
@@ -107,17 +77,9 @@ describe('player wrapper', () => {
     expect(props.onPress).toBeCalledTimes(1)
   })
   it('toggle player if no custom onPress handler', () => {
-    const { wrapper, props } = givenAudioPlayer({
-      player: {
-        pause: jest.fn(),
-        isLoaded: jest.fn().mockReturnValue(true),
-        isPlaying: jest.fn().mockReturnValue(true),
-      },
-    })
-    act(() => {
-      fireEvent.press(wrapper.root.findByProps({ testID: 'player-wrapper' }))
-    })
-    expect(props.player.pause).toBeCalledTimes(1)
+    const { wrapper } = givenAudioPlayer()
+    fireEvent.press(wrapper.root.findByProps({ testID: 'player-wrapper' }))
+    expect(wrapper.root.findByProps({ testID: 'audio-player' }).props.paused).toBe(false)
   })
 })
 it('handles delete button', () => {

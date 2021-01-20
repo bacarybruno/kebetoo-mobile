@@ -1,565 +1,649 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders AudioPlayer 1`] = `
-<View
-  style={
-    Array [
+Array [
+  <Video
+    audioOnly={true}
+    ignoreSilentSwitch="ignore"
+    onAudioBecomingNoisy={[Function]}
+    onEnd={[Function]}
+    onError={[Function]}
+    onLoad={[Function]}
+    onLoadStart={[Function]}
+    onProgress={[Function]}
+    paused={true}
+    progressUpdateInterval={10}
+    source={
       Object {
-        "flex": 1,
-        "height": 52,
-        "maxHeight": 52,
-      },
-      Object {
-        "height": 20,
-      },
-    ]
-  }
->
+        "uri": "http://localhost:1337/uploads/PTT_20200618_4_77ef44ec7b.mp3",
+      }
+    }
+    testID="audio-player"
+  />,
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "#F5F5F5",
-          "borderRadius": 5,
           "flex": 1,
-          "overflow": "hidden",
+          "height": 52,
+          "maxHeight": 52,
         },
-        Object {},
-        undefined,
+        Object {
+          "height": 20,
+        },
       ]
     }
-    testID="player-wrapper"
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        style={
+        Array [
           Object {
-            "backgroundColor": "rgba(199, 199, 204, 255)",
-            "borderBottomLeftRadius": 5,
-            "borderTopLeftRadius": 5,
-            "height": "100%",
-            "opacity": 0.4,
-            "position": "absolute",
-            "width": "0%",
-          }
-        }
-        testID="progress"
-      />
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
             "backgroundColor": "#F5F5F5",
-            "borderRadius": 1000,
-            "elevation": 2,
-            "height": 30,
-            "justifyContent": "center",
-            "marginLeft": 16,
-            "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 255)",
-            "shadowOffset": Object {
-              "x": 0,
-              "y": 1,
-            },
-            "shadowOpacity": 0.2,
-            "shadowRadius": 1.41,
-            "width": 30,
-          }
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Object {
-              "color": "#0B1B77",
-              "fontFamily": "Ionicons",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            }
-          }
-          text="ionicon-ios-play"
-        />
-      </View>
+            "borderRadius": 5,
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          Object {},
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
+            "flexDirection": "row",
           }
         }
       >
-        <Image
-          source={
-            Object {
-              "testUri": "../../../assets/images/waves.png",
-            }
-          }
+        <View
           style={
             Object {
-              "resizeMode": "contain",
-              "width": "80%",
+              "backgroundColor": "rgba(199, 199, 204, 255)",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+              "width": "0%",
             }
           }
+          testID="progress"
         />
-      </View>
-      <Text
-        style={
-          Array [
-            false,
-            false,
-            false,
+        <View
+          accessible={true}
+          focusable={true}
+          hitSlop={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontSize": 12,
-              "fontWeight": "400",
-              "letterSpacing": 0,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgba(0,0,0,0.54)",
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F5F5F5",
+              "borderRadius": 1000,
+              "elevation": 2,
+              "height": 30,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "opacity": 1,
+              "shadowColor": "rgba(0, 0, 0, 255)",
+              "shadowOffset": Object {
+                "x": 0,
+                "y": 1,
               },
+              "shadowOpacity": 0.2,
+              "shadowRadius": 1.41,
+              "width": 30,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Object {
+                "color": "#0B1B77",
+                "fontFamily": "Ionicons",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              }
+            }
+            text="ionicon-ios-play"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../assets/images/waves.png",
+              }
+            }
+            style={
+              Object {
+                "resizeMode": "contain",
+                "width": "80%",
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
               Object {
                 "backgroundColor": "transparent",
+                "color": "#000000",
                 "fontFamily": "System",
+                "fontSize": 12,
                 "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
-            ],
-          ]
-        }
-      >
-        0:00
-      </Text>
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+              ],
+            ]
+          }
+        >
+          0:00
+        </Text>
+      </View>
     </View>
-  </View>
-</View>
+  </View>,
+]
 `;
 
 exports[`renders AudioPlayer with delete icon 1`] = `
-<View
-  style={
-    Array [
+Array [
+  <Video
+    audioOnly={true}
+    ignoreSilentSwitch="ignore"
+    onAudioBecomingNoisy={[Function]}
+    onEnd={[Function]}
+    onError={[Function]}
+    onLoad={[Function]}
+    onLoadStart={[Function]}
+    onProgress={[Function]}
+    paused={true}
+    progressUpdateInterval={10}
+    source={
       Object {
-        "flex": 1,
-        "height": 52,
-        "maxHeight": 52,
-      },
-      Object {
-        "height": 20,
-      },
-    ]
-  }
->
+        "uri": "http://localhost:1337/uploads/PTT_20200618_4_77ef44ec7b.mp3",
+      }
+    }
+    testID="audio-player"
+  />,
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "#F5F5F5",
-          "borderRadius": 5,
           "flex": 1,
-          "overflow": "hidden",
+          "height": 52,
+          "maxHeight": 52,
         },
-        Object {},
-        undefined,
+        Object {
+          "height": 20,
+        },
       ]
     }
-    testID="player-wrapper"
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        style={
+        Array [
           Object {
-            "backgroundColor": "rgba(199, 199, 204, 255)",
-            "borderBottomLeftRadius": 5,
-            "borderTopLeftRadius": 5,
-            "height": "100%",
-            "opacity": 0.4,
-            "position": "absolute",
-            "width": "0%",
-          }
-        }
-        testID="progress"
-      />
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
             "backgroundColor": "#F5F5F5",
-            "borderRadius": 1000,
-            "elevation": 2,
-            "height": 30,
-            "justifyContent": "center",
-            "marginLeft": 16,
-            "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 255)",
-            "shadowOffset": Object {
-              "x": 0,
-              "y": 1,
-            },
-            "shadowOpacity": 0.2,
-            "shadowRadius": 1.41,
-            "width": 30,
-          }
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Object {
-              "color": "#0B1B77",
-              "fontFamily": "Ionicons",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            }
-          }
-          text="ionicon-ios-play"
-        />
-      </View>
+            "borderRadius": 5,
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          Object {},
+          undefined,
+        ]
+      }
+      testID="player-wrapper"
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
+            "flexDirection": "row",
           }
         }
       >
-        <Image
-          source={
-            Object {
-              "testUri": "../../../assets/images/waves.png",
-            }
-          }
+        <View
           style={
             Object {
-              "resizeMode": "contain",
-              "width": "80%",
+              "backgroundColor": "rgba(199, 199, 204, 255)",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+              "width": "0%",
             }
           }
+          testID="progress"
         />
-      </View>
-      <Text
-        style={
-          Array [
-            false,
-            false,
-            false,
+        <View
+          accessible={true}
+          focusable={true}
+          hitSlop={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontSize": 12,
-              "fontWeight": "400",
-              "letterSpacing": 0,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgba(0,0,0,0.54)",
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F5F5F5",
+              "borderRadius": 1000,
+              "elevation": 2,
+              "height": 30,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "opacity": 1,
+              "shadowColor": "rgba(0, 0, 0, 255)",
+              "shadowOffset": Object {
+                "x": 0,
+                "y": 1,
               },
+              "shadowOpacity": 0.2,
+              "shadowRadius": 1.41,
+              "width": 30,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Object {
+                "color": "#0B1B77",
+                "fontFamily": "Ionicons",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              }
+            }
+            text="ionicon-ios-play"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../assets/images/waves.png",
+              }
+            }
+            style={
+              Object {
+                "resizeMode": "contain",
+                "width": "80%",
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
               Object {
                 "backgroundColor": "transparent",
+                "color": "#000000",
                 "fontFamily": "System",
+                "fontSize": 12,
                 "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
-            ],
-          ]
-        }
-      >
-        0:00
-      </Text>
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+              ],
+            ]
+          }
+        >
+          0:00
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    accessible={true}
-    focusable={true}
-    hitSlop={
-      Object {
-        "bottom": 50,
-        "left": 50,
-        "right": 50,
-        "top": 50,
+    <View
+      accessible={true}
+      focusable={true}
+      hitSlop={
+        Object {
+          "bottom": 50,
+          "left": 50,
+          "right": 50,
+          "top": 50,
+        }
       }
-    }
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#F5F5F5",
-        "borderRadius": 1000,
-        "elevation": 2,
-        "height": 20,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "right": -5,
-        "shadowColor": "rgba(0, 0, 0, 255)",
-        "shadowOffset": Object {
-          "x": 0,
-          "y": 1,
-        },
-        "shadowOpacity": 0.2,
-        "shadowRadius": 1.41,
-        "top": -5,
-        "width": 20,
-      }
-    }
-  >
-    <Text
-      allowFontScaling={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "color": "rgba(0,0,0,0.87)",
-          "fontFamily": "Ionicons",
-          "fontSize": 20,
-          "fontStyle": "normal",
-          "fontWeight": "normal",
+          "alignItems": "center",
+          "backgroundColor": "#F5F5F5",
+          "borderRadius": 1000,
+          "elevation": 2,
+          "height": 20,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "right": -5,
+          "shadowColor": "rgba(0, 0, 0, 255)",
+          "shadowOffset": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 1.41,
+          "top": -5,
+          "width": 20,
         }
       }
-      text="ionicon-ios-close"
-    />
-  </View>
-</View>
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontFamily": "Ionicons",
+            "fontSize": 20,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-ios-close"
+      />
+    </View>
+  </View>,
+]
 `;
 
 exports[`renders round AudioPlayer 1`] = `
-<View
-  style={
-    Array [
+Array [
+  <Video
+    audioOnly={true}
+    ignoreSilentSwitch="ignore"
+    onAudioBecomingNoisy={[Function]}
+    onEnd={[Function]}
+    onError={[Function]}
+    onLoad={[Function]}
+    onLoadStart={[Function]}
+    onProgress={[Function]}
+    paused={true}
+    progressUpdateInterval={10}
+    source={
       Object {
-        "flex": 1,
-        "height": 52,
-        "maxHeight": 52,
-      },
-      Object {
-        "height": 20,
-      },
-    ]
-  }
->
+        "uri": "http://localhost:1337/uploads/PTT_20200618_4_77ef44ec7b.mp3",
+      }
+    }
+    testID="audio-player"
+  />,
   <View
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "#F5F5F5",
-          "borderRadius": 5,
           "flex": 1,
-          "overflow": "hidden",
+          "height": 52,
+          "maxHeight": 52,
         },
-        Object {},
         Object {
-          "borderRadius": 20,
+          "height": 20,
         },
       ]
     }
-    testID="player-wrapper"
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        style={
+        Array [
           Object {
-            "backgroundColor": "rgba(199, 199, 204, 255)",
-            "borderBottomLeftRadius": 5,
-            "borderTopLeftRadius": 5,
-            "height": "100%",
-            "opacity": 0.4,
-            "position": "absolute",
-            "width": "0%",
-          }
-        }
-        testID="progress"
-      />
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
             "backgroundColor": "#F5F5F5",
-            "borderRadius": 1000,
-            "elevation": 2,
-            "height": 30,
-            "justifyContent": "center",
-            "marginLeft": 16,
-            "opacity": 1,
-            "shadowColor": "rgba(0, 0, 0, 255)",
-            "shadowOffset": Object {
-              "x": 0,
-              "y": 1,
-            },
-            "shadowOpacity": 0.2,
-            "shadowRadius": 1.41,
-            "width": 30,
-          }
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Object {
-              "color": "#0B1B77",
-              "fontFamily": "Ionicons",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            }
-          }
-          text="ionicon-ios-play"
-        />
-      </View>
+            "borderRadius": 5,
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          Object {},
+          Object {
+            "borderRadius": 20,
+          },
+        ]
+      }
+      testID="player-wrapper"
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
+            "flexDirection": "row",
           }
         }
       >
-        <Image
-          source={
-            Object {
-              "testUri": "../../../assets/images/waves.png",
-            }
-          }
+        <View
           style={
             Object {
-              "resizeMode": "contain",
-              "width": "80%",
+              "backgroundColor": "rgba(199, 199, 204, 255)",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "height": "100%",
+              "opacity": 0.4,
+              "position": "absolute",
+              "width": "0%",
             }
           }
+          testID="progress"
         />
-      </View>
-      <Text
-        style={
-          Array [
-            false,
-            false,
-            false,
+        <View
+          accessible={true}
+          focusable={true}
+          hitSlop={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontSize": 12,
-              "fontWeight": "400",
-              "letterSpacing": 0,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgba(0,0,0,0.54)",
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#F5F5F5",
+              "borderRadius": 1000,
+              "elevation": 2,
+              "height": 30,
+              "justifyContent": "center",
+              "marginLeft": 16,
+              "opacity": 1,
+              "shadowColor": "rgba(0, 0, 0, 255)",
+              "shadowOffset": Object {
+                "x": 0,
+                "y": 1,
               },
+              "shadowOpacity": 0.2,
+              "shadowRadius": 1.41,
+              "width": 30,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Object {
+                "color": "#0B1B77",
+                "fontFamily": "Ionicons",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              }
+            }
+            text="ionicon-ios-play"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../assets/images/waves.png",
+              }
+            }
+            style={
+              Object {
+                "resizeMode": "contain",
+                "width": "80%",
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
               Object {
                 "backgroundColor": "transparent",
+                "color": "#000000",
                 "fontFamily": "System",
+                "fontSize": 12,
                 "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
-            ],
-          ]
-        }
-      >
-        0:00
-      </Text>
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+              ],
+            ]
+          }
+        >
+          0:00
+        </Text>
+      </View>
     </View>
-  </View>
-</View>
+  </View>,
+]
 `;

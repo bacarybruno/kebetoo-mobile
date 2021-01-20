@@ -23,7 +23,7 @@ const createAudioRecorder = (...props) => {
 }
 
 it('is defined', () => {
-  const audioRecorder = createAudioRecorder()
+  const audioRecorder = createAudioRecorder({ uri: null })
   // props
   expect(audioRecorder.hasRecording).toBeDefined()
   expect(audioRecorder.elapsedTime).toBeDefined()
@@ -79,6 +79,7 @@ describe('mutators', () => {
     await act(async () => {
       await audioRecorder.start()
       jest.advanceTimersByTime(5000)
+      await new Promise((resolve) => setImmediate(resolve));
     })
     expect(audioRecorder.isRecording).toBe(false)
   })
