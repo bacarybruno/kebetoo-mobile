@@ -597,62 +597,6 @@ exports[`renders ManagePost 1`] = `
                     >
                       5 days ago
                     </Text>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 12,
-                            "fontWeight": "400",
-                            "letterSpacing": 0,
-                            "lineHeight": 16,
-                          },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                       • 
-                    </Text>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 12,
-                            "fontWeight": "400",
-                            "letterSpacing": 0,
-                            "lineHeight": 16,
-                          },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                      Edited
-                    </Text>
                   </View>
                 </View>
               </View>
@@ -801,6 +745,14 @@ exports[`renders ManagePost 1`] = `
                   <View
                     accessible={true}
                     focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 10,
+                        "left": 10,
+                        "right": 10,
+                        "top": 10,
+                      }
+                    }
                     onClick={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -3014,62 +2966,6 @@ exports[`renders ManagePost 1`] = `
                       }
                     >
                       in 6 months
-                    </Text>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 12,
-                            "fontWeight": "400",
-                            "letterSpacing": 0,
-                            "lineHeight": 16,
-                          },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                       • 
-                    </Text>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "#000000",
-                            "fontFamily": "System",
-                            "fontSize": 12,
-                            "fontWeight": "400",
-                            "letterSpacing": 0,
-                            "lineHeight": 16,
-                          },
-                          Array [
-                            Object {
-                              "color": "rgba(0,0,0,0.87)",
-                            },
-                            Object {
-                              "backgroundColor": "transparent",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                            },
-                            undefined,
-                          ],
-                        ]
-                      }
-                    >
-                      Edited
                     </Text>
                   </View>
                 </View>

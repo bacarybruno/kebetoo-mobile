@@ -213,62 +213,6 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
             >
                • 
             </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-              Edited
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-               • 
-            </Text>
             <View
               style={
                 Array [
@@ -411,6 +355,14 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
           <View
             accessible={true}
             focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 10,
+                "left": 10,
+                "right": 10,
+                "top": 10,
+              }
+            }
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -1407,6 +1359,14 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
           <View
             accessible={true}
             focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 10,
+                "left": 10,
+                "right": 10,
+                "top": 10,
+              }
+            }
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2042,62 +2002,6 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
             >
                • 
             </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-              Edited
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-               • 
-            </Text>
             <View
               style={
                 Array [
@@ -2240,6 +2144,14 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
           <View
             accessible={true}
             focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 10,
+                "left": 10,
+                "right": 10,
+                "top": 10,
+              }
+            }
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -9062,62 +8974,6 @@ exports[`renders component [video]: renders BasicPost 1`] = `
             >
                • 
             </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-              Edited
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-               • 
-            </Text>
             <View
               style={
                 Array [
@@ -10766,62 +10622,6 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
               }
             >
               in 6 months
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-               • 
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-            >
-              Edited
             </Text>
             <Text
               style={

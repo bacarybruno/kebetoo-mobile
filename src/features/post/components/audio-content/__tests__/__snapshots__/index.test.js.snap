@@ -100,6 +100,14 @@ exports[`renders AudioContent 1`] = `
         <View
           accessible={true}
           focusable={true}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
           onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}

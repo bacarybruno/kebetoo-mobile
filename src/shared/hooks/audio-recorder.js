@@ -3,12 +3,12 @@ import { Recorder } from '@react-native-community/audio-toolkit'
 import RNFetchBlob from 'rn-fetch-blob'
 import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
-import BackgroundTimer from 'react-native-background-timer'
 import { LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
 import { getExtension, getMimeType } from '@app/shared/helpers/file'
+import BackgroundTimer from '@app/shared/helpers/background-timer'
 
 LogBox.ignoreLogs([
   'Warning: Cannot update a component from inside the function body of a different component.',
@@ -20,8 +20,8 @@ export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 24000,
   sampleRate: 16000,
-  channels: 1,
-  quality: 'min',
+  channels: 2,
+  quality: 'medium',
 })
 export const constructFileName = (time, duration, extension) => (
   // TODO: check if it's necessary to have unique file names
@@ -34,8 +34,17 @@ export const extractMetadataFromName = (name) => {
     prefix, time, duration,
   }
 }
-export const getRecordUri = (filename = RECORD_NAME) => (
-  `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
+
+let recorder = null
+let timerId = null
+
+const prepareRecorderAsync = (r) => (
+  new Promise((resolve, reject) => {
+    r.prepare((err, path) => {
+      if (err) return reject(err)
+      return resolve(path)
+    })
+  })
 )
 
 /**
@@ -52,13 +61,10 @@ const useAudioRecorder = (
   const [isRecording, setIsRecording] = useState(false)
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
-  const [recorder, setRecorder] = useState(null)
+  const [recordUri, setRecordUri] = useState(uri)
   const permissions = usePermissions()
 
-  const getFileUri = useCallback(() => uri || getRecordUri(), [uri])
-
   const savePost = useCallback(async (author, content, repost) => {
-    const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     let duration = null
     if (uri) {
@@ -73,51 +79,53 @@ const useAudioRecorder = (
       author,
       content,
       audio: {
-        uri: fileUri,
-        mimeType: getMimeType(fileUri),
-        name: constructFileName(time, duration || elapsedTime, getExtension(fileUri)),
+        uri: recordUri,
+        mimeType: getMimeType(recordUri),
+        name: constructFileName(time, duration || elapsedTime, getExtension(recordUri)),
       },
       repost,
     })
     setHasRecording(false)
-    await RNFetchBlob.fs.unlink(fileUri)
+    await RNFetchBlob.fs.unlink(recordUri)
     return response
-  }, [elapsedTime, getFileUri, uri])
+  }, [elapsedTime, recordUri, uri])
 
   const saveComment = useCallback(async (post, author, toReply) => {
-    const fileUri = getFileUri()
     const time = dayjs().format('YYYYMMDD')
     const response = await api.comments.createAudio({
       post: toReply ? null : post,
       thread: toReply ? toReply.id : null,
       author,
       audio: {
-        uri: fileUri,
-        mimeType: getMimeType(fileUri),
-        name: constructFileName(time, elapsedTime, getExtension(fileUri)),
+        uri: recordUri,
+        mimeType: getMimeType(recordUri),
+        name: constructFileName(time, elapsedTime, getExtension(recordUri)),
       },
     })
     setHasRecording(false)
-    await RNFetchBlob.fs.unlink(fileUri)
+    await RNFetchBlob.fs.unlink(recordUri)
     return response
-  }, [elapsedTime, getFileUri])
+  }, [elapsedTime, recordUri])
 
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
-    setRecorder(new Recorder(RECORD_NAME, RECORD_CONFIG).record())
+    recorder = new Recorder(RECORD_NAME, RECORD_CONFIG)
+    const path = await prepareRecorderAsync(recorder)
+    recorder.record()
+    setRecordUri(path)
     setIsRecording(true)
   }, [permissions])
 
   const reset = useCallback(async () => {
-    const fileUri = getFileUri()
-    await RNFetchBlob.fs.unlink(fileUri)
+    await RNFetchBlob.fs.unlink(recordUri)
     setHasRecording(false)
     setElapsedTime(0)
-  }, [getFileUri])
+  }, [recordUri])
 
   const stop = useCallback(() => {
-    BackgroundTimer.stopBackgroundTimer()
+    BackgroundTimer.clearInterval(timerId)
+    timerId = null
     setIsRecording(false)
     if (recorder) {
       recorder.stop(() => {
@@ -125,16 +133,17 @@ const useAudioRecorder = (
         return setHasRecording(true)
       })
     }
-  }, [elapsedTime, minDurationInSeconds, recorder, reset])
+  }, [elapsedTime, minDurationInSeconds, reset])
 
   useEffect(() => {
     if (isRecording) {
-      BackgroundTimer.runBackgroundTimer(() => {
+      timerId = BackgroundTimer.setInterval(() => {
         setElapsedTime((state) => state + 1)
       }, 1000)
     }
     return () => {
-      BackgroundTimer.stopBackgroundTimer()
+      BackgroundTimer.clearInterval(timerId)
+      timerId = null
     }
   }, [isRecording])
 
@@ -153,7 +162,7 @@ const useAudioRecorder = (
     isRecording,
     hasRecording,
     elapsedTime,
-    recordUri: getFileUri(),
+    recordUri,
   }
 }
 
