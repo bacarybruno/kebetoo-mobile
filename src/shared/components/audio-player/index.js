@@ -1,11 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import {
   TouchableOpacity, ActivityIndicator, View, Image,
 } from 'react-native'
+import Video from 'react-native-video'
 import { MediaStates } from '@react-native-community/audio-toolkit'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import Player from 'react-native-sound'
-import BackgroundTimer from 'react-native-background-timer'
 
 import { edgeInsets, images } from '@app/theme'
 import { Pressable } from '@app/shared/components'
@@ -14,8 +13,6 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 import Typography from '../typography'
-
-Player.setCategory('Playback')
 
 const Waves = () => {
   const styles = useAppStyles(createThemedStyles)
@@ -29,8 +26,14 @@ const Waves = () => {
 export const PlayButton = ({ onPress, state, ...otherProps }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
+
   return (
-    <TouchableOpacity style={styles.iconWrapper} onPress={onPress} {...otherProps}>
+    <TouchableOpacity
+      hitSlop={edgeInsets.all(10)}
+      style={styles.iconWrapper}
+      onPress={onPress}
+      {...otherProps}
+    >
       {state === MediaStates.PREPARING
         ? (
           <ActivityIndicator color={colors.blue_dark} />
@@ -57,63 +60,29 @@ export const DeleteIconButton = ({ onPress }) => {
 
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
-  duration, source, onDelete, round, onPress, player: instance, style = {},
+  duration, source, onDelete, round, onPress, style = {},
 }) => {
-  const [player, setPlayer] = useState(instance)
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
+  const [audioDuration, setAudioDuration] = useState(duration)
+
+  const videoRef = useRef()
 
   const styles = useAppStyles(createThemedStyles)
 
-  const onEnd = useCallback((ended) => {
-    if (ended) {
-      setPlayerState(MediaStates.IDLE)
-      BackgroundTimer.stopBackgroundTimer()
-      setProgress(0)
-      setPlayer(null)
-    }
+  const onEnd = useCallback(() => {
+    setPlayerState(MediaStates.IDLE)
+    setProgress(0)
+    videoRef.current?.seek(0)
   }, [])
 
-  const handleInterval = useCallback((soundPlayer) => {
-    let totalTime = soundPlayer.getDuration()
-    if (totalTime < 0) {
-      totalTime = parseInt(duration, 10)
-    }
-
-    BackgroundTimer.runBackgroundTimer(() => {
-      soundPlayer.getCurrentTime((currentTime) => {
-        const currentProgress = (currentTime / totalTime) * 100
-        setProgress(currentProgress < 100 ? currentProgress : 0)
-      })
-    }, 1)
-
-    return () => {
-      BackgroundTimer.stopBackgroundTimer()
-    }
-  }, [duration])
-
-  const onPlayPause = useCallback(async () => {
-    let playerInstance = null
-    if (!player?.isLoaded()) {
-      setPlayerState(MediaStates.PREPARING)
-      playerInstance = await new Promise((resolve, reject) => {
-        const newPlayer = new Player(source, undefined, (err) => {
-          if (err) reject(err)
-          else resolve(newPlayer)
-        })
-      })
-      setPlayer(playerInstance)
-    }
-    const soundPlayer = player || playerInstance
-    if (soundPlayer.isPlaying()) {
-      soundPlayer.pause()
-      setPlayerState(MediaStates.PAUSED)
-    } else {
-      soundPlayer.play(onEnd)
-      handleInterval(soundPlayer)
-      setPlayerState(MediaStates.PLAYING)
-    }
-  }, [handleInterval, onEnd, player, source])
+  const onPlayPause = useCallback(() => {
+    setPlayerState((state) => (
+      state === MediaStates.PLAYING
+        ? MediaStates.PAUSED
+        : MediaStates.PLAYING
+    ))
+  }, [])
 
   const onPressDelegate = useCallback(() => {
     if (!onPress) return onPlayPause()
@@ -124,28 +93,55 @@ export const AudioPlayer = ({
     return true
   }, [onPress, onPlayPause])
 
+  const onProgress = useCallback((data) => {
+    const currentProgress = (data.currentTime / audioDuration) * 100
+    setProgress(currentProgress < 100 ? currentProgress : 0)
+  }, [audioDuration])
+
+  const onLoad = useCallback((data) => {
+    setPlayerState(MediaStates.PREPARED)
+    setAudioDuration(data.duration)
+  }, [])
+
   const { height, ...pressableStyle } = style
   return (
-    <View style={[styles.audio, height && { height }]}>
-      <Pressable
-        foreground
-        onPress={onPressDelegate}
-        style={[styles.audioWrapper, pressableStyle, round && styles.round]}
-        testID="player-wrapper"
-      >
-        <View style={styles.audioContent}>
-          <View testID="progress" style={{ ...styles.progress, width: `${progress}%` }} />
-          <PlayButton state={playerState} onPress={onPlayPause} />
-          <Waves />
-          <Typography
-            type={Typography.types.headline6}
-            text={readableSeconds(duration)}
-            style={styles.duration}
-          />
-        </View>
-      </Pressable>
-      {onDelete && <DeleteIconButton onPress={onDelete} />}
-    </View>
+    <>
+      <Video
+        audioOnly
+        onEnd={onEnd}
+        ref={videoRef}
+        testID="audio-player"
+        onProgress={onProgress}
+        source={{ uri: source }}
+        ignoreSilentSwitch="ignore"
+        progressUpdateInterval={10}
+        onAudioBecomingNoisy={() => setPlayerState(MediaStates.PAUSED)}
+        paused={playerState !== MediaStates.PLAYING}
+        onLoadStart={() => setPlayerState(MediaStates.PREPARING)}
+        onError={() => setPlayerState(MediaStates.ERROR)}
+        onLoad={onLoad}
+      />
+      <View style={[styles.audio, height && { height }]}>
+        <Pressable
+          foreground
+          onPress={onPressDelegate}
+          style={[styles.audioWrapper, pressableStyle, round && styles.round]}
+          testID="player-wrapper"
+        >
+          <View style={styles.audioContent}>
+            <View testID="progress" style={{ ...styles.progress, width: `${progress}%` }} />
+            <PlayButton state={playerState} onPress={onPlayPause} />
+            <Waves />
+            <Typography
+              type={Typography.types.headline6}
+              text={readableSeconds(audioDuration)}
+              style={styles.duration}
+            />
+          </View>
+        </Pressable>
+        {onDelete && <DeleteIconButton onPress={onDelete} />}
+      </View>
+    </>
   )
 }
 

@@ -15,8 +15,9 @@ export const routeOptions = {
 }
 
 const VideoModal = ({ route, navigation }) => {
-  const { colors, resetAppBars } = useAppColors()
   navigation.setOptions(routeOptions)
+
+  const { colors, resetAppBars } = useAppColors()
   const playerRef = useRef()
   const { source, poster } = route.params
 

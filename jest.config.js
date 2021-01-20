@@ -20,6 +20,7 @@ module.exports = {
     'views/assets/[a-z](.+).png$': '<rootDir>/__mocks__/file-mock',
     '^[./a-zA-Z0-9$_-]+\\icons/kebeticons$': '<rootDir>/__mocks__/@app/shared/icons/kebeticons',
     '^[./a-zA-Z0-9$_-]+\\api$': '<rootDir>/__mocks__/@app/shared/services/api',
+    '^[./a-zA-Z0-9$_-]+\\helpers/background-timer$': '<rootDir>/__mocks__/@app/shared/helpers/background-timer',
   },
   coveragePathIgnorePatterns: [
     '/node_modules/',

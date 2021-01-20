@@ -85,6 +85,24 @@ exports[`renders AudioPlayer if post has recording 1`] = `
         </View>
       </View>
       <View>
+        <Video
+          audioOnly={true}
+          ignoreSilentSwitch="ignore"
+          onAudioBecomingNoisy={[Function]}
+          onEnd={[Function]}
+          onError={[Function]}
+          onLoad={[Function]}
+          onLoadStart={[Function]}
+          onProgress={[Function]}
+          paused={true}
+          progressUpdateInterval={10}
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          testID="audio-player"
+        />
         <View
           style={
             Array [
@@ -124,6 +142,14 @@ exports[`renders AudioPlayer if post has recording 1`] = `
               <View
                 accessible={true}
                 focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 10,
+                    "left": 10,
+                    "right": 10,
+                    "top": 10,
+                  }
+                }
                 onClick={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
