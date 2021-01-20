@@ -5,6 +5,8 @@ def use_kebetoo_pods!()
 
     # react-native-google-signin
     pod 'GoogleSignIn', '~> 5.0.2'
+
+    pod 'RNConvertPhAsset', :path => '../node_modules/react-native-convert-ph-asset'
 end
 
 def react_native_share_menu_post_install(installer)

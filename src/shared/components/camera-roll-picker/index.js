@@ -11,6 +11,7 @@ import CameraRoll from '@react-native-community/cameraroll'
 import RNCameraRollPicker from '@kebetoo/camera-roll-picker'
 import ActionButton from 'react-native-action-button'
 import ImageCropPicker from 'react-native-image-crop-picker'
+import RNConvertPhAsset from 'react-native-convert-ph-asset'
 
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { elevation, metrics } from '@app/theme'
@@ -205,10 +206,22 @@ const CameraRollPicker = ({ navigation }) => {
       try {
         let payload = {}
         if (isVideo(item.type)) {
+          let videoUri = item.uri
+          if (Platform.OS === 'ios' && videoUri.startsWith('ph://')) {
+            // received video is a ph asset
+            // we should convert it back to mp4
+            const converted = await RNConvertPhAsset.convertVideoFromUrl({
+              url: videoUri,
+              convertTo: 'mpeg4',
+              quality: 'medium'
+            })
+            videoUri = converted.path.replace('file://', '')
+          }
           // videos does not need image crop picker
           payload = {
-            uri: item.uri,
-            type: getMimeType(item.uri),
+            uri: videoUri,
+            originalUri: item.uri,
+            type: getMimeType(videoUri),
             duration: item.playableDuration,
           }
         } else {
