@@ -1,6 +1,7 @@
 import PushNotification from 'react-native-push-notification'
 import AsyncStorage from '@react-native-community/async-storage'
 import messaging from '@react-native-firebase/messaging'
+import { getNotificationMessage, getNotificationTitle } from '@app/features/notifications/containers'
 
 PushNotification.createChannel({
   channelId: 'kbt',
@@ -15,10 +16,13 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   bgNotifications.push(remoteMessage)
   PushNotification.setApplicationIconBadgeNumber(bgNotifications.length)
   await AsyncStorage.setItem('backgroundNotifications', JSON.stringify(bgNotifications))
+
+  const notificationTitle = getNotificationTitle(remoteMessage)
+  if (!notificationTitle) return
   PushNotification.localNotification({
     channelId: 'kbt',
-    title: remoteMessage.data.title,
-    message: remoteMessage.data.message,
+    title: `${notificationTitle.name} ${notificationTitle.message}`,
+    message: getNotificationMessage(remoteMessage),
     smallIcon: 'ic_notification',
   })
 })

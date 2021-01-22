@@ -23,6 +23,38 @@ export const NOTIFICATION_TYPES = {
   COMMENT_REACTION: 'comment-reaction',
 }
 
+export const getNotificationTitle = (message) => {
+  const payload = JSON.parse(message.data.payload)
+  const name = payload.author.displayName
+  switch (message.data.type) {
+    case NOTIFICATION_TYPES.COMMENT:
+      return { name, message: strings.notifications.commented_post }
+    case NOTIFICATION_TYPES.COMMENT_REACTION:
+      return { name, message: strings.notifications.reacted_comment }
+    case NOTIFICATION_TYPES.POST_REACTION:
+      return { name, message: strings.notifications.reacted_post }
+    case NOTIFICATION_TYPES.REPLY:
+      return { name, message: strings.notifications.replied_comment }
+    default:
+      return null
+  }
+}
+
+export const getNotificationMessage = (message) => {
+  const payload = JSON.parse(message.data.payload)
+  switch (message.data.type) {
+    case NOTIFICATION_TYPES.COMMENT:
+    case NOTIFICATION_TYPES.REPLY:
+      return payload.content
+    case NOTIFICATION_TYPES.COMMENT_REACTION:
+      return payload.comment.content
+    case NOTIFICATION_TYPES.POST_REACTION:
+      return payload.post.content
+    default:
+      return null
+  }
+}
+
 const Section = ({ title, items, renderItem }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -59,38 +91,6 @@ const NotificationsPage = () => {
     return payload.author
   }
 
-  const getTitle = (message) => {
-    const payload = JSON.parse(message.data.payload)
-    const name = payload.author.displayName
-    switch (message.data.type) {
-      case NOTIFICATION_TYPES.COMMENT:
-        return { name, message: strings.notifications.commented_post }
-      case NOTIFICATION_TYPES.COMMENT_REACTION:
-        return { name, message: strings.notifications.reacted_comment }
-      case NOTIFICATION_TYPES.POST_REACTION:
-        return { name, message: strings.notifications.reacted_post }
-      case NOTIFICATION_TYPES.REPLY:
-        return { name, message: strings.notifications.replied_comment }
-      default:
-        return null
-    }
-  }
-
-  const getMessage = (message) => {
-    const payload = JSON.parse(message.data.payload)
-    switch (message.data.type) {
-      case NOTIFICATION_TYPES.COMMENT:
-      case NOTIFICATION_TYPES.REPLY:
-        return payload.content
-      case NOTIFICATION_TYPES.COMMENT_REACTION:
-        return payload.comment.content
-      case NOTIFICATION_TYPES.POST_REACTION:
-        return payload.post.content
-      default:
-        return null
-    }
-  }
-
   const onNotificationOpen = useCallback(async ({ id, message }) => {
     setIsLoading(true)
 
@@ -125,8 +125,8 @@ const NotificationsPage = () => {
     <Notification
       isOpened={item.status === NOTIFICATION_STATUS.OPENED}
       onPress={() => onNotificationOpen(item)}
-      title={getTitle(item.message)}
-      message={getMessage(item.message)}
+      title={getNotificationTitle(item.message)}
+      message={getNotificationMessage(item.message)}
       author={getAuthor(item.message)}
       caption={dayjs(item.time).fromNow()}
       key={`${item.id}-${index}`}
