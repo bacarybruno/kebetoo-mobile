@@ -54,7 +54,7 @@
     "react-native-navigation-bar-color": "^2.0.1",
     "react-native-permissions": "^2.1.4",
     "react-native-popover-view": "^3.0.3",
-    "react-native-push-notification": "^5.1.0",
+    "react-native-push-notification": "^7.1.1",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.4.0",
