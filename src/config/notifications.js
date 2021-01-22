@@ -10,6 +10,8 @@ PushNotification.createChannel({
   playSound: false,
 })
 
+const formatNotificationMessage = ({ name, message }) => `${name} ${message}`
+
 // handle background notifications
 messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   const bgNotifications = JSON.parse(await AsyncStorage.getItem('backgroundNotifications')) || []
@@ -18,11 +20,13 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   await AsyncStorage.setItem('backgroundNotifications', JSON.stringify(bgNotifications))
 
   const notificationTitle = getNotificationTitle(remoteMessage)
-  if (!notificationTitle) return
+  if (!notificationTitle && !remoteMessage.data.title) return
   PushNotification.localNotification({
     channelId: 'kbt',
-    title: `${notificationTitle.name} ${notificationTitle.message}`,
-    message: getNotificationMessage(remoteMessage),
+    title: notificationTitle
+      ? formatNotificationMessage(notificationTitle)
+      : remoteMessage.data.title,
+    message: getNotificationMessage(remoteMessage) || remoteMessage.data.message,
     smallIcon: 'ic_notification',
   })
 })
