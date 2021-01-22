@@ -1641,13 +1641,6 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.7.1.tgz#715a6061307055c6aa59c901bca313050695f75e"
   integrity sha512-ddefrDUgJgeYevk1QQFWQD2n3fq9B7PfYZoBTXw8yYgV5AdXdolFtwt5DnfFHqqibgiQGCd9lNP6SvM6xktu9Q==
 
-"@react-native-community/push-notification-ios@^1.4.0":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-community/push-notification-ios/-/push-notification-ios-1.4.1.tgz#02b46fb793926f34aa275605ed49f03015e893b3"
-  integrity sha512-Y+4LS10R+yc17wu54tlDcxgW/SugEAz2dNjmil9I7KUtaZIOc0hTvAE8dUvYTEDvYQ9uYrXI+OqdElTE3FJ3FA==
-  dependencies:
-    invariant "^2.2.4"
-
 "@react-native-community/push-notification-ios@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/push-notification-ios/-/push-notification-ios-1.6.1.tgz#44c33f5a0218d027a0beed0bfe60d7ebad0c4cd0"
@@ -7690,12 +7683,10 @@ react-native-popover-view@^3.0.3:
   dependencies:
     react-native-safe-area-view "0.14.9"
 
-react-native-push-notification@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-5.1.0.tgz#7dca8e95093ffc3b01cc4e38a78d4b27787b0f1d"
-  integrity sha512-6olJ/v0MyyAaHRY2h5B5ROBjkol0SslQGBxjtmdmy9aaNCap3PbNFXh64/fo/1f7fvNwkyp/ruWok022TyT3qA==
-  dependencies:
-    "@react-native-community/push-notification-ios" "^1.4.0"
+react-native-push-notification@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-7.1.1.tgz#af1357f5208a64239bdf02ff9ebbfae82db325aa"
+  integrity sha512-WkkRJFAX6jfgWRv3ZrTigXes5CAtOIam/JBHc/FwyuGDzzYbT/F2hoUqp5a0hX1aVd4HCWohne2is6hHX+CBaA==
 
 react-native-reanimated@^1.8.0:
   version "1.8.0"
