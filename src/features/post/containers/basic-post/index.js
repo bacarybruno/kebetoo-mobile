@@ -79,8 +79,8 @@ const MoreButton = ({ onPress }) => {
       testID="more-button"
     >
       <Ionicon
-        name={Platform.select({ android: 'md-more', ios: 'ios-more' })}
-        size={Typography.fontSizes.lg}
+        name="ellipsis-vertical"
+        size={Typography.fontSizes.header}
         color={colors.textTertiary}
       />
     </TouchableOpacity>

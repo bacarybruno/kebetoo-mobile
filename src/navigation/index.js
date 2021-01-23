@@ -80,22 +80,20 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
-      [routes.NOTIFICATIONS]: 'ios-notifications-outline',
+      [routes.NOTIFICATIONS]: 'chatbubbles',
       [routes.SEARCH]: 'search',
-      [routes.PROFILE]: 'user',
+      [routes.PROFILE]: 'person',
     }
-    const size = focused ? 24 : 18
+    const size = 24
     const iconName = iconNames[route.name]
-    return iconName !== 'ios-notifications-outline'
-      ? <Kebeticon name={iconName} size={size} color={color} />
-      : (
-        <Ionicon
-          name={iconName}
-          size={size * 1.5}
-          color={color}
-          style={{ marginTop: focused ? -metrics.spacing.sm : 0 }}
-        />
-      )
+    if (iconName === undefined) return
+    return (
+      <Ionicon
+        name={focused ? iconName : (iconName + '-outline')}
+        size={size}
+        color={color}
+      />
+    )
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {

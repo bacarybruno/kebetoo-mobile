@@ -209,7 +209,7 @@ const PreferencesSection = React.memo(({ updateAppearance }) => {
         onPress={warnNotImplemented}
       />
       <IconButton
-        icon="ios-globe"
+        icon="language"
         text={strings.profile.language}
         message={strings.languages[strings.getLanguage()]}
         onPress={warnNotImplemented}
@@ -237,7 +237,7 @@ const AppInfosSection = React.memo(({
         message={strings.profile.issue_or_feedback}
       />
       <IconButton
-        icon={Platform.select({ ios: 'ios-appstore', android: 'md-appstore' })}
+        icon="information-circle-sharp"
         text={`${name} v${version}`}
         onPress={() => Linking.openURL(strings.auth.tos_url)}
         message={strings.auth.terms_and_conditions}

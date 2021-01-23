@@ -14,7 +14,7 @@ export default (colors) => StyleSheet.create({
     color: colors.white,
   },
   textIcon: {
-    width: 20,
+    width: 30,
   },
   iconButtonWrapper: {
     height: 48,
