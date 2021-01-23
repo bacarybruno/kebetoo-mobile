@@ -123,9 +123,9 @@ const defaultMainScreenOptions = {
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
+  <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
-  <Stack.Screen component={NotificationsPage} name={routes.NOTIFICATIONS} />,
+  <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
   <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
 ]
 

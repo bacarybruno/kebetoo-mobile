@@ -1,13 +1,12 @@
 import React, { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import Popover from 'react-native-popover-view'
 
 import { Avatar, Logo, Typography } from '@app/shared/components'
-import { IconButton } from '@app/features/profile/containers'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import { useAppColors } from '@app/shared/hooks'
+import { edgeInsets } from '@app/theme'
 
 import styles from './styles'
 import HeaderBack from '../header-back'
@@ -21,7 +20,7 @@ export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
 )
 
 const HeaderNavigationBack = ({ onPress, tintColor }) => (
-  <TouchableOpacity onPress={onPress}>
+  <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(10)}>
     <HeaderBack tintColor={tintColor} style={styles.headerBack} />
   </TouchableOpacity>
 )
