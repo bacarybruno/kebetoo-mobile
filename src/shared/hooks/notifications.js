@@ -87,7 +87,7 @@ const useNotifications = () => {
   return {
     newItems,
     seenItems,
-    badgeCount: 2,
+    badgeCount,
     readableBadgeCount: badgeCount > 9 ? '9+' : badgeCount,
     isEmpty: notifications.length === 0,
     updateSeenStatus,
