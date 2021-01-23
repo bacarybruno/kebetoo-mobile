@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import Popover from 'react-native-popover-view'
 
 import { Avatar, Logo, Typography } from '@app/shared/components'
+import { IconButton } from '@app/features/profile/containers'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import { useAppColors } from '@app/shared/hooks'
@@ -11,10 +13,26 @@ import styles from './styles'
 
 export const routeOptions = { headerShown: false }
 
+const HeaderMenu = () => (
+  <View style={{ width: 300 }}>
+    <IconButton icon="ios-log-out" text={strings.tabs.notifications} />
+    <IconButton icon="ios-log-out" text={strings.profile.edit_username} />
+    <IconButton icon="ios-log-out" text={strings.profile.edit_profile} />
+    <IconButton icon="ios-log-out" text={strings.profile.manage_posts_title} />
+    <IconButton icon="ios-log-out" text={strings.profile.signout} />
+  </View>
+)
+
 export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
-  <TouchableOpacity onPress={onPress}>
-    <Avatar src={photoURL} text={displayName} />
-  </TouchableOpacity>
+  <Popover
+    from={(
+      <TouchableOpacity onPress={onPress}>
+        <Avatar src={photoURL} text={displayName} />
+      </TouchableOpacity>
+    )}
+  >
+    <HeaderMenu />
+  </Popover>
 )
 
 const Header = ({
