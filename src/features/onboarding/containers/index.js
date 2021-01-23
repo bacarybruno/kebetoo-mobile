@@ -139,7 +139,7 @@ const OnboardingPage = ({ navigation }) => {
             <IconButton
               style={styles.nextButton}
               onPress={onSlideNext}
-              iconName="ios-arrow-round-forward"
+              iconName="arrow-forward"
               testID="next-button"
             />
           )}

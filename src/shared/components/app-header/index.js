@@ -49,7 +49,7 @@ const HeaderMenu = ({ close }) => {
         onPress={() => navigateToRoute(routes.MANAGE_POSTS)}
       />
       <IconButton.Text
-        icon="md-help"
+        icon="information-circle-outline"
         text={strings.profile.issue_or_feedback}
         onPress={() => navigateToRoute(routes.CREATE_POST, { action: actionTypes.REPORT })}
       />

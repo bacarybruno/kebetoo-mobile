@@ -26,7 +26,7 @@ export const SearchIcon = ({ onPress }) => {
       onPress={onPress}
       hitSlop={edgeInsets.all(15)}
     >
-      <Ionicon name="ios-search" size={23} color={colors.textPrimary} />
+      <Ionicon name="search" size={20} color={colors.textPrimary} />
     </TouchableOpacity>
   )
 }
@@ -38,7 +38,7 @@ export const CancelIcon = ({ isLoading, onPress }) => {
     <View style={styles.cancelIcon}>
       {!isLoading && (
         <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
-          <Ionicon name="ios-close" size={36} color={colors.textPrimary} />
+          <Ionicon name="close" size={30} color={colors.textPrimary} />
         </TouchableOpacity>
       )}
       {isLoading && <ActivityIndicator size={23} color={colors.textPrimary} />}
