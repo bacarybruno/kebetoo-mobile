@@ -50,7 +50,7 @@ exports[`renders HeaderClose 1`] = `
       Object {
         "color": "red",
         "fontFamily": "Ionicons",
-        "fontSize": 40,
+        "fontSize": 30,
         "fontStyle": "normal",
         "fontWeight": "normal",
       }

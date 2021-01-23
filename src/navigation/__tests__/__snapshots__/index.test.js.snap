@@ -445,7 +445,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                 "height": 30,
                                                 "width": 30,
                                               },
-                                              undefined,
+                                              Object {
+                                                "height": 35,
+                                                "width": 35,
+                                              },
                                               undefined,
                                             ]
                                           }
@@ -465,7 +468,9 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                   "flex": 1,
                                                   "justifyContent": "center",
                                                 },
-                                                undefined,
+                                                Object {
+                                                  "borderRadius": 17.5,
+                                                },
                                               ]
                                             }
                                             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -786,7 +791,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             "height": 30,
                                             "width": 30,
                                           },
-                                          undefined,
+                                          Object {
+                                            "height": 35,
+                                            "width": 35,
+                                          },
                                           undefined,
                                         ]
                                       }
@@ -806,7 +814,9 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
-                                            undefined,
+                                            Object {
+                                              "borderRadius": 17.5,
+                                            },
                                           ]
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -1191,13 +1201,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home"
                                   />
                                 </View>
                                 <View
@@ -1223,13 +1233,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home-outline"
                                   />
                                 </View>
                               </View>
@@ -1264,6 +1274,227 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               >
                                 Home
                               </Text>
+                            </View>
+                            <View
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "selected": false,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                  Object {
+                                    "flexDirection": "column",
+                                    "justifyContent": "flex-end",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "flex": 1,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <Text
+                                    allowFontScaling={false}
+                                    style={
+                                      Object {
+                                        "color": "rgba(0, 122, 255, 255)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      }
+                                    }
+                                    text="ionicon-chatbubbles"
+                                  />
+                                </View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 1,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <Text
+                                    allowFontScaling={false}
+                                    style={
+                                      Object {
+                                        "color": "#7A8FA6",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      }
+                                    }
+                                    text="ionicon-chatbubbles-outline"
+                                  />
+                                </View>
+                              </View>
+                              <Text
+                                numberOfLines={1}
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0,
+                                      "lineHeight": 16,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      Object {
+                                        "color": "#7A8FA6",
+                                      },
+                                    ],
+                                  ]
+                                }
+                              >
+                                Rooms
+                              </Text>
+                            </View>
+                            <View
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "selected": false,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                  Object {
+                                    "flexDirection": "column",
+                                    "justifyContent": "flex-end",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "flex": 1,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                    ]
+                                  }
+                                />
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 1,
+                                      },
+                                    ]
+                                  }
+                                />
+                              </View>
                             </View>
                             <View
                               accessibilityRole="button"
@@ -1332,13 +1563,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 36,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": -8,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications"
                                   />
                                 </View>
                                 <View
@@ -1365,13 +1595,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       Object {
                                         "color": "#7A8FA6",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 27,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": 0,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications-outline"
                                   />
                                 </View>
                               </View>
@@ -1473,13 +1702,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-undefined"
+                                    text="ionicon-search"
                                   />
                                 </View>
                                 <View
@@ -1505,122 +1734,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
-                              </View>
-                            </View>
-                            <View
-                              accessibilityRole="button"
-                              accessibilityState={
-                                Object {
-                                  "selected": false,
-                                }
-                              }
-                              accessible={true}
-                              focusable={true}
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "flex": 1,
-                                  },
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                  },
-                                  Object {
-                                    "flexDirection": "column",
-                                    "justifyContent": "flex-end",
-                                  },
-                                  undefined,
-                                ]
-                              }
-                            >
-                              <View
-                                style={
-                                  Array [
-                                    Object {
-                                      "flex": 1,
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 0,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
-                                  />
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 1,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-search"
+                                    text="ionicon-search-outline"
                                   />
                                 </View>
                               </View>
@@ -1654,146 +1774,6 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 }
                               >
                                 Search
-                              </Text>
-                            </View>
-                            <View
-                              accessibilityRole="button"
-                              accessibilityState={
-                                Object {
-                                  "selected": false,
-                                }
-                              }
-                              accessible={true}
-                              focusable={true}
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "flex": 1,
-                                  },
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                  },
-                                  Object {
-                                    "flexDirection": "column",
-                                    "justifyContent": "flex-end",
-                                  },
-                                  undefined,
-                                ]
-                              }
-                            >
-                              <View
-                                style={
-                                  Array [
-                                    Object {
-                                      "flex": 1,
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 0,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 24,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-user"
-                                  />
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 1,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-user"
-                                  />
-                                </View>
-                              </View>
-                              <Text
-                                numberOfLines={1}
-                                style={
-                                  Array [
-                                    Object {
-                                      "backgroundColor": "transparent",
-                                      "color": "#000000",
-                                      "fontFamily": "System",
-                                      "fontSize": 12,
-                                      "fontWeight": "400",
-                                      "letterSpacing": 0,
-                                      "lineHeight": 16,
-                                    },
-                                    Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "fontFamily": "System",
-                                        "fontWeight": "400",
-                                      },
-                                      Object {
-                                        "color": "#7A8FA6",
-                                      },
-                                    ],
-                                  ]
-                                }
-                              >
-                                Profile
                               </Text>
                             </View>
                           </View>
@@ -2273,7 +2253,10 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                 "height": 30,
                                                 "width": 30,
                                               },
-                                              undefined,
+                                              Object {
+                                                "height": 35,
+                                                "width": 35,
+                                              },
                                               undefined,
                                             ]
                                           }
@@ -2293,7 +2276,9 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                   "flex": 1,
                                                   "justifyContent": "center",
                                                 },
-                                                undefined,
+                                                Object {
+                                                  "borderRadius": 17.5,
+                                                },
                                               ]
                                             }
                                             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -2614,7 +2599,10 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             "height": 30,
                                             "width": 30,
                                           },
-                                          undefined,
+                                          Object {
+                                            "height": 35,
+                                            "width": 35,
+                                          },
                                           undefined,
                                         ]
                                       }
@@ -2634,7 +2622,9 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
-                                            undefined,
+                                            Object {
+                                              "borderRadius": 17.5,
+                                            },
                                           ]
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -3019,13 +3009,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home"
                                   />
                                 </View>
                                 <View
@@ -3051,13 +3041,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home-outline"
                                   />
                                 </View>
                               </View>
@@ -3092,6 +3082,227 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                               >
                                 Home
                               </Text>
+                            </View>
+                            <View
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "selected": false,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                  Object {
+                                    "flexDirection": "column",
+                                    "justifyContent": "flex-end",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "flex": 1,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <Text
+                                    allowFontScaling={false}
+                                    style={
+                                      Object {
+                                        "color": "rgba(0, 122, 255, 255)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      }
+                                    }
+                                    text="ionicon-chatbubbles"
+                                  />
+                                </View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 1,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <Text
+                                    allowFontScaling={false}
+                                    style={
+                                      Object {
+                                        "color": "#7A8FA6",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      }
+                                    }
+                                    text="ionicon-chatbubbles-outline"
+                                  />
+                                </View>
+                              </View>
+                              <Text
+                                numberOfLines={1}
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0,
+                                      "lineHeight": 16,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      Object {
+                                        "color": "#7A8FA6",
+                                      },
+                                    ],
+                                  ]
+                                }
+                              >
+                                Rooms
+                              </Text>
+                            </View>
+                            <View
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "selected": false,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                  Object {
+                                    "flexDirection": "column",
+                                    "justifyContent": "flex-end",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "flex": 1,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                    ]
+                                  }
+                                />
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "height": "100%",
+                                        "justifyContent": "center",
+                                        "minWidth": 25,
+                                        "position": "absolute",
+                                        "width": "100%",
+                                      },
+                                      Object {
+                                        "opacity": 1,
+                                      },
+                                    ]
+                                  }
+                                />
+                              </View>
                             </View>
                             <View
                               accessibilityRole="button"
@@ -3160,13 +3371,12 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 36,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": -8,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications"
                                   />
                                 </View>
                                 <View
@@ -3193,13 +3403,12 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       Object {
                                         "color": "#7A8FA6",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 27,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": 0,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications-outline"
                                   />
                                 </View>
                               </View>
@@ -3301,13 +3510,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-undefined"
+                                    text="ionicon-search"
                                   />
                                 </View>
                                 <View
@@ -3333,122 +3542,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
-                              </View>
-                            </View>
-                            <View
-                              accessibilityRole="button"
-                              accessibilityState={
-                                Object {
-                                  "selected": false,
-                                }
-                              }
-                              accessible={true}
-                              focusable={true}
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "flex": 1,
-                                  },
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                  },
-                                  Object {
-                                    "flexDirection": "column",
-                                    "justifyContent": "flex-end",
-                                  },
-                                  undefined,
-                                ]
-                              }
-                            >
-                              <View
-                                style={
-                                  Array [
-                                    Object {
-                                      "flex": 1,
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 0,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
-                                  />
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 1,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-search"
+                                    text="ionicon-search-outline"
                                   />
                                 </View>
                               </View>
@@ -3482,146 +3582,6 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 }
                               >
                                 Search
-                              </Text>
-                            </View>
-                            <View
-                              accessibilityRole="button"
-                              accessibilityState={
-                                Object {
-                                  "selected": false,
-                                }
-                              }
-                              accessible={true}
-                              focusable={true}
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "flex": 1,
-                                  },
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                  },
-                                  Object {
-                                    "flexDirection": "column",
-                                    "justifyContent": "flex-end",
-                                  },
-                                  undefined,
-                                ]
-                              }
-                            >
-                              <View
-                                style={
-                                  Array [
-                                    Object {
-                                      "flex": 1,
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 0,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 24,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-user"
-                                  />
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "alignItems": "center",
-                                        "alignSelf": "center",
-                                        "height": "100%",
-                                        "justifyContent": "center",
-                                        "minWidth": 25,
-                                        "position": "absolute",
-                                        "width": "100%",
-                                      },
-                                      Object {
-                                        "opacity": 1,
-                                      },
-                                    ]
-                                  }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-user"
-                                  />
-                                </View>
-                              </View>
-                              <Text
-                                numberOfLines={1}
-                                style={
-                                  Array [
-                                    Object {
-                                      "backgroundColor": "transparent",
-                                      "color": "#000000",
-                                      "fontFamily": "System",
-                                      "fontSize": 12,
-                                      "fontWeight": "400",
-                                      "letterSpacing": 0,
-                                      "lineHeight": 16,
-                                    },
-                                    Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "fontFamily": "System",
-                                        "fontWeight": "400",
-                                      },
-                                      Object {
-                                        "color": "#7A8FA6",
-                                      },
-                                    ],
-                                  ]
-                                }
-                              >
-                                Profile
                               </Text>
                             </View>
                           </View>
@@ -4680,7 +4640,7 @@ You Care About
                                 "fontWeight": "normal",
                               }
                             }
-                            text="ionicon-ios-arrow-round-forward"
+                            text="ionicon-arrow-forward"
                           />
                         </View>
                       </View>
@@ -5018,7 +4978,10 @@ exports[`tabs renders TabNavigation 1`] = `
                               "height": 30,
                               "width": 30,
                             },
-                            undefined,
+                            Object {
+                              "height": 35,
+                              "width": 35,
+                            },
                             undefined,
                           ]
                         }
@@ -5038,7 +5001,9 @@ exports[`tabs renders TabNavigation 1`] = `
                                 "flex": 1,
                                 "justifyContent": "center",
                               },
-                              undefined,
+                              Object {
+                                "borderRadius": 17.5,
+                              },
                             ]
                           }
                           testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -5496,13 +5461,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-home"
+                  text="ionicon-home"
                 />
               </View>
               <View
@@ -5528,13 +5493,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-home"
+                  text="ionicon-home-outline"
                 />
               </View>
             </View>
@@ -5637,13 +5602,12 @@ exports[`tabs renders TabNavigation 1`] = `
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
                       "fontFamily": "Ionicons",
-                      "fontSize": 36,
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
-                      "marginTop": -8,
                     }
                   }
-                  text="ionicon-ios-notifications-outline"
+                  text="ionicon-chatbubbles"
                 />
               </View>
               <View
@@ -5670,13 +5634,233 @@ exports[`tabs renders TabNavigation 1`] = `
                     Object {
                       "color": "#7A8FA6",
                       "fontFamily": "Ionicons",
-                      "fontSize": 27,
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
-                      "marginTop": 0,
                     }
                   }
-                  text="ionicon-ios-notifications-outline"
+                  text="ionicon-chatbubbles-outline"
+                />
+              </View>
+            </View>
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 16,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "color": "#7A8FA6",
+                    },
+                  ],
+                ]
+              }
+            >
+              Rooms
+            </Text>
+          </View>
+          <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "selected": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                Object {
+                  "flexDirection": "column",
+                  "justifyContent": "flex-end",
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "alignSelf": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "minWidth": 25,
+                      "position": "absolute",
+                      "width": "100%",
+                    },
+                    Object {
+                      "opacity": 0,
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "alignSelf": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "minWidth": 25,
+                      "position": "absolute",
+                      "width": "100%",
+                    },
+                    Object {
+                      "opacity": 1,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "selected": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                Object {
+                  "flexDirection": "column",
+                  "justifyContent": "flex-end",
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "alignSelf": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "minWidth": 25,
+                      "position": "absolute",
+                      "width": "100%",
+                    },
+                    Object {
+                      "opacity": 0,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "rgba(0, 122, 255, 255)",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-notifications"
+                />
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "alignSelf": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "minWidth": 25,
+                      "position": "absolute",
+                      "width": "100%",
+                    },
+                    Object {
+                      "opacity": 1,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "#7A8FA6",
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="ionicon-notifications-outline"
                 />
               </View>
             </View>
@@ -5778,13 +5962,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-undefined"
+                  text="ionicon-search"
                 />
               </View>
               <View
@@ -5810,122 +5994,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-undefined"
-                />
-              </View>
-            </View>
-          </View>
-          <View
-            accessibilityRole="button"
-            accessibilityState={
-              Object {
-                "selected": false,
-              }
-            }
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                Object {
-                  "flexDirection": "column",
-                  "justifyContent": "flex-end",
-                },
-                undefined,
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "flex": 1,
-                  },
-                  undefined,
-                ]
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 25,
-                      "position": "absolute",
-                      "width": "100%",
-                    },
-                    Object {
-                      "opacity": 0,
-                    },
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-search"
-                />
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 25,
-                      "position": "absolute",
-                      "width": "100%",
-                    },
-                    Object {
-                      "opacity": 1,
-                    },
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-search"
+                  text="ionicon-search-outline"
                 />
               </View>
             </View>
@@ -5959,146 +6034,6 @@ exports[`tabs renders TabNavigation 1`] = `
               }
             >
               Search
-            </Text>
-          </View>
-          <View
-            accessibilityRole="button"
-            accessibilityState={
-              Object {
-                "selected": false,
-              }
-            }
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                Object {
-                  "flexDirection": "column",
-                  "justifyContent": "flex-end",
-                },
-                undefined,
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "flex": 1,
-                  },
-                  undefined,
-                ]
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 25,
-                      "position": "absolute",
-                      "width": "100%",
-                    },
-                    Object {
-                      "opacity": 0,
-                    },
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-user"
-                />
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 25,
-                      "position": "absolute",
-                      "width": "100%",
-                    },
-                    Object {
-                      "opacity": 1,
-                    },
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-user"
-                />
-              </View>
-            </View>
-            <Text
-              numberOfLines={1}
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "#000000",
-                    "fontFamily": "System",
-                    "fontSize": 12,
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 16,
-                  },
-                  Array [
-                    Object {
-                      "color": "rgba(0,0,0,0.87)",
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "color": "#7A8FA6",
-                    },
-                  ],
-                ]
-              }
-            >
-              Profile
             </Text>
           </View>
         </View>

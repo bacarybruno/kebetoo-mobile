@@ -115,12 +115,12 @@ exports[`renders SearchPage for posts 1`] = `
           Object {
             "color": "rgba(0,0,0,0.87)",
             "fontFamily": "Ionicons",
-            "fontSize": 23,
+            "fontSize": 24,
             "fontStyle": "normal",
             "fontWeight": "normal",
           }
         }
-        text="ionicon-ios-search"
+        text="ionicon-search"
       />
     </View>
   </View>
@@ -788,12 +788,12 @@ exports[`renders SearchPage for users 1`] = `
           Object {
             "color": "rgba(0,0,0,0.87)",
             "fontFamily": "Ionicons",
-            "fontSize": 23,
+            "fontSize": 24,
             "fontStyle": "normal",
             "fontWeight": "normal",
           }
         }
-        text="ionicon-ios-search"
+        text="ionicon-search"
       />
     </View>
   </View>

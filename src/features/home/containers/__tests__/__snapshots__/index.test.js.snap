@@ -493,7 +493,10 @@ exports[`renders HomePage 1`] = `
                     "height": 30,
                     "width": 30,
                   },
-                  undefined,
+                  Object {
+                    "height": 35,
+                    "width": 35,
+                  },
                   undefined,
                 ]
               }
@@ -513,7 +516,9 @@ exports[`renders HomePage 1`] = `
                       "flex": 1,
                       "justifyContent": "center",
                     },
-                    undefined,
+                    Object {
+                      "borderRadius": 17.5,
+                    },
                   ]
                 }
                 testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -894,12 +899,12 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -1647,12 +1652,12 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -2308,12 +2313,12 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -2438,12 +2443,12 @@ exports[`renders HomePage 1`] = `
                         Object {
                           "color": "rgba(255, 255, 255, 255)",
                           "fontFamily": "Ionicons",
-                          "fontSize": 45,
+                          "fontSize": 40,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
                         }
                       }
-                      text="ionicon-ios-play"
+                      text="ionicon-play"
                     />
                   </View>
                   <Video
@@ -3017,12 +3022,12 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -3681,12 +3686,12 @@ exports[`renders HomePage 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>

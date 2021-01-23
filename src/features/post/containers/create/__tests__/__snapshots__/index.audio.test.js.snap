@@ -1,34 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders AudioPlayer if post has recording 1`] = `
-<RCTScrollView
-  keyboardShouldPersistTaps="always"
->
-  <View>
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        undefined,
+      ]
+    }
+  >
     <View
       style={
-        Array [
-          undefined,
-          undefined,
-        ]
+        Object {
+          "flex": 8,
+        }
       }
     >
-      <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "marginLeft": 16,
+                  "width": 24,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": undefined,
+                  "fontFamily": "icomoon",
+                  "fontSize": 20,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="kebeticon-chevron-left"
+            />
+          </View>
+        </View>
         <Text
           style={
             Array [
-              false,
-              false,
-              false,
               Object {
                 "backgroundColor": "transparent",
                 "color": "#000000",
                 "fontFamily": "System",
-                "fontSize": 12,
+                "fontSize": 22,
                 "fontWeight": "400",
-                "letterSpacing": 0,
-                "lineHeight": 16,
+                "letterSpacing": 0.34375,
+                "lineHeight": 28,
               },
+              false,
+              false,
+              false,
               Array [
                 Object {
                   "color": undefined,
@@ -36,174 +98,282 @@ exports[`renders AudioPlayer if post has recording 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "fontFamily": "System",
-                  "fontWeight": "400",
+                  "fontWeight": "600",
                 },
                 undefined,
               ],
             ]
           }
         >
-          Your message
+          Share post
         </Text>
-        <View
-          style={Object {}}
-        >
-          <View
+        <ActivityIndicator
+          animating={false}
+          color="#999999"
+          hidesWhenStopped={true}
+          size="small"
+          style={
+            Object {
+              "marginLeft": 8,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          undefined,
+          undefined,
+          Object {
+            "borderColor": undefined,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
+            },
+            Array [
+              Object {
+                "color": undefined,
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        SHARE
+      </Text>
+    </View>
+  </View>,
+  <RCTScrollView
+    keyboardShouldPersistTaps="always"
+  >
+    <View>
+      <View
+        style={
+          Array [
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <View>
+          <Text
             style={
               Array [
-                undefined,
-                undefined,
+                false,
+                false,
+                false,
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": undefined,
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
               ]
             }
           >
-            <TextInput
-              allowFontScaling={true}
-              autoFocus={true}
-              blurOnSubmit={false}
-              defaultValue=""
-              editable={true}
-              maxLength={180}
-              multiline={true}
-              numberOfLines={8}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholder="What's on your mind?"
-              rejectResponderTermination={true}
-              returnKeyType="default"
+            Your message
+          </Text>
+          <View
+            style={Object {}}
+          >
+            <View
               style={
                 Array [
                   undefined,
                   undefined,
-                  undefined,
                 ]
               }
-              underlineColorAndroid="transparent"
-              value={null}
-            />
+            >
+              <TextInput
+                allowFontScaling={true}
+                autoFocus={true}
+                blurOnSubmit={false}
+                defaultValue=""
+                editable={true}
+                maxLength={180}
+                multiline={true}
+                numberOfLines={8}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholder="What's on your mind?"
+                rejectResponderTermination={true}
+                returnKeyType="default"
+                style={
+                  Array [
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value={null}
+              />
+            </View>
           </View>
         </View>
-      </View>
-      <View>
-        <View
-          style={
-            Array [
-              undefined,
-              undefined,
-            ]
-          }
-        >
+        <View>
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 undefined,
-                Object {},
                 undefined,
               ]
             }
-            testID="player-wrapper"
           >
-            <View>
-              <View
-                style={
-                  Object {
-                    "width": "0%",
-                  }
-                }
-                testID="progress"
-              />
-              <View
-                accessible={true}
-                focusable={true}
-                hitSlop={
-                  Object {
-                    "bottom": 10,
-                    "left": 10,
-                    "right": 10,
-                    "top": 10,
-                  }
-                }
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <Text
-                  allowFontScaling={false}
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  undefined,
+                  Object {},
+                  undefined,
+                ]
+              }
+              testID="player-wrapper"
+            >
+              <View>
+                <View
                   style={
                     Object {
-                      "color": undefined,
-                      "fontFamily": "Ionicons",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "width": "0%",
                     }
                   }
-                  text="ionicon-ios-play"
+                  testID="progress"
                 />
-              </View>
-              <View>
-                <Image
-                  source={
+                <View
+                  accessible={true}
+                  focusable={true}
+                  hitSlop={
                     Object {
-                      "testUri": "../../../assets/images/waves.png",
+                      "bottom": 10,
+                      "left": 10,
+                      "right": 10,
+                      "top": 10,
                     }
                   }
-                />
-              </View>
-              <Text
-                style={
-                  Array [
-                    false,
-                    false,
-                    false,
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
                     Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 12,
-                      "fontWeight": "400",
-                      "letterSpacing": 0,
-                      "lineHeight": 16,
-                    },
-                    Array [
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
                       Object {
                         "color": undefined,
-                      },
+                        "fontFamily": "Ionicons",
+                        "fontSize": 22,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="ionicon-ios-play"
+                  />
+                </View>
+                <View>
+                  <Image
+                    source={
+                      Object {
+                        "testUri": "../../../assets/images/waves.png",
+                      }
+                    }
+                  />
+                </View>
+                <Text
+                  style={
+                    Array [
+                      false,
+                      false,
+                      false,
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "fontFamily": "System",
+                        "fontSize": 12,
                         "fontWeight": "400",
+                        "letterSpacing": 0,
+                        "lineHeight": 16,
                       },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                0:00
-              </Text>
+                      Array [
+                        Object {
+                          "color": undefined,
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  0:00
+                </Text>
+              </View>
             </View>
           </View>
         </View>
       </View>
     </View>
-  </View>
-</RCTScrollView>
+  </RCTScrollView>,
+]
 `;

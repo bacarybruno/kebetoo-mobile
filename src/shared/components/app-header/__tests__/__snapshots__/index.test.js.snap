@@ -156,7 +156,10 @@ exports[`renders Header 1`] = `
             "height": 30,
             "width": 30,
           },
-          undefined,
+          Object {
+            "height": 35,
+            "width": 35,
+          },
           undefined,
         ]
       }
@@ -176,7 +179,9 @@ exports[`renders Header 1`] = `
               "flex": 1,
               "justifyContent": "center",
             },
-            undefined,
+            Object {
+              "borderRadius": 17.5,
+            },
           ]
         }
         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
