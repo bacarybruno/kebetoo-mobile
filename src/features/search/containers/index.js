@@ -26,7 +26,7 @@ export const SearchIcon = ({ onPress }) => {
       onPress={onPress}
       hitSlop={edgeInsets.all(15)}
     >
-      <Ionicon name="search" size={20} color={colors.textPrimary} />
+      <Ionicon name="search" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
   )
 }

@@ -19,6 +19,7 @@ import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
 import HomePage from '@app/features/home/containers'
+import RoomsPage from '@app/features/rooms/containers'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
 import SearchPage from '@app/features/search/containers'
@@ -80,9 +81,9 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
-      [routes.NOTIFICATIONS]: 'chatbubbles',
+      [routes.ROOMS]: 'chatbubbles',
       [routes.SEARCH]: 'search',
-      [routes.PROFILE]: 'person',
+      [routes.NOTIFICATIONS]: 'notifications',
     }
     const size = 24
     const iconName = iconNames[route.name]
@@ -98,9 +99,9 @@ const defaultTabOptions = ({ route }) => ({
   tabBarLabel: ({ focused, color }) => {
     const labels = {
       [routes.HOME]: HomePage.routeOptions.title,
-      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
+      [routes.ROOMS]: RoomsPage.routeOptions.title,
       [routes.SEARCH]: SearchPage.routeOptions.title,
-      [routes.PROFILE]: ProfilePage.routeOptions.title,
+      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
     }
     return (
       <Typography
@@ -122,10 +123,10 @@ const defaultMainScreenOptions = {
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Tab.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
+  <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
+  <Stack.Screen component={NotificationsPage} name={routes.NOTIFICATIONS} />,
   <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
-  <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
 ]
 
 export const TabBar = (styles, colors) => (props) => (
@@ -199,6 +200,7 @@ export const loggedInPages = [
   <Stack.Screen component={VideoModal} name={routes.MODAL_VIDEO} />,
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
+  <Stack.Screen component={ProfilePage} name={routes.PROFILE} />,
 ]
 
 // Main Section

@@ -7,7 +7,7 @@ import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 import {
-  TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer,
+  TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer, AppHeader,
 } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
@@ -32,14 +32,9 @@ import { warnNotImplemented } from '@app/shared/components/no-content'
 
 import createThemedStyles from './styles'
 
-export const routeOptions = (styles, colors) => ({
-  headerShown: true,
-  headerBackImage: () => (
-    <HeaderBack.Close tintColor={colors.textPrimary} />
-  ),
-  headerStyle: styles.header,
-  headerTitleStyle: { color: colors.textPrimary },
-})
+export const routeOptions = {
+  headerShown: false,
+}
 
 export const actionTypes = {
   EDIT: 'edit',
@@ -132,7 +127,7 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
-  navigation.setOptions(routeOptions(styles, colors))
+  navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
   const { reportError } = useAnalytics()
@@ -261,7 +256,7 @@ const CreatePostPage = ({ route, navigation }) => {
   }, [editMode, shareMode, reportMode])
 
   useLayoutEffect(() => {
-    const headerMessages = getHeaderMessages()
+    
     navigation.setOptions({
       headerRight: () => (
         <OutlinedButton
@@ -292,7 +287,24 @@ const CreatePostPage = ({ route, navigation }) => {
   }, [filePicker.file, navigation])
 
   const marginBottom = keyboardHeight - getBottomSpace() + metrics.marginHorizontal
+  const headerMessages = getHeaderMessages()
   return (
+    <>
+    <AppHeader
+      style={styles.header}
+      title={headerMessages.title}
+      text=""
+      showAvatar={false}
+      headerBack
+      Right={() =>　(
+        <OutlinedButton
+          text={headerMessages.post.toUpperCase()}
+          disabled={text.length === 0 || isLoading}
+          onPress={onHeaderSavePress}
+          loading={isLoading}
+        />
+      )}
+    />
     <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
       <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
         <PostTextMessage
@@ -353,6 +365,7 @@ const CreatePostPage = ({ route, navigation }) => {
         )}
       </View>
     </ScrollView>
+    </>
   )
 }
 

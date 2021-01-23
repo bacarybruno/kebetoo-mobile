@@ -1,8 +1,9 @@
 import { metrics } from '@app/theme'
 import { StyleSheet } from 'react-native'
+
 import Typography from '../typography'
 
-export default (colors) => StyleSheet.create({
+export default StyleSheet.create({
   header: {
     height: 60,
     flexDirection: 'row',
@@ -23,13 +24,8 @@ export default (colors) => StyleSheet.create({
     height: Typography.fontSizes.header,
     marginLeft: metrics.spacing.xs,
   },
-  headerMenu: {
-    minWidth: 250,
-    paddingVertical: metrics.spacing.xs,
-    paddingHorizontal: metrics.marginHorizontal,
-  },
-  popover: {
-    backgroundColor: colors.backgroundSecondary,
-    borderRadius: metrics.radius.sm,
+  headerBack: {
+    marginLeft: 0,
+    marginRight: metrics.spacing.md,
   },
 })

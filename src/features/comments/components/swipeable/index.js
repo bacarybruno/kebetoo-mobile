@@ -32,7 +32,7 @@ const SwipeableComment = ({ children, style, onFulfilled }) => {
     return (
       <View style={styles.leftAction}>
         <Animated.View style={{ ...styles.leftContent, transform: [{ translateX }] }}>
-          <Ionicon name="ios-undo" size={20} color={colors.textPrimary} />
+          <Ionicon name="arrow-undo" size={20} color={colors.textPrimary} />
         </Animated.View>
       </View>
     )
