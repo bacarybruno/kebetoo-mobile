@@ -1,93 +1,31 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Popover from 'react-native-popover-view'
 
-import { Avatar, Logo, Typography, IconButton } from '@app/shared/components'
+import { Avatar, Logo, Typography } from '@app/shared/components'
+import { IconButton } from '@app/features/profile/containers'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
-import { useAppColors, useAppStyles, useNotifications, useUser } from '@app/shared/hooks'
-import { actionTypes } from '@app/features/post/containers/create'
+import { useAppColors } from '@app/shared/hooks'
 
-import createThemedStyles from './styles'
-import { colors } from '@app/theme'
+import styles from './styles'
+import HeaderBack from '../header-back'
 
 export const routeOptions = { headerShown: false }
 
-const HeaderMenu = ({ close }) => {
-  const { signOut } = useUser()
-  const styles = useAppStyles(createThemedStyles)
-  const { navigate } = useNavigation()
-  const { badgeCount } = useNotifications()
+export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
+    <Avatar src={photoURL} text={displayName} size={35} />
+  </TouchableOpacity>
+)
 
-  const navigateToRoute = (...args) => {
-    navigate(...args)
-    close()
-  }
-
-  const userSignOut = () => {
-    signOut()
-    close()
-  }
-
-  return (
-    <View style={styles.headerMenu}>
-      <IconButton.Text
-        icon="ios-notifications-outline"
-        text={strings.tabs.notifications}
-        onPress={() => navigateToRoute(routes.NOTIFICATIONS)}
-        badgeColor={colors.pink}
-        badge={
-          badgeCount > 0
-            ? strings.formatString(strings.notifications.new_count, badgeCount)
-            : null
-        }
-      />
-      <IconButton.Text
-        icon="md-list"
-        text={strings.profile.manage_posts_title}
-        onPress={() => navigateToRoute(routes.MANAGE_POSTS)}
-      />
-      <IconButton.Text
-        icon="information-circle-outline"
-        text={strings.profile.issue_or_feedback}
-        onPress={() => navigateToRoute(routes.CREATE_POST, { action: actionTypes.REPORT })}
-      />
-      <IconButton.Text
-        icon="ios-log-out"
-        onPress={userSignOut}
-        text={strings.profile.signout}
-      />
-    </View>
-  )
-}
-
-export const HeaderAvatar = ({ photoURL, displayName, onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const [isVisible, setIsVisible] = useState(false)
-  const { readableBadgeCount } = useNotifications()
-
-  const open = () => setIsVisible(true)
-  const close = () => setIsVisible(false)
-
-  return (
-    <Popover
-      popoverStyle={styles.popover}
-      onOpenComplete={open}
-      onCloseComplete={close}
-      onRequestClose={close}
-      isVisible={isVisible}
-      from={(
-        <TouchableOpacity onPress={open}>
-          <Avatar size={38} src={photoURL} text={displayName} badge={readableBadgeCount} />
-        </TouchableOpacity>
-      )}
-    >
-      <HeaderMenu close={close} />
-    </Popover>
-  )
-}
-
+const HeaderNavigationBack = ({ onPress, tintColor }) => (
+  <TouchableOpacity onPress={onPress}>
+    <HeaderBack tintColor={tintColor} style={styles.headerBack} />
+  </TouchableOpacity>
+)
+ 
 const Header = ({
   displayName = '',
   imageSrc,
@@ -100,10 +38,10 @@ const Header = ({
   text = strings.home.whats_new,
   loading = false,
   showAvatar = true,
+  headerBack = false,
   Right,
 }) => {
-  const { navigate } = useNavigation()
-  const styles = useAppStyles(createThemedStyles)
+  const { navigate, goBack } = useNavigation()
   const { colors } = useAppColors()
 
   const onHeaderPress = useCallback(() => {
@@ -114,6 +52,9 @@ const Header = ({
     <View style={[styles.header, style]}>
       <View style={styles.greetings}>
         <View style={styles.section}>
+          {headerBack && (
+            <HeaderNavigationBack tintColor={colors.textPrimary} onPress={goBack} />
+          )}
           <Typography text={title.replace(' ,', ',')} type={Typography.types.headline2} />
           <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
         </View>

@@ -5,10 +5,9 @@ const routes = {
   ONBOARDING: 'route:onboarding',
   HOME_NAV: 'route:home_nav',
   HOME: 'tab:home',
-  PROFILE: 'tab:profile',
-  SEARCH: 'tab:search',
+  ROOMS: 'tab:rooms',
   NOTIFICATIONS: 'tab:notifications',
-  STORIES: 'tab:stories',
+  SEARCH: 'tab:search',
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'tab:tabs_fab',
   COMMENTS: 'route:comments',
@@ -19,6 +18,7 @@ const routes = {
   SEARCH_POSTS: 'tab:search_posts',
   SEARCH_USERS: 'tab:search_users',
   CAMERA_ROLL_PICKER: 'route:camera_roll_picker',
+  PROFILE: 'route:profile',
 }
 
 export default routes

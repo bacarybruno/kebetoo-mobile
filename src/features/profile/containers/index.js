@@ -357,7 +357,7 @@ const ProfilePage = React.memo(() => {
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.padding}>
-          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} />
+          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} headerBack />
           <ProfileHeader
             profile={profile}
             postsCount={postsCount}

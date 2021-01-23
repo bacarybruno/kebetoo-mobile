@@ -15,11 +15,7 @@ export default (colors) => StyleSheet.create({
     marginBottom: metrics.marginVertical,
   },
   header: {
-    backgroundColor: colors.background,
-    ...elevation(0),
-  },
-  headerSaveButton: {
-    marginHorizontal: metrics.marginHorizontal,
+    paddingHorizontal: metrics.marginHorizontal,
   },
   textInput: {
     textAlignVertical: 'top',

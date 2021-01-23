@@ -26,4 +26,7 @@ export default (colors) => StyleSheet.create({
   fab: {
     fontSize: 35,
   },
+  header: {
+    paddingHorizontal: metrics.marginHorizontal,
+  },
 })
