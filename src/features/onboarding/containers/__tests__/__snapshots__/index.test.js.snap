@@ -885,7 +885,7 @@ You Care About
               "fontWeight": "normal",
             }
           }
-          text="ionicon-ios-arrow-round-forward"
+          text="ionicon-arrow-forward"
         />
       </View>
     </View>

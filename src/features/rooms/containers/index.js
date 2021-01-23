@@ -1,9 +1,9 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { Typography } from '@app/shared/components'
+import { AppHeader, Typography } from '@app/shared/components'
 import { strings } from '@app/config'
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppStyles, useUser } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
@@ -11,9 +11,17 @@ const routeOptions = { title: strings.tabs.rooms }
 
 const RoomsPage = () => {
   const styles = useAppStyles(createThemedStyles)
+  const { profile } = useUser()
+
   return (
     <View style={styles.wrapper}>
-      <Typography type={Typography.types.headline4} text="Hello Rooms" />
+      <AppHeader
+        title={strings.tabs.rooms}
+        text=""
+        displayName={profile.displayName}
+        imageSrc={profile.photoURL}
+        style={styles.pageTitle}
+      />
     </View>
   )
 }

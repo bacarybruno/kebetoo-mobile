@@ -38,11 +38,10 @@ it('renders ManagePost', async () => {
 
 it('defines page name', () => {
   const { props } = givenManagePost()
-  expect(props.navigation.setOptions).toBeCalledWith(
-    expect.objectContaining({
-      title: strings.manage_posts.my_posts, headerShown: true,
-    }),
-  )
+  expect(props.navigation.setOptions).toBeCalledWith({
+    title: strings.manage_posts.my_posts,
+    headerShown: false,
+  })
 })
 
 it('display a no-content message if there is no post', async () => {

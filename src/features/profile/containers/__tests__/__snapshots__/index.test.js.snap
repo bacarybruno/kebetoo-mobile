@@ -51,6 +51,53 @@ exports[`renders Profile 1`] = `
                 }
               }
             >
+              <View
+                accessible={true}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "width": 24,
+                      },
+                      Object {
+                        "marginLeft": 0,
+                        "marginRight": 16,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "icomoon",
+                        "fontSize": 20,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="kebeticon-chevron-left"
+                  />
+                </View>
+              </View>
               <Text
                 style={
                   Array [
@@ -961,7 +1008,7 @@ exports[`renders Profile 1`] = `
                     "fontWeight": "normal",
                   }
                 }
-                text="ionicon-ios-globe"
+                text="ionicon-language"
               />
             </View>
             <View>
@@ -1288,7 +1335,7 @@ exports[`renders Profile 1`] = `
                   ]
                 }
               >
-                Issue or Feedback
+                Help & Feedback
               </Text>
             </View>
           </View>
@@ -1347,7 +1394,7 @@ exports[`renders Profile 1`] = `
                     "fontWeight": "normal",
                   }
                 }
-                text="ionicon-ios-appstore"
+                text="ionicon-information-circle-sharp"
               />
             </View>
             <View>
