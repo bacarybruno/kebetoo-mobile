@@ -15,4 +15,20 @@ export default (colors) => StyleSheet.create({
     borderRadius: metrics.radius.round,
     backgroundColor: colors.primary,
   },
+  badgeWrapper: {
+    backgroundColor: colors.background,
+    padding: 2,
+    position: 'absolute',
+    top: -4,
+    left: -6,
+    borderRadius: metrics.radius.round,
+  },
+  badge: {
+    backgroundColor: colors.pink,
+    width: 20,
+    height: 20,
+    borderRadius: metrics.radius.round,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })

@@ -36,7 +36,7 @@ const SocialSignIn = ({
   onLoading,
   disabled,
   type,
-  enabled = Platform.OS !== 'ios',
+  enabled = Platform.OS !== 'ios' || __DEV__,
   onError,
 }) => {
   const styles = useAppStyles(createThemedStyles)

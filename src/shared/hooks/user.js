@@ -5,8 +5,10 @@ import { useSelector } from 'react-redux'
 import { userProfileSelector } from '@app/redux/selectors'
 
 import { api } from '../services'
+// import useAnalytics from './analytics'
 
 const useUser = () => {
+  // const { trackSignOut } = useAnalytics()
   const profile = useSelector(userProfileSelector)
   const { isLoggedIn } = profile
 
@@ -17,6 +19,7 @@ const useUser = () => {
       console.log('An error occured while signing user out', error)
     } finally {
       await auth().signOut()
+      // trackSignOut()
     }
   }, [profile.uid])
 

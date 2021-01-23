@@ -269,7 +269,6 @@ export const ProfileHeader = React.memo(({
 const ProfilePage = React.memo(() => {
   const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
-  const { trackSignOut } = useAnalytics()
 
   const stats = useSelector(userStatsSelector)
   const [postsCount, setPostsCount] = useState(stats.posts)
@@ -350,11 +349,6 @@ const ProfilePage = React.memo(() => {
 
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
-  const requestSignOut = useCallback(async () => {
-    await signOut()
-    trackSignOut()
-  }, [signOut, trackSignOut])
-
   const reportIssue = useCallback(() => {
     navigate(routes.CREATE_POST, { action: actionTypes.REPORT })
   }, [navigate])
@@ -379,7 +373,7 @@ const ProfilePage = React.memo(() => {
           shareApp={shareApp}
           reportIssue={reportIssue}
         />
-        <AccountSection signOut={requestSignOut} />
+        <AccountSection signOut={signOut} />
       </ScrollView>
     </View>
   )

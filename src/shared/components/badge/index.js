@@ -6,16 +6,16 @@ import { useAppColors } from '@app/shared/hooks'
 import styles from './styles'
 import Typography from '../typography'
 
-const getBackgroundColor = (primary, colors) => ({
-  backgroundColor: primary ? colors.primary : colors.secondary,
+const getBackgroundColor = (primary, colors, color) => ({
+  backgroundColor: color || (primary ? colors.primary : colors.secondary),
 })
 
 const Badge = ({
-  text, style, primary, typography, testID,
+  text, style, primary, typography, testID, color,
 }) => {
   const { colors } = useAppColors()
   return (
-    <View style={[styles.wrapper, getBackgroundColor(primary, colors), style]} testID={testID}>
+    <View style={[styles.wrapper, getBackgroundColor(primary, colors, color), style]} testID={testID}>
       <Typography
         type={typography || Typography.types.headline5}
         text={text}
