@@ -92,7 +92,7 @@ const locales = Object.freeze({
     dark: 'Dark',
     light: 'Light',
     application: 'Application',
-    issue_or_feedback: 'Issue or Feedback',
+    issue_or_feedback: 'Help & Feedback',
   },
   manage_posts: {
     my_posts: 'Manage posts',
@@ -161,6 +161,7 @@ const locales = Object.freeze({
     already_seen: 'Already seen',
     replied_comment: 'replied to your comment',
     no_content: 'Your notifications will appear here',
+    new_count: '{0} new',
   },
   dates: {
     format_month_year: 'MMMM YYYY',
