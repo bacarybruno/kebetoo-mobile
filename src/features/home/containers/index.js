@@ -207,7 +207,7 @@ const HomePage = ({ navigation }) => {
       value: 'updatedAt',
     }]
     return (
-      <>
+      <View style={styles.headerWrapper}>
         <AppHeader
           displayName={user.displayName}
           imageSrc={user.photoURL}
@@ -219,7 +219,7 @@ const HomePage = ({ navigation }) => {
           onSelect={onSelectFilter}
           selectedValue={postsSort}
         />
-      </>
+      </View>
     )
   }, [onSelectFilter, styles.header, postsSort])
 
