@@ -22,6 +22,7 @@ const locales = Object.freeze({
     support: 'Support',
     not_implemented_title: 'Information',
     not_implemented_description: 'This feature has not been enabled yet. It will be available in the next versions of Kebetoo.',
+    create: 'Create',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -163,6 +164,11 @@ const locales = Object.freeze({
     replied_comment: 'replied to your comment',
     no_content: 'Your notifications will appear here',
     new_count: '{0} new',
+  },
+  create_room: {
+    create_room: 'Create room',
+    room_name: 'Enter Room name (required)',
+    room_theme: 'Select room theme',
   },
   dates: {
     format_month_year: 'MMMM YYYY',

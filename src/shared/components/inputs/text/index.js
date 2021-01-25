@@ -13,7 +13,7 @@ import createThemedStyles from '../styles'
 
 export const ErrorTooltip = (styles, colors) => (
   <TouchableOpacity style={styles.iconWrapper}>
-    <Ionicon name="ios-alert" size={28} color={colors.pink} />
+    <Ionicon name="alert-circle" size={28} color={colors.pink} />
   </TouchableOpacity>
 )
 

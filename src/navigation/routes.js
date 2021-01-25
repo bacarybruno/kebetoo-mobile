@@ -19,6 +19,7 @@ const routes = {
   SEARCH_USERS: 'tab:search_users',
   CAMERA_ROLL_PICKER: 'route:camera_roll_picker',
   PROFILE: 'route:profile',
+  CREATE_ROOM: 'route:create_room',
 }
 
 export default routes

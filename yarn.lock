@@ -1673,6 +1673,11 @@
   dependencies:
     stacktrace-js "^2.0.0"
 
+"@react-native-firebase/database@<10.0.0":
+  version "7.5.15"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-7.5.15.tgz#6a8d4570f181b9978ad10ff3bead3911833c0e1b"
+  integrity sha512-3fcrNRAJ3yBbM90Y4uG/qWwip7fV8fyb0Xdt5I4Ul6F+BNVYFe5TGT+8YyKCooR2bYgU0RH6spbdtVqI6CwHig==
+
 "@react-native-firebase/messaging@<10.0.0":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-8.0.1.tgz#845a31ed7464bf170823d0148056fa9f9c6d3f2e"

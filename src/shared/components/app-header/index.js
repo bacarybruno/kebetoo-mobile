@@ -54,7 +54,7 @@ const Header = ({
           {headerBack && (
             <HeaderNavigationBack tintColor={colors.textPrimary} onPress={goBack} />
           )}
-          <Typography text={title.replace(' ,', ',')} type={Typography.types.headline2} />
+          <Typography style={styles.title} numberOfLines={1} text={title.replace(' ,', ',')} type={Typography.types.headline2} />
           <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
         </View>
         {text.length > 0 && (
