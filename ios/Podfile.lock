@@ -43,6 +43,9 @@ PODS:
   - Firebase/Crashlytics (6.34.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 4.6.2)
+  - Firebase/Database (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.6.0)
   - Firebase/Messaging (6.34.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 4.7.1)
@@ -75,6 +78,9 @@ PODS:
     - GoogleDataTransport (~> 7.2)
     - nanopb (~> 1.30906.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseDatabase (6.6.0):
+    - FirebaseCore (~> 6.10)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (1.7.0):
     - FirebaseCore (~> 6.10)
     - GoogleUtilities/Environment (~> 6.7)
@@ -188,6 +194,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - leveldb-library (1.22)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -488,6 +495,10 @@ PODS:
     - Firebase/Crashlytics (~> 6.34.0)
     - React-Core
     - RNFBApp
+  - RNFBDatabase (7.5.15):
+    - Firebase/Database (~> 6.34.0)
+    - React-Core
+    - RNFBApp
   - RNFBMessaging (8.0.1):
     - Firebase/Messaging (~> 6.34.0)
     - React-Core
@@ -595,6 +606,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
+  - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
@@ -622,6 +634,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCrashlytics
+    - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
@@ -638,6 +651,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - leveldb-library
     - nanopb
     - OpenSSL-Universal
     - PromisesObjC
@@ -738,6 +752,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBCrashlytics:
     :path: "../node_modules/@react-native-firebase/crashlytics"
+  RNFBDatabase:
+    :path: "../node_modules/@react-native-firebase/database"
   RNFBMessaging:
     :path: "../node_modules/@react-native-firebase/messaging"
   RNGestureHandler:
@@ -778,6 +794,7 @@ SPEC CHECKSUMS:
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseCrashlytics: 1a747c9cc084a24dc6d9511c991db1cd078154eb
+  FirebaseDatabase: 13a865a4b85897462b930eb683bda8f52583713f
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseInstanceID: bd3ffc24367f901a43c063b36c640b345a4a5dd1
   FirebaseMessaging: 5eca4ef173de76253352511aafef774caa1cba2a
@@ -796,6 +813,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
   Permission-Microphone: 84332821b494a0864867ae41c0b29f28002db47b
@@ -841,6 +859,7 @@ SPEC CHECKSUMS:
   RNFBApp: 804b98033f45c3a3e35b56de8c894f85ef5e4388
   RNFBAuth: 8c4de7a59b563bd399993855aa61183e1f1be4bf
   RNFBCrashlytics: 501d01e5dd0cd6affedba60762b9b8d7d579cea8
+  RNFBDatabase: 5c71fdaefe5b2c4a061787bf938b16b006a16003
   RNFBMessaging: b8d5f0ab26e5b8fe9a45f4aa6b85270565e32f05
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNGoogleSignin: 068788c1e83e5e05ef0bad090ba67fd8f963a2a3

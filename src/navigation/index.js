@@ -10,16 +10,16 @@ import PushNotification from 'react-native-push-notification'
 import AsyncStorage from '@react-native-community/async-storage'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Kebeticon from '@app/shared/icons/kebeticons'
 import {
   TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
 } from '@app/shared/components'
-import { images, metrics } from '@app/theme'
+import { images } from '@app/theme'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
 import HomePage from '@app/features/home/containers'
 import RoomsPage from '@app/features/rooms/containers'
+import CreateRoomPage from '@app/features/rooms/containers/create'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
 import SearchPage from '@app/features/search/containers'
@@ -201,6 +201,7 @@ export const loggedInPages = [
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
   <Stack.Screen component={ProfilePage} name={routes.PROFILE} />,
+  <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
 ]
 
 // Main Section

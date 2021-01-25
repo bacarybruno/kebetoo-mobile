@@ -26,7 +26,7 @@ export const ImageAvatar = ({ src, size, style }) => {
 }
 
 export const TextAvatar = ({
-  text, size, style, fontSize, noRadius,
+  text, size, style, fontSize, noRadius, color,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -36,7 +36,8 @@ export const TextAvatar = ({
         styles.content,
         borderRadius(size),
         noRadius && { borderRadius: 0 },
-        backgroundColor(text)]}
+        color ? { backgroundColor: color } : backgroundColor(text)
+      ]}
       >
         <Text
           style={{ fontSize, ...systemWeights.semibold, color: colors.white }}

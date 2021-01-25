@@ -52,10 +52,15 @@ export const hexToRgba = (hex, opacity) => {
 
 export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => {
   const baseColors = {
-    pink: iosColors.systemPink[colorScheme],
     blue: iosColors.systemBlue[colorScheme],
+    green: iosColors.systemGreen[colorScheme],
+    indigo: iosColors.systemIndigo[colorScheme],
+    orange: iosColors.systemOrange[colorScheme],
+    pink: iosColors.systemPink[colorScheme],
     purple: iosColors.systemPurple[colorScheme],
     red: iosColors.systemRed[colorScheme],
+    teal: iosColors.systemTeal[colorScheme],
+    yellow: iosColors.systemYellow[colorScheme],
     black: iosColors.black,
     white: iosColors.white,
   }

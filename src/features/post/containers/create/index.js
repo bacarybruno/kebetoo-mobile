@@ -7,7 +7,7 @@ import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 import {
-  TextInput, Typography, HeaderBack, OutlinedButton, AudioPlayer, AppHeader,
+  TextInput, Typography, OutlinedButton, AudioPlayer, AppHeader,
 } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'

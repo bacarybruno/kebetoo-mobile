@@ -28,4 +28,7 @@ export default StyleSheet.create({
     marginLeft: 0,
     marginRight: metrics.spacing.md,
   },
+  title: {
+    flex: 1,
+  }
 })
