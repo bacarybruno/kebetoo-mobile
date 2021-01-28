@@ -103,6 +103,7 @@ exports[`renders CommentInput 1`] = `
           <TextInput
             allowFontScaling={true}
             blurOnSubmit={false}
+            disableAutofocus={true}
             editable={true}
             multiline={true}
             onBlur={[Function]}

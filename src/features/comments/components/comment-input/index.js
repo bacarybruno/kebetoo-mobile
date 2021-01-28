@@ -27,6 +27,7 @@ export const CommentInput = ({
   placeholder,
   style,
   disableEmojis,
+  disableAutofocus = true,
   handleContentSizeChange = true,
   ...inputProps
 }) => {
@@ -79,6 +80,7 @@ export const CommentInput = ({
               reply && styles.textInputWrapperWithReply,
             ]}
             disableEmojis={disableEmojis}
+            disableAutofocus={disableAutofocus}
             {...inputProps}
           >
             {reply && (

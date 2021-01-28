@@ -122,6 +122,7 @@ const RoomPage = ({ navigation }) => {
         value={message}
         isLoading={isLoading}
         disableEmojis
+        disableAutofocus
         handleContentSizeChange={false}
         // reply={toReply}
         // onReplyClose={clearToReply}

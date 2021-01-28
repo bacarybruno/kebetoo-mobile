@@ -1922,6 +1922,7 @@ exports[`renders Comments 1`] = `
               <TextInput
                 allowFontScaling={true}
                 blurOnSubmit={false}
+                disableAutofocus={true}
                 editable={true}
                 multiline={false}
                 onBlur={[Function]}
@@ -3958,6 +3959,7 @@ exports[`renders Comments in loading state 1`] = `
               <TextInput
                 allowFontScaling={true}
                 blurOnSubmit={false}
+                disableAutofocus={true}
                 editable={true}
                 multiline={false}
                 onBlur={[Function]}

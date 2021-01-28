@@ -81,8 +81,8 @@ const EmojiTextInput = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    if (!blurred) ref?.current?.focus()
-  }, [showEmojiPicker, ref, blurred])
+    if (!blurred && !props.disableAutofocus) ref?.current?.focus()
+  }, [showEmojiPicker, props.disableAutofocus, ref, blurred])
 
   const handleBlur = useCallback(() => {
     if (showEmojiPicker) {
