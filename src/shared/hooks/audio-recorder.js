@@ -7,7 +7,7 @@ import { LogBox } from 'react-native'
 
 import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
-import { getExtension, getMimeType } from '@app/shared/helpers/file'
+import { getExtension, getFileName, getMimeType } from '@app/shared/helpers/file'
 import BackgroundTimer from '@app/shared/helpers/background-timer'
 
 LogBox.ignoreLogs([
@@ -30,6 +30,14 @@ export const constructFileName = (time, duration, extension) => (
 export const extractMetadataFromName = (name) => {
   const extension = getExtension(name)
   const [prefix, time, duration] = name.replace(extension, '').split('-')
+  return {
+    prefix, time, duration,
+  }
+}
+
+export const extractMetadataFromUrl = (url) => {
+  const name = getFileName(url).split('.')[0]
+  const [prefix, time, duration] = name.split('_')
   return {
     prefix, time, duration,
   }
@@ -107,6 +115,23 @@ const useAudioRecorder = (
     return response
   }, [elapsedTime, recordUri])
 
+  const saveAsset = useCallback(async () => {
+    try {
+      const time = dayjs().format('YYYYMMDD')
+      const response = await api.assets.createAudio({
+        audio: {
+          uri: recordUri,
+          mimeType: getMimeType(recordUri),
+          name: constructFileName(time, elapsedTime, getExtension(recordUri)),
+        },
+      })
+      reset()
+      return response[0].url
+    } catch (error) {
+      console.log(error)
+    }
+  }, [elapsedTime, recordUri, reset])
+
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
@@ -156,13 +181,14 @@ const useAudioRecorder = (
   return {
     start,
     stop,
-    savePost,
-    saveComment,
     reset,
+    savePost,
+    saveAsset,
+    saveComment,
+    recordUri,
+    elapsedTime,
     isRecording,
     hasRecording,
-    elapsedTime,
-    recordUri,
   }
 }
 

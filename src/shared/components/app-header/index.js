@@ -24,11 +24,14 @@ const HeaderNavigationBack = ({ onPress, tintColor }) => (
     <HeaderBack tintColor={tintColor} style={styles.headerBack} />
   </TouchableOpacity>
 )
- 
+
 const Header = ({
   displayName = '',
   imageSrc,
   style,
+  titleStyle,
+  textStyle,
+  iconColor,
   title = strings.formatString(strings.home.welcome, (
     displayName && displayName.trim()
       ? displayName.trim().split(' ')[0]
@@ -39,6 +42,7 @@ const Header = ({
   showAvatar = true,
   headerBack = false,
   Right,
+  Logo: HeaderLogo,
 }) => {
   const { navigate, goBack } = useNavigation()
   const { colors } = useAppColors()
@@ -52,17 +56,21 @@ const Header = ({
       <View style={styles.greetings}>
         <View style={styles.section}>
           {headerBack && (
-            <HeaderNavigationBack tintColor={colors.textPrimary} onPress={goBack} />
+            <HeaderNavigationBack tintColor={iconColor || colors.textPrimary} onPress={goBack} />
           )}
-          <Typography style={styles.title} numberOfLines={1} text={title.replace(' ,', ',')} type={Typography.types.headline2} />
-          <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
-        </View>
-        {text.length > 0 && (
-          <View style={styles.section}>
-            <Typography text={text} type={Typography.types.subheading} />
-            <Logo style={styles.icon} />
+          <View style={{ flex: 1 }}>
+            <View style={styles.section}>
+              <Typography style={[styles.title, titleStyle]} numberOfLines={1} text={title.replace(' ,', ',')} type={Typography.types.headline2} />
+              <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
+            </View>
+            {text.length > 0 && (
+              <View style={styles.section}>
+                <Typography text={text} style={textStyle} type={Typography.types.subheading} />
+                {HeaderLogo ? HeaderLogo : <Logo style={styles.icon} />}
+              </View>
+            )}
           </View>
-        )}
+        </View>
       </View>
       {Right && <Right />}
       {showAvatar && (

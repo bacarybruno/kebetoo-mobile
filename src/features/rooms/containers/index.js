@@ -1,14 +1,19 @@
-import React from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import React, { useCallback, useState } from 'react'
+import { View, TouchableOpacity, FlatList } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { AppHeader, Typography } from '@app/shared/components'
+import { AppHeader, SegmentedControl } from '@app/shared/components'
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-
-import createThemedStyles from './styles'
+import { abbreviateNumber } from '@app/shared/helpers/strings'
 import { edgeInsets } from '@app/theme'
 import routes from '@app/navigation/routes'
+
+import createThemedStyles from './styles'
+import Room from '../components/room'
+import dayjs from 'dayjs'
+import useRooms from '../hooks/rooms'
+import { getSystemMessage } from './room'
 
 const routeOptions = { title: strings.tabs.rooms }
 
@@ -23,7 +28,46 @@ export const SearchIcon = ({ onPress }) => {
 
 const RoomsPage = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
+  const { rooms, discoverRooms } = useRooms()
   const { profile } = useUser()
+
+  const filterItems = [{
+    label: strings.formatString(strings.rooms.my_rooms, abbreviateNumber(rooms.length)),
+    value: 'rooms',
+  }, {
+    label: strings.formatString(strings.rooms.discover, abbreviateNumber(discoverRooms.length)),
+    value: 'discover',
+  }]
+  const [selectedValue, setSelectedValue] = useState(filterItems[0].value)
+
+  const navigateToRoom = useCallback((room) => {
+    navigation.navigate(routes.ROOM, room)
+  }, [])
+
+  const renderRoom = useCallback(({ item, index }) => (
+    <Room
+      isOpened={false}
+      onPress={() => navigateToRoom(item)}
+      membersCount={Object.keys(item.members)?.length ?? 0}
+      title={item.name}
+      message={item.lastMessage?.system ? getSystemMessage(item.lastMessage) : item.lastMessage?.text}
+      room={{ displayName: item.name }}
+      caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
+      theme={item.theme}
+    />
+  ), [])
+
+  const renderDiscoverRoom = useCallback(({ item, index }) => (
+    <Room.Discover
+      onPress={() => navigateToRoom(item)}
+      membersCount={Object.keys(item.members)?.length ?? 0}
+      title={item.name}
+      author={item.author.displayName}
+      room={{ displayName: item.name }}
+      caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
+      theme={item.theme}
+    />
+  ), [])
 
   return (
     <View style={styles.wrapper}>
@@ -34,8 +78,28 @@ const RoomsPage = ({ navigation }) => {
         showAvatar={false}
         displayName={profile.displayName}
         imageSrc={profile.photoURL}
-        style={styles.pageTitle}
+        style={styles.padding}
       />
+      <SegmentedControl
+        items={filterItems}
+        style={styles.segmentedControl}
+        onSelect={(item) => setSelectedValue(item.value)}
+        selectedValue={selectedValue}
+      />
+      {selectedValue === filterItems[0].value && (
+        <FlatList
+          data={rooms}
+          renderItem={renderRoom}
+          removeClippedSubviews
+        />
+      )}
+      {selectedValue === filterItems[1].value && (
+        <FlatList
+          data={discoverRooms}
+          renderItem={renderDiscoverRoom}
+          removeClippedSubviews
+        />
+      )}
     </View>
   )
 }

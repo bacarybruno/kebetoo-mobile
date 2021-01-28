@@ -2,15 +2,16 @@ import { StyleSheet } from 'react-native'
 import { human } from 'react-native-typography'
 
 import { metrics } from '@app/theme'
+import { hexToRgba, rgbaToHex } from '@app/theme/colors'
 
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: colors.background,
-    paddingHorizontal: metrics.marginHorizontal,
+    paddingBottom: metrics.spacing.md,
   },
   content: {
-    flex: 1,
+    paddingHorizontal: metrics.marginHorizontal,
   },
   inputWrapper: {
     flex: 1,
@@ -47,6 +48,21 @@ export default (colors) => StyleSheet.create({
   roomName: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 30,
   },
+  audioWrapper: {
+    height: 45,
+    margin: metrics.spacing.sm,
+    width: metrics.screenWidth / 1.5,
+  },
+  audio: {
+    backgroundColor: hexToRgba(rgbaToHex(colors.black), 0.05),
+  },
+  onlineDot: {
+    backgroundColor: colors.green,
+    borderRadius: metrics.radius.round,
+    width: 10,
+    height: 10,
+    marginLeft: metrics.spacing.xs,
+    marginTop: 3,
+  }
 })

@@ -41,7 +41,7 @@ const ColorPicker = ({ items, selectedItem, onChange = () => { } }) => {
   )
 }
 
-const CresteRoomPage = ({ navigation }) => {
+const CreateRoomPage = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const [name, setName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -122,6 +122,6 @@ const CresteRoomPage = ({ navigation }) => {
     </View>
   )
 }
-CresteRoomPage.routeOptions = routeOptions
+CreateRoomPage.routeOptions = routeOptions
 
-export default CresteRoomPage
+export default CreateRoomPage

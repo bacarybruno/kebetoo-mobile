@@ -25,7 +25,7 @@ export const Segment = ({ item, selected, onPress }) => {
 }
 
 const SegmentedControl = ({
-  items, selectedValue, onSelect, style, ...otherProps
+  items, selectedValue, onSelect = () => {}, style, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
 

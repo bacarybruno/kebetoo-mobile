@@ -20,6 +20,7 @@ import SignInPage from '@app/features/account/containers/signin'
 import HomePage from '@app/features/home/containers'
 import RoomsPage from '@app/features/rooms/containers'
 import CreateRoomPage from '@app/features/rooms/containers/create'
+import RoomPage from '@app/features/rooms/containers/room'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
 import SearchPage from '@app/features/search/containers'
@@ -141,7 +142,7 @@ export const TabBar = (styles, colors) => (props) => (
       style={styles.bottomTabOverlay}
     />
     <View>
-      <TabBarAddButton route={routes.CREATE_POST} />
+      <TabBarAddButton />
       <BottomTabBar {...props} />
     </View>
   </View>
@@ -202,6 +203,7 @@ export const loggedInPages = [
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
   <Stack.Screen component={ProfilePage} name={routes.PROFILE} />,
   <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
+  <Stack.Screen component={RoomPage} name={routes.ROOM} />,
 ]
 
 // Main Section
