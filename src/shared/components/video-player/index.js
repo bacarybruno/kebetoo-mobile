@@ -85,7 +85,7 @@ const VideoPlayer = ({
       />
       <View style={styles.touchableOverlay}>
         <TouchableOpacity style={styles.touchable} onPress={onPlayVideo}>
-          <Ionicon name="ios-play" size={45} color={colors.white} />
+          <Ionicon name="play" size={40} color={colors.white} />
         </TouchableOpacity>
         {Boolean(videoDuration) && (
           <Badge primary testID="badge" text={readableSeconds(videoDuration)} style={styles.badge} />

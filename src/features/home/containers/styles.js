@@ -14,4 +14,8 @@ export default (colors) => StyleSheet.create({
     paddingHorizontal: metrics.marginHorizontal,
     paddingBottom: metrics.tabBarFullHeight - metrics.tabBarHeight,
   },
+  headerWrapper: {
+    marginTop: metrics.spacing.sm,
+    marginBottom: metrics.spacing.md,
+  },
 })

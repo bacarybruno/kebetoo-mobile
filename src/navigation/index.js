@@ -10,15 +10,17 @@ import PushNotification from 'react-native-push-notification'
 import AsyncStorage from '@react-native-community/async-storage'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import Kebeticon from '@app/shared/icons/kebeticons'
 import {
   TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
 } from '@app/shared/components'
-import { images, metrics } from '@app/theme'
+import { images } from '@app/theme'
 import OnboardingPage from '@app/features/onboarding/containers'
 import SignUpPage from '@app/features/account/containers/signup'
 import SignInPage from '@app/features/account/containers/signin'
 import HomePage from '@app/features/home/containers'
+import RoomsPage from '@app/features/rooms/containers'
+import CreateRoomPage from '@app/features/rooms/containers/create'
+import RoomPage from '@app/features/rooms/containers/room'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
 import SearchPage from '@app/features/search/containers'
@@ -80,29 +82,27 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
-      [routes.NOTIFICATIONS]: 'ios-notifications-outline',
+      [routes.ROOMS]: 'chatbubbles',
       [routes.SEARCH]: 'search',
-      [routes.PROFILE]: 'user',
+      [routes.NOTIFICATIONS]: 'notifications',
     }
-    const size = focused ? 24 : 18
+    const size = 24
     const iconName = iconNames[route.name]
-    return iconName !== 'ios-notifications-outline'
-      ? <Kebeticon name={iconName} size={size} color={color} />
-      : (
-        <Ionicon
-          name={iconName}
-          size={size * 1.5}
-          color={color}
-          style={{ marginTop: focused ? -metrics.spacing.sm : 0 }}
-        />
-      )
+    if (iconName === undefined) return
+    return (
+      <Ionicon
+        name={focused ? iconName : (iconName + '-outline')}
+        size={size}
+        color={color}
+      />
+    )
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {
       [routes.HOME]: HomePage.routeOptions.title,
-      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
+      [routes.ROOMS]: RoomsPage.routeOptions.title,
       [routes.SEARCH]: SearchPage.routeOptions.title,
-      [routes.PROFILE]: ProfilePage.routeOptions.title,
+      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
     }
     return (
       <Typography
@@ -124,10 +124,10 @@ const defaultMainScreenOptions = {
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Tab.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
+  <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
+  <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
   <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
-  <Tab.Screen name={routes.PROFILE} component={ProfilePage} />,
 ]
 
 export const TabBar = (styles, colors) => (props) => (
@@ -142,7 +142,7 @@ export const TabBar = (styles, colors) => (props) => (
       style={styles.bottomTabOverlay}
     />
     <View>
-      <TabBarAddButton route={routes.CREATE_POST} />
+      <TabBarAddButton />
       <BottomTabBar {...props} />
     </View>
   </View>
@@ -201,6 +201,9 @@ export const loggedInPages = [
   <Stack.Screen component={VideoModal} name={routes.MODAL_VIDEO} />,
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
+  <Stack.Screen component={ProfilePage} name={routes.PROFILE} />,
+  <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
+  <Stack.Screen component={RoomPage} name={routes.ROOM} />,
 ]
 
 // Main Section

@@ -18,7 +18,7 @@ const HeaderBack = ({ tintColor, style }) => (
 
 HeaderBack.Close = ({ tintColor, style }) => (
   <Wrapper style={style}>
-    <Ionicon name="ios-close" color={tintColor} size={40} />
+    <Ionicon name="ios-close" color={tintColor} size={30} />
   </Wrapper>
 )
 

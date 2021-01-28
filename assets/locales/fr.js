@@ -22,6 +22,7 @@ const locales = Object.freeze({
     support: 'Support',
     not_implemented_title: 'Information',
     not_implemented_description: 'Cette fonctionnalité n\'a pas encore été activée. Elle le sera dans les prochaines versions de Kebetoo.',
+    create: 'Créer',
   },
   onboarding: {
     screen_one_title: 'Rejoignez Notre Réseau Social',
@@ -57,6 +58,7 @@ const locales = Object.freeze({
     notifications: 'Notifications',
     search: 'Recherche',
     profile: 'Profil',
+    rooms: 'Rooms',
   },
   home: {
     welcome: 'Salut {0},',
@@ -92,7 +94,7 @@ const locales = Object.freeze({
     dark: 'Sombre',
     light: 'Clair',
     application: 'Application',
-    issue_or_feedback: 'Problème ou Feedback',
+    issue_or_feedback: 'Aide & Feedback',
   },
   manage_posts: {
     my_posts: 'Mes publications',
@@ -108,7 +110,7 @@ const locales = Object.freeze({
   },
   comments: {
     no_content: 'Soyez le premier à ajouter un commentaire ! 👇',
-    add_comment: 'Ajouter un commentaire',
+    add_comment: 'Ajouter un commentaire...',
     recording: 'Entrain d\'enregistrer',
     people_reacted: '{0} ont réagi',
     replying_to: 'Réponse à {0}',
@@ -161,6 +163,23 @@ const locales = Object.freeze({
     already_seen: 'Déja consultés',
     replied_comment: 'a répondu à votre commentaire',
     no_content: 'Vos notifications vont apparaitre ici',
+    new_count: '{0} nouv.',
+  },
+  rooms: {
+    created_by: 'Créé par {0}',
+    members: '{0} membres',
+    my_rooms: 'Mes Rooms ({0})',
+    discover: 'Découvrir ({0})',
+  },
+  create_room: {
+    create_room: 'Créer une room',
+    room_name: 'Nom de la room (requis)',
+    room_theme: 'Selectionnez le theme principal',
+  },
+  room: {
+    type_message: 'Message...',
+    online_count: '{0} en ligne',
+    system_room_created: '{0} a créé la room',
   },
   dates: {
     format_month_year: 'MMMM YYYY',

@@ -10,7 +10,7 @@ import Snackbar from 'react-native-snackbar'
 
 import { api } from '@app/shared/services'
 import {
-  HeaderBack, Typography, NoContent, Badge,
+  HeaderBack, Typography, NoContent, Badge, AppHeader,
 } from '@app/shared/components'
 import { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
@@ -27,14 +27,9 @@ LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
 ])
 
-export const routeOptions = (colors) => ({
+export const routeOptions = ({
+  headerShown: false,
   title: strings.manage_posts.my_posts,
-  headerShown: true,
-  headerStyle: { backgroundColor: colors.background },
-  headerTitleStyle: { color: colors.textPrimary },
-  headerBackImage: () => (
-    <HeaderBack tintColor={colors.textPrimary} />
-  ),
 })
 
 export const NoPosts = () => (
@@ -55,7 +50,7 @@ const bottomSheetItems = [{
 const ManagePostsPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
-  navigation.setOptions(routeOptions(colors))
+  navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
   const [posts, setPosts] = useState([])
@@ -228,6 +223,14 @@ const ManagePostsPage = ({ route, navigation }) => {
 
   return (
     <View style={[styles.wrapper, sortedPosts.length === 0 && { paddingTop: 0 }]}>
+      <AppHeader
+        style={styles.header}
+        title={routeOptions.title}
+        text=""
+        showAvatar={false}
+        headerBack
+        loading={loading}
+      />
       <SectionList
         style={styles.sectionList}
         sections={sortedPosts}

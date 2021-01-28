@@ -269,8 +269,8 @@ const CameraRollPicker = ({ navigation }) => {
   }, [navigation, selected, onSubmit])
 
   useLayoutEffect(() => {
-    let iconName = 'ios-arrow-down'
-    if (modalVisible) iconName = 'ios-arrow-up'
+    let iconName = 'chevron-down'
+    if (modalVisible) iconName = 'chevron-up'
     else if (selected.length > 0) iconName = 'md-send'
 
     const onPress = selected.length > 0 ? submitSelection : toggleModalPicker

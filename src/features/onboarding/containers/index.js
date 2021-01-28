@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useState, useRef, useEffect, useMemo,
+  useCallback, useState, useRef, useEffect, useMemo, useContext,
 } from 'react'
 import {
   View, TouchableOpacity, ImageBackground, StatusBar,
@@ -13,6 +13,8 @@ import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
 import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 import { strings } from '@app/config'
+import { SafeAreaContext } from '@app/shared/contexts'
+
 
 import createThemedStyles from './styles'
 
@@ -74,11 +76,16 @@ const OnboardingPage = ({ navigation }) => {
   navigation.setOptions(routeOptions)
   const styles = useAppStyles(createThemedStyles)
   const { colors, resetAppBars } = useAppColors()
-
   const [slideIndex, setSlideIndex] = useState(0)
   const swiperRef = useRef()
   const isLastSlideItem = slideItems.length - 1 === slideIndex
   const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
+  const { updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
+
+  useEffect(() => {
+    updateTopSafeAreaColor(colors.onboarding)
+    updateBottomSafeAreaColor(colors.onboarding)
+  }, [])
 
   useEffect(() => {
     trackOnboardingStart()
@@ -100,6 +107,7 @@ const OnboardingPage = ({ navigation }) => {
 
   const onGetStarted = useCallback(() => {
     trackOnboardingEnd()
+    resetStatusBars()
     navigation.navigate(routes.SIGNUP)
   }, [navigation, trackOnboardingEnd])
 
@@ -139,7 +147,7 @@ const OnboardingPage = ({ navigation }) => {
             <IconButton
               style={styles.nextButton}
               onPress={onSlideNext}
-              iconName="ios-arrow-round-forward"
+              iconName="arrow-forward"
               testID="next-button"
             />
           )}

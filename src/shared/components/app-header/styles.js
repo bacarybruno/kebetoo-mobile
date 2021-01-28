@@ -1,5 +1,6 @@
 import { metrics } from '@app/theme'
 import { StyleSheet } from 'react-native'
+
 import Typography from '../typography'
 
 export default StyleSheet.create({
@@ -23,4 +24,11 @@ export default StyleSheet.create({
     height: Typography.fontSizes.header,
     marginLeft: metrics.spacing.xs,
   },
+  headerBack: {
+    marginLeft: 0,
+    marginRight: metrics.spacing.md,
+  },
+  title: {
+    flex: 1,
+  }
 })

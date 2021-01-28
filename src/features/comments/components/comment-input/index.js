@@ -15,7 +15,20 @@ import createThemedStyles from './styles'
 const baseReplyInfoSize = 62
 
 export const CommentInput = ({
-  onChange, onSend, inputRef, value, audioRecorder, isLoading, reply, onReplyClose, ...inputProps
+  onChange,
+  onSend,
+  inputRef,
+  value,
+  audioRecorder,
+  isLoading,
+  reply,
+  onReplyClose,
+  theme,
+  placeholder,
+  style,
+  disableEmojis,
+  handleContentSizeChange = true,
+  ...inputProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
 
@@ -31,17 +44,17 @@ export const CommentInput = ({
   }, [inputHeight, reply])
 
   const updateInputHeight = useCallback((event) => {
+    if (!handleContentSizeChange) return
     setInputHeight(
       Math.max(
         styles.textInputSize.minHeight,
         event.nativeEvent.contentSize.height,
       ),
     )
-  }, [styles.textInputSize.minHeight])
+  }, [styles.textInputSize.minHeight, handleContentSizeChange])
 
-  // FIXME: handle ios keyboard on comments
   return (
-    <View style={styles.commentInputWrapper}>
+    <View style={[styles.commentInputWrapper, style]}>
       <View style={styles.flexible}>
         {!audioRecorder.hasRecording && (
           <EmojiTextInput
@@ -50,7 +63,7 @@ export const CommentInput = ({
             placeholder={
               audioRecorder.isRecording
                 ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
-                : strings.comments.add_comment
+                : (placeholder || strings.comments.add_comment)
             }
             onValueChange={onChange}
             value={value}
@@ -65,6 +78,7 @@ export const CommentInput = ({
               styles.textInputWrapper,
               reply && styles.textInputWrapperWithReply,
             ]}
+            disableEmojis={disableEmojis}
             {...inputProps}
           >
             {reply && (
@@ -91,10 +105,16 @@ export const CommentInput = ({
               isRecording={audioRecorder.isRecording}
               start={audioRecorder.start}
               stop={audioRecorder.stop}
+              defaultBgColor={theme}
             />
           </View>
         ) : (
-          <SendButton onPress={onSend} isLoading={isLoading} testID="send-button" />
+          <SendButton
+            onPress={onSend}
+            isLoading={isLoading}
+            testID="send-button"
+            defaultBgColor={theme}
+          />
         )}
     </View>
   )

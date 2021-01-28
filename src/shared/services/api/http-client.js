@@ -82,12 +82,12 @@ class HttpClient {
       data: JSON.stringify(data),
     }
     const file = {
-      name: `files.${field}`,
+      name: 'files',
       filename: asset.name,
       type: asset.mimeType,
       data: RNFetchBlob.wrap(asset.uri),
     }
-    const formData = [payload, file]
+    const formData = [file]
     return RNFetchBlob
       .fetch('POST', this.baseURL + endpoint, headers, formData)
       .then((res) => res.json())

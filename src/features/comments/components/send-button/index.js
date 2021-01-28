@@ -7,11 +7,13 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
-export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => {
+export const SendButton = React.memo(({
+  onPress, isLoading, defaultBgColor, ...otherProps
+}) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   return (
-    <TouchableOpacity style={styles.send} onPress={isLoading ? undefined : onPress} {...otherProps}>
+    <TouchableOpacity style={[styles.send, defaultBgColor && { backgroundColor: defaultBgColor }]} onPress={isLoading ? undefined : onPress} {...otherProps}>
       {isLoading
         ? <ActivityIndicator size={25} color={colors.white} />
         : (
@@ -21,7 +23,9 @@ export const SendButton = React.memo(({ onPress, isLoading, ...otherProps }) => 
   )
 })
 
-export const RecordButton = React.memo(({ isRecording, start, stop }) => {
+export const RecordButton = React.memo(({
+  isRecording, start, stop, defaultBgColor,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   return (
@@ -35,7 +39,7 @@ export const RecordButton = React.memo(({ isRecording, start, stop }) => {
       onPressIn={start}
       onPressOut={stop}
       isActive={isRecording}
-      defaultBgColor={colors.primary}
+      defaultBgColor={defaultBgColor || colors.primary}
     />
   )
 })

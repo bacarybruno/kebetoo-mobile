@@ -56,14 +56,14 @@ exports[`renders EmojiTextInput 1`] = `
           allowFontScaling={false}
           style={
             Object {
-              "color": "rgba(174, 174, 178, 255)",
+              "color": "rgba(0,0,0,0.54)",
               "fontFamily": "Ionicons",
               "fontSize": 28,
               "fontStyle": "normal",
               "fontWeight": "normal",
             }
           }
-          text="ionicon-md-happy"
+          text="ionicon-happy-outline"
         />
       </View>
       <TextInput

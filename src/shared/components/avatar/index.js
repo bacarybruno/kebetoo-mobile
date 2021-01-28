@@ -6,6 +6,7 @@ import generateColor from '@app/shared/helpers/color-generator'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
+import Typography from '../typography'
 
 const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
@@ -25,7 +26,7 @@ export const ImageAvatar = ({ src, size, style }) => {
 }
 
 export const TextAvatar = ({
-  text, size, style, fontSize, noRadius,
+  text, size, style, fontSize, noRadius, color,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -35,7 +36,8 @@ export const TextAvatar = ({
         styles.content,
         borderRadius(size),
         noRadius && { borderRadius: 0 },
-        backgroundColor(text)]}
+        color ? { backgroundColor: color } : backgroundColor(text)
+      ]}
       >
         <Text
           style={{ fontSize, ...systemWeights.semibold, color: colors.white }}
@@ -47,8 +49,27 @@ export const TextAvatar = ({
   )
 }
 
-const Avatar = ({ src, text, ...props }) => (
-  src ? <ImageAvatar src={src} {...props} /> : <TextAvatar text={text} {...props} />
-)
+const Avatar = ({ src, text, size, badge, ...props }) => {
+  const styles = useAppStyles(createThemedStyles)
+  return (
+    <>
+      {src
+        ? <ImageAvatar size={size} src={src} {...props} />
+        : <TextAvatar size={size} text={text} {...props} />}
+      {!!badge && (
+        <View style={styles.badgeWrapper}>
+          <View style={styles.badge}>
+            <Typography
+              text={badge}
+              type={Typography.types.headline6}
+              systemWeight={Typography.weights.bold}
+              color={Typography.colors.primary}
+            />
+          </View>
+        </View>
+      )}
+    </>
+  )
+}
 
 export default React.memo(Avatar)

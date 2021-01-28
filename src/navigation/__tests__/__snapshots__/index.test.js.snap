@@ -208,7 +208,14 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                             >
                               <RCTScrollView
                                 ListHeaderComponent={
-                                  <React.Fragment>
+                                  <View
+                                    style={
+                                      Object {
+                                        "marginBottom": 16,
+                                        "marginTop": 8,
+                                      }
+                                    }
+                                  >
                                     <Header
                                       displayName="Bruno Bodian"
                                       imageSrc="https://avatars1.githubusercontent.com/u/14147533"
@@ -239,7 +246,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         }
                                       }
                                     />
-                                  </React.Fragment>
+                                  </View>
                                 }
                                 contentContainerStyle={
                                   Object {
@@ -292,337 +299,374 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                   >
                                     <View
                                       style={
-                                        Array [
-                                          Object {
-                                            "alignItems": "center",
-                                            "flexDirection": "row",
-                                            "height": 60,
-                                          },
-                                          Object {
-                                            "marginBottom": 16,
-                                          },
-                                        ]
+                                        Object {
+                                          "marginBottom": 16,
+                                          "marginTop": 8,
+                                        }
                                       }
                                     >
                                       <View
                                         style={
-                                          Object {
-                                            "flex": 8,
-                                          }
+                                          Array [
+                                            Object {
+                                              "alignItems": "center",
+                                              "flexDirection": "row",
+                                              "height": 60,
+                                            },
+                                            Object {
+                                              "marginBottom": 16,
+                                            },
+                                          ]
                                         }
                                       >
                                         <View
                                           style={
                                             Object {
-                                              "alignItems": "center",
-                                              "flexDirection": "row",
+                                              "flex": 8,
                                             }
                                           }
                                         >
-                                          <Text
+                                          <View
                                             style={
-                                              Array [
-                                                Object {
-                                                  "backgroundColor": "transparent",
-                                                  "color": "#000000",
-                                                  "fontFamily": "System",
-                                                  "fontSize": 22,
-                                                  "fontWeight": "400",
-                                                  "letterSpacing": 0.34375,
-                                                  "lineHeight": 28,
-                                                },
-                                                false,
-                                                false,
-                                                false,
-                                                Array [
-                                                  Object {
-                                                    "color": "rgba(0,0,0,0.87)",
-                                                  },
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "600",
-                                                  },
-                                                  undefined,
-                                                ],
-                                              ]
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
                                             }
                                           >
-                                            Hey Bruno,
-                                          </Text>
-                                          <ActivityIndicator
-                                            animating={false}
-                                            color="rgba(0, 122, 255, 255)"
-                                            hidesWhenStopped={true}
-                                            size="small"
-                                            style={
-                                              Object {
-                                                "marginLeft": 8,
-                                              }
-                                            }
-                                          />
-                                        </View>
-                                        <View
-                                          style={
-                                            Object {
-                                              "alignItems": "center",
-                                              "flexDirection": "row",
-                                            }
-                                          }
-                                        >
-                                          <Text
-                                            style={
-                                              Array [
+                                            <View
+                                              style={
                                                 Object {
-                                                  "backgroundColor": "transparent",
-                                                  "color": "#000000",
-                                                  "fontFamily": "System",
-                                                  "fontSize": 17,
-                                                  "fontWeight": "400",
-                                                  "letterSpacing": -0.408,
-                                                  "lineHeight": 22,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "color": "rgba(0,0,0,0.87)",
-                                                  },
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "400",
-                                                  },
-                                                  undefined,
-                                                ],
-                                              ]
-                                            }
-                                          >
-                                            Happy to see you!
-                                          </Text>
-                                          <Image
-                                            source={
-                                              Object {
-                                                "testUri": "../../../assets/images/logo.png",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "alignSelf": "center",
-                                                  "height": 118,
-                                                  "resizeMode": "contain",
-                                                  "width": "80%",
-                                                },
-                                                Object {
-                                                  "height": 20,
-                                                  "marginLeft": 4,
-                                                  "width": 20,
-                                                },
-                                              ]
-                                            }
-                                          />
-                                        </View>
-                                      </View>
-                                      <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "opacity": 1,
-                                          }
-                                        }
-                                      >
-                                        <View
-                                          style={
-                                            Array [
-                                              Object {
-                                                "height": 30,
-                                                "width": 30,
-                                              },
-                                              undefined,
-                                              undefined,
-                                            ]
-                                          }
-                                        >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "alignItems": "center",
-                                                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                  "borderRadius": 1000,
                                                   "flex": 1,
-                                                  "justifyContent": "center",
+                                                }
+                                              }
+                                            >
+                                              <View
+                                                style={
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "flexDirection": "row",
+                                                  }
+                                                }
+                                              >
+                                                <Text
+                                                  numberOfLines={1}
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "backgroundColor": "transparent",
+                                                        "color": "#000000",
+                                                        "fontFamily": "System",
+                                                        "fontSize": 22,
+                                                        "fontWeight": "400",
+                                                        "letterSpacing": 0.34375,
+                                                        "lineHeight": 28,
+                                                      },
+                                                      false,
+                                                      false,
+                                                      false,
+                                                      Array [
+                                                        Object {
+                                                          "color": "rgba(0,0,0,0.87)",
+                                                        },
+                                                        Object {
+                                                          "backgroundColor": "transparent",
+                                                          "fontFamily": "System",
+                                                          "fontWeight": "600",
+                                                        },
+                                                        Array [
+                                                          Object {
+                                                            "flex": 1,
+                                                          },
+                                                          undefined,
+                                                        ],
+                                                      ],
+                                                    ]
+                                                  }
+                                                >
+                                                  Hey Bruno,
+                                                </Text>
+                                                <ActivityIndicator
+                                                  animating={false}
+                                                  color="rgba(0, 122, 255, 255)"
+                                                  hidesWhenStopped={true}
+                                                  size="small"
+                                                  style={
+                                                    Object {
+                                                      "marginLeft": 8,
+                                                    }
+                                                  }
+                                                />
+                                              </View>
+                                              <View
+                                                style={
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "flexDirection": "row",
+                                                  }
+                                                }
+                                              >
+                                                <Text
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "backgroundColor": "transparent",
+                                                        "color": "#000000",
+                                                        "fontFamily": "System",
+                                                        "fontSize": 17,
+                                                        "fontWeight": "400",
+                                                        "letterSpacing": -0.408,
+                                                        "lineHeight": 22,
+                                                      },
+                                                      Array [
+                                                        Object {
+                                                          "color": "rgba(0,0,0,0.87)",
+                                                        },
+                                                        Object {
+                                                          "backgroundColor": "transparent",
+                                                          "fontFamily": "System",
+                                                          "fontWeight": "400",
+                                                        },
+                                                        undefined,
+                                                      ],
+                                                    ]
+                                                  }
+                                                >
+                                                  Happy to see you!
+                                                </Text>
+                                                <Image
+                                                  source={
+                                                    Object {
+                                                      "testUri": "../../../assets/images/logo.png",
+                                                    }
+                                                  }
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "alignSelf": "center",
+                                                        "height": 118,
+                                                        "resizeMode": "contain",
+                                                        "width": "80%",
+                                                      },
+                                                      Object {
+                                                        "height": 20,
+                                                        "marginLeft": 4,
+                                                        "width": 20,
+                                                      },
+                                                    ]
+                                                  }
+                                                />
+                                              </View>
+                                            </View>
+                                          </View>
+                                        </View>
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "height": 30,
+                                                  "width": 30,
+                                                },
+                                                Object {
+                                                  "height": 35,
+                                                  "width": 35,
                                                 },
                                                 undefined,
                                               ]
                                             }
-                                            testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-                                          />
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                                                    "borderRadius": 1000,
+                                                    "flex": 1,
+                                                    "justifyContent": "center",
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17.5,
+                                                  },
+                                                ]
+                                              }
+                                              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                                            />
+                                          </View>
                                         </View>
                                       </View>
-                                    </View>
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "backgroundColor": "#F5F5F5",
-                                            "elevation": 1,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": 40,
-                                            "maxHeight": 40,
-                                            "shadowColor": "rgba(0, 0, 0, 255)",
-                                            "shadowOffset": Object {
-                                              "x": 0,
-                                              "y": 0,
-                                            },
-                                            "shadowOpacity": 0.18,
-                                            "shadowRadius": 1,
-                                          },
-                                          Object {
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                          },
-                                          Object {
-                                            "marginBottom": 16,
-                                          },
-                                        ]
-                                      }
-                                    >
                                       <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
                                         style={
-                                          Object {
-                                            "alignItems": "center",
-                                            "backgroundColor": "rgba(0, 122, 255, 255)",
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                            "elevation": 4,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": "100%",
-                                            "justifyContent": "center",
-                                            "opacity": 1,
-                                            "paddingHorizontal": 24,
-                                            "shadowColor": "rgba(0, 0, 0, 255)",
-                                            "shadowOffset": Object {
-                                              "x": 0,
-                                              "y": 2,
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "#F5F5F5",
+                                              "elevation": 1,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": 40,
+                                              "maxHeight": 40,
+                                              "shadowColor": "rgba(0, 0, 0, 255)",
+                                              "shadowOffset": Object {
+                                                "x": 0,
+                                                "y": 0,
+                                              },
+                                              "shadowOpacity": 0.18,
+                                              "shadowRadius": 1,
                                             },
-                                            "shadowOpacity": 0.23,
-                                            "shadowRadius": 2.62,
-                                          }
+                                            Object {
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                            },
+                                            Object {
+                                              "marginBottom": 16,
+                                            },
+                                          ]
                                         }
                                       >
-                                        <Text
-                                          numberOfLines={1}
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
                                           style={
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "color": "#FFFFFF",
-                                                "fontFamily": "System",
-                                                "fontSize": 16,
-                                                "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
+                                            Object {
+                                              "alignItems": "center",
+                                              "backgroundColor": "rgba(0, 122, 255, 255)",
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                              "elevation": 4,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": "100%",
+                                              "justifyContent": "center",
+                                              "opacity": 1,
+                                              "paddingHorizontal": 24,
+                                              "shadowColor": "rgba(0, 0, 0, 255)",
+                                              "shadowOffset": Object {
+                                                "x": 0,
+                                                "y": 2,
                                               },
-                                              Array [
-                                                Object {
-                                                  "color": "rgba(255, 255, 255, 255)",
-                                                },
-                                                Object {
-                                                  "backgroundColor": "transparent",
-                                                  "fontFamily": "System",
-                                                  "fontWeight": "700",
-                                                },
-                                                undefined,
-                                              ],
-                                            ]
+                                              "shadowOpacity": 0.23,
+                                              "shadowRadius": 2.62,
+                                            }
                                           }
                                         >
-                                          Trending
-                                        </Text>
-                                      </View>
-                                      <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "alignItems": "center",
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": "100%",
-                                            "justifyContent": "center",
-                                            "opacity": 1,
-                                            "paddingHorizontal": 16,
-                                          }
-                                        }
-                                      >
-                                        <Text
-                                          numberOfLines={1}
-                                          style={
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "color": "#FFFFFF",
-                                                "fontFamily": "System",
-                                                "fontSize": 16,
-                                                "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
-                                              },
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
                                               Array [
                                                 Object {
-                                                  "color": "rgba(0,0,0,0.38)",
-                                                },
-                                                Object {
                                                   "backgroundColor": "transparent",
+                                                  "color": "#FFFFFF",
                                                   "fontFamily": "System",
-                                                  "fontWeight": "700",
+                                                  "fontSize": 16,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": -0.32,
+                                                  "lineHeight": 21,
                                                 },
-                                                undefined,
-                                              ],
-                                            ]
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(255, 255, 255, 255)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "700",
+                                                  },
+                                                  undefined,
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Trending
+                                          </Text>
+                                        </View>
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "alignItems": "center",
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": "100%",
+                                              "justifyContent": "center",
+                                              "opacity": 1,
+                                              "paddingHorizontal": 16,
+                                            }
                                           }
                                         >
-                                          Recents
-                                        </Text>
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "#FFFFFF",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 16,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": -0.32,
+                                                  "lineHeight": 21,
+                                                },
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.38)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "700",
+                                                  },
+                                                  undefined,
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Recents
+                                          </Text>
+                                        </View>
                                       </View>
                                     </View>
                                   </View>
@@ -719,48 +763,71 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         }
                                       }
                                     >
-                                      <Text
-                                        style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontSize": 22,
-                                              "fontWeight": "400",
-                                              "letterSpacing": 0.34375,
-                                              "lineHeight": 28,
-                                            },
-                                            false,
-                                            false,
-                                            false,
-                                            Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "fontFamily": "System",
-                                                "fontWeight": "600",
-                                              },
-                                              undefined,
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Notifications
-                                      </Text>
-                                      <ActivityIndicator
-                                        animating={false}
-                                        color="rgba(0, 122, 255, 255)"
-                                        hidesWhenStopped={true}
-                                        size="small"
+                                      <View
                                         style={
                                           Object {
-                                            "marginLeft": 8,
+                                            "flex": 1,
                                           }
                                         }
-                                      />
+                                      >
+                                        <View
+                                          style={
+                                            Object {
+                                              "alignItems": "center",
+                                              "flexDirection": "row",
+                                            }
+                                          }
+                                        >
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 22,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": 0.34375,
+                                                  "lineHeight": 28,
+                                                },
+                                                false,
+                                                false,
+                                                false,
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "600",
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "flex": 1,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Notifications
+                                          </Text>
+                                          <ActivityIndicator
+                                            animating={false}
+                                            color="rgba(0, 122, 255, 255)"
+                                            hidesWhenStopped={true}
+                                            size="small"
+                                            style={
+                                              Object {
+                                                "marginLeft": 8,
+                                              }
+                                            }
+                                          />
+                                        </View>
+                                      </View>
                                     </View>
                                   </View>
                                   <View
@@ -786,7 +853,10 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                             "height": 30,
                                             "width": 30,
                                           },
-                                          undefined,
+                                          Object {
+                                            "height": 35,
+                                            "width": 35,
+                                          },
                                           undefined,
                                         ]
                                       }
@@ -806,7 +876,9 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
-                                            undefined,
+                                            Object {
+                                              "borderRadius": 17.5,
+                                            },
                                           ]
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -1191,13 +1263,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home"
                                   />
                                 </View>
                                 <View
@@ -1223,13 +1295,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home-outline"
                                   />
                                 </View>
                               </View>
@@ -1332,13 +1404,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 36,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": -8,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications"
                                   />
                                 </View>
                                 <View
@@ -1365,13 +1436,12 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       Object {
                                         "color": "#7A8FA6",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 27,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": 0,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications-outline"
                                   />
                                 </View>
                               </View>
@@ -1467,21 +1537,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       },
                                     ]
                                   }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 24,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
+                                />
                                 <View
                                   style={
                                     Array [
@@ -1499,21 +1555,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       },
                                     ]
                                   }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
+                                />
                               </View>
                             </View>
                             <View
@@ -1582,13 +1624,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
+                                    text="ionicon-chatbubbles"
                                   />
                                 </View>
                                 <View
@@ -1614,13 +1656,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
+                                    text="ionicon-chatbubbles-outline"
                                   />
                                 </View>
                               </View>
@@ -1653,7 +1695,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                   ]
                                 }
                               >
-                                Search
+                                Rooms
                               </Text>
                             </View>
                             <View
@@ -1722,13 +1764,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-user"
+                                    text="ionicon-search"
                                   />
                                 </View>
                                 <View
@@ -1754,13 +1796,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-user"
+                                    text="ionicon-search-outline"
                                   />
                                 </View>
                               </View>
@@ -1793,7 +1835,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                   ]
                                 }
                               >
-                                Profile
+                                Search
                               </Text>
                             </View>
                           </View>
@@ -2036,7 +2078,14 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                             >
                               <RCTScrollView
                                 ListHeaderComponent={
-                                  <React.Fragment>
+                                  <View
+                                    style={
+                                      Object {
+                                        "marginBottom": 16,
+                                        "marginTop": 8,
+                                      }
+                                    }
+                                  >
                                     <Header
                                       displayName="Bruno Bodian"
                                       imageSrc="https://avatars1.githubusercontent.com/u/14147533"
@@ -2067,7 +2116,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                         }
                                       }
                                     />
-                                  </React.Fragment>
+                                  </View>
                                 }
                                 contentContainerStyle={
                                   Object {
@@ -2120,337 +2169,374 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                   >
                                     <View
                                       style={
-                                        Array [
-                                          Object {
-                                            "alignItems": "center",
-                                            "flexDirection": "row",
-                                            "height": 60,
-                                          },
-                                          Object {
-                                            "marginBottom": 16,
-                                          },
-                                        ]
+                                        Object {
+                                          "marginBottom": 16,
+                                          "marginTop": 8,
+                                        }
                                       }
                                     >
                                       <View
                                         style={
-                                          Object {
-                                            "flex": 8,
-                                          }
+                                          Array [
+                                            Object {
+                                              "alignItems": "center",
+                                              "flexDirection": "row",
+                                              "height": 60,
+                                            },
+                                            Object {
+                                              "marginBottom": 16,
+                                            },
+                                          ]
                                         }
                                       >
                                         <View
                                           style={
                                             Object {
-                                              "alignItems": "center",
-                                              "flexDirection": "row",
+                                              "flex": 8,
                                             }
                                           }
                                         >
-                                          <Text
+                                          <View
                                             style={
-                                              Array [
-                                                Object {
-                                                  "backgroundColor": "transparent",
-                                                  "color": "#000000",
-                                                  "fontFamily": "System",
-                                                  "fontSize": 22,
-                                                  "fontWeight": "400",
-                                                  "letterSpacing": 0.34375,
-                                                  "lineHeight": 28,
-                                                },
-                                                false,
-                                                false,
-                                                false,
-                                                Array [
-                                                  Object {
-                                                    "color": "rgba(0,0,0,0.87)",
-                                                  },
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "600",
-                                                  },
-                                                  undefined,
-                                                ],
-                                              ]
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
                                             }
                                           >
-                                            Hey Bruno,
-                                          </Text>
-                                          <ActivityIndicator
-                                            animating={false}
-                                            color="rgba(0, 122, 255, 255)"
-                                            hidesWhenStopped={true}
-                                            size="small"
-                                            style={
-                                              Object {
-                                                "marginLeft": 8,
-                                              }
-                                            }
-                                          />
-                                        </View>
-                                        <View
-                                          style={
-                                            Object {
-                                              "alignItems": "center",
-                                              "flexDirection": "row",
-                                            }
-                                          }
-                                        >
-                                          <Text
-                                            style={
-                                              Array [
+                                            <View
+                                              style={
                                                 Object {
-                                                  "backgroundColor": "transparent",
-                                                  "color": "#000000",
-                                                  "fontFamily": "System",
-                                                  "fontSize": 17,
-                                                  "fontWeight": "400",
-                                                  "letterSpacing": -0.408,
-                                                  "lineHeight": 22,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "color": "rgba(0,0,0,0.87)",
-                                                  },
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "400",
-                                                  },
-                                                  undefined,
-                                                ],
-                                              ]
-                                            }
-                                          >
-                                            Happy to see you!
-                                          </Text>
-                                          <Image
-                                            source={
-                                              Object {
-                                                "testUri": "../../../assets/images/logo.png",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "alignSelf": "center",
-                                                  "height": 118,
-                                                  "resizeMode": "contain",
-                                                  "width": "80%",
-                                                },
-                                                Object {
-                                                  "height": 20,
-                                                  "marginLeft": 4,
-                                                  "width": 20,
-                                                },
-                                              ]
-                                            }
-                                          />
-                                        </View>
-                                      </View>
-                                      <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "opacity": 1,
-                                          }
-                                        }
-                                      >
-                                        <View
-                                          style={
-                                            Array [
-                                              Object {
-                                                "height": 30,
-                                                "width": 30,
-                                              },
-                                              undefined,
-                                              undefined,
-                                            ]
-                                          }
-                                        >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "alignItems": "center",
-                                                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                  "borderRadius": 1000,
                                                   "flex": 1,
-                                                  "justifyContent": "center",
+                                                }
+                                              }
+                                            >
+                                              <View
+                                                style={
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "flexDirection": "row",
+                                                  }
+                                                }
+                                              >
+                                                <Text
+                                                  numberOfLines={1}
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "backgroundColor": "transparent",
+                                                        "color": "#000000",
+                                                        "fontFamily": "System",
+                                                        "fontSize": 22,
+                                                        "fontWeight": "400",
+                                                        "letterSpacing": 0.34375,
+                                                        "lineHeight": 28,
+                                                      },
+                                                      false,
+                                                      false,
+                                                      false,
+                                                      Array [
+                                                        Object {
+                                                          "color": "rgba(0,0,0,0.87)",
+                                                        },
+                                                        Object {
+                                                          "backgroundColor": "transparent",
+                                                          "fontFamily": "System",
+                                                          "fontWeight": "600",
+                                                        },
+                                                        Array [
+                                                          Object {
+                                                            "flex": 1,
+                                                          },
+                                                          undefined,
+                                                        ],
+                                                      ],
+                                                    ]
+                                                  }
+                                                >
+                                                  Hey Bruno,
+                                                </Text>
+                                                <ActivityIndicator
+                                                  animating={false}
+                                                  color="rgba(0, 122, 255, 255)"
+                                                  hidesWhenStopped={true}
+                                                  size="small"
+                                                  style={
+                                                    Object {
+                                                      "marginLeft": 8,
+                                                    }
+                                                  }
+                                                />
+                                              </View>
+                                              <View
+                                                style={
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "flexDirection": "row",
+                                                  }
+                                                }
+                                              >
+                                                <Text
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "backgroundColor": "transparent",
+                                                        "color": "#000000",
+                                                        "fontFamily": "System",
+                                                        "fontSize": 17,
+                                                        "fontWeight": "400",
+                                                        "letterSpacing": -0.408,
+                                                        "lineHeight": 22,
+                                                      },
+                                                      Array [
+                                                        Object {
+                                                          "color": "rgba(0,0,0,0.87)",
+                                                        },
+                                                        Object {
+                                                          "backgroundColor": "transparent",
+                                                          "fontFamily": "System",
+                                                          "fontWeight": "400",
+                                                        },
+                                                        undefined,
+                                                      ],
+                                                    ]
+                                                  }
+                                                >
+                                                  Happy to see you!
+                                                </Text>
+                                                <Image
+                                                  source={
+                                                    Object {
+                                                      "testUri": "../../../assets/images/logo.png",
+                                                    }
+                                                  }
+                                                  style={
+                                                    Array [
+                                                      Object {
+                                                        "alignSelf": "center",
+                                                        "height": 118,
+                                                        "resizeMode": "contain",
+                                                        "width": "80%",
+                                                      },
+                                                      Object {
+                                                        "height": 20,
+                                                        "marginLeft": 4,
+                                                        "width": 20,
+                                                      },
+                                                    ]
+                                                  }
+                                                />
+                                              </View>
+                                            </View>
+                                          </View>
+                                        </View>
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "height": 30,
+                                                  "width": 30,
+                                                },
+                                                Object {
+                                                  "height": 35,
+                                                  "width": 35,
                                                 },
                                                 undefined,
                                               ]
                                             }
-                                            testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-                                          />
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "alignItems": "center",
+                                                    "backgroundColor": "rgba(0, 122, 255, 255)",
+                                                    "borderRadius": 1000,
+                                                    "flex": 1,
+                                                    "justifyContent": "center",
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17.5,
+                                                  },
+                                                ]
+                                              }
+                                              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                                            />
+                                          </View>
                                         </View>
                                       </View>
-                                    </View>
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "backgroundColor": "#F5F5F5",
-                                            "elevation": 1,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": 40,
-                                            "maxHeight": 40,
-                                            "shadowColor": "rgba(0, 0, 0, 255)",
-                                            "shadowOffset": Object {
-                                              "x": 0,
-                                              "y": 0,
-                                            },
-                                            "shadowOpacity": 0.18,
-                                            "shadowRadius": 1,
-                                          },
-                                          Object {
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                          },
-                                          Object {
-                                            "marginBottom": 16,
-                                          },
-                                        ]
-                                      }
-                                    >
                                       <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
                                         style={
-                                          Object {
-                                            "alignItems": "center",
-                                            "backgroundColor": "rgba(0, 122, 255, 255)",
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                            "elevation": 4,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": "100%",
-                                            "justifyContent": "center",
-                                            "opacity": 1,
-                                            "paddingHorizontal": 24,
-                                            "shadowColor": "rgba(0, 0, 0, 255)",
-                                            "shadowOffset": Object {
-                                              "x": 0,
-                                              "y": 2,
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "#F5F5F5",
+                                              "elevation": 1,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": 40,
+                                              "maxHeight": 40,
+                                              "shadowColor": "rgba(0, 0, 0, 255)",
+                                              "shadowOffset": Object {
+                                                "x": 0,
+                                                "y": 0,
+                                              },
+                                              "shadowOpacity": 0.18,
+                                              "shadowRadius": 1,
                                             },
-                                            "shadowOpacity": 0.23,
-                                            "shadowRadius": 2.62,
-                                          }
+                                            Object {
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                            },
+                                            Object {
+                                              "marginBottom": 16,
+                                            },
+                                          ]
                                         }
                                       >
-                                        <Text
-                                          numberOfLines={1}
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
                                           style={
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "color": "#FFFFFF",
-                                                "fontFamily": "System",
-                                                "fontSize": 16,
-                                                "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
+                                            Object {
+                                              "alignItems": "center",
+                                              "backgroundColor": "rgba(0, 122, 255, 255)",
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                              "elevation": 4,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": "100%",
+                                              "justifyContent": "center",
+                                              "opacity": 1,
+                                              "paddingHorizontal": 24,
+                                              "shadowColor": "rgba(0, 0, 0, 255)",
+                                              "shadowOffset": Object {
+                                                "x": 0,
+                                                "y": 2,
                                               },
-                                              Array [
-                                                Object {
-                                                  "color": "rgba(255, 255, 255, 255)",
-                                                },
-                                                Object {
-                                                  "backgroundColor": "transparent",
-                                                  "fontFamily": "System",
-                                                  "fontWeight": "700",
-                                                },
-                                                undefined,
-                                              ],
-                                            ]
+                                              "shadowOpacity": 0.23,
+                                              "shadowRadius": 2.62,
+                                            }
                                           }
                                         >
-                                          Trending
-                                        </Text>
-                                      </View>
-                                      <View
-                                        accessible={true}
-                                        focusable={true}
-                                        onClick={[Function]}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "alignItems": "center",
-                                            "borderBottomLeftRadius": 20,
-                                            "borderBottomRightRadius": 20,
-                                            "borderTopLeftRadius": 20,
-                                            "borderTopRightRadius": 20,
-                                            "flex": 1,
-                                            "flexDirection": "row",
-                                            "height": "100%",
-                                            "justifyContent": "center",
-                                            "opacity": 1,
-                                            "paddingHorizontal": 16,
-                                          }
-                                        }
-                                      >
-                                        <Text
-                                          numberOfLines={1}
-                                          style={
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "color": "#FFFFFF",
-                                                "fontFamily": "System",
-                                                "fontSize": 16,
-                                                "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
-                                              },
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
                                               Array [
                                                 Object {
-                                                  "color": "rgba(0,0,0,0.38)",
-                                                },
-                                                Object {
                                                   "backgroundColor": "transparent",
+                                                  "color": "#FFFFFF",
                                                   "fontFamily": "System",
-                                                  "fontWeight": "700",
+                                                  "fontSize": 16,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": -0.32,
+                                                  "lineHeight": 21,
                                                 },
-                                                undefined,
-                                              ],
-                                            ]
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(255, 255, 255, 255)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "700",
+                                                  },
+                                                  undefined,
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Trending
+                                          </Text>
+                                        </View>
+                                        <View
+                                          accessible={true}
+                                          focusable={true}
+                                          onClick={[Function]}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "alignItems": "center",
+                                              "borderBottomLeftRadius": 20,
+                                              "borderBottomRightRadius": 20,
+                                              "borderTopLeftRadius": 20,
+                                              "borderTopRightRadius": 20,
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "height": "100%",
+                                              "justifyContent": "center",
+                                              "opacity": 1,
+                                              "paddingHorizontal": 16,
+                                            }
                                           }
                                         >
-                                          Recents
-                                        </Text>
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "#FFFFFF",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 16,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": -0.32,
+                                                  "lineHeight": 21,
+                                                },
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.38)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "700",
+                                                  },
+                                                  undefined,
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Recents
+                                          </Text>
+                                        </View>
                                       </View>
                                     </View>
                                   </View>
@@ -2547,48 +2633,71 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                         }
                                       }
                                     >
-                                      <Text
-                                        style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontSize": 22,
-                                              "fontWeight": "400",
-                                              "letterSpacing": 0.34375,
-                                              "lineHeight": 28,
-                                            },
-                                            false,
-                                            false,
-                                            false,
-                                            Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                                "fontFamily": "System",
-                                                "fontWeight": "600",
-                                              },
-                                              undefined,
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Notifications
-                                      </Text>
-                                      <ActivityIndicator
-                                        animating={false}
-                                        color="rgba(0, 122, 255, 255)"
-                                        hidesWhenStopped={true}
-                                        size="small"
+                                      <View
                                         style={
                                           Object {
-                                            "marginLeft": 8,
+                                            "flex": 1,
                                           }
                                         }
-                                      />
+                                      >
+                                        <View
+                                          style={
+                                            Object {
+                                              "alignItems": "center",
+                                              "flexDirection": "row",
+                                            }
+                                          }
+                                        >
+                                          <Text
+                                            numberOfLines={1}
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 22,
+                                                  "fontWeight": "400",
+                                                  "letterSpacing": 0.34375,
+                                                  "lineHeight": 28,
+                                                },
+                                                false,
+                                                false,
+                                                false,
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "600",
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "flex": 1,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            Notifications
+                                          </Text>
+                                          <ActivityIndicator
+                                            animating={false}
+                                            color="rgba(0, 122, 255, 255)"
+                                            hidesWhenStopped={true}
+                                            size="small"
+                                            style={
+                                              Object {
+                                                "marginLeft": 8,
+                                              }
+                                            }
+                                          />
+                                        </View>
+                                      </View>
                                     </View>
                                   </View>
                                   <View
@@ -2614,7 +2723,10 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                             "height": 30,
                                             "width": 30,
                                           },
-                                          undefined,
+                                          Object {
+                                            "height": 35,
+                                            "width": 35,
+                                          },
                                           undefined,
                                         ]
                                       }
@@ -2634,7 +2746,9 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                               "flex": 1,
                                               "justifyContent": "center",
                                             },
-                                            undefined,
+                                            Object {
+                                              "borderRadius": 17.5,
+                                            },
                                           ]
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
@@ -3019,13 +3133,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home"
                                   />
                                 </View>
                                 <View
@@ -3051,13 +3165,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-home"
+                                    text="ionicon-home-outline"
                                   />
                                 </View>
                               </View>
@@ -3160,13 +3274,12 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 36,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": -8,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications"
                                   />
                                 </View>
                                 <View
@@ -3193,13 +3306,12 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       Object {
                                         "color": "#7A8FA6",
                                         "fontFamily": "Ionicons",
-                                        "fontSize": 27,
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginTop": 0,
                                       }
                                     }
-                                    text="ionicon-ios-notifications-outline"
+                                    text="ionicon-notifications-outline"
                                   />
                                 </View>
                               </View>
@@ -3295,21 +3407,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       },
                                     ]
                                   }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 24,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
+                                />
                                 <View
                                   style={
                                     Array [
@@ -3327,21 +3425,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       },
                                     ]
                                   }
-                                >
-                                  <Text
-                                    allowFontScaling={false}
-                                    style={
-                                      Object {
-                                        "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      }
-                                    }
-                                    text="kebeticon-undefined"
-                                  />
-                                </View>
+                                />
                               </View>
                             </View>
                             <View
@@ -3410,13 +3494,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
+                                    text="ionicon-chatbubbles"
                                   />
                                 </View>
                                 <View
@@ -3442,13 +3526,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-search"
+                                    text="ionicon-chatbubbles-outline"
                                   />
                                 </View>
                               </View>
@@ -3481,7 +3565,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                   ]
                                 }
                               >
-                                Search
+                                Rooms
                               </Text>
                             </View>
                             <View
@@ -3550,13 +3634,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "rgba(0, 122, 255, 255)",
-                                        "fontFamily": "icomoon",
+                                        "fontFamily": "Ionicons",
                                         "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-user"
+                                    text="ionicon-search"
                                   />
                                 </View>
                                 <View
@@ -3582,13 +3666,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     style={
                                       Object {
                                         "color": "#7A8FA6",
-                                        "fontFamily": "icomoon",
-                                        "fontSize": 18,
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 24,
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
                                       }
                                     }
-                                    text="kebeticon-user"
+                                    text="ionicon-search-outline"
                                   />
                                 </View>
                               </View>
@@ -3621,7 +3705,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                   ]
                                 }
                               >
-                                Profile
+                                Search
                               </Text>
                             </View>
                           </View>
@@ -4680,7 +4764,7 @@ You Care About
                                 "fontWeight": "normal",
                               }
                             }
-                            text="ionicon-ios-arrow-round-forward"
+                            text="ionicon-arrow-forward"
                           />
                         </View>
                       </View>
@@ -4781,7 +4865,14 @@ exports[`tabs renders TabNavigation 1`] = `
           >
             <RCTScrollView
               ListHeaderComponent={
-                <React.Fragment>
+                <View
+                  style={
+                    Object {
+                      "marginBottom": 16,
+                      "marginTop": 8,
+                    }
+                  }
+                >
                   <Header
                     displayName="Bruno Bodian"
                     imageSrc="https://avatars1.githubusercontent.com/u/14147533"
@@ -4812,7 +4903,7 @@ exports[`tabs renders TabNavigation 1`] = `
                       }
                     }
                   />
-                </React.Fragment>
+                </View>
               }
               contentContainerStyle={
                 Object {
@@ -4865,337 +4956,374 @@ exports[`tabs renders TabNavigation 1`] = `
                 >
                   <View
                     style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "flexDirection": "row",
-                          "height": 60,
-                        },
-                        Object {
-                          "marginBottom": 16,
-                        },
-                      ]
+                      Object {
+                        "marginBottom": 16,
+                        "marginTop": 8,
+                      }
                     }
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 8,
-                        }
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "height": 60,
+                          },
+                          Object {
+                            "marginBottom": 16,
+                          },
+                        ]
                       }
                     >
                       <View
                         style={
                           Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
+                            "flex": 8,
                           }
                         }
                       >
-                        <Text
+                        <View
                           style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 22,
-                                "fontWeight": "400",
-                                "letterSpacing": 0.34375,
-                                "lineHeight": 28,
-                              },
-                              false,
-                              false,
-                              false,
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "600",
-                                },
-                                undefined,
-                              ],
-                            ]
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                            }
                           }
                         >
-                          Hey Bruno,
-                        </Text>
-                        <ActivityIndicator
-                          animating={false}
-                          color="rgba(0, 122, 255, 255)"
-                          hidesWhenStopped={true}
-                          size="small"
-                          style={
-                            Object {
-                              "marginLeft": 8,
-                            }
-                          }
-                        />
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                          }
-                        }
-                      >
-                        <Text
-                          style={
-                            Array [
+                          <View
+                            style={
                               Object {
-                                "backgroundColor": "transparent",
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontSize": 17,
-                                "fontWeight": "400",
-                                "letterSpacing": -0.408,
-                                "lineHeight": 22,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.87)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "400",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                          Happy to see you!
-                        </Text>
-                        <Image
-                          source={
-                            Object {
-                              "testUri": "../../../assets/images/logo.png",
-                            }
-                          }
-                          style={
-                            Array [
-                              Object {
-                                "alignSelf": "center",
-                                "height": 118,
-                                "resizeMode": "contain",
-                                "width": "80%",
-                              },
-                              Object {
-                                "height": 20,
-                                "marginLeft": 4,
-                                "width": 20,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
-                    </View>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "height": 30,
-                              "width": 30,
-                            },
-                            undefined,
-                            undefined,
-                          ]
-                        }
-                      >
-                        <Image
-                          source={
-                            Object {
-                              "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                            }
-                          }
-                          style={
-                            Array [
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": "rgba(0, 122, 255, 255)",
-                                "borderRadius": 1000,
                                 "flex": 1,
-                                "justifyContent": "center",
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <Text
+                                numberOfLines={1}
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 22,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.34375,
+                                      "lineHeight": 28,
+                                    },
+                                    false,
+                                    false,
+                                    false,
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "600",
+                                      },
+                                      Array [
+                                        Object {
+                                          "flex": 1,
+                                        },
+                                        undefined,
+                                      ],
+                                    ],
+                                  ]
+                                }
+                              >
+                                Hey Bruno,
+                              </Text>
+                              <ActivityIndicator
+                                animating={false}
+                                color="rgba(0, 122, 255, 255)"
+                                hidesWhenStopped={true}
+                                size="small"
+                                style={
+                                  Object {
+                                    "marginLeft": 8,
+                                  }
+                                }
+                              />
+                            </View>
+                            <View
+                              style={
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 17,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.408,
+                                      "lineHeight": 22,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      undefined,
+                                    ],
+                                  ]
+                                }
+                              >
+                                Happy to see you!
+                              </Text>
+                              <Image
+                                source={
+                                  Object {
+                                    "testUri": "../../../assets/images/logo.png",
+                                  }
+                                }
+                                style={
+                                  Array [
+                                    Object {
+                                      "alignSelf": "center",
+                                      "height": 118,
+                                      "resizeMode": "contain",
+                                      "width": "80%",
+                                    },
+                                    Object {
+                                      "height": 20,
+                                      "marginLeft": 4,
+                                      "width": 20,
+                                    },
+                                  ]
+                                }
+                              />
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          Object {
+                            "opacity": 1,
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "height": 30,
+                                "width": 30,
+                              },
+                              Object {
+                                "height": 35,
+                                "width": 35,
                               },
                               undefined,
                             ]
                           }
-                          testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-                        />
+                        >
+                          <Image
+                            source={
+                              Object {
+                                "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                              }
+                            }
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                                  "borderRadius": 1000,
+                                  "flex": 1,
+                                  "justifyContent": "center",
+                                },
+                                Object {
+                                  "borderRadius": 17.5,
+                                },
+                              ]
+                            }
+                            testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+                          />
+                        </View>
                       </View>
                     </View>
-                  </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "#F5F5F5",
-                          "elevation": 1,
-                          "flex": 1,
-                          "flexDirection": "row",
-                          "height": 40,
-                          "maxHeight": 40,
-                          "shadowColor": "rgba(0, 0, 0, 255)",
-                          "shadowOffset": Object {
-                            "x": 0,
-                            "y": 0,
-                          },
-                          "shadowOpacity": 0.18,
-                          "shadowRadius": 1,
-                        },
-                        Object {
-                          "borderBottomLeftRadius": 20,
-                          "borderBottomRightRadius": 20,
-                          "borderTopLeftRadius": 20,
-                          "borderTopRightRadius": 20,
-                        },
-                        Object {
-                          "marginBottom": 16,
-                        },
-                      ]
-                    }
-                  >
                     <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(0, 122, 255, 255)",
-                          "borderBottomLeftRadius": 20,
-                          "borderBottomRightRadius": 20,
-                          "borderTopLeftRadius": 20,
-                          "borderTopRightRadius": 20,
-                          "elevation": 4,
-                          "flex": 1,
-                          "flexDirection": "row",
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "opacity": 1,
-                          "paddingHorizontal": 24,
-                          "shadowColor": "rgba(0, 0, 0, 255)",
-                          "shadowOffset": Object {
-                            "x": 0,
-                            "y": 2,
+                        Array [
+                          Object {
+                            "backgroundColor": "#F5F5F5",
+                            "elevation": 1,
+                            "flex": 1,
+                            "flexDirection": "row",
+                            "height": 40,
+                            "maxHeight": 40,
+                            "shadowColor": "rgba(0, 0, 0, 255)",
+                            "shadowOffset": Object {
+                              "x": 0,
+                              "y": 0,
+                            },
+                            "shadowOpacity": 0.18,
+                            "shadowRadius": 1,
                           },
-                          "shadowOpacity": 0.23,
-                          "shadowRadius": 2.62,
-                        }
+                          Object {
+                            "borderBottomLeftRadius": 20,
+                            "borderBottomRightRadius": 20,
+                            "borderTopLeftRadius": 20,
+                            "borderTopRightRadius": 20,
+                          },
+                          Object {
+                            "marginBottom": 16,
+                          },
+                        ]
                       }
                     >
-                      <Text
-                        numberOfLines={1}
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#FFFFFF",
-                              "fontFamily": "System",
-                              "fontSize": 16,
-                              "fontWeight": "400",
-                              "letterSpacing": -0.32,
-                              "lineHeight": 21,
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(0, 122, 255, 255)",
+                            "borderBottomLeftRadius": 20,
+                            "borderBottomRightRadius": 20,
+                            "borderTopLeftRadius": 20,
+                            "borderTopRightRadius": 20,
+                            "elevation": 4,
+                            "flex": 1,
+                            "flexDirection": "row",
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "opacity": 1,
+                            "paddingHorizontal": 24,
+                            "shadowColor": "rgba(0, 0, 0, 255)",
+                            "shadowOffset": Object {
+                              "x": 0,
+                              "y": 2,
                             },
-                            Array [
-                              Object {
-                                "color": "rgba(255, 255, 255, 255)",
-                              },
-                              Object {
-                                "backgroundColor": "transparent",
-                                "fontFamily": "System",
-                                "fontWeight": "700",
-                              },
-                              undefined,
-                            ],
-                          ]
+                            "shadowOpacity": 0.23,
+                            "shadowRadius": 2.62,
+                          }
                         }
                       >
-                        Trending
-                      </Text>
-                    </View>
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "borderBottomLeftRadius": 20,
-                          "borderBottomRightRadius": 20,
-                          "borderTopLeftRadius": 20,
-                          "borderTopRightRadius": 20,
-                          "flex": 1,
-                          "flexDirection": "row",
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "opacity": 1,
-                          "paddingHorizontal": 16,
-                        }
-                      }
-                    >
-                      <Text
-                        numberOfLines={1}
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "#FFFFFF",
-                              "fontFamily": "System",
-                              "fontSize": 16,
-                              "fontWeight": "400",
-                              "letterSpacing": -0.32,
-                              "lineHeight": 21,
-                            },
+                        <Text
+                          numberOfLines={1}
+                          style={
                             Array [
                               Object {
-                                "color": "rgba(0,0,0,0.38)",
-                              },
-                              Object {
                                 "backgroundColor": "transparent",
+                                "color": "#FFFFFF",
                                 "fontFamily": "System",
-                                "fontWeight": "700",
+                                "fontSize": 16,
+                                "fontWeight": "400",
+                                "letterSpacing": -0.32,
+                                "lineHeight": 21,
                               },
-                              undefined,
-                            ],
-                          ]
+                              Array [
+                                Object {
+                                  "color": "rgba(255, 255, 255, 255)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "700",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          Trending
+                        </Text>
+                      </View>
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "borderBottomLeftRadius": 20,
+                            "borderBottomRightRadius": 20,
+                            "borderTopLeftRadius": 20,
+                            "borderTopRightRadius": 20,
+                            "flex": 1,
+                            "flexDirection": "row",
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "opacity": 1,
+                            "paddingHorizontal": 16,
+                          }
                         }
                       >
-                        Recents
-                      </Text>
+                        <Text
+                          numberOfLines={1}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#FFFFFF",
+                                "fontFamily": "System",
+                                "fontSize": 16,
+                                "fontWeight": "400",
+                                "letterSpacing": -0.32,
+                                "lineHeight": 21,
+                              },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.38)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "700",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          Recents
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -5496,13 +5624,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-home"
+                  text="ionicon-home"
                 />
               </View>
               <View
@@ -5528,13 +5656,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-home"
+                  text="ionicon-home-outline"
                 />
               </View>
             </View>
@@ -5637,13 +5765,12 @@ exports[`tabs renders TabNavigation 1`] = `
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
                       "fontFamily": "Ionicons",
-                      "fontSize": 36,
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
-                      "marginTop": -8,
                     }
                   }
-                  text="ionicon-ios-notifications-outline"
+                  text="ionicon-notifications"
                 />
               </View>
               <View
@@ -5670,13 +5797,12 @@ exports[`tabs renders TabNavigation 1`] = `
                     Object {
                       "color": "#7A8FA6",
                       "fontFamily": "Ionicons",
-                      "fontSize": 27,
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
-                      "marginTop": 0,
                     }
                   }
-                  text="ionicon-ios-notifications-outline"
+                  text="ionicon-notifications-outline"
                 />
               </View>
             </View>
@@ -5772,21 +5898,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     },
                   ]
                 }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
-                      "fontSize": 24,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-undefined"
-                />
-              </View>
+              />
               <View
                 style={
                   Array [
@@ -5804,21 +5916,7 @@ exports[`tabs renders TabNavigation 1`] = `
                     },
                   ]
                 }
-              >
-                <Text
-                  allowFontScaling={false}
-                  style={
-                    Object {
-                      "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    }
-                  }
-                  text="kebeticon-undefined"
-                />
-              </View>
+              />
             </View>
           </View>
           <View
@@ -5887,13 +5985,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-search"
+                  text="ionicon-chatbubbles"
                 />
               </View>
               <View
@@ -5919,13 +6017,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-search"
+                  text="ionicon-chatbubbles-outline"
                 />
               </View>
             </View>
@@ -5958,7 +6056,7 @@ exports[`tabs renders TabNavigation 1`] = `
                 ]
               }
             >
-              Search
+              Rooms
             </Text>
           </View>
           <View
@@ -6027,13 +6125,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "rgba(0, 122, 255, 255)",
-                      "fontFamily": "icomoon",
+                      "fontFamily": "Ionicons",
                       "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-user"
+                  text="ionicon-search"
                 />
               </View>
               <View
@@ -6059,13 +6157,13 @@ exports[`tabs renders TabNavigation 1`] = `
                   style={
                     Object {
                       "color": "#7A8FA6",
-                      "fontFamily": "icomoon",
-                      "fontSize": 18,
+                      "fontFamily": "Ionicons",
+                      "fontSize": 24,
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     }
                   }
-                  text="kebeticon-user"
+                  text="ionicon-search-outline"
                 />
               </View>
             </View>
@@ -6098,7 +6196,7 @@ exports[`tabs renders TabNavigation 1`] = `
                 ]
               }
             >
-              Profile
+              Search
             </Text>
           </View>
         </View>

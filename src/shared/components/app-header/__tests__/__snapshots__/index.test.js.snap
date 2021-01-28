@@ -30,107 +30,130 @@ exports[`renders Header 1`] = `
         }
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontSize": 22,
-              "fontWeight": "400",
-              "letterSpacing": 0.34375,
-              "lineHeight": 28,
-            },
-            false,
-            false,
-            false,
-            Array [
-              Object {
-                "color": "rgba(0,0,0,0.87)",
-              },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "600",
-              },
-              undefined,
-            ],
-          ]
-        }
-      >
-        Hey Bruno,
-      </Text>
-      <ActivityIndicator
-        animating={false}
-        color="rgba(0, 122, 255, 255)"
-        hidesWhenStopped={true}
-        size="small"
+      <View
         style={
           Object {
-            "marginLeft": 8,
+            "flex": 1,
           }
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-              "letterSpacing": -0.408,
-              "lineHeight": 22,
-            },
-            Array [
-              Object {
-                "color": "rgba(0,0,0,0.87)",
-              },
-              Object {
-                "backgroundColor": "transparent",
-                "fontFamily": "System",
-                "fontWeight": "400",
-              },
-              undefined,
-            ],
-          ]
         }
       >
-        Happy to see you!
-      </Text>
-      <Image
-        source={
-          Object {
-            "testUri": "../../../assets/images/logo.png",
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
           }
-        }
-        style={
-          Array [
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 22,
+                  "fontWeight": "400",
+                  "letterSpacing": 0.34375,
+                  "lineHeight": 28,
+                },
+                false,
+                false,
+                false,
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "600",
+                  },
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            Hey Bruno,
+          </Text>
+          <ActivityIndicator
+            animating={false}
+            color="rgba(0, 122, 255, 255)"
+            hidesWhenStopped={true}
+            size="small"
+            style={
+              Object {
+                "marginLeft": 8,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
             Object {
-              "alignSelf": "center",
-              "height": 118,
-              "resizeMode": "contain",
-              "width": "80%",
-            },
-            Object {
-              "height": 20,
-              "marginLeft": 4,
-              "width": 20,
-            },
-          ]
-        }
-      />
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                  "letterSpacing": -0.408,
+                  "lineHeight": 22,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Happy to see you!
+          </Text>
+          <Image
+            source={
+              Object {
+                "testUri": "../../../assets/images/logo.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "height": 118,
+                  "resizeMode": "contain",
+                  "width": "80%",
+                },
+                Object {
+                  "height": 20,
+                  "marginLeft": 4,
+                  "width": 20,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
     </View>
   </View>
   <View
@@ -156,7 +179,10 @@ exports[`renders Header 1`] = `
             "height": 30,
             "width": 30,
           },
-          undefined,
+          Object {
+            "height": 35,
+            "width": 35,
+          },
           undefined,
         ]
       }
@@ -176,7 +202,9 @@ exports[`renders Header 1`] = `
               "flex": 1,
               "justifyContent": "center",
             },
-            undefined,
+            Object {
+              "borderRadius": 17.5,
+            },
           ]
         }
         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"

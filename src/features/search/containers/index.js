@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
-// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { metrics, edgeInsets } from '@app/theme'
@@ -18,15 +17,10 @@ import SearchUsers from './users'
 const routeOptions = { title: strings.tabs.search }
 
 export const SearchIcon = ({ onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   return (
-    <TouchableOpacity
-      style={styles.searchIcon}
-      onPress={onPress}
-      hitSlop={edgeInsets.all(15)}
-    >
-      <Ionicon name="ios-search" size={23} color={colors.textPrimary} />
+    <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
+      <Ionicon name="search" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
   )
 }
@@ -38,7 +32,7 @@ export const CancelIcon = ({ isLoading, onPress }) => {
     <View style={styles.cancelIcon}>
       {!isLoading && (
         <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
-          <Ionicon name="ios-close" size={36} color={colors.textPrimary} />
+          <Ionicon name="close" size={30} color={colors.textPrimary} />
         </TouchableOpacity>
       )}
       {isLoading && <ActivityIndicator size={23} color={colors.textPrimary} />}

@@ -46,48 +46,71 @@ exports[`renders NotificationsPage 1`] = `
             }
           }
         >
-          <Text
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 22,
-                  "fontWeight": "400",
-                  "letterSpacing": 0.34375,
-                  "lineHeight": 28,
-                },
-                false,
-                false,
-                false,
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.87)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "600",
-                  },
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Notifications
-          </Text>
-          <ActivityIndicator
-            animating={false}
-            color="rgba(0, 122, 255, 255)"
-            hidesWhenStopped={true}
-            size="small"
+          <View
             style={
               Object {
-                "marginLeft": 8,
+                "flex": 1,
               }
             }
-          />
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 22,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.34375,
+                      "lineHeight": 28,
+                    },
+                    false,
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Notifications
+              </Text>
+              <ActivityIndicator
+                animating={false}
+                color="rgba(0, 122, 255, 255)"
+                hidesWhenStopped={true}
+                size="small"
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
         </View>
       </View>
       <View
@@ -113,7 +136,10 @@ exports[`renders NotificationsPage 1`] = `
                 "height": 30,
                 "width": 30,
               },
-              undefined,
+              Object {
+                "height": 35,
+                "width": 35,
+              },
               undefined,
             ]
           }
@@ -133,7 +159,9 @@ exports[`renders NotificationsPage 1`] = `
                   "flex": 1,
                   "justifyContent": "center",
                 },
-                undefined,
+                Object {
+                  "borderRadius": 17.5,
+                },
               ]
             }
             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"

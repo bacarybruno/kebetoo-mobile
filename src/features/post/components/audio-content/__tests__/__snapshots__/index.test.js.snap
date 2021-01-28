@@ -145,6 +145,7 @@ exports[`renders AudioContent 1`] = `
                 "fontSize": 22,
                 "fontStyle": "normal",
                 "fontWeight": "normal",
+                "marginLeft": 3,
               }
             }
             text="ionicon-ios-play"
@@ -196,11 +197,14 @@ exports[`renders AudioContent 1`] = `
                   "fontFamily": "System",
                   "fontWeight": "400",
                 },
-                Object {
-                  "bottom": 2,
-                  "position": "absolute",
-                  "right": 8,
-                },
+                Array [
+                  Object {
+                    "bottom": 2,
+                    "position": "absolute",
+                    "right": 8,
+                  },
+                  undefined,
+                ],
               ],
             ]
           }

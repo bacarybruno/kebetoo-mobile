@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useMemo } from 'react'
+import React, { useCallback, useRef, useMemo, useContext, useEffect } from 'react'
 import {
   View, FlatList, KeyboardAvoidingView, Platform,
 } from 'react-native'
@@ -14,6 +14,7 @@ import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
 import { metrics } from '@app/theme'
+import { SafeAreaContext } from '@app/shared/contexts'
 
 import createThemedStyles from './styles'
 import CommentInput from '../components/comment-input'
@@ -67,10 +68,16 @@ const Comments = () => {
     replies,
     comment,
   } = useComments(navigation, post, commentInput, scrollView, audioRecorder)
+  const { updateTopSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
   const insets = useSafeAreaInsets()
 
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
+
+  useEffect(() => {
+    updateTopSafeAreaColor(colors.backgroundSecondary)
+    return resetStatusBars
+  }, [])
 
   const renderComment = useMemo(() => ({ item }) => {
     if (!item.author) return null

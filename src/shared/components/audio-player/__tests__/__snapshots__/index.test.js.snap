@@ -110,6 +110,7 @@ exports[`renders AudioPlayer 1`] = `
               "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
+              "marginLeft": 3,
             }
           }
           text="ionicon-ios-play"
@@ -161,11 +162,14 @@ exports[`renders AudioPlayer 1`] = `
                 "fontFamily": "System",
                 "fontWeight": "400",
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
+              Array [
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+                undefined,
+              ],
             ],
           ]
         }
@@ -287,6 +291,7 @@ exports[`renders AudioPlayer with delete icon 1`] = `
               "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
+              "marginLeft": 3,
             }
           }
           text="ionicon-ios-play"
@@ -338,11 +343,14 @@ exports[`renders AudioPlayer with delete icon 1`] = `
                 "fontFamily": "System",
                 "fontWeight": "400",
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
+              Array [
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+                undefined,
+              ],
             ],
           ]
         }
@@ -521,6 +529,7 @@ exports[`renders round AudioPlayer 1`] = `
               "fontSize": 22,
               "fontStyle": "normal",
               "fontWeight": "normal",
+              "marginLeft": 3,
             }
           }
           text="ionicon-ios-play"
@@ -572,11 +581,14 @@ exports[`renders round AudioPlayer 1`] = `
                 "fontFamily": "System",
                 "fontWeight": "400",
               },
-              Object {
-                "bottom": 2,
-                "position": "absolute",
-                "right": 8,
-              },
+              Array [
+                Object {
+                  "bottom": 2,
+                  "position": "absolute",
+                  "right": 8,
+                },
+                undefined,
+              ],
             ],
           ]
         }

@@ -51,48 +51,126 @@ exports[`renders Profile 1`] = `
                 }
               }
             >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 22,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.34375,
-                      "lineHeight": 28,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.87)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Profile
-              </Text>
-              <ActivityIndicator
-                animating={false}
-                color="rgba(0, 122, 255, 255)"
-                hidesWhenStopped={true}
-                size="small"
-                style={
+              <View
+                accessible={true}
+                focusable={false}
+                hitSlop={
                   Object {
-                    "marginLeft": 8,
+                    "bottom": 10,
+                    "left": 10,
+                    "right": 10,
+                    "top": 10,
                   }
                 }
-              />
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "marginLeft": 16,
+                        "width": 24,
+                      },
+                      Object {
+                        "marginLeft": 0,
+                        "marginRight": 16,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    style={
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                        "fontFamily": "icomoon",
+                        "fontSize": 20,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      }
+                    }
+                    text="kebeticon-chevron-left"
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    numberOfLines={1}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "fontFamily": "System",
+                          "fontSize": 22,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.34375,
+                          "lineHeight": 28,
+                        },
+                        false,
+                        false,
+                        false,
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.87)",
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                            "fontFamily": "System",
+                            "fontWeight": "600",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ],
+                      ]
+                    }
+                  >
+                    Profile
+                  </Text>
+                  <ActivityIndicator
+                    animating={false}
+                    color="rgba(0, 122, 255, 255)"
+                    hidesWhenStopped={true}
+                    size="small"
+                    style={
+                      Object {
+                        "marginLeft": 8,
+                      }
+                    }
+                  />
+                </View>
+              </View>
             </View>
           </View>
         </View>
@@ -961,7 +1039,7 @@ exports[`renders Profile 1`] = `
                     "fontWeight": "normal",
                   }
                 }
-                text="ionicon-ios-globe"
+                text="ionicon-language"
               />
             </View>
             <View>
@@ -1288,7 +1366,7 @@ exports[`renders Profile 1`] = `
                   ]
                 }
               >
-                Issue or Feedback
+                Help & Feedback
               </Text>
             </View>
           </View>
@@ -1347,7 +1425,7 @@ exports[`renders Profile 1`] = `
                     "fontWeight": "normal",
                   }
                 }
-                text="ionicon-ios-appstore"
+                text="ionicon-information-circle-sharp"
               />
             </View>
             <View>

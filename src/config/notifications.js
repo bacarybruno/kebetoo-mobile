@@ -1,9 +1,9 @@
+import { Platform } from 'react-native'
 import PushNotification from 'react-native-push-notification'
 import AsyncStorage from '@react-native-community/async-storage'
 import messaging from '@react-native-firebase/messaging'
 
 import { getNotificationMessage, getNotificationTitle } from '@app/features/notifications/containers'
-import { Platform } from 'react-native'
 
 PushNotification.createChannel({
   channelId: 'kbt',

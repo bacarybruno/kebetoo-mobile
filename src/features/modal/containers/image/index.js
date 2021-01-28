@@ -78,7 +78,7 @@ const ImageModal = ({ route, navigation }) => {
     <TouchableWithoutFeedback onPress={onShowControls} testID="pressable">
       <View style={styles.wrapper}>
         <Image
-          source={source}
+          source={{ uri: sourceUri }}
           style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
         />
       </View>

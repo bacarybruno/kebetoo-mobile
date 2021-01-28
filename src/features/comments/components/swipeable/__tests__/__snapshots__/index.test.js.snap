@@ -67,7 +67,7 @@ exports[`renders SwipeableComment 1`] = `
               "fontWeight": "normal",
             }
           }
-          text="ionicon-ios-undo"
+          text="ionicon-arrow-undo"
         />
       </View>
     </View>

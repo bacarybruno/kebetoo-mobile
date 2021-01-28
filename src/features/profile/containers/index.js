@@ -209,7 +209,7 @@ const PreferencesSection = React.memo(({ updateAppearance }) => {
         onPress={warnNotImplemented}
       />
       <IconButton
-        icon="ios-globe"
+        icon="language"
         text={strings.profile.language}
         message={strings.languages[strings.getLanguage()]}
         onPress={warnNotImplemented}
@@ -237,7 +237,7 @@ const AppInfosSection = React.memo(({
         message={strings.profile.issue_or_feedback}
       />
       <IconButton
-        icon={Platform.select({ ios: 'ios-appstore', android: 'md-appstore' })}
+        icon="information-circle-sharp"
         text={`${name} v${version}`}
         onPress={() => Linking.openURL(strings.auth.tos_url)}
         message={strings.auth.terms_and_conditions}
@@ -269,7 +269,6 @@ export const ProfileHeader = React.memo(({
 const ProfilePage = React.memo(() => {
   const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
-  const { trackSignOut } = useAnalytics()
 
   const stats = useSelector(userStatsSelector)
   const [postsCount, setPostsCount] = useState(stats.posts)
@@ -350,11 +349,6 @@ const ProfilePage = React.memo(() => {
 
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
-  const requestSignOut = useCallback(async () => {
-    await signOut()
-    trackSignOut()
-  }, [signOut, trackSignOut])
-
   const reportIssue = useCallback(() => {
     navigate(routes.CREATE_POST, { action: actionTypes.REPORT })
   }, [navigate])
@@ -363,7 +357,7 @@ const ProfilePage = React.memo(() => {
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.padding}>
-          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} />
+          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} headerBack />
           <ProfileHeader
             profile={profile}
             postsCount={postsCount}
@@ -379,7 +373,7 @@ const ProfilePage = React.memo(() => {
           shareApp={shareApp}
           reportIssue={reportIssue}
         />
-        <AccountSection signOut={requestSignOut} />
+        <AccountSection signOut={signOut} />
       </ScrollView>
     </View>
   )

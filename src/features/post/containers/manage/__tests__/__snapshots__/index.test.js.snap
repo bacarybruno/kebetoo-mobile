@@ -55,6 +55,158 @@ exports[`renders ManagePost 1`] = `
     ]
   }
 >
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        Object {
+          "paddingHorizontal": 16,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "marginLeft": 16,
+                  "width": 24,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                  "fontFamily": "icomoon",
+                  "fontSize": 20,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="kebeticon-chevron-left"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Manage posts
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
   <RCTScrollView
     ListEmptyComponent={[Function]}
     contentContainerStyle={
@@ -641,12 +793,12 @@ exports[`renders ManagePost 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -790,6 +942,7 @@ exports[`renders ManagePost 1`] = `
                           "fontSize": 22,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
+                          "marginLeft": 3,
                         }
                       }
                       text="ionicon-ios-play"
@@ -841,11 +994,14 @@ exports[`renders ManagePost 1`] = `
                             "fontFamily": "System",
                             "fontWeight": "400",
                           },
-                          Object {
-                            "bottom": 2,
-                            "position": "absolute",
-                            "right": 8,
-                          },
+                          Array [
+                            Object {
+                              "bottom": 2,
+                              "position": "absolute",
+                              "right": 8,
+                            },
+                            undefined,
+                          ],
                         ],
                       ]
                     }
@@ -1394,12 +1550,12 @@ exports[`renders ManagePost 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -2055,12 +2211,12 @@ exports[`renders ManagePost 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -3011,12 +3167,12 @@ exports[`renders ManagePost 1`] = `
                       Object {
                         "color": "rgba(0,0,0,0.38)",
                         "fontFamily": "Ionicons",
-                        "fontSize": 24,
+                        "fontSize": 20,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       }
                     }
-                    text="ionicon-ios-more"
+                    text="ionicon-ellipsis-vertical"
                   />
                 </View>
               </View>
@@ -3141,12 +3297,12 @@ exports[`renders ManagePost 1`] = `
                         Object {
                           "color": "rgba(255, 255, 255, 255)",
                           "fontFamily": "Ionicons",
-                          "fontSize": 45,
+                          "fontSize": 40,
                           "fontStyle": "normal",
                           "fontWeight": "normal",
                         }
                       }
-                      text="ionicon-ios-play"
+                      text="ionicon-play"
                     />
                   </View>
                   <Video
@@ -3640,7 +3796,7 @@ exports[`renders ManagePost 1`] = `
                   Object {
                     "backgroundColor": "transparent",
                     "color": "rgba(255, 255, 255, 1)",
-                    "fontSize": 30,
+                    "fontSize": 35,
                     "marginTop": -4,
                   }
                 }

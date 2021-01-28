@@ -1,0 +1,519 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Room 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "rgba(229, 229, 234, 255)",
+        "borderBottomWidth": 0.5,
+        "flexDirection": "row",
+        "paddingHorizontal": 16,
+        "paddingVertical": 16,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 30,
+          "width": 30,
+        },
+        Object {
+          "height": 55,
+          "width": 55,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
+            "borderRadius": 1000,
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "borderRadius": 27.5,
+          },
+          undefined,
+          Object {
+            "backgroundColor": "rgba(0, 122, 255, 255)",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgba(255, 255, 255, 255)",
+            "fontFamily": "System",
+            "fontSize": 35,
+            "fontWeight": "600",
+          }
+        }
+      >
+        K
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "marginLeft": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="middle"
+        numberOfLines={2}
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "marginBottom": 4,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "600",
+                "letterSpacing": -0.408,
+                "lineHeight": 22,
+              },
+              false,
+              false,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Hello World
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+           • 
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          100k members
+        </Text>
+      </Text>
+    </View>
+    <Text
+      numberOfLines={2}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Hello and welcome to kebetoo!
+    </Text>
+    <Text
+      style={
+        Array [
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          false,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.38)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      2 days ago
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders discover Room 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderBottomColor": "rgba(229, 229, 234, 255)",
+      "borderBottomWidth": 0.5,
+      "flexDirection": "row",
+      "paddingHorizontal": 16,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 30,
+          "width": 30,
+        },
+        Object {
+          "height": 55,
+          "width": 55,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0, 122, 255, 255)",
+            "borderRadius": 1000,
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "borderRadius": 27.5,
+          },
+          undefined,
+          Object {
+            "backgroundColor": "rgba(255, 159, 10, 255)",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgba(255, 255, 255, 255)",
+            "fontFamily": "System",
+            "fontSize": 35,
+            "fontWeight": "600",
+          }
+        }
+      >
+        K
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "marginLeft": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="middle"
+        numberOfLines={2}
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "marginBottom": 4,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "600",
+                "letterSpacing": -0.408,
+                "lineHeight": 22,
+              },
+              false,
+              false,
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Hello World
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+           • 
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "letterSpacing": -0.24,
+                "lineHeight": 20,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          100k members
+        </Text>
+      </Text>
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontFamily": "Ionicons",
+            "fontSize": 25,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          }
+        }
+        text="ionicon-chevron-forward-outline"
+      />
+    </View>
+    <Text
+      numberOfLines={2}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Created by Jest
+    </Text>
+    <Text
+      style={
+        Array [
+          false,
+          false,
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "letterSpacing": -0.24,
+            "lineHeight": 20,
+          },
+          false,
+          Array [
+            Object {
+              "color": "rgba(0,0,0,0.38)",
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      2 days ago
+    </Text>
+  </View>
+</View>
+`;

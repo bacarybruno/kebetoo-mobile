@@ -122,12 +122,12 @@ exports[`renders VideoContent 1`] = `
               Object {
                 "color": "rgba(255, 255, 255, 255)",
                 "fontFamily": "Ionicons",
-                "fontSize": 45,
+                "fontSize": 40,
                 "fontStyle": "normal",
                 "fontWeight": "normal",
               }
             }
-            text="ionicon-ios-play"
+            text="ionicon-play"
           />
         </View>
         <Video

@@ -1,577 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders CreatePost 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "backgroundColor": "rgba(255, 255, 255, 255)",
-      "flex": 1,
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        Object {
+          "paddingHorizontal": 16,
+        },
+      ]
     }
-  }
-  keyboardShouldPersistTaps="always"
->
-  <View>
+  >
     <View
       style={
-        Array [
-          Object {
-            "flex": 1,
-            "marginBottom": 24,
-            "marginHorizontal": 16,
-          },
-          false,
-        ]
+        Object {
+          "flex": 8,
+        }
       }
     >
       <View
         style={
           Object {
-            "marginTop": 26.68,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        <Text
+        <View
+          accessible={true}
+          focusable={false}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              false,
-              false,
-              false,
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 12,
-                "fontWeight": "400",
-                "letterSpacing": 0,
-                "lineHeight": 16,
-              },
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
               Array [
                 Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "marginLeft": 16,
+                  "width": 24,
                 },
                 Object {
                   "marginLeft": 0,
-                },
-              ],
-            ]
-          }
-        >
-          169 characters
-        </Text>
-        <View
-          style={
-            Object {
-              "backgroundColor": "rgba(255, 255, 255, 255)",
-              "borderColor": "transparent",
-              "borderRadius": 0,
-              "borderWidth": 1,
-              "height": 381.14285714285717,
-              "minHeight": 200,
-              "overflow": "hidden",
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "flexDirection": "row",
-                  "paddingLeft": 16,
-                },
-                Object {
-                  "paddingLeft": 0,
+                  "marginRight": 16,
                 },
               ]
-            }
-          >
-            <TextInput
-              allowFontScaling={true}
-              autoFocus={true}
-              blurOnSubmit={false}
-              defaultValue="hello world"
-              editable={true}
-              maxLength={180}
-              multiline={true}
-              numberOfLines={8}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholder="What's on your mind?"
-              placeholderTextColor="rgba(174, 174, 178, 255)"
-              rejectResponderTermination={true}
-              returnKeyType="default"
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "flex": 1,
-                    "fontFamily": "System",
-                    "fontSize": 16,
-                    "fontWeight": "400",
-                    "height": "100%",
-                    "letterSpacing": -0.32,
-                    "lineHeight": 21,
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "fontFamily": "System",
-                    "fontSize": 19,
-                    "fontWeight": "400",
-                    "letterSpacing": -0.408,
-                    "lineHeight": 22,
-                    "marginTop": 0,
-                    "textAlignVertical": "top",
-                  },
-                  undefined,
-                ]
-              }
-              underlineColorAndroid="transparent"
-              value={null}
-            />
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "justifyContent": "flex-end",
-          }
-        }
-      />
-      <View
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginTop": 16,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              accessible={true}
-              focusable={true}
-              hitSlop={
-                Object {
-                  "bottom": 20,
-                  "left": 20,
-                  "right": 20,
-                  "top": 20,
-                }
-              }
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#F5F5F5",
-                  "borderRadius": 1000,
-                  "height": 40,
-                  "justifyContent": "center",
-                  "marginRight": 16,
-                  "opacity": 1,
-                  "transform": Array [
-                    Object {
-                      "scale": 1,
-                    },
-                  ],
-                  "width": 40,
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontSize": 18.018018018018015,
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  }
-                }
-                text="kebeticon-camera"
-              />
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              accessible={true}
-              focusable={true}
-              hitSlop={
-                Object {
-                  "bottom": 20,
-                  "left": 20,
-                  "right": 20,
-                  "top": 20,
-                }
-              }
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#F5F5F5",
-                  "borderRadius": 1000,
-                  "height": 40,
-                  "justifyContent": "center",
-                  "marginRight": 16,
-                  "opacity": 1,
-                  "transform": Array [
-                    Object {
-                      "scale": 1,
-                    },
-                  ],
-                  "width": 40,
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontSize": 18.018018018018015,
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  }
-                }
-                text="kebeticon-photo"
-              />
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              accessible={true}
-              focusable={true}
-              hitSlop={
-                Object {
-                  "bottom": 20,
-                  "left": 20,
-                  "right": 20,
-                  "top": 20,
-                }
-              }
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#F5F5F5",
-                  "borderRadius": 1000,
-                  "height": 40,
-                  "justifyContent": "center",
-                  "marginRight": 16,
-                  "opacity": 1,
-                  "transform": Array [
-                    Object {
-                      "scale": 1,
-                    },
-                  ],
-                  "width": 40,
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Object {
-                    "color": "#0B1B77",
-                    "fontFamily": "icomoon",
-                    "fontSize": 18.018018018018015,
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  }
-                }
-                text="kebeticon-more-h"
-              />
-            </View>
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            accessible={true}
-            focusable={false}
-            hitSlop={
-              Object {
-                "bottom": 20,
-                "left": 20,
-                "right": 20,
-                "top": 20,
-              }
-            }
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#F5F5F5",
-                "borderRadius": 1000,
-                "height": 40,
-                "justifyContent": "center",
-                "marginRight": 16,
-                "opacity": 1,
-                "transform": Array [
-                  Object {
-                    "scale": 1,
-                  },
-                ],
-                "width": 40,
-              }
             }
           >
             <Text
               allowFontScaling={false}
               style={
                 Object {
-                  "color": "#0B1B77",
+                  "color": "rgba(0,0,0,0.87)",
                   "fontFamily": "icomoon",
-                  "fontSize": 18.018018018018015,
+                  "fontSize": 20,
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 }
               }
-              text="kebeticon-microphone"
+              text="kebeticon-chevron-left"
             />
           </View>
         </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`renders CreatePost with report mode 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "backgroundColor": "rgba(255, 255, 255, 255)",
-      "flex": 1,
-    }
-  }
-  keyboardShouldPersistTaps="always"
->
-  <View>
-    <View
-      style={
-        Array [
-          Object {
-            "flex": 1,
-            "marginBottom": 24,
-            "marginHorizontal": 16,
-          },
-          false,
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "marginTop": 26.68,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              false,
-              false,
-              false,
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 12,
-                "fontWeight": "400",
-                "letterSpacing": 0,
-                "lineHeight": 16,
-              },
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.54)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "400",
-                },
-                Object {
-                  "marginLeft": 0,
-                },
-              ],
-            ]
-          }
-        >
-          Your message
-        </Text>
-        <View
-          style={
-            Object {
-              "backgroundColor": "rgba(255, 255, 255, 255)",
-              "borderColor": "transparent",
-              "borderRadius": 0,
-              "borderWidth": 1,
-              "height": 381.14285714285717,
-              "minHeight": 200,
-              "overflow": "hidden",
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "flexDirection": "row",
-                  "paddingLeft": 16,
-                },
-                Object {
-                  "paddingLeft": 0,
-                },
-              ]
-            }
-          >
-            <TextInput
-              allowFontScaling={true}
-              autoFocus={true}
-              blurOnSubmit={false}
-              defaultValue=""
-              editable={true}
-              maxLength={1000}
-              multiline={true}
-              numberOfLines={8}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholder="Please describe your issue or feedback. This will not appear in posts."
-              placeholderTextColor="rgba(174, 174, 178, 255)"
-              rejectResponderTermination={true}
-              returnKeyType="default"
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "flex": 1,
-                    "fontFamily": "System",
-                    "fontSize": 16,
-                    "fontWeight": "400",
-                    "height": "100%",
-                    "letterSpacing": -0.32,
-                    "lineHeight": 21,
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(0,0,0,0.87)",
-                    "fontFamily": "System",
-                    "fontSize": 19,
-                    "fontWeight": "400",
-                    "letterSpacing": -0.408,
-                    "lineHeight": 22,
-                    "marginTop": 0,
-                    "textAlignVertical": "top",
-                  },
-                  undefined,
-                ]
-              }
-              underlineColorAndroid="transparent"
-              value={null}
-            />
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "justifyContent": "flex-end",
-          }
-        }
-      />
-      <View
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginTop": 16,
-          }
-        }
-      >
         <View
           style={
             Object {
               "flex": 1,
-              "flexDirection": "row",
             }
           }
         >
@@ -583,9 +101,469 @@ exports[`renders CreatePost with report mode 1`] = `
               }
             }
           >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Create post
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "rgba(0, 122, 255, 255)",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "height": 36,
+            "justifyContent": "center",
+            "minWidth": 64,
+            "paddingHorizontal": 16,
+          },
+          undefined,
+          false,
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
+            },
+            Array [
+              Object {
+                "color": "rgba(0, 122, 255, 255)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        POST
+      </Text>
+    </View>
+  </View>,
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flex": 1,
+      }
+    }
+    keyboardShouldPersistTaps="always"
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "marginBottom": 24,
+              "marginHorizontal": 16,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginTop": 26.68,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                false,
+                false,
+                false,
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "marginLeft": 0,
+                  },
+                ],
+              ]
+            }
+          >
+            169 characters
+          </Text>
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(255, 255, 255, 255)",
+                "borderColor": "transparent",
+                "borderRadius": 0,
+                "borderWidth": 1,
+                "height": 381.14285714285717,
+                "minHeight": 200,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flex": 1,
+                    "flexDirection": "row",
+                    "paddingLeft": 16,
+                  },
+                  Object {
+                    "paddingLeft": 0,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                autoFocus={true}
+                blurOnSubmit={false}
+                defaultValue="hello world"
+                editable={true}
+                maxLength={180}
+                multiline={true}
+                numberOfLines={8}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholder="What's on your mind?"
+                placeholderTextColor="rgba(174, 174, 178, 255)"
+                rejectResponderTermination={true}
+                returnKeyType="default"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "flex": 1,
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                      "height": "100%",
+                      "letterSpacing": -0.32,
+                      "lineHeight": 21,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "System",
+                      "fontSize": 19,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                      "marginTop": 0,
+                      "textAlignVertical": "top",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value={null}
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 1000,
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "opacity": 1,
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                    "width": 40,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "#0B1B77",
+                      "fontFamily": "icomoon",
+                      "fontSize": 18.018018018018015,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="kebeticon-camera"
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 1000,
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "opacity": 1,
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                    "width": 40,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "#0B1B77",
+                      "fontFamily": "icomoon",
+                      "fontSize": 18.018018018018015,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="kebeticon-photo"
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 1000,
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "opacity": 1,
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                    "width": 40,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "#0B1B77",
+                      "fontFamily": "icomoon",
+                      "fontSize": 18.018018018018015,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="kebeticon-more-h"
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
             <View
               accessible={true}
-              focusable={true}
+              focusable={false}
               hitSlop={
                 Object {
                   "bottom": 20,
@@ -630,13 +608,457 @@ exports[`renders CreatePost with report mode 1`] = `
                     "fontWeight": "normal",
                   }
                 }
-                text="kebeticon-photo"
+                text="kebeticon-microphone"
               />
             </View>
           </View>
         </View>
       </View>
     </View>
-  </View>
-</RCTScrollView>
+  </RCTScrollView>,
+]
+`;
+
+exports[`renders CreatePost with report mode 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        Object {
+          "paddingHorizontal": 16,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "marginLeft": 16,
+                  "width": 24,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(0,0,0,0.87)",
+                  "fontFamily": "icomoon",
+                  "fontSize": 20,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="kebeticon-chevron-left"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Support
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "rgba(0, 122, 255, 255)",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "height": 36,
+            "justifyContent": "center",
+            "minWidth": 64,
+            "paddingHorizontal": 16,
+          },
+          undefined,
+          Object {
+            "borderColor": "rgba(199, 199, 204, 255)",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFFFFF",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "letterSpacing": -0.32,
+              "lineHeight": 21,
+            },
+            Array [
+              Object {
+                "color": "rgba(199, 199, 204, 255)",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "fontFamily": "System",
+                "fontWeight": "600",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        SEND
+      </Text>
+    </View>
+  </View>,
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flex": 1,
+      }
+    }
+    keyboardShouldPersistTaps="always"
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "marginBottom": 24,
+              "marginHorizontal": 16,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginTop": 26.68,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                false,
+                false,
+                false,
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0,0,0,0.54)",
+                  },
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "marginLeft": 0,
+                  },
+                ],
+              ]
+            }
+          >
+            Your message
+          </Text>
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(255, 255, 255, 255)",
+                "borderColor": "transparent",
+                "borderRadius": 0,
+                "borderWidth": 1,
+                "height": 381.14285714285717,
+                "minHeight": 200,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flex": 1,
+                    "flexDirection": "row",
+                    "paddingLeft": 16,
+                  },
+                  Object {
+                    "paddingLeft": 0,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                autoFocus={true}
+                blurOnSubmit={false}
+                defaultValue=""
+                editable={true}
+                maxLength={1000}
+                multiline={true}
+                numberOfLines={8}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholder="Please describe your issue or feedback. This will not appear in posts."
+                placeholderTextColor="rgba(174, 174, 178, 255)"
+                rejectResponderTermination={true}
+                returnKeyType="default"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "flex": 1,
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                      "height": "100%",
+                      "letterSpacing": -0.32,
+                      "lineHeight": 21,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0,0,0,0.87)",
+                      "fontFamily": "System",
+                      "fontSize": 19,
+                      "fontWeight": "400",
+                      "letterSpacing": -0.408,
+                      "lineHeight": 22,
+                      "marginTop": 0,
+                      "textAlignVertical": "top",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value={null}
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#F5F5F5",
+                    "borderRadius": 1000,
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "opacity": 1,
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                    "width": 40,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Object {
+                      "color": "#0B1B77",
+                      "fontFamily": "icomoon",
+                      "fontSize": 18.018018018018015,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    }
+                  }
+                  text="kebeticon-photo"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>,
+]
 `;
