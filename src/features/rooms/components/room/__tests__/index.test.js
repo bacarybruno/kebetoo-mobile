@@ -1,38 +1,41 @@
 import setupTest from '@app/config/jest-setup'
-import authors from '@fixtures/authors.json'
 
-import Notification, { Dot, Title, Message } from '../index'
+import Room from '../index'
 
-const givenNotification = setupTest(Notification)({
+const givenRoom = setupTest(Room)({
   isOpened: true,
-  title: {
-    name: 'Bruno',
-    value: 'reacted to your post',
-  },
-  message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyod magna et dolore magna.',
+  title: 'Hello World',
+  membersCount: 100000,
+  message: 'Hello and welcome to kebetoo!',
   caption: '2 days ago',
-  author: authors[0],
+  room: {
+    displayName: 'Kebetoo',
+    photoURL: null,
+  },
   onPress: jest.fn(),
+  theme: 'blue',
 })
 
-it('renders Notification', () => {
-  const { wrapper } = givenNotification()
+const givenDiscoverRoom = setupTest(Room.Discover)({
+  title: 'Hello World',
+  membersCount: 100000,
+  message: 'Hello and welcome to kebetoo!',
+  caption: '2 days ago',
+  room: {
+    displayName: 'Kebetoo',
+    photoURL: null,
+  },
+  onPress: jest.fn(),
+  theme: 'orange',
+  author: 'Jest',
+})
+
+it('renders Room', () => {
+  const { wrapper } = givenRoom()
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
-describe('conditional renders', () => {
-  it('shows notification dot if not opened', () => {
-    const { wrapper } = givenNotification({ isOpened: false })
-    expect(wrapper.root.findAllByType(Dot).length).toBe(1)
-  })
-
-  it('doesnt show title if not present', () => {
-    const { wrapper } = givenNotification({ title: null })
-    expect(wrapper.root.findAllByType(Title).length).toBe(0)
-  })
-
-  it('doesnt show message if not present', () => {
-    const { wrapper } = givenNotification({ message: null })
-    expect(wrapper.root.findAllByType(Message).length).toBe(0)
-  })
+it('renders discover Room', () => {
+  const { wrapper } = givenDiscoverRoom()
+  expect(wrapper.toJSON()).toMatchSnapshot()
 })

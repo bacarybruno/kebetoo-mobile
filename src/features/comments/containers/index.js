@@ -14,6 +14,7 @@ import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
 import { metrics } from '@app/theme'
+import { SafeAreaContext } from '@app/shared/contexts'
 
 import createThemedStyles from './styles'
 import CommentInput from '../components/comment-input'
@@ -21,7 +22,6 @@ import Reactions from '../components/reactions'
 import Comment from '../components/comment'
 import Swipeable from '../components/swipeable'
 import useComments from './hook'
-import { SafeAreaContext } from '@app/features/app/containers'
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />

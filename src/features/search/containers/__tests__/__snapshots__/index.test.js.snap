@@ -38,48 +38,71 @@ exports[`renders SearchPage for posts 1`] = `
           }
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 22,
-                "fontWeight": "400",
-                "letterSpacing": 0.34375,
-                "lineHeight": 28,
-              },
-              false,
-              false,
-              false,
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          Search
-        </Text>
-        <ActivityIndicator
-          animating={false}
-          color="rgba(0, 122, 255, 255)"
-          hidesWhenStopped={true}
-          size="small"
+        <View
           style={
             Object {
-              "marginLeft": 8,
+              "flex": 1,
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Search
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
     </View>
     <View
@@ -102,9 +125,6 @@ exports[`renders SearchPage for posts 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "justifyContent": "center",
-          "marginRight": 8,
           "opacity": 1,
         }
       }
@@ -711,48 +731,71 @@ exports[`renders SearchPage for users 1`] = `
           }
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 22,
-                "fontWeight": "400",
-                "letterSpacing": 0.34375,
-                "lineHeight": 28,
-              },
-              false,
-              false,
-              false,
-              Array [
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          Search
-        </Text>
-        <ActivityIndicator
-          animating={false}
-          color="rgba(0, 122, 255, 255)"
-          hidesWhenStopped={true}
-          size="small"
+        <View
           style={
             Object {
-              "marginLeft": 8,
+              "flex": 1,
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Search
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
     </View>
     <View
@@ -775,9 +818,6 @@ exports[`renders SearchPage for users 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "justifyContent": "center",
-          "marginRight": 8,
           "opacity": 1,
         }
       }

@@ -17,7 +17,7 @@ export default (colors) => StyleSheet.create({
     marginBottom: metrics.spacing.xl,
     maxWidth: 300,
     width: '90%',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   saveButton: {
     marginBottom: metrics.marginVertical,
@@ -48,5 +48,10 @@ export default (colors) => StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 30,
+  },
+  colorPickerItem: {
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })

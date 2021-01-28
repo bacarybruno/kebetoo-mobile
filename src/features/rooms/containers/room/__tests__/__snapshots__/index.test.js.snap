@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Room 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 255)",
+      "flex": 1,
+      "paddingBottom": 16,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 60,
+        },
+        Array [
+          Object {
+            "paddingHorizontal": 16,
+          },
+          Object {
+            "backgroundColor": undefined,
+          },
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 10,
+              "right": 10,
+              "top": 10,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "marginLeft": 16,
+                  "width": 24,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 255)",
+                  "fontFamily": "icomoon",
+                  "fontSize": 20,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                }
+              }
+              text="kebeticon-chevron-left"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      Object {
+                        "color": "rgba(255,255,255,1)",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Hey,
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="rgba(0, 122, 255, 255)"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 17,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.408,
+                    "lineHeight": 22,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "color": "rgba(255,255,255,0.70)",
+                    },
+                  ],
+                ]
+              }
+            >
+              0 online
+            </Text>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "rgba(52, 199, 89, 255)",
+                  "borderRadius": 1000,
+                  "height": 8,
+                  "marginLeft": 4,
+                  "marginTop": 3,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -60,13 +60,26 @@ const Header = ({
           )}
           <View style={{ flex: 1 }}>
             <View style={styles.section}>
-              <Typography style={[styles.title, titleStyle]} numberOfLines={1} text={title.replace(' ,', ',')} type={Typography.types.headline2} />
-              <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
+              <Typography
+                style={[styles.title, titleStyle]}
+                numberOfLines={1}
+                text={title.replace(' ,', ',')}
+                type={Typography.types.headline2}
+              />
+              <ActivityIndicator
+                color={colors.primary}
+                style={styles.loading}
+                animating={loading}
+              />
             </View>
             {text.length > 0 && (
               <View style={styles.section}>
-                <Typography text={text} style={textStyle} type={Typography.types.subheading} />
-                {HeaderLogo ? HeaderLogo : <Logo style={styles.icon} />}
+                <Typography
+                  text={text}
+                  style={textStyle}
+                  type={Typography.types.subheading}
+                />
+                {HeaderLogo || <Logo style={styles.icon} />}
               </View>
             )}
           </View>

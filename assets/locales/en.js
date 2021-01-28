@@ -166,8 +166,10 @@ const locales = Object.freeze({
     new_count: '{0} new',
   },
   rooms: {
-    my_rooms: `My Rooms ({0})`,
-    discover: `Discover ({0})`,
+    created_by: 'Created by {0}',
+    members: '{0} members',
+    my_rooms: 'My Rooms ({0})',
+    discover: 'Discover ({0})',
   },
   create_room: {
     create_room: 'Create room',

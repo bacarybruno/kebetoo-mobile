@@ -3,13 +3,16 @@
 exports[`renders CommentInput 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "rgba(255, 255, 255, 255)",
-      "flexDirection": "row",
-      "paddingBottom": 8,
-      "paddingHorizontal": 16,
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flexDirection": "row",
+        "paddingBottom": 8,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
   }
 >
   <View
@@ -87,14 +90,14 @@ exports[`renders CommentInput 1`] = `
               allowFontScaling={false}
               style={
                 Object {
-                  "color": "rgba(174, 174, 178, 255)",
+                  "color": "rgba(0,0,0,0.54)",
                   "fontFamily": "Ionicons",
                   "fontSize": 28,
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 }
               }
-              text="ionicon-md-happy"
+              text="ionicon-happy-outline"
             />
           </View>
           <TextInput
@@ -107,7 +110,7 @@ exports[`renders CommentInput 1`] = `
             onContentSizeChange={[Function]}
             onFocus={[Function]}
             onTouchStart={[Function]}
-            placeholder="Add a comment"
+            placeholder="Add a comment..."
             placeholderTextColor="rgba(174, 174, 178, 255)"
             rejectResponderTermination={true}
             returnKeyType="default"
@@ -249,13 +252,16 @@ exports[`renders CommentInput 1`] = `
 exports[`renders CommentInput with AudioPlayer 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "rgba(255, 255, 255, 255)",
-      "flexDirection": "row",
-      "paddingBottom": 8,
-      "paddingHorizontal": 16,
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "flexDirection": "row",
+        "paddingBottom": 8,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
   }
 >
   <View
@@ -394,6 +400,7 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
                     "fontSize": 22,
                     "fontStyle": "normal",
                     "fontWeight": "normal",
+                    "marginLeft": 3,
                   }
                 }
                 text="ionicon-ios-play"
@@ -445,11 +452,14 @@ exports[`renders CommentInput with AudioPlayer 1`] = `
                       "fontFamily": "System",
                       "fontWeight": "400",
                     },
-                    Object {
-                      "bottom": 2,
-                      "position": "absolute",
-                      "right": 8,
-                    },
+                    Array [
+                      Object {
+                        "bottom": 2,
+                        "position": "absolute",
+                        "right": 8,
+                      },
+                      undefined,
+                    ],
                   ],
                 ]
               }

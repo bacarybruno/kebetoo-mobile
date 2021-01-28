@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { View, TouchableOpacity, FlatList } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+import dayjs from 'dayjs'
 
 import { AppHeader, SegmentedControl } from '@app/shared/components'
 import { strings } from '@app/config'
@@ -11,8 +12,8 @@ import routes from '@app/navigation/routes'
 
 import createThemedStyles from './styles'
 import Room from '../components/room'
-import dayjs from 'dayjs'
 import useRooms from '../hooks/rooms'
+// eslint-disable-next-line import/no-cycle
 import { getSystemMessage } from './room'
 
 const routeOptions = { title: strings.tabs.rooms }
@@ -42,22 +43,27 @@ const RoomsPage = ({ navigation }) => {
 
   const navigateToRoom = useCallback((room) => {
     navigation.navigate(routes.ROOM, room)
-  }, [])
+  }, [navigation])
 
-  const renderRoom = useCallback(({ item, index }) => (
+  const renderRoom = useCallback(({ item }) => (
     <Room
-      isOpened={false}
+      // TODO: implement this
+      isOpened
       onPress={() => navigateToRoom(item)}
       membersCount={Object.keys(item.members)?.length ?? 0}
       title={item.name}
-      message={item.lastMessage?.system ? getSystemMessage(item.lastMessage) : item.lastMessage?.text}
       room={{ displayName: item.name }}
       caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
       theme={item.theme}
+      message={
+        item.lastMessage?.system
+          ? getSystemMessage(item.lastMessage)
+          : (item.lastMessage?.text ?? 'Audio')
+      }
     />
-  ), [])
+  ), [navigateToRoom])
 
-  const renderDiscoverRoom = useCallback(({ item, index }) => (
+  const renderDiscoverRoom = useCallback(({ item }) => (
     <Room.Discover
       onPress={() => navigateToRoom(item)}
       membersCount={Object.keys(item.members)?.length ?? 0}
@@ -67,7 +73,7 @@ const RoomsPage = ({ navigation }) => {
       caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
       theme={item.theme}
     />
-  ), [])
+  ), [navigateToRoom])
 
   return (
     <View style={styles.wrapper}>
