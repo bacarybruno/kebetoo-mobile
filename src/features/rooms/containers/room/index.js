@@ -2,7 +2,7 @@ import React, {
   useCallback, useEffect, useState, useContext, useRef,
 } from 'react'
 import {
-  InteractionManager, StatusBar, View,
+  InteractionManager, StatusBar, TouchableOpacity, View,
 } from 'react-native'
 import { GiftedChat, Bubble, SystemMessage } from 'react-native-gifted-chat'
 import { useRoute } from '@react-navigation/native'
@@ -25,6 +25,7 @@ import { abbreviateNumber } from '@app/shared/helpers/strings'
 
 import createThemedStyles from './styles'
 import useRooms from '../../hooks/rooms'
+import routes from '@app/navigation/routes'
 
 export const getSystemMessage = (currentMessage) => {
   const { user, text } = currentMessage
@@ -130,23 +131,30 @@ const RoomPage = ({ navigation }) => {
 
   const renderAvatar = useCallback((props) => {
     const { user } = props.currentMessage
-    return <Avatar size={35} text={user.name} src={user.avatar} />
-  }, [])
+    const navigateToUserProfile = () =>　(
+      navigation.navigate(routes.USER_PROFILE, { userId: user._id })
+    )
+    return (
+      <TouchableOpacity onPress={navigateToUserProfile}>
+        <Avatar size={35} fontSize={25} text={user.name} src={user.avatar} />
+      </TouchableOpacity>
+    )
+  }, [navigation])
 
   const renderMessageAudio = useCallback((props) => {
-    const { audio } = props.currentMessage
+    const { audio, user } = props.currentMessage
     const metadata = extractMetadataFromUrl(audio)
+    const isOwnMessage = user._id === profile.uid
     return (
       <View style={styles.audioWrapper}>
         <AudioPlayer
           duration={metadata.duration}
           source={audio}
-          style={styles.audio}
-          textColor={mdColors.textSecondary.dark}
+          style={{ ...styles.audio, ...[isOwnMessage ? {} : styles.incomingAudio][0] }}
         />
       </View>
     )
-  }, [styles.audio, styles.audioWrapper])
+  }, [styles.audio, styles.audioWrapper, profile.uid])
 
   const renderTicks = useCallback((currentMessage) => {
     // eslint-disable-next-line no-underscore-dangle
@@ -207,7 +215,7 @@ const RoomPage = ({ navigation }) => {
           renderAvatar={renderAvatar}
           renderSystemMessage={renderSystemMessage}
           renderTicks={renderTicks}
-          onLongPress={() => {}}
+          onLongPress={() => { }}
         />
       )}
     </View>

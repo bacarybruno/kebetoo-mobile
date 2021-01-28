@@ -50,12 +50,14 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
   },
   audioWrapper: {
-    height: 45,
     margin: metrics.spacing.sm,
     width: metrics.screenWidth / 1.5,
   },
   audio: {
-    backgroundColor: hexToRgba(rgbaToHex(colors.teal), 0.3),
+    backgroundColor: hexToRgba(rgbaToHex(colors.teal), 0.2),
+  },
+  incomingAudio: {
+    backgroundColor: hexToRgba(rgbaToHex(colors.backgroundTertiary), 0.5),
   },
   onlineDot: {
     backgroundColor: colors.green,
@@ -65,7 +67,4 @@ export default (colors) => StyleSheet.create({
     marginLeft: metrics.spacing.xs,
     marginTop: 3,
   },
-
-  // gifted chat items
-  
 })

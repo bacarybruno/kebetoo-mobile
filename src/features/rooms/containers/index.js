@@ -33,11 +33,11 @@ const RoomsPage = ({ navigation }) => {
   const { profile } = useUser()
 
   const filterItems = [{
-    label: strings.formatString(strings.rooms.my_rooms, abbreviateNumber(rooms.length)),
-    value: 'rooms',
-  }, {
     label: strings.formatString(strings.rooms.discover, abbreviateNumber(discoverRooms.length)),
     value: 'discover',
+  }, {
+    label: strings.formatString(strings.rooms.my_rooms, abbreviateNumber(rooms.length)),
+    value: 'rooms',
   }]
   const [selectedValue, setSelectedValue] = useState(filterItems[0].value)
 
@@ -92,14 +92,14 @@ const RoomsPage = ({ navigation }) => {
         onSelect={(item) => setSelectedValue(item.value)}
         selectedValue={selectedValue}
       />
-      {selectedValue === filterItems[0].value && (
+      {selectedValue === 'rooms' && (
         <FlatList
           data={rooms}
           renderItem={renderRoom}
           removeClippedSubviews
         />
       )}
-      {selectedValue === filterItems[1].value && (
+      {selectedValue === 'discover' && (
         <FlatList
           data={discoverRooms}
           renderItem={renderDiscoverRoom}

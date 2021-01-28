@@ -237,7 +237,7 @@ exports[`renders Rooms 1`] = `
           ]
         }
       >
-        My Rooms (0)
+        Discover (0)
       </Text>
     </View>
     <View
@@ -293,7 +293,7 @@ exports[`renders Rooms 1`] = `
           ]
         }
       >
-        Discover (0)
+        My Rooms (0)
       </Text>
     </View>
   </View>
