@@ -61,7 +61,7 @@ export const DeleteIconButton = ({ onPress }) => {
 
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
-  duration, source, onDelete, round, onPress, style = {},
+  duration, source, onDelete, round, onPress, style = {}, textColor,
 }) => {
   const [playerState, setPlayerState] = useState(MediaStates.IDLE)
   const [progress, setProgress] = useState(0)
@@ -146,7 +146,7 @@ export const AudioPlayer = ({
             <Typography
               type={Typography.types.headline6}
               text={readableSeconds(audioDuration)}
-              style={styles.duration}
+              style={[styles.duration, textColor && { color: textColor }]}
             />
           </View>
         </Pressable>

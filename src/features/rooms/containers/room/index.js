@@ -1,15 +1,20 @@
-import React, { useCallback, useEffect, useState, useContext, useRef } from 'react'
-import { InteractionManager, StatusBar, View } from 'react-native'
-import { GiftedChat, Bubble, Send, SystemMessage } from 'react-native-gifted-chat'
+import React, {
+  useCallback, useEffect, useState, useContext, useRef,
+} from 'react'
+import {
+  InteractionManager, StatusBar, View,
+} from 'react-native'
+import { GiftedChat, Bubble, SystemMessage } from 'react-native-gifted-chat'
 import { useRoute } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { AppHeader, AudioPlayer, Avatar } from '@app/shared/components'
-import { useAppColors, useAppStyles, useAudioRecorder, useUser } from '@app/shared/hooks'
-import { SafeAreaContext } from '@app/features/app/containers'
+import {
+  useAppColors, useAppStyles, useAudioRecorder, useUser,
+} from '@app/shared/hooks'
+import { SafeAreaContext } from '@app/shared/contexts'
 
-import createThemedStyles from './styles'
-import useRooms from '../../hooks/rooms'
+
 import mdColors from '@app/theme/md-colors'
 import { CommentInput } from '@app/features/comments/components/comment-input'
 import { strings } from '@app/config'
@@ -17,6 +22,9 @@ import { metrics } from '@app/theme'
 import { isIphoneX } from 'react-native-iphone-x-helper'
 import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
+
+import createThemedStyles from './styles'
+import useRooms from '../../hooks/rooms'
 
 export const getSystemMessage = (currentMessage) => {
   const { user, text } = currentMessage
@@ -38,17 +46,17 @@ const RoomPage = ({ navigation }) => {
   const audioRecorder = useAudioRecorder()
   const [isLoading, setIsLoading] = useState(false)
   const [messages, setMessages] = useState(roomMessages)
-  const { updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
+  const {
+    updateTopSafeAreaColor,
+    updateBottomSafeAreaColor,
+    resetStatusBars,
+  } = useContext(SafeAreaContext)
 
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
       setIsReady(true)
     })
   }, [])
-
-  useEffect(() => {
-    setMessages(roomMessages)
-  }, [roomMessages])
 
   useEffect(() => {
     updateTopSafeAreaColor(themeColor)
@@ -61,64 +69,64 @@ const RoomPage = ({ navigation }) => {
     }
   }, [])
 
+  useEffect(() => {
+    setMessages(roomMessages)
+  }, [roomMessages])
+
   const onSend = useCallback(async () => {
-    if (!message && !audioRecorder.hasRecording) return
-    setIsLoading(true)
-    messageInput.current?.clear()
-    let audio = null
-    if (audioRecorder.hasRecording) {
-      audio = await audioRecorder.saveAsset()
+    try {
+      if (!message && !audioRecorder.hasRecording) return
+      setIsLoading(true)
+      messageInput.current?.clear()
+      let audio = null
+      if (audioRecorder.hasRecording) {
+        audio = await audioRecorder.saveAsset()
+      }
+      setIsLoading(false)
+      await createMessage({ room: params.id, text: message, audio })
+      setMessage('')
+    } catch (error) {
+      console.log(error)
     }
-    setIsLoading(false)
-    await createMessage({ room: params.id, text: message, audio })
-    setMessage('')
-  }, [message, audioRecorder])
+  }, [message, audioRecorder, createMessage, params.id])
 
-  const renderBubble = useCallback((props) => {
-    return (
-      <Bubble
-        {...props}
-        textStyle={{
-          left: { color: colors.textPrimary },
-          right: { color: mdColors.textPrimary.dark },
-        }}
-        timeTextStyle={{
-          left: { color: colors.textSecondary },
-          right: { color: mdColors.textSecondary.dark },
-        }}
-        wrapperStyle={{
-          left: {
-            backgroundColor: colors.backgroundSecondary,
-          }
-        }}
-      />
-    )
-  }, [])
+  const renderBubble = useCallback((props) => (
+    <Bubble
+      {...props}
+      textStyle={{
+        left: { color: colors.textPrimary },
+        right: { color: mdColors.textPrimary.dark },
+      }}
+      timeTextStyle={{
+        left: { color: colors.textSecondary },
+        right: { color: mdColors.textSecondary.dark },
+      }}
+      wrapperStyle={{
+        left: {
+          backgroundColor: colors.backgroundSecondary,
+        },
+      }}
+    />
+  ), [colors])
 
-  const renderInputToolbar = useCallback((props) => {
-    return (
-      <>
-        <CommentInput
-          theme={themeColor}
-          placeholder={strings.room.type_message}
-          onChange={setMessage}
-          onSend={onSend}
-          inputRef={messageInput}
-          audioRecorder={audioRecorder}
-          value={message}
-          isLoading={isLoading}
+  const renderInputToolbar = useCallback((props) => (
+    <>
+      <CommentInput
+        theme={themeColor}
+        placeholder={strings.room.type_message}
+        onChange={setMessage}
+        onSend={onSend}
+        inputRef={messageInput}
+        audioRecorder={audioRecorder}
+        value={message}
+        isLoading={isLoading}
+        disableEmojis
+        handleContentSizeChange={false}
         // reply={toReply}
         // onReplyClose={clearToReply}
-        />
-      </>
-    )
-  }, [message, onSend, messageInput, audioRecorder, isLoading])
-
-  const renderSend = useCallback((props) => {
-    return (
-      <Send {...props} textStyle={{ color: themeColor }} />
-    )
-  }, [])
+      />
+    </>
+  ), [themeColor, onSend, audioRecorder, message, isLoading])
 
   const renderAvatar = useCallback((props) => {
     const { user } = props.currentMessage
@@ -134,12 +142,14 @@ const RoomPage = ({ navigation }) => {
           duration={metadata.duration}
           source={audio}
           style={styles.audio}
+          textColor={mdColors.textSecondary.dark}
         />
       </View>
     )
-  }, [])
+  }, [styles.audio, styles.audioWrapper])
 
   const renderTicks = useCallback((currentMessage) => {
+    // eslint-disable-next-line no-underscore-dangle
     if (currentMessage.user._id !== profile.uid) return null
     const { sent, pending, received } = currentMessage
     let icon
@@ -154,31 +164,29 @@ const RoomPage = ({ navigation }) => {
         style={{ marginRight: metrics.spacing.xs }}
       />
     )
-  }, [])
+  }, [colors.white, profile.uid])
 
-  const renderSystemMessage = useCallback((props) => {
-    return (
-      <SystemMessage
-        {...props}
-        textStyle={{ color: colors.textSecondary }}
-        currentMessage={{
-          ...props.currentMessage,
-          text: getSystemMessage(props.currentMessage),
-        }}
-      />
-    )
-  }, [])
+  const renderSystemMessage = useCallback((props) => (
+    <SystemMessage
+      {...props}
+      textStyle={{ color: colors.textSecondary }}
+      currentMessage={{
+        ...props.currentMessage,
+        text: getSystemMessage(props.currentMessage),
+      }}
+    />
+  ), [colors.textSecondary])
 
   return (
     <View style={styles.wrapper}>
       <AppHeader
+        headerBack
         title={params.name}
         text={strings.formatString(strings.room.online_count, abbreviateNumber(onlineCount))}
         showAvatar={false}
-        headerBack
         style={[styles.content, { backgroundColor: themeColor }]}
-        titleStyle={{ color: colors.white }}
-        textStyle={{ color: colors.white }}
+        titleStyle={{ color: mdColors.textPrimary.dark }}
+        textStyle={{ color: mdColors.textSecondary.dark }}
         iconColor={colors.white}
         Logo={<View style={styles.onlineDot} />}
       />
@@ -195,11 +203,11 @@ const RoomPage = ({ navigation }) => {
           renderInputToolbar={renderInputToolbar}
           renderMessageAudio={renderMessageAudio}
           locale={strings.getLanguage()}
-          renderSend={renderSend}
           bottomOffset={isIphoneX() ? metrics.spacing.lg : undefined}
           renderAvatar={renderAvatar}
           renderSystemMessage={renderSystemMessage}
           renderTicks={renderTicks}
+          onLongPress={() => {}}
         />
       )}
     </View>

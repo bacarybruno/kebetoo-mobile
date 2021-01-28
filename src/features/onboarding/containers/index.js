@@ -13,7 +13,8 @@ import routes from '@app/navigation/routes'
 import { images } from '@app/theme'
 import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 import { strings } from '@app/config'
-import { SafeAreaContext } from '@app/features/app/containers'
+import { SafeAreaContext } from '@app/shared/contexts'
+
 
 import createThemedStyles from './styles'
 

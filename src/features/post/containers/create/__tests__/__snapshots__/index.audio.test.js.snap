@@ -84,48 +84,71 @@ Array [
             />
           </View>
         </View>
-        <Text
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 22,
-                "fontWeight": "400",
-                "letterSpacing": 0.34375,
-                "lineHeight": 28,
-              },
-              false,
-              false,
-              false,
-              Array [
-                Object {
-                  "color": undefined,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "600",
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          Share post
-        </Text>
-        <ActivityIndicator
-          animating={false}
-          color="#999999"
-          hidesWhenStopped={true}
-          size="small"
+        <View
           style={
             Object {
-              "marginLeft": 8,
+              "flex": 1,
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 22,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.34375,
+                    "lineHeight": 28,
+                  },
+                  false,
+                  false,
+                  false,
+                  Array [
+                    Object {
+                      "color": undefined,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "600",
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ],
+                  ],
+                ]
+              }
+            >
+              Share post
+            </Text>
+            <ActivityIndicator
+              animating={false}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="small"
+              style={
+                Object {
+                  "marginLeft": 8,
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
     </View>
     <View
@@ -331,6 +354,7 @@ Array [
                         "fontSize": 22,
                         "fontStyle": "normal",
                         "fontWeight": "normal",
+                        "marginLeft": 3,
                       }
                     }
                     text="ionicon-ios-play"
@@ -369,7 +393,10 @@ Array [
                           "fontFamily": "System",
                           "fontWeight": "400",
                         },
-                        undefined,
+                        Array [
+                          undefined,
+                          undefined,
+                        ],
                       ],
                     ]
                   }

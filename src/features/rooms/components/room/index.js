@@ -5,6 +5,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { Pressable, Avatar, Typography } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { strings } from '@app/config'
 
 import createThemedStyles from './styles'
 
@@ -36,11 +37,16 @@ export const Title = ({ name, info, Right }) => {
 }
 
 export const Message = ({ text }) => (
-  <Typography numberOfLines={2} type={Typography.types.body} color={Typography.colors.secondary} text={text} />
+  <Typography
+    numberOfLines={2}
+    type={Typography.types.body}
+    color={Typography.colors.secondary}
+    text={text}
+  />
 )
 
 const Room = ({
-  isOpened, title, membersCount, message, caption, room, onPress, theme,
+  isOpened = true, title, membersCount = 0, message, caption, room, onPress, theme,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -50,10 +56,25 @@ const Room = ({
       style={[styles.roomWrapper, !isOpened && styles.pendingRoom]}
       onPress={onPress}
     >
-      <Avatar color={colors[theme]} text={room.displayName} src={room.photoURL} size={55} fontSize={25} />
+      <Avatar
+        color={colors[theme]}
+        text={room.displayName}
+        src={room.photoURL}
+        size={55}
+        fontSize={35}
+      />
       <View style={styles.roomInfos}>
         {title && (
-          <Title name={title} info={`${abbreviateNumber(membersCount)} members`} Right={!isOpened ? <Dot /> : null} />
+          <Title
+            name={title}
+            info={
+              strings.formatString(
+                strings.rooms.members,
+                abbreviateNumber(membersCount),
+              )
+            }
+            Right={!isOpened ? <Dot /> : null}
+          />
         )}
         <Message text={message} />
         <Typography
@@ -73,20 +94,35 @@ const NextButton = () => {
   )
 }
 
-Room.Discover = ({
-  title, membersCount, author, caption, room, onPress, theme,
+const Discover = ({
+  title, membersCount = 0, author, caption, room, onPress, theme,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
 
   return (
     <Pressable style={styles.roomWrapper} onPress={onPress}>
-      <Avatar color={colors[theme]} text={room.displayName} src={room.photoURL} size={55} fontSize={25} />
+      <Avatar
+        color={colors[theme]}
+        text={room.displayName}
+        src={room.photoURL}
+        size={55}
+        fontSize={35}
+      />
       <View style={styles.roomInfos}>
         {title && (
-          <Title name={title} info={`${abbreviateNumber(membersCount)} members`} Right={<NextButton />} />
+          <Title
+            name={title}
+            info={
+              strings.formatString(
+                strings.rooms.members,
+                abbreviateNumber(membersCount),
+              )
+            }
+            Right={<NextButton />}
+          />
         )}
-        <Message text={`Created by ${author}`} />
+        <Message text={strings.formatString(strings.rooms.created_by, author)} />
         <Typography
           text={caption}
           type={Typography.types.headline5}
@@ -96,5 +132,7 @@ Room.Discover = ({
     </Pressable>
   )
 }
+
+Room.Discover = Discover
 
 export default Room

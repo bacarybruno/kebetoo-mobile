@@ -16,9 +16,9 @@ export const EmojiPickerToggler = ({ onPress, isActive }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.emojiPicker} hitSlop={edgeInsets.all(20)}>
       <Ionicon
-        name="md-happy"
+        name="happy-outline"
         size={28}
-        color={isActive ? colors.primary : colors.placeholder}
+        color={isActive ? colors.primary : colors.textSecondary}
       />
     </TouchableOpacity>
   )
@@ -103,14 +103,14 @@ const EmojiTextInput = React.forwardRef((props, ref) => {
         onChangeText={onChangeText}
         ref={ref}
         key={showEmojiPicker}
-        Left={Platform.OS === 'android' && renderToggler}
+        Left={Platform.OS === 'android' && !props.disableEmojis && renderToggler}
         multiline={Platform.OS === 'android' ? props.multiline : false}
         showSoftInputOnFocus={!showEmojiPicker}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onTouchStart={onKeyboardPress}
       />
-      {Platform.OS === 'android' && (
+      {Platform.OS === 'android' && !props.disableEmojis && (
         <EmojiKeyboard
           hide={blurred}
           inputRef={ref}

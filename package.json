@@ -38,6 +38,7 @@
     "@react-navigation/stack": "^5.9.0",
     "dayjs": "^1.8.27",
     "emoji-datasource": "^5.0.1",
+    "hermes-engine": "0.5.2-rc1",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-action-button": "^2.8.5",

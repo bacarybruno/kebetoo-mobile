@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import database from '@react-native-firebase/database'
+
 import { useUser } from '@app/shared/hooks'
 
 const roomsPath = '/rooms'
@@ -28,7 +29,7 @@ const useRooms = (roomId) => {
         .orderByChild('createdAt')
         .limitToLast(1000)
         .once('value', (snapshot) => {
-          let values = []
+          const values = []
           snapshot.forEach((child) => {
             values.unshift({ ...child.val(), received: true })
           })
@@ -66,33 +67,33 @@ const useRooms = (roomId) => {
           }
         })
     }
-  }, [roomId, profile.uid])
+  }, [roomId, profile.uid, messagesRef, roomsRef])
 
   useEffect(() => {
     onlineRef.set({
       status: true,
-      date: Date.now()
+      date: Date.now(),
     })
     onlineRef
       .onDisconnect()
       .set({
         status: false,
-        date: Date.now()
+        date: Date.now(),
       })
-  }, [profile])
+  }, [onlineRef, profile])
 
   useEffect(() => {
     try {
       roomsRef.on('value', (data) => {
         const values = data.val()
         const roomsVal = Object.keys(values).map((key) => ({ id: key, ...values[key] }))
-        let newRooms = []
-        let newDiscoverRooms = []
+        const newRooms = []
+        const newDiscoverRooms = []
         roomsVal.forEach((room) => {
           if (room.members && room.members[profile.uid]) {
-            newRooms = [...newRooms, room]
+            newRooms.unshift(room)
           } else {
-            newDiscoverRooms = [...newDiscoverRooms, room]
+            newDiscoverRooms.unshift(room)
           }
         })
         setRooms(newRooms)
@@ -103,31 +104,9 @@ const useRooms = (roomId) => {
     }
   }, [roomsRef, profile.uid])
 
-  const createRoom = useCallback(async ({ name, theme }) => {
-    const newRoom = roomsRef.push()
-    await newRoom.set({
-      name,
-      theme,
-      createdAt: new Date().toISOString(),
-      author: {
-        displayName: profile.displayName,
-        uid: profile.uid,
-        photoURL: profile.photoURL,
-      },
-      members: {
-        [profile.uid]: Date.now()
-      },
-      lastMessage: null,
-      _id: newRoom.key,
-    })
-    await createMessage({
-      text: systemMessages.ROOM_CREATED,
-      system: true,
-      room: newRoom.key,
-    })
-  }, [profile, createMessage])
-
-  const createMessage = useCallback(async ({ room, text, audio, ...other }) => {
+  const createMessage = useCallback(async ({
+    room, text, audio, ...other
+  }) => {
     const newMessage = messagesRef.child(`/${room}`).push()
     const createdAt = Date.now()
     // create the message
@@ -135,7 +114,7 @@ const useRooms = (roomId) => {
     const user = {
       _id: profile.uid,
       name: profile.displayName,
-      avatar: profile.photoURL
+      avatar: profile.photoURL,
     }
     const message = {
       _id: newMessage.key,
@@ -148,10 +127,11 @@ const useRooms = (roomId) => {
     await newMessage.set(message, () => {
       setMessages((oldState) => {
         const updatedState = [...oldState]
-        for (let i = 0; i < updatedState.length; i++) {
-          const m = updatedState[i]
-          if (m._id === message._id) {
-            m.received = true
+        for (let i = 0; i < updatedState.length; i += 1) {
+          const pendingMessage = updatedState[i]
+          // eslint-disable-next-line no-underscore-dangle
+          if (pendingMessage._id === message._id) {
+            pendingMessage.received = true
           }
         }
         return updatedState
@@ -167,7 +147,31 @@ const useRooms = (roomId) => {
     if (!isMember) {
       roomMembers.ref.set({ [profile.uid]: Date.now() })
     }
-  }, [profile, messages])
+  }, [messagesRef, profile, roomsRef])
+
+  const createRoom = useCallback(async ({ name, theme }) => {
+    const newRoom = roomsRef.push()
+    await newRoom.set({
+      name,
+      theme,
+      createdAt: new Date().toISOString(),
+      author: {
+        displayName: profile.displayName,
+        uid: profile.uid,
+        photoURL: profile.photoURL,
+      },
+      members: {
+        [profile.uid]: Date.now(),
+      },
+      lastMessage: null,
+      _id: newRoom.key,
+    })
+    await createMessage({
+      text: systemMessages.ROOM_CREATED,
+      system: true,
+      room: newRoom.key,
+    })
+  }, [roomsRef, profile, createMessage])
 
   return {
     rooms,

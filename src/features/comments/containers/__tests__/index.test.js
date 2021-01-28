@@ -1,4 +1,5 @@
 import { act } from 'react-test-renderer'
+import reactNavigation from '@react-navigation/native'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
@@ -10,21 +11,18 @@ import SwipeableComment from '../../components/swipeable'
 import { CommentInput } from '../../components/comment-input'
 import Comment from '../../components/comment'
 
-jest.mock('@react-navigation/native', () => {
-  const posts = require('@fixtures/posts').default
-  return {
-    ...jest.requireActual('@react-navigation/native'),
-    useRoute: () => ({
-      params: {
-        post: posts.audio,
-      },
-    }),
-    useNavigation: () => ({
-      navigate: jest.fn(),
-      setOptions: jest.fn(),
-      addListener: jest.fn(),
-    }),
-  }
+const posts = require('@fixtures/posts').default
+
+reactNavigation.useRoute = jest.fn().mockReturnValue({
+  params: {
+    post: posts.audio,
+  },
+})
+
+reactNavigation.useNavigation = () => ({
+  navigate: jest.fn(),
+  setOptions: jest.fn(),
+  addListener: jest.fn(),
 })
 
 beforeEach(jest.clearAllMocks)

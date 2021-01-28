@@ -8,6 +8,10 @@ import configureStore from 'redux-mock-store'
 import 'react-native-gesture-handler/jestSetup'
 import { renderHook } from '@testing-library/react-hooks'
 import auth from '@react-native-firebase/auth'
+import { SafeAreaContext } from '@app/shared/contexts'
+
+// Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
 
 // wix/react-native-keyboard-input
 NativeModules.KeyboardTrackingViewTempManager = {
@@ -19,9 +23,6 @@ NativeModules.KeyboardTrackingViewTempManager = {
 NativeModules.RealPathUtils = {
   getOriginalFilePath: jest.fn(),
 }
-
-// Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
 
 const mockedStoreState = {
   postsReducer: {
@@ -52,10 +53,17 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
       ...additionalProps,
     }
     const mockStore = configureStore()
+    const safeAreaCtxValue = {
+      updateTopSafeAreaColor: jest.fn(),
+      updateBottomSafeAreaColor: jest.fn(),
+      resetStatusBars: jest.fn(),
+    }
     const Component = (
-      <Provider store={store || mockStore(__storeState__)}>
-        <WrappedComponent {...propsWithArgs} />
-      </Provider>
+      <SafeAreaContext.Provider value={safeAreaCtxValue}>
+        <Provider store={store || mockStore(__storeState__)}>
+          <WrappedComponent {...propsWithArgs} />
+        </Provider>
+      </SafeAreaContext.Provider>
     )
     wrapper = renderFn(Component)
     return { wrapper, props: propsWithArgs }

@@ -1,8 +1,12 @@
 import React, { useCallback, useState } from 'react'
-import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
+import {
+  FlatList, ScrollView, TouchableOpacity, View,
+} from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { AppHeader, Avatar, FullButton, TextInput, Typography } from '@app/shared/components'
+import {
+  AppHeader, Avatar, FullButton, TextInput, Typography,
+} from '@app/shared/components'
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
@@ -18,14 +22,24 @@ const ColorPicker = ({ items, selectedItem, onChange = () => { } }) => {
   const itemsPerRow = 3
   const itemSize = 65
 
-  const renderColor = useCallback(({ item, index }) => {
+  const renderColor = useCallback(({ item }) => {
     const isSelected = selectedItem === item.name
+    const itemStyle = {
+      width: itemSize,
+      height: itemSize,
+      backgroundColor: item.color,
+    }
     return (
-      <TouchableOpacity onPress={() => onChange(item.name)} style={{ width: itemSize, height: itemSize, backgroundColor: item.color, borderRadius: 100, justifyContent: 'center', alignItems: 'center' }}>
-        {isSelected && <Ionicon name="checkmark-sharp" size={40} color={colors.white} />}
+      <TouchableOpacity
+        onPress={() => onChange(item.name)}
+        style={[styles.colorPickerItem, itemStyle]}
+      >
+        {isSelected && (
+          <Ionicon name="checkmark-sharp" size={40} color={colors.white} />
+        )}
       </TouchableOpacity>
     )
-  }, [selectedItem, onChange])
+  }, [selectedItem, styles.colorPickerItem, colors.white, onChange])
 
   const keyExtractor = useCallback((item) => item.name, [])
 
@@ -48,31 +62,31 @@ const CreateRoomPage = ({ navigation }) => {
   const { colors } = useAppColors()
   const roomColors = [{
     color: colors.blue,
-    name: 'blue'
+    name: 'blue',
   }, {
     color: colors.orange,
-    name: 'orange'
+    name: 'orange',
   }, {
     color: colors.yellow,
-    name: 'yellow'
+    name: 'yellow',
   }, {
     color: colors.purple,
-    name: 'purple'
+    name: 'purple',
   }, {
     color: colors.green,
-    name: 'green'
+    name: 'green',
   }, {
     color: colors.indigo,
-    name: 'indigo'
+    name: 'indigo',
   }, {
     color: colors.pink,
-    name: 'pink'
+    name: 'pink',
   }, {
     color: colors.teal,
-    name: 'teal'
+    name: 'teal',
   }, {
     color: colors.red,
-    name: 'red'
+    name: 'red',
   }]
   const [color, setColor] = useState(roomColors[0].name)
   const { createRoom } = useRooms()
@@ -83,7 +97,7 @@ const CreateRoomPage = ({ navigation }) => {
     await createRoom({ name, theme: color })
     setIsLoading(false)
     navigation.goBack()
-  }, [name, color, navigation])
+  }, [name, createRoom, color, navigation])
 
   return (
     <View style={styles.wrapper}>
@@ -108,7 +122,11 @@ const CreateRoomPage = ({ navigation }) => {
               wrapperStyle={styles.textInputWrapper}
             />
           </View>
-          <Typography type={Typography.types.subheading} text={strings.create_room.room_theme} style={styles.label} />
+          <Typography
+            type={Typography.types.subheading}
+            text={strings.create_room.room_theme}
+            style={styles.label}
+          />
           <ColorPicker items={roomColors} selectedItem={color} onChange={setColor} />
         </View>
       </ScrollView>
@@ -122,6 +140,7 @@ const CreateRoomPage = ({ navigation }) => {
     </View>
   )
 }
+
 CreateRoomPage.routeOptions = routeOptions
 
 export default CreateRoomPage

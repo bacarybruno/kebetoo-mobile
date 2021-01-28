@@ -18,7 +18,7 @@ export default (colors) => StyleSheet.create({
     marginBottom: metrics.spacing.xl,
     maxWidth: 300,
     width: '90%',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   saveButton: {
     marginBottom: metrics.marginVertical,
@@ -55,14 +55,17 @@ export default (colors) => StyleSheet.create({
     width: metrics.screenWidth / 1.5,
   },
   audio: {
-    backgroundColor: hexToRgba(rgbaToHex(colors.black), 0.05),
+    backgroundColor: hexToRgba(rgbaToHex(colors.teal), 0.3),
   },
   onlineDot: {
     backgroundColor: colors.green,
     borderRadius: metrics.radius.round,
-    width: 10,
-    height: 10,
+    width: 8,
+    height: 8,
     marginLeft: metrics.spacing.xs,
     marginTop: 3,
-  }
+  },
+
+  // gifted chat items
+  
 })
