@@ -15,7 +15,7 @@ export const routeOptions = { headerShown: false }
 
 export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <Avatar src={photoURL} text={displayName} size={35} />
+    <Avatar src={photoURL} text={displayName} size={35} fontSize={20} />
   </TouchableOpacity>
 )
 
