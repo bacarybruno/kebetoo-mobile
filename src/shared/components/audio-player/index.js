@@ -42,6 +42,7 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => {
             name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
             size={22}
             color={colors.blue_dark}
+            style={{ marginLeft: 3 }}
           />
         )}
     </TouchableOpacity>

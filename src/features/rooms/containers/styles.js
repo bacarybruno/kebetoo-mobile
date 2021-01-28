@@ -4,7 +4,13 @@ import { StyleSheet } from 'react-native'
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
-    paddingHorizontal: metrics.marginHorizontal,
     backgroundColor: colors.background,
+  },
+  padding: {
+    paddingHorizontal: metrics.marginHorizontal,
+  },
+  segmentedControl: {
+    marginHorizontal: metrics.marginHorizontal,
+    marginBottom: metrics.spacing.md,
   },
 })

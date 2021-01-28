@@ -110,7 +110,7 @@ const locales = Object.freeze({
   },
   comments: {
     no_content: 'Soyez le premier à ajouter un commentaire ! 👇',
-    add_comment: 'Ajouter un commentaire',
+    add_comment: 'Ajouter un commentaire...',
     recording: 'Entrain d\'enregistrer',
     people_reacted: '{0} ont réagi',
     replying_to: 'Réponse à {0}',
@@ -165,10 +165,19 @@ const locales = Object.freeze({
     no_content: 'Vos notifications vont apparaitre ici',
     new_count: '{0} nouv.',
   },
+  rooms: {
+    my_rooms: `Mes Rooms ({0})`,
+    discover: `Découvrir ({0})`,
+  },
   create_room: {
     create_room: 'Créer une room',
     room_name: 'Nom de la room (requis)',
     room_theme: 'Selectionnez le theme principal',
+  },
+  room: {
+    type_message: 'Message...',
+    online_count: '{0} en ligne',
+    system_room_created: '{0} a créé la room',
   },
   dates: {
     format_month_year: 'MMMM YYYY',

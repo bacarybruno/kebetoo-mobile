@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
@@ -15,12 +15,16 @@ LogBox.ignoreLogs([
 ])
 enableScreens()
 
+export const SafeAreaContext = React.createContext()
+
 const RootContainer = () => {
   const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
 
   const styles = useAppStyles(createThemedStyles)
   const { colors, resetAppBars } = useAppColors()
+  const [topSafeAreaColor, updateTopSafeAreaColor] = useState(colors.background)
+  const [bottomSafeAreaColor, updateBottomSafeAreaColor] = useState(colors.background)
 
   useEffect(() => {
     const appStateChange = (state) => {
@@ -36,22 +40,28 @@ const RootContainer = () => {
 
   useEffect(() => {
     resetAppBars()
+    resetStatusBars()
   }, [colors])
 
   useEffect(() => {
     setupNotifications()
   }, [setupNotifications])
 
+  const resetStatusBars = useCallback(() => {
+    updateTopSafeAreaColor(styles.topSafeArea.backgroundColor)
+    updateBottomSafeAreaColor(styles.bottomSafeArea.backgroundColor)
+  }, [styles])
+
   return (
-    <>
-      <RNSafeAreaView style={styles.topSafeArea} />
+    <SafeAreaContext.Provider value={{ updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars }}>
+      <RNSafeAreaView style={[styles.topSafeArea, { backgroundColor: topSafeAreaColor }]} />
       <SafeAreaProvider>
         <SafeAreaView style={styles.wrapper}>
           <AppNavigation />
         </SafeAreaView>
       </SafeAreaProvider>
-      <RNSafeAreaView style={styles.bottomSafeArea} />
-    </>
+      <RNSafeAreaView style={[styles.bottomSafeArea, { backgroundColor: bottomSafeAreaColor }]} />
+    </SafeAreaContext.Provider>
   )
 }
 

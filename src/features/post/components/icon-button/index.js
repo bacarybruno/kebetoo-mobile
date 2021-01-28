@@ -60,7 +60,7 @@ const IconButton = ({
         style={[
           styles.button,
           { backgroundColor: defaultBgColor || colors.backgroundSecondary },
-          isActive && styles.activeButton,
+          isActive && [styles.activeButton, defaultBgColor && { backgroundColor: defaultBgColor }],
           getDimensions(size),
           scale(animatedScale),
           style,

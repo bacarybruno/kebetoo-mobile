@@ -71,6 +71,12 @@ class ApiClient extends HttpClient {
       createImage: ({ image, ...payload }) => this.postAsset('/feedbacks', 'image', image, payload),
     }
   }
+
+  get assets() {
+    return {
+      createAudio: ({ audio, ...payload }) => this.postAsset('/upload', 'audio', audio, payload),
+    }
+  }
 }
 
 
