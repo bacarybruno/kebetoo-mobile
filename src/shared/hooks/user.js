@@ -29,9 +29,10 @@ const useUser = () => {
     await auth().currentUser.updateProfile({ photoURL })
     dispatch({ type: SET_USER_PROFILE, payload: { photoURL } })
     const currentPicture = await api.assets.findByUrl(profile.photoURL)
+    // eslint-disable-next-line no-underscore-dangle
     await api.assets.delete(currentPicture[0]._id)
     await api.authors.update(profile.uid, { photoURL })
-  }, [])
+  }, [dispatch, profile])
 
   const deleteProfilePicture = useCallback(async () => {
     return updateProfilePicture('')

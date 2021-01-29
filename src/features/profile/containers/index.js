@@ -98,7 +98,16 @@ export const Summary = React.memo(({
         onLoading(false)
       }
     })
-  }, [colors, onLoading, saveImage, showActionSheetWithOptions, photoURL])
+  }, [
+    showActionSheetWithOptions,
+    colors,
+    onLoading,
+    saveImage,
+    updateProfilePicture,
+    deleteProfilePicture,
+    photoURL,
+    navigate,
+  ])
 
   return (
     <View style={styles.summary}>
