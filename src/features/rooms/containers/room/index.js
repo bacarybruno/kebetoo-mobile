@@ -137,7 +137,7 @@ const RoomPage = ({ navigation }) => {
     )
     return (
       <TouchableOpacity onPress={navigateToUserProfile}>
-        <Avatar size={35} fontSize={25} text={user.name} src={user.avatar} />
+        <Avatar size={35} fontSize={20} text={user.name} src={user.avatar} />
       </TouchableOpacity>
     )
   }, [navigation])

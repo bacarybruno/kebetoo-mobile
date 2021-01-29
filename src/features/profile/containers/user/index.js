@@ -169,6 +169,7 @@ const UserProfile = ({ route, navigation }) => {
         ListHeaderComponent={renderListHeader}
         contentContainerStyle={styles.sectionListContent}
         renderItem={renderItem}
+        stickySectionHeadersEnabled={false}
       />
     </View>
   )
