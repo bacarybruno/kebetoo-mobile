@@ -76,6 +76,8 @@ class ApiClient extends HttpClient {
     return {
       createAudio: ({ audio, ...payload }) => this.postAsset('/upload', 'audio', audio, payload),
       createImage: ({ image, ...payload }) => this.postAsset('/upload', 'image', image, payload),
+      findByUrl: (url) => this.get(`/upload/files?url=${url}`),
+      delete: (id) => this.get(`/upload/delete/${id}`),
     }
   }
 }

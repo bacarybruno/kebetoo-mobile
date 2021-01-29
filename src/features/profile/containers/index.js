@@ -47,7 +47,8 @@ export const Summary = React.memo(({
   const { colors } = useAppColors()
   const { showActionSheetWithOptions } = useActionSheet()
   const { saveImage } = useFilePicker()
-  const {} = useUser()
+  const { updateProfilePicture, deleteProfilePicture } = useUser()
+  const { navigate } = useNavigation()
 
   const showAvatarOptions = useCallback(async () => {
     const bottomSheetItems = [{
@@ -79,21 +80,25 @@ export const Summary = React.memo(({
       titleTextStyle: { color: colors.textSecondary },
       containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
     }, async (index) => {
-      onLoading(true)
-      if (index === 0) {
-        const profilePictureUrl = await saveImage()
+      try {
+        onLoading(true)
+        if (index === 0) {
+          const profilePictureUrl = await saveImage()
+          await updateProfilePicture(profilePictureUrl)
+        } else if (index === 1) {
+          await deleteProfilePicture()
+        } else if (index === 2) {
+          if (photoURL) {
+            navigate(routes.MODAL_IMAGE, {
+              source: { uri: photoURL },
+            })
+          }
+        }
+      } finally {
+        onLoading(false)
       }
-      onLoading(false)
     })
-
-    // if (photoURL) {
-    //   navigate(routes.MODAL_IMAGE, {
-    //     source: {
-    //       uri: photoURL,
-    //     },
-    //   })
-    // }
-  }, [colors, onLoading, saveImage, showActionSheetWithOptions])
+  }, [colors, onLoading, saveImage, showActionSheetWithOptions, photoURL])
 
   return (
     <View style={styles.summary}>
