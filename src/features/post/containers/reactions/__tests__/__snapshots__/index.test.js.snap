@@ -10,17 +10,17 @@ Array [
     "icons": Array [
       <_default
         color="rgba(0,0,0,0.87)"
-        name="ios-share-alt"
+        name="git-compare-outline"
         size={24}
       />,
       <_default
         color="rgba(0,0,0,0.87)"
-        name="ios-share"
+        name="create-outline"
         size={24}
       />,
       <_default
         color="rgba(0,0,0,0.87)"
-        name="md-close"
+        name="close-outline"
         size={24}
       />,
     ],
