@@ -235,6 +235,7 @@ const CameraRollPicker = ({ navigation }) => {
         navigation.goBack()
       } catch (error) {
         console.log(error)
+        onSubmit(null)
       }
     }
   }, [maximum, navigation, onSubmit, cropperThemeOptions])
@@ -259,6 +260,7 @@ const CameraRollPicker = ({ navigation }) => {
       navigation.goBack()
     } catch (error) {
       console.log(error)
+      onSubmit(null)
     }
   }, [assetType, navigation, onSubmit, cropperThemeOptions])
 
