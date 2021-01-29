@@ -23,6 +23,7 @@ const useFilePicker = (uri) => {
 
   const pickImage = useCallback(async () => {
     const fileData = await new Promise((resolve) => {
+      // TODO: handle back button press without selecting an item
       navigate(routes.CAMERA_ROLL_PICKER, {
         assetType: CameraRollPicker.AssetTypes.Photos,
         onSelectedItem: (item) => {
@@ -69,22 +70,18 @@ const useFilePicker = (uri) => {
   }, [file])
 
   const saveImage = useCallback(async () => {
-    try {
-      const fileData = await pickImage()
-      const time = dayjs().format('YYYYMMDD')
-      const fileUri = fileData.uri.replace('file://', '')
-      const response = await api.assets.createImage({
-        image: {
-          uri: fileUri,
-          mimeType: fileData.type,
-          name: constructFileName(time, 'IMG', getExtension(fileUri)),
-        },
-      })
-      reset()
-      return response[0].url
-    } catch (error) {
-      console.log(error)
-    }
+    const fileData = await pickImage()
+    const time = dayjs().format('YYYYMMDD')
+    const fileUri = fileData.uri.replace('file://', '')
+    const response = await api.assets.createImage({
+      image: {
+        uri: fileUri,
+        mimeType: fileData.type,
+        name: constructFileName(time, 'IMG', getExtension(fileUri)),
+      },
+    })
+    reset()
+    return response[0].url
   }, [file, pickImage, reset])
 
   const savePost = useCallback(async (author, content, repost) => {
