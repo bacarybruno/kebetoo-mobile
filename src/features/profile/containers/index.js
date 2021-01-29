@@ -16,13 +16,12 @@ import { api } from '@app/shared/services'
 import * as types from '@app/redux/types'
 import { appSelector, userStatsSelector } from '@app/redux/selectors'
 import { strings } from '@app/config'
-import {
-  useAnalytics, useAppColors, useAppStyles, useUser,
-} from '@app/shared/hooks'
+import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
 import { rgbaToHex } from '@app/theme/colors'
 import { actionTypes } from '@app/features/post/containers/create'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
 import { warnNotImplemented } from '@app/shared/components/no-content'
+import useFilePicker from '@app/features/post/hooks/file-picker'
 
 import createThemedStyles, { imageSize } from './styles'
 
@@ -41,26 +40,67 @@ export const SectionTitle = React.memo(({ text }) => {
   )
 })
 
-export const Summary = React.memo(({ photoURL, info, displayName }) => {
-  const { navigate } = useNavigation()
+export const Summary = React.memo(({
+  photoURL, info, displayName, onLoading,
+}) => {
   const styles = useAppStyles(createThemedStyles)
+  const { colors } = useAppColors()
+  const { showActionSheetWithOptions } = useActionSheet()
+  const { saveImage } = useFilePicker()
+  const {} = useUser()
 
-  const onPress = useCallback(() => {
-    if (photoURL) {
-      navigate(routes.MODAL_IMAGE, {
-        source: {
-          uri: photoURL,
-        },
-      })
-    }
-  }, [navigate, photoURL])
+  const showAvatarOptions = useCallback(async () => {
+    const bottomSheetItems = [{
+      title: strings.profile.edit_picture,
+      icon: 'camera-outline',
+    }, {
+      title: strings.profile.delete_picture,
+      icon: 'trash-outline',
+    }, {
+      title: strings.profile.view_picture,
+      icon: 'eye-outline',
+    }, {
+      title: strings.general.cancel,
+      icon: 'close-outline',
+    }]
+
+    showActionSheetWithOptions({
+      options: bottomSheetItems.map((item) => item.title),
+      icons: bottomSheetItems.map((item) => (
+        <Ionicon
+          name={item.icon}
+          size={24}
+          color={colors.textPrimary}
+        />
+      )),
+      cancelButtonIndex: bottomSheetItems.length - 1,
+      title: strings.general.options,
+      textStyle: { color: colors.textPrimary },
+      titleTextStyle: { color: colors.textSecondary },
+      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
+    }, async (index) => {
+      onLoading(true)
+      if (index === 0) {
+        const profilePictureUrl = await saveImage()
+      }
+      onLoading(false)
+    })
+
+    // if (photoURL) {
+    //   navigate(routes.MODAL_IMAGE, {
+    //     source: {
+    //       uri: photoURL,
+    //     },
+    //   })
+    // }
+  }, [colors, onLoading, saveImage, showActionSheetWithOptions])
 
   return (
     <View style={styles.summary}>
       <TouchableOpacity
         style={styles.imageWrapper}
         activeOpacity={0.8}
-        onPress={onPress}
+        onPress={showAvatarOptions}
       >
         <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
       </TouchableOpacity>
@@ -247,7 +287,7 @@ const AppInfosSection = React.memo(({
 })
 
 export const ProfileHeader = React.memo(({
-  profile, postsCount, reactionsCount, commentsCount,
+  profile, postsCount, reactionsCount, commentsCount, onLoading,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -256,6 +296,7 @@ export const ProfileHeader = React.memo(({
         photoURL={profile.photoURL}
         displayName={profile.displayName}
         info={profile.email}
+        onLoading={onLoading}
       />
       <Stats
         postsCount={postsCount}
@@ -269,6 +310,7 @@ export const ProfileHeader = React.memo(({
 const ProfilePage = React.memo(() => {
   const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
+  const [loading, setLoading] = useState(false)
 
   const stats = useSelector(userStatsSelector)
   const [postsCount, setPostsCount] = useState(stats.posts)
@@ -357,12 +399,19 @@ const ProfilePage = React.memo(() => {
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.padding}>
-          <AppHeader title={strings.tabs.profile} text="" showAvatar={false} headerBack />
+          <AppHeader
+            title={strings.tabs.profile}
+            text=""
+            showAvatar={false}
+            headerBack
+            loading={loading}
+          />
           <ProfileHeader
             profile={profile}
             postsCount={postsCount}
             reactionsCount={reactionsCount}
             commentsCount={commentsCount}
+            onLoading={setLoading}
           />
         </View>
         <ProfileSection managePosts={managePosts} />
