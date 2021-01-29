@@ -60,15 +60,22 @@ const RoomPage = ({ navigation }) => {
   }, [])
 
   useEffect(() => {
-    updateTopSafeAreaColor(themeColor)
-    updateBottomSafeAreaColor(colors.backgroundSecondary)
-    StatusBar.setBackgroundColor(themeColor)
-    StatusBar.setBarStyle('light-content')
-    return () => {
+    const unsubscribeFocus = navigation.addListener('focus', () => {
+      updateTopSafeAreaColor(themeColor)
+      updateBottomSafeAreaColor(colors.backgroundSecondary)
+      StatusBar.setBackgroundColor(themeColor)
+      StatusBar.setBarStyle('light-content')
+    })
+    const unsubscribeBlur = navigation.addListener('blur', () => {
       resetStatusBars()
       resetAppBars()
+    })
+
+    return () => {
+      unsubscribeFocus()
+      unsubscribeBlur()
     }
-  }, [])
+  }, [navigation])
 
   useEffect(() => {
     setMessages(roomMessages)
