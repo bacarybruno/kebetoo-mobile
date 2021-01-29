@@ -95,6 +95,9 @@ const locales = Object.freeze({
     light: 'Light',
     application: 'Application',
     issue_or_feedback: 'Help & Feedback',
+    edit_picture: 'Update picture',
+    view_picture: 'Show picture',
+    delete_picture: 'Delete picture',
   },
   manage_posts: {
     my_posts: 'Manage posts',

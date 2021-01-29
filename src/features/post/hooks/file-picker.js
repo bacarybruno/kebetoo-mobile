@@ -32,6 +32,7 @@ const useFilePicker = (uri) => {
       })
     })
     if (fileData) setFile(fileData)
+    return fileData
   }, [navigate])
 
   const pickVideo = useCallback(async () => {
@@ -66,6 +67,25 @@ const useFilePicker = (uri) => {
       }
     }
   }, [file])
+
+  const saveImage = useCallback(async () => {
+    try {
+      const fileData = await pickImage()
+      const time = dayjs().format('YYYYMMDD')
+      const fileUri = fileData.uri.replace('file://', '')
+      const response = await api.assets.createImage({
+        image: {
+          uri: fileUri,
+          mimeType: fileData.type,
+          name: constructFileName(time, 'IMG', getExtension(fileUri)),
+        },
+      })
+      reset()
+      return response[0].url
+    } catch (error) {
+      console.log(error)
+    }
+  }, [file, pickImage, reset])
 
   const savePost = useCallback(async (author, content, repost) => {
     // TODO: check if it's necessary to have unique file names
@@ -118,13 +138,14 @@ const useFilePicker = (uri) => {
   }, [file, reset])
 
   return {
-    pickImage,
-    pickVideo,
+    file,
     hasFile: file !== null,
     type: isVideo(file?.uri) ? 'video' : 'image',
-    file,
     reset,
     savePost,
+    saveImage,
+    pickImage,
+    pickVideo,
     saveFeedback,
   }
 }

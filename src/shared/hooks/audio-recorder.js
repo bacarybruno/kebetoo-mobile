@@ -115,23 +115,6 @@ const useAudioRecorder = (
     return response
   }, [elapsedTime, recordUri])
 
-  const saveAsset = useCallback(async () => {
-    try {
-      const time = dayjs().format('YYYYMMDD')
-      const response = await api.assets.createAudio({
-        audio: {
-          uri: recordUri,
-          mimeType: getMimeType(recordUri),
-          name: constructFileName(time, elapsedTime, getExtension(recordUri)),
-        },
-      })
-      reset()
-      return response[0].url
-    } catch (error) {
-      console.log(error)
-    }
-  }, [elapsedTime, recordUri, reset])
-
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
@@ -147,6 +130,19 @@ const useAudioRecorder = (
     setHasRecording(false)
     setElapsedTime(0)
   }, [recordUri])
+
+  const saveAsset = useCallback(async () => {
+    const time = dayjs().format('YYYYMMDD')
+    const response = await api.assets.createAudio({
+      audio: {
+        uri: recordUri,
+        mimeType: getMimeType(recordUri),
+        name: constructFileName(time, elapsedTime, getExtension(recordUri)),
+      },
+    })
+    reset()
+    return response[0].url
+  }, [elapsedTime, recordUri, reset])
 
   const stop = useCallback(() => {
     BackgroundTimer.clearInterval(timerId)
