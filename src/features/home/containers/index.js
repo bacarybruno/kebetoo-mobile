@@ -139,22 +139,23 @@ const HomePage = ({ navigation }) => {
 
     const bottomSheetItems = [{
       title: strings.home.hide_post,
-      icon: 'md-eye-off',
+      icon: 'eye-off-outline',
     }, {
       title: strings.home.report_post,
-      icon: 'md-flag',
+      icon: 'flag-outline',
     }, {
       title: strings.formatString(
         strings.home.block_author,
         post.author.displayName.split(' ')[0],
       ),
-      icon: 'md-remove-circle',
+      icon: 'remove-circle-outline',
     }, {
       title: strings.general.cancel,
       icon: 'md-close',
     }]
 
     const cancelButtonIndex = bottomSheetItems.length - 1
+    const destructiveButtonIndex = bottomSheetItems.length - 2
     showActionSheetWithOptions({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map((item) => (
@@ -165,6 +166,7 @@ const HomePage = ({ navigation }) => {
         />
       )),
       cancelButtonIndex,
+      destructiveButtonIndex,
       title: strings.general.actions,
       textStyle: { color: colors.textPrimary },
       titleTextStyle: { color: colors.textSecondary },

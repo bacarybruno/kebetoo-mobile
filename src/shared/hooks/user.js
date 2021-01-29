@@ -23,6 +23,10 @@ const useUser = () => {
     }
   }, [profile.uid])
 
+  const updateProfilePicture = useCallback(() => {
+    
+  }, [])
+
   return {
     signOut,
     profile,

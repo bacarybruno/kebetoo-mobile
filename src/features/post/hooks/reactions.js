@@ -22,13 +22,13 @@ export const REACTION_TYPES = {
 
 export const bottomSheetItems = [{
   title: strings.reactions.share_now,
-  icon: 'ios-share-alt',
+  icon: 'git-compare-outline',
 }, {
   title: strings.reactions.write_post,
-  icon: 'ios-share',
+  icon: 'create-outline',
 }, {
   title: strings.general.cancel,
-  icon: 'md-close',
+  icon: 'close-outline',
 }]
 
 const createBottomSheetIcon = (color) => (item) => (
