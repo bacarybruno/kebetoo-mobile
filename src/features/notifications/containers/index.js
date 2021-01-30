@@ -21,37 +21,50 @@ export const NOTIFICATION_TYPES = {
   REPLY: 'reply',
   POST_REACTION: 'post-reaction',
   COMMENT_REACTION: 'comment-reaction',
+  SYSTEM: 'system',
 }
 
 export const getNotificationTitle = (message) => {
-  const payload = JSON.parse(message.data.payload)
-  const name = payload.author.displayName
-  switch (message.data.type) {
-    case NOTIFICATION_TYPES.COMMENT:
-      return { name, message: strings.notifications.commented_post }
-    case NOTIFICATION_TYPES.COMMENT_REACTION:
-      return { name, message: strings.notifications.reacted_comment }
-    case NOTIFICATION_TYPES.POST_REACTION:
-      return { name, message: strings.notifications.reacted_post }
-    case NOTIFICATION_TYPES.REPLY:
-      return { name, message: strings.notifications.replied_comment }
-    default:
-      return null
+  try {
+    const payload = JSON.parse(message.data.payload)
+    const name = payload.author.displayName
+    switch (message.data.type) {
+      case NOTIFICATION_TYPES.COMMENT:
+        return { name, message: strings.notifications.commented_post }
+      case NOTIFICATION_TYPES.COMMENT_REACTION:
+        return { name, message: strings.notifications.reacted_comment }
+      case NOTIFICATION_TYPES.POST_REACTION:
+        return { name, message: strings.notifications.reacted_post }
+      case NOTIFICATION_TYPES.REPLY:
+        return { name, message: strings.notifications.replied_comment }
+      case NOTIFICATION_TYPES.SYSTEM:
+        return { name, message: payload.systemMessage }
+      default:
+        return null
+    }
+  } catch (error) {
+    return null
   }
 }
 
 export const getNotificationMessage = (message) => {
-  const payload = JSON.parse(message.data.payload)
-  switch (message.data.type) {
-    case NOTIFICATION_TYPES.COMMENT:
-    case NOTIFICATION_TYPES.REPLY:
-      return payload.content
-    case NOTIFICATION_TYPES.COMMENT_REACTION:
-      return payload.comment.content
-    case NOTIFICATION_TYPES.POST_REACTION:
-      return payload.post.content
-    default:
-      return null
+  try {
+    const payload = JSON.parse(message.data.payload)
+    switch (message.data.type) {
+      case NOTIFICATION_TYPES.COMMENT:
+      case NOTIFICATION_TYPES.REPLY:
+        return payload.content
+      case NOTIFICATION_TYPES.COMMENT_REACTION:
+        return payload.comment.content
+      case NOTIFICATION_TYPES.POST_REACTION:
+        return payload.post.content
+      case NOTIFICATION_TYPES.SYSTEM:
+        return payload.content
+      default:
+        return null
+    }
+  } catch (error) {
+    return null
   }
 }
 
@@ -87,8 +100,12 @@ const NotificationsPage = () => {
   }, [addListener, newItems, updateSeenStatus])
 
   const getAuthor = (message) => {
-    const payload = JSON.parse(message.data.payload)
-    return payload.author
+    try {
+      const payload = JSON.parse(message.data.payload)
+      return payload.author 
+    } catch (error) {
+      return {}
+    }
   }
 
   const onNotificationOpen = useCallback(async ({ id, message }) => {
@@ -108,16 +125,18 @@ const NotificationsPage = () => {
       case NOTIFICATION_TYPES.REPLY:
         postId = payload.thread.post
         break
+      case NOTIFICATION_TYPES.SYSTEM:
+        postId = payload.post
       default:
         break
     }
 
     if (postId) {
       const post = await api.posts.getById(postId)
-      updateOpenStatus(id)
       navigate(routes.COMMENTS, { post })
     }
 
+    updateOpenStatus(id)
     setIsLoading(false)
   }, [navigate, updateOpenStatus])
 
