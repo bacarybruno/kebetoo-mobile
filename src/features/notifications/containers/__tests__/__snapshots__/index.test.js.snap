@@ -125,6 +125,7 @@ exports[`renders NotificationsPage 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "marginLeft": 8,
             "opacity": 1,
           }
         }
@@ -380,7 +381,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                Bruno Bodian
+                Bruno Bodian 
               </Text>
               <Text
                 style={
@@ -411,7 +412,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                 reacted on your post
+                reacted on your post
               </Text>
             </Text>
             <View
@@ -708,7 +709,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                Bruno Bodian
+                Bruno Bodian 
               </Text>
               <Text
                 style={
@@ -739,7 +740,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                 commented your post
+                commented your post
               </Text>
             </Text>
             <View
@@ -950,7 +951,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                John Doe
+                John Doe 
               </Text>
               <Text
                 style={
@@ -981,7 +982,7 @@ exports[`renders NotificationsPage 1`] = `
                   ]
                 }
               >
-                 reacted on your comment
+                reacted on your comment
               </Text>
             </Text>
           </View>

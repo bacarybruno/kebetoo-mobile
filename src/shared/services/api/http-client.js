@@ -77,10 +77,6 @@ class HttpClient {
       ...this.headers,
       'Content-Type': 'multipart/form-data',
     }
-    const payload = {
-      name: 'data',
-      data: JSON.stringify(data),
-    }
     const file = {
       name: 'files',
       filename: asset.name,
@@ -88,6 +84,17 @@ class HttpClient {
       data: RNFetchBlob.wrap(asset.uri),
     }
     const formData = [file]
+
+    if (field) {
+      file.name = `files.${field}`
+    }
+    if (data) {
+      const payload = {
+        name: 'data',
+        data: JSON.stringify(data),
+      }
+      formData.unshift(payload)
+    }
     return RNFetchBlob
       .fetch('POST', this.baseURL + endpoint, headers, formData)
       .then((res) => res.json())

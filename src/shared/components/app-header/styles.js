@@ -30,5 +30,8 @@ export default StyleSheet.create({
   },
   title: {
     flex: 1,
-  }
+  },
+  headerAvatar: {
+    marginLeft: metrics.spacing.sm,
+  },
 })

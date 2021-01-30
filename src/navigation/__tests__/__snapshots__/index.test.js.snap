@@ -472,6 +472,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                           onStartShouldSetResponder={[Function]}
                                           style={
                                             Object {
+                                              "marginLeft": 8,
                                               "opacity": 1,
                                             }
                                           }
@@ -842,6 +843,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                     onStartShouldSetResponder={[Function]}
                                     style={
                                       Object {
+                                        "marginLeft": 8,
                                         "opacity": 1,
                                       }
                                     }
@@ -2342,6 +2344,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                           onStartShouldSetResponder={[Function]}
                                           style={
                                             Object {
+                                              "marginLeft": 8,
                                               "opacity": 1,
                                             }
                                           }
@@ -2712,6 +2715,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                     onStartShouldSetResponder={[Function]}
                                     style={
                                       Object {
+                                        "marginLeft": 8,
                                         "opacity": 1,
                                       }
                                     }
@@ -5129,6 +5133,7 @@ exports[`tabs renders TabNavigation 1`] = `
                         onStartShouldSetResponder={[Function]}
                         style={
                           Object {
+                            "marginLeft": 8,
                             "opacity": 1,
                           }
                         }

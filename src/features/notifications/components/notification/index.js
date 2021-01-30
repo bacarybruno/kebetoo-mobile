@@ -16,12 +16,14 @@ export const Title = ({ name, message, showDot }) => {
   return (
     <View style={styles.headerTitleWrapper}>
       <Text style={styles.headerTitle} numberOfLines={2}>
-        <Typography
-          text={name}
-          type={Typography.types.headline4}
-          systemWeight={Typography.weights.semibold}
-        />
-        <Typography text={` ${message}`} type={Typography.types.headline4} />
+        {name && (
+          <Typography
+            text={`${name} `}
+            type={Typography.types.headline4}
+            systemWeight={Typography.weights.semibold}
+          />
+        )}
+        <Typography text={message} type={Typography.types.headline4} />
       </Text>
       {showDot && <Dot />}
     </View>

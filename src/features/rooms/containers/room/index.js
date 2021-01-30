@@ -175,7 +175,7 @@ const RoomPage = ({ navigation }) => {
     return (
       <Ionicon
         name={icon}
-        size={18}
+        size={15}
         color={colors.white}
         style={{ marginRight: metrics.spacing.xs }}
       />

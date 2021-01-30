@@ -93,6 +93,7 @@ const OnboardingPage = ({ navigation }) => {
     const removeFocusListener = navigation.addListener('focus', () => {
       StatusBar.setBackgroundColor(colors.onboarding)
       changeNavigationBarColor(colors.onboarding)
+      StatusBar.setBarStyle('dark-content')
     })
     const removeBlurListener = navigation.addListener('blur', resetAppBars)
     return () => {
