@@ -49,9 +49,6 @@ exports[`renders Room 1`] = `
             "flex": 1,
             "justifyContent": "center",
           },
-          Object {
-            "borderRadius": 27.5,
-          },
           undefined,
           Object {
             "backgroundColor": "rgba(0, 122, 255, 255)",
@@ -299,9 +296,6 @@ exports[`renders discover Room 1`] = `
             "borderRadius": 1000,
             "flex": 1,
             "justifyContent": "center",
-          },
-          Object {
-            "borderRadius": 27.5,
           },
           undefined,
           Object {

@@ -263,6 +263,42 @@ const AppNavigation = () => {
       api.authors.update(profile.uid, { notificationToken })
     })
 
+    // persistNotification({
+    //   messageId: 'test-1',
+    //   sentTime: Date.now(),
+    //   data: {
+    //     type: 'system',
+    //     payload: JSON.stringify({
+    //       author: {
+    //         displayName: 'Kebetoo',
+    //         certified: true,
+    //         photoURL: 'https://kebetoo.com/assets/img/icon.png',
+    //       },
+    //       systemMessage: '',
+    //       content: 'Kebetoo vous souhaite la bienvenue!',
+    //       post: '600316e3c78fa70017137655',
+    //     }),
+    //   },
+    // })
+
+    // persistNotification({
+    //   messageId: 'test-2',
+    //   sentTime: Date.now(),
+    //   data: {
+    //     type: 'system',
+    //     payload: JSON.stringify({
+    //       author: {
+    //         displayName: 'Kebetoo',
+    //         certified: true,
+    //         photoURL: 'https://kebetoo.com/assets/img/icon.png',
+    //       },
+    //       systemMessage: 'Du nouveau sur Kebetoo — photos de profil, rooms ...',
+    //       content: 'Cliquez ici pour en savoir plus',
+    //       post: '600316e3c78fa70017137655',
+    //     }),
+    //   },
+    // })
+
     return () => {
       unsubscribeForegroundNotification()
       unsubscribeTokenRefresh()

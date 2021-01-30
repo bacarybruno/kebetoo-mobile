@@ -79,9 +79,6 @@ exports[`renders UserProfile 1`] = `
                     "justifyContent": "center",
                   },
                   Object {
-                    "borderRadius": 375,
-                  },
-                  Object {
                     "borderRadius": 0,
                   },
                   Object {

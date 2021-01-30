@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text } from 'react-native'
 import { human, systemWeights, material } from 'react-native-typography'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { useAppColors } from '@app/shared/hooks'
 
@@ -102,14 +103,14 @@ const Caption = ({ children, style, ...otherProps }) => (
 )
 
 const createTypography = (
-  text, style, color, onPress, themeColors, defaultProps,
-) => (Component, props) => {
+  text, style, color, onPress, themeColors, hasBadge, defaultProps,
+) => (Baseline, props) => {
   const { systemWeight = weights.regular, systemColor = colors.primary, ...textProps } = {
     ...props,
     ...defaultProps,
   }
   return (
-    <Component
+    <Baseline
       style={[
         { color: themeColors[color || systemColor] },
         systemWeights[systemWeight],
@@ -119,18 +120,24 @@ const createTypography = (
       {...textProps}
     >
       {text}
-    </Component>
+      {hasBadge && (
+        <>
+          <Ionicon name="shield-checkmark" size={16} color={themeColors.primary} />
+          <Text>{' '}</Text>
+        </>
+      )}
+    </Baseline>
   )
 }
 
 const Typography = ({
-  type = types.body, text, style, color, onPress, ...otherProps
+  type = types.body, text, style, color, onPress, hasBadge, ...otherProps
 }) => {
   const { colors: themeColors } = useAppColors()
 
   if (text === null || text === undefined) return null
 
-  const typography = createTypography(text, style, color, onPress, themeColors, otherProps)
+  const typography = createTypography(text, style, color, onPress, themeColors, hasBadge, otherProps)
 
   switch (type) {
     case types.headline1:

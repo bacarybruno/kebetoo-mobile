@@ -81,9 +81,6 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -1196,9 +1193,6 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 12,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -1878,9 +1872,6 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -2350,9 +2341,6 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                     "borderRadius": 1000,
                     "flex": 1,
                     "justifyContent": "center",
-                  },
-                  Object {
-                    "borderRadius": 17.5,
                   },
                   undefined,
                   Object {
@@ -3370,9 +3358,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 12,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -3940,9 +3925,6 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -4317,9 +4299,6 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -4614,18 +4593,13 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                         }
                       }
                       style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 1000,
-                            "flex": 1,
-                            "justifyContent": "center",
-                          },
-                          Object {
-                            "borderRadius": 12,
-                          },
-                        ]
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
+                          "borderRadius": 1000,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
                       }
                       testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                     />
@@ -5524,9 +5498,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 12,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -5714,18 +5685,13 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                         }
                       }
                       style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 1000,
-                            "flex": 1,
-                            "justifyContent": "center",
-                          },
-                          Object {
-                            "borderRadius": 12,
-                          },
-                        ]
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
+                          "borderRadius": 1000,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
                       }
                       testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                     />
@@ -6298,9 +6264,6 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -6595,18 +6558,13 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                         }
                       }
                       style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "rgba(0, 122, 255, 255)",
-                            "borderRadius": 1000,
-                            "flex": 1,
-                            "justifyContent": "center",
-                          },
-                          Object {
-                            "borderRadius": 12,
-                          },
-                        ]
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgba(0, 122, 255, 255)",
+                          "borderRadius": 1000,
+                          "flex": 1,
+                          "justifyContent": "center",
+                        }
                       }
                       testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                     />
@@ -6862,9 +6820,6 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                     "borderRadius": 1000,
                     "flex": 1,
                     "justifyContent": "center",
-                  },
-                  Object {
-                    "borderRadius": 17.5,
                   },
                   undefined,
                   Object {
@@ -7885,9 +7840,6 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 12,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -8474,9 +8426,6 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 17.5,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -8853,9 +8802,6 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                     "borderRadius": 1000,
                     "flex": 1,
                     "justifyContent": "center",
-                  },
-                  Object {
-                    "borderRadius": 17.5,
                   },
                   undefined,
                   Object {
@@ -9909,9 +9855,6 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 12,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",
@@ -10530,9 +10473,6 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                     "borderRadius": 1000,
                     "flex": 1,
                     "justifyContent": "center",
-                  },
-                  Object {
-                    "borderRadius": 17.5,
                   },
                   undefined,
                   Object {

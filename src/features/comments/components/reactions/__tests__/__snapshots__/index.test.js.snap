@@ -407,16 +407,13 @@ exports[`renders CommentReactions 1`] = `
                 }
               }
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                    "borderRadius": 1000,
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                  undefined,
-                ]
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                  "borderRadius": 1000,
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
               }
               testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
             />
@@ -467,7 +464,6 @@ exports[`renders CommentReactions 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  undefined,
                   undefined,
                   Object {
                     "backgroundColor": "#9575cd",

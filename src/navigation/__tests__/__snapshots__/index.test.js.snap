@@ -499,18 +499,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                                 }
                                               }
                                               style={
-                                                Array [
-                                                  Object {
-                                                    "alignItems": "center",
-                                                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                    "borderRadius": 1000,
-                                                    "flex": 1,
-                                                    "justifyContent": "center",
-                                                  },
-                                                  Object {
-                                                    "borderRadius": 17.5,
-                                                  },
-                                                ]
+                                                Object {
+                                                  "alignItems": "center",
+                                                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                                                  "borderRadius": 1000,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                }
                                               }
                                               testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                                             />
@@ -870,18 +865,13 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                           }
                                         }
                                         style={
-                                          Array [
-                                            Object {
-                                              "alignItems": "center",
-                                              "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 1000,
-                                              "flex": 1,
-                                              "justifyContent": "center",
-                                            },
-                                            Object {
-                                              "borderRadius": 17.5,
-                                            },
-                                          ]
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "rgba(0, 122, 255, 255)",
+                                            "borderRadius": 1000,
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          }
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                                       />
@@ -2371,18 +2361,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                                 }
                                               }
                                               style={
-                                                Array [
-                                                  Object {
-                                                    "alignItems": "center",
-                                                    "backgroundColor": "rgba(0, 122, 255, 255)",
-                                                    "borderRadius": 1000,
-                                                    "flex": 1,
-                                                    "justifyContent": "center",
-                                                  },
-                                                  Object {
-                                                    "borderRadius": 17.5,
-                                                  },
-                                                ]
+                                                Object {
+                                                  "alignItems": "center",
+                                                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                                                  "borderRadius": 1000,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                }
                                               }
                                               testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                                             />
@@ -2742,18 +2727,13 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                           }
                                         }
                                         style={
-                                          Array [
-                                            Object {
-                                              "alignItems": "center",
-                                              "backgroundColor": "rgba(0, 122, 255, 255)",
-                                              "borderRadius": 1000,
-                                              "flex": 1,
-                                              "justifyContent": "center",
-                                            },
-                                            Object {
-                                              "borderRadius": 17.5,
-                                            },
-                                          ]
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "rgba(0, 122, 255, 255)",
+                                            "borderRadius": 1000,
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          }
                                         }
                                         testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                                       />
@@ -5160,18 +5140,13 @@ exports[`tabs renders TabNavigation 1`] = `
                               }
                             }
                             style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                                  "borderRadius": 1000,
-                                  "flex": 1,
-                                  "justifyContent": "center",
-                                },
-                                Object {
-                                  "borderRadius": 17.5,
-                                },
-                              ]
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "rgba(0, 122, 255, 255)",
+                                "borderRadius": 1000,
+                                "flex": 1,
+                                "justifyContent": "center",
+                              }
                             }
                             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
                           />

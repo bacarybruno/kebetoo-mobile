@@ -27,7 +27,7 @@ export const NOTIFICATION_TYPES = {
 export const getNotificationTitle = (message) => {
   try {
     const payload = JSON.parse(message.data.payload)
-    const name = payload.author.displayName
+    const { displayName: name, certified } = payload.author
     switch (message.data.type) {
       case NOTIFICATION_TYPES.COMMENT:
         return { name, message: strings.notifications.commented_post }
@@ -38,7 +38,7 @@ export const getNotificationTitle = (message) => {
       case NOTIFICATION_TYPES.REPLY:
         return { name, message: strings.notifications.replied_comment }
       case NOTIFICATION_TYPES.SYSTEM:
-        return { name, message: payload.systemMessage }
+        return { name, message: payload.systemMessage, certified }
       default:
         return null
     }
@@ -108,7 +108,7 @@ const NotificationsPage = () => {
     }
   }
 
-  const onNotificationOpen = useCallback(async ({ id, message }) => {
+  const onNotificationOpen = useCallback(async ({ id, message, status }) => {
     setIsLoading(true)
 
     const payload = JSON.parse(message.data.payload)
@@ -136,7 +136,7 @@ const NotificationsPage = () => {
       navigate(routes.COMMENTS, { post })
     }
 
-    updateOpenStatus(id)
+    if (status !== NOTIFICATION_STATUS.OPENED) updateOpenStatus(id)
     setIsLoading(false)
   }, [navigate, updateOpenStatus])
 
