@@ -14,7 +14,7 @@ import HeaderBack from '../header-back'
 export const routeOptions = { headerShown: false }
 
 export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
-  <TouchableOpacity onPress={onPress}>
+  <TouchableOpacity onPress={onPress} style={styles.headerAvatar}>
     <Avatar src={photoURL} text={displayName} size={35} fontSize={20} />
   </TouchableOpacity>
 )
