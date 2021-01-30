@@ -247,9 +247,6 @@ exports[`renders CreateRoom 1`] = `
                     "flex": 1,
                     "justifyContent": "center",
                   },
-                  Object {
-                    "borderRadius": 40,
-                  },
                   undefined,
                   Object {
                     "backgroundColor": "rgba(0, 122, 255, 255)",

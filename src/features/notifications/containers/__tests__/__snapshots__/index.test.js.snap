@@ -152,18 +152,13 @@ exports[`renders NotificationsPage 1`] = `
               }
             }
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 1000,
-                  "flex": 1,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "borderRadius": 17.5,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 1000,
+                "flex": 1,
+                "justifyContent": "center",
+              }
             }
             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
           />
@@ -310,18 +305,13 @@ exports[`renders NotificationsPage 1`] = `
               }
             }
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 1000,
-                  "flex": 1,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "borderRadius": 27.5,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 1000,
+                "flex": 1,
+                "justifyContent": "center",
+              }
             }
             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
           />
@@ -352,36 +342,38 @@ exports[`renders NotificationsPage 1`] = `
                 }
               }
             >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
+              <Text>
+                <Text
+                  style={
                     Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.87)",
-                      },
+                      false,
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "fontFamily": "System",
+                        "fontSize": 17,
                         "fontWeight": "600",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
                       },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Bruno Bodian 
+                      false,
+                      false,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  Bruno Bodian 
+                </Text>
               </Text>
               <Text
                 style={
@@ -638,18 +630,13 @@ exports[`renders NotificationsPage 1`] = `
               }
             }
             style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                  "borderRadius": 1000,
-                  "flex": 1,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "borderRadius": 27.5,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 122, 255, 255)",
+                "borderRadius": 1000,
+                "flex": 1,
+                "justifyContent": "center",
+              }
             }
             testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
           />
@@ -680,36 +667,38 @@ exports[`renders NotificationsPage 1`] = `
                 }
               }
             >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
+              <Text>
+                <Text
+                  style={
                     Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.87)",
-                      },
+                      false,
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "fontFamily": "System",
+                        "fontSize": 17,
                         "fontWeight": "600",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
                       },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Bruno Bodian 
+                      false,
+                      false,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  Bruno Bodian 
+                </Text>
               </Text>
               <Text
                 style={
@@ -871,9 +860,6 @@ exports[`renders NotificationsPage 1`] = `
                   "flex": 1,
                   "justifyContent": "center",
                 },
-                Object {
-                  "borderRadius": 27.5,
-                },
                 undefined,
                 Object {
                   "backgroundColor": "#9575cd",
@@ -922,36 +908,38 @@ exports[`renders NotificationsPage 1`] = `
                 }
               }
             >
-              <Text
-                style={
-                  Array [
-                    false,
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "600",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    false,
-                    false,
+              <Text>
+                <Text
+                  style={
                     Array [
-                      Object {
-                        "color": "rgba(0,0,0,0.87)",
-                      },
+                      false,
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "fontFamily": "System",
+                        "fontSize": 17,
                         "fontWeight": "600",
+                        "letterSpacing": -0.408,
+                        "lineHeight": 22,
                       },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                John Doe 
+                      false,
+                      false,
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.87)",
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontFamily": "System",
+                          "fontWeight": "600",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  John Doe 
+                </Text>
               </Text>
               <Text
                 style={

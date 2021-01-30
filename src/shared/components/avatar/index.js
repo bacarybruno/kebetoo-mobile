@@ -8,7 +8,6 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import createThemedStyles from './styles'
 import Typography from '../typography'
 
-const borderRadius = (size) => size && { borderRadius: size / 2 }
 const dimensions = (size) => size && { width: size, height: size }
 const backgroundColor = (text) => text && { backgroundColor: generateColor(text) }
 
@@ -18,7 +17,7 @@ export const ImageAvatar = ({ src, size, style }) => {
     <View style={[styles.wrapper, dimensions(size), style]}>
       <Image
         testID={`image-avatar-${src}`}
-        style={[styles.content, borderRadius(size)]}
+        style={styles.content}
         source={{ uri: src }}
       />
     </View>
@@ -34,7 +33,6 @@ export const TextAvatar = ({
     <View style={[styles.wrapper, dimensions(size), style]}>
       <View style={[
         styles.content,
-        borderRadius(size),
         noRadius && { borderRadius: 0 },
         color ? { backgroundColor: color } : backgroundColor(text)
       ]}

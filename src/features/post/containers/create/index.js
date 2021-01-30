@@ -43,8 +43,6 @@ export const actionTypes = {
   REPORT: 'report',
 }
 
-const noop = () => { }
-
 export const PostTextMessage = ({
   onChange,
   text,
