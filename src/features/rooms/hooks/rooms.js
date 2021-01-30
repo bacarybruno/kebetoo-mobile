@@ -145,7 +145,7 @@ const useRooms = (roomId) => {
     const isMember = roomMembers.hasChild(profile.uid)
     // add user in the room when he sent a message to that room
     if (!isMember) {
-      roomMembers.ref.set({ [profile.uid]: Date.now() })
+      roomMembers.ref.update({ [profile.uid]: Date.now() })
     }
   }, [messagesRef, profile, roomsRef])
 
