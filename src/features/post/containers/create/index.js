@@ -1,6 +1,8 @@
-import React, { useLayoutEffect, useState, useCallback } from 'react'
+import React, {
+  useLayoutEffect, useState, useCallback, useEffect, useRef,
+} from 'react'
 import {
-  View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard,
+  View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard, InteractionManager,
 } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
@@ -20,7 +22,6 @@ import useFilePicker from '@app/features/post/hooks/file-picker'
 import routes from '@app/navigation/routes'
 import {
   useAnalytics,
-  useAppColors,
   useAppStyles,
   useAudioRecorder,
   useKeyboard,
@@ -51,6 +52,7 @@ export const PostTextMessage = ({
   maxNumberOfLines = 8,
   placeholder = strings.create_post.placeholder,
   maxLength = 180,
+  inputRef,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -79,6 +81,7 @@ export const PostTextMessage = ({
         maxLength={maxLength}
         editable={editable}
         defaultValue={text}
+        ref={inputRef}
         numberOfLines={Math.min(
           Math.floor(metrics.screenHeight / 75),
           maxNumberOfLines,
@@ -124,7 +127,6 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
 // or use redux-saga to handle post creation
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
   navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
@@ -141,6 +143,21 @@ const CreatePostPage = ({ route, navigation }) => {
   const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
   const [text, setText] = useState((value) => value || payload)
   const { keyboardHeight, keyboardShown } = useKeyboard()
+  const inputRef = useRef()
+
+  useEffect(() => {
+    const removeFocusListener = navigation.addListener('focus', () => {
+      InteractionManager.runAfterInteractions(() => {
+        inputRef.current.focus()
+      })
+    })
+    const removeBlurListener = navigation.addListener('blur', Keyboard.dismiss)
+
+    return () => {
+      removeFocusListener()
+      removeBlurListener()
+    }
+  }, [navigation])
 
   const onHeaderSavePress = useCallback(async () => {
     setIsLoading(true)
@@ -312,6 +329,7 @@ const CreatePostPage = ({ route, navigation }) => {
           displayCounter={text.length > 0}
           placeholder={reportMode ? strings.create_post.report_mode_placeholder : undefined}
           maxLength={reportMode ? 1000 : undefined}
+          inputRef={inputRef}
         />
         <View style={styles.preview}>
           {audioRecorder.hasRecording && (
