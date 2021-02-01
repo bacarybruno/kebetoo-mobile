@@ -114,7 +114,7 @@ const RoomPage = ({ navigation }) => {
     createMessage,
     onlineCount,
     quitRoom,
-  } = useRooms(params.id)
+  } = useRooms(params._id)
   const themeColor = colors[params.theme]
   const [isReady, setIsReady] = useState(false)
   const [message, setMessage] = useState('')
@@ -159,9 +159,9 @@ const RoomPage = ({ navigation }) => {
   const reportRoom = useCallback(() => {
     navigation.navigate(routes.CREATE_POST, {
       action: actionTypes.REPORT,
-      sharedText: `[${params.id}]\n\n ${strings.room.report_room_message}`,
+      sharedText: `[${params._id}]\n\n ${strings.room.report_room_message}`,
     })
-  }, [navigation, params.id])
+  }, [navigation, params._id])
 
   const exitRoom = useCallback(() => {
     quitRoom()
@@ -178,12 +178,12 @@ const RoomPage = ({ navigation }) => {
         audio = await audioRecorder.saveAsset()
       }
       setIsLoading(false)
-      await createMessage({ room: params.id, text: message, audio })
+      await createMessage({ room: params._id, text: message, audio })
       setMessage('')
     } catch (error) {
       console.log(error)
     }
-  }, [message, audioRecorder, createMessage, params.id])
+  }, [message, audioRecorder, createMessage, params._id])
 
   const renderBubble = useCallback((props) => (
     <Bubble

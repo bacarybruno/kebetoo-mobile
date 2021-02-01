@@ -9,6 +9,7 @@ import {
 } from '@app/shared/components'
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import routes from '@app/navigation/routes'
 
 import createThemedStyles from './styles'
 import useRooms from '../../hooks/rooms'
@@ -94,9 +95,9 @@ const CreateRoomPage = ({ navigation }) => {
   const onSubmit = useCallback(async () => {
     if (!name) return
     setIsLoading(true)
-    await createRoom({ name, theme: color })
+    const createdRoom = await createRoom({ name, theme: color })
     setIsLoading(false)
-    navigation.goBack()
+    navigation.replace(routes.ROOM, createdRoom)
   }, [name, createRoom, color, navigation])
 
   return (

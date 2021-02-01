@@ -75,6 +75,15 @@ const RoomsPage = ({ navigation }) => {
     />
   ), [navigateToRoom])
 
+  const ListHeaderComponent = (
+    <SegmentedControl
+        items={filterItems}
+        style={styles.segmentedControl}
+        onSelect={(item) => setSelectedValue(item.value)}
+        selectedValue={selectedValue}
+      />
+  )
+
   return (
     <View style={styles.wrapper}>
       <AppHeader
@@ -86,16 +95,12 @@ const RoomsPage = ({ navigation }) => {
         imageSrc={profile.photoURL}
         style={styles.padding}
       />
-      <SegmentedControl
-        items={filterItems}
-        style={styles.segmentedControl}
-        onSelect={(item) => setSelectedValue(item.value)}
-        selectedValue={selectedValue}
-      />
+
       {selectedValue === 'rooms' && (
         <FlatList
           data={rooms}
           renderItem={renderRoom}
+          ListHeaderComponent={ListHeaderComponent}
           removeClippedSubviews
         />
       )}
@@ -103,6 +108,7 @@ const RoomsPage = ({ navigation }) => {
         <FlatList
           data={discoverRooms}
           renderItem={renderDiscoverRoom}
+          ListHeaderComponent={ListHeaderComponent}
           removeClippedSubviews
         />
       )}
