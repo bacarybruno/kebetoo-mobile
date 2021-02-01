@@ -104,6 +104,10 @@ const useRooms = (roomId) => {
     }
   }, [roomsRef, profile.uid])
 
+  const quitRoom = useCallback(async () => {
+    await roomsRef.child(`/${roomId}/members/${profile.uid}`).ref.remove()
+  }, [])
+
   const createMessage = useCallback(async ({
     room, text, audio, ...other
   }) => {
@@ -178,6 +182,7 @@ const useRooms = (roomId) => {
     messages,
     onlineCount,
     discoverRooms,
+    quitRoom,
     createRoom,
     createMessage,
   }

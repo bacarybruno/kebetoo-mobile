@@ -67,4 +67,13 @@ export default (colors) => StyleSheet.create({
     marginLeft: metrics.spacing.xs,
     marginTop: 3,
   },
+  headerMenu: {
+    minWidth: 250,
+    paddingVertical: metrics.spacing.xs,
+    paddingHorizontal: metrics.marginHorizontal,
+  },
+  popover: {
+    backgroundColor: colors.backgroundSecondary,
+    borderRadius: metrics.radius.sm,
+  },
 })
