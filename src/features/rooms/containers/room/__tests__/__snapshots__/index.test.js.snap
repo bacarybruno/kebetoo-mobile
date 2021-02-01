@@ -219,6 +219,222 @@ exports[`renders Room 1`] = `
         </View>
       </View>
     </View>
+    <PopoverView
+      arrowStyle={
+        Object {
+          "height": 0,
+          "width": 0,
+        }
+      }
+      from={
+        <ForwardRef
+          onPress={[Function]}
+        />
+      }
+      isVisible={false}
+      onCloseComplete={[Function]}
+      onOpenComplete={[Function]}
+      onRequestClose={[Function]}
+      placement="PopoverPlacement.BOTTOM"
+      popoverStyle={
+        Object {
+          "backgroundColor": "#F5F5F5",
+          "borderRadius": 5,
+        }
+      }
+      safeAreaInsets={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+        }
+      }
+      verticalOffset={-35}
+    >
+      <View
+        style={
+          Object {
+            "minWidth": 250,
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 48,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginRight": 16,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "#7A8FA6",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 25,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "width": 30,
+                }
+              }
+              text="ionicon-flag"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ],
+                ]
+              }
+            >
+              Report room
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 48,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginRight": 16,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Object {
+                  "color": "#7A8FA6",
+                  "fontFamily": "Ionicons",
+                  "fontSize": 25,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "width": 30,
+                }
+              }
+              text="ionicon-remove-circle"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  false,
+                  false,
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                    "letterSpacing": -0.24,
+                    "lineHeight": 20,
+                  },
+                  false,
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ],
+                ]
+              }
+            >
+              Exit room
+            </Text>
+          </View>
+        </View>
+      </View>
+    </PopoverView>
   </View>
 </View>
 `;
