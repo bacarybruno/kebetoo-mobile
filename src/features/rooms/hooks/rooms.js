@@ -86,6 +86,7 @@ const useRooms = (roomId) => {
     try {
       roomsRef.on('value', (data) => {
         const values = data.val()
+        if (!values) return
         const roomsVal = Object.keys(values).map((key) => ({ id: key, ...values[key] }))
         const newRooms = []
         const newDiscoverRooms = []
@@ -164,7 +165,7 @@ const useRooms = (roomId) => {
 
   const createRoom = useCallback(async ({ name, theme }) => {
     const newRoom = roomsRef.push()
-    await newRoom.set({
+    const roomInfos = {
       name,
       theme,
       createdAt: new Date().toISOString(),
@@ -178,12 +179,14 @@ const useRooms = (roomId) => {
       },
       lastMessage: null,
       _id: newRoom.key,
-    })
+    }
+    await newRoom.set(roomInfos)
     await createMessage({
       text: systemMessages.ROOM_CREATED,
       system: true,
       room: newRoom.key,
     })
+    return (await roomsRef.child(newRoom.key).once('value')).val()
   }, [roomsRef, profile, createMessage])
 
   return {
