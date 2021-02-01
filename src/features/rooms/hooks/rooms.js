@@ -106,6 +106,15 @@ const useRooms = (roomId) => {
 
   const quitRoom = useCallback(async () => {
     await roomsRef.child(`/${roomId}/members/${profile.uid}`).ref.remove()
+    const roomMembers = await roomsRef.child(`/${roomId}/members`).once('value')
+    if (roomMembers.exists() === false) {
+      // the deleted member was the last one
+      // the room must be deleted
+      // gg BoeD
+      await roomsRef.child(roomId).remove()
+      // also delete messages
+      await messagesRef.child(roomId).remove()
+    }
   }, [])
 
   const createMessage = useCallback(async ({
