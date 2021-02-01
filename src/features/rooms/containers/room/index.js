@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useState, useContext, useRef,
+  useCallback, useEffect, useState, useContext, useRef, forwardRef,
 } from 'react'
 import {
   InteractionManager, StatusBar, TouchableOpacity, View,
@@ -38,10 +38,14 @@ export const getSystemMessage = (currentMessage) => {
   return message
 }
 
-export const RightIcon = React.forwardRef(((props, ref) => {
+export const RightIcon = forwardRef(((props, ref) => {
   const { colors } = useAppColors()
   return (
-    <TouchableOpacity ref={ref} onPress={props.onPress} hitSlop={edgeInsets.all(15)}>
+    <TouchableOpacity
+      ref={ref}
+      onPress={props.onPress}
+      hitSlop={edgeInsets.all(15)}
+    >
       <Ionicon name="ellipsis-vertical" size={24} color={colors.white} />
     </TouchableOpacity>
   )
@@ -51,7 +55,7 @@ const HeaderMenu = ({ report, exit }) => {
   const styles = useAppStyles(createThemedStyles)
   const [isVisible, setIsVisible] = useState(false)
   const insets = useSafeAreaInsets()
-  
+
   const open = useCallback(() => {
     setIsVisible(true)
   }, [])
@@ -63,12 +67,12 @@ const HeaderMenu = ({ report, exit }) => {
   const reportRoom = useCallback(() => {
     report()
     close()
-  }, [close])
+  }, [close, report])
 
   const exitRoom = useCallback(() => {
     exit()
     close()
-  }, [close])
+  }, [close, exit])
 
   return (
     <Popover
@@ -106,7 +110,10 @@ const RoomPage = ({ navigation }) => {
   const { params } = useRoute()
   const { profile } = useUser()
   const {
-    messages: roomMessages, createMessage, onlineCount, quitRoom,
+    messages: roomMessages,
+    createMessage,
+    onlineCount,
+    quitRoom,
   } = useRooms(params.id)
   const themeColor = colors[params.theme]
   const [isReady, setIsReady] = useState(false)
@@ -154,7 +161,7 @@ const RoomPage = ({ navigation }) => {
       action: actionTypes.REPORT,
       sharedText: `[${params.id}]\n\n ${strings.room.report_room_message}`,
     })
-  }, [navigation])
+  }, [navigation, params.id])
 
   const exitRoom = useCallback(() => {
     quitRoom()
@@ -197,7 +204,7 @@ const RoomPage = ({ navigation }) => {
     />
   ), [colors])
 
-  const renderInputToolbar = useCallback((props) => (
+  const renderInputToolbar = useCallback(() => (
     <>
       <CommentInput
         theme={themeColor}
@@ -220,6 +227,7 @@ const RoomPage = ({ navigation }) => {
   const renderAvatar = useCallback((props) => {
     const { user } = props.currentMessage
     const navigateToUserProfile = () => (
+      // eslint-disable-next-line no-underscore-dangle
       navigation.navigate(routes.USER_PROFILE, { userId: user._id })
     )
     return (
@@ -242,7 +250,7 @@ const RoomPage = ({ navigation }) => {
         />
       </View>
     )
-  }, [styles.audio, styles.audioWrapper, profile.uid])
+  }, [profile.uid, styles])
 
   const renderTicks = useCallback((currentMessage) => {
     // eslint-disable-next-line no-underscore-dangle
