@@ -68,7 +68,7 @@ const locales = Object.freeze({
     hide_post: 'Masquer ce post',
     hide_post_done: 'Ce post n\'apparaîtra plus dans votre fil d\'actualité',
     report_post: 'Signaler ce post',
-    report_post_message: 'Je signale ce post parce que ...',
+    report_post_message: 'Je signale ce post car ...',
     block_author_done: 'Vous ne verrez plus les posts de {0}',
     block_author: 'Bloquer {0}',
   },
@@ -183,6 +183,9 @@ const locales = Object.freeze({
     type_message: 'Message...',
     online_count: '{0} en ligne',
     system_room_created: '{0} a créé la room',
+    report_room: 'Signaler cette room',
+    report_room_message: 'Je signale cette room car ...',
+    exit_room: 'Quitter cette room',
   },
   dates: {
     format_month_year: 'MMMM YYYY',

@@ -18,7 +18,7 @@ import { getSystemMessage } from './room'
 
 const routeOptions = { title: strings.tabs.rooms }
 
-export const SearchIcon = ({ onPress }) => {
+export const RightIcon = ({ onPress }) => {
   const { colors } = useAppColors()
   return (
     <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
@@ -80,7 +80,7 @@ const RoomsPage = ({ navigation }) => {
       <AppHeader
         title={strings.tabs.rooms}
         text=""
-        Right={() => <SearchIcon onPress={() => navigation.navigate(routes.CREATE_ROOM)} />}
+        Right={() => <RightIcon onPress={() => navigation.navigate(routes.CREATE_ROOM)} />}
         showAvatar={false}
         displayName={profile.displayName}
         imageSrc={profile.photoURL}

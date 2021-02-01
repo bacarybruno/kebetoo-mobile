@@ -7,25 +7,29 @@ import {
 import { GiftedChat, Bubble, SystemMessage } from 'react-native-gifted-chat'
 import { useRoute } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+import Popover, { PopoverPlacement } from 'react-native-popover-view'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { AppHeader, AudioPlayer, Avatar } from '@app/shared/components'
+import {
+  AppHeader, AudioPlayer, Avatar, IconButton,
+} from '@app/shared/components'
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
 import { SafeAreaContext } from '@app/shared/contexts'
 
-
 import mdColors from '@app/theme/md-colors'
 import { CommentInput } from '@app/features/comments/components/comment-input'
 import { strings } from '@app/config'
-import { metrics } from '@app/theme'
+import { edgeInsets, metrics } from '@app/theme'
 import { isIphoneX } from 'react-native-iphone-x-helper'
 import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { actionTypes } from '@app/features/post/containers/create'
+import routes from '@app/navigation/routes'
 
 import createThemedStyles from './styles'
 import useRooms from '../../hooks/rooms'
-import routes from '@app/navigation/routes'
 
 export const getSystemMessage = (currentMessage) => {
   const { user, text } = currentMessage
@@ -34,12 +38,76 @@ export const getSystemMessage = (currentMessage) => {
   return message
 }
 
+export const RightIcon = React.forwardRef(((props, ref) => {
+  const { colors } = useAppColors()
+  return (
+    <TouchableOpacity ref={ref} onPress={props.onPress} hitSlop={edgeInsets.all(15)}>
+      <Ionicon name="ellipsis-vertical" size={24} color={colors.white} />
+    </TouchableOpacity>
+  )
+}))
+
+const HeaderMenu = ({ report, exit }) => {
+  const styles = useAppStyles(createThemedStyles)
+  const [isVisible, setIsVisible] = useState(false)
+  const insets = useSafeAreaInsets()
+  
+  const open = useCallback(() => {
+    setIsVisible(true)
+  }, [])
+
+  const close = useCallback(() => {
+    setIsVisible(false)
+  }, [])
+
+  const reportRoom = useCallback(() => {
+    report()
+    close()
+  }, [close])
+
+  const exitRoom = useCallback(() => {
+    exit()
+    close()
+  }, [close])
+
+  return (
+    <Popover
+      popoverStyle={styles.popover}
+      onOpenComplete={open}
+      onCloseComplete={close}
+      onRequestClose={close}
+      isVisible={isVisible}
+      placement={PopoverPlacement.BOTTOM}
+      from={<RightIcon onPress={open} />}
+      arrowStyle={{ width: 0, height: 0 }}
+      safeAreaInsets={insets}
+      verticalOffset={metrics.spacing.sm - 43}
+      // icon height - (header height / 2)
+    >
+      <View style={styles.headerMenu}>
+        <IconButton.Text
+          icon="flag"
+          onPress={reportRoom}
+          text={strings.room.report_room}
+        />
+        <IconButton.Text
+          icon="remove-circle"
+          onPress={exitRoom}
+          text={strings.room.exit_room}
+        />
+      </View>
+    </Popover>
+  )
+}
+
 const RoomPage = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors, resetAppBars } = useAppColors()
   const { params } = useRoute()
   const { profile } = useUser()
-  const { messages: roomMessages, createMessage, onlineCount } = useRooms(params.id)
+  const {
+    messages: roomMessages, createMessage, onlineCount, quitRoom,
+  } = useRooms(params.id)
   const themeColor = colors[params.theme]
   const [isReady, setIsReady] = useState(false)
   const [message, setMessage] = useState('')
@@ -80,6 +148,18 @@ const RoomPage = ({ navigation }) => {
   useEffect(() => {
     setMessages(roomMessages)
   }, [roomMessages])
+
+  const reportRoom = useCallback(() => {
+    navigation.navigate(routes.CREATE_POST, {
+      action: actionTypes.REPORT,
+      sharedText: `[${params.id}]\n\n ${strings.room.report_room_message}`,
+    })
+  }, [navigation])
+
+  const exitRoom = useCallback(() => {
+    quitRoom()
+    navigation.goBack()
+  }, [navigation, quitRoom])
 
   const onSend = useCallback(async () => {
     try {
@@ -131,15 +211,15 @@ const RoomPage = ({ navigation }) => {
         disableEmojis
         disableAutofocus
         handleContentSizeChange={false}
-        // reply={toReply}
-        // onReplyClose={clearToReply}
+      // reply={toReply}
+      // onReplyClose={clearToReply}
       />
     </>
   ), [themeColor, onSend, audioRecorder, message, isLoading])
 
   const renderAvatar = useCallback((props) => {
     const { user } = props.currentMessage
-    const navigateToUserProfile = () =>　(
+    const navigateToUserProfile = () => (
       navigation.navigate(routes.USER_PROFILE, { userId: user._id })
     )
     return (
@@ -205,6 +285,7 @@ const RoomPage = ({ navigation }) => {
         textStyle={{ color: mdColors.textSecondary.dark }}
         iconColor={colors.white}
         Logo={<View style={styles.onlineDot} />}
+        Right={() => <HeaderMenu report={reportRoom} exit={exitRoom} />}
       />
       {isReady && (
         <GiftedChat

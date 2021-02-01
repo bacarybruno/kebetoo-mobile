@@ -183,6 +183,9 @@ const locales = Object.freeze({
     type_message: 'Message...',
     online_count: '{0} online',
     system_room_created: '{0} created the room',
+    report_room: 'Report room',
+    report_room_message: 'I\'m reporting this room because ...',
+    exit_room: 'Exit room',
   },
   dates: {
     format_month_year: 'MMMM YYYY',
