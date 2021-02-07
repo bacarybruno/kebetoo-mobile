@@ -30,7 +30,7 @@ function* fetchPosts(action) {
     let allowedPosts = posts
     allowedPosts = posts.filter((post) => (
       !blockedItems.posts.includes(post.id)
-      && !blockedItems.authors.includes(post.author.id)
+      && !blockedItems.authors.includes(post.author?.id)
     ))
 
     yield put({ type: postActionType, payload: allowedPosts || [] })
