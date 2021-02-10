@@ -368,6 +368,11 @@ exports[`renders CreateRoom 1`] = `
           Select room theme
         </Text>
         <RCTScrollView
+          contentContainerStyle={
+            Object {
+              "justifyContent": "space-between",
+            }
+          }
           data={
             Array [
               Object {

@@ -82,7 +82,7 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
-      [routes.ROOMS]: 'chatbubbles',
+      [routes.ROOMS]: 'chatbubble-ellipses',
       [routes.SEARCH]: 'search',
       [routes.NOTIFICATIONS]: 'notifications',
     }
@@ -157,6 +157,7 @@ export const TabPage = () => {
       screenOptions={defaultTabOptions}
       tabBarOptions={defaultTabBarOptions(styles, colors)}
       tabBar={TabBar(styles, colors)}
+      lazy={false}
     >
       {tabPages.map((page, key) => (
         React.cloneElement(page, {

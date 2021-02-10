@@ -20,7 +20,7 @@ export const Title = ({ name, info, Right }) => {
     <View style={styles.headerTitleWrapper}>
       <Text style={styles.headerTitle} numberOfLines={2} ellipsizeMode="middle">
         <Typography
-          text={name}
+          text={name.trim()}
           type={Typography.types.headline4}
           systemWeight={Typography.weights.semibold}
         />

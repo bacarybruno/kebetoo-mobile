@@ -298,7 +298,7 @@ exports[`renders Room 1`] = `
                   "width": 30,
                 }
               }
-              text="ionicon-flag"
+              text="ionicon-flag-outline"
             />
           </View>
           <View
@@ -384,7 +384,7 @@ exports[`renders Room 1`] = `
                   "width": 30,
                 }
               }
-              text="ionicon-remove-circle"
+              text="ionicon-remove-circle-outline"
             />
           </View>
           <View

@@ -9,7 +9,23 @@ import AppNavigation, {
   TabPage, OnboardingStack, tabPages, loggedInPages, notLoggedInPages, onboardingPages,
 } from '../index'
 
-const givenAppNavigation = setupTest(AppNavigation)()
+const __storeState__ = {
+  notificationsReducer: {
+    notifications: [],
+  },
+  postsReducer: {
+    posts: [],
+  },
+  userReducer: {
+    profile: {
+      isLoggedIn: true,
+    },
+    searchHistory: {
+      users: [],
+      posts: [],
+    },
+  }
+}
 
 describe('tabs', () => {
   const TabNavigation = () => (
@@ -18,7 +34,7 @@ describe('tabs', () => {
     </NavigationContainer>
   )
 
-  const givenTabPage = setupTest(TabNavigation)()
+  const givenTabPage = setupTest(TabNavigation)({ __storeState__ })
 
   it('renders TabNavigation', () => {
     const { wrapper } = givenTabPage()
@@ -50,6 +66,8 @@ describe('onboarding', () => {
 })
 
 describe('app navigation', () => {
+  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__ })
+
   it('renders AppNavigation for authenticated user', async () => {
     auth.setMockOptions({
       currentUser: {
@@ -82,6 +100,8 @@ describe('app navigation', () => {
 })
 
 describe('route state change', () => {
+  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__ })
+
   it('handles route state change', () => {
     const getCurrentRoute = jest.fn()
     getCurrentRoute.mockReturnValue('route:first')

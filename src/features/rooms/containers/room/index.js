@@ -90,12 +90,12 @@ const HeaderMenu = ({ report, exit }) => {
     >
       <View style={styles.headerMenu}>
         <IconButton.Text
-          icon="flag"
+          icon="flag-outline"
           onPress={reportRoom}
           text={strings.room.report_room}
         />
         <IconButton.Text
-          icon="remove-circle"
+          icon="remove-circle-outline"
           onPress={exitRoom}
           text={strings.room.exit_room}
         />

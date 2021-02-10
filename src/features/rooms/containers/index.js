@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { View, TouchableOpacity, FlatList } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
@@ -45,43 +45,59 @@ const RoomsPage = ({ navigation }) => {
     navigation.navigate(routes.ROOM, room)
   }, [navigation])
 
-  const renderRoom = useCallback(({ item }) => (
-    <Room
-      // TODO: implement this
-      isOpened
-      onPress={() => navigateToRoom(item)}
-      membersCount={Object.keys(item.members)?.length ?? 0}
-      title={item.name}
-      room={{ displayName: item.name }}
-      caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
-      theme={item.theme}
-      message={
-        item.lastMessage?.system
-          ? getSystemMessage(item.lastMessage)
-          : (item.lastMessage?.text ?? 'Audio')
-      }
-    />
-  ), [navigateToRoom])
+  const renderRoom = useCallback(({ item }) => {
+    if (!item?.members) return null
+    return (
+      <Room
+        isOpened
+        onPress={() => navigateToRoom(item)}
+        membersCount={Object.keys(item.members)?.length ?? 0}
+        title={item.name}
+        room={{ displayName: item.name }}
+        caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
+        theme={item.theme}
+        message={
+          item.lastMessage?.system
+            ? getSystemMessage(item.lastMessage)
+            : (item.lastMessage?.text ?? 'Audio')
+        }
+      />
+    )
+  }, [navigateToRoom])
 
-  const renderDiscoverRoom = useCallback(({ item }) => (
-    <Room.Discover
-      onPress={() => navigateToRoom(item)}
-      membersCount={Object.keys(item.members)?.length ?? 0}
-      title={item.name}
-      author={item.author.displayName}
-      room={{ displayName: item.name }}
-      caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
-      theme={item.theme}
-    />
-  ), [navigateToRoom])
+  const renderDiscoverRoom = useCallback(({ item }) => {
+    if (!item?.members) return null
+    return (
+      <Room.Discover
+        onPress={() => navigateToRoom(item)}
+        membersCount={Object.keys(item.members)?.length ?? 0}
+        title={item.name}
+        author={item.author.displayName}
+        room={{ displayName: item.name }}
+        caption={dayjs(item.updatedAt || item.createdAt).fromNow()}
+        theme={item.theme}
+      />
+    )
+  }, [navigateToRoom])
+
+  useEffect(() => {
+    if (rooms.length > 0) {
+      setSelectedValue('rooms')
+    } else {
+      setSelectedValue('discover')
+    }
+  }, [rooms])
+
+  const sortByName = useCallback((a, b) => a.name.localeCompare(b.name), [])
+  const sortByMembersCount = useCallback((a, b) => Object.keys(b.members).length - Object.keys(a.members).length, [])
 
   const ListHeaderComponent = (
     <SegmentedControl
-        items={filterItems}
-        style={styles.segmentedControl}
-        onSelect={(item) => setSelectedValue(item.value)}
-        selectedValue={selectedValue}
-      />
+      items={filterItems}
+      style={styles.segmentedControl}
+      onSelect={(item) => setSelectedValue(item.value)}
+      selectedValue={selectedValue}
+    />
   )
 
   return (
@@ -95,10 +111,9 @@ const RoomsPage = ({ navigation }) => {
         imageSrc={profile.photoURL}
         style={styles.padding}
       />
-
       {selectedValue === 'rooms' && (
         <FlatList
-          data={rooms}
+          data={rooms.sort(sortByName)}
           renderItem={renderRoom}
           ListHeaderComponent={ListHeaderComponent}
           removeClippedSubviews
@@ -106,7 +121,7 @@ const RoomsPage = ({ navigation }) => {
       )}
       {selectedValue === 'discover' && (
         <FlatList
-          data={discoverRooms}
+          data={discoverRooms.sort(sortByMembersCount)}
           renderItem={renderDiscoverRoom}
           ListHeaderComponent={ListHeaderComponent}
           removeClippedSubviews

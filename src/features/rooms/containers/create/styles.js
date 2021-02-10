@@ -41,7 +41,7 @@ export default (colors) => StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: metrics.spacing.xxl * 1.5,
   },
-  flstlistContent: {
+  flatlistContent: {
     justifyContent: 'space-between',
   },
   roomName: {
