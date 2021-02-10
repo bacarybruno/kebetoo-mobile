@@ -149,18 +149,29 @@ const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder
 
   const onComment = useCallback(() => commentInput.current?.focus(), [])
 
-  const onCommentPress = useCallback(() => {
-    const type = getPostType(post)
+  const handleCommentPress = useCallback((p) => {
+    const type = getPostType(p)
     if (type === POST_TYPES.IMAGE) {
       navigate(routes.MODAL_IMAGE, {
-        ...post.image,
-        source: getSource(post.image.url),
+        ...p.image,
+        source: getSource(p.image.url),
       })
       return false
     }
+    return true
+  }, [])
+
+  const onCommentPress = useCallback(() => {
+    const type = getPostType(post)
+    if (type === POST_TYPES.IMAGE) {
+      return handleCommentPress(post)
+    }
+    if (type === POST_TYPES.REPOST) {
+      return handleCommentPress(post.repost)
+    }
     // TODO: handle video
     return true
-  }, [navigate, post])
+  }, [handleCommentPress, post])
 
   const clearToReply = useCallback(() => {
     dispatch({ type: actionTypes.CLEAR_TO_REPLY })

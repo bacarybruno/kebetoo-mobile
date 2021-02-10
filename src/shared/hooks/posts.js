@@ -13,6 +13,7 @@ const usePosts = () => {
         data[doc.id] = {
           displayName: doc.displayName,
           photoURL: doc.photoURL,
+          id: doc.id,
         }
       })
     }

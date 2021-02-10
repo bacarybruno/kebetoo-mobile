@@ -47,7 +47,12 @@ const ImageContent = ({
   const styles = useAppStyles(createThemeColors)
   return (
     <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
-      <Typography type={Typography.types.body} text={content} style={styles.text} numberOfLines={mode === 'comments' ? 1 : undefined} />
+      <Typography
+        type={Typography.types.body}
+        text={content.trim()}
+        style={styles.text}
+        numberOfLines={mode === 'comments' ? 1 : undefined}
+      />
       <ImageViewer
         onPress={onPress}
         style={styles.imageViewer}
