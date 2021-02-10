@@ -50,13 +50,13 @@ const SearchPage = () => {
 
   const styles = useAppStyles(createThemedStyles)
 
-  const [selectedTab, setSelectedTab] = useState(routes.SEARCH_POSTS)
+  const [selectedTab, setSelectedTab] = useState(routes.SEARCH_USERS)
   const tabs = [{
-    label: strings.search.posts_tab,
-    value: routes.SEARCH_POSTS,
-  }, {
     label: strings.search.users_tab,
     value: routes.SEARCH_USERS,
+  }, {
+    label: strings.search.posts_tab,
+    value: routes.SEARCH_POSTS,
   }]
 
   const onChange = useCallback((terms) => {

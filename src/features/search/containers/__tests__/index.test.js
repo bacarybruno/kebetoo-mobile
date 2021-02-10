@@ -1,5 +1,3 @@
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
 import { ActivityIndicator } from 'react-native'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'
@@ -8,8 +6,7 @@ import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
-import SearchPosts from '../posts'
-import { SegmentedControl } from '@app/shared/components'
+import SearchUsers from '../users'
 import routes from '@app/navigation/routes'
 
 const givenSearchPage = setupTest(SearchPage)({
@@ -62,7 +59,7 @@ describe('searchbar', () => {
     })
 
     await act(async () => {
-      await wrapper.root.findByType(SearchPosts).props.onRecentSearch('hello')
+      await wrapper.root.findByType(SearchUsers).props.onRecentSearch('hello')
     })
 
     expect(wrapper.root.findByProps({ placeholder: strings.search.placeholder })).toBeDefined()
@@ -89,7 +86,7 @@ it('shows loading indicator on search', async () => {
   await act(async () => {
     const { wrapper: wrapperAsync } = await givenSearchPage()
     wrapper = wrapperAsync
-    wrapper.root.findByType(SearchPosts).props.onSearch('')
+    wrapper.root.findByType(SearchUsers).props.onSearch('')
   })
   expect(wrapper.root.findAllByType(ActivityIndicator).length).toBe(1)
 })
