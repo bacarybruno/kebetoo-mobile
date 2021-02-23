@@ -23,6 +23,7 @@ import CreateRoomPage from '@app/features/rooms/containers/create'
 import RoomPage from '@app/features/rooms/containers/room'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
+import EditProfilePage from '@app/features/profile/containers/edit'
 import SearchPage from '@app/features/search/containers'
 import CreatePostPage from '@app/features/post/containers/create'
 import CommentsPage from '@app/features/comments/containers'
@@ -203,6 +204,7 @@ export const loggedInPages = [
   <Stack.Screen component={UserProfilePage} name={routes.USER_PROFILE} />,
   <Stack.Screen component={CameraRollPicker} name={routes.CAMERA_ROLL_PICKER} />,
   <Stack.Screen component={ProfilePage} name={routes.PROFILE} />,
+  <Stack.Screen component={EditProfilePage} name={routes.EDIT_PROFILE} />,
   <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
   <Stack.Screen component={RoomPage} name={routes.ROOM} />,
 ]

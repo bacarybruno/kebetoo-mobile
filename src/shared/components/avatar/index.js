@@ -11,7 +11,9 @@ import Typography from '../typography'
 const dimensions = (size) => size && { width: size, height: size }
 const backgroundColor = (text) => text && { backgroundColor: generateColor(text) }
 
-export const ImageAvatar = ({ src, size, style }) => {
+export const ImageAvatar = ({
+  src, size, style, children,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={[styles.wrapper, dimensions(size), style]}>
@@ -20,12 +22,13 @@ export const ImageAvatar = ({ src, size, style }) => {
         style={styles.content}
         source={{ uri: src }}
       />
+      {children}
     </View>
   )
 }
 
 export const TextAvatar = ({
-  text, size, style, fontSize, noRadius, color,
+  text, size, style, fontSize, noRadius, color, children,
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -42,6 +45,7 @@ export const TextAvatar = ({
         >
           {text ? text[0].toUpperCase() : ''}
         </Text>
+        {children}
       </View>
     </View>
   )

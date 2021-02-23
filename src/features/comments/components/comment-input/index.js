@@ -4,7 +4,7 @@ import React, {
 import { Animated, View } from 'react-native'
 
 import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
-import { strings } from '@app/config'
+import { env, strings } from '@app/config'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { useAppStyles } from '@app/shared/hooks'
 
@@ -29,6 +29,7 @@ export const CommentInput = ({
   disableEmojis,
   disableAutofocus = true,
   handleContentSizeChange = true,
+  maxLength = env.maxLength.post.comments,
   ...inputProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -54,6 +55,16 @@ export const CommentInput = ({
     )
   }, [styles.textInputSize.minHeight, handleContentSizeChange])
 
+  const inputPlaceholder = audioRecorder.isRecording
+    ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
+    : (placeholder || strings.comments.add_comment)
+
+  const wrapperStyle = [
+    styles.textInputSize,
+    styles.textInputWrapper,
+    reply && styles.textInputWrapperWithReply,
+  ]
+
   return (
     <View style={[styles.commentInputWrapper, style]}>
       <View style={styles.flexible}>
@@ -61,11 +72,6 @@ export const CommentInput = ({
           <EmojiTextInput
             multiline
             fieldName="comment"
-            placeholder={
-              audioRecorder.isRecording
-                ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
-                : (placeholder || strings.comments.add_comment)
-            }
             onValueChange={onChange}
             value={value}
             ref={inputRef}
@@ -74,13 +80,11 @@ export const CommentInput = ({
             onContentSizeChange={updateInputHeight}
             height={inputSize.current}
             returnKeyType="default"
-            wrapperStyle={[
-              styles.textInputSize,
-              styles.textInputWrapper,
-              reply && styles.textInputWrapperWithReply,
-            ]}
             disableEmojis={disableEmojis}
             disableAutofocus={disableAutofocus}
+            maxLength={maxLength}
+            wrapperStyle={wrapperStyle}
+            placeholder={inputPlaceholder}
             {...inputProps}
           >
             {reply && (
