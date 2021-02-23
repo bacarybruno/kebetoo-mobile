@@ -7,7 +7,7 @@ import {
 } from '@app/shared/components'
 import SocialSignIn from '@app/features/account/components/social-signin'
 import { metrics } from '@app/theme'
-import { strings } from '@app/config'
+import { env, strings } from '@app/config'
 import { useAppStyles } from '@app/shared/hooks'
 
 import useSignin, { fieldNames } from './hook'
@@ -54,6 +54,7 @@ const SignIn = ({ navigation }) => {
             onBlur={validate}
             error={errors[fieldNames.email]}
             returnKeyType="next"
+            maxLength={env.maxLength.email}
           />
           <PasswordInput
             placeholder={strings.auth.password}
@@ -63,6 +64,7 @@ const SignIn = ({ navigation }) => {
             onBlur={validate}
             error={errors[fieldNames.password]}
             returnKeyType="done"
+            maxLength={env.maxLength.password}
           />
           <View>
             <FullButton
