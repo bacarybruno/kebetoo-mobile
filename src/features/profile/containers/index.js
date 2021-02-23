@@ -44,77 +44,20 @@ export const Summary = React.memo(({
   photoURL, info, displayName, onLoading,
 }) => {
   const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
-  const { showActionSheetWithOptions } = useActionSheet()
-  const { saveImage } = useFilePicker()
-  const { updateProfilePicture, deleteProfilePicture } = useUser()
   const { navigate } = useNavigation()
+  const { showAvatarOptions } = useUser()
+  const { saveImage } = useFilePicker()
 
-  const showAvatarOptions = useCallback(async () => {
-    const bottomSheetItems = [{
-      title: strings.profile.edit_picture,
-      icon: 'camera-outline',
-    }, {
-      title: strings.profile.delete_picture,
-      icon: 'trash-outline',
-    }, {
-      title: strings.profile.view_picture,
-      icon: 'eye-outline',
-    }, {
-      title: strings.general.cancel,
-      icon: 'close-outline',
-    }]
-
-    showActionSheetWithOptions({
-      options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map((item) => (
-        <Ionicon
-          name={item.icon}
-          size={24}
-          color={colors.textPrimary}
-        />
-      )),
-      cancelButtonIndex: bottomSheetItems.length - 1,
-      title: strings.general.options,
-      textStyle: { color: colors.textPrimary },
-      titleTextStyle: { color: colors.textSecondary },
-      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-    }, async (index) => {
-      try {
-        onLoading(true)
-        if (index === 0) {
-          const profilePictureUrl = await saveImage()
-          await updateProfilePicture(profilePictureUrl)
-        } else if (index === 1) {
-          await deleteProfilePicture()
-        } else if (index === 2) {
-          if (photoURL) {
-            navigate(routes.MODAL_IMAGE, {
-              source: { uri: photoURL },
-            })
-          }
-        }
-      } finally {
-        onLoading(false)
-      }
-    })
-  }, [
-    showActionSheetWithOptions,
-    colors,
-    onLoading,
-    saveImage,
-    updateProfilePicture,
-    deleteProfilePicture,
-    photoURL,
-    navigate,
-  ])
+  const onAvatarOptions = useCallback(async () => {
+    await showAvatarOptions({ onLoading, navigate, saveImage })
+  }, [onLoading, navigate, saveImage, showAvatarOptions])
 
   return (
     <View style={styles.summary}>
       <TouchableOpacity
         style={styles.imageWrapper}
         activeOpacity={0.8}
-        onPress={showAvatarOptions}
+        onPress={onAvatarOptions}
       >
         <Avatar src={photoURL} text={displayName} size={imageSize} fontSize={48} />
       </TouchableOpacity>
@@ -205,7 +148,7 @@ const ProfileSection = React.memo(({ managePosts }) => {
   )
 })
 
-const AccountSection = React.memo(({ signOut }) => {
+const AccountSection = React.memo(({ signOut, editProfile, editUsername }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.section}>
@@ -214,12 +157,12 @@ const AccountSection = React.memo(({ signOut }) => {
         icon="ios-at"
         text={strings.profile.edit_username}
         message={strings.profile.no_username_defined}
-        onPress={warnNotImplemented}
+        onPress={editUsername}
       />
       <IconButton
         icon="md-create"
         text={strings.profile.edit_profile}
-        onPress={warnNotImplemented}
+        onPress={editProfile}
       />
       <IconButton
         icon="ios-log-out"
@@ -409,6 +352,14 @@ const ProfilePage = React.memo(() => {
     navigate(routes.CREATE_POST, { action: actionTypes.REPORT })
   }, [navigate])
 
+  const editProfile = useCallback(() => {
+    navigate(routes.EDIT_PROFILE)
+  }, [])
+
+  const editUsername = useCallback(() => {
+    navigate(routes.EDIT_PROFILE, { field: 'username' })
+  }, [])
+
   return (
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -436,7 +387,7 @@ const ProfilePage = React.memo(() => {
           shareApp={shareApp}
           reportIssue={reportIssue}
         />
-        <AccountSection signOut={signOut} />
+        <AccountSection signOut={signOut} editProfile={editProfile} editUsername={editUsername} />
       </ScrollView>
     </View>
   )

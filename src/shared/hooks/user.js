@@ -1,11 +1,17 @@
-import { useCallback } from 'react'
+import React, { useCallback } from 'react'
 import auth from '@react-native-firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
+import { useActionSheet } from '@expo/react-native-action-sheet'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { userProfileSelector } from '@app/redux/selectors'
 import { SET_USER_PROFILE } from '@app/redux/types'
+import { strings } from '@app/config'
+import { rgbaToHex } from '@app/theme/colors'
+import routes from '@app/navigation/routes'
 
 import { api } from '../services'
+import useAppColors from './app-colors'
 // import useAnalytics from './analytics'
 
 const useUser = () => {
@@ -13,6 +19,8 @@ const useUser = () => {
   const profile = useSelector(userProfileSelector)
   const { isLoggedIn } = profile
   const dispatch = useDispatch()
+  const { showActionSheetWithOptions } = useActionSheet()
+  const { colors } = useAppColors()
 
   const signOut = useCallback(async () => {
     try {
@@ -38,10 +46,68 @@ const useUser = () => {
     return updateProfilePicture('')
   }, [updateProfilePicture])
 
+  // TODO: create a custom hook only for action sheet items
+  const showAvatarOptions = useCallback(async ({ onLoading, navigate, saveImage }) => {
+    try {
+      const bottomSheetItems = [{
+        title: strings.profile.edit_picture,
+        icon: 'camera-outline',
+      }, {
+        title: strings.profile.delete_picture,
+        icon: 'trash-outline',
+      }, {
+        title: strings.profile.view_picture,
+        icon: 'eye-outline',
+      }, {
+        title: strings.general.cancel,
+        icon: 'close-outline',
+      }]
+
+      showActionSheetWithOptions({
+        options: bottomSheetItems.map((item) => item.title),
+        icons: bottomSheetItems.map((item) => (
+          <Ionicon
+            name={item.icon}
+            size={24}
+            color={colors.textPrimary}
+          />
+        )),
+        cancelButtonIndex: bottomSheetItems.length - 1,
+        title: strings.general.options,
+        textStyle: { color: colors.textPrimary },
+        titleTextStyle: { color: colors.textSecondary },
+        containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
+      }, async (index) => {
+        try {
+          onLoading(true)
+          if (index === 0) {
+            const profilePictureUrl = await saveImage()
+            await updateProfilePicture(profilePictureUrl)
+          } else if (index === 1) {
+            if (profile.photoURL) {
+              await deleteProfilePicture()
+            }
+          } else if (index === 2) {
+            if (profile.photoURL) {
+              navigate(routes.MODAL_IMAGE, {
+                source: { uri: profile.photoURL },
+              })
+            }
+          }
+        } finally {
+          onLoading(false)
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }, [showActionSheetWithOptions, updateProfilePicture, deleteProfilePicture, profile, colors])
+
   return {
     signOut,
     profile,
     isLoggedIn,
+    showAvatarOptions,
     updateProfilePicture,
     deleteProfilePicture,
   }

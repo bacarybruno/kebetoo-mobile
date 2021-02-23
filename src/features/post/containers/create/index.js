@@ -1,5 +1,5 @@
 import React, {
-  useLayoutEffect, useState, useCallback, useEffect, useRef,
+  useState, useCallback, useEffect, useRef,
 } from 'react'
 import {
   View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard, InteractionManager,
@@ -8,14 +8,12 @@ import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
-import {
-  TextInput, Typography, OutlinedButton, AudioPlayer, AppHeader,
-} from '@app/shared/components'
+import { OutlinedButton, AudioPlayer, AppHeader } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
 import { api } from '@app/shared/services'
 import { readableSeconds } from '@app/shared/helpers/dates'
-import { strings } from '@app/config'
+import { env, strings } from '@app/config'
 import { getMediaType } from '@app/shared/helpers/file'
 import { metrics } from '@app/theme'
 import useFilePicker from '@app/features/post/hooks/file-picker'
@@ -30,6 +28,7 @@ import {
 import iosColors from '@app/theme/ios-colors'
 import { VideoMarker } from '@app/shared/components/camera-roll-picker'
 import { warnNotImplemented } from '@app/shared/components/no-content'
+import { OutlinedTextInput } from '@app/shared/components/inputs'
 
 import createThemedStyles from './styles'
 
@@ -51,43 +50,31 @@ export const PostTextMessage = ({
   editable = true,
   maxNumberOfLines = 8,
   placeholder = strings.create_post.placeholder,
-  maxLength = 180,
+  maxLength = env.maxLength.post.text,
   inputRef,
 }) => {
   const styles = useAppStyles(createThemedStyles)
+  const label = displayCounter
+    ? strings.formatString(
+      strings.create_post.characters,
+      maxLength - text.length,
+    )
+    : strings.create_post.caption
+
   return (
-    <View style={styles.postTextMessage}>
-      <Typography
-        style={styles.textCount}
-        type={Typography.types.headline6}
-        text={
-          displayCounter
-            ? strings.formatString(
-              strings.create_post.characters,
-              maxLength - text.length,
-            )
-            : strings.create_post.caption
-        }
-      />
-      <TextInput
-        autoFocus
-        multiline
-        placeholder={placeholder}
-        onValueChange={onChange}
-        returnKeyType="default"
-        textStyle={styles.textInput}
-        wrapperStyle={styles.textInputWrapper}
-        inputWrapperStyle={styles.inputWrapper}
-        maxLength={maxLength}
-        editable={editable}
-        defaultValue={text}
-        ref={inputRef}
-        numberOfLines={Math.min(
-          Math.floor(metrics.screenHeight / 75),
-          maxNumberOfLines,
-        )}
-      />
-    </View>
+    <OutlinedTextInput
+      text={text}
+      onChange={onChange}
+      editable={editable}
+      maxNumberOfLines={maxNumberOfLines}
+      placeholder={placeholder}
+      maxLength={maxLength}
+      inputRef={inputRef}
+      textStyle={styles.textInput}
+      wrapperStyle={styles.textInputWrapper}
+      label={label}
+      autoFocus
+    />
   )
 }
 
@@ -116,14 +103,14 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
       <TouchableWithoutFeedback onPress={onPress}>
         <View>
           <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
-          <VideoMarker style={{ position: 'absolute', left: 10, bottom: 5 }} />
+          <VideoMarker style={styles.videoMarker} />
         </View>
       </TouchableWithoutFeedback>
     </View>
   )
 }
 
-// TODO: separate UI from logic to make unit tests easier
+// FIXME: separate UI from logic to make unit tests easier
 // or use redux-saga to handle post creation
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -174,8 +161,8 @@ const CreatePostPage = ({ route, navigation }) => {
         post = await audioRecorder.savePost(profile.uid, text, repost)
       } else if (filePicker.hasFile) {
         post = await filePicker.savePost(profile.uid, text, repost)
-      } else {
-        post = await api.posts.create({ content: text, repost, author: profile.uid })
+      } else if (text.trim()) {
+        post = await api.posts.create({ content: text.trim(), repost, author: profile.uid })
       }
 
       if (post.error) throw new Error(post.error)
@@ -270,22 +257,6 @@ const CreatePostPage = ({ route, navigation }) => {
     }
   }, [editMode, shareMode, reportMode])
 
-  useLayoutEffect(() => {
-    
-    navigation.setOptions({
-      headerRight: () => (
-        <OutlinedButton
-          text={headerMessages.post.toUpperCase()}
-          disabled={text.length === 0 || isLoading}
-          onPress={onHeaderSavePress}
-          style={styles.headerSaveButton}
-          loading={isLoading}
-        />
-      ),
-      title: headerMessages.title,
-    })
-  }, [text, navigation, onHeaderSavePress, getHeaderMessages, isLoading, styles])
-
   const openImagePreview = useCallback(() => {
     navigation.navigate(routes.MODAL_IMAGE, {
       source: {
@@ -305,82 +276,82 @@ const CreatePostPage = ({ route, navigation }) => {
   const headerMessages = getHeaderMessages()
   return (
     <>
-    <AppHeader
-      style={styles.header}
-      title={headerMessages.title}
-      text=""
-      showAvatar={false}
-      headerBack
-      Right={() =>　(
-        <OutlinedButton
-          text={headerMessages.post.toUpperCase()}
-          disabled={text.length === 0 || isLoading}
-          onPress={onHeaderSavePress}
-          loading={isLoading}
-        />
-      )}
-    />
-    <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
-      <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
-        <PostTextMessage
-          onChange={setText}
-          text={text}
-          editable={!isLoading}
-          displayCounter={text.length > 0}
-          placeholder={reportMode ? strings.create_post.report_mode_placeholder : undefined}
-          maxLength={reportMode ? 1000 : undefined}
-          inputRef={inputRef}
-        />
-        <View style={styles.preview}>
-          {audioRecorder.hasRecording && (
-            <AudioPlayer
-              source={audioRecorder.recordUri}
-              onDelete={audioRecorder.reset}
-              duration={audioRecorder.elapsedTime}
-              style={styles.audioPlayer}
-            />
-          )}
-          {filePicker.hasFile && filePicker.type === 'image' && (
-            <ImagePreviewer
-              uri={filePicker.file.uri}
-              onDelete={filePicker.reset}
-              onPress={openImagePreview}
-            />
-          )}
-          {filePicker.hasFile && filePicker.type === 'video' && (
-            <VideoPreviewer
-              uri={filePicker.file.originalUri || filePicker.file.uri}
-              onDelete={filePicker.reset}
-              onPress={openVideoPreview}
-            />
-          )}
-        </View>
-        {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && (
-          <View style={styles.buttonsWrapper}>
-            <View style={styles.buttonsContainer}>
-              {!audioRecorder.isRecording && !shareMode && (
-                <>
-                  {!reportMode && <Button name="camera" onPress={filePicker.pickVideo} />}
-                  <Button name="photo" onPress={filePicker.pickImage} />
-                  {!reportMode && <Button name="more-h" onPress={warnNotImplemented} />}
-                </>
-              )}
-            </View>
-            {!reportMode && (
-              <IconButton
-                activable
-                name="microphone"
-                style={styles.iconButton}
-                onPressIn={audioRecorder.start}
-                onPressOut={audioRecorder.stop}
-                isActive={audioRecorder.isRecording}
-                text={readableSeconds(audioRecorder.elapsedTime)}
+      <AppHeader
+        style={styles.header}
+        title={headerMessages.title}
+        text=""
+        showAvatar={false}
+        headerBack
+        Right={() => (
+          <OutlinedButton
+            text={headerMessages.post.toUpperCase()}
+            disabled={text.length === 0 || isLoading}
+            onPress={onHeaderSavePress}
+            loading={isLoading}
+          />
+        )}
+      />
+      <ScrollView contentContainerStyle={styles.wrapper} keyboardShouldPersistTaps="always">
+        <View style={[styles.container, Platform.OS === 'ios' && keyboardShown && { marginBottom }]}>
+          <PostTextMessage
+            onChange={setText}
+            text={text}
+            editable={!isLoading}
+            displayCounter={text.length > 0}
+            placeholder={reportMode ? strings.create_post.report_mode_placeholder : undefined}
+            maxLength={reportMode ? 1000 : undefined}
+            inputRef={inputRef}
+          />
+          <View style={styles.preview}>
+            {audioRecorder.hasRecording && (
+              <AudioPlayer
+                source={audioRecorder.recordUri}
+                onDelete={audioRecorder.reset}
+                duration={audioRecorder.elapsedTime}
+                style={styles.audioPlayer}
+              />
+            )}
+            {filePicker.hasFile && filePicker.type === 'image' && (
+              <ImagePreviewer
+                uri={filePicker.file.uri}
+                onDelete={filePicker.reset}
+                onPress={openImagePreview}
+              />
+            )}
+            {filePicker.hasFile && filePicker.type === 'video' && (
+              <VideoPreviewer
+                uri={filePicker.file.originalUri || filePicker.file.uri}
+                onDelete={filePicker.reset}
+                onPress={openVideoPreview}
               />
             )}
           </View>
-        )}
-      </View>
-    </ScrollView>
+          {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && (
+            <View style={styles.buttonsWrapper}>
+              <View style={styles.buttonsContainer}>
+                {!audioRecorder.isRecording && !shareMode && (
+                  <>
+                    {!reportMode && <Button name="camera" onPress={filePicker.pickVideo} />}
+                    <Button name="photo" onPress={filePicker.pickImage} />
+                    {!reportMode && <Button name="more-h" onPress={warnNotImplemented} />}
+                  </>
+                )}
+              </View>
+              {!reportMode && (
+                <IconButton
+                  activable
+                  name="microphone"
+                  style={styles.iconButton}
+                  onPressIn={audioRecorder.start}
+                  onPressOut={audioRecorder.stop}
+                  isActive={audioRecorder.isRecording}
+                  text={readableSeconds(audioRecorder.elapsedTime)}
+                />
+              )}
+            </View>
+          )}
+        </View>
+      </ScrollView>
     </>
   )
 }
