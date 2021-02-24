@@ -46,7 +46,7 @@ const EditProfile = ({ route, navigation }) => {
   const { profile, showAvatarOptions } = useUser()
   const usernameRef = useRef()
   const styles = useAppStyles(createThemedStyles)
-  const { navigate } = navigation
+  const { navigate, goBack } = navigation
   const { saveImage } = useFilePicker()
   const reduxDispatch = useDispatch()
   const currentUser = auth().currentUser
@@ -99,8 +99,21 @@ const EditProfile = ({ route, navigation }) => {
         displayName: values[fieldNames.fullName] || profile.displayName,
         bio: values[fieldNames.bio] || null,
       }
+
+      payload.username = payload.username.replace('@', '').toLowerCase()
+
+      const foundAuthors = await api.authors.checkUsername(payload.username)
+      if (foundAuthors.length > 0 && foundAuthors[0].id !== profile.uid) {
+        const usernameTakenError = new Error(strings.errors.username_taken)
+        usernameTakenError.name = 'ValidationError'
+        usernameTakenError.path = fieldNames.username
+        throw usernameTakenError
+      }
+
+      await api.authors.update(profile.uid, payload)
+      await currentUser.updateProfile(payload)
       reduxDispatch({ type: SET_USER_PROFILE, payload })
-      api.authors.update(profile.uid, payload)
+      goBack()
     } catch (error) {
       if (error.name === 'ValidationError') {
         dispatch({
@@ -114,7 +127,7 @@ const EditProfile = ({ route, navigation }) => {
     } finally {
       dispatch({ type: actionTypes.END_LOADING })
     }
-  }, [schema, values])
+  }, [schema, values, goBack])
 
   const onAvatarOptions = useCallback(async () => {
     await showAvatarOptions({ onLoading: setAvatarLoading, navigate, saveImage })

@@ -213,75 +213,76 @@ Array [
           ]
         }
       >
-        <View>
-          <Text
-            style={
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
               Array [
-                false,
-                false,
-                false,
+                Object {
+                  "color": undefined,
+                },
                 Object {
                   "backgroundColor": "transparent",
-                  "color": "#000000",
                   "fontFamily": "System",
-                  "fontSize": 12,
                   "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
                 },
-                Array [
-                  Object {
-                    "color": undefined,
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  undefined,
-                ],
+                undefined,
+              ],
+            ]
+          }
+        >
+          Your message
+        </Text>
+        <View
+          style={Object {}}
+        >
+          <View
+            style={
+              Array [
+                undefined,
+                undefined,
               ]
             }
           >
-            Your message
-          </Text>
-          <View
-            style={Object {}}
-          >
-            <View
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={true}
+              blurOnSubmit={false}
+              defaultValue=""
+              editable={true}
+              maxLength={254}
+              multiline={true}
+              numberOfLines={8}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="What's on your mind?"
+              rejectResponderTermination={true}
+              returnKeyType="default"
               style={
                 Array [
                   undefined,
-                  undefined,
-                ]
-              }
-            >
-              <TextInput
-                allowFontScaling={true}
-                autoFocus={true}
-                blurOnSubmit={false}
-                defaultValue=""
-                editable={true}
-                maxLength={180}
-                multiline={true}
-                numberOfLines={8}
-                onBlur={[Function]}
-                onChangeText={[Function]}
-                onFocus={[Function]}
-                placeholder="What's on your mind?"
-                rejectResponderTermination={true}
-                returnKeyType="default"
-                style={
                   Array [
                     undefined,
                     undefined,
-                    undefined,
-                  ]
-                }
-                underlineColorAndroid="transparent"
-                value={null}
-              />
-            </View>
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
           </View>
         </View>
         <View>

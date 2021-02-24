@@ -206,6 +206,7 @@ const locales = Object.freeze({
     auth_email_already_in_use: 'Ce compte existe déjà. Veuillez essayer de vous connecter',
     auth_account_exists_different_credential: 'L\'e-mail utilisé est déjà associé à un autre compte. Veuillez essayer une autre méthode de connexion',
     create_post_error: 'Une erreur est survenue lors de la création du post. Merci de réessayer plus tard.',
+    username_taken: 'Ce nom d\'utilisateur est deja pris. Veuillez en choisir un autre.',
   },
 })
 

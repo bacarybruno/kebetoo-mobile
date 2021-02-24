@@ -148,7 +148,9 @@ const ProfileSection = React.memo(({ managePosts }) => {
   )
 })
 
-const AccountSection = React.memo(({ signOut, editProfile, editUsername }) => {
+const AccountSection = React.memo(({
+  signOut, editProfile, editUsername, username,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.section}>
@@ -156,7 +158,7 @@ const AccountSection = React.memo(({ signOut, editProfile, editUsername }) => {
       <IconButton
         icon="ios-at"
         text={strings.profile.edit_username}
-        message={strings.profile.no_username_defined}
+        message={username ? `@${username}` : strings.profile.no_username_defined}
         onPress={editUsername}
       />
       <IconButton
@@ -252,7 +254,7 @@ export const ProfileHeader = React.memo(({
       <Summary
         photoURL={profile.photoURL}
         displayName={profile.displayName}
-        info={profile.email}
+        info={profile.bio || profile.email}
         onLoading={onLoading}
       />
       <Stats
@@ -387,7 +389,12 @@ const ProfilePage = React.memo(() => {
           shareApp={shareApp}
           reportIssue={reportIssue}
         />
-        <AccountSection signOut={signOut} editProfile={editProfile} editUsername={editUsername} />
+        <AccountSection
+          signOut={signOut}
+          editProfile={editProfile}
+          editUsername={editUsername}
+          username={profile.username}
+        />
       </ScrollView>
     </View>
   )

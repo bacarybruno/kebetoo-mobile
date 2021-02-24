@@ -107,6 +107,7 @@ exports[`renders SignUp 1`] = `
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
+              maxLength={60}
               onBlur={[Function]}
               onChangeText={[Function]}
               onFocus={[Function]}
@@ -166,6 +167,7 @@ exports[`renders SignUp 1`] = `
               allowFontScaling={true}
               blurOnSubmit={false}
               keyboardType="email-address"
+              maxLength={254}
               onBlur={[Function]}
               onChangeText={[Function]}
               onFocus={[Function]}
@@ -224,6 +226,7 @@ exports[`renders SignUp 1`] = `
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
+              maxLength={128}
               onBlur={[Function]}
               onChangeText={[Function]}
               onFocus={[Function]}

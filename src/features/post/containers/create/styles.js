@@ -22,6 +22,7 @@ export default (colors) => StyleSheet.create({
     ...human.headline,
     ...systemWeights.regular,
     fontSize: Typography.fontSizes.md + 3,
+    color: colors.textPrimary,
   },
   textInputWrapper: {
     height: metrics.screenHeight / 3.5,

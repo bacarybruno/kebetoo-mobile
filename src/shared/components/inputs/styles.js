@@ -35,7 +35,7 @@ export default (colors) => StyleSheet.create({
     paddingVertical: metrics.marginHorizontal / 2,
   },
   error: {
-    borderColor: colors.pink,
+    borderColor: colors.danger,
   },
   trailing: {
     paddingRight: metrics.spacing.xxl,

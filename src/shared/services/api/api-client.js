@@ -15,6 +15,7 @@ class ApiClient extends HttpClient {
     const pageSize = 30
     return {
       search: (query) => this.get(`/authors?displayName_contains=${query}&_limit=${pageSize}`),
+      checkUsername: (username) => this.get(`/authors?username=${username}&_limit=1`),
       create: (author) => this.post('/authors', author),
       getByUid: (uid) => this.get(`/authors?uid=${uid}`),
       getById: (id) => this.get(`/authors/${id}`),
