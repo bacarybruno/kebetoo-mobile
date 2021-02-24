@@ -12,7 +12,7 @@ beforeEach(jest.clearAllMocks)
 const givenEditProfile = setupTest(EditProfile)({
   route: {
     params: {
-      field: null,
+      field: 'username',
     },
   },
   navigation: {
