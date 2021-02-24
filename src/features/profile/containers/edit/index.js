@@ -1,9 +1,12 @@
-import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react'
+import React, {
+  useCallback, useEffect, useReducer, useRef, useState,
+} from 'react'
 import { TouchableOpacity, View, ActivityIndicator } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import * as yup from 'yup'
 import auth from '@react-native-firebase/auth'
+import { useDispatch } from 'react-redux'
 
 import { AppHeader, Avatar, OutlinedButton } from '@app/shared/components'
 import { env, strings } from '@app/config'
@@ -11,11 +14,10 @@ import { useAppStyles, useUser } from '@app/shared/hooks'
 import { OutlinedTextInput } from '@app/shared/components/inputs'
 import useFilePicker from '@app/features/post/hooks/file-picker'
 import reducer, { actionTypes } from '@app/features/account/reducer'
-
-import createThemedStyles from './styles'
-import { useDispatch } from 'react-redux'
 import { SET_USER_PROFILE } from '@app/redux/types'
 import { api } from '@app/shared/services'
+
+import createThemedStyles from './styles'
 
 const routeOptions = { title: strings.profile.edit_profile }
 
@@ -49,7 +51,7 @@ const EditProfile = ({ route, navigation }) => {
   const { navigate, goBack } = navigation
   const { saveImage } = useFilePicker()
   const reduxDispatch = useDispatch()
-  const currentUser = auth().currentUser
+  const { currentUser } = auth()
 
   const initialState = {
     values: {
@@ -127,15 +129,15 @@ const EditProfile = ({ route, navigation }) => {
     } finally {
       dispatch({ type: actionTypes.END_LOADING })
     }
-  }, [schema, values, goBack])
+  }, [schema, values, profile, currentUser, reduxDispatch, goBack])
 
   const onAvatarOptions = useCallback(async () => {
     await showAvatarOptions({ onLoading: setAvatarLoading, navigate, saveImage })
   }, [navigate, saveImage, showAvatarOptions])
 
   useEffect(() => {
-    if (route.params?.field === 'username') {
-      usernameRef.current?.focus()
+    if (route.params?.field === 'username' && usernameRef.current) {
+      usernameRef.current.focus()
     }
   }, [route])
 
@@ -161,7 +163,11 @@ const EditProfile = ({ route, navigation }) => {
       />
 
       <View style={[styles.section, styles.avatar]}>
-        <TouchableAvatar profile={profile} onPress={onAvatarOptions} isLoading={avatarLoading} />
+        <TouchableAvatar
+          profile={profile}
+          onPress={onAvatarOptions}
+          isLoading={avatarLoading}
+        />
       </View>
 
       <View style={styles.section}>
@@ -181,7 +187,7 @@ const EditProfile = ({ route, navigation }) => {
         <OutlinedTextInput
           label={strings.auth.username}
           onChange={onChangeText}
-          placeholder={`user${profile.uid.substr(0, 15)}`}
+          placeholder={strings.auth.username}
           text={profile.username}
           borderless={false}
           inputRef={usernameRef}
