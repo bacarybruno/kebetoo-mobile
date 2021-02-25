@@ -242,7 +242,7 @@ exports[`renders EditProfile 1`] = `
             ]
           }
         >
-          Save
+          SAVE
         </Text>
       </View>
     </View>

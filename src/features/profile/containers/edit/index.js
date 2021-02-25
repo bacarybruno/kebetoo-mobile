@@ -154,7 +154,7 @@ const EditProfile = ({ route, navigation }) => {
         headerBack
         Right={() => (
           <OutlinedButton
-            text={strings.general.save}
+            text={strings.general.save.toUpperCase()}
             disabled={false}
             onPress={onSubmit}
             loading={isLoading}

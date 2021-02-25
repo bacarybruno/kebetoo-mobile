@@ -34,7 +34,7 @@ it('updates profile', async () => {
     await displayName.props.onChange('jest', fieldNames.fullName)
     await username.props.onChange('@jestuser', fieldNames.username)
     await bio.props.onChange('Hello from the test side!', fieldNames.bio)
-    await wrapper.root.findByProps({ text: strings.general.save }).props.onPress()
+    await wrapper.root.findByProps({ text: strings.general.save.toUpperCase() }).props.onPress()
   })
 
   expect(api.authors.update).toBeCalledTimes(1)
@@ -57,7 +57,7 @@ it('aborts profile update if username exists', async () => {
     await displayName.props.onChange('jest', fieldNames.fullName)
     await username.props.onChange('@jestuser', fieldNames.username)
     await bio.props.onChange('Hello from the test side!', fieldNames.bio)
-    await wrapper.root.findByProps({ text: strings.general.save }).props.onPress()
+    await wrapper.root.findByProps({ text: strings.general.save.toUpperCase() }).props.onPress()
   })
 
   expect(api.authors.update).not.toBeCalled()
