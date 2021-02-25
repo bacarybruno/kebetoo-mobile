@@ -107,6 +107,7 @@ exports[`renders Signin 1`] = `
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
+              editable={true}
               keyboardType="email-address"
               maxLength={254}
               onBlur={[Function]}
@@ -167,6 +168,7 @@ exports[`renders Signin 1`] = `
             <TextInput
               allowFontScaling={true}
               blurOnSubmit={false}
+              editable={true}
               maxLength={128}
               onBlur={[Function]}
               onChangeText={[Function]}

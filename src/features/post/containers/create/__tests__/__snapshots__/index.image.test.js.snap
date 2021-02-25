@@ -325,7 +325,7 @@ Array [
                   Array [
                     Object {
                       "color": "rgba(0,0,0,0.87)",
-                      "marginTop": 0,
+                      "paddingBottom": 8,
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -943,7 +943,7 @@ Array [
                   Array [
                     Object {
                       "color": "rgba(0,0,0,0.87)",
-                      "marginTop": 0,
+                      "paddingBottom": 8,
                     },
                     Object {
                       "backgroundColor": "transparent",

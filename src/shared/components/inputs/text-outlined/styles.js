@@ -4,7 +4,7 @@ import { metrics } from '@app/theme'
 
 export default (colors) => StyleSheet.create({
   textInput: {
-    marginTop: Platform.select({ android: -metrics.spacing.sm, default: 0 }),
+    paddingBottom: metrics.spacing.sm,
     color: colors.textPrimary,
   },
   textInputWrapper: {
@@ -13,7 +13,7 @@ export default (colors) => StyleSheet.create({
     borderRadius: 0,
   },
   label: {
-    marginLeft: Platform.select({ android: metrics.spacing.xs, ios: 0 }),
+    marginLeft: 0,
   },
   inputWrapper: {
     paddingLeft: 0,

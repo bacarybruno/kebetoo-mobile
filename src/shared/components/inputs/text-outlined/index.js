@@ -39,13 +39,18 @@ export const TextOutlinedInput = ({
         borderless={true}
         error={error}
         returnKeyType="default"
-        textStyle={[styles.textInput, textStyle]}
-        wrapperStyle={[styles.textInputWrapper, !borderless && styles.border, !borderless && error && styles.error, wrapperStyle]}
-        inputWrapperStyle={styles.inputWrapper}
         maxLength={maxLength}
         editable={editable}
         defaultValue={text}
         ref={inputRef}
+        inputWrapperStyle={styles.inputWrapper}
+        textStyle={[styles.textInput, textStyle]}
+        wrapperStyle={[
+          styles.textInputWrapper,
+          !borderless && styles.border,
+          !borderless && error && styles.error,
+          wrapperStyle,
+        ]}
         numberOfLines={Math.min(
           Math.floor(metrics.screenHeight / 75),
           maxNumberOfLines,

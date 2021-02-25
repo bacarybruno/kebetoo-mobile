@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { Keyboard } from 'react-native'
 import auth from '@react-native-firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { useActionSheet } from '@expo/react-native-action-sheet'
@@ -49,6 +50,8 @@ const useUser = () => {
   // TODO: create a custom hook only for action sheet items
   const showAvatarOptions = useCallback(async ({ onLoading, navigate, saveImage }) => {
     try {
+      Keyboard.dismiss()
+
       const bottomSheetItems = [{
         title: strings.profile.edit_picture,
         icon: 'camera-outline',

@@ -76,6 +76,7 @@ const SignUp = ({ navigation }) => {
             error={errors[fieldNames.fullName]}
             returnKeyType="next"
             maxLength={env.maxLength.fullname}
+            editable={!isLoading}
           />
           <TextInput
             placeholder={strings.auth.email}
@@ -88,6 +89,7 @@ const SignUp = ({ navigation }) => {
             error={errors[fieldNames.email]}
             returnKeyType="next"
             maxLength={env.maxLength.email}
+            editable={!isLoading}
           />
           <PasswordInput
             placeholder={strings.auth.password}
@@ -98,6 +100,7 @@ const SignUp = ({ navigation }) => {
             ref={passwordRef}
             returnKeyType="done"
             maxLength={env.maxLength.password}
+            editable={!isLoading}
           />
           <View>
             <FullButton

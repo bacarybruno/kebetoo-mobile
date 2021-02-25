@@ -1,7 +1,7 @@
 import React, {
   useCallback, useEffect, useReducer, useRef, useState,
 } from 'react'
-import { TouchableOpacity, View, ActivityIndicator } from 'react-native'
+import { TouchableOpacity, View, ActivityIndicator, InteractionManager } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import * as yup from 'yup'
@@ -28,7 +28,7 @@ const TouchableAvatar = ({ profile, onPress, isLoading }) => {
       <Avatar src={profile.photoURL} text={profile.displayName} size={115} fontSize={50}>
         <View style={styles.avatarOverlay}>
           {isLoading
-            ? <ActivityIndicator color={styles.avatarOverlayIcon.color} />
+            ? <ActivityIndicator size="large" color={styles.avatarOverlayIcon.color} />
             : <Ionicon name="camera" size={35} style={styles.avatarOverlayIcon} />}
         </View>
       </Avatar>
@@ -137,7 +137,9 @@ const EditProfile = ({ route, navigation }) => {
 
   useEffect(() => {
     if (route.params?.field === 'username' && usernameRef.current) {
-      usernameRef.current.focus()
+      InteractionManager.runAfterInteractions(() => {
+        usernameRef.current.focus()
+      })
     }
   }, [route])
 
@@ -180,6 +182,7 @@ const EditProfile = ({ route, navigation }) => {
           maxLength={env.maxLength.fullname}
           fieldName={fieldNames.fullName}
           error={errors[fieldNames.fullName]}
+          editable={!isLoading}
         />
       </View>
 
@@ -194,6 +197,7 @@ const EditProfile = ({ route, navigation }) => {
           maxLength={env.maxLength.username}
           fieldName={fieldNames.username}
           error={errors[fieldNames.username]}
+          editable={!isLoading}
         />
       </View>
 
@@ -220,6 +224,7 @@ const EditProfile = ({ route, navigation }) => {
           maxLength={env.maxLength.bio}
           fieldName={fieldNames.bio}
           error={errors[fieldNames.bio]}
+          editable={!isLoading}
         />
       </View>
     </KeyboardAwareScrollView>

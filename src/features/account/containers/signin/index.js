@@ -55,6 +55,7 @@ const SignIn = ({ navigation }) => {
             error={errors[fieldNames.email]}
             returnKeyType="next"
             maxLength={env.maxLength.email}
+            editable={!isLoading}
           />
           <PasswordInput
             placeholder={strings.auth.password}
@@ -65,6 +66,7 @@ const SignIn = ({ navigation }) => {
             error={errors[fieldNames.password]}
             returnKeyType="done"
             maxLength={env.maxLength.password}
+            editable={!isLoading}
           />
           <View>
             <FullButton

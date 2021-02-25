@@ -439,7 +439,7 @@ exports[`renders EditProfile 1`] = `
                 Array [
                   Object {
                     "color": "rgba(0,0,0,0.87)",
-                    "marginTop": 0,
+                    "paddingBottom": 8,
                   },
                   undefined,
                 ],
@@ -552,7 +552,7 @@ exports[`renders EditProfile 1`] = `
                 Array [
                   Object {
                     "color": "rgba(0,0,0,0.87)",
-                    "marginTop": 0,
+                    "paddingBottom": 8,
                   },
                   undefined,
                 ],
@@ -666,7 +666,7 @@ exports[`renders EditProfile 1`] = `
                 Array [
                   Object {
                     "color": "rgba(0,0,0,0.87)",
-                    "marginTop": 0,
+                    "paddingBottom": 8,
                   },
                   undefined,
                 ],
@@ -779,7 +779,7 @@ exports[`renders EditProfile 1`] = `
                 Array [
                   Object {
                     "color": "rgba(0,0,0,0.87)",
-                    "marginTop": 0,
+                    "paddingBottom": 8,
                   },
                   undefined,
                 ],
