@@ -105,6 +105,7 @@ exports[`renders CommentInput 1`] = `
             blurOnSubmit={false}
             disableAutofocus={true}
             editable={true}
+            maxLength={1024}
             multiline={true}
             onBlur={[Function]}
             onChangeText={[Function]}

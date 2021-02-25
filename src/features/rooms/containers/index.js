@@ -88,8 +88,19 @@ const RoomsPage = ({ navigation }) => {
     }
   }, [rooms])
 
-  const sortByName = useCallback((a, b) => a.name.localeCompare(b.name), [])
-  const sortByMembersCount = useCallback((a, b) => Object.keys(b.members).length - Object.keys(a.members).length, [])
+  const sortByName = useCallback((a, b) => {
+    if (a?.name && b?.name) {
+      return a.name.localeCompare(b.name)
+    }
+    return 0
+  }, [])
+
+  const sortByMembersCount = useCallback((a, b) => {
+    if (a?.members && b?.members) {
+      return Object.keys(b.members).length - Object.keys(a.members).length
+    }
+    return 0
+  }, [])
 
   const ListHeaderComponent = (
     <SegmentedControl

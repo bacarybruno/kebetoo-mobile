@@ -118,7 +118,7 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
 
     primary: baseColors.blue,
     secondary: customColors.secondary[colorScheme],
-    danger: baseColors.red,
+    danger: baseColors.pink,
     blue_dark: customColors.blue_dark[colorScheme],
 
     inactive: customColors.inactive[colorScheme],

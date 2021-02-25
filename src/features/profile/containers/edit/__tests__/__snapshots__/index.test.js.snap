@@ -1,0 +1,804 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders EditProfile 1`] = `
+<RCTScrollView
+  automaticallyAdjustContentInsets={false}
+  contentInset={
+    Object {
+      "bottom": 0,
+    }
+  }
+  enableAutomaticScroll={true}
+  enableOnAndroid={true}
+  enableResetScrollToCoords={true}
+  extraHeight={75}
+  extraScrollHeight={0}
+  getScrollResponder={[Function]}
+  handleOnScroll={[Function]}
+  keyboardDismissMode="interactive"
+  keyboardOpeningTime={250}
+  keyboardShouldPersistTaps="handled"
+  keyboardSpace={0}
+  onScroll={[Function]}
+  resetKeyboardSpace={[Function]}
+  scrollEventThrottle={1}
+  scrollForExtraHeightOnAndroid={[Function]}
+  scrollIntoView={[Function]}
+  scrollToEnd={[Function]}
+  scrollToFocusedInput={[Function]}
+  scrollToPosition={[Function]}
+  showsVerticalScrollIndicator={true}
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 255)",
+      "flex": 1,
+      "paddingHorizontal": 16,
+    }
+  }
+  update={[Function]}
+  viewIsInsideTabBar={false}
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={false}
+            hitSlop={
+              Object {
+                "bottom": 10,
+                "left": 10,
+                "right": 10,
+                "top": 10,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "marginLeft": 16,
+                    "width": 24,
+                  },
+                  Object {
+                    "marginLeft": 0,
+                    "marginRight": 16,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Object {
+                    "color": "rgba(0,0,0,0.87)",
+                    "fontFamily": "icomoon",
+                    "fontSize": 20,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
+                }
+                text="kebeticon-chevron-left"
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontSize": 22,
+                      "fontWeight": "400",
+                      "letterSpacing": 0.34375,
+                      "lineHeight": 28,
+                    },
+                    false,
+                    false,
+                    false,
+                    Array [
+                      Object {
+                        "color": "rgba(0,0,0,0.87)",
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                        "fontFamily": "System",
+                        "fontWeight": "600",
+                      },
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Edit profile
+              </Text>
+              <ActivityIndicator
+                animating={false}
+                color="rgba(0, 122, 255, 255)"
+                hidesWhenStopped={true}
+                size="small"
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderColor": "rgba(0, 122, 255, 255)",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+            false,
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#FFFFFF",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "letterSpacing": -0.32,
+                "lineHeight": 21,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0, 122, 255, 255)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "600",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          SAVE
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 24,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "marginTop": 16,
+            },
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "marginBottom": 16,
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 30,
+                  "width": 30,
+                },
+                Object {
+                  "height": 115,
+                  "width": 115,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
+                }
+              }
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                  "borderRadius": 1000,
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 0, 0, 0.4)",
+                  "borderRadius": 100,
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "position": "absolute",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 255)",
+                    "fontFamily": "Ionicons",
+                    "fontSize": 35,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  }
+                }
+                text="ionicon-camera"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginTop": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          Full Name
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderBottomColor": "rgba(229, 229, 234, 255)",
+              "borderBottomWidth": 1,
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                Object {
+                  "paddingLeft": 0,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={false}
+              blurOnSubmit={false}
+              defaultValue="Bruno Bodian"
+              editable={true}
+              maxLength={60}
+              multiline={true}
+              numberOfLines={1}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="Bruno Bodian"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="default"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "flex": 1,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "paddingBottom": 8,
+                    },
+                    undefined,
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginTop": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          Username
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderBottomColor": "rgba(229, 229, 234, 255)",
+              "borderBottomWidth": 1,
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                Object {
+                  "paddingLeft": 0,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={false}
+              blurOnSubmit={false}
+              editable={true}
+              maxLength={24}
+              multiline={true}
+              numberOfLines={1}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="Username"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="default"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "flex": 1,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "paddingBottom": 8,
+                    },
+                    undefined,
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginTop": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          Email
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderBottomColor": "rgba(229, 229, 234, 255)",
+              "borderBottomWidth": 1,
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                Object {
+                  "paddingLeft": 0,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={false}
+              blurOnSubmit={false}
+              defaultValue="bacarybruno@kebetoo.com"
+              editable={false}
+              maxLength={254}
+              multiline={true}
+              numberOfLines={1}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="Email"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="default"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "flex": 1,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "paddingBottom": 8,
+                    },
+                    undefined,
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginTop": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          Bio
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderBottomColor": "rgba(229, 229, 234, 255)",
+              "borderBottomWidth": 1,
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "minHeight": 48,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
+                },
+                Object {
+                  "paddingLeft": 0,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={false}
+              blurOnSubmit={false}
+              editable={true}
+              maxLength={160}
+              multiline={true}
+              numberOfLines={1}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="Share your interests or hobbies"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="default"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
+                    "flex": 1,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
+                  },
+                  Array [
+                    Object {
+                      "color": "rgba(0,0,0,0.87)",
+                      "paddingBottom": 8,
+                    },
+                    undefined,
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

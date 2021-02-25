@@ -127,7 +127,6 @@ function* setUserProfile(action) {
 
     // save token in the backend
   } catch (error) {
-    console.log({ type: types.SET_USER_PROFILE_ERROR, payload: error })
     yield put({ type: types.SET_USER_PROFILE_ERROR, payload: error })
   }
 }

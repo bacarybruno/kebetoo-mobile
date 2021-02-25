@@ -23,14 +23,10 @@ export default (colors) => StyleSheet.create({
     ...systemWeights.regular,
     fontSize: Typography.fontSizes.md + 3,
     color: colors.textPrimary,
-    marginTop: Platform.select({ android: -metrics.spacing.sm, default: 0 }),
   },
   textInputWrapper: {
-    backgroundColor: colors.background,
     height: metrics.screenHeight / 3.5,
     minHeight: 200,
-    borderColor: 'transparent',
-    borderRadius: 0,
   },
   textCount: {
     marginLeft: Platform.select({ android: metrics.spacing.xs, ios: 0 }),
@@ -59,10 +55,12 @@ export default (colors) => StyleSheet.create({
   imagePreviewer: {
     width: '50%',
   },
-  inputWrapper: {
-    paddingLeft: 0,
-  },
   postTextMessage: {
     marginTop: metrics.screenHeight * 0.02,
+  },
+  videoMarker: {
+    position: 'absolute',
+    left: 10,
+    bottom: 5,
   },
 })

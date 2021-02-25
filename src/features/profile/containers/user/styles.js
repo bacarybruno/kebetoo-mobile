@@ -59,4 +59,11 @@ export default (colors) => StyleSheet.create({
     height: '100%',
     ...elevation(0),
   },
+  bio: {
+    marginHorizontal: metrics.marginHorizontal,
+    marginTop: metrics.spacing.md,
+  },
+  about: {
+    marginBottom: metrics.spacing.xs / 2,
+  },
 })

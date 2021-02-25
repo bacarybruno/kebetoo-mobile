@@ -6,7 +6,7 @@ import {
   Typography, TextInput, PasswordInput, Logo, FullButton,
 } from '@app/shared/components'
 import SocialSignIn from '@app/features/account/components/social-signin'
-import { strings } from '@app/config'
+import { env, strings } from '@app/config'
 import { metrics } from '@app/theme'
 import { useAppStyles } from '@app/shared/hooks'
 
@@ -75,6 +75,8 @@ const SignUp = ({ navigation }) => {
             onBlur={validate}
             error={errors[fieldNames.fullName]}
             returnKeyType="next"
+            maxLength={env.maxLength.fullname}
+            editable={!isLoading}
           />
           <TextInput
             placeholder={strings.auth.email}
@@ -86,6 +88,8 @@ const SignUp = ({ navigation }) => {
             onBlur={validate}
             error={errors[fieldNames.email]}
             returnKeyType="next"
+            maxLength={env.maxLength.email}
+            editable={!isLoading}
           />
           <PasswordInput
             placeholder={strings.auth.password}
@@ -95,6 +99,8 @@ const SignUp = ({ navigation }) => {
             error={errors[fieldNames.password]}
             ref={passwordRef}
             returnKeyType="done"
+            maxLength={env.maxLength.password}
+            editable={!isLoading}
           />
           <View>
             <FullButton

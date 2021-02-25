@@ -9,6 +9,7 @@ const locales = Object.freeze({
     edited: 'Edited',
     post: 'Post',
     edit: 'Edit',
+    save: 'Save',
     share: 'Share',
     confirm: 'Confirm',
     system_default: 'System default',
@@ -39,6 +40,7 @@ const locales = Object.freeze({
     email: 'Email',
     fullname: 'Full Name',
     password: 'Password',
+    username: 'Username',
     signup: 'Sign up',
     signin: 'Sign in',
     or_signup_with: 'Or sign up with',
@@ -98,6 +100,8 @@ const locales = Object.freeze({
     edit_picture: 'Update picture',
     view_picture: 'Show picture',
     delete_picture: 'Delete picture',
+    bio_placeholder: 'Share your interests or hobbies',
+    bio: 'Bio',
   },
   manage_posts: {
     my_posts: 'Manage posts',
@@ -202,6 +206,7 @@ const locales = Object.freeze({
     auth_email_already_in_use: 'This account already exists. Please try to log in instead',
     auth_account_exists_different_credential: 'The email used is already associated with another account. Please try another signin method',
     create_post_error: 'An error occured while creating the post. Please try again later.',
+    username_taken: 'This username is already taken. Please try another one.',
   },
 })
 

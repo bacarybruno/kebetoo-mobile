@@ -9,13 +9,14 @@ import { api } from '@app/shared/services'
 import { usePermissions } from '@app/shared/hooks'
 import { getExtension, getFileName, getMimeType } from '@app/shared/helpers/file'
 import BackgroundTimer from '@app/shared/helpers/background-timer'
+import { env } from '@app/config'
 
 LogBox.ignoreLogs([
   'Warning: Cannot update a component from inside the function body of a different component.',
 ])
 
 export const MIN_DURATION_IN_SECONDS = 1
-export const MAX_DURATION_IN_SECONDS = 30
+export const MAX_DURATION_IN_SECONDS = env.maxLength.post.audio
 export const RECORD_NAME = 'PTT.mp4'
 export const RECORD_CONFIG = Object.freeze({
   bitrate: 24000,

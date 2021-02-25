@@ -8,6 +8,7 @@ const createRandomId = () => parseInt(Math.random() * 10000000).toString()
 const api = {
   authors: {
     search: jest.fn().mockResolvedValue([]),
+    checkUsername: jest.fn().mockResolvedValue([]),
     create: jest.fn().mockResolvedValue({}),
     getByUid: jest.fn()
       .mockImplementation((uid) => authors.filter((author) => author.uid === uid)),

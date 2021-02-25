@@ -232,102 +232,100 @@ Array [
           ]
         }
       >
+        <Text
+          style={
+            Array [
+              false,
+              false,
+              false,
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgba(0,0,0,0.54)",
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "marginLeft": 0,
+                },
+              ],
+            ]
+          }
+        >
+          249 characters
+        </Text>
         <View
           style={
             Object {
-              "marginTop": 26.68,
+              "backgroundColor": "rgba(255, 255, 255, 255)",
+              "borderColor": "transparent",
+              "borderRadius": 0,
+              "borderWidth": 1,
+              "height": 381.14285714285717,
+              "minHeight": 200,
+              "overflow": "hidden",
             }
           }
         >
-          <Text
+          <View
             style={
               Array [
-                false,
-                false,
-                false,
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#000000",
-                  "fontFamily": "System",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                  "letterSpacing": 0,
-                  "lineHeight": 16,
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "paddingLeft": 16,
                 },
-                Array [
-                  Object {
-                    "color": "rgba(0,0,0,0.54)",
-                  },
-                  Object {
-                    "backgroundColor": "transparent",
-                    "fontFamily": "System",
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "marginLeft": 0,
-                  },
-                ],
+                Object {
+                  "paddingLeft": 0,
+                },
               ]
             }
           >
-            175 characters
-          </Text>
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgba(255, 255, 255, 255)",
-                "borderColor": "transparent",
-                "borderRadius": 0,
-                "borderWidth": 1,
-                "height": 381.14285714285717,
-                "minHeight": 200,
-                "overflow": "hidden",
-              }
-            }
-          >
-            <View
+            <TextInput
+              allowFontScaling={true}
+              autoFocus={true}
+              blurOnSubmit={false}
+              defaultValue="Hello"
+              editable={true}
+              maxLength={254}
+              multiline={true}
+              numberOfLines={8}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholder="What's on your mind?"
+              placeholderTextColor="rgba(174, 174, 178, 255)"
+              rejectResponderTermination={true}
+              returnKeyType="default"
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "color": "rgba(0,0,0,0.87)",
                     "flex": 1,
-                    "flexDirection": "row",
-                    "paddingLeft": 16,
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "height": "100%",
+                    "letterSpacing": -0.32,
+                    "lineHeight": 21,
                   },
-                  Object {
-                    "paddingLeft": 0,
-                  },
-                ]
-              }
-            >
-              <TextInput
-                allowFontScaling={true}
-                autoFocus={true}
-                blurOnSubmit={false}
-                defaultValue="Hello"
-                editable={true}
-                maxLength={180}
-                multiline={true}
-                numberOfLines={8}
-                onBlur={[Function]}
-                onChangeText={[Function]}
-                onFocus={[Function]}
-                placeholder="What's on your mind?"
-                placeholderTextColor="rgba(174, 174, 178, 255)"
-                rejectResponderTermination={true}
-                returnKeyType="default"
-                style={
                   Array [
                     Object {
-                      "backgroundColor": "transparent",
                       "color": "rgba(0,0,0,0.87)",
-                      "flex": 1,
-                      "fontFamily": "System",
-                      "fontSize": 16,
-                      "fontWeight": "400",
-                      "height": "100%",
-                      "letterSpacing": -0.32,
-                      "lineHeight": 21,
+                      "paddingBottom": 8,
                     },
                     Object {
                       "backgroundColor": "transparent",
@@ -337,16 +335,15 @@ Array [
                       "fontWeight": "400",
                       "letterSpacing": -0.408,
                       "lineHeight": 22,
-                      "marginTop": 0,
                       "textAlignVertical": "top",
                     },
-                    undefined,
-                  ]
-                }
-                underlineColorAndroid="transparent"
-                value={null}
-              />
-            </View>
+                  ],
+                  undefined,
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value={null}
+            />
           </View>
         </View>
         <View

@@ -44,6 +44,25 @@ export const SectionHeader = ({ section, dateFormat }) => {
 
 const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
 
+const Bio = ({ text }) => {
+  const styles = useAppStyles(createThemedStyles)
+  if (!text) return null
+  return (
+    <View style={styles.bio}>
+      <Typography
+        text={strings.profile.bio}
+        type={Typography.types.headline5}
+        style={styles.about}
+      />
+      <Typography
+        text={text}
+        type={Typography.types.headline5}
+        color={Typography.colors.tertiary}
+      />
+    </View>
+  )
+}
+
 const UserProfile = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -61,6 +80,7 @@ const UserProfile = ({ route, navigation }) => {
     comments: [],
     reactions: [],
     createdAt: dayjs().toISOString(),
+    username: null,
   })
 
   const dateFormat = 'YYYY-MM'
@@ -126,39 +146,43 @@ const UserProfile = ({ route, navigation }) => {
     </View>
   ), [authors, styles.paddingHorizontal, user])
 
-  const renderListHeader = useCallback(() => (
-    <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
-      {photoURL
-        ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
-        : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
-      <View style={styles.profileInfos}>
-        <View style={styles.profileInfoSection}>
-          <Typography
-            style={styles.textCenter}
-            type={Typography.types.headline2}
-            text={user.displayName}
-            systemWeight={Typography.weights.semibold}
-          />
-          <Typography
-            style={styles.textCenter}
-            type={Typography.types.subheading}
-            text={strings.formatString(
-              strings.user_profile.joined_in,
-              dayjs(user.createdAt).format(strings.dates.format_month_year),
-            )}
-          />
+  const renderListHeader = useCallback(() => {
+    const joinedAt = strings.formatString(
+      strings.user_profile.joined_in,
+      dayjs(user.createdAt).format(strings.dates.format_month_year),
+    )
+    return (
+      <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
+        {photoURL
+          ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
+          : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
+        <View style={styles.profileInfos}>
+          <View style={styles.profileInfoSection}>
+            <Typography
+              style={styles.textCenter}
+              type={Typography.types.headline2}
+              text={user.displayName}
+              systemWeight={Typography.weights.semibold}
+            />
+            <Typography
+              style={styles.textCenter}
+              type={Typography.types.subheading}
+              text={user.username ? `@${user.username}` : joinedAt}
+            />
+          </View>
+          <View style={styles.profileInfoSection}>
+            <Stats
+              postsCount={user.posts.length}
+              commentsCount={user.comments.length}
+              reactionsCount={user.reactions.length}
+              style={styles.stats}
+            />
+          </View>
         </View>
-        <View style={styles.profileInfoSection}>
-          <Stats
-            postsCount={user.posts.length}
-            commentsCount={user.comments.length}
-            reactionsCount={user.reactions.length}
-            style={styles.stats}
-          />
-        </View>
-      </View>
-    </Pressable>
-  ), [onListHeaderPress, photoURL, styles, user])
+        <Bio text={user.bio} />
+      </Pressable>
+    )
+  }, [onListHeaderPress, photoURL, styles, user])
 
   return (
     <View style={styles.wrapper}>

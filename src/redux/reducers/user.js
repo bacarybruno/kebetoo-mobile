@@ -16,6 +16,8 @@ const initialState = {
     displayName: ' ',
     photoURL: null,
     isLoggedIn: false,
+    bio: null,
+    username: null,
   },
   hiddenPosts: [],
   blockedAuthors: [],
