@@ -8,6 +8,8 @@ export default (colors) => StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     paddingHorizontal: metrics.marginHorizontal,
+  },
+  content: {
     marginBottom: metrics.marginVertical,
   },
   avatarOverlay: {

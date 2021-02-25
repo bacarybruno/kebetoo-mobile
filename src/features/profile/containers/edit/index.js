@@ -164,68 +164,70 @@ const EditProfile = ({ route, navigation }) => {
         )}
       />
 
-      <View style={[styles.section, styles.avatar]}>
-        <TouchableAvatar
-          profile={profile}
-          onPress={onAvatarOptions}
-          isLoading={avatarLoading}
-        />
-      </View>
+      <View style={styles.content}>
+        <View style={[styles.section, styles.avatar]}>
+          <TouchableAvatar
+            profile={profile}
+            onPress={onAvatarOptions}
+            isLoading={avatarLoading}
+          />
+        </View>
 
-      <View style={styles.section}>
-        <OutlinedTextInput
-          onChange={onChangeText}
-          placeholder={profile.displayName}
-          text={profile.displayName}
-          label={strings.auth.fullname}
-          borderless={false}
-          maxLength={env.maxLength.fullname}
-          fieldName={fieldNames.fullName}
-          error={errors[fieldNames.fullName]}
-          editable={!isLoading}
-        />
-      </View>
+        <View style={styles.section}>
+          <OutlinedTextInput
+            onChange={onChangeText}
+            placeholder={profile.displayName}
+            text={profile.displayName}
+            label={strings.auth.fullname}
+            borderless={false}
+            maxLength={env.maxLength.fullname}
+            fieldName={fieldNames.fullName}
+            error={errors[fieldNames.fullName]}
+            editable={!isLoading}
+          />
+        </View>
 
-      <View style={styles.section}>
-        <OutlinedTextInput
-          label={strings.auth.username}
-          onChange={onChangeText}
-          placeholder={strings.auth.username}
-          text={profile.username}
-          borderless={false}
-          inputRef={usernameRef}
-          maxLength={env.maxLength.username}
-          fieldName={fieldNames.username}
-          error={errors[fieldNames.username]}
-          editable={!isLoading}
-        />
-      </View>
+        <View style={styles.section}>
+          <OutlinedTextInput
+            label={strings.auth.username}
+            onChange={onChangeText}
+            placeholder={strings.auth.username}
+            text={profile.username}
+            borderless={false}
+            inputRef={usernameRef}
+            maxLength={env.maxLength.username}
+            fieldName={fieldNames.username}
+            error={errors[fieldNames.username]}
+            editable={!isLoading}
+          />
+        </View>
 
-      <View style={styles.section}>
-        <OutlinedTextInput
-          label={strings.auth.email}
-          placeholder={strings.auth.email}
-          text={profile.email}
-          borderless={false}
-          editable={false}
-          maxLength={env.maxLength.email}
-          fieldName={fieldNames.email}
-          error={errors[fieldNames.email]}
-        />
-      </View>
+        <View style={styles.section}>
+          <OutlinedTextInput
+            label={strings.auth.email}
+            placeholder={strings.auth.email}
+            text={profile.email}
+            borderless={false}
+            editable={false}
+            maxLength={env.maxLength.email}
+            fieldName={fieldNames.email}
+            error={errors[fieldNames.email]}
+          />
+        </View>
 
-      <View style={styles.section}>
-        <OutlinedTextInput
-          label={strings.profile.bio}
-          text={profile.bio}
-          onChange={onChangeText}
-          placeholder={strings.profile.bio_placeholder}
-          borderless={false}
-          maxLength={env.maxLength.bio}
-          fieldName={fieldNames.bio}
-          error={errors[fieldNames.bio]}
-          editable={!isLoading}
-        />
+        <View style={styles.section}>
+          <OutlinedTextInput
+            label={strings.profile.bio}
+            text={profile.bio}
+            onChange={onChangeText}
+            placeholder={strings.profile.bio_placeholder}
+            borderless={false}
+            maxLength={env.maxLength.bio}
+            fieldName={fieldNames.bio}
+            error={errors[fieldNames.bio]}
+            editable={!isLoading}
+          />
+        </View>
       </View>
     </KeyboardAwareScrollView>
   )
