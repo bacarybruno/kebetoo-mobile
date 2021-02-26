@@ -20,6 +20,7 @@ const routes = {
   CAMERA_ROLL_PICKER: 'route:camera_roll_picker',
   PROFILE: 'route:profile',
   EDIT_PROFILE: 'route:edit_profile',
+  LANGUAGES: 'route:languages',
   CREATE_ROOM: 'route:create_room',
   ROOM: 'route:room',
 }

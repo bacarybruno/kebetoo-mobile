@@ -175,7 +175,7 @@ const AccountSection = React.memo(({
   )
 })
 
-const PreferencesSection = React.memo(({ updateAppearance }) => {
+const PreferencesSection = React.memo(({ updateAppearance, openLanguages }) => {
   const styles = useAppStyles(createThemedStyles)
   const { theme } = useSelector(appSelector)
 
@@ -211,7 +211,7 @@ const PreferencesSection = React.memo(({ updateAppearance }) => {
         icon="language"
         text={strings.profile.language}
         message={strings.languages[strings.getLanguage()]}
-        onPress={warnNotImplemented}
+        onPress={openLanguages}
       />
     </View>
   )
@@ -362,6 +362,10 @@ const ProfilePage = React.memo(() => {
     navigate(routes.EDIT_PROFILE, { field: 'username' })
   }, [])
 
+  const openLanguages = useCallback(() => {
+    navigate(routes.LANGUAGES)
+  }, [])
+
   return (
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -382,7 +386,10 @@ const ProfilePage = React.memo(() => {
           />
         </View>
         <ProfileSection managePosts={managePosts} />
-        <PreferencesSection updateAppearance={updateAppearance} />
+        <PreferencesSection
+          updateAppearance={updateAppearance}
+          openLanguages={openLanguages}
+        />
         <AppInfosSection
           name={DeviceInfo.getApplicationName()}
           version={DeviceInfo.getVersion()}

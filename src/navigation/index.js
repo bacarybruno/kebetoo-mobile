@@ -20,6 +20,7 @@ import SignInPage from '@app/features/account/containers/signin'
 import HomePage from '@app/features/home/containers'
 import RoomsPage from '@app/features/rooms/containers'
 import CreateRoomPage from '@app/features/rooms/containers/create'
+import LanguagesPage from '@app/features/languages/containers'
 import RoomPage from '@app/features/rooms/containers/room'
 import NotificationsPage from '@app/features/notifications/containers'
 import ProfilePage from '@app/features/profile/containers'
@@ -38,6 +39,7 @@ import {
 
 import routes from './routes'
 import createThemedStyles from './styles'
+import { strings } from '@app/config'
 
 enableScreens()
 
@@ -100,10 +102,10 @@ const defaultTabOptions = ({ route }) => ({
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {
-      [routes.HOME]: HomePage.routeOptions.title,
-      [routes.ROOMS]: RoomsPage.routeOptions.title,
-      [routes.SEARCH]: SearchPage.routeOptions.title,
-      [routes.NOTIFICATIONS]: NotificationsPage.routeOptions.title,
+      [routes.HOME]: strings.tabs.home,
+      [routes.ROOMS]: strings.tabs.rooms,
+      [routes.SEARCH]: strings.tabs.search,
+      [routes.NOTIFICATIONS]: strings.tabs.notifications,
     }
     return (
       <Typography
@@ -207,6 +209,7 @@ export const loggedInPages = [
   <Stack.Screen component={EditProfilePage} name={routes.EDIT_PROFILE} />,
   <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
   <Stack.Screen component={RoomPage} name={routes.ROOM} />,
+  <Stack.Screen component={LanguagesPage} name={routes.LANGUAGES} />,
 ]
 
 // Main Section

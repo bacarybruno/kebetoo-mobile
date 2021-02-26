@@ -15,4 +15,9 @@ const strings = new LocalizedStrings({
 dayjs.locale(strings.getLanguage())
 dayjs.extend(relativeTime)
 
+export const updateAppLocale = (locale) => {
+  dayjs.locale(locale)
+  strings.setLanguage(locale)
+}
+
 export default strings
