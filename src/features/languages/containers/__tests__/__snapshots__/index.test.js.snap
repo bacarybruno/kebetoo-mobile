@@ -387,3 +387,18 @@ exports[`renders LanguagesPage 1`] = `
   </RCTScrollView>
 </View>
 `;
+
+exports[`updates language 1`] = `
+Array [
+  Array [
+    "Switching language",
+    "Changing the language will reload the app. It will only take a few moments.",
+    Array [
+      Object {
+        "onPress": [Function],
+        "text": "OK",
+      },
+    ],
+  ],
+]
+`;
