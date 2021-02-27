@@ -13,7 +13,7 @@ const givenCreatePost = setupTest(CreatePost)({
       if (params.headerRight) params.headerRight()
     }),
     dispatch: jest.fn(),
-    addListener: jest.fn().mockReturnValue(jest.fn()),
+    addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
   },
   route: {
     params: {

@@ -22,7 +22,7 @@ reactNavigation.useRoute = jest.fn().mockReturnValue({
 reactNavigation.useNavigation = () => ({
   navigate: jest.fn(),
   setOptions: jest.fn(),
-  addListener: jest.fn(),
+  addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
 })
 
 beforeEach(jest.clearAllMocks)
