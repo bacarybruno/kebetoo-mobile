@@ -8,7 +8,7 @@
     "android:cast": "scrcpy -m 1080 -T",
     "android:build": "react-native run-android --variant=release",
     "gradlew:clean": "cd android && ./gradlew clean && cd ..",
-    "ios:dev": "cd ios && pod install && cd .. && react-native run-ios --simulator='iPhone 5s'",
+    "ios:dev": "cd ios && pod install && cd .. && react-native run-ios",
     "ios:build": "cd ios && pod install && cd .. && react-native run-ios --configuration Release",
     "develop": "react-native start",
     "test": "jest",

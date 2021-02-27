@@ -4,7 +4,7 @@ import React, {
 import { AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import AppNavigation from '@app/navigation'
 import {
@@ -12,9 +12,10 @@ import {
 } from '@app/shared/hooks'
 import { SafeAreaContext } from '@app/shared/contexts'
 import { localeSelector } from '@app/redux/selectors'
+import strings, { updateAppLocale } from '@app/config/strings'
+import { SET_LOCALE } from '@app/redux/types'
 
 import createThemedStyles from './styles'
-import { updateAppLocale } from '@app/config/strings'
 
 LogBox.ignoreLogs([
   '`setBackgroundColor` is only available on Android',
@@ -24,6 +25,7 @@ enableScreens()
 const RootContainer = () => {
   const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
+  const dispatch = useDispatch()
 
   const styles = useAppStyles(createThemedStyles)
   const { colors, resetAppBars } = useAppColors()
@@ -58,7 +60,11 @@ const RootContainer = () => {
   }, [colors])
 
   useEffect(() => {
-    updateAppLocale(locale)
+    if (locale) {
+      updateAppLocale(locale)
+    } else {
+      dispatch({ type: SET_LOCALE, payload: strings.getInterfaceLanguage() })
+    }
   }, [locale])
 
   const safeAreaCtxValue = useMemo(() => ({
