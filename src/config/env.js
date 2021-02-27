@@ -7,7 +7,7 @@ export default {
   googleSigninWebClientId: GOOGLE_SIGNIN_WEB_CLIENT_ID,
   maxLength: {
     fullname: 60,
-    username: 24,
+    username: 20,
     email: 254,
     password: 128,
     bio: 160,

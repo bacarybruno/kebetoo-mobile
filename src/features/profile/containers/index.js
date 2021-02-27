@@ -158,7 +158,7 @@ const AccountSection = React.memo(({
       <IconButton
         icon="ios-at"
         text={strings.profile.edit_username}
-        message={username ? `@${username}` : strings.profile.no_username_defined}
+        message={username || strings.profile.no_username_defined}
         onPress={editUsername}
       />
       <IconButton

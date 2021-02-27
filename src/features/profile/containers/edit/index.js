@@ -7,6 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import * as yup from 'yup'
 import auth from '@react-native-firebase/auth'
 import { useDispatch } from 'react-redux'
+import twitterText from 'twitter-text'
 
 import { AppHeader, Avatar, OutlinedButton } from '@app/shared/components'
 import { env, strings } from '@app/config'
@@ -42,6 +43,14 @@ export const fieldNames = {
   username: 'username',
   bio: 'bio',
 }
+
+yup.addMethod(yup.string, 'usernameValidator', function (message) {
+  return this.test('validate-username', message, function (value) {
+    const { path, createError } = this;
+    const username = value.startsWith('@') ? value : `@${value}`
+    return twitterText.isValidUsername(username) || createError({ path, message })
+  })
+})
 
 const EditProfile = ({ route, navigation }) => {
   const [avatarLoading, setAvatarLoading] = useState(false)
@@ -82,14 +91,28 @@ const EditProfile = ({ route, navigation }) => {
     ),
     [fieldNames.username]: yup.string().required(
       strings.formatString(strings.errors.required_field, strings.auth.username),
+    ).usernameValidator(
+      strings.formatString(strings.errors.invalid_field, strings.auth.username),
     ),
     [fieldNames.bio]: yup.string().optional().nullable(),
   })
 
-  const onChangeText = useCallback((value, field) => {
+  const formatUsername = useCallback((val) => {
+    value = val.toLowerCase()
+    if (value.length > 0 && value[0] !== '@') {
+      value = '@' + value
+    }
+    return value
+  }, [])
+
+  const onChangeText = useCallback((val, field) => {
+    let value = val
+    if (field === fieldNames.username) {
+      value = formatUsername(value)
+    }
     dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } })
     dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
-  }, [])
+  }, [formatUsername])
 
   const onSubmit = useCallback(async () => {
     try {
@@ -101,8 +124,6 @@ const EditProfile = ({ route, navigation }) => {
         displayName: values[fieldNames.fullName] || profile.displayName,
         bio: values[fieldNames.bio] || null,
       }
-
-      payload.username = payload.username.replace('@', '').toLowerCase()
 
       const foundAuthors = await api.authors.checkUsername(payload.username)
       if (foundAuthors.length > 0 && foundAuthors[0].id !== profile.uid) {
@@ -184,6 +205,7 @@ const EditProfile = ({ route, navigation }) => {
             fieldName={fieldNames.fullName}
             error={errors[fieldNames.fullName]}
             editable={!isLoading}
+            value={values[fieldNames.fullName]}
           />
         </View>
 
@@ -199,6 +221,7 @@ const EditProfile = ({ route, navigation }) => {
             fieldName={fieldNames.username}
             error={errors[fieldNames.username]}
             editable={!isLoading}
+            value={values[fieldNames.username]}
           />
         </View>
 
@@ -212,6 +235,7 @@ const EditProfile = ({ route, navigation }) => {
             maxLength={env.maxLength.email}
             fieldName={fieldNames.email}
             error={errors[fieldNames.email]}
+            value={values[fieldNames.email]}
           />
         </View>
 

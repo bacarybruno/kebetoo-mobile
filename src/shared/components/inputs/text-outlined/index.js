@@ -21,6 +21,7 @@ export const TextOutlinedInput = ({
   wrapperStyle,
   error,
   fieldName,
+  ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
@@ -55,6 +56,7 @@ export const TextOutlinedInput = ({
           Math.floor(metrics.screenHeight / 75),
           maxNumberOfLines,
         )}
+        {...otherProps}
       />
     </>
   )

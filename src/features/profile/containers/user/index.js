@@ -167,7 +167,7 @@ const UserProfile = ({ route, navigation }) => {
             <Typography
               style={styles.textCenter}
               type={Typography.types.subheading}
-              text={user.username ? `@${user.username}` : joinedAt}
+              text={user.username || joinedAt}
             />
           </View>
           <View style={styles.profileInfoSection}>

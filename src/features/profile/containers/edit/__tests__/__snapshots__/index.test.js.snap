@@ -453,7 +453,7 @@ exports[`renders EditProfile 1`] = `
                 ]
               }
               underlineColorAndroid="transparent"
-              value={null}
+              value="Bruno Bodian"
             />
           </View>
         </View>
@@ -532,7 +532,7 @@ exports[`renders EditProfile 1`] = `
               autoFocus={false}
               blurOnSubmit={false}
               editable={true}
-              maxLength={24}
+              maxLength={20}
               multiline={true}
               numberOfLines={1}
               onBlur={[Function]}
@@ -566,7 +566,6 @@ exports[`renders EditProfile 1`] = `
                 ]
               }
               underlineColorAndroid="transparent"
-              value={null}
             />
           </View>
         </View>
@@ -680,7 +679,7 @@ exports[`renders EditProfile 1`] = `
                 ]
               }
               underlineColorAndroid="transparent"
-              value={null}
+              value="bacarybruno@kebetoo.com"
             />
           </View>
         </View>

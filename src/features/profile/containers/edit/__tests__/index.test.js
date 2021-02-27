@@ -39,7 +39,7 @@ it('updates profile', async () => {
 
   expect(api.authors.update).toBeCalledTimes(1)
   expect(api.authors.update).toBeCalledWith(expect.any(String), {
-    username: 'jestuser',
+    username: '@jestuser',
     displayName: 'jest',
     bio: 'Hello from the test side!',
   })
