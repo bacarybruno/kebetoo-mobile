@@ -24,6 +24,7 @@ const locales = Object.freeze({
     not_implemented_title: 'Information',
     not_implemented_description: 'This feature has not been enabled yet. It will be available in the next versions of Kebetoo.',
     create: 'Create',
+    ok: 'Ok',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -114,6 +115,9 @@ const locales = Object.freeze({
   languages: {
     en: 'English',
     fr: 'French',
+    languages: 'Languages',
+    switching_language: 'Switching language',
+    switching_language_reload: 'Changing the language will reload the app. It will only take a few moments.',
   },
   comments: {
     no_content: 'Be the first to add a comment! 👇',

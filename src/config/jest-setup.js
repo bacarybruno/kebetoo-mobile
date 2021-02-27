@@ -40,6 +40,7 @@ const mockedStoreState = {
   },
   appReducer: {
     theme: 'system',
+    locale: 'fr',
   },
 }
 // helper to setup unit tests

@@ -4,14 +4,17 @@ import React, {
 import { AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
+import { useSelector } from 'react-redux'
 
 import AppNavigation from '@app/navigation'
 import {
   useAnalytics, useAppColors, useAppStyles, useNotifications,
 } from '@app/shared/hooks'
 import { SafeAreaContext } from '@app/shared/contexts'
+import { localeSelector } from '@app/redux/selectors'
 
 import createThemedStyles from './styles'
+import { updateAppLocale } from '@app/config/strings'
 
 LogBox.ignoreLogs([
   '`setBackgroundColor` is only available on Android',
@@ -26,6 +29,7 @@ const RootContainer = () => {
   const { colors, resetAppBars } = useAppColors()
   const [topSafeAreaColor, updateTopSafeAreaColor] = useState(colors.background)
   const [bottomSafeAreaColor, updateBottomSafeAreaColor] = useState(colors.background)
+  const locale = useSelector(localeSelector)
 
   useEffect(() => {
     const appStateChange = (state) => {
@@ -53,6 +57,10 @@ const RootContainer = () => {
     resetStatusBars()
   }, [colors])
 
+  useEffect(() => {
+    updateAppLocale(locale)
+  }, [locale])
+
   const safeAreaCtxValue = useMemo(() => ({
     updateTopSafeAreaColor,
     updateBottomSafeAreaColor,
@@ -64,7 +72,7 @@ const RootContainer = () => {
       <RNSafeAreaView style={[styles.topSafeArea, { backgroundColor: topSafeAreaColor }]} />
       <SafeAreaProvider>
         <SafeAreaView style={styles.wrapper}>
-          <AppNavigation />
+          <AppNavigation key={`lang-${locale}`} />
         </SafeAreaView>
       </SafeAreaProvider>
       <RNSafeAreaView style={[styles.bottomSafeArea, { backgroundColor: bottomSafeAreaColor }]} />

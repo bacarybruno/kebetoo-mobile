@@ -12,7 +12,7 @@ const locales = Object.freeze({
     save: 'Valider',
     share: 'Partager',
     confirm: 'Confirmer',
-    system_default: 'Thème par défaut du système',
+    system_default: 'Réglage par défaut',
     audio: 'Audio',
     new: 'Nouveau',
     on: 'Actif',
@@ -24,6 +24,7 @@ const locales = Object.freeze({
     not_implemented_title: 'Information',
     not_implemented_description: 'Cette fonctionnalité n\'a pas encore été activée. Elle le sera dans les prochaines versions de Kebetoo.',
     create: 'Créer',
+    ok: 'Ok',
   },
   onboarding: {
     screen_one_title: 'Rejoignez Notre Réseau Social',
@@ -114,6 +115,9 @@ const locales = Object.freeze({
   languages: {
     en: 'Anglais',
     fr: 'Français',
+    languages: 'Langues',
+    switching_language: 'Changement de langues',
+    switching_language_reload: 'Le changement de la langue rechargera l\'application. Cela ne prendra que quelques instants.',
   },
   comments: {
     no_content: 'Soyez le premier à ajouter un commentaire ! 👇',
@@ -148,7 +152,7 @@ const locales = Object.freeze({
     write_post: 'Editer et partager',
   },
   search: {
-    search: 'Search',
+    search: 'Recherche',
     placeholder: 'Rechercher...',
     posts_tab: 'Posts',
     users_tab: 'Utilisateurs',
