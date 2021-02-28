@@ -8,8 +8,10 @@ jest.mock('@expo/react-native-action-sheet', () => ({
   }),
 }))
 
+beforeEach(jest.clearAllMocks)
+
 const givenBottomSheet = () => {
-  const rendered = setupHook(() => useBottomSheet())
+  const rendered = setupHook(useBottomSheet)
   return { bottomSheet: rendered.result.current, rerender: rendered.rerender }
 }
 
