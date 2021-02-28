@@ -5,7 +5,6 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import { useActionSheet } from '@expo/react-native-action-sheet'
 import DeviceInfo from 'react-native-device-info'
 
 import {
@@ -16,8 +15,9 @@ import { api } from '@app/shared/services'
 import * as types from '@app/redux/types'
 import { appSelector, userStatsSelector } from '@app/redux/selectors'
 import { strings } from '@app/config'
-import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-import { rgbaToHex } from '@app/theme/colors'
+import {
+  useAppColors, useAppStyles, useBottomSheet, useUser,
+} from '@app/shared/hooks'
 import { actionTypes } from '@app/features/post/containers/create'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
 import { warnNotImplemented } from '@app/shared/components/no-content'
@@ -277,9 +277,8 @@ const ProfilePage = React.memo(() => {
   const [reactionsCount, setReactionsCount] = useState(stats.reactions)
 
   const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
 
-  const { showActionSheetWithOptions } = useActionSheet()
+  const { showAppearanceOptions } = useBottomSheet()
 
   const dispatch = useDispatch()
 
@@ -319,34 +318,17 @@ const ProfilePage = React.memo(() => {
     })
   }, [])
 
-  const updateAppearance = useCallback(() => {
-    const bottomSheetItems = [{
-      title: strings.general.system_default,
-    }, {
-      title: strings.profile.dark,
-    }, {
-      title: strings.profile.light,
-    }, {
-      title: strings.general.cancel,
-    }]
+  const updateAppearance = useCallback(async () => {
+    const actionIndex = await showAppearanceOptions()
 
-    showActionSheetWithOptions({
-      options: bottomSheetItems.map((item) => item.title),
-      cancelButtonIndex: bottomSheetItems.length - 1,
-      title: strings.general.options,
-      textStyle: { color: colors.textPrimary },
-      titleTextStyle: { color: colors.textSecondary },
-      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-    }, (index) => {
-      if (index === 0) {
-        dispatch({ type: types.SET_THEME, payload: 'system' })
-      } else if (index === 1) {
-        dispatch({ type: types.SET_THEME, payload: 'dark' })
-      } else if (index === 2) {
-        dispatch({ type: types.SET_THEME, payload: 'light' })
-      }
-    })
-  }, [colors, dispatch, showActionSheetWithOptions])
+    if (actionIndex === 0) {
+      dispatch({ type: types.SET_THEME, payload: 'system' })
+    } else if (actionIndex === 1) {
+      dispatch({ type: types.SET_THEME, payload: 'dark' })
+    } else if (actionIndex === 2) {
+      dispatch({ type: types.SET_THEME, payload: 'light' })
+    }
+  }, [dispatch, showAppearanceOptions])
 
   const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
 
@@ -356,15 +338,15 @@ const ProfilePage = React.memo(() => {
 
   const editProfile = useCallback(() => {
     navigate(routes.EDIT_PROFILE)
-  }, [])
+  }, [navigate])
 
   const editUsername = useCallback(() => {
     navigate(routes.EDIT_PROFILE, { field: 'username' })
-  }, [])
+  }, [navigate])
 
   const openLanguages = useCallback(() => {
     navigate(routes.LANGUAGES)
-  }, [])
+  }, [navigate])
 
   return (
     <View style={styles.wrapper}>

@@ -87,7 +87,7 @@ describe('post options', () => {
     })
     expect(useActionSheet().showActionSheetWithOptions).toBeCalledTimes(1)
     expect(useActionSheet().showActionSheetWithOptions.mock.calls[0]).toMatchSnapshot()
-    useActionSheet().showActionSheetWithOptions.mock.calls[0][1](0)
+    await useActionSheet().showActionSheetWithOptions.mock.calls[0][1](0)
     expect(props.navigation.navigate).toBeCalledTimes(1)
     expect(props.navigation.navigate).toBeCalledWith(routes.CREATE_POST, {
       action: actionTypes.EDIT,

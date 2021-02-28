@@ -8,8 +8,6 @@ import {
 import { useSelector, useDispatch } from 'react-redux'
 import ShareMenu from 'react-native-share-menu'
 import RNFetchBlob from 'rn-fetch-blob'
-import { useActionSheet } from '@expo/react-native-action-sheet'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 import Snackbar from 'react-native-snackbar'
 
 import * as types from '@app/redux/types'
@@ -23,9 +21,8 @@ import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
 import { AppHeader, SegmentedControl } from '@app/shared/components'
 import { actionTypes } from '@app/features/post/containers/create'
 import {
-  useAnalytics, useAppColors, useAppStyles, usePosts, useUser,
+  useAnalytics, useAppColors, useAppStyles, useBottomSheet, usePosts, useUser,
 } from '@app/shared/hooks'
-import { rgbaToHex } from '@app/theme/colors'
 
 import createThemedStyles from './styles'
 
@@ -45,7 +42,7 @@ const HomePage = ({ navigation }) => {
 
   const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
-  const { showActionSheetWithOptions } = useActionSheet()
+  const { showFeedPostsOptions } = useBottomSheet()
 
   const handleShare = useCallback(async (item) => {
     if (!item?.data) return
@@ -133,54 +130,19 @@ const HomePage = ({ navigation }) => {
     })
   }, [dispatch])
 
-  const showPostOptions = useCallback((post) => {
+  const showPostOptions = useCallback(async (post) => {
     // user should not be able to block his own posts
     if (post.author.id === profile.uid) return
 
-    const bottomSheetItems = [{
-      title: strings.home.hide_post,
-      icon: 'eye-off-outline',
-    }, {
-      title: strings.home.report_post,
-      icon: 'flag-outline',
-    }, {
-      title: strings.formatString(
-        strings.home.block_author,
-        post.author.displayName.split(' ')[0],
-      ),
-      icon: 'remove-circle-outline',
-    }, {
-      title: strings.general.cancel,
-      icon: 'md-close',
-    }]
-
-    const cancelButtonIndex = bottomSheetItems.length - 1
-    const destructiveButtonIndex = bottomSheetItems.length - 2
-    showActionSheetWithOptions({
-      options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map((item) => (
-        <Ionicon
-          name={item.icon}
-          size={24}
-          color={colors.textPrimary}
-        />
-      )),
-      cancelButtonIndex,
-      destructiveButtonIndex,
-      title: strings.general.actions,
-      textStyle: { color: colors.textPrimary },
-      titleTextStyle: { color: colors.textSecondary },
-      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-    }, (index) => {
-      if (index === 0) {
-        hidePost(post)
-      } else if (index === 1) {
-        reportPost(post)
-      } else if (index === 2) {
-        blockAuthor(post)
-      }
-    })
-  }, [profile, colors, showActionSheetWithOptions, hidePost, reportPost, blockAuthor])
+    const actionIndex = await showFeedPostsOptions(post)
+    if (actionIndex === 0) {
+      hidePost(post)
+    } else if (actionIndex === 1) {
+      reportPost(post)
+    } else if (actionIndex === 2) {
+      blockAuthor(post)
+    }
+  }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor])
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
@@ -223,7 +185,7 @@ const HomePage = ({ navigation }) => {
         />
       </View>
     )
-  }, [onSelectFilter, styles.header, postsSort])
+  }, [styles, onSelectFilter, postsSort])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

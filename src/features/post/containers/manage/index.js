@@ -2,21 +2,18 @@ import React, { useEffect, useState, useCallback } from 'react'
 import {
   View, SectionList, Alert, LogBox,
 } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'
-import { useActionSheet } from '@expo/react-native-action-sheet'
 import ActionButton from 'react-native-action-button'
 import Snackbar from 'react-native-snackbar'
 
 import { api } from '@app/shared/services'
 import {
-  HeaderBack, Typography, NoContent, Badge, AppHeader,
+  Typography, NoContent, Badge, AppHeader,
 } from '@app/shared/components'
-import { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import {
-  useAppColors, useAppStyles, usePosts, useUser,
+  useAppColors, useAppStyles, useBottomSheet, usePosts, useUser,
 } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
@@ -36,17 +33,6 @@ export const NoPosts = () => (
   <NoContent title={strings.general.no_content} text={strings.manage_posts.no_content} />
 )
 
-const bottomSheetItems = [{
-  title: strings.manage_posts.edit_post,
-  icon: 'md-create',
-}, {
-  title: strings.manage_posts.delete_post,
-  icon: 'ios-trash',
-}, {
-  title: strings.general.cancel,
-  icon: 'md-close',
-}]
-
 const ManagePostsPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
@@ -62,7 +48,7 @@ const ManagePostsPage = ({ route, navigation }) => {
   const { params } = route
 
 
-  const { showActionSheetWithOptions } = useActionSheet()
+  const { showManagePostsOptions } = useBottomSheet()
   const { navigate } = navigation
   const dateFormat = 'YYYY-MM'
 
@@ -161,32 +147,15 @@ const ManagePostsPage = ({ route, navigation }) => {
     )
   }, [confirmDeletePost])
 
-  const showPostOptions = useCallback((post) => {
-    const cancelButtonIndex = bottomSheetItems.length - 1
-    const destructiveButtonIndex = bottomSheetItems.length - 2
-    showActionSheetWithOptions({
-      options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map((item, index) => (
-        <Ionicon
-          name={item.icon}
-          size={24}
-          color={index === destructiveButtonIndex ? colors.danger : colors.textPrimary}
-        />
-      )),
-      cancelButtonIndex,
-      destructiveButtonIndex,
-      title: strings.general.actions,
-      textStyle: { color: colors.textPrimary },
-      titleTextStyle: { color: colors.textSecondary },
-      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-    }, (index) => {
-      if (index === 0) {
-        editPost(post)
-      } else if (index === 1) {
-        deletePost(post)
-      }
-    })
-  }, [colors, deletePost, editPost, showActionSheetWithOptions])
+  const showPostOptions = useCallback(async (post) => {
+    const actionIndex = await showManagePostsOptions()
+
+    if (actionIndex === 0) {
+      editPost(post)
+    } else if (actionIndex === 1) {
+      deletePost(post)
+    }
+  }, [deletePost, editPost, showManagePostsOptions])
 
   const userToAuthor = ({ displayName, uid, photoURL }) => ({
     displayName,
@@ -195,14 +164,14 @@ const ManagePostsPage = ({ route, navigation }) => {
   })
 
   const renderItem = useCallback(({ item }) => {
-    const badge = params?.action === actionTypes.EDIT
-      ? strings.general.edited
-      : strings.general.new
+    // const badge = params?.action === actionTypes.EDIT
+    //   ? strings.general.edited
+    //   : strings.general.new
     return (
       <BasicPost
         onOptions={() => showPostOptions(item)}
         author={userToAuthor(profile)}
-        badge={params?.payload === item.id ? badge : undefined}
+        // badge={params?.payload === item.id ? badge : undefined}
         originalAuthor={
           item.repost
             ? authors[item.repost.author]
