@@ -164,14 +164,14 @@ const ManagePostsPage = ({ route, navigation }) => {
   })
 
   const renderItem = useCallback(({ item }) => {
-    const badge = params?.action === actionTypes.EDIT
-      ? strings.general.edited
-      : strings.general.new
+    // const badge = params?.action === actionTypes.EDIT
+    //   ? strings.general.edited
+    //   : strings.general.new
     return (
       <BasicPost
         onOptions={() => showPostOptions(item)}
         author={userToAuthor(profile)}
-        badge={params?.payload === item.id ? badge : undefined}
+        // badge={params?.payload === item.id ? badge : undefined}
         originalAuthor={
           item.repost
             ? authors[item.repost.author]

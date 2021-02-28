@@ -59,7 +59,7 @@ const useBottomSheet = () => {
         if (index === destructiveButtonIndex) {
           return createBottomSheetIcon(colors.danger)(item)
         }
-        return createBottomSheetIcon(colors.textPrimary)(index)
+        return createBottomSheetIcon(colors.textPrimary)(item)
       }),
       cancelButtonIndex: bottomSheetItems.length - 1,
       destructiveButtonIndex: bottomSheetItems.length - 2,
@@ -78,11 +78,17 @@ const useBottomSheet = () => {
       icon: 'md-close',
     }]
 
+    const destructiveButtonIndex = bottomSheetItems.length - 2
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
+      icons: bottomSheetItems.map((item, index) => {
+        if (index === destructiveButtonIndex) {
+          return createBottomSheetIcon(colors.danger)(item)
+        }
+        return createBottomSheetIcon(colors.textPrimary)(item)
+      }),
       cancelButtonIndex: bottomSheetItems.length - 1,
-      destructiveButtonIndex: bottomSheetItems.length - 2,
+      destructiveButtonIndex,
     })
   }, [colors.textPrimary, showActionSheet])
 
