@@ -1,14 +1,11 @@
 /* eslint-disable radix */
-import React, { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { useActionSheet } from '@expo/react-native-action-sheet'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { rgbaToHex } from '@app/theme/colors'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
 import { api } from '@app/shared/services'
-import { useAnalytics, useAppColors } from '@app/shared/hooks'
+import { useAnalytics, useBottomSheet } from '@app/shared/hooks'
 
 import { actionTypes } from '../containers/create'
 
@@ -31,10 +28,6 @@ export const bottomSheetItems = [{
   icon: 'close-outline',
 }]
 
-const createBottomSheetIcon = (color) => (item) => (
-  <Ionicon name={item.icon} size={24} color={color} />
-)
-
 const countReactions = (post, type) => (
   post.reactions.filter((r) => r.type === type).length
 )
@@ -48,11 +41,9 @@ const useReactions = ({
     setPost({ ...givenPost })
   }, [givenPost])
 
-  const { showActionSheetWithOptions } = useActionSheet()
+  const { showSharePostOptions } = useBottomSheet()
   const { navigate } = useNavigation()
   const { trackSelectPost } = useAnalytics()
-
-  const { colors } = useAppColors()
 
   const findUserReaction = useCallback((reaction) => reaction.author === author, [author])
 
@@ -153,30 +144,22 @@ const useReactions = ({
     }
   }, [post.reactions, findUserReaction, createReaction, deleteReaction, editReaction])
 
-  const handlePostShare = useCallback(() => {
+  const handlePostShare = useCallback(async () => {
     if (post.author.id === author) return
+    const actionIndex = await showSharePostOptions()
+
     // if ((post.repost?.author === author) === true) return
     const repostId = post.repost?.id || post.id
-    showActionSheetWithOptions({
-      options: bottomSheetItems.map((item) => item.title),
-      icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
-      cancelButtonIndex: bottomSheetItems.length - 1,
-      title: strings.general.share,
-      textStyle: { color: colors.textPrimary },
-      titleTextStyle: { color: colors.textSecondary },
-      containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
-    }, async (index) => {
-      if (index === 0) {
-        await api.posts.create({ author, repost: repostId })
-        navigate(routes.MANAGE_POSTS)
-      } else if (index === 1) {
-        navigate(routes.CREATE_POST, {
-          action: actionTypes.SHARE,
-          post: repostId,
-        })
-      }
-    })
-  }, [author, colors, navigate, post.author.id, post.id, post.repost, showActionSheetWithOptions])
+    if (actionIndex === 0) {
+      await api.posts.create({ author, repost: repostId })
+      navigate(routes.MANAGE_POSTS)
+    } else if (actionIndex === 1) {
+      navigate(routes.CREATE_POST, {
+        action: actionTypes.SHARE,
+        post: repostId,
+      })
+    }
+  }, [author, navigate, post, showSharePostOptions])
 
   const onReaction = useCallback(async (type) => {
     switch (type) {
