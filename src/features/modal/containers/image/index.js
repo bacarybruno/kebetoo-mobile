@@ -11,6 +11,7 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { rgbaToHex } from '@app/theme/colors'
 
 import createThemedStyles from './styles'
+import PinchableImage from '@app/shared/components/pinchable-image'
 
 export const routeOptions = (colors) => ({
   title: '',
@@ -77,9 +78,11 @@ const ImageModal = ({ route, navigation }) => {
   return (
     <TouchableWithoutFeedback onPress={onShowControls} testID="pressable">
       <View style={styles.wrapper}>
-        <Image
+        <PinchableImage
           source={{ uri: sourceUri }}
           style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
+          enableMove={false}
+          shouldResetScale
         />
       </View>
     </TouchableWithoutFeedback>

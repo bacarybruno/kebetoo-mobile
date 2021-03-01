@@ -185,7 +185,7 @@ const locales = Object.freeze({
   create_room: {
     create_room: 'Créer une room',
     room_name: 'Nom de la room (requis)',
-    room_theme: 'Selectionnez le theme principal',
+    room_theme: 'Selectionnez le thème principal',
   },
   room: {
     type_message: 'Message...',

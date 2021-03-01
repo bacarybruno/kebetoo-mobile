@@ -8,6 +8,7 @@ import { env } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemeColors from './styles'
+import PinchableImage from '@app/shared/components/pinchable-image'
 
 export const getSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}` })
 
@@ -32,9 +33,12 @@ export const ImageViewer = ({
   return (
     <>
       <View style={[styles.imageWrapper, style, { borderRadius }]} {...otherProps}>
-        <ImageBackground source={source} style={styles.flex} borderRadius={borderRadius}>
-          {onPress && <Pressable style={styles.flex} onPress={onPress} />}
-        </ImageBackground>
+        <PinchableImage
+          source={source}
+          style={styles.flex}
+          enableMove={false}
+          shouldResetScale={true}
+        />
       </View>
       {onDelete && <DeleteIconButton onPress={onDelete} />}
     </>
