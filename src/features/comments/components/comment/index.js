@@ -159,13 +159,13 @@ const Comment = ({
   if (!displayName?.trim().length > 0) return <CommentPlaceholder />
 
   return (
-    <DoubleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
-      <View style={styles.row}>
-        <TouchableWithoutFeedback onPress={onShowProfile}>
-          <View style={styles.avatarWrapper}>
-            <Avatar src={photoURL} text={displayName} size={avatarSize} />
-          </View>
-        </TouchableWithoutFeedback>
+    <View style={styles.row}>
+      <TouchableWithoutFeedback onPress={onShowProfile}>
+        <View style={styles.avatarWrapper}>
+          <Avatar src={photoURL} text={displayName} size={avatarSize} />
+        </View>
+      </TouchableWithoutFeedback>
+      <DoubleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
         <View style={styles.flexible}>
           <Header displayName={displayName} updatedAt={item.updatedAt} />
           <Content item={item} />
@@ -177,8 +177,8 @@ const Comment = ({
             onShowReplies={onShowReplies}
           />
         </View>
-      </View>
-    </DoubleTapHandler>
+      </DoubleTapHandler>
+    </View>
   )
 }
 

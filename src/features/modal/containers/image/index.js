@@ -4,6 +4,7 @@ import {
 } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import changeNavigationBarColor from 'react-native-navigation-bar-color'
+import ImageZoom from 'react-native-image-pan-zoom'
 
 import { metrics } from '@app/theme'
 import { HeaderBack } from '@app/shared/components'
@@ -32,6 +33,7 @@ const ImageModal = ({ route, navigation }) => {
   const [controlsHidden, setControlsHidden] = useState(true)
 
   const { source, width, height } = route.params
+  const [dimensions, setDimensions] = useState({ width, height })
   const [aspectRatio, setAspectRatio] = useState(parseInt(width, 10) / parseInt(height, 10))
   const sourceUri = isGoogleImageUrl(source.uri) ? source.uri.replace('s96-c', 's400-c') : source.uri
 
@@ -66,6 +68,7 @@ const ImageModal = ({ route, navigation }) => {
     if (Number.isNaN(aspectRatio)) {
       Image.getSize(sourceUri, (w, h) => {
         // set aspect ratio based on react native image size
+        setDimensions({ width: w, height: h })
         setAspectRatio(w / h)
       }, () => {
         // on error
@@ -74,13 +77,24 @@ const ImageModal = ({ route, navigation }) => {
     }
   }, [aspectRatio, sourceUri])
 
+  let imageHeight = (dimensions.height * metrics.screenWidth) / dimensions.width
+  if (isNaN(imageHeight)) {
+    imageHeight = metrics.screenHeight
+  }
   return (
     <TouchableWithoutFeedback onPress={onShowControls} testID="pressable">
       <View style={styles.wrapper}>
-        <Image
-          source={{ uri: sourceUri }}
-          style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
-        />
+        <ImageZoom
+          cropWidth={metrics.screenWidth}
+          cropHeight={metrics.screenHeight}
+          imageWidth={metrics.screenWidth}
+          imageHeight={imageHeight}
+        >
+          <Image
+            source={{ uri: sourceUri }}
+            style={{ aspectRatio: aspectRatio || metrics.aspectRatio.vertical }}
+          />
+        </ImageZoom>
       </View>
     </TouchableWithoutFeedback>
   )
