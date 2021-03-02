@@ -2,9 +2,6 @@
 
 exports[`renders Comment 1`] = `
 <View
-  collapsable={false}
-  onGestureHandlerEvent={[Function]}
-  onGestureHandlerStateChange={[Function]}
   style={
     Object {
       "flex": 1,
@@ -75,6 +72,9 @@ exports[`renders Comment 1`] = `
     </View>
   </RNGestureHandlerButton>
   <View
+    collapsable={false}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
     style={
       Object {
         "flex": 1,

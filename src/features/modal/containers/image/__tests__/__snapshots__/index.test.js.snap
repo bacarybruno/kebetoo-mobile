@@ -20,17 +20,71 @@ exports[`renders ImageModal 1`] = `
   }
   testID="pressable"
 >
-  <Image
-    source={
-      Object {
-        "uri": "jest://fake-image.png",
-      }
-    }
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
     style={
       Object {
-        "aspectRatio": 1,
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "height": 1334,
+        "justifyContent": "center",
+        "overflow": "hidden",
+        "width": 750,
       }
     }
-  />
+  >
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          Object {
+            "height": 750,
+            "width": 750,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "jest://fake-image.png",
+            }
+          }
+          style={
+            Object {
+              "aspectRatio": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
 </View>
 `;
