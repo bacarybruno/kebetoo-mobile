@@ -46,7 +46,7 @@ export const fieldNames = {
 
 yup.addMethod(yup.string, 'usernameValidator', function (message) {
   return this.test('validate-username', message, function (value) {
-    const { path, createError } = this;
+    const { path, createError } = this
     const username = value.startsWith('@') ? value : `@${value}`
     return twitterText.isValidUsername(username) || createError({ path, message })
   })
@@ -64,10 +64,10 @@ const EditProfile = ({ route, navigation }) => {
 
   const initialState = {
     values: {
-      [fieldNames.email]: profile.email,
-      [fieldNames.username]: profile.username,
-      [fieldNames.fullName]: profile.displayName,
-      [fieldNames.bio]: profile.bio,
+      [fieldNames.email]: profile.email || '',
+      [fieldNames.username]: profile.username || '',
+      [fieldNames.fullName]: profile.displayName || '',
+      [fieldNames.bio]: profile.bio || null,
     },
     errors: {
       [fieldNames.email]: null,
