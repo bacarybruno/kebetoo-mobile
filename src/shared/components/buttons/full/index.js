@@ -16,10 +16,11 @@ const FullButton = ({
 }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
+  const isDisabled = disabled || loading
   return (
     <TouchableOpacity
-      disabled={disabled}
-      style={[styles.button, (disabled || loading) && styles.disabledButton, style]}
+      disabled={isDisabled}
+      style={[styles.button, isDisabled && styles.disabledButton, style]}
       onPress={onPress}
       {...rest}
     >
