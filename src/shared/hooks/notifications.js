@@ -58,8 +58,7 @@ const useNotifications = () => {
   }, [notifications])
 
   const fetchPendingNotifications = useCallback(async () => {
-    const profileId = '199iDPDSMIQh5izN9p94FDtcpky1'
-    // const profileId = profile.uid
+    const profileId = profile.uid
     const pendingNotifications = (await notificationsRef.child(profileId).once('value')).val()
 
     // persist notifications
