@@ -29,6 +29,7 @@ import createThemedStyles from './styles'
 const routeOptions = { title: strings.tabs.home }
 
 // TODO: use local reducer
+// or sagas
 const HomePage = ({ navigation }) => {
   const dispatch = useDispatch()
   const posts = useSelector(postsSelector) || []

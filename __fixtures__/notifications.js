@@ -12,11 +12,9 @@ const notifications = [{
     data: {
       type: NOTIFICATION_TYPES.POST_REACTION,
       payload: JSON.stringify({
+        postId: textPost.id,
         author: authors[0],
-        post: {
-          content: textPost.content,
-          id: textPost.id,
-        },
+        content: textPost.content,
       }),
     },
   },
@@ -28,11 +26,9 @@ const notifications = [{
     data: {
       type: NOTIFICATION_TYPES.COMMENT,
       payload: JSON.stringify({
+        postId: audioPost.id,
         author: authors[0],
         content: audioPost.comments[0].content,
-        post: {
-          id: audioPost.id,
-        },
       }),
     },
   },
@@ -44,11 +40,9 @@ const notifications = [{
     data: {
       type: NOTIFICATION_TYPES.COMMENT_REACTION,
       payload: JSON.stringify({
+        postId: audioPost.id,
         author: authors[1],
-        comment: {
-          post: audioPost.id,
-          content: audioPost.comments[1].content,
-        },
+        content: audioPost.comments[1].content,
       }),
     },
   },

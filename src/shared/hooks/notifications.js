@@ -1,10 +1,13 @@
 import { useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import messaging from '@react-native-firebase/messaging'
+import database from '@react-native-firebase/database'
 
 import { usePermissions } from '@app/shared/hooks'
 import { notificationsSelector } from '@app/redux/selectors'
 import * as types from '@app/redux/types'
+
+import useUser from './user'
 
 export const NOTIFICATION_STATUS = {
   NEW: 'notification_status_new',
@@ -12,9 +15,13 @@ export const NOTIFICATION_STATUS = {
   OPENED: 'notification_status_opened',
 }
 
+const notificationsPath = '/notifications'
+
 const useNotifications = () => {
   const permissions = usePermissions()
   const dispatch = useDispatch()
+  const [notificationsRef] = useState(database().ref(notificationsPath))
+  const { profile } = useUser()
 
   const notifications = useSelector(notificationsSelector)
 
@@ -49,6 +56,23 @@ const useNotifications = () => {
     setSeenItems(seenNotifications)
     setBadgeCount(notifsBadgeItems.length)
   }, [notifications])
+
+  const fetchPendingNotifications = useCallback(async () => {
+    const pendingNotifications = (await notificationsRef.child(profile.uid).once('value')).val()
+    // persist notifications
+    Object.values(pendingNotifications).forEach((pendingNotification) => {
+      // only if it isn't already persisted
+      if (!notifications.some((notification) => notification.id === pendingNotification.messageId)) {
+        persistNotification(pendingNotification)
+      }
+    })
+
+    // delete notifications because we've already processed them
+    const deletePromises = Object.keys(pendingNotifications).map((notificationId) => (
+      database().ref(notificationsPath).child(profile.uid).child(notificationId).remove()
+    ))
+    await Promise.all(deletePromises)
+  }, [profile.uid, persistNotification])
 
   const persistNotification = useCallback((notification) => {
     dispatch({ type: types.ADD_NOTIFICATION, payload: notification })
@@ -94,6 +118,7 @@ const useNotifications = () => {
     updateOpenStatus,
     setupNotifications,
     persistNotification,
+    fetchPendingNotifications,
   }
 }
 

@@ -18,6 +18,7 @@ const NoContent = ({ title, text, children }) => (
       <Typography
         text={title}
         type={Typography.types.headline3}
+        style={styles.text}
         color="primary"
       />
     )}
@@ -25,6 +26,7 @@ const NoContent = ({ title, text, children }) => (
       <Typography
         text={text}
         type={Typography.types.headline4}
+        style={styles.text}
       />
     )}
     {children}

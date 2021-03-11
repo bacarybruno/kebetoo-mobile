@@ -53,11 +53,8 @@ export const getNotificationMessage = (message) => {
     switch (message.data.type) {
       case NOTIFICATION_TYPES.COMMENT:
       case NOTIFICATION_TYPES.REPLY:
-        return payload.content
       case NOTIFICATION_TYPES.COMMENT_REACTION:
-        return payload.comment.content
       case NOTIFICATION_TYPES.POST_REACTION:
-        return payload.post.content
       case NOTIFICATION_TYPES.SYSTEM:
         return payload.content
       default:
@@ -102,42 +99,37 @@ const NotificationsPage = () => {
   const getAuthor = (message) => {
     try {
       const payload = JSON.parse(message.data.payload)
-      return payload.author 
+      return payload.author
     } catch (error) {
       return {}
     }
   }
 
   const onNotificationOpen = useCallback(async ({ id, message, status }) => {
-    setIsLoading(true)
+    try {
+      setIsLoading(true)
+  
+      let postId = null
+      const payload = JSON.parse(message.data.payload)
+      switch (message.data.type) {
+        case NOTIFICATION_TYPES.COMMENT:
+        case NOTIFICATION_TYPES.POST_REACTION:
+        case NOTIFICATION_TYPES.COMMENT_REACTION:
+        case NOTIFICATION_TYPES.REPLY:
+        case NOTIFICATION_TYPES.SYSTEM:
+          postId = payload.postId
+        default:
+          break
+      }
 
-    const payload = JSON.parse(message.data.payload)
-    let postId = null
-
-    switch (message.data.type) {
-      case NOTIFICATION_TYPES.COMMENT:
-      case NOTIFICATION_TYPES.POST_REACTION:
-        postId = payload.post.id
-        break
-      case NOTIFICATION_TYPES.COMMENT_REACTION:
-        postId = payload.comment.post
-        break
-      case NOTIFICATION_TYPES.REPLY:
-        postId = payload.thread.post
-        break
-      case NOTIFICATION_TYPES.SYSTEM:
-        postId = payload.post
-      default:
-        break
+      if (postId) {
+        const post = await api.posts.getById(postId)
+        navigate(routes.COMMENTS, { post })
+      }
+    } finally {
+      setIsLoading(false)
+      if (status !== NOTIFICATION_STATUS.OPENED) updateOpenStatus(id)
     }
-
-    if (postId) {
-      const post = await api.posts.getById(postId)
-      navigate(routes.COMMENTS, { post })
-    }
-
-    if (status !== NOTIFICATION_STATUS.OPENED) updateOpenStatus(id)
-    setIsLoading(false)
   }, [navigate, updateOpenStatus])
 
   const renderNotification = useCallback((item, index) => (

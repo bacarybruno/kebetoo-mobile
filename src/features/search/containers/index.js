@@ -17,9 +17,10 @@ import SearchUsers from './users'
 const routeOptions = { title: strings.tabs.search }
 
 export const SearchIcon = ({ onPress }) => {
+  const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   return (
-    <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)}>
+    <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)} style={styles.searchIcon}>
       <Ionicon name="search" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
   )
@@ -80,7 +81,7 @@ const SearchPage = () => {
 
   const onRecentSearch = useCallback((text) => {
     onChange(text)
-    textInputRef.current?.setNativeProps({ text })
+    // textInputRef.current?.setNativeProps({ text })
   }, [onChange])
 
   const onShowSearchbar = useCallback(() => {
