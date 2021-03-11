@@ -34,23 +34,27 @@ const useNotifications = () => {
     const seenNotifications = []
     const notifsBadgeItems = []
 
-    notifications.forEach((notif) => {
-      switch (notif.status) {
-        case NOTIFICATION_STATUS.NEW:
-          newNotifications.push(notif)
-          notifsBadgeItems.push(notif)
-          break
-        case NOTIFICATION_STATUS.OPENED:
-          seenNotifications.push(notif)
-          break
-        case NOTIFICATION_STATUS.SEEN:
-          seenNotifications.push(notif)
-          notifsBadgeItems.push(notif)
-          break
-        default:
-          break
-      }
-    })
+    const sortNotifications = (notifA, notifB) => notifB.time - notifA.time
+
+    notifications
+      .sort(sortNotifications)
+      .forEach((notif) => {
+        switch (notif.status) {
+          case NOTIFICATION_STATUS.NEW:
+            newNotifications.push(notif)
+            notifsBadgeItems.push(notif)
+            break
+          case NOTIFICATION_STATUS.OPENED:
+            seenNotifications.push(notif)
+            break
+          case NOTIFICATION_STATUS.SEEN:
+            seenNotifications.push(notif)
+            notifsBadgeItems.push(notif)
+            break
+          default:
+            break
+        }
+      })
 
     setNewItems(newNotifications)
     setSeenItems(seenNotifications)

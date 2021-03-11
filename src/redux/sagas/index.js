@@ -107,7 +107,7 @@ function* setUserProfile(action) {
     }
 
     // create author in the backend
-    const authorId = yield call(createOrUpdateUser, {
+    const { id: authorId, username, bio } = yield call(createOrUpdateUser, {
       id: uid, displayName, photoURL,
     })
 
@@ -115,7 +115,7 @@ function* setUserProfile(action) {
     yield put({
       type: types.SET_USER_PROFILE,
       payload: {
-        uid: authorId, email, photoURL, isLoggedIn, displayName,
+        uid: authorId, email, photoURL, isLoggedIn, displayName, username, bio,
       },
     })
 

@@ -8,16 +8,13 @@ export const getUser = async (uid) => {
 }
 
 export const createOrUpdateUser = async ({ id, displayName, photoURL }) => {
-  const existingAuthor = await getUser(id)
-  let authorId
-  if (existingAuthor) {
-    authorId = existingAuthor.id
-    await api.authors.update(authorId, { displayName, photoURL })
+  let author = await getUser(id)
+  if (author) {
+    await api.authors.update(author.id, { displayName, photoURL })
   } else {
-    const createdAuthor = await api.authors.create({ uid: id, displayName, photoURL })
-    authorId = createdAuthor.id
+    author = await api.authors.create({ uid: id, displayName, photoURL })
   }
-  return authorId
+  return author
 }
 
 export const getNotificationToken = async () => {

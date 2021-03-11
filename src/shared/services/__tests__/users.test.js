@@ -26,7 +26,7 @@ it('updates user', async () => {
   const result = await users.createOrUpdateUser(userData)
   expect(api.authors.update).toBeCalledTimes(1)
   expect(api.authors.update).toBeCalledWith(author.id, userData)
-  expect(result).toBe(author.id)
+  expect(result.id).toBe(author.id)
 })
 
 it('gets notification token', async () => {
