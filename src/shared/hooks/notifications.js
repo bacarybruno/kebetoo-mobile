@@ -58,20 +58,18 @@ const useNotifications = () => {
   }, [notifications])
 
   const fetchPendingNotifications = useCallback(async () => {
-    const profileId = profile.uid
-    const pendingNotifications = (await notificationsRef.child(profileId).once('value')).val()
-
+    const pendingNotifications = (await notificationsRef.child(profile.uid).once('value')).val()
     // persist notifications
     Object.values(pendingNotifications).forEach((pendingNotification) => {
       // only if it isn't already persisted
       if (!notifications.some((notification) => notification.id === pendingNotification.messageId)) {
-        persistNotification(notification)
+        persistNotification(pendingNotification)
       }
     })
 
     // delete notifications because we've already processed them
     const deletePromises = Object.keys(pendingNotifications).map((notificationId) => (
-      database().ref(notificationsPath).child(profileId).child(notificationId).remove()
+      database().ref(notificationsPath).child(profile.uid).child(notificationId).remove()
     ))
     await Promise.all(deletePromises)
   }, [profile.uid, persistNotification])

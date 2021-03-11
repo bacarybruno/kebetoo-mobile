@@ -242,7 +242,7 @@ const AppNavigation = () => {
 
   const handleInitialNotification = useCallback((remoteMessage) => {
     if (remoteMessage && isLoggedIn) {
-      navigationRef.current.navigate(routes.NOTIFICATIONS)
+      navigationRef.current?.navigate(routes.NOTIFICATIONS)
     }
   }, [isLoggedIn])
 

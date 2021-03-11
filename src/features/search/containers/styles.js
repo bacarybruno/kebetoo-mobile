@@ -25,6 +25,9 @@ export default (colors) => StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  searchIcon: {
+    marginRight: metrics.spacing.md,
+  },
   segmentedControl: {
     marginHorizontal: metrics.marginHorizontal,
   },

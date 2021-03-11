@@ -126,7 +126,7 @@ const NotificationsPage = () => {
         const post = await api.posts.getById(postId)
         navigate(routes.COMMENTS, { post })
       }
-    } catch (error) {
+    } finally {
       setIsLoading(false)
       if (status !== NOTIFICATION_STATUS.OPENED) updateOpenStatus(id)
     }
