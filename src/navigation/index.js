@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react'
-import { Image, Platform, View } from 'react-native'
+import { AppState, Image, Platform, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
@@ -213,9 +213,10 @@ export const loggedInPages = [
 ]
 
 // Main Section
+// TODO: use sagas
 const AppNavigation = () => {
   const { isLoggedIn, profile } = useUser()
-  const { persistNotification } = useNotifications()
+  const { persistNotification, fetchPendingNotifications } = useNotifications()
   const { trackPageView } = useAnalytics()
   const navigationRef = useRef()
   const routeNameRef = useRef()
@@ -246,29 +247,29 @@ const AppNavigation = () => {
   }, [isLoggedIn])
 
   useEffect(() => {
-    const handleBackgroundNotifications = async () => {
-      // save background notifications in redux
-      // with a default status of "new"
-      const bgNotifications = JSON.parse(await AsyncStorage.getItem('backgroundNotifications')) || []
-      bgNotifications.forEach(persistNotification)
-
+    const handlePendingNotifications = async () => {
+      fetchPendingNotifications()
       // remove background notifications
       await AsyncStorage.removeItem('backgroundNotifications')
       // reset badge number
       PushNotification.setApplicationIconBadgeNumber(0)
     }
 
-    handleBackgroundNotifications()
-  }, [persistNotification])
+    const appStateChange = (state) => {
+      if (state === 'active') {
+        handlePendingNotifications()
+      }
+    }
+
+    handlePendingNotifications()
+
+    AppState.addEventListener('change', appStateChange)
+    return () => {
+      AppState.removeEventListener('change', appStateChange)
+    }
+  }, [fetchPendingNotifications])
 
   useEffect(() => {
-    messaging().getInitialNotification().then(handleInitialNotification)
-    messaging().onNotificationOpenedApp(handleInitialNotification)
-    const unsubscribeForegroundNotification = messaging().onMessage(persistNotification)
-    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
-      api.authors.update(profile.uid, { notificationToken })
-    })
-
     // persistNotification({
     //   messageId: 'test-1',
     //   sentTime: Date.now(),
@@ -282,7 +283,7 @@ const AppNavigation = () => {
     //       },
     //       systemMessage: '',
     //       content: 'Kebetoo vous souhaite la bienvenue!',
-    //       post: '600316e3c78fa70017137655',
+    //       postId: '600316e3c78fa70017137655',
     //     }),
     //   },
     // })
@@ -300,15 +301,20 @@ const AppNavigation = () => {
     //       },
     //       systemMessage: 'Du nouveau sur Kebetoo — photos de profil, rooms ...',
     //       content: 'Cliquez ici pour en savoir plus',
-    //       post: '600316e3c78fa70017137655',
+    //       postId: '600316e3c78fa70017137655',
     //     }),
     //   },
     // })
 
-    return () => {
-      unsubscribeForegroundNotification()
-      unsubscribeTokenRefresh()
-    }
+    // notification opened app from quit state
+    messaging().getInitialNotification().then(handleInitialNotification)
+    // notification opened app from background state
+    messaging().onNotificationOpenedApp(handleInitialNotification)
+    // fcm token refresh
+    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
+      api.authors.update(profile.uid, { notificationToken })
+    })  
+    return unsubscribeTokenRefresh
   }, [handleInitialNotification, persistNotification, profile.uid])
 
   const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name
