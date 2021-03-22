@@ -211,6 +211,7 @@ const locales = Object.freeze({
     auth_account_exists_different_credential: 'The email used is already associated with another account. Please try another signin method',
     create_post_error: 'An error occured while creating the post. Please try again later.',
     username_taken: 'This username is already taken. Please try another one.',
+    username_not_exist: 'This user does not exist',
   },
 })
 
