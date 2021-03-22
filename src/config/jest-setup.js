@@ -9,6 +9,8 @@ import 'react-native-gesture-handler/jestSetup'
 import { renderHook } from '@testing-library/react-hooks'
 import auth from '@react-native-firebase/auth'
 import { SafeAreaContext } from '@app/shared/contexts'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
@@ -48,7 +50,7 @@ const mockedStoreState = {
 const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
   let wrapper = null
   return (defaultProps = {}) => (additionalProps = {}) => {
-    const { store, __storeState__ = mockedStoreState, ...props } = defaultProps
+    const { store, __storeState__ = mockedStoreState, disconnectNavigation, ...props } = defaultProps
     const propsWithArgs = {
       ...props,
       ...additionalProps,
@@ -59,10 +61,21 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
       updateBottomSafeAreaColor: jest.fn(),
       resetStatusBars: jest.fn(),
     }
+    const Stack = createStackNavigator()
     const Component = (
       <SafeAreaContext.Provider value={safeAreaCtxValue}>
         <Provider store={store || mockStore(__storeState__)}>
-          <WrappedComponent {...propsWithArgs} />
+          {disconnectNavigation
+            ? <WrappedComponent {...propsWithArgs} />
+            : (
+              <NavigationContainer>
+                <Stack.Navigator>
+                  <Stack.Screen name="jest">
+                    {(props) => <WrappedComponent {...propsWithArgs} />}
+                  </Stack.Screen>
+                </Stack.Navigator>
+              </NavigationContainer>
+            )}
         </Provider>
       </SafeAreaContext.Provider>
     )

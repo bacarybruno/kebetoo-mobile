@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import { fireEvent, act } from 'react-native-testing-library'
@@ -28,13 +27,7 @@ const __storeState__ = {
 }
 
 describe('tabs', () => {
-  const TabNavigation = () => (
-    <NavigationContainer>
-      <TabPage />
-    </NavigationContainer>
-  )
-
-  const givenTabPage = setupTest(TabNavigation)({ __storeState__ })
+  const givenTabPage = setupTest(TabPage)({ __storeState__ })
 
   it('renders TabNavigation', () => {
     const { wrapper } = givenTabPage()
@@ -47,13 +40,7 @@ describe('tabs', () => {
 })
 
 describe('onboarding', () => {
-  const OnboardingNavigation = () => (
-    <NavigationContainer>
-      <OnboardingStack />
-    </NavigationContainer>
-  )
-
-  const givenOnboardingStack = setupTest(OnboardingNavigation)()
+  const givenOnboardingStack = setupTest(OnboardingStack)()
 
   it('renders OnboardingNavigation', () => {
     const { wrapper } = givenOnboardingStack()
@@ -66,7 +53,7 @@ describe('onboarding', () => {
 })
 
 describe('app navigation', () => {
-  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__ })
+  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__, disconnectNavigation: true })
 
   it('renders AppNavigation for authenticated user', async () => {
     auth.setMockOptions({
@@ -100,7 +87,7 @@ describe('app navigation', () => {
 })
 
 describe('route state change', () => {
-  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__ })
+  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__, disconnectNavigation: true })
 
   it('handles route state change', () => {
     const getCurrentRoute = jest.fn()

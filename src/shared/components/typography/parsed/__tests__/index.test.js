@@ -1,22 +1,8 @@
-import React from 'react'
 import setupTest from '@app/config/jest-setup'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 
 import ParsedTypography from '../index'
 
-const Stack = createStackNavigator()
-const ParsedTypographyNavigation = (ownProps) => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="jest">
-        {(props) => <ParsedTypography {...ownProps} {...props} />}
-      </Stack.Screen>
-    </Stack.Navigator>
-  </NavigationContainer>
-)
-
-const givenParsedTypography = setupTest(ParsedTypographyNavigation)({
+const givenParsedTypography = setupTest(ParsedTypography)({
   text: `
     Hello World!
     Here is a *bold* text 

@@ -2,891 +2,1114 @@
 
 exports[`renders Onboarding 1`] = `
 <View
-  accessibilityIgnoresInvertColors={true}
   style={
     Object {
-      "backgroundColor": "#E0F2F8",
       "flex": 1,
     }
   }
 >
-  <Image
-    source={
-      Object {
-        "testUri": "../../../assets/images/onboarding1.png",
-      }
-    }
+  <View
+    pointerEvents="box-none"
     style={
       Array [
+        Object {
+          "zIndex": 1,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      accessibilityElementsHidden={false}
+      importantForAccessibility="auto"
+      onLayout={[Function]}
+      pointerEvents="box-none"
+      style={null}
+    >
+      <View
+        pointerEvents="box-none"
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderBottomColor": "rgb(216, 216, 216)",
+              "flex": 1,
+              "shadowColor": "rgb(216, 216, 216)",
+              "shadowOffset": Object {
+                "height": 0.5,
+                "width": 0,
+              },
+              "shadowOpacity": 0.85,
+              "shadowRadius": 0,
+            }
+          }
+        />
+      </View>
+      <View
+        pointerEvents="box-none"
+        style={
+          Object {
+            "height": 44,
+            "maxHeight": undefined,
+            "minHeight": undefined,
+            "opacity": undefined,
+            "transform": undefined,
+          }
+        }
+      >
+        <View
+          pointerEvents="none"
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        />
+        <View
+          pointerEvents="box-none"
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            pointerEvents="box-none"
+            style={
+              Object {
+                "marginHorizontal": 16,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              accessibilityRole="header"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Object {
+                  "color": "rgb(28, 28, 30)",
+                  "fontSize": 17,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              jest
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
         Object {
           "bottom": 0,
           "left": 0,
           "position": "absolute",
           "right": 0,
           "top": 0,
-        },
-        Object {
-          "height": undefined,
-          "width": undefined,
-        },
-        undefined,
-      ]
-    }
-  />
-  <View
-    style={
-      Object {
-        "flex": 1,
-        "marginVertical": 24,
+        }
       }
-    }
-  >
-    <View
-      style={Object {}}
     >
       <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        collapsable={false}
         style={
           Object {
-            "alignSelf": "flex-end",
-            "marginHorizontal": 16,
             "opacity": 1,
           }
         }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontSize": 16,
-                "fontWeight": "400",
-                "letterSpacing": -0.32,
-                "lineHeight": 21,
+      />
+      <View
+        accessibilityElementsHidden={false}
+        closing={false}
+        gestureVelocityImpact={0.3}
+        importantForAccessibility="auto"
+        onClose={[Function]}
+        onGestureBegin={[Function]}
+        onGestureCanceled={[Function]}
+        onGestureEnd={[Function]}
+        onOpen={[Function]}
+        onTransitionStart={[Function]}
+        pointerEvents="box-none"
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        transitionSpec={
+          Object {
+            "close": Object {
+              "animation": "spring",
+              "config": Object {
+                "damping": 500,
+                "mass": 3,
+                "overshootClamping": true,
+                "restDisplacementThreshold": 10,
+                "restSpeedThreshold": 10,
+                "stiffness": 1000,
               },
-              Array [
-                Object {
-                  "color": "rgba(0, 0, 0, 255)",
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                  "fontFamily": "System",
-                  "fontWeight": "300",
-                },
-                undefined,
-              ],
-            ]
+            },
+            "open": Object {
+              "animation": "spring",
+              "config": Object {
+                "damping": 500,
+                "mass": 3,
+                "overshootClamping": true,
+                "restDisplacementThreshold": 10,
+                "restSpeedThreshold": 10,
+                "stiffness": 1000,
+              },
+            },
+          }
+        }
+      >
+        <View
+          pointerEvents="box-none"
+          style={
+            Object {
+              "flex": 1,
+            }
           }
         >
-          Skip
-        </Text>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "position": "relative",
-          },
-          undefined,
-        ]
-      }
-    >
-      <RCTScrollView
-        activeDotStyle={
-          Object {
-            "backgroundColor": "rgba(0, 122, 255, 255)",
-            "height": 8,
-            "width": 15,
-          }
-        }
-        automaticallyAdjustContentInsets={false}
-        autoplay={false}
-        autoplayDirection={true}
-        autoplayTimeout={2.5}
-        bounces={false}
-        contentContainerStyle={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "marginTop": 16,
-            },
-          ]
-        }
-        contentOffset={
-          Object {
-            "x": 0,
-          }
-        }
-        disableNextButton={false}
-        disablePrevButton={false}
-        dotStyle={
-          Object {
-            "backgroundColor": "rgba(199, 199, 204, 255)",
-            "height": 8,
-            "width": 8,
-          }
-        }
-        horizontal={true}
-        index={0}
-        loadMinimal={false}
-        loadMinimalSize={1}
-        loop={true}
-        onIndexChanged={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        paginationStyle={
-          Object {
-            "justifyContent": "flex-start",
-            "marginHorizontal": 16,
-          }
-        }
-        pagingEnabled={true}
-        removeClippedSubviews={true}
-        scrollEnabled={false}
-        scrollsToTop={false}
-        showsButtons={false}
-        showsHorizontalScrollIndicator={false}
-        showsPagination={true}
-        showsVerticalScrollIndicator={false}
-        testID="swiper"
-      >
-        <View>
           <View
+            collapsable={false}
+            forwardedRef={[Function]}
+            onGestureHandlerEvent={[Function]}
+            onGestureHandlerStateChange={[Function]}
             style={
-              Array [
-                Object {
-                  "height": 1334,
-                  "width": 750,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-              ]
+              Object {
+                "flex": 1,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
+              }
             }
           >
             <View
+              pointerEvents="none"
               style={
                 Object {
-                  "marginHorizontal": 16,
-                  "marginTop": 733.7,
+                  "backgroundColor": "rgb(242, 242, 242)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 1,
+                    "width": -1,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 5,
+                  "top": 0,
+                  "width": 3,
                 }
               }
-            >
-              <Text
-                bold={true}
-                style={
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  },
                   Array [
                     Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
+                      "backgroundColor": "rgb(242, 242, 242)",
                     },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column-reverse",
+                  }
                 }
               >
-                React to the Contents
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      Object {
+                        "backgroundColor": "#E0F2F8",
+                        "flex": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../assets/images/onboarding1.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "marginVertical": 24,
+                        }
+                      }
+                    >
+                      <View
+                        style={Object {}}
+                      >
+                        <View
+                          accessible={true}
+                          focusable={true}
+                          onClick={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Object {
+                              "alignSelf": "flex-end",
+                              "marginHorizontal": 16,
+                              "opacity": 1,
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.32,
+                                  "lineHeight": 21,
+                                },
+                                Array [
+                                  Object {
+                                    "color": "rgba(0, 0, 0, 255)",
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "fontFamily": "System",
+                                    "fontWeight": "300",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Skip
+                          </Text>
+                        </View>
+                      </View>
+                      <View
+                        onLayout={[Function]}
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "flex": 1,
+                              "position": "relative",
+                            },
+                            undefined,
+                          ]
+                        }
+                      >
+                        <RCTScrollView
+                          activeDotStyle={
+                            Object {
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
+                              "height": 8,
+                              "width": 15,
+                            }
+                          }
+                          automaticallyAdjustContentInsets={false}
+                          autoplay={false}
+                          autoplayDirection={true}
+                          autoplayTimeout={2.5}
+                          bounces={false}
+                          contentContainerStyle={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                              Object {
+                                "marginTop": 16,
+                              },
+                            ]
+                          }
+                          contentOffset={
+                            Object {
+                              "x": 0,
+                            }
+                          }
+                          disableNextButton={false}
+                          disablePrevButton={false}
+                          dotStyle={
+                            Object {
+                              "backgroundColor": "rgba(199, 199, 204, 255)",
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                          horizontal={true}
+                          index={0}
+                          loadMinimal={false}
+                          loadMinimalSize={1}
+                          loop={true}
+                          onIndexChanged={[Function]}
+                          onMomentumScrollEnd={[Function]}
+                          onScrollBeginDrag={[Function]}
+                          onScrollEndDrag={[Function]}
+                          paginationStyle={
+                            Object {
+                              "justifyContent": "flex-start",
+                              "marginHorizontal": 16,
+                            }
+                          }
+                          pagingEnabled={true}
+                          removeClippedSubviews={true}
+                          scrollEnabled={false}
+                          scrollsToTop={false}
+                          showsButtons={false}
+                          showsHorizontalScrollIndicator={false}
+                          showsPagination={true}
+                          showsVerticalScrollIndicator={false}
+                          testID="swiper"
+                        >
+                          <View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "height": 1334,
+                                    "width": 750,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "marginHorizontal": 16,
+                                    "marginTop": 733.7,
+                                  }
+                                }
+                              >
+                                <Text
+                                  bold={true}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 28,
+                                        "fontWeight": "600",
+                                        "letterSpacing": 0.355469,
+                                        "lineHeight": 34,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  React to the Contents
 You Care About
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "marginTop": 46.690000000000005,
-                      },
-                    ],
-                  ]
-                }
-              >
-                React and comment in a 
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 17,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.408,
-                        "lineHeight": 22,
-                      },
-                      Array [
-                        Object {
-                          "color": "rgba(0, 0, 0, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  simple and intuitive
-                </Text>
-                 way the posts that interest you the most ❤️
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "height": 1334,
-                  "width": 750,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "marginTop": 733.7,
-                }
-              }
-            >
-              <Text
-                bold={true}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Join Our Social Media
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "marginTop": 46.690000000000005,
-                      },
-                    ],
-                  ]
-                }
-              >
-                Kebetoo is a microblogging app with 
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 17,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.408,
-                        "lineHeight": 22,
-                      },
-                      Array [
-                        Object {
-                          "color": "rgba(0, 0, 0, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  African DNA
-                </Text>
-                . Be one of the first to join the adventure 💪
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "height": 1334,
-                  "width": 750,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "marginTop": 733.7,
-                }
-              }
-            >
-              <Text
-                bold={true}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                It's your turn to speak
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "marginTop": 46.690000000000005,
-                      },
-                    ],
-                  ]
-                }
-              >
-                With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 17,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.408,
-                        "lineHeight": 22,
-                      },
-                      Array [
-                        Object {
-                          "color": "rgba(0, 0, 0, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  voice messages
-                </Text>
-                 🎤
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "height": 1334,
-                  "width": 750,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "marginTop": 733.7,
-                }
-              }
-            >
-              <Text
-                bold={true}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                React to the Contents
+                                </Text>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 17,
+                                        "fontWeight": "400",
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        Object {
+                                          "marginTop": 46.690000000000005,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  React and comment in a 
+                                  <Text
+                                    style={
+                                      Array [
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
+                                        },
+                                        Array [
+                                          Object {
+                                            "color": "rgba(0, 0, 0, 255)",
+                                          },
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "fontFamily": "System",
+                                            "fontWeight": "600",
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
+                                    }
+                                  >
+                                    simple and intuitive
+                                  </Text>
+                                   way the posts that interest you the most ❤️
+                                </Text>
+                              </View>
+                            </View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "height": 1334,
+                                    "width": 750,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "marginHorizontal": 16,
+                                    "marginTop": 733.7,
+                                  }
+                                }
+                              >
+                                <Text
+                                  bold={true}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 28,
+                                        "fontWeight": "600",
+                                        "letterSpacing": 0.355469,
+                                        "lineHeight": 34,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Join Our Social Media
+                                </Text>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 17,
+                                        "fontWeight": "400",
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        Object {
+                                          "marginTop": 46.690000000000005,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Kebetoo is a microblogging app with 
+                                  <Text
+                                    style={
+                                      Array [
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
+                                        },
+                                        Array [
+                                          Object {
+                                            "color": "rgba(0, 0, 0, 255)",
+                                          },
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "fontFamily": "System",
+                                            "fontWeight": "600",
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
+                                    }
+                                  >
+                                    African DNA
+                                  </Text>
+                                  . Be one of the first to join the adventure 💪
+                                </Text>
+                              </View>
+                            </View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "height": 1334,
+                                    "width": 750,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "marginHorizontal": 16,
+                                    "marginTop": 733.7,
+                                  }
+                                }
+                              >
+                                <Text
+                                  bold={true}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 28,
+                                        "fontWeight": "600",
+                                        "letterSpacing": 0.355469,
+                                        "lineHeight": 34,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  It's your turn to speak
+                                </Text>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 17,
+                                        "fontWeight": "400",
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        Object {
+                                          "marginTop": 46.690000000000005,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
+                                  <Text
+                                    style={
+                                      Array [
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
+                                        },
+                                        Array [
+                                          Object {
+                                            "color": "rgba(0, 0, 0, 255)",
+                                          },
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "fontFamily": "System",
+                                            "fontWeight": "600",
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
+                                    }
+                                  >
+                                    voice messages
+                                  </Text>
+                                   🎤
+                                </Text>
+                              </View>
+                            </View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "height": 1334,
+                                    "width": 750,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "marginHorizontal": 16,
+                                    "marginTop": 733.7,
+                                  }
+                                }
+                              >
+                                <Text
+                                  bold={true}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 28,
+                                        "fontWeight": "600",
+                                        "letterSpacing": 0.355469,
+                                        "lineHeight": 34,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  React to the Contents
 You Care About
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "marginTop": 46.690000000000005,
-                      },
-                    ],
-                  ]
-                }
-              >
-                React and comment in a 
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 17,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.408,
-                        "lineHeight": 22,
-                      },
-                      Array [
-                        Object {
-                          "color": "rgba(0, 0, 0, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  simple and intuitive
-                </Text>
-                 way the posts that interest you the most ❤️
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "height": 1334,
-                  "width": 750,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "marginTop": 733.7,
-                }
-              }
-            >
-              <Text
-                bold={true}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 28,
-                      "fontWeight": "400",
-                      "letterSpacing": 0.355469,
-                      "lineHeight": 34,
-                    },
-                    false,
-                    false,
-                    false,
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "600",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Join Our Social Media
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontSize": 17,
-                      "fontWeight": "400",
-                      "letterSpacing": -0.408,
-                      "lineHeight": 22,
-                    },
-                    Array [
-                      Object {
-                        "color": "rgba(0, 0, 0, 255)",
-                      },
-                      Object {
-                        "backgroundColor": "transparent",
-                        "fontFamily": "System",
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "marginTop": 46.690000000000005,
-                      },
-                    ],
-                  ]
-                }
-              >
-                Kebetoo is a microblogging app with 
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "#000000",
-                        "fontFamily": "System",
-                        "fontSize": 17,
-                        "fontWeight": "400",
-                        "letterSpacing": -0.408,
-                        "lineHeight": 22,
-                      },
-                      Array [
-                        Object {
-                          "color": "rgba(0, 0, 0, 255)",
-                        },
-                        Object {
-                          "backgroundColor": "transparent",
-                          "fontFamily": "System",
-                          "fontWeight": "600",
-                        },
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  African DNA
-                </Text>
-                . Be one of the first to join the adventure 💪
-              </Text>
+                                </Text>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 17,
+                                        "fontWeight": "400",
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        Object {
+                                          "marginTop": 46.690000000000005,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  React and comment in a 
+                                  <Text
+                                    style={
+                                      Array [
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
+                                        },
+                                        Array [
+                                          Object {
+                                            "color": "rgba(0, 0, 0, 255)",
+                                          },
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "fontFamily": "System",
+                                            "fontWeight": "600",
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
+                                    }
+                                  >
+                                    simple and intuitive
+                                  </Text>
+                                   way the posts that interest you the most ❤️
+                                </Text>
+                              </View>
+                            </View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "height": 1334,
+                                    "width": 750,
+                                  },
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "marginHorizontal": 16,
+                                    "marginTop": 733.7,
+                                  }
+                                }
+                              >
+                                <Text
+                                  bold={true}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 28,
+                                        "fontWeight": "600",
+                                        "letterSpacing": 0.355469,
+                                        "lineHeight": 34,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Join Our Social Media
+                                </Text>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontSize": 17,
+                                        "fontWeight": "400",
+                                        "letterSpacing": -0.408,
+                                        "lineHeight": 22,
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 255)",
+                                        },
+                                        undefined,
+                                        Object {
+                                          "marginTop": 46.690000000000005,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Kebetoo is a microblogging app with 
+                                  <Text
+                                    style={
+                                      Array [
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "#000000",
+                                          "fontFamily": "System",
+                                          "fontSize": 17,
+                                          "fontWeight": "400",
+                                          "letterSpacing": -0.408,
+                                          "lineHeight": 22,
+                                        },
+                                        Array [
+                                          Object {
+                                            "color": "rgba(0, 0, 0, 255)",
+                                          },
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "fontFamily": "System",
+                                            "fontWeight": "600",
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
+                                    }
+                                  >
+                                    African DNA
+                                  </Text>
+                                  . Be one of the first to join the adventure 💪
+                                </Text>
+                              </View>
+                            </View>
+                          </View>
+                        </RCTScrollView>
+                        <View
+                          pointerEvents="none"
+                          style={
+                            Array [
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "bottom": 25,
+                                "flex": 1,
+                                "flexDirection": "row",
+                                "justifyContent": "center",
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                              },
+                              Object {
+                                "justifyContent": "flex-start",
+                                "marginHorizontal": 16,
+                              },
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "#007aff",
+                                  "borderRadius": 4,
+                                  "height": 8,
+                                  "marginBottom": 3,
+                                  "marginLeft": 3,
+                                  "marginRight": 3,
+                                  "marginTop": 3,
+                                  "width": 8,
+                                },
+                                Object {
+                                  "backgroundColor": "rgba(0, 122, 255, 255)",
+                                  "height": 8,
+                                  "width": 15,
+                                },
+                              ]
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "rgba(0,0,0,.2)",
+                                  "borderRadius": 4,
+                                  "height": 8,
+                                  "marginBottom": 3,
+                                  "marginLeft": 3,
+                                  "marginRight": 3,
+                                  "marginTop": 3,
+                                  "width": 8,
+                                },
+                                Object {
+                                  "backgroundColor": "rgba(199, 199, 204, 255)",
+                                  "height": 8,
+                                  "width": 8,
+                                },
+                              ]
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "rgba(0,0,0,.2)",
+                                  "borderRadius": 4,
+                                  "height": 8,
+                                  "marginBottom": 3,
+                                  "marginLeft": 3,
+                                  "marginRight": 3,
+                                  "marginTop": 3,
+                                  "width": 8,
+                                },
+                                Object {
+                                  "backgroundColor": "rgba(199, 199, 204, 255)",
+                                  "height": 8,
+                                  "width": 8,
+                                },
+                              ]
+                            }
+                          />
+                        </View>
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "bottom": 8,
+                            "position": "absolute",
+                            "right": 16,
+                            "width": 718,
+                          }
+                        }
+                      >
+                        <View
+                          accessible={true}
+                          focusable={true}
+                          onClick={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgba(0, 122, 255, 255)",
+                              "borderRadius": 15,
+                              "bottom": 0,
+                              "color": "rgba(255, 255, 255, 255)",
+                              "elevation": 2,
+                              "height": 48,
+                              "justifyContent": "center",
+                              "opacity": 1,
+                              "position": "absolute",
+                              "right": 0,
+                              "shadowColor": "rgba(0, 0, 0, 255)",
+                              "shadowOffset": Object {
+                                "x": 0,
+                                "y": 1,
+                              },
+                              "shadowOpacity": 0.2,
+                              "shadowRadius": 1.41,
+                              "width": 57,
+                            }
+                          }
+                          testID="next-button"
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            style={
+                              Object {
+                                "color": "rgba(255, 255, 255, 255)",
+                                "fontFamily": "Ionicons",
+                                "fontSize": 30,
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              }
+                            }
+                            text="ionicon-arrow-forward"
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
         </View>
-      </RCTScrollView>
-      <View
-        pointerEvents="none"
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "bottom": 25,
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-            },
-            Object {
-              "justifyContent": "flex-start",
-              "marginHorizontal": 16,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#007aff",
-                "borderRadius": 4,
-                "height": 8,
-                "marginBottom": 3,
-                "marginLeft": 3,
-                "marginRight": 3,
-                "marginTop": 3,
-                "width": 8,
-              },
-              Object {
-                "backgroundColor": "rgba(0, 122, 255, 255)",
-                "height": 8,
-                "width": 15,
-              },
-            ]
-          }
-        />
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "rgba(0,0,0,.2)",
-                "borderRadius": 4,
-                "height": 8,
-                "marginBottom": 3,
-                "marginLeft": 3,
-                "marginRight": 3,
-                "marginTop": 3,
-                "width": 8,
-              },
-              Object {
-                "backgroundColor": "rgba(199, 199, 204, 255)",
-                "height": 8,
-                "width": 8,
-              },
-            ]
-          }
-        />
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "rgba(0,0,0,.2)",
-                "borderRadius": 4,
-                "height": 8,
-                "marginBottom": 3,
-                "marginLeft": 3,
-                "marginRight": 3,
-                "marginTop": 3,
-                "width": 8,
-              },
-              Object {
-                "backgroundColor": "rgba(199, 199, 204, 255)",
-                "height": 8,
-                "width": 8,
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 8,
-          "position": "absolute",
-          "right": 16,
-          "width": 718,
-        }
-      }
-    >
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0, 122, 255, 255)",
-            "borderRadius": 15,
-            "bottom": 0,
-            "color": "rgba(255, 255, 255, 255)",
-            "elevation": 2,
-            "height": 48,
-            "justifyContent": "center",
-            "opacity": 1,
-            "position": "absolute",
-            "right": 0,
-            "shadowColor": "rgba(0, 0, 0, 255)",
-            "shadowOffset": Object {
-              "x": 0,
-              "y": 1,
-            },
-            "shadowOpacity": 0.2,
-            "shadowRadius": 1.41,
-            "width": 57,
-          }
-        }
-        testID="next-button"
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Object {
-              "color": "rgba(255, 255, 255, 255)",
-              "fontFamily": "Ionicons",
-              "fontSize": 30,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            }
-          }
-          text="ionicon-arrow-forward"
-        />
       </View>
     </View>
   </View>

@@ -1,7 +1,5 @@
-import React from 'react'
 import CameraRoll from '@react-native-community/cameraroll'
-import reactNavigation, { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import reactNavigation from '@react-navigation/native'
 import { act } from 'react-test-renderer'
 import { fireEvent } from 'react-native-testing-library'
 import RNCameraRollPicker from '@kebetoo/camera-roll-picker'
@@ -45,7 +43,6 @@ const photosMock = {
   ],
 }
 
-const Stack = createStackNavigator()
 const routeParamsMock = {
   assetType: CameraRollPicker.AssetTypes.Photos,
   maximum: 1,
@@ -57,24 +54,14 @@ const givenCameraRollPicker = async ({
   props = { navigation },
   photos = photosMock,
   albums = albumsMock,
-  routeName = 'CameraRollPicker',
 }) => {
   CameraRoll.getPhotos.mockResolvedValue(photos)
   CameraRoll.getAlbums.mockResolvedValue(albums)
   reactNavigation.useRoute = jest.fn().mockReturnValue({ params: routeParams })
   return new Promise((resolve) => {
-    const CameraRollWrapper = () => (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name={routeName} initialParams={routeParams}>
-            {(navProps) => <CameraRollPicker {...navProps} {...props} />}
-          </Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
-    )
     let wrapperProps
     act(async () => {
-      wrapperProps = await setupTest(CameraRollWrapper)()()
+      wrapperProps = await setupTest(CameraRollPicker)(props)()
     }).then(() => {
       resolve(wrapperProps)
     })
