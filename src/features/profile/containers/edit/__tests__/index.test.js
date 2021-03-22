@@ -47,7 +47,7 @@ it('updates profile', async () => {
 })
 
 it('aborts profile update if username exists', async () => {
-  api.authors.checkUsername.mockResolvedValue([{ id: 'fake-id-123' }])
+  api.authors.getByUsername.mockResolvedValue([{ id: 'fake-id-123' }])
   const { wrapper, props } = givenEditProfile()
   const [displayName, username, _, bio] = wrapper.root.findAllByType(TextOutlinedInput)
 
