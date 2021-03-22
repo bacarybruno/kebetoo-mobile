@@ -21,6 +21,7 @@ export const TextOutlinedInput = ({
   wrapperStyle,
   error,
   fieldName,
+  inputChildren,
   ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -46,6 +47,7 @@ export const TextOutlinedInput = ({
         ref={inputRef}
         inputWrapperStyle={styles.inputWrapper}
         textStyle={[styles.textInput, textStyle]}
+        inputChildren={inputChildren}
         wrapperStyle={[
           styles.textInputWrapper,
           !borderless && styles.border,

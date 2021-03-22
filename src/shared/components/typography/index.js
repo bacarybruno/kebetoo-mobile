@@ -47,37 +47,91 @@ const types = {
   caption: 'caption',
 }
 
+const styles = {
+  [types.headline1]: {
+    ...human.title1,
+    ...systemWeights[weights.semibold],
+  },
+  [types.headline2]: {
+    ...human.title2,
+    ...systemWeights[weights.semibold],
+  },
+  [types.headline3]: {
+    ...human.title3,
+    ...systemWeights[weights.semibold],
+  },
+  [types.headline4]: {
+    ...human.headline,
+    ...systemWeights[weights.regular],
+  },
+  [types.headline5]: {
+    ...human.subhead,
+    ...systemWeights[weights.regular],
+  },
+  [types.headline6]: {
+    ...human.caption1,
+    ...systemWeights[weights.regular],
+  },
+  [types.subheading]: {
+    ...human.body,
+    ...systemWeights[weights.regular],
+  },
+  [types.button]: {
+    ...human.calloutWhite,
+    ...systemWeights[weights.semibold],
+  },
+  [types.separator]: {
+    ...material.body2,
+    ...systemWeights[weights.regular],
+  },
+  [types.textButton]: {
+    ...human.callout,
+    ...systemWeights[weights.regular],
+  },
+  [types.textButtonLight]: {
+    ...human.callout,
+    ...systemWeights[weights.light],
+  },
+  [types.body]: {
+    ...human.subhead,
+    ...systemWeights[weights.regular],
+  },
+  [types.caption]: {
+    ...human.caption1,
+    ...systemWeights[weights.regular],
+  },
+}
+
 const Headline = ({
   children, style, size, ...otherProps
-}) => (
-  <Text
-    style={[
-      size <= 3 && human[`title${size}`],
-      size === 4 && human.headline,
-      size === 5 && human.subhead,
-      size === 6 && human.caption1,
-      style,
-    ]}
-    {...otherProps}
-  >
-    {children}
-  </Text>
-)
+}) => {
+  return (
+    <Text
+      style={[
+        styles[`headline${size}`],
+        style,
+      ]}
+      {...otherProps}
+    >
+      {children}
+    </Text>
+  )
+}
 
 const Subheading = ({ children, style, ...otherProps }) => (
-  <Text style={[human.body, style]} {...otherProps}>
+  <Text style={[styles.subheading, style]} {...otherProps}>
     {children}
   </Text>
 )
 
 const Button = ({ children, style, ...otherProps }) => (
-  <Text style={[human.calloutWhite, style]} {...otherProps}>
+  <Text style={[styles.button, style]} {...otherProps}>
     {children}
   </Text>
 )
 
 const Separator = ({ children, style, ...otherProps }) => (
-  <Text style={[material.body2, style]} {...otherProps}>
+  <Text style={[styles.separator, style]} {...otherProps}>
     {children}
   </Text>
 )
@@ -85,19 +139,27 @@ const Separator = ({ children, style, ...otherProps }) => (
 const TextButton = ({
   children, style, onPress, ...otherProps
 }) => (
-  <Text style={[human.callout, style]} onPress={onPress} {...otherProps}>
+  <Text style={[styles.textButton, style]} onPress={onPress} {...otherProps}>
+    {children}
+  </Text>
+)
+
+const TextButtonLight = ({
+  children, style, onPress, ...otherProps
+}) => (
+  <Text style={[styles.textButtonLight, style]} onPress={onPress} {...otherProps}>
     {children}
   </Text>
 )
 
 const Body = ({ children, style, ...otherProps }) => (
-  <Text style={[human.subhead, style]} {...otherProps}>
+  <Text style={[styles.body, style]} {...otherProps}>
     {children}
   </Text>
 )
 
 const Caption = ({ children, style, ...otherProps }) => (
-  <Text style={[human.caption1, style]} {...otherProps}>
+  <Text style={[styles.caption, style]} {...otherProps}>
     {children}
   </Text>
 )
@@ -105,7 +167,7 @@ const Caption = ({ children, style, ...otherProps }) => (
 const createTypography = (
   text, style, color, onPress, themeColors, hasBadge, defaultProps,
 ) => (Baseline, props) => {
-  const { systemWeight = weights.regular, systemColor = colors.primary, ...textProps } = {
+  const { systemWeight, systemColor = colors.primary, ...textProps } = {
     ...props,
     ...defaultProps,
   }
@@ -113,7 +175,7 @@ const createTypography = (
     <Baseline
       style={[
         { color: themeColors[color || systemColor] },
-        systemWeights[systemWeight],
+        systemWeight && systemWeights[systemWeight],
         style,
       ]}
       onPress={onPress}
@@ -141,50 +203,27 @@ const Typography = ({
 
   switch (type) {
     case types.headline1:
-      return typography(Headline, {
-        size: 1,
-        systemWeight: weights.semibold,
-      })
+      return typography(Headline, { size: 1 })
     case types.headline2:
-      return typography(Headline, {
-        size: 2,
-        systemWeight: weights.semibold,
-      })
+      return typography(Headline, { size: 2 })
     case types.headline3:
-      return typography(Headline, {
-        size: 3,
-        systemWeight: weights.semibold,
-      })
+      return typography(Headline, { size: 3 })
     case types.headline4:
-      return typography(Headline, {
-        size: 4,
-      })
+      return typography(Headline, { size: 4 })
     case types.headline5:
-      return typography(Headline, {
-        size: 5,
-      })
+      return typography(Headline, { size: 5 })
     case types.headline6:
-      return typography(Headline, {
-        size: 6,
-        systemColor: colors.secondary,
-      })
+      return typography(Headline, { size: 6, systemColor: colors.secondary })
     case types.subheading:
       return typography(Subheading)
     case types.button:
-      return typography(Button, {
-        systemColor: colors.white,
-        systemWeight: weights.semibold,
-      })
+      return typography(Button, { systemColor: colors.white })
     case types.separator:
-      return typography(Separator, {
-        systemWeight: weights.regular,
-      })
+      return typography(Separator)
     case types.textButton:
       return typography(TextButton)
     case types.textButtonLight:
-      return typography(TextButton, {
-        systemWeight: weights.light,
-      })
+      return typography(TextButtonLight)
     case types.body:
       return typography(Body)
     case types.caption:
@@ -198,5 +237,6 @@ Typography.types = types
 Typography.colors = colors
 Typography.weights = weights
 Typography.fontSizes = fontSizes
+Typography.styles = styles
 
 export default Typography

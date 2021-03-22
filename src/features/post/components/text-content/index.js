@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { Pressable, Typography } from '@app/shared/components'
+import { Pressable, Typography, ParsedTypography } from '@app/shared/components'
 import { POST_TYPES } from '@app/features/post/containers/basic-post'
 import { useAppStyles } from '@app/shared/hooks'
-import { ReadMore } from '@app/shared/components'
 
 import createThemedStyles from './styles'
 
@@ -24,7 +23,7 @@ const TextContent = ({
         mode === 'comments' && isRepost && styles.commentRepost,
       ]}
     >
-      <ReadMore text={content.trim()} type={Typography.types.body} />
+      <ParsedTypography text={content.trim()} type={Typography.types.body} />
     </Pressable>
   )
 }
