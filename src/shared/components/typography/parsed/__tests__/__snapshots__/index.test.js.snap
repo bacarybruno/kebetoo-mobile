@@ -350,7 +350,59 @@ exports[`renders ParsedTypography 1`] = `
                               ]
                             }
                           >
-                            bold
+                            *bold*
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                              text 
+    Here is a 
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontStyle": "italic",
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            _italic_
                           </Text>
                           <Text
                             style={
@@ -394,58 +446,6 @@ exports[`renders ParsedTypography 1`] = `
                                   "color": "#000000",
                                   "fontFamily": "System",
                                   "fontSize": 15,
-                                  "fontStyle": "italic",
-                                  "fontWeight": "400",
-                                  "letterSpacing": -0.24,
-                                  "lineHeight": 20,
-                                },
-                              ]
-                            }
-                          >
-                            italic
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 15,
-                                    "fontWeight": "400",
-                                    "letterSpacing": -0.24,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                                undefined,
-                              ]
-                            }
-                          >
-                             italic 
-    Here is a 
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 15,
-                                    "fontWeight": "400",
-                                    "letterSpacing": -0.24,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "#000000",
-                                  "fontFamily": "System",
-                                  "fontSize": 15,
                                   "fontWeight": "400",
                                   "letterSpacing": -0.24,
                                   "lineHeight": 20,
@@ -455,7 +455,7 @@ exports[`renders ParsedTypography 1`] = `
                               ]
                             }
                           >
-                            strikeThrough
+                            ~strikeThrough~
                           </Text>
                           <Text
                             style={
@@ -508,6 +508,110 @@ exports[`renders ParsedTypography 1`] = `
                             }
                           >
                             @bacary
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                            
+    Website: 
+                          </Text>
+                          <Text
+                            onPress={[Function]}
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "rgba(0, 122, 255, 255)",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            https://www.kebetoo.com
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                            
+    Phone: 
+                          </Text>
+                          <Text
+                            onPress={[Function]}
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "rgba(0, 122, 255, 255)",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            +221777777777
                           </Text>
                           <Text
                             style={
@@ -666,7 +770,59 @@ exports[`renders ParsedTypography 1`] = `
                               ]
                             }
                           >
-                            bold
+                            *bold*
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                              text 
+    Here is a 
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontStyle": "italic",
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            _italic_
                           </Text>
                           <Text
                             style={
@@ -710,58 +866,6 @@ exports[`renders ParsedTypography 1`] = `
                                   "color": "#000000",
                                   "fontFamily": "System",
                                   "fontSize": 15,
-                                  "fontStyle": "italic",
-                                  "fontWeight": "400",
-                                  "letterSpacing": -0.24,
-                                  "lineHeight": 20,
-                                },
-                              ]
-                            }
-                          >
-                            italic
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 15,
-                                    "fontWeight": "400",
-                                    "letterSpacing": -0.24,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                                undefined,
-                              ]
-                            }
-                          >
-                             italic 
-    Here is a 
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 15,
-                                    "fontWeight": "400",
-                                    "letterSpacing": -0.24,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "#000000",
-                                  "fontFamily": "System",
-                                  "fontSize": 15,
                                   "fontWeight": "400",
                                   "letterSpacing": -0.24,
                                   "lineHeight": 20,
@@ -771,7 +875,7 @@ exports[`renders ParsedTypography 1`] = `
                               ]
                             }
                           >
-                            strikeThrough
+                            ~strikeThrough~
                           </Text>
                           <Text
                             style={
@@ -824,6 +928,110 @@ exports[`renders ParsedTypography 1`] = `
                             }
                           >
                             @bacary
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                            
+    Website: 
+                          </Text>
+                          <Text
+                            onPress={[Function]}
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "rgba(0, 122, 255, 255)",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            https://www.kebetoo.com
+                          </Text>
+                          <Text
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                undefined,
+                              ]
+                            }
+                          >
+                            
+    Phone: 
+                          </Text>
+                          <Text
+                            onPress={[Function]}
+                            style={
+                              Array [
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 15,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
+                                  },
+                                  undefined,
+                                ],
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "rgba(0, 122, 255, 255)",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                              ]
+                            }
+                          >
+                            +221777777777
                           </Text>
                           <Text
                             style={
