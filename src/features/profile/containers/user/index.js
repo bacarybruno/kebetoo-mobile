@@ -90,8 +90,8 @@ const UserProfile = ({ route, navigation }) => {
   const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
 
   useEffect(() => {
-    api.authors.getById(userId).then(setUser).catch(console.log)
-    api.posts.getByAuthor(userId).then(setPosts).catch(console.log)
+    api.authors.getById(userId)?.then(setUser).catch(console.log)
+    api.posts.getByAuthor(userId)?.then(setPosts).catch(console.log)
   }, [userId])
 
   useEffect(() => {

@@ -1,12 +1,8 @@
-import React from 'react'
 import * as redux from 'react-redux'
 import { act } from 'react-test-renderer'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 import auth from '@react-native-firebase/auth'
 
 import setupTest from '@app/config/jest-setup'
-import { strings } from '@app/config'
 import authors from '@fixtures/authors'
 import { api } from '@app/shared/services'
 import BasicPost from '@app/features/post/containers/basic-post'
@@ -15,8 +11,6 @@ import HistoryItem from '@app/features/search/components/history-item'
 import * as types from '@app/redux/types'
 
 import SearchPosts, { SearchHistoryHeader } from '../index'
-
-const Stack = createStackNavigator()
 
 const posts = [{
   content: 'Hello World',
@@ -35,16 +29,6 @@ const posts = [{
   comments: [],
 }]
 
-const SearchPostsNavigation = (ownProps) => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name={strings.search.posts_tab}>
-        {(props) => <SearchPosts {...ownProps} {...props} />}
-      </Stack.Screen>
-    </Stack.Navigator>
-  </NavigationContainer>
-)
-
 api.posts.search.mockImplementation(async (query) => {
   const results = posts.filter((post) => (
     post.content?.toLowerCase().includes(query.toLowerCase())
@@ -52,7 +36,7 @@ api.posts.search.mockImplementation(async (query) => {
   return results
 })
 
-const givenSearchPosts = setupTest(SearchPostsNavigation)({
+const givenSearchPosts = setupTest(SearchPosts)({
   __storeState__: {
     userReducer: {
       searchHistory: {

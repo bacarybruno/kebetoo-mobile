@@ -19,6 +19,7 @@ const givenCreatePost = setupTest(CreatePost)({
       if (params.headerRight) params.headerRight()
     }),
     dispatch: jest.fn(),
+    addListener: jest.fn(),
   },
   route: {
     params: {

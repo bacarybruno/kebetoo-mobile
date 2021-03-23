@@ -23,7 +23,7 @@ it('renders SegmentedControl', () => {
 
 it('renders null if there is no item', () => {
   const { wrapper } = givenSegmentedControl({ items: [] })
-  expect(wrapper.toJSON()).toBeNull()
+  expect(wrapper.root.findAllByType(Segment).length).toBe(0)
 })
 
 it('renders as many Segment as items', () => {

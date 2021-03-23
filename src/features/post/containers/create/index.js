@@ -8,7 +8,7 @@ import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
-import { OutlinedButton, AudioPlayer, AppHeader } from '@app/shared/components'
+import { OutlinedButton, AudioPlayer, AppHeader, ParsedTypography } from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
 import { api } from '@app/shared/services'
@@ -60,7 +60,6 @@ export const PostTextMessage = ({
       maxLength - text.length,
     )
     : strings.create_post.caption
-
   return (
     <OutlinedTextInput
       text={text}
@@ -74,6 +73,10 @@ export const PostTextMessage = ({
       wrapperStyle={styles.textInputWrapper}
       label={label}
       autoFocus
+      hideValue
+      inputChildren={text?.length > 0
+        ? <ParsedTypography text={text} withReadMore={false} rawValue style={styles.textInput} />
+        : undefined}
     />
   )
 }

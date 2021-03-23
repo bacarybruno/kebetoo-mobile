@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
-import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
+import { View, ActivityIndicator, TouchableOpacity, InteractionManager } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { metrics, edgeInsets } from '@app/theme'
@@ -81,7 +81,9 @@ const SearchPage = () => {
 
   const onRecentSearch = useCallback((text) => {
     onChange(text)
-    // textInputRef.current?.setNativeProps({ text })
+    InteractionManager.runAfterInteractions(() => {
+      textInputRef.current?.setNativeProps({ text })      
+    })
   }, [onChange])
 
   const onShowSearchbar = useCallback(() => {

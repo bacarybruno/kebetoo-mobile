@@ -125,7 +125,7 @@ const EditProfile = ({ route, navigation }) => {
         bio: values[fieldNames.bio] || null,
       }
 
-      const foundAuthors = await api.authors.checkUsername(payload.username)
+      const foundAuthors = await api.authors.getByUsername(payload.username)
       if (foundAuthors.length > 0 && foundAuthors[0].id !== profile.uid) {
         const usernameTakenError = new Error(strings.errors.username_taken)
         usernameTakenError.name = 'ValidationError'

@@ -4,7 +4,6 @@ import setupTest from '@app/config/jest-setup'
 import { readableSeconds } from '@app/shared/helpers/dates'
 
 import IconButton from '../index'
-import { act } from 'react-test-renderer'
 
 const givenIconButton = setupTest(IconButton)({
   onPress: jest.fn(),
@@ -30,7 +29,8 @@ describe('animation', () => {
       isActive: true,
       text: readableSeconds(100),
     })
-    expect(animateSpring).toBeCalledTimes(1)
+    // a call is already trigerred by react navigation
+    expect(animateSpring).toBeCalledTimes(2)
   })
   it('doesnt animates IconButton if not active', () => {
     const animateSpring = jest.spyOn(Animated, 'spring')
@@ -39,6 +39,7 @@ describe('animation', () => {
       isActive: false,
       text: readableSeconds(100),
     })
-    expect(animateSpring).not.toBeCalled()
+    // a call is already trigerred by react navigation
+    expect(animateSpring).toBeCalledTimes(1)
   })
 })

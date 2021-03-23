@@ -17,7 +17,7 @@ export const DeleteIconButton = ({ onPress }) => {
       onPress={onPress}
       hitSlop={edgeInsets.all(50)}
     >
-      <Ionicon name="ios-close" size={25} color={colors.textPrimary} />
+      <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
     </TouchableOpacity>
   )
 }

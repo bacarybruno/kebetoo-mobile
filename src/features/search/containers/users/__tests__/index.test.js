@@ -1,19 +1,13 @@
-import React from 'react'
 import * as redux from 'react-redux'
 import { act } from 'react-test-renderer'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 
 import setupTest from '@app/config/jest-setup'
-import { strings } from '@app/config'
 import { api } from '@app/shared/services'
 import NoResult from '@app/features/search/components/no-result'
 import HistoryItem from '@app/features/search/components/history-item'
 import * as types from '@app/redux/types'
 
 import SearchUsers, { SearchHistoryHeader, SearchResult } from '../index'
-
-const Stack = createStackNavigator()
 
 const users = [{
   id: 1,
@@ -38,16 +32,6 @@ const users = [{
   comments: Array(40),
 }]
 
-const SearchUsersNavigation = (ownProps) => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name={strings.search.posts_tab}>
-        {(props) => <SearchUsers {...ownProps} {...props} />}
-      </Stack.Screen>
-    </Stack.Navigator>
-  </NavigationContainer>
-)
-
 api.authors.search = jest.fn().mockImplementation(async (query) => {
   const results = users.filter((user) => (
     user.displayName.toLowerCase().includes(query.toLowerCase())
@@ -55,7 +39,7 @@ api.authors.search = jest.fn().mockImplementation(async (query) => {
   return results
 })
 
-const givenSearchUsers = setupTest(SearchUsersNavigation)({
+const givenSearchUsers = setupTest(SearchUsers)({
   __storeState__: {
     userReducer: {
       searchHistory: {

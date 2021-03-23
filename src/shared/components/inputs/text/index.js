@@ -48,16 +48,20 @@ const InputText = forwardRef((props, ref) => {
     height,
     inputWrapperStyle,
     borderless,
+    inputChildren,
+    hideValue,
     ...otherProps
   } = props
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState("")
 
   const styles = useAppStyles(createThemedStyles)
 
   const onChangeText = useCallback((newValue) => {
     if (onValueChange) onValueChange(newValue, fieldName)
-    setValue(newValue)
-  }, [onValueChange, fieldName])
+    if (!hideValue) {
+      setValue(newValue)
+    }
+  }, [onValueChange, fieldName, hideValue])
 
   const hasTrailingItem = error || Right
 
@@ -82,7 +86,9 @@ const InputText = forwardRef((props, ref) => {
           onBlur={() => onBlur(fieldName)}
           onFocus={() => onFocus(fieldName)}
           {...otherProps}
-        />
+        >
+          {inputChildren}
+        </TextInput>
         {error
           ? <PopoverTooltip message={error} />
           : Right && <Right />}
@@ -92,4 +98,4 @@ const InputText = forwardRef((props, ref) => {
 })
 
 
-export default React.memo(InputText)
+export default InputText

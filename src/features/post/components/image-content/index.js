@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { Pressable, Typography } from '@app/shared/components'
+import { Pressable, Typography, ParsedTypography } from '@app/shared/components'
 import { edgeInsets } from '@app/theme'
 import { env } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
@@ -47,12 +47,13 @@ const ImageContent = ({
   const styles = useAppStyles(createThemeColors)
   return (
     <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
-      <Typography
-        type={Typography.types.body}
-        text={content.trim()}
-        style={styles.text}
-        numberOfLines={mode === 'comments' ? 1 : undefined}
-      />
+      <View style={styles.text}>
+        <ParsedTypography
+          type={Typography.types.body}
+          text={content.trim()}
+          numberOfLines={2}
+        />
+      </View>
       <ImageViewer
         onPress={onPress}
         style={styles.imageViewer}

@@ -109,7 +109,7 @@ exports[`renders CameraRollPicker 1`] = `
                 }
               }
             >
-              CameraRollPicker
+              jest
             </Text>
           </View>
         </View>
@@ -630,11 +630,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.87)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
@@ -658,11 +654,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.38)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
@@ -738,11 +730,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.87)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
@@ -766,11 +754,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.38)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
@@ -865,11 +849,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.87)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
@@ -893,11 +873,7 @@ exports[`renders CameraRollPicker 1`] = `
                                           Object {
                                             "color": "rgba(0,0,0,0.38)",
                                           },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "400",
-                                          },
+                                          undefined,
                                           undefined,
                                         ],
                                       ]
