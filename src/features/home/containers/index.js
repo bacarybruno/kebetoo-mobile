@@ -132,9 +132,9 @@ const HomePage = ({ navigation }) => {
   }, [dispatch])
 
   const showPostOptions = useCallback(async (post) => {
-    // user should not be able to block his own posts
-    if (post.author.id === profile.uid) return
-
+    if (post.author.id === profile.uid) {
+      return navigation.navigate(routes.MANAGE_POSTS)
+    }
     const actionIndex = await showFeedPostsOptions(post)
     if (actionIndex === 0) {
       hidePost(post)
@@ -143,7 +143,7 @@ const HomePage = ({ navigation }) => {
     } else if (actionIndex === 2) {
       blockAuthor(post)
     }
-  }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor])
+  }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor, navigation])
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
