@@ -165,6 +165,9 @@ const locales = Object.freeze({
   user_profile: {
     profile: 'Profile',
     joined_in: 'Joined on {0}',
+    published_post: 'published this post',
+    commented_post: 'commented on this post',
+    reacted_post: 'reacted on this post',
   },
   notifications: {
     commented_post: 'commented your post',

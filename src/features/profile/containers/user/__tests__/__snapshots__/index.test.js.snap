@@ -279,6 +279,14 @@ exports[`renders UserProfile 1`] = `
                     }
                   >
                     <RCTScrollView
+                      ListFooterComponent={
+                        <ActivityIndicator
+                          animating={true}
+                          color="rgba(0, 122, 255, 255)"
+                          hidesWhenStopped={true}
+                          size="large"
+                        />
+                      }
                       ListHeaderComponent={[Function]}
                       data={Array []}
                       disableVirtualization={false}
@@ -289,7 +297,8 @@ exports[`renders UserProfile 1`] = `
                       keyExtractor={[Function]}
                       maxToRenderPerBatch={10}
                       onContentSizeChange={[Function]}
-                      onEndReachedThreshold={2}
+                      onEndReached={[Function]}
+                      onEndReachedThreshold={0.5}
                       onLayout={[Function]}
                       onMomentumScrollEnd={[Function]}
                       onScroll={[Function]}
@@ -322,6 +331,154 @@ exports[`renders UserProfile 1`] = `
                             }
                             testID="list-header"
                           >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flexDirection": "row",
+                                    "height": 60,
+                                  },
+                                  Object {
+                                    "paddingHorizontal": 16,
+                                    "position": "absolute",
+                                    "width": 750,
+                                    "zIndex": 1,
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 8,
+                                  }
+                                }
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "alignItems": "center",
+                                      "flexDirection": "row",
+                                    }
+                                  }
+                                >
+                                  <View
+                                    accessible={true}
+                                    focusable={false}
+                                    hitSlop={
+                                      Object {
+                                        "bottom": 10,
+                                        "left": 10,
+                                        "right": 10,
+                                        "top": 10,
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "marginLeft": 16,
+                                            "width": 24,
+                                          },
+                                          Object {
+                                            "marginLeft": 0,
+                                            "marginRight": 16,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        allowFontScaling={false}
+                                        style={
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                            "fontFamily": "icomoon",
+                                            "fontSize": 20,
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          }
+                                        }
+                                        text="kebeticon-chevron-left"
+                                      />
+                                    </View>
+                                  </View>
+                                  <View
+                                    style={
+                                      Object {
+                                        "flex": 1,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 22,
+                                              "fontWeight": "600",
+                                              "letterSpacing": 0.34375,
+                                              "lineHeight": 28,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              undefined,
+                                              Array [
+                                                Object {
+                                                  "flex": 1,
+                                                },
+                                                undefined,
+                                              ],
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        
+                                      </Text>
+                                      <ActivityIndicator
+                                        animating={false}
+                                        color="rgba(0, 122, 255, 255)"
+                                        hidesWhenStopped={true}
+                                        size="small"
+                                        style={
+                                          Object {
+                                            "marginLeft": 8,
+                                          }
+                                        }
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
                             <View
                               style={
                                 Array [
@@ -380,6 +537,7 @@ exports[`renders UserProfile 1`] = `
                                   "height": 140,
                                   "marginHorizontal": 16,
                                   "marginTop": -70,
+                                  "paddingHorizontal": 16,
                                   "shadowColor": "rgba(0, 0, 0, 255)",
                                   "shadowOffset": Object {
                                     "x": 0,
@@ -399,6 +557,8 @@ exports[`renders UserProfile 1`] = `
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
+                                  numberOfLines={1}
                                   style={
                                     Array [
                                       Object {
@@ -689,6 +849,16 @@ exports[`renders UserProfile 1`] = `
                               </View>
                             </View>
                           </View>
+                        </View>
+                        <View
+                          onLayout={[Function]}
+                        >
+                          <ActivityIndicator
+                            animating={true}
+                            color="rgba(0, 122, 255, 255)"
+                            hidesWhenStopped={true}
+                            size="large"
+                          />
                         </View>
                       </View>
                     </RCTScrollView>

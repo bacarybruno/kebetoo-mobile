@@ -15,6 +15,24 @@ const api = {
     getById: jest.fn(),
     update: jest.fn().mockResolvedValue(true),
     batchGetById: jest.fn().mockResolvedValue(authors),
+    countActivities: jest.fn().mockResolvedValue({ posts: 0, comments: 0, reactions: 0 }),
+    getActivities: jest.fn().mockResolvedValue({
+      metadata: {
+        count: {
+          posts: 0,
+          comments: 0,
+          reactions: 0,
+          pageSize: 0,
+        },
+        next: "2021-01-11T17:39:03.701Z"
+      },
+      items: [
+        {
+          type: "post",
+          data: {}
+        }
+      ]
+    })
   },
 
   posts: {
@@ -33,7 +51,6 @@ const api = {
     search: jest.fn().mockImplementation((query) => Promise.resolve((
       postsList.filter((post) => post.content?.toLowerCase().includes(query.toLowerCase()))
     ))),
-    countByAuthor: jest.fn().mockResolvedValue(0),
   },
 
   comments: {
@@ -56,7 +73,6 @@ const api = {
     })),
     createAudio: jest.fn().mockResolvedValue({}),
     delete: jest.fn().mockResolvedValue(true),
-    countByAuthor: jest.fn().mockResolvedValue(0),
   },
 
   reactions: {
@@ -86,7 +102,6 @@ const api = {
     ),
     update: jest.fn().mockResolvedValue(true),
     delete: jest.fn().mockResolvedValue(true),
-    countByAuthor: jest.fn().mockResolvedValue(0),
   },
 }
 

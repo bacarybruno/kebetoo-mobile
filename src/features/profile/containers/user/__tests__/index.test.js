@@ -100,7 +100,11 @@ describe('posts', () => {
     }
     const userPosts = [audioPost]
     api.authors.getById.mockResolvedValue(author)
-    api.posts.getByAuthor.mockResolvedValue(userPosts)
+
+    const activities = {
+      items: [{ type: 'post', data: userPosts[0] }]
+    }
+    api.authors.getActivities.mockResolvedValue(activities)
 
     await act(async () => {
       const { wrapper: wrapperAsync } = await givenUserProfile()

@@ -11,7 +11,10 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.background,
   },
   header: {
-    // backgroundColor: colors.background,
+    paddingHorizontal: metrics.marginHorizontal,
+    position: 'absolute',
+    width: metrics.screenWidth,
+    zIndex: 1,
   },
   headerTitle: {
     color: colors.textPrimary,
@@ -45,6 +48,7 @@ export default (colors) => StyleSheet.create({
     height: profileInfoSize,
     marginTop: -profileInfoSize / 2,
     marginHorizontal: metrics.marginHorizontal,
+    paddingHorizontal: metrics.spacing.md,
   },
   profileInfoSection: {
     height: '50%',
@@ -65,5 +69,11 @@ export default (colors) => StyleSheet.create({
   },
   about: {
     marginBottom: metrics.spacing.xs / 2,
+  },
+  subheading: {
+    paddingBottom: metrics.spacing.md,
+    marginBottom: metrics.spacing.md,
+    borderBottomColor: colors.border,
+    borderBottomWidth: 1.5,
   },
 })
