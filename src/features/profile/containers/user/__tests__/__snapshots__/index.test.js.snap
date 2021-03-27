@@ -281,14 +281,26 @@ exports[`renders UserProfile 1`] = `
                     <RCTScrollView
                       ListFooterComponent={
                         <ActivityIndicator
-                          animating={true}
+                          animating={false}
                           color="rgba(0, 122, 255, 255)"
                           hidesWhenStopped={true}
                           size="large"
                         />
                       }
                       ListHeaderComponent={[Function]}
-                      data={Array []}
+                      data={
+                        Array [
+                          Object {
+                            "data": Array [
+                              Object {
+                                "data": Object {},
+                                "type": "post",
+                              },
+                            ],
+                            "title": "2020-06",
+                          },
+                        ]
+                      }
                       disableVirtualization={false}
                       getItem={[Function]}
                       getItemCount={[Function]}
@@ -508,7 +520,7 @@ exports[`renders UserProfile 1`] = `
                                       "borderRadius": 0,
                                     },
                                     Object {
-                                      "backgroundColor": "#a1887f",
+                                      "backgroundColor": "#673ab7",
                                     },
                                   ]
                                 }
@@ -524,7 +536,7 @@ exports[`renders UserProfile 1`] = `
                                     }
                                   }
                                 >
-                                   
+                                  J
                                 </Text>
                               </View>
                             </View>
@@ -586,7 +598,7 @@ exports[`renders UserProfile 1`] = `
                                     ]
                                   }
                                 >
-                                   
+                                  Jest 123
                                 </Text>
                                 <Text
                                   style={
@@ -612,7 +624,7 @@ exports[`renders UserProfile 1`] = `
                                     ]
                                   }
                                 >
-                                  Joined on June 2020
+                                  jest123
                                 </Text>
                               </View>
                               <View
@@ -848,13 +860,180 @@ exports[`renders UserProfile 1`] = `
                                 </View>
                               </View>
                             </View>
+                            <View
+                              style={
+                                Object {
+                                  "marginHorizontal": 16,
+                                  "marginTop": 16,
+                                }
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      undefined,
+                                      Object {
+                                        "marginBottom": 2,
+                                      },
+                                    ],
+                                  ]
+                                }
+                              >
+                                Bio
+                              </Text>
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.38)",
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ],
+                                  ]
+                                }
+                              >
+                                Jest tester
+                              </Text>
+                            </View>
                           </View>
                         </View>
                         <View
                           onLayout={[Function]}
+                          style={null}
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                  "marginBottom": 24,
+                                },
+                                Object {
+                                  "paddingHorizontal": 16,
+                                },
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 17,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.408,
+                                    "lineHeight": 22,
+                                  },
+                                  Array [
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "fontFamily": "System",
+                                      "fontWeight": "600",
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              June 2020
+                            </Text>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 1000,
+                                    "paddingHorizontal": 16,
+                                    "paddingVertical": 4,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#F0F6FE",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0, 122, 255, 255)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "700",
+                                      },
+                                      undefined,
+                                    ],
+                                  ]
+                                }
+                              >
+                                1+
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
+                        <View
+                          onLayout={[Function]}
+                          style={null}
+                        />
+                        <View
+                          onLayout={[Function]}
+                          style={null}
+                        />
+                        <View
+                          style={
+                            Object {
+                              "height": 0,
+                            }
+                          }
+                        />
+                        <View
+                          onLayout={[Function]}
                         >
                           <ActivityIndicator
-                            animating={true}
+                            animating={false}
                             color="rgba(0, 122, 255, 255)"
                             hidesWhenStopped={true}
                             size="large"

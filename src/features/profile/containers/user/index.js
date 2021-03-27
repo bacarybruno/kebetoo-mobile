@@ -69,6 +69,7 @@ const UserProfile = ({ route, navigation }) => {
     reactions: [],
     createdAt: dayjs().toISOString(),
     username: null,
+    bio: null,
   })
 
   const dateFormat = 'YYYY-MM'
@@ -86,25 +87,21 @@ const UserProfile = ({ route, navigation }) => {
       ])
       setUser(author)
       setPosts(activities.items)
-      setNext(activities.metadata.next)
+      setNext(activities.metadata?.next)
       setIsLoading(false)
     }
 
     fetchData()
   }, [userId])
 
-  const onEndReached = useCallback(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      if (next) {
-        const activities = await api.authors.getActivities(userId, next)
-        setPosts((posts) => [...posts, ...activities.items])
-        setNext(activities.metadata.next)
-      }
-      setIsLoading(false)
+  const loadMore = useCallback(async () => {
+    setIsLoading(true)
+    if (next) {
+      const activities = await api.authors.getActivities(userId, next)
+      setPosts((posts) => [...posts, ...activities.items])
+      setNext(activities.metadata?.next)
     }
-
-    fetchData()
+    setIsLoading(false)
   }, [next])
 
   useEffect(() => {
@@ -179,7 +176,7 @@ const UserProfile = ({ route, navigation }) => {
             />
             <Typography
               type={Typography.types.subheading}
-              text={` ${message}`}
+              text={' ' + message}
             />
           </Text>
         </View>
@@ -247,7 +244,7 @@ const UserProfile = ({ route, navigation }) => {
         contentContainerStyle={styles.sectionListContent}
         renderItem={renderItem}
         stickySectionHeadersEnabled={false}
-        onEndReached={onEndReached}
+        onEndReached={loadMore}
         onEndReachedThreshold={0.5}
         ListFooterComponent={(
           <ActivityIndicator
