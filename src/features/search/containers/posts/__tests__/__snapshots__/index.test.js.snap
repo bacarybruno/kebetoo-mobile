@@ -1250,6 +1250,9 @@ exports[`renders SearchPosts results 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -1266,6 +1269,9 @@ exports[`renders SearchPosts results 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -1304,6 +1310,9 @@ exports[`renders SearchPosts results 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -1320,6 +1329,9 @@ exports[`renders SearchPosts results 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -1877,6 +1889,9 @@ exports[`renders SearchPosts results 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -1893,6 +1908,9 @@ exports[`renders SearchPosts results 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -1931,6 +1949,9 @@ exports[`renders SearchPosts results 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -1947,6 +1968,9 @@ exports[`renders SearchPosts results 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
