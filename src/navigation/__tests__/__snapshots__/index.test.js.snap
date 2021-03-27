@@ -207,6 +207,14 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                               }
                             >
                               <RCTScrollView
+                                ListFooterComponent={
+                                  <ActivityIndicator
+                                    animating={true}
+                                    color="rgba(0, 122, 255, 255)"
+                                    hidesWhenStopped={true}
+                                    size="large"
+                                  />
+                                }
                                 ListHeaderComponent={
                                   <View
                                     style={
@@ -664,6 +672,16 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         </View>
                                       </View>
                                     </View>
+                                  </View>
+                                  <View
+                                    onLayout={[Function]}
+                                  >
+                                    <ActivityIndicator
+                                      animating={true}
+                                      color="rgba(0, 122, 255, 255)"
+                                      hidesWhenStopped={true}
+                                      size="large"
+                                    />
                                   </View>
                                 </View>
                               </RCTScrollView>
@@ -3052,6 +3070,14 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                               }
                             >
                               <RCTScrollView
+                                ListFooterComponent={
+                                  <ActivityIndicator
+                                    animating={true}
+                                    color="rgba(0, 122, 255, 255)"
+                                    hidesWhenStopped={true}
+                                    size="large"
+                                  />
+                                }
                                 ListHeaderComponent={
                                   <View
                                     style={
@@ -3509,6 +3535,16 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                         </View>
                                       </View>
                                     </View>
+                                  </View>
+                                  <View
+                                    onLayout={[Function]}
+                                  >
+                                    <ActivityIndicator
+                                      animating={true}
+                                      color="rgba(0, 122, 255, 255)"
+                                      hidesWhenStopped={true}
+                                      size="large"
+                                    />
                                   </View>
                                 </View>
                               </RCTScrollView>
@@ -7306,6 +7342,14 @@ exports[`tabs renders TabNavigation 1`] = `
                               }
                             >
                               <RCTScrollView
+                                ListFooterComponent={
+                                  <ActivityIndicator
+                                    animating={true}
+                                    color="rgba(0, 122, 255, 255)"
+                                    hidesWhenStopped={true}
+                                    size="large"
+                                  />
+                                }
                                 ListHeaderComponent={
                                   <View
                                     style={
@@ -7763,6 +7807,16 @@ exports[`tabs renders TabNavigation 1`] = `
                                         </View>
                                       </View>
                                     </View>
+                                  </View>
+                                  <View
+                                    onLayout={[Function]}
+                                  >
+                                    <ActivityIndicator
+                                      animating={true}
+                                      color="rgba(0, 122, 255, 255)"
+                                      hidesWhenStopped={true}
+                                      size="large"
+                                    />
                                   </View>
                                 </View>
                               </RCTScrollView>

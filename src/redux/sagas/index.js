@@ -16,6 +16,8 @@ import { blockedItemsSelector, emojiHistorySelector, userProfileSelector } from 
 
 function* fetchPosts(action) {
   try {
+    yield put({ type: types.IS_LOADING_POSTS, payload: true })
+
     const posts = yield call([api.posts, 'get'], action.payload)
 
     let postActionType = types.API_FETCH_POSTS_SUCCESS
@@ -36,6 +38,8 @@ function* fetchPosts(action) {
     yield put({ type: postActionType, payload: allowedPosts || [] })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })
+  } finally {
+    yield put({ type: types.IS_LOADING_POSTS, payload: false })
   }
 }
 

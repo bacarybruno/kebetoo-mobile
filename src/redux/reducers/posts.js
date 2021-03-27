@@ -6,6 +6,7 @@ import * as types from '../types'
 
 const initialState = {
   posts: [],
+  isLoading: false,
 }
 
 const posts = (state = initialState.posts, action) => {
@@ -23,6 +24,16 @@ const posts = (state = initialState.posts, action) => {
   }
 }
 
+const isLoading = (state = initialState.isLoading, action) => {
+  switch (action.type) {
+    case types.IS_LOADING_POSTS:
+      return action.payload
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   posts,
+  isLoading,
 })
