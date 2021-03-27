@@ -123,7 +123,16 @@ const UserProfile = ({ route, navigation }) => {
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
-      const data = await getRepostAuthors(posts)
+      const postsData = posts
+        .flatMap((post) => post.data)
+        .map((post) => ({
+          repost: {
+            author: post.repost?.author
+              || post.author?._id
+              || post.author,
+          },
+        }))
+      const data = await getRepostAuthors(postsData)
       setAuthors(data)
     }
     fetchRepostAuthors()
@@ -148,14 +157,14 @@ const UserProfile = ({ route, navigation }) => {
   const renderItem = useCallback(({ item }) => {
     const { type, data } = item
     const post = data.post || data
-    let message = null
 
     if (!post?.reactions) {
       // comments reactions or replies
       return null
     }
 
-    if (type === 'post') message = strings.user_profile.published_post
+    let message = strings.user_profile.published_post
+    if (type === 'post' && post.repost) message = strings.user_profile.shared_post
     else if (type === 'comment') message = strings.user_profile.commented_post
     else if (type === 'reaction') message = strings.user_profile.reacted_post
 
