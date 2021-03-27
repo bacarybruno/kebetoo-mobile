@@ -20,6 +20,8 @@ class ApiClient extends HttpClient {
       getByUid: (uid) => this.get(`/authors?uid=${uid}`),
       getById: (id) => this.get(`/authors/${id}`),
       update: (id, data) => this.put(`/authors/${id}`, data),
+      countActivities: (id) => this.get(`/authors/${id}/activities/count`),
+      getActivities: (id, from = new Date().toISOString()) => this.get(`/authors/${id}/activities?_from=${from}&_limit=10`),
       batchGetById: (ids) => {
         const queryString = ids.map((id) => `id_eq=${id}`).join('&')
         return this.get(`/authors?${queryString}`)
@@ -40,7 +42,6 @@ class ApiClient extends HttpClient {
       update: ({ id, content }) => this.put(`/posts/${id}`, { content }),
       delete: (id) => this.delete(`/posts/${id}`),
       search: (query) => this.get(`/posts?content_contains=${query}&_limit=${pageSize}`),
-      countByAuthor: (author) => this.get(`/posts/count?author.id=${author}`),
     }
   }
 
@@ -52,7 +53,6 @@ class ApiClient extends HttpClient {
       create: (comment) => this.post('/comments', comment),
       createAudio: ({ audio, ...payload }) => this.postAsset('/comments', 'audio', audio, payload),
       delete: (id) => this.delete(`/comments/${id}`),
-      countByAuthor: (author) => this.get(`/comments/count?author.id=${author}`),
     }
   }
 
@@ -62,7 +62,6 @@ class ApiClient extends HttpClient {
       createCommentReaction: (type, comment, author) => this.post('/reactions', { type, comment, author }),
       update: (id, type) => this.put(`/reactions/${id}`, { type }),
       delete: (id) => this.delete(`/reactions/${id}`),
-      countByAuthor: (author) => this.get(`/reactions/count?author.id=${author}`),
     }
   }
 

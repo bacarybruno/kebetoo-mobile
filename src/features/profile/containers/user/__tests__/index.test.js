@@ -1,5 +1,5 @@
 import { act } from 'react-test-renderer'
-import { Image } from 'react-native'
+import { Image, SectionList } from 'react-native'
 
 import setupTest from '@app/config/jest-setup'
 import { api } from '@app/shared/services'
@@ -7,6 +7,8 @@ import authors from '@fixtures/authors'
 import { TextAvatar } from '@app/shared/components'
 import routes from '@app/navigation/routes'
 import audioPost from '@fixtures/posts/audio'
+import repostPost from '@fixtures/posts/repost'
+import comments from '@fixtures/comments'
 import BasicPost from '@app/features/post/containers/basic-post'
 
 import UserProfile, { SectionHeader } from '../index'
@@ -23,8 +25,22 @@ const givenUserProfile = setupTest(UserProfile)({
   },
 })
 
-it('renders UserProfile', () => {
-  const { wrapper } = givenUserProfile()
+it('renders UserProfile', async () => {
+  let wrapper
+  api.authors.getById.mockResolvedValue({
+    bio: 'Jest tester',
+    username: 'jest123',
+    displayName: 'Jest 123',
+    photoURL: null,
+    email: 'jest-123@gmail.com',
+    posts: [],
+    comments: [],
+    reactions: [],
+  })
+  await act(async () => {
+    const { wrapper: wrapperAsync } = await givenUserProfile()
+    wrapper = wrapperAsync
+  })
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
@@ -100,7 +116,11 @@ describe('posts', () => {
     }
     const userPosts = [audioPost]
     api.authors.getById.mockResolvedValue(author)
-    api.posts.getByAuthor.mockResolvedValue(userPosts)
+
+    const activities = {
+      items: [{ type: 'post', data: userPosts[0] }]
+    }
+    api.authors.getActivities.mockResolvedValue(activities)
 
     await act(async () => {
       const { wrapper: wrapperAsync } = await givenUserProfile()
@@ -109,5 +129,40 @@ describe('posts', () => {
 
     expect(wrapper.root.findAllByType(BasicPost).length).toBe(userPosts.length)
     expect(wrapper.root.findAllByType(SectionHeader).length).toBeTruthy()
+  })
+
+  it('loads more on end reached', async () => {
+    api.authors.getActivities.mockResolvedValue({
+      items: [],
+      metadata: {
+        next: new Date().toISOString(),
+      },
+    })
+    
+    let wrapper
+    await act(async () => {
+      const { wrapper: wrapperAsync } = await givenUserProfile()
+      wrapper = wrapperAsync
+    })
+  
+    expect(wrapper.root.findAllByType(BasicPost).length).toBe(0)
+
+    api.authors.getActivities.mockResolvedValue({
+      items: [
+        { type: 'post', data: audioPost },
+        { type: 'post', data: repostPost },
+        { type: 'comment', data: comments[0] },
+        { type: 'reaction', data: audioPost },
+      ],
+      metadata: {
+        next: new Date().toISOString(),
+      },
+    })
+
+    await act(async () => {
+      await wrapper.root.findByType(SectionList).props.onEndReached()
+    })
+
+    expect(wrapper.root.findAllByType(BasicPost).length).toBe(4)
   })
 })

@@ -3,7 +3,7 @@ import React, {
   useEffect, useState, useCallback, useMemo,
 } from 'react'
 import {
-  View, FlatList, RefreshControl, Platform,
+  View, FlatList, RefreshControl, Platform, ActivityIndicator,
 } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import ShareMenu from 'react-native-share-menu'
@@ -11,7 +11,7 @@ import RNFetchBlob from 'rn-fetch-blob'
 import Snackbar from 'react-native-snackbar'
 
 import * as types from '@app/redux/types'
-import { postsSelector } from '@app/redux/selectors'
+import { isLoadingPostsSelector, postsSelector } from '@app/redux/selectors'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { getFileName, getExtension } from '@app/shared/helpers/file'
 import { strings } from '@app/config'
@@ -33,6 +33,7 @@ const routeOptions = { title: strings.tabs.home }
 const HomePage = ({ navigation }) => {
   const dispatch = useDispatch()
   const posts = useSelector(postsSelector) || []
+  const isLoading = useSelector(isLoadingPostsSelector)
   const [refreshing, setRefreshing] = useState(false)
   const [page, setPage] = useState(0)
   const [authors, setAuthors] = useState({})
@@ -204,13 +205,20 @@ const HomePage = ({ navigation }) => {
       <FlatList
         data={posts}
         contentContainerStyle={styles.flatlistContent}
-        onEndReached={onEndReached}
-        onEndReachedThreshold={0.5}
         keyExtractor={createKey}
         ListHeaderComponent={renderListHeader(profile)}
         refreshControl={renderRefreshControl}
         renderItem={renderBasicPost}
         removeClippedSubviews
+        onEndReached={onEndReached}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={(
+          <ActivityIndicator
+            size="large"
+            animating={isLoading}
+            color={colors.primary}
+          />
+        )}
       />
     </View>
   )

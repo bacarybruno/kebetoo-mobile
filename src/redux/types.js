@@ -28,6 +28,7 @@ export const API_FETCH_POSTS_ERROR = 'sagas:api_fetch_posts_error'
 export const API_REACT_POST = 'sagas:api_react_post'
 export const API_REACT_POST_ERROR = 'sagas:api_react_post_error'
 export const REPLACE_POSTS = 'sagas:replace_posts'
+export const IS_LOADING_POSTS = 'sagas:is_loading_posts'
 
 // -- notifications reducer --
 export const ADD_NOTIFICATION = 'notifications:add_notification'

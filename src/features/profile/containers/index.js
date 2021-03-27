@@ -288,22 +288,14 @@ const ProfilePage = React.memo(() => {
         // fetch latest stats
         const userId = profile.uid
         if (userId) {
-          const [posts, comments, reactions] = await Promise.all([
-            api.posts.countByAuthor(userId),
-            api.comments.countByAuthor(userId),
-            api.reactions.countByAuthor(userId),
-          ])
-
+          const result = await api.authors.countActivities(userId)
           // update data in component
-          setPostsCount(posts)
-          setCommentsCount(comments)
-          setReactionsCount(reactions)
+          setPostsCount(result.posts)
+          setCommentsCount(result.comments)
+          setReactionsCount(result.reactions)
 
           // store the data in redux
-          dispatch({
-            type: types.SET_USER_STATS,
-            payload: { posts, comments, reactions },
-          })
+          dispatch({ type: types.SET_USER_STATS, payload: result })
         }
       }
       fetchStats()

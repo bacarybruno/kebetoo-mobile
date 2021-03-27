@@ -279,8 +279,28 @@ exports[`renders UserProfile 1`] = `
                     }
                   >
                     <RCTScrollView
+                      ListFooterComponent={
+                        <ActivityIndicator
+                          animating={false}
+                          color="rgba(0, 122, 255, 255)"
+                          hidesWhenStopped={true}
+                          size="large"
+                        />
+                      }
                       ListHeaderComponent={[Function]}
-                      data={Array []}
+                      data={
+                        Array [
+                          Object {
+                            "data": Array [
+                              Object {
+                                "data": Object {},
+                                "type": "post",
+                              },
+                            ],
+                            "title": "2020-06",
+                          },
+                        ]
+                      }
                       disableVirtualization={false}
                       getItem={[Function]}
                       getItemCount={[Function]}
@@ -289,7 +309,8 @@ exports[`renders UserProfile 1`] = `
                       keyExtractor={[Function]}
                       maxToRenderPerBatch={10}
                       onContentSizeChange={[Function]}
-                      onEndReachedThreshold={2}
+                      onEndReached={[Function]}
+                      onEndReachedThreshold={0.5}
                       onLayout={[Function]}
                       onMomentumScrollEnd={[Function]}
                       onScroll={[Function]}
@@ -326,6 +347,154 @@ exports[`renders UserProfile 1`] = `
                               style={
                                 Array [
                                   Object {
+                                    "alignItems": "center",
+                                    "flexDirection": "row",
+                                    "height": 60,
+                                  },
+                                  Object {
+                                    "paddingHorizontal": 16,
+                                    "position": "absolute",
+                                    "width": 750,
+                                    "zIndex": 1,
+                                  },
+                                ]
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 8,
+                                  }
+                                }
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "alignItems": "center",
+                                      "flexDirection": "row",
+                                    }
+                                  }
+                                >
+                                  <View
+                                    accessible={true}
+                                    focusable={false}
+                                    hitSlop={
+                                      Object {
+                                        "bottom": 10,
+                                        "left": 10,
+                                        "right": 10,
+                                        "top": 10,
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "marginLeft": 16,
+                                            "width": 24,
+                                          },
+                                          Object {
+                                            "marginLeft": 0,
+                                            "marginRight": 16,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        allowFontScaling={false}
+                                        style={
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                            "fontFamily": "icomoon",
+                                            "fontSize": 20,
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          }
+                                        }
+                                        text="kebeticon-chevron-left"
+                                      />
+                                    </View>
+                                  </View>
+                                  <View
+                                    style={
+                                      Object {
+                                        "flex": 1,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontSize": 22,
+                                              "fontWeight": "600",
+                                              "letterSpacing": 0.34375,
+                                              "lineHeight": 28,
+                                            },
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              undefined,
+                                              Array [
+                                                Object {
+                                                  "flex": 1,
+                                                },
+                                                undefined,
+                                              ],
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        
+                                      </Text>
+                                      <ActivityIndicator
+                                        animating={false}
+                                        color="rgba(0, 122, 255, 255)"
+                                        hidesWhenStopped={true}
+                                        size="small"
+                                        style={
+                                          Object {
+                                            "marginLeft": 8,
+                                          }
+                                        }
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
+                            <View
+                              style={
+                                Array [
+                                  Object {
                                     "height": 30,
                                     "width": 30,
                                   },
@@ -351,7 +520,7 @@ exports[`renders UserProfile 1`] = `
                                       "borderRadius": 0,
                                     },
                                     Object {
-                                      "backgroundColor": "#a1887f",
+                                      "backgroundColor": "#673ab7",
                                     },
                                   ]
                                 }
@@ -367,7 +536,7 @@ exports[`renders UserProfile 1`] = `
                                     }
                                   }
                                 >
-                                   
+                                  J
                                 </Text>
                               </View>
                             </View>
@@ -380,6 +549,7 @@ exports[`renders UserProfile 1`] = `
                                   "height": 140,
                                   "marginHorizontal": 16,
                                   "marginTop": -70,
+                                  "paddingHorizontal": 16,
                                   "shadowColor": "rgba(0, 0, 0, 255)",
                                   "shadowOffset": Object {
                                     "x": 0,
@@ -399,6 +569,8 @@ exports[`renders UserProfile 1`] = `
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
+                                  numberOfLines={1}
                                   style={
                                     Array [
                                       Object {
@@ -426,7 +598,7 @@ exports[`renders UserProfile 1`] = `
                                     ]
                                   }
                                 >
-                                   
+                                  Jest 123
                                 </Text>
                                 <Text
                                   style={
@@ -452,7 +624,7 @@ exports[`renders UserProfile 1`] = `
                                     ]
                                   }
                                 >
-                                  Joined on June 2020
+                                  jest123
                                 </Text>
                               </View>
                               <View
@@ -688,7 +860,184 @@ exports[`renders UserProfile 1`] = `
                                 </View>
                               </View>
                             </View>
+                            <View
+                              style={
+                                Object {
+                                  "marginHorizontal": 16,
+                                  "marginTop": 16,
+                                }
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
+                                      undefined,
+                                      Object {
+                                        "marginBottom": 2,
+                                      },
+                                    ],
+                                  ]
+                                }
+                              >
+                                Bio
+                              </Text>
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0,0,0,0.38)",
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ],
+                                  ]
+                                }
+                              >
+                                Jest tester
+                              </Text>
+                            </View>
                           </View>
+                        </View>
+                        <View
+                          onLayout={[Function]}
+                          style={null}
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                  "marginBottom": 24,
+                                },
+                                Object {
+                                  "paddingHorizontal": 16,
+                                },
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontSize": 17,
+                                    "fontWeight": "400",
+                                    "letterSpacing": -0.408,
+                                    "lineHeight": 22,
+                                  },
+                                  Array [
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "fontFamily": "System",
+                                      "fontWeight": "600",
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              June 2020
+                            </Text>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 1000,
+                                    "paddingHorizontal": 16,
+                                    "paddingVertical": 4,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#F0F6FE",
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "color": "#000000",
+                                      "fontFamily": "System",
+                                      "fontSize": 15,
+                                      "fontWeight": "400",
+                                      "letterSpacing": -0.24,
+                                      "lineHeight": 20,
+                                    },
+                                    Array [
+                                      Object {
+                                        "color": "rgba(0, 122, 255, 255)",
+                                      },
+                                      Object {
+                                        "backgroundColor": "transparent",
+                                        "fontFamily": "System",
+                                        "fontWeight": "700",
+                                      },
+                                      undefined,
+                                    ],
+                                  ]
+                                }
+                              >
+                                1+
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
+                        <View
+                          onLayout={[Function]}
+                          style={null}
+                        />
+                        <View
+                          onLayout={[Function]}
+                          style={null}
+                        />
+                        <View
+                          style={
+                            Object {
+                              "height": 0,
+                            }
+                          }
+                        />
+                        <View
+                          onLayout={[Function]}
+                        >
+                          <ActivityIndicator
+                            animating={false}
+                            color="rgba(0, 122, 255, 255)"
+                            hidesWhenStopped={true}
+                            size="large"
+                          />
                         </View>
                       </View>
                     </RCTScrollView>

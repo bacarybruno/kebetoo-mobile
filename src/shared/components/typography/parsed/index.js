@@ -47,7 +47,7 @@ const ParsedTypography = ({
   const renderPatternValue = useCallback((_, matches) => matches[rawValue ? 0 : 1], [rawValue])
 
   const textStyle = Typography.styles[type]
-  const baseTextStyle = [textStyle, style]
+  const baseTextStyle = [styles.text, textStyle, style]
 
   const linkStyle = StyleSheet.flatten([baseTextStyle, styles.link])
   const boldStyle = StyleSheet.flatten([baseTextStyle, styles.bold])

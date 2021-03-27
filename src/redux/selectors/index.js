@@ -1,4 +1,5 @@
 export const postsSelector = (state) => state.postsReducer.posts
+export const isLoadingPostsSelector = (state) => state.postsReducer.isLoading
 export const userStatsSelector = (state) => state.userReducer.stats
 export const userProfileSelector = (state) => state.userReducer.profile
 export const recentSearchHistory = (state) => state.userReducer.searchHistory

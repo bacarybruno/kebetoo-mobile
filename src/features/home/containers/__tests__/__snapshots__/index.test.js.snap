@@ -279,6 +279,14 @@ exports[`renders HomePage 1`] = `
                     }
                   >
                     <RCTScrollView
+                      ListFooterComponent={
+                        <ActivityIndicator
+                          animating={true}
+                          color="rgba(0, 122, 255, 255)"
+                          hidesWhenStopped={true}
+                          size="large"
+                        />
+                      }
                       ListHeaderComponent={
                         <View
                           style={
@@ -1954,6 +1962,9 @@ exports[`renders HomePage 1`] = `
                                         style={
                                           Array [
                                             Object {
+                                              "color": "rgba(0,0,0,0.87)",
+                                            },
+                                            Object {
                                               "backgroundColor": "transparent",
                                               "color": "#000000",
                                               "fontFamily": "System",
@@ -1970,6 +1981,9 @@ exports[`renders HomePage 1`] = `
                                           style={
                                             Array [
                                               Array [
+                                                Object {
+                                                  "color": "rgba(0,0,0,0.87)",
+                                                },
                                                 Object {
                                                   "backgroundColor": "transparent",
                                                   "color": "#000000",
@@ -2008,6 +2022,9 @@ exports[`renders HomePage 1`] = `
                                         style={
                                           Array [
                                             Object {
+                                              "color": "rgba(0,0,0,0.87)",
+                                            },
+                                            Object {
                                               "backgroundColor": "transparent",
                                               "color": "#000000",
                                               "fontFamily": "System",
@@ -2024,6 +2041,9 @@ exports[`renders HomePage 1`] = `
                                           style={
                                             Array [
                                               Array [
+                                                Object {
+                                                  "color": "rgba(0,0,0,0.87)",
+                                                },
                                                 Object {
                                                   "backgroundColor": "transparent",
                                                   "color": "#000000",
@@ -3375,6 +3395,9 @@ exports[`renders HomePage 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -3391,6 +3414,9 @@ exports[`renders HomePage 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -3429,6 +3455,9 @@ exports[`renders HomePage 1`] = `
                                       style={
                                         Array [
                                           Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
+                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -3445,6 +3474,9 @@ exports[`renders HomePage 1`] = `
                                         style={
                                           Array [
                                             Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -4228,6 +4260,9 @@ exports[`renders HomePage 1`] = `
                                               style={
                                                 Array [
                                                   Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
                                                     "backgroundColor": "transparent",
                                                     "color": "#000000",
                                                     "fontFamily": "System",
@@ -4244,6 +4279,9 @@ exports[`renders HomePage 1`] = `
                                                 style={
                                                   Array [
                                                     Array [
+                                                      Object {
+                                                        "color": "rgba(0,0,0,0.87)",
+                                                      },
                                                       Object {
                                                         "backgroundColor": "transparent",
                                                         "color": "#000000",
@@ -4282,6 +4320,9 @@ exports[`renders HomePage 1`] = `
                                               style={
                                                 Array [
                                                   Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
                                                     "backgroundColor": "transparent",
                                                     "color": "#000000",
                                                     "fontFamily": "System",
@@ -4298,6 +4339,9 @@ exports[`renders HomePage 1`] = `
                                                 style={
                                                   Array [
                                                     Array [
+                                                      Object {
+                                                        "color": "rgba(0,0,0,0.87)",
+                                                      },
                                                       Object {
                                                         "backgroundColor": "transparent",
                                                         "color": "#000000",
@@ -4629,6 +4673,16 @@ exports[`renders HomePage 1`] = `
                               </View>
                             </View>
                           </View>
+                        </View>
+                        <View
+                          onLayout={[Function]}
+                        >
+                          <ActivityIndicator
+                            animating={true}
+                            color="rgba(0, 122, 255, 255)"
+                            hidesWhenStopped={true}
+                            size="large"
+                          />
                         </View>
                       </View>
                     </RCTScrollView>

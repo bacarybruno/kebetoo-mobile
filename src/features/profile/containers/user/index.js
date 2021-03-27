@@ -1,32 +1,19 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { View, SectionList, Image } from 'react-native'
+import { View, SectionList, Image, Text, ActivityIndicator } from 'react-native'
 import dayjs from 'dayjs'
 
 import { api } from '@app/shared/services'
 import {
-  Badge, Typography, HeaderBack, Pressable, TextAvatar,
+  Badge, Typography, Pressable, TextAvatar, AppHeader,
 } from '@app/shared/components'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks'
 import { metrics } from '@app/theme'
-import { TransitionPresets } from '@react-navigation/stack'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 
 import { Stats } from '../index'
 import createThemedStyles from './styles'
-
-export const routeOptions = (styles, colors) => ({
-  headerShown: true,
-  headerBackImage: () => (
-    <HeaderBack tintColor={colors.textPrimary} />
-  ),
-  headerStyle: styles.header,
-  headerTitleStyle: styles.headerTitle,
-  title: '',
-  headerTransparent: true,
-  ...TransitionPresets.SlideFromRightIOS,
-})
 
 export const SectionHeader = ({ section, dateFormat }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -37,7 +24,7 @@ export const SectionHeader = ({ section, dateFormat }) => {
         systemWeight={Typography.weights.semibold}
         text={dayjs(section.title, dateFormat).format(strings.dates.format_month_year)}
       />
-      <Badge text={section.data.length} />
+      <Badge text={`${section.data.length}+`} />
     </View>
   )
 }
@@ -66,12 +53,13 @@ const Bio = ({ text }) => {
 const UserProfile = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
-  navigation.setOptions(routeOptions(styles, colors))
 
   const { params: { userId } } = route
   const [posts, setPosts] = useState([])
   const [sortedPosts, setSortedPosts] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   const [authors, setAuthors] = useState({})
+  const [next, setNext] = useState(null)
   const [user, setUser] = useState({
     displayName: ' ',
     photoURL: null,
@@ -81,6 +69,7 @@ const UserProfile = ({ route, navigation }) => {
     reactions: [],
     createdAt: dayjs().toISOString(),
     username: null,
+    bio: null,
   })
 
   const dateFormat = 'YYYY-MM'
@@ -90,9 +79,30 @@ const UserProfile = ({ route, navigation }) => {
   const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
 
   useEffect(() => {
-    api.authors.getById(userId)?.then(setUser).catch(console.log)
-    api.posts.getByAuthor(userId)?.then(setPosts).catch(console.log)
+    const fetchData = async () => {
+      setIsLoading(true)
+      const [author, activities] = await Promise.all([
+        api.authors.getById(userId),
+        api.authors.getActivities(userId)
+      ])
+      setUser(author)
+      setPosts(activities.items)
+      setNext(activities.metadata?.next)
+      setIsLoading(false)
+    }
+
+    fetchData()
   }, [userId])
+
+  const loadMore = useCallback(async () => {
+    setIsLoading(true)
+    if (next) {
+      const activities = await api.authors.getActivities(userId, next)
+      setPosts((posts) => [...posts, ...activities.items])
+      setNext(activities.metadata?.next)
+    }
+    setIsLoading(false)
+  }, [next])
 
   useEffect(() => {
     const dateMap = {}
@@ -110,7 +120,16 @@ const UserProfile = ({ route, navigation }) => {
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
-      const data = await getRepostAuthors(posts)
+      const postsData = posts
+        .flatMap((post) => post.data)
+        .map((post) => ({
+          repost: {
+            author: post.repost?.author
+              || post.author?._id
+              || post.author,
+          },
+        }))
+      const data = await getRepostAuthors(postsData)
       setAuthors(data)
     }
     fetchRepostAuthors()
@@ -132,19 +151,47 @@ const UserProfile = ({ route, navigation }) => {
     <SectionHeader section={section} dateFormat={dateFormat} />
   ), [])
 
-  const renderItem = useCallback(({ item }) => (
-    <View style={styles.paddingHorizontal}>
-      <BasicPost
-        author={user}
-        originalAuthor={
-          item.repost
-            ? authors[item.repost.author]
-            : user
-        }
-        post={item}
-      />
-    </View>
-  ), [authors, styles.paddingHorizontal, user])
+  const renderItem = useCallback(({ item }) => {
+    const { type, data } = item
+    const post = data.post || data
+
+    if (!post?.reactions) {
+      // comments reactions or replies
+      return null
+    }
+
+    let message = strings.user_profile.published_post
+    if (type === 'post' && post.repost) message = strings.user_profile.shared_post
+    else if (type === 'comment') message = strings.user_profile.commented_post
+    else if (type === 'reaction') message = strings.user_profile.reacted_post
+
+    return (
+      <View style={styles.paddingHorizontal}>
+        <View style={styles.subheading}>
+          <Text>
+            <Typography
+              type={Typography.types.subheading}
+              systemWeight={Typography.weights.bold}
+              text={user.displayName}
+            />
+            <Typography
+              type={Typography.types.subheading}
+              text={' ' + message}
+            />
+          </Text>
+        </View>
+        <BasicPost
+          author={post.author}
+          originalAuthor={
+            post.repost
+              ? authors[post.repost.author]
+              : user
+          }
+          post={post}
+        />
+      </View>
+    )
+  }, [authors, styles.paddingHorizontal, user])
 
   const renderListHeader = useCallback(() => {
     const joinedAt = strings.formatString(
@@ -153,6 +200,7 @@ const UserProfile = ({ route, navigation }) => {
     )
     return (
       <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
+        <AppHeader headerBack showAvatar={false} title="" text="" style={styles.header} />
         {photoURL
           ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
           : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
@@ -163,6 +211,8 @@ const UserProfile = ({ route, navigation }) => {
               type={Typography.types.headline2}
               text={user.displayName}
               systemWeight={Typography.weights.semibold}
+              numberOfLines={1}
+              adjustsFontSizeToFit
             />
             <Typography
               style={styles.textCenter}
@@ -194,6 +244,15 @@ const UserProfile = ({ route, navigation }) => {
         contentContainerStyle={styles.sectionListContent}
         renderItem={renderItem}
         stickySectionHeadersEnabled={false}
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={(
+          <ActivityIndicator
+            size="large"
+            animating={isLoading}
+            color={colors.primary}
+          />
+        )}
       />
     </View>
   )

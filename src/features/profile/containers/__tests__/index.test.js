@@ -56,9 +56,11 @@ describe('displays the right stats for', () => {
   }]
   statsItems.forEach((item) => {
     it(`[${item.name}]: when request is resolved`, async () => {
-      api.posts.countByAuthor.mockResolvedValue(item.resolvedValue)
-      api.comments.countByAuthor.mockResolvedValue(item.resolvedValue)
-      api.reactions.countByAuthor.mockResolvedValue(item.resolvedValue)
+      api.authors.countActivities.mockResolvedValue({
+        posts: item.resolvedValue,
+        comments: item.resolvedValue,
+        reactions: item.resolvedValue,
+      })
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()
@@ -67,9 +69,11 @@ describe('displays the right stats for', () => {
       expect(wrapper.root.findByProps({ title: item.title }).props.value).toBe(item.resolvedValue)
     })
     it(`[${item.name}]: when request fails`, async () => {
-      api.posts.countByAuthor.mockRejectedValue()
-      api.comments.countByAuthor.mockRejectedValue()
-      api.reactions.countByAuthor.mockRejectedValue()
+      api.authors.countActivities.mockRejectedValue({
+        posts: item.resolvedValue,
+        comments: item.resolvedValue,
+        reactions: item.resolvedValue,
+      })
       let wrapper = null
       await act(async () => {
         const { wrapper: asyncWrapper } = await givenProfile()
