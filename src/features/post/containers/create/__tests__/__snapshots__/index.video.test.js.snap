@@ -619,6 +619,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                                       "lineHeight": 22,
                                       "textAlignVertical": "top",
                                     },
+                                    undefined,
                                   ]
                                 }
                               >
@@ -648,6 +649,7 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                                           "lineHeight": 22,
                                           "textAlignVertical": "top",
                                         },
+                                        undefined,
                                       ],
                                       undefined,
                                     ]

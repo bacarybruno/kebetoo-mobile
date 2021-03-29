@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ParsedTypography 1`] = `
+exports[`renders FormatedTypography 1`] = `
 <View
   style={
     Object {
@@ -300,6 +300,7 @@ exports[`renders ParsedTypography 1`] = `
                                 "lineHeight": 20,
                               },
                               undefined,
+                              undefined,
                             ]
                           }
                         >
@@ -319,6 +320,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 undefined,
@@ -346,13 +348,14 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 Object {
                                   "backgroundColor": "transparent",
                                   "color": "#000000",
                                   "fontFamily": "System",
                                   "fontSize": 15,
-                                  "fontWeight": "bold",
+                                  "fontWeight": "600",
                                   "letterSpacing": -0.24,
                                   "lineHeight": 20,
                                 },
@@ -378,6 +381,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -402,6 +406,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -436,6 +441,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -460,6 +466,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -495,6 +502,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -520,6 +528,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -553,6 +562,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -578,6 +588,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -611,6 +622,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -636,6 +648,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -669,6 +682,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -694,6 +708,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -726,6 +741,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 undefined,
@@ -768,6 +784,7 @@ exports[`renders ParsedTypography 1`] = `
                                 "lineHeight": 20,
                               },
                               undefined,
+                              undefined,
                             ]
                           }
                         >
@@ -787,6 +804,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 undefined,
@@ -814,13 +832,14 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 Object {
                                   "backgroundColor": "transparent",
                                   "color": "#000000",
                                   "fontFamily": "System",
                                   "fontSize": 15,
-                                  "fontWeight": "bold",
+                                  "fontWeight": "600",
                                   "letterSpacing": -0.24,
                                   "lineHeight": 20,
                                 },
@@ -846,6 +865,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -870,6 +890,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -904,6 +925,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -928,6 +950,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -963,6 +986,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -988,6 +1012,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -1021,6 +1046,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -1046,6 +1072,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -1079,6 +1106,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -1104,6 +1132,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -1137,6 +1166,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ],
                                 undefined,
                               ]
@@ -1162,6 +1192,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 Object {
@@ -1194,6 +1225,7 @@ exports[`renders ParsedTypography 1`] = `
                                     "letterSpacing": -0.24,
                                     "lineHeight": 20,
                                   },
+                                  undefined,
                                   undefined,
                                 ],
                                 undefined,

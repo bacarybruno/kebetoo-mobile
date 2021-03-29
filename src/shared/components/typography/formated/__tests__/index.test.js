@@ -4,7 +4,7 @@ import { api } from '@app/shared/services'
 import { useNavigation } from '@react-navigation/native'
 import { Linking } from 'react-native'
 
-import ParsedTypography from '../index'
+import FormatedTypography from '../index'
 
 beforeEach(jest.clearAllMocks)
 
@@ -18,7 +18,7 @@ const infos = {
   strikeThrough: '~strikeThrough~',
 }
 
-const givenParsedTypography = setupTest(ParsedTypography)({
+const givenFormatedTypography = setupTest(FormatedTypography)({
   text: `
     Hello World!
     Here is a ${infos.bold} text 
@@ -33,13 +33,13 @@ const givenParsedTypography = setupTest(ParsedTypography)({
   rawValue: true,
 })
 
-it('renders ParsedTypography', () => {
-  const { wrapper } = givenParsedTypography()
+it('renders FormatedTypography', () => {
+  const { wrapper } = givenFormatedTypography()
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
 it('opens url', () => {
-  const { wrapper } = givenParsedTypography()
+  const { wrapper } = givenFormatedTypography()
   const website = wrapper.root.findAllByProps({ children: infos.website })[0]
   website.props.onPress()
   expect(Linking.openURL).toBeCalledTimes(1)
@@ -48,7 +48,7 @@ it('opens url', () => {
 
 it('handles username', async () => {
   api.authors.getByUsername.mockReturnValueOnce([{ _id: 123 }])
-  const { wrapper } = givenParsedTypography()
+  const { wrapper } = givenFormatedTypography()
   const username = wrapper.root.findAllByProps({ children: infos.username })[0]
   await username.props.onPress()
   expect(useNavigation().navigate).toBeCalledTimes(1)
@@ -57,7 +57,7 @@ it('handles username', async () => {
 
 it('handles username not found', async () => {
   api.authors.getByUsername.mockReturnValueOnce([])
-  const { wrapper } = givenParsedTypography()
+  const { wrapper } = givenFormatedTypography()
   const username = wrapper.root.findAllByProps({ children: infos.username })[0]
   await username.props.onPress()
   expect(useNavigation().navigate).not.toBeCalled()

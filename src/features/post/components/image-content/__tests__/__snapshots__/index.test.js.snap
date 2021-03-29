@@ -319,6 +319,7 @@ exports[`renders ImageContent 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -338,6 +339,7 @@ exports[`renders ImageContent 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -379,6 +381,7 @@ exports[`renders ImageContent 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -398,6 +401,7 @@ exports[`renders ImageContent 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -815,6 +819,7 @@ exports[`renders ImageContent on comments mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -834,6 +839,7 @@ exports[`renders ImageContent on comments mode 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -875,6 +881,7 @@ exports[`renders ImageContent on comments mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -894,6 +901,7 @@ exports[`renders ImageContent on comments mode 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,

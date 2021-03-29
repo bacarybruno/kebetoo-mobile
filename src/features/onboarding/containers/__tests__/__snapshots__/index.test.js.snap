@@ -459,7 +459,9 @@ exports[`renders Onboarding 1`] = `
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
                                   bold={true}
+                                  numberOfLines={2}
                                   style={
                                     Array [
                                       Object {
@@ -481,64 +483,273 @@ exports[`renders Onboarding 1`] = `
                                     ]
                                   }
                                 >
-                                  React to the Contents
-You Care About
+                                  React to the Contents You Care About
                                 </Text>
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 17,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.408,
-                                        "lineHeight": 22,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 255)",
-                                        },
-                                        undefined,
-                                        Object {
-                                          "marginTop": 46.690000000000005,
-                                        },
-                                      ],
-                                    ]
+                                    Object {
+                                      "marginTop": 46.690000000000005,
+                                    }
                                   }
                                 >
-                                  React and comment in a 
-                                  <Text
+                                  <View
                                     style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontSize": 17,
-                                          "fontWeight": "400",
-                                          "letterSpacing": -0.408,
-                                          "lineHeight": 22,
-                                        },
-                                        Array [
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 255)",
-                                          },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "600",
-                                          },
-                                          undefined,
-                                        ],
-                                      ]
+                                      Object {
+                                        "opacity": 0,
+                                      }
                                     }
                                   >
-                                    simple and intuitive
-                                  </Text>
-                                   way the posts that interest you the most ❤️
-                                </Text>
+                                    <View
+                                      onLayout={[Function]}
+                                    >
+                                      <Text
+                                        numberOfLines={5}
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            React and comment in a 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            simple and intuitive
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             way the posts that interest you the most ❤️
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                    <View
+                                      onLayout={[Function]}
+                                      style={
+                                        Object {
+                                          "left": 0,
+                                          "opacity": 0,
+                                          "position": "absolute",
+                                          "top": 0,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            React and comment in a 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            simple and intuitive
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             way the posts that interest you the most ❤️
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                             <View
@@ -563,7 +774,9 @@ You Care About
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
                                   bold={true}
+                                  numberOfLines={2}
                                   style={
                                     Array [
                                       Object {
@@ -587,61 +800,271 @@ You Care About
                                 >
                                   Join Our Social Media
                                 </Text>
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 17,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.408,
-                                        "lineHeight": 22,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 255)",
-                                        },
-                                        undefined,
-                                        Object {
-                                          "marginTop": 46.690000000000005,
-                                        },
-                                      ],
-                                    ]
+                                    Object {
+                                      "marginTop": 46.690000000000005,
+                                    }
                                   }
                                 >
-                                  Kebetoo is a microblogging app with 
-                                  <Text
+                                  <View
                                     style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontSize": 17,
-                                          "fontWeight": "400",
-                                          "letterSpacing": -0.408,
-                                          "lineHeight": 22,
-                                        },
-                                        Array [
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 255)",
-                                          },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "600",
-                                          },
-                                          undefined,
-                                        ],
-                                      ]
+                                      Object {
+                                        "opacity": 0,
+                                      }
                                     }
                                   >
-                                    African DNA
-                                  </Text>
-                                  . Be one of the first to join the adventure 💪
-                                </Text>
+                                    <View
+                                      onLayout={[Function]}
+                                    >
+                                      <Text
+                                        numberOfLines={5}
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            Kebetoo is a microblogging app with 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            African DNA
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            . Be one of the first to join the adventure 💪
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                    <View
+                                      onLayout={[Function]}
+                                      style={
+                                        Object {
+                                          "left": 0,
+                                          "opacity": 0,
+                                          "position": "absolute",
+                                          "top": 0,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            Kebetoo is a microblogging app with 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            African DNA
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            . Be one of the first to join the adventure 💪
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                             <View
@@ -666,7 +1089,9 @@ You Care About
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
                                   bold={true}
+                                  numberOfLines={2}
                                   style={
                                     Array [
                                       Object {
@@ -690,61 +1115,271 @@ You Care About
                                 >
                                   It's your turn to speak
                                 </Text>
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 17,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.408,
-                                        "lineHeight": 22,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 255)",
-                                        },
-                                        undefined,
-                                        Object {
-                                          "marginTop": 46.690000000000005,
-                                        },
-                                      ],
-                                    ]
+                                    Object {
+                                      "marginTop": 46.690000000000005,
+                                    }
                                   }
                                 >
-                                  With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
-                                  <Text
+                                  <View
                                     style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontSize": 17,
-                                          "fontWeight": "400",
-                                          "letterSpacing": -0.408,
-                                          "lineHeight": 22,
-                                        },
-                                        Array [
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 255)",
-                                          },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "600",
-                                          },
-                                          undefined,
-                                        ],
-                                      ]
+                                      Object {
+                                        "opacity": 0,
+                                      }
                                     }
                                   >
-                                    voice messages
-                                  </Text>
-                                   🎤
-                                </Text>
+                                    <View
+                                      onLayout={[Function]}
+                                    >
+                                      <Text
+                                        numberOfLines={5}
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            voice messages
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             🎤
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                    <View
+                                      onLayout={[Function]}
+                                      style={
+                                        Object {
+                                          "left": 0,
+                                          "opacity": 0,
+                                          "position": "absolute",
+                                          "top": 0,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            With Kebetoo, you can create and share public posts of all types: videos, images, texts but also... 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            voice messages
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             🎤
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                             <View
@@ -769,7 +1404,9 @@ You Care About
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
                                   bold={true}
+                                  numberOfLines={2}
                                   style={
                                     Array [
                                       Object {
@@ -791,64 +1428,273 @@ You Care About
                                     ]
                                   }
                                 >
-                                  React to the Contents
-You Care About
+                                  React to the Contents You Care About
                                 </Text>
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 17,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.408,
-                                        "lineHeight": 22,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 255)",
-                                        },
-                                        undefined,
-                                        Object {
-                                          "marginTop": 46.690000000000005,
-                                        },
-                                      ],
-                                    ]
+                                    Object {
+                                      "marginTop": 46.690000000000005,
+                                    }
                                   }
                                 >
-                                  React and comment in a 
-                                  <Text
+                                  <View
                                     style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontSize": 17,
-                                          "fontWeight": "400",
-                                          "letterSpacing": -0.408,
-                                          "lineHeight": 22,
-                                        },
-                                        Array [
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 255)",
-                                          },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "600",
-                                          },
-                                          undefined,
-                                        ],
-                                      ]
+                                      Object {
+                                        "opacity": 0,
+                                      }
                                     }
                                   >
-                                    simple and intuitive
-                                  </Text>
-                                   way the posts that interest you the most ❤️
-                                </Text>
+                                    <View
+                                      onLayout={[Function]}
+                                    >
+                                      <Text
+                                        numberOfLines={5}
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            React and comment in a 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            simple and intuitive
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             way the posts that interest you the most ❤️
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                    <View
+                                      onLayout={[Function]}
+                                      style={
+                                        Object {
+                                          "left": 0,
+                                          "opacity": 0,
+                                          "position": "absolute",
+                                          "top": 0,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            React and comment in a 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            simple and intuitive
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                             way the posts that interest you the most ❤️
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                             <View
@@ -873,7 +1719,9 @@ You Care About
                                 }
                               >
                                 <Text
+                                  adjustsFontSizeToFit={true}
                                   bold={true}
+                                  numberOfLines={2}
                                   style={
                                     Array [
                                       Object {
@@ -897,61 +1745,271 @@ You Care About
                                 >
                                   Join Our Social Media
                                 </Text>
-                                <Text
+                                <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "#000000",
-                                        "fontFamily": "System",
-                                        "fontSize": 17,
-                                        "fontWeight": "400",
-                                        "letterSpacing": -0.408,
-                                        "lineHeight": 22,
-                                      },
-                                      Array [
-                                        Object {
-                                          "color": "rgba(0, 0, 0, 255)",
-                                        },
-                                        undefined,
-                                        Object {
-                                          "marginTop": 46.690000000000005,
-                                        },
-                                      ],
-                                    ]
+                                    Object {
+                                      "marginTop": 46.690000000000005,
+                                    }
                                   }
                                 >
-                                  Kebetoo is a microblogging app with 
-                                  <Text
+                                  <View
                                     style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontSize": 17,
-                                          "fontWeight": "400",
-                                          "letterSpacing": -0.408,
-                                          "lineHeight": 22,
-                                        },
-                                        Array [
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 255)",
-                                          },
-                                          Object {
-                                            "backgroundColor": "transparent",
-                                            "fontFamily": "System",
-                                            "fontWeight": "600",
-                                          },
-                                          undefined,
-                                        ],
-                                      ]
+                                      Object {
+                                        "opacity": 0,
+                                      }
                                     }
                                   >
-                                    African DNA
-                                  </Text>
-                                  . Be one of the first to join the adventure 💪
-                                </Text>
+                                    <View
+                                      onLayout={[Function]}
+                                    >
+                                      <Text
+                                        numberOfLines={5}
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            Kebetoo is a microblogging app with 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            African DNA
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            . Be one of the first to join the adventure 💪
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                    <View
+                                      onLayout={[Function]}
+                                      style={
+                                        Object {
+                                          "left": 0,
+                                          "opacity": 0,
+                                          "position": "absolute",
+                                          "top": 0,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={Object {}}
+                                      >
+                                        <Text
+                                          style={
+                                            Array [
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontSize": 17,
+                                                "fontWeight": "400",
+                                                "letterSpacing": -0.408,
+                                                "lineHeight": 22,
+                                              },
+                                              undefined,
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 255)",
+                                              },
+                                            ]
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            Kebetoo is a microblogging app with 
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                Object {
+                                                  "backgroundColor": "transparent",
+                                                  "color": "rgba(0, 0, 0, 255)",
+                                                  "fontFamily": "System",
+                                                  "fontSize": 17,
+                                                  "fontWeight": "600",
+                                                  "letterSpacing": -0.408,
+                                                  "lineHeight": 22,
+                                                },
+                                              ]
+                                            }
+                                          >
+                                            African DNA
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Array [
+                                                  Object {
+                                                    "color": "rgba(0,0,0,0.87)",
+                                                  },
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 17,
+                                                    "fontWeight": "400",
+                                                    "letterSpacing": -0.408,
+                                                    "lineHeight": 22,
+                                                  },
+                                                  undefined,
+                                                  Object {
+                                                    "color": "rgba(0, 0, 0, 255)",
+                                                  },
+                                                ],
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            . Be one of the first to join the adventure 💪
+                                          </Text>
+                                        </Text>
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                           </View>

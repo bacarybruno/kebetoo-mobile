@@ -2,7 +2,10 @@ import { StyleSheet } from 'react-native'
 
 import { metrics } from '@app/theme'
 
-const safeHeight = metrics.screenHeight - metrics.headerHeight
+let safeHeight = metrics.screenHeight - metrics.headerHeight
+if (metrics.isIPhoneX) {
+  safeHeight -= metrics.screenHeight * 0.1
+}
 
 export default (colors) => StyleSheet.create({
   wrapper: {

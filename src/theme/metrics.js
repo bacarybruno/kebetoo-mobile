@@ -1,4 +1,5 @@
 import { Dimensions, Platform } from 'react-native'
+import DeviceInfo from 'react-native-device-info'
 
 const { width, height } = Dimensions.get('window')
 
@@ -37,6 +38,7 @@ const metrics = {
   screenHeight: height,
   marginVertical: spacing.lg,
   marginHorizontal: spacing.md,
+  isIPhoneX: DeviceInfo.hasNotch(),
   tabBarHeight: 50,
   tabBarFullHeight: 80,
   headerHeight: getDefaultHeaderHeight(),

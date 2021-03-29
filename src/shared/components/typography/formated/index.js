@@ -4,16 +4,22 @@ import { useNavigation } from '@react-navigation/native'
 import ParsedText from 'react-native-parsed-text'
 import Snackbar from 'react-native-snackbar'
 
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { ReadMore, Typography } from '@app/shared/components'
 import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
+
 import { warnNotImplemented } from '../../no-content'
 
 import createThemedStyles from './styles'
 
-const ParsedTypography = ({
+const boldVariants = {
+  semi: 'semibold',
+  bold: 'bold',
+}
+
+const FormatedTypography = ({
   text,
   type = Typography.types.body,
   withReadMore = true,
@@ -21,9 +27,12 @@ const ParsedTypography = ({
   rawValue = false,
   withDecorators = false,
   numberOfLines,
+  boldVariant = boldVariants.semi,
+  color,
   ...textProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
+  const { colors } = useAppColors()
   const { navigate } = useNavigation()
 
   const handleUrlPress = useCallback((url) => {
@@ -47,10 +56,15 @@ const ParsedTypography = ({
   const renderPatternValue = useCallback((_, matches) => matches[rawValue ? 0 : 1], [rawValue])
 
   const textStyle = Typography.styles[type]
-  const baseTextStyle = [styles.text, textStyle, style]
+  const baseTextStyle = [styles.text, textStyle, style, color && { color: colors[color] }]
 
   const linkStyle = StyleSheet.flatten([baseTextStyle, styles.link])
-  const boldStyle = StyleSheet.flatten([baseTextStyle, styles.bold])
+  const boldStyle = StyleSheet.flatten([
+    baseTextStyle,
+    boldVariant === boldVariants.semi
+      ? styles.semibold
+      : styles.bold,
+  ])
   const italicStyle = StyleSheet.flatten([baseTextStyle, styles.italic])
   const strikeThroughStyle = StyleSheet.flatten([baseTextStyle, styles.strikeThrough])
   const parsePatterns = [
@@ -78,7 +92,9 @@ const ParsedTypography = ({
   )
 }
 
-export default ParsedTypography
+FormatedTypography.boldVariants = boldVariants
+
+export default FormatedTypography
 
 // A robust regexp for matching URLs. Thanks: https://gist.github.com/dperini/729294
 const regWebUrl = /(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?/i

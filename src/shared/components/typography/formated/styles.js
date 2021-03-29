@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { systemWeights } from 'react-native-typography'
 
 export default (colors) => StyleSheet.create({
   text: {
@@ -7,9 +8,8 @@ export default (colors) => StyleSheet.create({
   link: {
     color: colors.link,
   },
-  bold: {
-    fontWeight: 'bold',
-  },
+  bold: systemWeights.bold,
+  semibold: systemWeights.semibold,
   italic: {
     fontStyle: 'italic',
   },

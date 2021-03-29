@@ -3865,6 +3865,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -3884,6 +3885,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -3925,6 +3927,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -3944,6 +3947,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -5415,6 +5419,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -5434,6 +5439,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -5475,6 +5481,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -5494,6 +5501,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -6446,6 +6454,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -6465,6 +6474,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -6506,6 +6516,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
+                                    undefined,
                                   ]
                                 }
                               >
@@ -6525,6 +6536,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                           "letterSpacing": -0.24,
                                           "lineHeight": 20,
                                         },
+                                        undefined,
                                         undefined,
                                       ],
                                       undefined,
@@ -7373,6 +7385,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -7392,6 +7405,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -7433,6 +7447,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -7452,6 +7467,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -9039,6 +9055,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -9058,6 +9075,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -9099,6 +9117,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -9118,6 +9137,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -10202,6 +10222,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -10221,6 +10242,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -10262,6 +10284,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
+                                          undefined,
                                         ]
                                       }
                                     >
@@ -10281,6 +10304,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                                 "letterSpacing": -0.24,
                                                 "lineHeight": 20,
                                               },
+                                              undefined,
                                               undefined,
                                             ],
                                             undefined,
@@ -10885,6 +10909,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -10904,6 +10929,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -10945,6 +10971,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -10964,6 +10991,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -12371,6 +12399,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -12390,6 +12419,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -12431,6 +12461,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -12450,6 +12481,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -13354,6 +13386,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -13373,6 +13406,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,
@@ -13414,6 +13448,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -13433,6 +13468,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                         "letterSpacing": -0.24,
                                         "lineHeight": 20,
                                       },
+                                      undefined,
                                       undefined,
                                     ],
                                     undefined,

@@ -619,6 +619,7 @@ exports[`renders CreatePost 1`] = `
                                       "lineHeight": 22,
                                       "textAlignVertical": "top",
                                     },
+                                    undefined,
                                   ]
                                 }
                               >
@@ -648,6 +649,7 @@ exports[`renders CreatePost 1`] = `
                                           "lineHeight": 22,
                                           "textAlignVertical": "top",
                                         },
+                                        undefined,
                                       ],
                                       undefined,
                                     ]
