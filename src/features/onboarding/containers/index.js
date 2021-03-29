@@ -22,40 +22,18 @@ const routeOptions = {
   headerShown: false,
 }
 
-const createKeyword = (word) => (
-  <Typography
-    type={Typography.types.subheading}
-    systemWeight={Typography.weights.semibold}
-    text={word}
-    color="black"
-  />
-)
-
-const withKeyword = (string, keyword) => (
-  strings.formatString(string, createKeyword(keyword))
-)
-
 export const slideItems = [{
   imageSrc: images.onboarding1,
   title: strings.onboarding.screen_one_title,
-  description: withKeyword(
-    strings.onboarding.screen_one_description,
-    strings.onboarding.keyword_african_dna,
-  ),
+  description: strings.onboarding.screen_one_description,
 }, {
   imageSrc: images.onboarding2,
   title: strings.onboarding.screen_two_title,
-  description: withKeyword(
-    strings.onboarding.screen_two_description,
-    strings.onboarding.keyword_voice_messages,
-  ),
+  description: strings.onboarding.screen_two_description,
 }, {
   imageSrc: images.onboarding3,
   title: strings.onboarding.screen_three_title,
-  description: withKeyword(
-    strings.onboarding.screen_three_description,
-    strings.onboarding.keyword_simple_intuitive,
-  ),
+  description: strings.onboarding.screen_three_description,
 }]
 
 export const SkipButton = ({ onPress }) => {
