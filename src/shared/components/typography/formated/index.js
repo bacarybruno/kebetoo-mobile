@@ -28,7 +28,8 @@ const FormatedTypography = ({
   withDecorators = false,
   numberOfLines,
   boldVariant = boldVariants.semi,
-  color,
+  systemColor = Typography.colors.primary,
+  color = Typography.colors.primary,
   ...textProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -56,7 +57,7 @@ const FormatedTypography = ({
   const renderPatternValue = useCallback((_, matches) => matches[rawValue ? 0 : 1], [rawValue])
 
   const textStyle = Typography.styles[type]
-  const baseTextStyle = [styles.text, textStyle, style, color && { color: colors[color] }]
+  const baseTextStyle = [textStyle, style, { color: colors[color || systemColor] }]
 
   const linkStyle = StyleSheet.flatten([baseTextStyle, styles.link])
   const boldStyle = StyleSheet.flatten([

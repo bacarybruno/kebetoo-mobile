@@ -2,14 +2,11 @@ import { StyleSheet } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
 export default (colors) => StyleSheet.create({
-  text: {
-    color: colors.textPrimary,
-  },
+  bold: systemWeights.bold,
+  semibold: systemWeights.semibold,
   link: {
     color: colors.link,
   },
-  bold: systemWeights.bold,
-  semibold: systemWeights.semibold,
   italic: {
     fontStyle: 'italic',
   },

@@ -1,7 +1,7 @@
 def use_kebetoo_pods!()
     # react-native-permissions
     permissions_path = '../node_modules/react-native-permissions/ios'
-    pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone.podspec"
+    pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
 
     # react-native-google-signin
     pod 'GoogleSignIn', '~> 5.0.2'

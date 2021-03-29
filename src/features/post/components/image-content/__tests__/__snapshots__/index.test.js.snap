@@ -307,9 +307,6 @@ exports[`renders ImageContent 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -319,7 +316,9 @@ exports[`renders ImageContent 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -327,9 +326,6 @@ exports[`renders ImageContent 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -340,7 +336,9 @@ exports[`renders ImageContent 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -369,9 +367,6 @@ exports[`renders ImageContent 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -381,7 +376,9 @@ exports[`renders ImageContent 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -389,9 +386,6 @@ exports[`renders ImageContent 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -402,7 +396,9 @@ exports[`renders ImageContent 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -807,9 +803,6 @@ exports[`renders ImageContent on comments mode 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -819,7 +812,9 @@ exports[`renders ImageContent on comments mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -827,9 +822,6 @@ exports[`renders ImageContent on comments mode 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -840,7 +832,9 @@ exports[`renders ImageContent on comments mode 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -869,9 +863,6 @@ exports[`renders ImageContent on comments mode 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -881,7 +872,9 @@ exports[`renders ImageContent on comments mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -889,9 +882,6 @@ exports[`renders ImageContent on comments mode 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -902,7 +892,9 @@ exports[`renders ImageContent on comments mode 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]

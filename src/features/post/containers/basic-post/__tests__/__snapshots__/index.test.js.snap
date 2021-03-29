@@ -1306,11 +1306,11 @@ exports[`renders component [audio]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -1422,11 +1422,11 @@ exports[`renders component [audio]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -1474,11 +1474,11 @@ exports[`renders component [audio]: renders BasicPost with no author 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }
@@ -3853,9 +3853,6 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -3865,7 +3862,9 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -3873,9 +3872,6 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -3886,7 +3882,9 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -3915,9 +3913,6 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -3927,7 +3922,9 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -3935,9 +3932,6 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -3948,7 +3942,9 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -4622,11 +4618,11 @@ exports[`renders component [image]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -4738,11 +4734,11 @@ exports[`renders component [image]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -4790,11 +4786,11 @@ exports[`renders component [image]: renders BasicPost with no author 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }
@@ -5407,9 +5403,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -5419,7 +5412,9 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -5427,9 +5422,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -5440,7 +5432,9 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -5469,9 +5463,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -5481,7 +5472,9 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -5489,9 +5482,6 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -5502,7 +5492,9 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -6442,9 +6434,6 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -6454,7 +6443,9 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -6462,9 +6453,6 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -6475,7 +6463,9 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -6504,9 +6494,6 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                 style={
                                   Array [
                                     Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    Object {
                                       "backgroundColor": "transparent",
                                       "color": "#000000",
                                       "fontFamily": "System",
@@ -6516,7 +6503,9 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                       "lineHeight": 20,
                                     },
                                     undefined,
-                                    undefined,
+                                    Object {
+                                      "color": "rgba(0,0,0,0.87)",
+                                    },
                                   ]
                                 }
                               >
@@ -6524,9 +6513,6 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                   style={
                                     Array [
                                       Array [
-                                        Object {
-                                          "color": "rgba(0,0,0,0.87)",
-                                        },
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
@@ -6537,7 +6523,9 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                                           "lineHeight": 20,
                                         },
                                         undefined,
-                                        undefined,
+                                        Object {
+                                          "color": "rgba(0,0,0,0.87)",
+                                        },
                                       ],
                                       undefined,
                                     ]
@@ -7373,9 +7361,6 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -7385,7 +7370,9 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -7393,9 +7380,6 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -7406,7 +7390,9 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -7435,9 +7421,6 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -7447,7 +7430,9 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -7455,9 +7440,6 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -7468,7 +7450,9 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -8074,11 +8058,11 @@ exports[`renders component [repost]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -8190,11 +8174,11 @@ exports[`renders component [repost]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -8242,11 +8226,11 @@ exports[`renders component [repost]: renders BasicPost with no author 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }
@@ -9043,9 +9027,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -9055,7 +9036,9 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -9063,9 +9046,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -9076,7 +9056,9 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -9105,9 +9087,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -9117,7 +9096,9 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -9125,9 +9106,6 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -9138,7 +9116,9 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -10210,9 +10190,6 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -10222,7 +10199,9 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -10230,9 +10209,6 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -10243,7 +10219,9 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -10272,9 +10250,6 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                       style={
                                         Array [
                                           Object {
-                                            "color": "rgba(0,0,0,0.87)",
-                                          },
-                                          Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
@@ -10284,7 +10259,9 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                             "lineHeight": 20,
                                           },
                                           undefined,
-                                          undefined,
+                                          Object {
+                                            "color": "rgba(0,0,0,0.87)",
+                                          },
                                         ]
                                       }
                                     >
@@ -10292,9 +10269,6 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                         style={
                                           Array [
                                             Array [
-                                              Object {
-                                                "color": "rgba(0,0,0,0.87)",
-                                              },
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
@@ -10305,7 +10279,9 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                                 "lineHeight": 20,
                                               },
                                               undefined,
-                                              undefined,
+                                              Object {
+                                                "color": "rgba(0,0,0,0.87)",
+                                              },
                                             ],
                                             undefined,
                                           ]
@@ -10897,9 +10873,6 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -10909,7 +10882,9 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -10917,9 +10892,6 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -10930,7 +10902,9 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -10959,9 +10933,6 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -10971,7 +10942,9 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -10979,9 +10952,6 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -10992,7 +10962,9 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -11594,11 +11566,11 @@ exports[`renders component [text]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -11710,11 +11682,11 @@ exports[`renders component [text]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -11762,11 +11734,11 @@ exports[`renders component [text]: renders BasicPost with no author 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }
@@ -12387,9 +12359,6 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -12399,7 +12368,9 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -12407,9 +12378,6 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -12420,7 +12388,9 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -12449,9 +12419,6 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -12461,7 +12428,9 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -12469,9 +12438,6 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -12482,7 +12448,9 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -13374,9 +13342,6 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -13386,7 +13351,9 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -13394,9 +13361,6 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -13407,7 +13371,9 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -13436,9 +13402,6 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": "rgba(0,0,0,0.87)",
-                                  },
-                                  Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
@@ -13448,7 +13411,9 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                     "lineHeight": 20,
                                   },
                                   undefined,
-                                  undefined,
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                  },
                                 ]
                               }
                             >
@@ -13456,9 +13421,6 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                 style={
                                   Array [
                                     Array [
-                                      Object {
-                                        "color": "rgba(0,0,0,0.87)",
-                                      },
                                       Object {
                                         "backgroundColor": "transparent",
                                         "color": "#000000",
@@ -13469,7 +13431,9 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                                         "lineHeight": 20,
                                       },
                                       undefined,
-                                      undefined,
+                                      Object {
+                                        "color": "rgba(0,0,0,0.87)",
+                                      },
                                     ],
                                     undefined,
                                   ]
@@ -14747,11 +14711,11 @@ exports[`renders component [video]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -14863,11 +14827,11 @@ exports[`renders component [video]: renders BasicPost with no author 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -14915,11 +14879,11 @@ exports[`renders component [video]: renders BasicPost with no author 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }

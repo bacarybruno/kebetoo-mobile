@@ -273,11 +273,11 @@ exports[`renders PostsPlaceholder 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -389,11 +389,11 @@ exports[`renders PostsPlaceholder 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -441,11 +441,11 @@ exports[`renders PostsPlaceholder 1`] = `
                     style={
                       Array [
                         Object {
-                          "marginBottom": 32,
-                        },
-                        Object {
                           "flexDirection": "row",
                           "width": "100%",
+                        },
+                        Object {
+                          "marginBottom": 32,
                         },
                       ]
                     }
@@ -871,11 +871,11 @@ exports[`renders PostsPlaceholder without reactions 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
@@ -987,11 +987,11 @@ exports[`renders PostsPlaceholder without reactions 1`] = `
                   <View
                     style={
                       Array [
-                        undefined,
                         Object {
                           "flexDirection": "row",
                           "width": "100%",
                         },
+                        undefined,
                       ]
                     }
                   >
