@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { Pressable, Avatar, Typography } from '@app/shared/components'
+import { Pressable, Avatar, Typography, FormatedTypography } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
 import { strings } from '@app/config'
@@ -37,11 +37,13 @@ export const Title = ({ name, info, Right }) => {
 }
 
 export const Message = ({ text }) => (
-  <Typography
+  <FormatedTypography
+    disableLinks
+    withReadMore={false}
     numberOfLines={2}
     type={Typography.types.body}
     color={Typography.colors.secondary}
-    text={text}
+    text={text + text + text}
   />
 )
 

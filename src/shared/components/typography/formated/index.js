@@ -30,6 +30,8 @@ const FormatedTypography = ({
   boldVariant = boldVariants.semi,
   systemColor = Typography.colors.primary,
   color = Typography.colors.primary,
+  linkStyle,
+  disableLinks,
   ...textProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -57,9 +59,10 @@ const FormatedTypography = ({
   const renderPatternValue = useCallback((_, matches) => matches[rawValue ? 0 : 1], [rawValue])
 
   const textStyle = Typography.styles[type]
-  const baseTextStyle = [textStyle, style, { color: colors[color || systemColor] }]
+  const textColor = color || systemColor
+  const baseTextStyle = [textStyle, style, textColor && { color: colors[textColor] }]
 
-  const linkStyle = StyleSheet.flatten([baseTextStyle, styles.link])
+  const linkStyles = StyleSheet.flatten([baseTextStyle, styles.link, linkStyle])
   const boldStyle = StyleSheet.flatten([
     baseTextStyle,
     boldVariant === boldVariants.semi
@@ -69,27 +72,35 @@ const FormatedTypography = ({
   const italicStyle = StyleSheet.flatten([baseTextStyle, styles.italic])
   const strikeThroughStyle = StyleSheet.flatten([baseTextStyle, styles.strikeThrough])
   const parsePatterns = [
-    { type: 'phone', style: linkStyle, onPress: handleUrlPress },
-    { type: 'email', style: linkStyle, onPress: handleUrlPress },
-    { pattern: regWebUrl, style: linkStyle, onPress: handleUrlPress },
-    { pattern: regUsername, style: linkStyle, onPress: handleUsernamePress },
-    { pattern: regHashtag, style: linkStyle, onPress: warnNotImplemented },
+    { type: 'phone', style: linkStyles, onPress: disableLinks ? null : handleUrlPress },
+    { type: 'email', style: linkStyles, onPress: disableLinks ? null : handleUrlPress },
+    { pattern: regWebUrl, style: linkStyles, onPress: disableLinks ? null : handleUrlPress },
+    { pattern: regUsername, style: linkStyles, onPress: disableLinks ? null : handleUsernamePress },
+    { pattern: regHashtag, style: linkStyles, onPress: disableLinks ? null : warnNotImplemented },
     { pattern: regBold, style: boldStyle, renderText: renderPatternValue },
     { pattern: regItalic, style: italicStyle, renderText: renderPatternValue },
     { pattern: regStrikeThrough, style: strikeThroughStyle, renderText: renderPatternValue },
   ]
 
-  let Wrapper = Fragment
   if (withReadMore) {
-    Wrapper = ReadMore
+    return (
+      <ReadMore numberOfLines={numberOfLines}>
+        <ParsedText parse={parsePatterns} style={baseTextStyle} {...textProps}>
+          {text}
+        </ParsedText>
+      </ReadMore>
+    )
   }
 
   return (
-    <Wrapper numberOfLines={numberOfLines}>
-      <ParsedText parse={parsePatterns} style={baseTextStyle} {...textProps}>
-        {text}
-      </ParsedText>
-    </Wrapper>
+    <ParsedText
+      numberOfLines={numberOfLines}
+      parse={parsePatterns}
+      style={baseTextStyle}
+      {...textProps}
+    >
+      {text}
+    </ParsedText>
   )
 }
 

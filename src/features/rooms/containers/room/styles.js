@@ -3,6 +3,7 @@ import { human } from 'react-native-typography'
 
 import { metrics } from '@app/theme'
 import { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import mdColors from '@app/theme/md-colors'
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -76,4 +77,27 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.backgroundSecondary,
     borderRadius: metrics.radius.sm,
   },
+  bubbleLeftText: {
+    color: colors.textPrimary,
+  },
+  bubbleRightText: {
+    color: mdColors.textPrimary.dark,
+  },
+  bubbleLeftTimeText: {
+    color: colors.textSecondary,
+  },
+  bubbleRightTimeText: {
+    color: mdColors.textSecondary.dark,
+  },
+  bubbleLeftWrapper: {
+    backgroundColor: colors.backgroundSecondary,
+  },
+  popoverArrowStyle: {
+    width: 0,
+    height: 0,
+  },
+  messageText: {
+    marginHorizontal: metrics.spacing.sm,
+    marginVertical: metrics.spacing.xs,
+  }
 })

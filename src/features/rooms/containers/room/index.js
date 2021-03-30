@@ -11,14 +11,13 @@ import Popover, { PopoverPlacement } from 'react-native-popover-view'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import {
-  AppHeader, AudioPlayer, Avatar, IconButton,
+  AppHeader, AudioPlayer, Avatar, FormatedTypography, IconButton, Typography,
 } from '@app/shared/components'
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
 } from '@app/shared/hooks'
 import { SafeAreaContext } from '@app/shared/contexts'
 
-import mdColors from '@app/theme/md-colors'
 import { CommentInput } from '@app/features/comments/components/comment-input'
 import { strings } from '@app/config'
 import { edgeInsets, metrics } from '@app/theme'
@@ -27,9 +26,9 @@ import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder'
 import { abbreviateNumber } from '@app/shared/helpers/strings'
 import { actionTypes } from '@app/features/post/containers/create'
 import routes from '@app/navigation/routes'
+import useRooms from '@app/features/rooms/hooks/rooms'
 
 import createThemedStyles from './styles'
-import useRooms from '../../hooks/rooms'
 
 export const getSystemMessage = (currentMessage) => {
   const { user, text } = currentMessage
@@ -83,10 +82,9 @@ const HeaderMenu = ({ report, exit }) => {
       isVisible={isVisible}
       placement={PopoverPlacement.BOTTOM}
       from={<RightIcon onPress={open} />}
-      arrowStyle={{ width: 0, height: 0 }}
+      arrowStyle={styles.popoverArrowStyle}
       safeAreaInsets={insets}
       verticalOffset={metrics.spacing.sm - 43}
-      // icon height - (header height / 2)
     >
       <View style={styles.headerMenu}>
         <IconButton.Text
@@ -118,10 +116,10 @@ const RoomPage = ({ navigation }) => {
   const themeColor = colors[params.theme]
   const [isReady, setIsReady] = useState(false)
   const [message, setMessage] = useState('')
-  const messageInput = useRef()
-  const audioRecorder = useAudioRecorder()
   const [isLoading, setIsLoading] = useState(false)
   const [messages, setMessages] = useState(roomMessages)
+  const messageInput = useRef()
+  const audioRecorder = useAudioRecorder()
   const {
     updateTopSafeAreaColor,
     updateBottomSafeAreaColor,
@@ -185,24 +183,27 @@ const RoomPage = ({ navigation }) => {
     }
   }, [message, audioRecorder, createMessage, params._id])
 
-  const renderBubble = useCallback((props) => (
-    <Bubble
-      {...props}
-      textStyle={{
-        left: { color: colors.textPrimary },
-        right: { color: mdColors.textPrimary.dark },
-      }}
-      timeTextStyle={{
-        left: { color: colors.textSecondary },
-        right: { color: mdColors.textSecondary.dark },
-      }}
-      wrapperStyle={{
-        left: {
-          backgroundColor: colors.backgroundSecondary,
-        },
-      }}
-    />
-  ), [colors])
+  const renderBubble = useCallback((props) => {
+    const textStyle = {
+      left: styles.bubbleLeftText,
+      right: styles.bubbleRightText,
+    }
+    const timeTextStyle = {
+      left: styles.bubbleLeftTimeText,
+      right: styles.bubbleRightTimeText,
+    }
+    const wrapperStyle = {
+      left: styles.bubbleLeftWrapper,
+    }
+    return (
+      <Bubble
+        {...props}
+        textStyle={textStyle}
+        timeTextStyle={timeTextStyle}
+        wrapperStyle={wrapperStyle}
+      />
+    )
+  }, [styles])
 
   const renderInputToolbar = useCallback(() => (
     <>
@@ -256,7 +257,7 @@ const RoomPage = ({ navigation }) => {
     // eslint-disable-next-line no-underscore-dangle
     if (currentMessage.user._id !== profile.uid) return null
     const { sent, pending, received } = currentMessage
-    let icon
+    let icon = null
     if (pending) icon = 'time'
     if (sent) icon = 'checkmark'
     if (received) icon = 'checkmark-done'
@@ -273,13 +274,41 @@ const RoomPage = ({ navigation }) => {
   const renderSystemMessage = useCallback((props) => (
     <SystemMessage
       {...props}
-      textStyle={{ color: colors.textSecondary }}
+      textStyle={styles.bubbleLeftTimeText}
       currentMessage={{
         ...props.currentMessage,
         text: getSystemMessage(props.currentMessage),
       }}
     />
   ), [colors.textSecondary])
+
+  const renderMessageText = useCallback((props) => {
+    const { user, text } = props.currentMessage
+    const isOwnMessage = user._id === profile.uid
+    const textStyle = {
+      color: isOwnMessage
+        ? (colors.colorScheme === 'dark' ? colors.textPrimary : colors.white)
+        : colors.textPrimary
+    }
+    const linkStyle = {
+      color: textStyle.color,
+      textDecorationLine: 'underline',
+      textDecorationColor: textStyle.color,
+    }
+    return (
+      <View style={styles.messageText}>
+        <FormatedTypography
+          type={Typography.types.headline4}
+          text={text}
+          color={null}
+          withReadMore={false}
+          systemColor={null}
+          linkStyle={isOwnMessage ? linkStyle : colors.white}
+          style={textStyle}
+        />
+      </View>
+    )
+  }, [styles, profile])
 
   return (
     <View style={styles.wrapper}>
@@ -289,8 +318,8 @@ const RoomPage = ({ navigation }) => {
         text={strings.formatString(strings.room.online_count, abbreviateNumber(onlineCount))}
         showAvatar={false}
         style={[styles.content, { backgroundColor: themeColor }]}
-        titleStyle={{ color: mdColors.textPrimary.dark }}
-        textStyle={{ color: mdColors.textSecondary.dark }}
+        titleStyle={styles.bubbleRightText}
+        textStyle={styles.bubbleRightTimeText}
         iconColor={colors.white}
         Logo={<View style={styles.onlineDot} />}
         Right={() => <HeaderMenu report={reportRoom} exit={exitRoom} />}
@@ -298,7 +327,7 @@ const RoomPage = ({ navigation }) => {
       {isReady && (
         <GiftedChat
           messages={messages}
-          timeTextStyle={{ color: colors.textSecondary }}
+          timeTextStyle={styles.bubbleLeftTimeText}
           user={{
             _id: profile.uid,
             name: profile.displayName,
@@ -313,6 +342,7 @@ const RoomPage = ({ navigation }) => {
           renderSystemMessage={renderSystemMessage}
           renderTicks={renderTicks}
           onLongPress={() => { }}
+          renderMessageText={renderMessageText}
         />
       )}
     </View>

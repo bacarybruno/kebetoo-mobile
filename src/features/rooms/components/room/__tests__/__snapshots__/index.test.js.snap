@@ -458,17 +458,37 @@ exports[`renders Room 1`] = `
                               "letterSpacing": -0.24,
                               "lineHeight": 20,
                             },
-                            Array [
-                              Object {
-                                "color": "rgba(0,0,0,0.54)",
-                              },
-                              undefined,
-                              undefined,
-                            ],
+                            undefined,
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
                           ]
                         }
                       >
-                        Hello and welcome to kebetoo!
+                        <Text
+                          style={
+                            Array [
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                                undefined,
+                                Object {
+                                  "color": "rgba(0,0,0,0.54)",
+                                },
+                              ],
+                              undefined,
+                            ]
+                          }
+                        >
+                          Hello and welcome to kebetoo!Hello and welcome to kebetoo!Hello and welcome to kebetoo!
+                        </Text>
                       </Text>
                       <Text
                         style={
@@ -975,17 +995,37 @@ exports[`renders discover Room 1`] = `
                               "letterSpacing": -0.24,
                               "lineHeight": 20,
                             },
-                            Array [
-                              Object {
-                                "color": "rgba(0,0,0,0.54)",
-                              },
-                              undefined,
-                              undefined,
-                            ],
+                            undefined,
+                            Object {
+                              "color": "rgba(0,0,0,0.54)",
+                            },
                           ]
                         }
                       >
-                        Created by Jest
+                        <Text
+                          style={
+                            Array [
+                              Array [
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 15,
+                                  "fontWeight": "400",
+                                  "letterSpacing": -0.24,
+                                  "lineHeight": 20,
+                                },
+                                undefined,
+                                Object {
+                                  "color": "rgba(0,0,0,0.54)",
+                                },
+                              ],
+                              undefined,
+                            ]
+                          }
+                        >
+                          Created by JestCreated by JestCreated by Jest
+                        </Text>
                       </Text>
                       <Text
                         style={
