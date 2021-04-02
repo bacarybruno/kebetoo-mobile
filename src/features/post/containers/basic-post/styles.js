@@ -25,6 +25,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   meta: {
+    flex: 1,
     justifyContent: 'space-between',
     marginLeft: metrics.spacing.sm,
   },
@@ -33,10 +34,6 @@ export default StyleSheet.create({
   },
   smallMeta: {
     flexDirection: 'row',
-    alignItems: 'center',
-  },
-  moreButton: {
-    width: 30,
     alignItems: 'center',
   },
   reactions: {

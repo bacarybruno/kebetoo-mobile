@@ -222,49 +222,11 @@ exports[`renders CommentInput 1`] = `
                               ]
                             }
                           >
-                            <View
-                              accessible={true}
-                              focusable={true}
-                              hitSlop={
-                                Object {
-                                  "bottom": 20,
-                                  "left": 20,
-                                  "right": 20,
-                                  "top": 20,
-                                }
-                              }
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Object {
-                                  "marginRight": 4,
-                                  "opacity": 1,
-                                }
-                              }
-                            >
-                              <Text
-                                allowFontScaling={false}
-                                style={
-                                  Object {
-                                    "color": "rgba(0,0,0,0.54)",
-                                    "fontFamily": "Ionicons",
-                                    "fontSize": 28,
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  }
-                                }
-                                text="ionicon-happy-outline"
-                              />
-                            </View>
                             <TextInput
                               allowFontScaling={true}
                               blurOnSubmit={false}
                               disableAutofocus={true}
+                              disableEmojis={true}
                               editable={true}
                               maxLength={1024}
                               multiline={true}
@@ -301,40 +263,6 @@ exports[`renders CommentInput 1`] = `
                               value=""
                             />
                           </View>
-                        </View>
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "#F0F6FE",
-                                "display": "flex",
-                                "marginBottom": -8,
-                                "marginLeft": -16,
-                                "marginTop": 16,
-                                "width": 750,
-                              },
-                              false,
-                            ]
-                          }
-                        >
-                          <KeyboardTrackingViewTemp
-                            addBottomView={false}
-                            allowHitsOutsideBounds={false}
-                            manageScrollView={true}
-                            onLayout={[Function]}
-                            requiresSameParentToManageScrollView={false}
-                            revealKeyboardInteractive={false}
-                            scrollBehavior="FIXED_OFFSET"
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": undefined,
-                              }
-                            }
-                          />
                         </View>
                       </View>
                     </View>

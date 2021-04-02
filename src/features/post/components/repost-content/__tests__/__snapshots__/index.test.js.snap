@@ -404,6 +404,7 @@ exports[`renders RepostContent 1`] = `
                                   style={
                                     Array [
                                       Object {
+                                        "flex": 1,
                                         "justifyContent": "space-between",
                                         "marginLeft": 8,
                                       },
@@ -417,16 +418,17 @@ exports[`renders RepostContent 1`] = `
                                   }
                                 >
                                   <Text
+                                    numberOfLines={1}
                                     style={
                                       Array [
                                         Object {
                                           "backgroundColor": "transparent",
                                           "color": "#000000",
                                           "fontFamily": "System",
-                                          "fontSize": 16,
+                                          "fontSize": 15,
                                           "fontWeight": "400",
-                                          "letterSpacing": -0.32,
-                                          "lineHeight": 21,
+                                          "letterSpacing": -0.24,
+                                          "lineHeight": 20,
                                         },
                                         Array [
                                           Object {

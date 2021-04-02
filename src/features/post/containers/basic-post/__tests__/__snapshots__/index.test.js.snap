@@ -377,6 +377,7 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -388,16 +389,17 @@ exports[`renders component [audio]: renders BasicPost 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -2012,6 +2014,7 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -2025,16 +2028,17 @@ exports[`renders component [audio]: renders BasicPost with repost mode 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -2946,6 +2950,7 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -2957,16 +2962,17 @@ exports[`renders component [audio]: renders BasicPost without reactions 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -3675,6 +3681,7 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -3686,16 +3693,17 @@ exports[`renders component [image]: renders BasicPost 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -5324,6 +5332,7 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -5337,16 +5346,17 @@ exports[`renders component [image]: renders BasicPost with repost mode 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -6256,6 +6266,7 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -6267,16 +6278,17 @@ exports[`renders component [image]: renders BasicPost without reactions 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -6999,6 +7011,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -7010,16 +7023,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -7274,6 +7288,7 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -7287,16 +7302,17 @@ exports[`renders component [repost]: renders BasicPost 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -8764,6 +8780,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -8777,16 +8794,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -8940,6 +8958,7 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -8953,16 +8972,17 @@ exports[`renders component [repost]: renders BasicPost with repost mode 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -9828,6 +9848,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -9839,16 +9860,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -10103,6 +10125,7 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -10116,16 +10139,17 @@ exports[`renders component [repost]: renders BasicPost without reactions 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -10687,6 +10711,7 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -10698,16 +10723,17 @@ exports[`renders component [text]: renders BasicPost 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -12272,6 +12298,7 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -12285,16 +12312,17 @@ exports[`renders component [text]: renders BasicPost with repost mode 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -13156,6 +13184,7 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -13167,16 +13196,17 @@ exports[`renders component [text]: renders BasicPost without reactions 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -13835,6 +13865,7 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -13846,16 +13877,17 @@ exports[`renders component [video]: renders BasicPost 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -15417,6 +15449,7 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -15430,16 +15463,17 @@ exports[`renders component [video]: renders BasicPost with repost mode 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {
@@ -16298,6 +16332,7 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "flex": 1,
                                   "justifyContent": "space-between",
                                   "marginLeft": 8,
                                 },
@@ -16309,16 +16344,17 @@ exports[`renders component [video]: renders BasicPost without reactions 1`] = `
                             }
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
                                     "color": "#000000",
                                     "fontFamily": "System",
-                                    "fontSize": 16,
+                                    "fontSize": 15,
                                     "fontWeight": "400",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
+                                    "letterSpacing": -0.24,
+                                    "lineHeight": 20,
                                   },
                                   Array [
                                     Object {

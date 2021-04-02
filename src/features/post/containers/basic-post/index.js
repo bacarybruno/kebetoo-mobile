@@ -74,7 +74,6 @@ const MoreButton = ({ onPress }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={styles.moreButton}
       hitSlop={edgeInsets.symmetric({ horizontal: 30, vertical: 15 })}
       testID="more-button"
     >
@@ -115,8 +114,9 @@ export const Header = ({
             <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>
               <Typography
                 text={author.displayName}
-                type={Typography.types.textButton}
+                type={Typography.types.body}
                 systemWeight={Typography.weights.semibold}
+                numberOfLines={1}
               />
               {!isRepost && (
                 <View style={styles.smallMeta}>
@@ -131,11 +131,7 @@ export const Header = ({
             </View>
           )}
         </TouchableOpacity>
-        {onOptions && (
-          <View style={styles.moreButton}>
-            <MoreButton onPress={() => onOptions(post.id)} />
-          </View>
-        )}
+        {onOptions && <MoreButton onPress={() => onOptions(post.id)} />}
       </View>
     </View>
   )

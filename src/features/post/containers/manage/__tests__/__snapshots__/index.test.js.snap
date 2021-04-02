@@ -929,6 +929,7 @@ exports[`renders ManagePost 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -940,16 +941,17 @@ exports[`renders ManagePost 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -1003,54 +1005,43 @@ exports[`renders ManagePost 1`] = `
                                   </View>
                                 </View>
                                 <View
-                                  style={
+                                  accessible={true}
+                                  focusable={true}
+                                  hitSlop={
                                     Object {
-                                      "alignItems": "center",
-                                      "width": 30,
+                                      "bottom": 15,
+                                      "left": 30,
+                                      "right": 30,
+                                      "top": 15,
                                     }
                                   }
-                                >
-                                  <View
-                                    accessible={true}
-                                    focusable={true}
-                                    hitSlop={
-                                      Object {
-                                        "bottom": 15,
-                                        "left": 30,
-                                        "right": 30,
-                                        "top": 15,
-                                      }
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
                                     }
-                                    onClick={[Function]}
-                                    onResponderGrant={[Function]}
-                                    onResponderMove={[Function]}
-                                    onResponderRelease={[Function]}
-                                    onResponderTerminate={[Function]}
-                                    onResponderTerminationRequest={[Function]}
-                                    onStartShouldSetResponder={[Function]}
+                                  }
+                                  testID="more-button"
+                                >
+                                  <Text
+                                    allowFontScaling={false}
                                     style={
                                       Object {
-                                        "alignItems": "center",
-                                        "opacity": 1,
-                                        "width": 30,
+                                        "color": "rgba(0,0,0,0.38)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 20,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
                                       }
                                     }
-                                    testID="more-button"
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,0.38)",
-                                          "fontFamily": "Ionicons",
-                                          "fontSize": 20,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="ionicon-ellipsis-vertical"
-                                    />
-                                  </View>
+                                    text="ionicon-ellipsis-vertical"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -1654,6 +1645,7 @@ exports[`renders ManagePost 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -1665,16 +1657,17 @@ exports[`renders ManagePost 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -1728,54 +1721,43 @@ exports[`renders ManagePost 1`] = `
                                   </View>
                                 </View>
                                 <View
-                                  style={
+                                  accessible={true}
+                                  focusable={true}
+                                  hitSlop={
                                     Object {
-                                      "alignItems": "center",
-                                      "width": 30,
+                                      "bottom": 15,
+                                      "left": 30,
+                                      "right": 30,
+                                      "top": 15,
                                     }
                                   }
-                                >
-                                  <View
-                                    accessible={true}
-                                    focusable={true}
-                                    hitSlop={
-                                      Object {
-                                        "bottom": 15,
-                                        "left": 30,
-                                        "right": 30,
-                                        "top": 15,
-                                      }
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
                                     }
-                                    onClick={[Function]}
-                                    onResponderGrant={[Function]}
-                                    onResponderMove={[Function]}
-                                    onResponderRelease={[Function]}
-                                    onResponderTerminate={[Function]}
-                                    onResponderTerminationRequest={[Function]}
-                                    onStartShouldSetResponder={[Function]}
+                                  }
+                                  testID="more-button"
+                                >
+                                  <Text
+                                    allowFontScaling={false}
                                     style={
                                       Object {
-                                        "alignItems": "center",
-                                        "opacity": 1,
-                                        "width": 30,
+                                        "color": "rgba(0,0,0,0.38)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 20,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
                                       }
                                     }
-                                    testID="more-button"
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,0.38)",
-                                          "fontFamily": "Ionicons",
-                                          "fontSize": 20,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="ionicon-ellipsis-vertical"
-                                    />
-                                  </View>
+                                    text="ionicon-ellipsis-vertical"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -2393,6 +2375,7 @@ exports[`renders ManagePost 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -2404,16 +2387,17 @@ exports[`renders ManagePost 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -2467,54 +2451,43 @@ exports[`renders ManagePost 1`] = `
                                   </View>
                                 </View>
                                 <View
-                                  style={
+                                  accessible={true}
+                                  focusable={true}
+                                  hitSlop={
                                     Object {
-                                      "alignItems": "center",
-                                      "width": 30,
+                                      "bottom": 15,
+                                      "left": 30,
+                                      "right": 30,
+                                      "top": 15,
                                     }
                                   }
-                                >
-                                  <View
-                                    accessible={true}
-                                    focusable={true}
-                                    hitSlop={
-                                      Object {
-                                        "bottom": 15,
-                                        "left": 30,
-                                        "right": 30,
-                                        "top": 15,
-                                      }
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
                                     }
-                                    onClick={[Function]}
-                                    onResponderGrant={[Function]}
-                                    onResponderMove={[Function]}
-                                    onResponderRelease={[Function]}
-                                    onResponderTerminate={[Function]}
-                                    onResponderTerminationRequest={[Function]}
-                                    onStartShouldSetResponder={[Function]}
+                                  }
+                                  testID="more-button"
+                                >
+                                  <Text
+                                    allowFontScaling={false}
                                     style={
                                       Object {
-                                        "alignItems": "center",
-                                        "opacity": 1,
-                                        "width": 30,
+                                        "color": "rgba(0,0,0,0.38)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 20,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
                                       }
                                     }
-                                    testID="more-button"
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,0.38)",
-                                          "fontFamily": "Ionicons",
-                                          "fontSize": 20,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="ionicon-ellipsis-vertical"
-                                    />
-                                  </View>
+                                    text="ionicon-ellipsis-vertical"
+                                  />
                                 </View>
                               </View>
                             </View>
@@ -2664,6 +2637,7 @@ exports[`renders ManagePost 1`] = `
                                             style={
                                               Array [
                                                 Object {
+                                                  "flex": 1,
                                                   "justifyContent": "space-between",
                                                   "marginLeft": 8,
                                                 },
@@ -2677,16 +2651,17 @@ exports[`renders ManagePost 1`] = `
                                             }
                                           >
                                             <Text
+                                              numberOfLines={1}
                                               style={
                                                 Array [
                                                   Object {
                                                     "backgroundColor": "transparent",
                                                     "color": "#000000",
                                                     "fontFamily": "System",
-                                                    "fontSize": 16,
+                                                    "fontSize": 15,
                                                     "fontWeight": "400",
-                                                    "letterSpacing": -0.32,
-                                                    "lineHeight": 21,
+                                                    "letterSpacing": -0.24,
+                                                    "lineHeight": 20,
                                                   },
                                                   Array [
                                                     Object {
@@ -3354,6 +3329,7 @@ exports[`renders ManagePost 1`] = `
                                     style={
                                       Array [
                                         Object {
+                                          "flex": 1,
                                           "justifyContent": "space-between",
                                           "marginLeft": 8,
                                         },
@@ -3365,16 +3341,17 @@ exports[`renders ManagePost 1`] = `
                                     }
                                   >
                                     <Text
+                                      numberOfLines={1}
                                       style={
                                         Array [
                                           Object {
                                             "backgroundColor": "transparent",
                                             "color": "#000000",
                                             "fontFamily": "System",
-                                            "fontSize": 16,
+                                            "fontSize": 15,
                                             "fontWeight": "400",
-                                            "letterSpacing": -0.32,
-                                            "lineHeight": 21,
+                                            "letterSpacing": -0.24,
+                                            "lineHeight": 20,
                                           },
                                           Array [
                                             Object {
@@ -3428,54 +3405,43 @@ exports[`renders ManagePost 1`] = `
                                   </View>
                                 </View>
                                 <View
-                                  style={
+                                  accessible={true}
+                                  focusable={true}
+                                  hitSlop={
                                     Object {
-                                      "alignItems": "center",
-                                      "width": 30,
+                                      "bottom": 15,
+                                      "left": 30,
+                                      "right": 30,
+                                      "top": 15,
                                     }
                                   }
-                                >
-                                  <View
-                                    accessible={true}
-                                    focusable={true}
-                                    hitSlop={
-                                      Object {
-                                        "bottom": 15,
-                                        "left": 30,
-                                        "right": 30,
-                                        "top": 15,
-                                      }
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
                                     }
-                                    onClick={[Function]}
-                                    onResponderGrant={[Function]}
-                                    onResponderMove={[Function]}
-                                    onResponderRelease={[Function]}
-                                    onResponderTerminate={[Function]}
-                                    onResponderTerminationRequest={[Function]}
-                                    onStartShouldSetResponder={[Function]}
+                                  }
+                                  testID="more-button"
+                                >
+                                  <Text
+                                    allowFontScaling={false}
                                     style={
                                       Object {
-                                        "alignItems": "center",
-                                        "opacity": 1,
-                                        "width": 30,
+                                        "color": "rgba(0,0,0,0.38)",
+                                        "fontFamily": "Ionicons",
+                                        "fontSize": 20,
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
                                       }
                                     }
-                                    testID="more-button"
-                                  >
-                                    <Text
-                                      allowFontScaling={false}
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,0.38)",
-                                          "fontFamily": "Ionicons",
-                                          "fontSize": 20,
-                                          "fontStyle": "normal",
-                                          "fontWeight": "normal",
-                                        }
-                                      }
-                                      text="ionicon-ellipsis-vertical"
-                                    />
-                                  </View>
+                                    text="ionicon-ellipsis-vertical"
+                                  />
                                 </View>
                               </View>
                             </View>

@@ -857,6 +857,7 @@ exports[`renders Comments 1`] = `
                                         style={
                                           Array [
                                             Object {
+                                              "flex": 1,
                                               "justifyContent": "space-between",
                                               "marginLeft": 8,
                                             },
@@ -868,16 +869,17 @@ exports[`renders Comments 1`] = `
                                         }
                                       >
                                         <Text
+                                          numberOfLines={1}
                                           style={
                                             Array [
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
                                                 "fontFamily": "System",
-                                                "fontSize": 16,
+                                                "fontSize": 15,
                                                 "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
+                                                "letterSpacing": -0.24,
+                                                "lineHeight": 20,
                                               },
                                               Array [
                                                 Object {
@@ -2160,6 +2162,7 @@ exports[`renders Comments 1`] = `
                                   allowFontScaling={true}
                                   blurOnSubmit={false}
                                   disableAutofocus={true}
+                                  disableEmojis={true}
                                   editable={true}
                                   maxLength={1024}
                                   multiline={false}
@@ -3141,6 +3144,7 @@ exports[`renders Comments in loading state 1`] = `
                                         style={
                                           Array [
                                             Object {
+                                              "flex": 1,
                                               "justifyContent": "space-between",
                                               "marginLeft": 8,
                                             },
@@ -3152,16 +3156,17 @@ exports[`renders Comments in loading state 1`] = `
                                         }
                                       >
                                         <Text
+                                          numberOfLines={1}
                                           style={
                                             Array [
                                               Object {
                                                 "backgroundColor": "transparent",
                                                 "color": "#000000",
                                                 "fontFamily": "System",
-                                                "fontSize": 16,
+                                                "fontSize": 15,
                                                 "fontWeight": "400",
-                                                "letterSpacing": -0.32,
-                                                "lineHeight": 21,
+                                                "letterSpacing": -0.24,
+                                                "lineHeight": 20,
                                               },
                                               Array [
                                                 Object {
@@ -4444,6 +4449,7 @@ exports[`renders Comments in loading state 1`] = `
                                   allowFontScaling={true}
                                   blurOnSubmit={false}
                                   disableAutofocus={true}
+                                  disableEmojis={true}
                                   editable={true}
                                   maxLength={1024}
                                   multiline={false}

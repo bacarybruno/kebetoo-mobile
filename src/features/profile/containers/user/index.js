@@ -170,13 +170,17 @@ const UserProfile = ({ route, navigation }) => {
         <View style={styles.subheading}>
           <Text>
             <Typography
-              type={Typography.types.subheading}
+              type={Typography.types.body}
               systemWeight={Typography.weights.bold}
               text={user.displayName}
             />
             <Typography
-              type={Typography.types.subheading}
-              text={' ' + message}
+              type={Typography.types.body}
+              text=" "
+            />
+            <Typography
+              type={Typography.types.body}
+              text={message}
             />
           </Text>
         </View>

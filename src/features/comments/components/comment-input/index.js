@@ -26,7 +26,7 @@ export const CommentInput = ({
   theme,
   placeholder,
   style,
-  disableEmojis,
+  disableEmojis = true,
   disableAutofocus = true,
   handleContentSizeChange = true,
   maxLength = env.maxLength.post.comments,
