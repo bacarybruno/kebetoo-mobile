@@ -144,8 +144,8 @@ android {
         applicationId "com.kebetoo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 42
-        versionName "0.4.4"
+        versionCode 43
+        versionName "0.4.5"
         multiDexEnabled true
     }
     splits {
