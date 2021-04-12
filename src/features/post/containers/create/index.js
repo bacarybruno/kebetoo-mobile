@@ -1,6 +1,4 @@
-import React, {
-  useState, useCallback, useEffect, useRef,
-} from 'react'
+import { memo, useState, useCallback, useEffect, useRef } from 'react'
 import {
   View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard, InteractionManager,
 } from 'react-native'
@@ -359,4 +357,4 @@ const CreatePostPage = ({ route, navigation }) => {
   )
 }
 
-export default React.memo(CreatePostPage)
+export default memo(CreatePostPage)

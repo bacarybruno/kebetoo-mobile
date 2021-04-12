@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { TouchableOpacity, Animated, View } from 'react-native'
 
 import Kebeticon from '@app/shared/icons/kebeticons'
@@ -77,4 +77,4 @@ const IconButton = ({
   )
 }
 
-export default React.memo(IconButton)
+export default memo(IconButton)

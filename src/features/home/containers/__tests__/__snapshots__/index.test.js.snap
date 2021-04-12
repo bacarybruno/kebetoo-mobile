@@ -280,7 +280,7 @@ exports[`renders HomePage 1`] = `
                   >
                     <RCTScrollView
                       ListFooterComponent={
-                        <ActivityIndicator
+                        <Component
                           animating={true}
                           color="rgba(0, 122, 255, 255)"
                           hidesWhenStopped={true}
@@ -288,7 +288,7 @@ exports[`renders HomePage 1`] = `
                         />
                       }
                       ListHeaderComponent={
-                        <View
+                        <Component
                           style={
                             Object {
                               "marginBottom": 16,
@@ -326,7 +326,7 @@ exports[`renders HomePage 1`] = `
                               }
                             }
                           />
-                        </View>
+                        </Component>
                       }
                       contentContainerStyle={
                         Object {

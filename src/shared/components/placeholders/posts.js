@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 import { Placeholder, PlaceholderMedia, PlaceholderLine } from 'rn-placeholder'
 
@@ -75,4 +75,4 @@ const PostPlaceholder = ({ withReactions, avatarSize }) => (
   </>
 )
 
-export default React.memo(PostPlaceholder)
+export default memo(PostPlaceholder)

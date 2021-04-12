@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View, TouchableOpacity, ImageBackground } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
@@ -64,4 +64,4 @@ const ImageContent = ({
   )
 }
 
-export default React.memo(ImageContent)
+export default memo(ImageContent)

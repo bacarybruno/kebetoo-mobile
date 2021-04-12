@@ -1,7 +1,5 @@
 /* eslint-disable import/default */
-import React, {
-  useEffect, useState, useCallback, useMemo,
-} from 'react'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import {
   View, FlatList, RefreshControl, Platform, ActivityIndicator,
 } from 'react-native'

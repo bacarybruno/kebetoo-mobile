@@ -1,5 +1,4 @@
 import { View } from 'react-native'
-import React from 'react'
 import { TapGestureHandler, State } from 'react-native-gesture-handler'
 import { fireEvent } from 'react-native-testing-library'
 

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { TouchableWithoutFeedback } from 'react-native'
 import ReadMoreText from 'react-native-view-more-text'
 

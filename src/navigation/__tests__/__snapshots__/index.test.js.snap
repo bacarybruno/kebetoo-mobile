@@ -208,7 +208,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                             >
                               <RCTScrollView
                                 ListFooterComponent={
-                                  <ActivityIndicator
+                                  <Component
                                     animating={true}
                                     color="rgba(0, 122, 255, 255)"
                                     hidesWhenStopped={true}
@@ -216,7 +216,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                   />
                                 }
                                 ListHeaderComponent={
-                                  <View
+                                  <Component
                                     style={
                                       Object {
                                         "marginBottom": 16,
@@ -252,7 +252,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                         }
                                       }
                                     />
-                                  </View>
+                                  </Component>
                                 }
                                 contentContainerStyle={
                                   Object {
@@ -3071,7 +3071,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                             >
                               <RCTScrollView
                                 ListFooterComponent={
-                                  <ActivityIndicator
+                                  <Component
                                     animating={true}
                                     color="rgba(0, 122, 255, 255)"
                                     hidesWhenStopped={true}
@@ -3079,7 +3079,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                   />
                                 }
                                 ListHeaderComponent={
-                                  <View
+                                  <Component
                                     style={
                                       Object {
                                         "marginBottom": 16,
@@ -3115,7 +3115,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                         }
                                       }
                                     />
-                                  </View>
+                                  </Component>
                                 }
                                 contentContainerStyle={
                                   Object {
@@ -8281,7 +8281,7 @@ exports[`tabs renders TabNavigation 1`] = `
                             >
                               <RCTScrollView
                                 ListFooterComponent={
-                                  <ActivityIndicator
+                                  <Component
                                     animating={true}
                                     color="rgba(0, 122, 255, 255)"
                                     hidesWhenStopped={true}
@@ -8289,7 +8289,7 @@ exports[`tabs renders TabNavigation 1`] = `
                                   />
                                 }
                                 ListHeaderComponent={
-                                  <View
+                                  <Component
                                     style={
                                       Object {
                                         "marginBottom": 16,
@@ -8325,7 +8325,7 @@ exports[`tabs renders TabNavigation 1`] = `
                                         }
                                       }
                                     />
-                                  </View>
+                                  </Component>
                                 }
                                 contentContainerStyle={
                                   Object {

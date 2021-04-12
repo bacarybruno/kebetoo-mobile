@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import { memo, useEffect, useState, useMemo } from 'react'
 import { View } from 'react-native'
 
 import BaseReactions from '@app/features/post/containers/reactions'
@@ -18,7 +18,7 @@ export const SummaryAuthor = ({ author }) => {
   )
 }
 
-const Summary = React.memo(({ comments }) => {
+const Summary = memo(({ comments }) => {
   const [authors, setAuthors] = useState({})
   const [reactionsMap, setReactionsMap] = useState({})
 
@@ -101,4 +101,4 @@ const Reactions = ({
   )
 }
 
-export default React.memo(Reactions)
+export default memo(Reactions)

@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useState, useContext, useRef, forwardRef,
-} from 'react'
+import { useCallback, useEffect, useState, useContext, useRef, forwardRef } from 'react'
 import {
   InteractionManager, StatusBar, TouchableOpacity, View,
 } from 'react-native'

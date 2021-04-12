@@ -1,6 +1,4 @@
-import React, {
-  useState, useCallback, useRef, useEffect,
-} from 'react'
+import { memo, useState, useCallback, useRef, useEffect } from 'react'
 import { Animated, View } from 'react-native'
 
 import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
@@ -126,4 +124,4 @@ export const CommentInput = ({
   )
 }
 
-export default React.memo(CommentInput)
+export default memo(CommentInput)

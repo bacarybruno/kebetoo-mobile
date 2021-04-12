@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 
 import { FormatedTypography, Typography } from '@app/shared/components'
@@ -31,4 +31,4 @@ const OnboardingSlide = ({ slideTitle, slideDescription }) => {
   )
 }
 
-export default React.memo(OnboardingSlide)
+export default memo(OnboardingSlide)

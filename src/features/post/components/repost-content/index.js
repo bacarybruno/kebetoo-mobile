@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View, TouchableWithoutFeedback } from 'react-native'
 
 import BasicPost, { Content, POST_TYPES, getPostType } from '@app/features/post/containers/basic-post'
@@ -35,4 +35,4 @@ const RepostContent = ({
   )
 }
 
-export default React.memo(RepostContent)
+export default memo(RepostContent)

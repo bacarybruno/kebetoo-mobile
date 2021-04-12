@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Alert, FlatList, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 

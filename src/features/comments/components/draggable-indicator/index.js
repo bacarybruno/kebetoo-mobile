@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 
 import { useAppStyles } from '@app/shared/hooks'
@@ -14,4 +14,4 @@ const DraggableIndicator = () => {
   )
 }
 
-export default React.memo(DraggableIndicator)
+export default memo(DraggableIndicator)

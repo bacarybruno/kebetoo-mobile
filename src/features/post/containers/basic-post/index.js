@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { View, TouchableOpacity, Platform } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -217,4 +217,4 @@ export const propsAreEqual = (prevProps, nextProps) => (
   && prevProps.post.comments.length === nextProps.post.comments.length
   && prevProps.post.localFileUri === nextProps.post.localFileUri
 )
-export default React.memo(BasicPost, propsAreEqual)
+export default memo(BasicPost, propsAreEqual)

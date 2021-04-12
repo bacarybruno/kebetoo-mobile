@@ -2,8 +2,6 @@ import 'react-native-gesture-handler'
 import './config/strings'
 import './config/init'
 // import './config/wdyr'
-
-import React from 'react'
 import { ActionSheetProvider } from '@expo/react-native-action-sheet'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'

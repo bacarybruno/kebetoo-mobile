@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useReducer, useRef, useState,
-} from 'react'
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import { TouchableOpacity, View, ActivityIndicator, InteractionManager } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'

@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef } from 'react'
+import { cloneElement, useEffect, useCallback, useRef } from 'react'
 import { AppState, Image, Platform, View } from 'react-native'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
@@ -46,7 +46,7 @@ enableScreens()
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
-const createPage = (page, key) => React.cloneElement(page, {
+const createPage = (page, key) => cloneElement(page, {
   key,
   options: { headerBackTitleVisible: false },
 })
@@ -163,7 +163,7 @@ export const TabPage = () => {
       lazy={false}
     >
       {tabPages.map((page, key) => (
-        React.cloneElement(page, {
+        cloneElement(page, {
           key,
           options: {
             tabBarBadge: page.props.name === routes.NOTIFICATIONS && badgeCount > 0

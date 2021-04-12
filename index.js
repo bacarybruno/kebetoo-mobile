@@ -1,6 +1,4 @@
-import React from 'react'
 import { AppRegistry } from 'react-native'
-
 import { KeyboardRegistry } from 'react-native-ui-lib/keyboard'
 
 import '@app/shared/helpers/polyfills'

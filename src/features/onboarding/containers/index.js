@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useState, useRef, useEffect, useMemo, useContext,
-} from 'react'
+import { memo, useCallback, useState, useRef, useEffect, useMemo, useContext } from 'react'
 import {
   View, TouchableOpacity, ImageBackground, StatusBar,
 } from 'react-native'
@@ -136,4 +134,4 @@ const OnboardingPage = ({ navigation }) => {
   )
 }
 
-export default React.memo(OnboardingPage)
+export default memo(OnboardingPage)

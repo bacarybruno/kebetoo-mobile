@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import { forwardRef, memo, useState, useCallback, useEffect } from 'react'
 import { View, TouchableOpacity, Platform } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAccessoryView, KeyboardUtils } from 'react-native-ui-lib/keyboard'
@@ -39,7 +39,7 @@ export const EmojiKeyboard = ({
   )
 }
 
-const EmojiTextInput = React.forwardRef((props, ref) => {
+const EmojiTextInput = forwardRef((props, ref) => {
   const [value, setValue] = useState(props.value)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
   const [blurred, setBlurred] = useState(false)
@@ -122,4 +122,4 @@ const EmojiTextInput = React.forwardRef((props, ref) => {
   )
 })
 
-export default React.memo(EmojiTextInput)
+export default memo(EmojiTextInput)

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import {
   FlatList, ScrollView, TouchableOpacity, View,
 } from 'react-native'

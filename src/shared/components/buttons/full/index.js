@@ -1,4 +1,3 @@
-import React from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
 
 import { Typography } from '@app/shared/components'

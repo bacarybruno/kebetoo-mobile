@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { Image } from 'react-native'
 
 import { images } from '@app/theme'
@@ -9,4 +9,4 @@ const Logo = ({ style }) => (
   <Image style={[styles.logo, style]} source={images.logo} />
 )
 
-export default React.memo(Logo)
+export default memo(Logo)

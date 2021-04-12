@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useLayoutEffect, useMemo, useState,
-} from 'react'
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import {
   FlatList, Image, Platform, View, Animated,
 } from 'react-native'
@@ -43,7 +41,7 @@ const routeOptions = (title, colors) => ({
 
 const isVideo = (type) => type.startsWith('video')
 
-const ImagePreview = React.memo(({ item }) => {
+const ImagePreview = memo(({ item }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <>
@@ -66,7 +64,7 @@ const ImagePreview = React.memo(({ item }) => {
   )
 })
 
-const Albums = React.memo(({ previews, onSelect }) => {
+const Albums = memo(({ previews, onSelect }) => {
   const numColumns = 2
   const imageMargin = metrics.spacing.xs
   const itemSize = (metrics.screenWidth - (numColumns - 1) * imageMargin) / numColumns

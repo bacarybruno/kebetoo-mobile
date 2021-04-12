@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { Alert, View } from 'react-native'
 
 import { strings } from '@app/config'
@@ -33,4 +33,4 @@ const NoContent = ({ title, text, children }) => (
   </View>
 )
 
-export default React.memo(NoContent)
+export default memo(NoContent)

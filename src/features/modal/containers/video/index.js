@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { StatusBar } from 'react-native'
 import { TransitionPresets } from '@react-navigation/stack'
 import VideoPlayer from 'react-native-video-controls'

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useMemo, useContext, useEffect } from 'react'
+import { memo, useCallback, useRef, useMemo, useContext, useEffect } from 'react'
 import {
   View, FlatList, KeyboardAvoidingView, Platform,
 } from 'react-native'
@@ -184,4 +184,4 @@ const Comments = () => {
   )
 }
 
-export default React.memo(Comments)
+export default memo(Comments)

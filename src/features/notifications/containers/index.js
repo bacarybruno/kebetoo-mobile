@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 import { View, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import dayjs from 'dayjs'

@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { TouchableOpacity, ActivityIndicator } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
@@ -7,7 +7,7 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 
-export const SendButton = React.memo(({
+export const SendButton = memo(({
   onPress, isLoading, defaultBgColor, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -23,7 +23,7 @@ export const SendButton = React.memo(({
   )
 })
 
-export const RecordButton = React.memo(({
+export const RecordButton = memo(({
   isRecording, start, stop, defaultBgColor,
 }) => {
   const styles = useAppStyles(createThemedStyles)

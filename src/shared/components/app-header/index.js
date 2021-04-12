@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
