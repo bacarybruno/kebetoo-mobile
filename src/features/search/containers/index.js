@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { View, ActivityIndicator, TouchableOpacity, InteractionManager } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 

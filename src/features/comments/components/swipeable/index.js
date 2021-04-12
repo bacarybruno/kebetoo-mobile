@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 import { Animated, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'

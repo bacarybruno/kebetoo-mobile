@@ -1,5 +1,5 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const SafeAreaContext = React.createContext()
+const SafeAreaContext = createContext()
 
 export { SafeAreaContext }

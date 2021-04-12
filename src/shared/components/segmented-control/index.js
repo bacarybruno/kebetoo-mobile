@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 
 import { useAppStyles } from '@app/shared/hooks'
@@ -48,4 +48,4 @@ const SegmentedControl = ({
   )
 }
 
-export default React.memo(SegmentedControl)
+export default memo(SegmentedControl)

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import { TapGestureHandler, State } from 'react-native-gesture-handler'
 
 const DoubleTapHandler = ({ onPress, onDoublePress, children }) => {

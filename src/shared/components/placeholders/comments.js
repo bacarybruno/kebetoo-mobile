@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { StyleSheet } from 'react-native'
 import {
   Placeholder, PlaceholderMedia, PlaceholderLine, Fade,
@@ -64,4 +64,4 @@ export const CommentPlaceholder = () => {
   )
 }
 
-export default React.memo(CommentPlaceholder)
+export default memo(CommentPlaceholder)

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import { memo, useCallback, useRef, useState } from 'react'
 import { FlatList, View, Text } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import rawEmojis from 'emoji-datasource'
@@ -23,7 +23,7 @@ export const emojisByCategory = helpers.groupByCategory(
     .map(helpers.mapEmojis),
 )
 
-export const Emoji = React.memo(({ item, onPress }) => {
+export const Emoji = memo(({ item, onPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <Pressable style={styles.emoji} onPress={() => onPress(item)}>
@@ -32,7 +32,7 @@ export const Emoji = React.memo(({ item, onPress }) => {
   )
 }, () => true)
 
-export const EmojiTab = React.memo(({
+export const EmojiTab = memo(({
   item, active, onPress, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -44,7 +44,7 @@ export const EmojiTab = React.memo(({
 }, (prevProps, nextProps) => prevProps.active === nextProps.active)
 
 
-export const EmojisTabs = React.memo(({ items, activeTab, onTabPress }) => {
+export const EmojisTabs = memo(({ items, activeTab, onTabPress }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.emojiTabs}>
@@ -61,7 +61,7 @@ export const EmojisTabs = React.memo(({ items, activeTab, onTabPress }) => {
   )
 })
 
-const EmptyEmojiTabContent = React.memo(() => {
+const EmptyEmojiTabContent = memo(() => {
   const styles = useAppStyles(createThemedStyles)
   return <View style={styles.tabContent} />
 })
@@ -157,4 +157,4 @@ EmojiSelector.defaultProps = {
   height: 250,
 }
 
-export default React.memo(EmojiSelector)
+export default memo(EmojiSelector)

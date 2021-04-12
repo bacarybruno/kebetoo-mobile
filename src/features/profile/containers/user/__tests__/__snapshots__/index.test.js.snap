@@ -280,7 +280,7 @@ exports[`renders UserProfile 1`] = `
                   >
                     <RCTScrollView
                       ListFooterComponent={
-                        <ActivityIndicator
+                        <Component
                           animating={false}
                           color="rgba(0, 122, 255, 255)"
                           hidesWhenStopped={true}

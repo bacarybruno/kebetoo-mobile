@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import {
   View, ScrollView, Platform, Share, TouchableOpacity, Linking,
 } from 'react-native'
@@ -27,7 +27,7 @@ import createThemedStyles, { imageSize } from './styles'
 
 const routeOptions = { title: strings.tabs.profile }
 
-export const SectionTitle = React.memo(({ text }) => {
+export const SectionTitle = memo(({ text }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <Typography
@@ -40,7 +40,7 @@ export const SectionTitle = React.memo(({ text }) => {
   )
 })
 
-export const Summary = React.memo(({
+export const Summary = memo(({
   photoURL, info, displayName, onLoading,
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -73,7 +73,7 @@ export const Summary = React.memo(({
   )
 })
 
-export const Stat = React.memo(({ title, value }) => {
+export const Stat = memo(({ title, value }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.stat}>
@@ -92,7 +92,7 @@ export const Stat = React.memo(({ title, value }) => {
   )
 })
 
-export const IconButton = React.memo(({
+export const IconButton = memo(({
   icon, text, message, onPress, children, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -121,7 +121,7 @@ export const IconButton = React.memo(({
   )
 })
 
-export const Stats = React.memo(({
+export const Stats = memo(({
   postsCount, reactionsCount, commentsCount, style,
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -134,7 +134,7 @@ export const Stats = React.memo(({
   )
 })
 
-const ProfileSection = React.memo(({ managePosts }) => {
+const ProfileSection = memo(({ managePosts }) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.section}>
@@ -148,7 +148,7 @@ const ProfileSection = React.memo(({ managePosts }) => {
   )
 })
 
-const AccountSection = React.memo(({
+const AccountSection = memo(({
   signOut, editProfile, editUsername, username,
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -175,7 +175,7 @@ const AccountSection = React.memo(({
   )
 })
 
-const PreferencesSection = React.memo(({ updateAppearance, openLanguages }) => {
+const PreferencesSection = memo(({ updateAppearance, openLanguages }) => {
   const styles = useAppStyles(createThemedStyles)
   const { theme } = useSelector(appSelector)
 
@@ -217,7 +217,7 @@ const PreferencesSection = React.memo(({ updateAppearance, openLanguages }) => {
   )
 })
 
-const AppInfosSection = React.memo(({
+const AppInfosSection = memo(({
   name, version, shareApp, reportIssue,
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -245,7 +245,7 @@ const AppInfosSection = React.memo(({
   )
 })
 
-export const ProfileHeader = React.memo(({
+export const ProfileHeader = memo(({
   profile, postsCount, reactionsCount, commentsCount, onLoading,
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -266,7 +266,7 @@ export const ProfileHeader = React.memo(({
   )
 })
 
-const ProfilePage = React.memo(() => {
+const ProfilePage = memo(() => {
   const { profile, signOut } = useUser()
   const { navigate } = useNavigation()
   const [loading, setLoading] = useState(false)

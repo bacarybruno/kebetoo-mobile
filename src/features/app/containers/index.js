@@ -1,6 +1,4 @@
-import React, {
-  useEffect, useCallback, useState, useMemo,
-} from 'react'
+import { useEffect, useCallback, useState, useMemo } from 'react'
 import { AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'

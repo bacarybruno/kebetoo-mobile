@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { Keyboard } from 'react-native'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'

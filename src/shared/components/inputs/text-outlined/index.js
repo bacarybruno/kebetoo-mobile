@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 
 import { TextInput, Typography } from '@app/shared/components'
 import { metrics } from '@app/theme'
@@ -64,4 +64,4 @@ export const TextOutlinedInput = ({
   )
 }
 
-export default React.memo(TextOutlinedInput)
+export default memo(TextOutlinedInput)

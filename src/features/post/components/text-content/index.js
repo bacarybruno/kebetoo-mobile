@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 
 import { Pressable, Typography, FormatedTypography } from '@app/shared/components'
 import { POST_TYPES } from '@app/features/post/containers/basic-post'
@@ -28,4 +28,4 @@ const TextContent = ({
   )
 }
 
-export default React.memo(TextContent)
+export default memo(TextContent)

@@ -1,4 +1,4 @@
-import React, { useCallback, Fragment } from 'react'
+import { useCallback } from 'react'
 import { Linking, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import ParsedText from 'react-native-parsed-text'

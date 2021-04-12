@@ -1,5 +1,5 @@
 import { useAppColors } from '@app/shared/hooks'
-import React from 'react'
+import { memo } from 'react'
 import {
   Platform,
   TouchableNativeFeedback,
@@ -40,4 +40,4 @@ const Pressable = ({
   return <TouchableComponent style={style} {...otherProps}>{children}</TouchableComponent>
 }
 
-export default React.memo(Pressable)
+export default memo(Pressable)

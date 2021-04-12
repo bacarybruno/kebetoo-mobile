@@ -1,4 +1,3 @@
-import React from 'react'
 import { View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 

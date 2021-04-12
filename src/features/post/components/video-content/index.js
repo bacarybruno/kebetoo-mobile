@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 
 import { VideoPlayer, Typography, Pressable } from '@app/shared/components'
@@ -43,4 +43,4 @@ const VideoContent = ({
   )
 }
 
-export default React.memo(VideoContent)
+export default memo(VideoContent)

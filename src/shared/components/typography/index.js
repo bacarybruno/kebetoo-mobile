@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text } from 'react-native'
 import { human, systemWeights, material } from 'react-native-typography'
 import Ionicon from 'react-native-vector-icons/Ionicons'

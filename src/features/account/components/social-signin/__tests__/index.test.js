@@ -1,4 +1,3 @@
-import React from 'react'
 import { fireEvent } from 'react-native-testing-library'
 import { act } from 'react-test-renderer'
 import auth from '@react-native-firebase/auth'

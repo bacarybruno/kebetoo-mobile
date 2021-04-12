@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 
 import { useAppColors } from '@app/shared/hooks'
@@ -26,4 +26,4 @@ const Badge = ({
   )
 }
 
-export default React.memo(Badge)
+export default memo(Badge)

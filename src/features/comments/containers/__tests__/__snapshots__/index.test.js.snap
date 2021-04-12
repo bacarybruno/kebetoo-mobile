@@ -287,7 +287,7 @@ exports[`renders Comments 1`] = `
                       <RCTScrollView
                         ListEmptyComponent={[Function]}
                         ListHeaderComponent={
-                          <View
+                          <Component
                             style={
                               Object {
                                 "backgroundColor": "#F5F5F5",
@@ -296,7 +296,7 @@ exports[`renders Comments 1`] = `
                               }
                             }
                           >
-                            <View
+                            <Component
                               style={
                                 Object {
                                   "minHeight": 200.1,
@@ -520,7 +520,7 @@ exports[`renders Comments 1`] = `
                                   }
                                 }
                               />
-                            </View>
+                            </Component>
                             <Memo(Reactions)
                               author="1"
                               comments={
@@ -639,7 +639,7 @@ exports[`renders Comments 1`] = `
                                 }
                               }
                             />
-                          </View>
+                          </Component>
                         }
                         contentContainerStyle={
                           Object {
@@ -2574,7 +2574,7 @@ exports[`renders Comments in loading state 1`] = `
                       <RCTScrollView
                         ListEmptyComponent={[Function]}
                         ListHeaderComponent={
-                          <View
+                          <Component
                             style={
                               Object {
                                 "backgroundColor": "#F5F5F5",
@@ -2583,7 +2583,7 @@ exports[`renders Comments in loading state 1`] = `
                               }
                             }
                           >
-                            <View
+                            <Component
                               style={
                                 Object {
                                   "minHeight": 200.1,
@@ -2807,7 +2807,7 @@ exports[`renders Comments in loading state 1`] = `
                                   }
                                 }
                               />
-                            </View>
+                            </Component>
                             <Memo(Reactions)
                               author="1"
                               comments={
@@ -2926,7 +2926,7 @@ exports[`renders Comments in loading state 1`] = `
                                 }
                               }
                             />
-                          </View>
+                          </Component>
                         }
                         contentContainerStyle={
                           Object {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, act } from 'react-native-testing-library'
 import RNFetchBlob from 'rn-fetch-blob'
 

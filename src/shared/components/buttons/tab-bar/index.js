@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import ActionButton from 'react-native-action-button'

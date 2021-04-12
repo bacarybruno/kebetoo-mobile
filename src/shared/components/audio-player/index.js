@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react'
+import { memo, useState, useCallback, useRef } from 'react'
 import {
   TouchableOpacity, ActivityIndicator, View, Image,
 } from 'react-native'
@@ -156,4 +156,4 @@ export const AudioPlayer = ({
   )
 }
 
-export default React.memo(AudioPlayer)
+export default memo(AudioPlayer)

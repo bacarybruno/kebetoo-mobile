@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View } from 'react-native'
 
 import { AudioPlayer, Typography } from '@app/shared/components'
@@ -31,4 +31,4 @@ const AudioContent = ({
   )
 }
 
-export default React.memo(AudioContent)
+export default memo(AudioContent)

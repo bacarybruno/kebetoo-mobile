@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { View, TouchableOpacity, FlatList } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import dayjs from 'dayjs'

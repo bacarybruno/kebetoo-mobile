@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react'
 import { NativeModules } from 'react-native'
 import TestRenderer from 'react-test-renderer'
 import { Provider } from 'react-redux'

@@ -1,8 +1,7 @@
-import React from 'react'
 import { View, Text } from 'react-native'
 
 import { Pressable, Avatar, Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
 

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, forwardRef } from 'react'
+import { useState, useCallback, forwardRef } from 'react'
 import {
   View, TextInput, TouchableOpacity, Animated,
 } from 'react-native'

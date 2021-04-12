@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
 
 import { Pressable } from '@app/shared/components'
@@ -26,4 +26,4 @@ const OutlinedButton = ({
   )
 }
 
-export default React.memo(OutlinedButton)
+export default memo(OutlinedButton)

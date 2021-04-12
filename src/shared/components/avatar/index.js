@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { Image, View, Text } from 'react-native'
 import { systemWeights } from 'react-native-typography'
 
@@ -74,4 +74,4 @@ const Avatar = ({ src, text, size, badge, ...props }) => {
   )
 }
 
-export default React.memo(Avatar)
+export default memo(Avatar)

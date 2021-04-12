@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { View, FlatList } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import Ionicon from 'react-native-vector-icons/Ionicons'

@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-import React, { useCallback, useState, useEffect } from 'react'
+import { memo, useCallback, useState, useEffect } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -71,4 +71,4 @@ const Reactions = ({
   )
 }
 
-export default React.memo(Reactions)
+export default memo(Reactions)

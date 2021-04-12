@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import { memo, useEffect, useState, useCallback } from 'react'
 import {
   View, SectionList, Alert, LogBox,
 } from 'react-native'
@@ -222,4 +222,4 @@ const ManagePostsPage = ({ route, navigation }) => {
   )
 }
 
-export default React.memo(ManagePostsPage)
+export default memo(ManagePostsPage)

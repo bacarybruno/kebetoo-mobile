@@ -1,5 +1,3 @@
-import React from 'react'
-
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 
