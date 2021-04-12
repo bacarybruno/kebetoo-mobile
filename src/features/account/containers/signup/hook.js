@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer } from 'react'
 import auth from '@react-native-firebase/auth'
-import * as yup from 'yup'
+import { object as yupObject, string as yupString, reach as yupReach } from 'yup'
 
 import routes from '@app/navigation/routes'
 import { strings } from '@app/config'
@@ -28,16 +28,16 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
 
   const { trackSignUp, reportError } = useAnalytics()
 
-  const schema = yup.object().shape({
-    [fieldNames.fullName]: yup.string().required(
+  const schema = yupObject().shape({
+    [fieldNames.fullName]: yupString().required(
       strings.formatString(strings.errors.required_field, strings.auth.fullname),
     ),
-    [fieldNames.email]: yup.string().email(
+    [fieldNames.email]: yupString().email(
       strings.formatString(strings.errors.invalid_field, strings.auth.email),
     ).required(
       strings.formatString(strings.errors.required_field, strings.auth.email),
     ),
-    [fieldNames.password]: yup.string().min(
+    [fieldNames.password]: yupString().min(
       8,
       strings.formatString(strings.errors.min_length_field, strings.auth.password, 8),
     ),
@@ -122,7 +122,7 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
 
   const validate = useCallback((field) => {
     try {
-      yup.reach(schema, field).validateSync(values[field])
+      yupReach(schema, field).validateSync(values[field])
       dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
     } catch (error) {
       dispatch({ type: actionTypes.SET_ERROR, payload: { field, value: error.message } })

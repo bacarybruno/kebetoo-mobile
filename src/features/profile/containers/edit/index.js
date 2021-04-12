@@ -2,10 +2,10 @@ import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import { TouchableOpacity, View, ActivityIndicator, InteractionManager } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import * as yup from 'yup'
+import { addMethod as addYupMethod, string as yupString, object as yupObject } from 'yup'
 import auth from '@react-native-firebase/auth'
 import { useDispatch } from 'react-redux'
-import twitterText from 'twitter-text'
+import { isValidUsername } from 'twitter-text'
 
 import { AppHeader, Avatar, OutlinedButton } from '@app/shared/components'
 import { env, strings } from '@app/config'
@@ -42,11 +42,11 @@ export const fieldNames = {
   bio: 'bio',
 }
 
-yup.addMethod(yup.string, 'usernameValidator', function (message) {
+addYupMethod(yupString, 'usernameValidator', function (message) {
   return this.test('validate-username', message, function (value) {
     const { path, createError } = this
     const username = value.startsWith('@') ? value : `@${value}`
-    return twitterText.isValidUsername(username) || createError({ path, message })
+    return isValidUsername(username) || createError({ path, message })
   })
 })
 
@@ -78,21 +78,21 @@ const EditProfile = ({ route, navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { values, errors, isLoading } = state
 
-  const schema = yup.object().shape({
-    [fieldNames.email]: yup.string().email(
+  const schema = yupObject().shape({
+    [fieldNames.email]: yupString().email(
       strings.formatString(strings.errors.invalid_field, strings.auth.email),
     ).required(
       strings.formatString(strings.errors.required_field, strings.auth.email),
     ),
-    [fieldNames.fullName]: yup.string().required(
+    [fieldNames.fullName]: yupString().required(
       strings.formatString(strings.errors.required_field, strings.auth.fullname),
     ),
-    [fieldNames.username]: yup.string().required(
+    [fieldNames.username]: yupString().required(
       strings.formatString(strings.errors.required_field, strings.auth.username),
     ).usernameValidator(
       strings.formatString(strings.errors.invalid_field, strings.auth.username),
     ),
-    [fieldNames.bio]: yup.string().optional().nullable(),
+    [fieldNames.bio]: yupString().optional().nullable(),
   })
 
   const formatUsername = useCallback((val) => {
