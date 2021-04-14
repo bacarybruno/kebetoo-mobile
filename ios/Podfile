@@ -17,6 +17,7 @@ target 'Kebetoo' do
   post_install do |installer|
     flipper_post_install(installer)
     react_native_share_menu_post_install(installer)
+    iphoneos_post_install(installer)
   end
 end
 
