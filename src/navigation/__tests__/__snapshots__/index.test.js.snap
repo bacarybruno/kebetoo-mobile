@@ -1618,6 +1618,7 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                       "borderTopRightRadius": 20,
                                     },
                                     Object {
+                                      "marginBottom": 8,
                                       "marginHorizontal": 16,
                                     },
                                   ]
@@ -4481,6 +4482,7 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                       "borderTopRightRadius": 20,
                                     },
                                     Object {
+                                      "marginBottom": 8,
                                       "marginHorizontal": 16,
                                     },
                                   ]
@@ -9692,6 +9694,7 @@ exports[`tabs renders TabNavigation 1`] = `
                                       "borderTopRightRadius": 20,
                                     },
                                     Object {
+                                      "marginBottom": 8,
                                       "marginHorizontal": 16,
                                     },
                                   ]

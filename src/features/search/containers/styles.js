@@ -30,5 +30,6 @@ export default (colors) => StyleSheet.create({
   },
   segmentedControl: {
     marginHorizontal: metrics.marginHorizontal,
+    marginBottom: metrics.spacing.sm,
   },
 })
