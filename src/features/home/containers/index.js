@@ -9,7 +9,12 @@ import RNFetchBlob from 'rn-fetch-blob'
 import Snackbar from 'react-native-snackbar'
 
 import * as types from '@app/redux/types'
-import { isLoadingPostsSelector, postsSelector } from '@app/redux/selectors'
+import {
+  isLoadingPostsSelector,
+  isRefreshingPostsSelector,
+  postsSelector,
+  postsFilterSelector,
+} from '@app/redux/selectors'
 import BasicPost from '@app/features/post/containers/basic-post'
 import { getFileName, getExtension } from '@app/shared/helpers/file'
 import { strings } from '@app/config'
@@ -30,15 +35,14 @@ const routeOptions = { title: strings.tabs.home }
 // or sagas
 const HomePage = ({ navigation }) => {
   const dispatch = useDispatch()
-  const posts = useSelector(postsSelector) || []
-  const isLoading = useSelector(isLoadingPostsSelector)
-  const [refreshing, setRefreshing] = useState(false)
-  const [page, setPage] = useState(0)
   const [authors, setAuthors] = useState({})
   const { trackReceiveIntent } = useAnalytics()
   const { profile } = useUser()
   const { getRepostAuthors } = usePosts()
-  const [postsSort, setPostsSort] = useState('score')
+  const posts = useSelector(postsSelector) || []
+  const isLoading = useSelector(isLoadingPostsSelector)
+  const isRefreshing = useSelector(isRefreshingPostsSelector)
+  const postsFilter = useSelector(postsFilterSelector)
 
   const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
@@ -75,26 +79,16 @@ const HomePage = ({ navigation }) => {
   }, [])
 
   const onRefresh = useCallback(() => {
-    setRefreshing(true)
-    setPage(0)
+    onSelectFilter({ value: postsFilter })
+  }, [onSelectFilter])
+
+  useEffect(() => {
+    dispatch({ type: types.INIT_POSTS })
   }, [])
 
   const onEndReached = useCallback(() => {
-    setPage((value) => value + 1)
-  }, [])
-
-  useEffect(() => {
-    if (page > 0) {
-      dispatch({ type: types.API_FETCH_POSTS, payload: { page, sort: postsSort } })
-    }
-  }, [dispatch, page, postsSort])
-
-  useEffect(() => {
-    if (page === 0) {
-      if (refreshing) setRefreshing(false)
-      dispatch({ type: types.API_FETCH_POSTS, payload: { page: 0, sort: postsSort } })
-    }
-  }, [dispatch, page, postsSort, refreshing])
+    dispatch({ type: types.POSTS_NEXT_PAGE_REQUEST })
+  }, [dispatch])
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
@@ -158,9 +152,15 @@ const HomePage = ({ navigation }) => {
   ), [authors, showPostOptions])
 
   const onSelectFilter = useCallback((item) => {
-    setPostsSort(item.value)
-    setTimeout(onRefresh, 1)
-  }, [onRefresh])
+    setTimeout(() => {
+      dispatch({
+        type: types.UPDATE_POSTS_FILTER_REQUEST,
+        payload: {
+          filter: item.value,
+        }
+      })
+    }, 1)
+  }, [])
 
   const renderListHeader = useMemo(() => (user) => {
     const filterItems = [{
@@ -181,11 +181,11 @@ const HomePage = ({ navigation }) => {
           style={styles.header}
           items={filterItems}
           onSelect={onSelectFilter}
-          selectedValue={postsSort}
+          selectedValue={postsFilter}
         />
       </View>
     )
-  }, [styles, onSelectFilter, postsSort])
+  }, [styles, onSelectFilter, postsFilter])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl
@@ -193,10 +193,10 @@ const HomePage = ({ navigation }) => {
       colors={[colors.primary]}
       tintColor={colors.primary}
       titleColor={colors.primary}
-      refreshing={refreshing}
+      refreshing={isRefreshing}
       onRefresh={onRefresh}
     />
-  ), [colors, onRefresh, refreshing])
+  ), [colors, onRefresh, isRefreshing])
 
   return (
     <View style={styles.wrapper}>

@@ -1,4 +1,5 @@
 import setupTest from '@app/config/jest-setup'
+import { act } from 'react-test-renderer'
 
 import SegmentedControl, { Segment } from '../index'
 
@@ -35,7 +36,9 @@ it('selects item', () => {
   const selectedItemIndex = 0
   const { wrapper, props } = givenSegmentedControl()
   const segment = wrapper.root.findAllByType(Segment)[selectedItemIndex]
-  segment.props.onPress(items[selectedItemIndex])
+  act(() => {
+    segment.props.onPress(items[selectedItemIndex])
+  })
   expect(props.onSelect).toBeCalledTimes(1)
   expect(props.onSelect).toBeCalledWith(items[selectedItemIndex])
 })

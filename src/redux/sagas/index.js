@@ -12,21 +12,18 @@ import {
 
 import channels from './channels'
 import * as types from '../types'
-import { blockedItemsSelector, emojiHistorySelector, userProfileSelector } from '../selectors'
+import {
+  blockedItemsSelector,
+  emojiHistorySelector,
+  userProfileSelector,
+  postsFilterSelector,
+  postsPageSelector,
+} from '../selectors'
 
 function* fetchPosts(action) {
   try {
-    yield put({ type: types.IS_LOADING_POSTS, payload: true })
-
     const posts = yield call([api.posts, 'get'], action.payload)
-
-    let postActionType = types.API_FETCH_POSTS_SUCCESS
-    if (action.payload.page === 0) {
-      postActionType = types.REPLACE_POSTS
-    }
-
     const blockedItems = yield select(blockedItemsSelector)
-
     // allow only posts that are not blocked by user
     // and those on which author is not blocked
     let allowedPosts = posts
@@ -35,11 +32,17 @@ function* fetchPosts(action) {
       && !blockedItems.authors.includes(post.author?.id)
     ))
 
-    yield put({ type: postActionType, payload: allowedPosts || [] })
+    yield put({
+      type: action.payload.page === 0
+        ? types.REPLACE_POSTS
+        : types.API_FETCH_POSTS_SUCCESS,
+      payload: allowedPosts || []
+    })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })
   } finally {
     yield put({ type: types.IS_LOADING_POSTS, payload: false })
+    yield put({ type: types.IS_REFRESHING_POSTS, payload: false })
   }
 }
 
@@ -135,11 +138,42 @@ function* setUserProfile(action) {
   }
 }
 
+function* fetchPostsNextPage() {
+  yield put({ type: types.IS_LOADING_POSTS, payload: true })
+  yield put({ type: types.POSTS_NEXT_PAGE })
+  const filter = yield select(postsFilterSelector)
+  const page = yield select(postsPageSelector)
+  yield put({ type: types.API_FETCH_POSTS, payload: { page, filter } })
+}
+
+function* updatePostsFilter(action) {
+  const { filter, shouldRefresh = true } = action.payload
+  yield put({ type: types.IS_REFRESHING_POSTS, payload: shouldRefresh })
+  yield put({ type: types.RESET_POSTS_PAGE })
+  yield put({ type: types.UPDATE_POSTS_FILTER, payload: filter })
+  const page = yield select(postsPageSelector)
+  yield put({ type: types.API_FETCH_POSTS, payload: { page, filter } })
+}
+
+function* initPosts() {
+  const filter = yield select(postsFilterSelector)
+  yield put({
+    type: types.UPDATE_POSTS_FILTER_REQUEST,
+    payload: {
+      filter,
+      shouldRefresh: false,
+    },
+  })
+}
+
 export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
     yield debounce(3000, types.ADD_EMOJI_HISTORY, addEmojiHistory),
     yield takeLeading(types.SET_USER_PROFILE_REQUEST, setUserProfile),
+    yield takeLeading(types.POSTS_NEXT_PAGE_REQUEST, fetchPostsNextPage),
+    yield takeLeading(types.UPDATE_POSTS_FILTER_REQUEST, updatePostsFilter),
+    yield takeLeading(types.INIT_POSTS, initPosts),
     yield call(channels),
   ])
 }

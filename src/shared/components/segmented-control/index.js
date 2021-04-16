@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 
 import { useAppStyles } from '@app/shared/hooks'
@@ -27,7 +27,14 @@ export const Segment = ({ item, selected, onPress }) => {
 const SegmentedControl = ({
   items, selectedValue, onSelect = () => {}, style, ...otherProps
 }) => {
+  const [selectedItem, setSelectedItem] = useState({ value: selectedValue })
   const styles = useAppStyles(createThemedStyles)
+
+  useEffect(() => {
+    if (selectedValue !== selectedItem.value) {
+      onSelect(selectedItem)
+    }
+  }, [selectedValue, selectedItem])
 
   if (!items?.length) {
     console.warn('SegmentedControl items should not be empty')
@@ -40,8 +47,8 @@ const SegmentedControl = ({
         <Segment
           key={`item-${item.label}-${item.value}-${index}`}
           item={item}
-          selected={selectedValue === item.value}
-          onPress={onSelect}
+          selected={selectedItem.value === item.value}
+          onPress={setSelectedItem}
         />
       ))}
     </View>

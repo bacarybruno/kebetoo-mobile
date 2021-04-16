@@ -14,6 +14,10 @@ const __storeState__ = {
   },
   postsReducer: {
     posts: [],
+    page: 0,
+    isLoading: true,
+    isRefreshing: false,
+    filter: 'score',
   },
   userReducer: {
     profile: {

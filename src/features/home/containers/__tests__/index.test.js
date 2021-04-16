@@ -17,6 +17,10 @@ const givenHomePage = setupTest(HomePage)({
   __storeState__: {
     postsReducer: {
       posts: postsList,
+      page: 0,
+      isLoading: true,
+      isRefreshing: false,
+      filter: 'score',
     },
     userReducer: {
       profile: auth().currentUser,

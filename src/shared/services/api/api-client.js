@@ -34,7 +34,7 @@ class ApiClient extends HttpClient {
     return {
       getByAuthor: (authorId) => this.get(`/posts?author.id=${authorId}&_sort=updatedAt:desc`),
       getById: (id) => this.get(`/posts/${id}`),
-      get: ({ page, sort = 'score' }) => this.get(`/posts?_sort=${sort}:desc&_start=${page * pageSize}&_limit=${pageSize}`),
+      get: ({ page, filter = 'score' }) => this.get(`/posts?_sort=${filter}:desc&_start=${page * pageSize}&_limit=${pageSize}`),
       create: (post) => this.post('/posts', post),
       createAudio: ({ audio, ...payload }) => this.postAsset('/posts', 'audio', audio, payload),
       createImage: ({ image, ...payload }) => this.postAsset('/posts', 'image', image, payload),
