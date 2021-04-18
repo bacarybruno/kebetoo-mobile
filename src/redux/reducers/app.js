@@ -1,9 +1,11 @@
 import { Appearance } from 'react-native'
 
+import { strings } from '@app/config'
+
 import { SET_LOCALE, SET_THEME, SET_EMOJI_HISTORY } from '../types'
 
 const initialState = {
-  locale: 'fr',
+  locale: strings.getInterfaceLanguage(),
   theme: Appearance.getColorScheme(),
   emojiHistory: [],
 }
