@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import { AppHeader, SegmentedControl } from '@app/shared/components'
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { readableNumber } from '@app/shared/helpers/strings'
 import { edgeInsets } from '@app/theme'
 import routes from '@app/navigation/routes'
 
@@ -33,10 +33,10 @@ const RoomsPage = ({ navigation }) => {
   const { profile } = useUser()
 
   const filterItems = [{
-    label: strings.formatString(strings.rooms.discover, abbreviateNumber(discoverRooms.length)),
+    label: strings.formatString(strings.rooms.discover, readableNumber(discoverRooms.length)),
     value: 'discover',
   }, {
-    label: strings.formatString(strings.rooms.my_rooms, abbreviateNumber(rooms.length)),
+    label: strings.formatString(strings.rooms.my_rooms, readableNumber(rooms.length)),
     value: 'rooms',
   }]
   const [selectedValue, setSelectedValue] = useState(filterItems[0].value)

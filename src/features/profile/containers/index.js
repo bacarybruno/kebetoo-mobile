@@ -19,7 +19,7 @@ import {
   useAppColors, useAppStyles, useBottomSheet, useUser,
 } from '@app/shared/hooks'
 import { actionTypes } from '@app/features/post/containers/create'
-import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { readableNumber } from '@app/shared/helpers/strings'
 import { warnNotImplemented } from '@app/shared/components/no-content'
 import useFilePicker from '@app/features/post/hooks/file-picker'
 
@@ -79,7 +79,7 @@ export const Stat = memo(({ title, value }) => {
     <View style={styles.stat}>
       <Typography
         type={Typography.types.subheading}
-        text={abbreviateNumber(value)}
+        text={readableNumber(value)}
         systemWeight={Typography.weights.bold}
         color="primary"
       />

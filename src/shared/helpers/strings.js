@@ -8,7 +8,7 @@ export const capitalize = (s) => {
 }
 
 
-export const abbreviateNumber = (number) => {
+export const readableNumber = (number) => {
   const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E']
 
   // what tier? (determines SI symbol)

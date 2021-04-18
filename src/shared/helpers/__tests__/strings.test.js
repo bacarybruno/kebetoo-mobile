@@ -46,6 +46,6 @@ it('abbreviates number', () => {
     expected: '1M',
   }]
   testCases.forEach((testCase) => {
-    expect(strings.abbreviateNumber(testCase.actual, 1)).toBe(testCase.expected)
+    expect(strings.readableNumber(testCase.actual, 1)).toBe(testCase.expected)
   })
 })

@@ -3,7 +3,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { Pressable, Avatar, Typography, FormatedTypography } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { readableNumber } from '@app/shared/helpers/strings'
 import { strings } from '@app/config'
 
 import createThemedStyles from './styles'
@@ -71,7 +71,7 @@ const Room = ({
             info={
               strings.formatString(
                 strings.rooms.members,
-                abbreviateNumber(membersCount),
+                readableNumber(membersCount),
               )
             }
             Right={!isOpened ? <Dot /> : null}
@@ -117,7 +117,7 @@ const Discover = ({
             info={
               strings.formatString(
                 strings.rooms.members,
-                abbreviateNumber(membersCount),
+                readableNumber(membersCount),
               )
             }
             Right={<NextButton />}

@@ -21,7 +21,7 @@ import { strings } from '@app/config'
 import { edgeInsets, metrics } from '@app/theme'
 import { isIphoneX } from 'react-native-iphone-x-helper'
 import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder'
-import { abbreviateNumber } from '@app/shared/helpers/strings'
+import { readableNumber } from '@app/shared/helpers/strings'
 import { actionTypes } from '@app/features/post/containers/create'
 import routes from '@app/navigation/routes'
 import useRooms from '@app/features/rooms/hooks/rooms'
@@ -313,7 +313,7 @@ const RoomPage = ({ navigation }) => {
       <AppHeader
         headerBack
         title={params.name}
-        text={strings.formatString(strings.room.online_count, abbreviateNumber(onlineCount))}
+        text={strings.formatString(strings.room.online_count, readableNumber(onlineCount))}
         showAvatar={false}
         style={[styles.content, { backgroundColor: themeColor }]}
         titleStyle={styles.bubbleRightText}
