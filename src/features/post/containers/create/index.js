@@ -280,10 +280,8 @@ const CreatePostPage = ({ route, navigation }) => {
       <AppHeader
         style={styles.header}
         title={headerMessages.title}
-        text=""
-        showAvatar={false}
         headerBack
-        Right={() => (
+        Right={(
           <OutlinedButton
             text={headerMessages.post.toUpperCase()}
             disabled={text.length === 0 || isLoading}

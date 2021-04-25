@@ -204,7 +204,7 @@ const UserProfile = ({ route, navigation }) => {
     )
     return (
       <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
-        <AppHeader headerBack showAvatar={false} title="" text="" style={styles.header} />
+        <AppHeader headerBack style={styles.header} />
         {photoURL
           ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
           : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}

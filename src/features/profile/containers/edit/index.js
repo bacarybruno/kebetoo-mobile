@@ -170,10 +170,8 @@ const EditProfile = ({ route, navigation }) => {
     >
       <AppHeader
         title={strings.profile.edit_profile}
-        text=""
-        showAvatar={false}
         headerBack
-        Right={() => (
+        Right={(
           <OutlinedButton
             text={strings.general.save.toUpperCase()}
             disabled={false}

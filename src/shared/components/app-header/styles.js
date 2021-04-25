@@ -1,11 +1,12 @@
-import { metrics } from '@app/theme'
 import { StyleSheet } from 'react-native'
+
+import { metrics } from '@app/theme'
 
 import Typography from '../typography'
 
 export default StyleSheet.create({
   header: {
-    height: 60,
+    height: metrics.headerHeight,
     flexDirection: 'row',
     alignItems: 'center',
   },

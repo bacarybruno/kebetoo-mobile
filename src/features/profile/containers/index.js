@@ -346,8 +346,6 @@ const ProfilePage = memo(() => {
         <View style={styles.padding}>
           <AppHeader
             title={strings.tabs.profile}
-            text=""
-            showAvatar={false}
             headerBack
             loading={loading}
           />

@@ -314,13 +314,12 @@ const RoomPage = ({ navigation }) => {
         headerBack
         title={params.name}
         text={strings.formatString(strings.room.online_count, readableNumber(onlineCount))}
-        showAvatar={false}
         style={[styles.content, { backgroundColor: themeColor }]}
         titleStyle={styles.bubbleRightText}
         textStyle={styles.bubbleRightTimeText}
         iconColor={colors.white}
         Logo={<View style={styles.onlineDot} />}
-        Right={() => <HeaderMenu report={reportRoom} exit={exitRoom} />}
+        Right={<HeaderMenu report={reportRoom} exit={exitRoom} />}
       />
       {isReady && (
         <GiftedChat

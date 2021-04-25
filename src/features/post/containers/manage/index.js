@@ -195,8 +195,6 @@ const ManagePostsPage = ({ route, navigation }) => {
       <AppHeader
         style={styles.header}
         title={routeOptions.title}
-        text=""
-        showAvatar={false}
         headerBack
         loading={loading}
       />

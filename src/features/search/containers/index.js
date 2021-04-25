@@ -95,12 +95,11 @@ const SearchPage = () => {
       {searchQuery === null
         ? (
           <AppHeader
-            text=""
+            headerBack
             title={strings.search.search}
             displayName={profile.displayName}
             imageSrc={profile.photoURL}
-            showAvatar={false}
-            Right={() => <SearchIcon onPress={onShowSearchbar} />}
+            Right={<SearchIcon onPress={onShowSearchbar} />}
             style={{ marginHorizontal: metrics.marginHorizontal }}
           />
         ) : (
@@ -114,7 +113,7 @@ const SearchPage = () => {
             textStyle={styles.textInputStyle}
             ref={textInputRef}
             Left={SearchIcon}
-            Right={() => <CancelIcon onPress={onCancel} isLoading={isLoading} />}
+            Right={<CancelIcon onPress={onCancel} isLoading={isLoading} />}
           />
         )}
 

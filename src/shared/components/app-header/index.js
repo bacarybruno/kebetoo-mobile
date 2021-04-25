@@ -1,9 +1,8 @@
-import { useCallback } from 'react'
+import { useCallback, isValidElement } from 'react'
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { Avatar, Logo, Typography } from '@app/shared/components'
-import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import { useAppColors } from '@app/shared/hooks'
 import { edgeInsets } from '@app/theme'
@@ -26,20 +25,17 @@ const HeaderNavigationBack = ({ onPress, tintColor }) => (
 )
 
 const Header = ({
+  title = '',
+  titleStyle,
+  text = '',
+  textStyle,
   displayName = '',
   imageSrc,
   style,
-  titleStyle,
-  textStyle,
   iconColor,
-  title = strings.formatString(strings.home.welcome, (
-    displayName && displayName.trim()
-      ? displayName.trim().split(' ')[0]
-      : ''
-  )),
-  text = strings.home.whats_new,
+  onGoBack,
   loading = false,
-  showAvatar = true,
+  showAvatar = false,
   headerBack = false,
   Right,
   Logo: HeaderLogo,
@@ -56,7 +52,10 @@ const Header = ({
       <View style={styles.greetings}>
         <View style={styles.section}>
           {headerBack && (
-            <HeaderNavigationBack tintColor={iconColor || colors.textPrimary} onPress={goBack} />
+            <HeaderNavigationBack
+              tintColor={iconColor || colors.textPrimary}
+              onPress={onGoBack || goBack}
+            />
           )}
           <View style={{ flex: 1 }}>
             <View style={styles.section}>
@@ -85,9 +84,12 @@ const Header = ({
           </View>
         </View>
       </View>
-      {Right && <Right />}
+      {isValidElement(Right) && Right}
       {showAvatar && (
-        <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />
+        <HeaderAvatar
+          displayName={displayName}
+          photoURL={imageSrc} onPress={onHeaderPress}
+        />
       )}
     </View>
   )

@@ -1,12 +1,13 @@
 /* eslint-disable import/default */
 import { useEffect, useState, useCallback, useMemo } from 'react'
 import {
-  View, FlatList, RefreshControl, Platform, ActivityIndicator,
+  View, FlatList, RefreshControl, Platform, ActivityIndicator, LogBox,
 } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import ShareMenu from 'react-native-share-menu'
 import RNFetchBlob from 'rn-fetch-blob'
 import Snackbar from 'react-native-snackbar'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import * as types from '@app/redux/types'
 import {
@@ -28,6 +29,8 @@ import {
 } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
+
+LogBox.ignoreAllLogs(true)
 
 const routeOptions = { title: strings.tabs.home }
 
@@ -176,6 +179,22 @@ const HomePage = ({ navigation }) => {
           displayName={user.displayName}
           imageSrc={user.photoURL}
           style={styles.header}
+          showAvatar
+          title={(
+            strings.formatString(
+              strings.home.welcome,
+              user.displayName?.trim()?.split(' ')[0] || ''
+            )
+          )}
+          text={strings.home.whats_new}
+          Right={(
+            <Ionicon
+              name="search-outline"
+              size={30}
+              color={colors.textPrimary}
+              onPress={() => navigation.navigate(routes.SEARCH)}
+            />
+          )}
         />
         <SegmentedControl
           style={styles.header}
@@ -185,7 +204,7 @@ const HomePage = ({ navigation }) => {
         />
       </View>
     )
-  }, [styles, onSelectFilter, postsFilter])
+  }, [styles, onSelectFilter, postsFilter, navigation])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

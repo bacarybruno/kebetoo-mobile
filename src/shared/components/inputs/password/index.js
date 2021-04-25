@@ -41,7 +41,7 @@ const InputPassword = forwardRef((props, ref) => {
       onChangeText={onChangeText}
       ref={ref}
       {...props}
-      Right={() => (
+      Right={(
         <EyeButton secureTextEntry={secureTextEntry} onPress={togglePassword} />
       )}
     />

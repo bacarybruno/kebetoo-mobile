@@ -102,12 +102,7 @@ const CreateRoomPage = ({ navigation }) => {
 
   return (
     <View style={styles.wrapper}>
-      <AppHeader
-        title={routeOptions.title}
-        text=""
-        showAvatar={false}
-        headerBack
-      />
+      <AppHeader title={routeOptions.title} headerBack />
       <ScrollView style={styles.content}>
         <View style={styles.inputWrapper}>
           <Typography type={Typography.types.headline4} text="" style={styles.label} />

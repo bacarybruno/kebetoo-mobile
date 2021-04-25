@@ -115,9 +115,7 @@ const RoomsPage = ({ navigation }) => {
     <View style={styles.wrapper}>
       <AppHeader
         title={strings.tabs.rooms}
-        text=""
-        Right={() => <RightIcon onPress={() => navigation.navigate(routes.CREATE_ROOM)} />}
-        showAvatar={false}
+        Right={<RightIcon onPress={() => navigation.navigate(routes.CREATE_ROOM)} />}
         displayName={profile.displayName}
         imageSrc={profile.photoURL}
         style={styles.padding}

@@ -79,10 +79,8 @@ const LanguagesPage = () => {
     <View style={styles.wrapper}>
       <AppHeader
         title={strings.languages.languages}
-        text=""
-        showAvatar={false}
         headerBack
-        Right={() => (
+        Right={(
           <OutlinedButton
             text={strings.general.save.toUpperCase()}
             disabled={defaultLanguage === selectedLanguage}

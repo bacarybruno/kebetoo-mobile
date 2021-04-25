@@ -148,7 +148,6 @@ const NotificationsPage = () => {
     <ScrollView style={styles.wrapper} contentContainerStyle={styles.content}>
       <AppHeader
         title={strings.tabs.notifications}
-        text=""
         displayName={profile.displayName}
         imageSrc={profile.photoURL}
         style={styles.pageTitle}
