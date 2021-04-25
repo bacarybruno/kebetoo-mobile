@@ -4,7 +4,7 @@ import setupTest from '@app/config/jest-setup'
 import comments from '@fixtures/comments'
 import authors from '@fixtures/authors'
 import { CommentPlaceholder } from '@app/shared/components/placeholders/comments'
-import { DoubleTapHandler } from '@app/shared/components'
+import { MultipleTapHandler } from '@app/shared/components'
 
 import Comment from '../index'
 
@@ -47,7 +47,7 @@ it('react to comment on double press', async () => {
     },
   })
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('heart')
-  await fireEvent(wrapper.root.findByType(DoubleTapHandler), 'onDoublePress')
+  await fireEvent(wrapper.root.findByType(MultipleTapHandler), 'onDoublePress')
   expect(wrapper.root.findByProps({ testID: 'reaction' }).props.name).toBe('md-heart')
 })
 
@@ -55,7 +55,7 @@ it('loads replies on press', async () => {
   const { wrapper, props } = givenComment({
     onShowReplies: jest.fn(),
   })
-  await fireEvent.press(wrapper.root.findByType(DoubleTapHandler))
+  await fireEvent.press(wrapper.root.findByType(MultipleTapHandler))
   expect(props.onShowReplies).toBeCalledTimes(1)
 })
 

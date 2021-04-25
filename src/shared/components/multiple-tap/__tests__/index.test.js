@@ -4,23 +4,23 @@ import { fireEvent } from 'react-native-testing-library'
 
 import setupTest from '@app/config/jest-setup'
 
-import DoubleTapHandler from '../index'
+import MultipleTapHandler from '../index'
 
 beforeEach(jest.clearAllMocks)
 
-const givenDoubleTapHandler = setupTest(DoubleTapHandler)({
+const givenMultipleTapHandler = setupTest(MultipleTapHandler)({
   onPress: jest.fn(),
   onDoublePress: jest.fn(),
   children: <View />,
 })
 
-it('renders DoubleTapHandler', () => {
-  const { wrapper } = givenDoubleTapHandler()
+it('renders MultipleTapHandler', () => {
+  const { wrapper } = givenMultipleTapHandler()
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
 it('handles press', () => {
-  const { wrapper, props } = givenDoubleTapHandler()
+  const { wrapper, props } = givenMultipleTapHandler()
   const presser = wrapper.root.findAllByType(TapGestureHandler)[0]
   fireEvent.press(presser)
   expect(props.onPress).toBeCalledTimes(1)
@@ -28,7 +28,7 @@ it('handles press', () => {
 })
 
 it('handles press without gesture handler', () => {
-  const { wrapper, props } = givenDoubleTapHandler()
+  const { wrapper, props } = givenMultipleTapHandler()
   const presser = wrapper.root.findAllByType(TapGestureHandler)[0]
   presser.props.onHandlerStateChange({ nativeEvent: { state: State.ACTIVE } })
   expect(props.onPress).toBeCalledTimes(1)
@@ -36,7 +36,7 @@ it('handles press without gesture handler', () => {
 })
 
 it('handles double press without gesture handler', () => {
-  const { wrapper, props } = givenDoubleTapHandler()
+  const { wrapper, props } = givenMultipleTapHandler()
   const presser = wrapper.root.findAllByType(TapGestureHandler)[1]
   presser.props.onHandlerStateChange({ nativeEvent: { state: State.ACTIVE } })
   expect(props.onPress).toBeCalledTimes(0)

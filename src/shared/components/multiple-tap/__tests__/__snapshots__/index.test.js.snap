@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders DoubleTapHandler 1`] = `
+exports[`renders MultipleTapHandler 1`] = `
 <View
   style={
     Object {

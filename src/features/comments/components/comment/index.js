@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
 import {
-  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, DoubleTapHandler,
+  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, MultipleTapHandler,
 } from '@app/shared/components'
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
 import { REACTION_TYPES } from '@app/features/post/containers/reactions'
@@ -165,7 +165,7 @@ const Comment = ({
           <Avatar src={photoURL} text={displayName} size={avatarSize} />
         </View>
       </TouchableWithoutFeedback>
-      <DoubleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
+      <MultipleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
         <View style={styles.flexible}>
           <Header displayName={displayName} updatedAt={item.updatedAt} />
           <Content item={item} />
@@ -177,7 +177,7 @@ const Comment = ({
             onShowReplies={onShowReplies}
           />
         </View>
-      </DoubleTapHandler>
+      </MultipleTapHandler>
     </View>
   )
 }
