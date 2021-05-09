@@ -113,16 +113,24 @@ function* setUserProfile(action) {
       return
     }
 
+    // sign user in and save basic infos from auth event
+    yield put({
+      type: types.SET_USER_PROFILE,
+      payload: {
+        isLoggedIn, email, displayName, photoURL,
+      },
+    })
+
     // create author in the backend
     const { id: authorId, username, bio } = yield call(createOrUpdateUser, {
       id: uid, displayName, photoURL,
     })
 
-    // save infos in redux
+    // save additional infos in redux
     yield put({
       type: types.SET_USER_PROFILE,
       payload: {
-        uid: authorId, email, photoURL, isLoggedIn, displayName, username, bio,
+        uid: authorId, username, bio,
       },
     })
 
