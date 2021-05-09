@@ -43,6 +43,7 @@ const metrics = {
   tabBarFullHeight: 80,
   headerHeight: getDefaultHeaderHeight(),
   spacing,
+  headerHeight: 60,
   radius: {
     sm: 5,
     md: 10,
@@ -51,6 +52,15 @@ const metrics = {
     xl: 40,
     xxl: 80,
     round: 1000,
+  },
+  icons: {
+    xs: 14,
+    sm: 16,
+    mid: 18,
+    md: 24,
+    lg: 30,
+    xl: 40,
+    xxl: 70,
   },
   aspectRatio: {
     feed: 4 / 3,

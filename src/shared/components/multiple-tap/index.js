@@ -1,23 +1,28 @@
 import { useCallback, useRef } from 'react'
 import { TapGestureHandler, State, LongPressGestureHandler } from 'react-native-gesture-handler'
 
-const MultipleTapHandler = ({ onPress, onDoublePress, onLongPress, children }) => {
+const MultipleTapHandler = ({
+  onPress = () => { },
+  onDoublePress = () => { },
+  onLongPress = () => { },
+  children,
+}) => {
   const doubleTapRef = useRef()
 
   const onSingleTap = useCallback((event) => {
-    if (event.nativeEvent.state === State.ACTIVE && onPress) {
+    if (event.nativeEvent.state === State.ACTIVE) {
       onPress()
     }
   }, [onPress])
 
   const onDoubleTap = useCallback((event) => {
-    if (event.nativeEvent.state === State.ACTIVE && onDoublePress) {
+    if (event.nativeEvent.state === State.ACTIVE) {
       onDoublePress()
     }
   }, [onDoublePress])
 
   const onLongTap = useCallback((event) => {
-    if (event.nativeEvent.state === State.ACTIVE && onLongPress) {
+    if (event.nativeEvent.state === State.ACTIVE) {
       onLongPress()
     }
   }, [onLongPress])

@@ -118,9 +118,13 @@ const OnboardingPage = ({ navigation }) => {
           {slides}
         </Swiper>
         <View style={styles.buttonWrapper}>
-          {isLastSlideItem ? (
-            <FullButton text={strings.general.get_started} onPress={onGetStarted} />
-          ) : (
+          {isLastSlideItem && (
+            <FullButton
+              text={strings.general.get_started}
+              onPress={onGetStarted}
+            />
+          )}
+          {!isLastSlideItem && (
             <IconButton
               style={styles.nextButton}
               onPress={onSlideNext}

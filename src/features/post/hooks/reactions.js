@@ -28,7 +28,7 @@ export const bottomSheetItems = [{
   icon: 'close-outline',
 }]
 
-const countReactions = (post, type) => (
+export const countReactions = (post, type) => (
   post.reactions.filter((r) => r.type === type).length
 )
 

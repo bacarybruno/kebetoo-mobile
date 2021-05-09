@@ -34,17 +34,17 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => {
       onPress={onPress}
       {...otherProps}
     >
-      {state === MediaStates.PREPARING
-        ? (
-          <ActivityIndicator color={colors.blue_dark} />
-        ) : (
-          <Ionicon
-            name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
-            size={22}
-            color={colors.blue_dark}
-            style={{ marginLeft: 3 }}
-          />
-        )}
+      {state === MediaStates.PREPARING && (
+        <ActivityIndicator color={colors.blue_dark} />
+      )}
+      {state !== MediaStates.PREPARING && (
+        <Ionicon
+          name={state === MediaStates.PLAYING ? 'ios-pause' : 'ios-play'}
+          size={22}
+          color={colors.blue_dark}
+          style={{ marginLeft: 3 }}
+        />
+      )}
     </TouchableOpacity>
   )
 }

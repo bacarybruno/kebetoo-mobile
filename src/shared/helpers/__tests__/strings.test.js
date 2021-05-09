@@ -34,13 +34,13 @@ it('abbreviates number', () => {
     expected: 10,
   }, {
     actual: 1000,
-    expected: '1k',
+    expected: '1K',
   }, {
     actual: 1001,
-    expected: '1k',
+    expected: '1K',
   }, {
     actual: 1100,
-    expected: '1.1k',
+    expected: '1.1K',
   }, {
     actual: 1000000,
     expected: '1M',

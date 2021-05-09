@@ -82,7 +82,7 @@ const SearchPage = () => {
   const onRecentSearch = useCallback((text) => {
     onChange(text)
     InteractionManager.runAfterInteractions(() => {
-      textInputRef.current?.setNativeProps({ text })      
+      textInputRef.current?.setNativeProps({ text })
     })
   }, [onChange])
 
@@ -92,30 +92,31 @@ const SearchPage = () => {
 
   return (
     <View style={styles.wrapper}>
-      {searchQuery === null
-        ? (
-          <AppHeader
-            headerBack
-            title={strings.search.search}
-            displayName={profile.displayName}
-            imageSrc={profile.photoURL}
-            Right={<SearchIcon onPress={onShowSearchbar} />}
-            style={{ marginHorizontal: metrics.marginHorizontal }}
-          />
-        ) : (
-          <TextInput
-            autoFocus
-            placeholder={strings.search.placeholder}
-            fieldName="searchQuery"
-            onValueChange={debouncedOnChange}
-            returnKeyType="search"
-            wrapperStyle={styles.textInputWrapper}
-            textStyle={styles.textInputStyle}
-            ref={textInputRef}
-            Left={SearchIcon}
-            Right={<CancelIcon onPress={onCancel} isLoading={isLoading} />}
-          />
-        )}
+      {searchQuery === null && (
+        <AppHeader
+          headerBack
+          title={strings.search.search}
+          displayName={profile.displayName}
+          imageSrc={profile.photoURL}
+          Right={<SearchIcon onPress={onShowSearchbar} />}
+          style={{ marginHorizontal: metrics.marginHorizontal }}
+        />
+      )}
+
+      {searchQuery !== null && (
+        <TextInput
+          autoFocus
+          placeholder={strings.search.placeholder}
+          fieldName="searchQuery"
+          onValueChange={debouncedOnChange}
+          returnKeyType="search"
+          wrapperStyle={styles.textInputWrapper}
+          textStyle={styles.textInputStyle}
+          ref={textInputRef}
+          Left={SearchIcon}
+          Right={<CancelIcon onPress={onCancel} isLoading={isLoading} />}
+        />
+      )}
 
       <SegmentedControl
         items={tabs}

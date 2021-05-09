@@ -15,7 +15,7 @@ export const getSource = (url) => (
     : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`
 )
 
-const getThumbnail = (videoUrl, extension = 'png') => {
+export const getVideoThumbnail = (videoUrl, extension = 'png') => {
   const fileName = getFileName(videoUrl)
   const fileExtension = getExtension(videoUrl)
   return videoUrl
@@ -34,8 +34,8 @@ const VideoContent = ({
         <VideoPlayer
           source={getSource(videoUrl)}
           duration={parseInt(extractMetadataFromName(videoName).duration, 10)}
-          thumbnail={getThumbnail(videoUrl, 'png')}
-          preview={getThumbnail(videoUrl, 'gif')}
+          thumbnail={getVideoThumbnail(videoUrl, 'png')}
+          preview={getVideoThumbnail(videoUrl, 'gif')}
           localSource={localFileUri}
         />
       </Pressable>

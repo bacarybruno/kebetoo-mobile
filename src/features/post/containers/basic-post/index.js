@@ -104,11 +104,14 @@ export const Header = ({
       <View style={styles.content}>
         <TouchableOpacity style={styles.left} onPress={onShowProfile}>
           <View style={styles.headerContent}>
-            {author ? (
-              <Avatar src={author.photoURL} text={author.displayName} size={avatarSize} />
-            ) : (
-              <PlaceholderAvatar size={avatarSize} />
+            {author && (
+              <Avatar
+                src={author.photoURL}
+                text={author.displayName}
+                size={avatarSize}
+              />
             )}
+            {!author && <PlaceholderAvatar size={avatarSize} />}
           </View>
           {author && (
             <View style={[styles.meta, { height: avatarSize }, isRepost && styles.repostMeta]}>

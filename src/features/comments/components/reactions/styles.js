@@ -18,9 +18,9 @@ export default (colors) => StyleSheet.create({
     borderTopColor: colors.border,
     borderLeftColor: colors.border,
     borderRightColor: colors.border,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderTopWidth: 1,
+    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderRightWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: StyleSheet.hairlineWidth,
   },
   summary: {
     alignItems: 'center',

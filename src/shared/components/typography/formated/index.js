@@ -32,6 +32,7 @@ const FormatedTypography = ({
   color = Typography.colors.primary,
   linkStyle,
   disableLinks,
+  revealType,
   ...textProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -84,7 +85,7 @@ const FormatedTypography = ({
 
   if (withReadMore) {
     return (
-      <ReadMore numberOfLines={numberOfLines}>
+      <ReadMore numberOfLines={numberOfLines} revealType={revealType}>
         <ParsedText parse={parsePatterns} style={baseTextStyle} {...textProps}>
           {text}
         </ParsedText>
