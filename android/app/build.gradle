@@ -147,6 +147,7 @@ android {
         versionCode 43
         versionName "0.4.5"
         multiDexEnabled true
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
     splits {
         abi {

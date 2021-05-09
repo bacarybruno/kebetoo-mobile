@@ -2,7 +2,11 @@ def use_kebetoo_pods!()
     pod 'GoogleSignIn', '~> 5.0.2'
     pod 'Permission-Microphone', :path => '../node_modules/react-native-permissions/ios/Microphone'
     pod 'RNConvertPhAsset', :path => '../node_modules/react-native-convert-ph-asset'
-    pod 'react-native-ffmpeg/full-lts', :podspec => '../node_modules/react-native-ffmpeg/react-native-ffmpeg.podspec'
+    pod 'react-native-ffmpeg/full-gpl-lts', :podspec => '../node_modules/react-native-ffmpeg/react-native-ffmpeg.podspec'
+end
+
+def use_kebetoo_share_extensions_pods!()
+    pod 'RNShareMenu', :path => '../node_modules/react-native-share-menu'
 end
 
 def react_native_share_menu_post_install(installer)
