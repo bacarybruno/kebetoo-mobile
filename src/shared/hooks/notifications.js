@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import messaging from '@react-native-firebase/messaging'
 import database from '@react-native-firebase/database'
 
-import { usePermissions } from '@app/shared/hooks'
 import { notificationsSelector } from '@app/redux/selectors'
+import { permissions } from '@app/shared/services'
 import * as types from '@app/redux/types'
 
 import useUser from './user'
@@ -18,7 +18,6 @@ export const NOTIFICATION_STATUS = {
 const notificationsPath = '/notifications'
 
 const useNotifications = () => {
-  const permissions = usePermissions()
   const dispatch = useDispatch()
   const [notificationsRef] = useState(database().ref(notificationsPath))
   const { profile } = useUser()
@@ -110,7 +109,7 @@ const useNotifications = () => {
     if (hasPermissions && !alreadyRegistered) {
       await messaging().registerDeviceForRemoteMessages()
     }
-  }, [permissions])
+  }, [])
 
   return {
     newItems,

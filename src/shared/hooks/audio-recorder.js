@@ -5,8 +5,7 @@ import dayjs from 'dayjs'
 import Sound from 'react-native-sound'
 import { LogBox } from 'react-native'
 
-import { api } from '@app/shared/services'
-import { usePermissions } from '@app/shared/hooks'
+import { api, permissions } from '@app/shared/services'
 import { getExtension, getFileName, getMimeType } from '@app/shared/helpers/file'
 import BackgroundTimer from '@app/shared/helpers/background-timer'
 import { env } from '@app/config'
@@ -71,7 +70,6 @@ const useAudioRecorder = (
   const [hasRecording, setHasRecording] = useState(uri !== undefined)
   const [elapsedTime, setElapsedTime] = useState(0)
   const [recordUri, setRecordUri] = useState(uri)
-  const permissions = usePermissions()
 
   const savePost = useCallback(async (author, content, repost) => {
     const time = dayjs().format('YYYYMMDD')
@@ -124,7 +122,7 @@ const useAudioRecorder = (
     recorder.record()
     setRecordUri(path)
     setIsRecording(true)
-  }, [permissions])
+  }, [])
 
   const reset = useCallback(async () => {
     await RNFetchBlob.fs.unlink(recordUri)

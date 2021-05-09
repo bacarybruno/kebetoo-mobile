@@ -1,12 +1,11 @@
-import { useCallback } from 'react'
 import { Platform } from 'react-native'
 import {
   check, request, PERMISSIONS, RESULTS,
 } from 'react-native-permissions'
 import messaging from '@react-native-firebase/messaging'
 
-const usePermissions = () => {
-  const handlePermissions = useCallback(async (name) => {
+const Permissions = {
+  handlePermissions: async (name) => {
     const checkPermissionResult = await check(name)
     const isNew = checkPermissionResult !== RESULTS.GRANTED
     const requestPermissionResult = await request(name)
@@ -14,37 +13,44 @@ const usePermissions = () => {
       success: requestPermissionResult === RESULTS.GRANTED,
       isNew,
     }
-  }, [])
+  },
 
-  const recordAudio = useCallback(async () => {
+  recordAudio: async () => {
     const audioPermissionName = Platform.select({
       ios: PERMISSIONS.IOS.MICROPHONE,
       android: PERMISSIONS.ANDROID.RECORD_AUDIO,
     })
-    const hasPermissions = await handlePermissions(audioPermissionName)
+    const hasPermissions = await Permissions.handlePermissions(audioPermissionName)
     return hasPermissions
-  }, [handlePermissions])
+  },
 
-  const notifications = useCallback(async () => {
+  notifications: async () => {
     const permissionStatus = await messaging().requestPermission()
     const authorizedStatus = [
       messaging.AuthorizationStatus.AUTHORIZED,
       messaging.AuthorizationStatus.PROVISIONAL,
     ]
     return authorizedStatus.includes(permissionStatus)
-  }, [])
+  },
 
-  const readExternalStorage = useCallback(async () => {
+  readExternalStorage: async () => {
     if (Platform.OS === 'ios') return Promise.resolve(true)
-    const hasPermissions = await handlePermissions(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
+    const hasPermissions = await Permissions.handlePermissions(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
     return hasPermissions
-  }, [handlePermissions])
+  },
 
-  return {
-    recordAudio,
-    notifications,
-    readExternalStorage,
-  }
+  writeExternalStorage: async () => {
+    if (Platform.OS === 'ios') return Promise.resolve(true)
+    const hasPermissions = await Permissions.handlePermissions(PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE)
+    return hasPermissions
+  },
+
+  externalStorage: async () => {
+    return {
+      readExternalStorage: await Permissions.readExternalStorage(),
+      writeExternalStorage: await Permissions.writeExternalStorage(),
+    }
+  },
 }
 
-export default usePermissions
+export default Permissions
