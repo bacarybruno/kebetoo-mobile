@@ -1,12 +1,11 @@
 import { useEffect, useCallback, useReducer } from 'react'
 
 import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
-import { useUser, usePosts } from '@app/shared/hooks'
+import { useUser, usePosts, useAudioRecorder } from '@app/shared/hooks'
 import { api } from '@app/shared/services'
 import routes from '@app/navigation/routes'
 import { getSource } from '@app/features/post/components/image-content'
-
-import reducer, { initialState, actionTypes } from './reducer'
+import reducer, { initialState, actionTypes } from '@app/features/comments/containers/reducer'
 
 /**
  * Hackernews' hot sort
@@ -44,7 +43,9 @@ const mapComments = (comment) => ({
 })
 
 // TODO: paginate comments
-const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder) => {
+const useComments = ({ navigate }, post, commentInput, scrollView) => {
+  const audioRecorder = useAudioRecorder()
+
   const initialComments = post.comments?.map(mapComments)
   if (initialComments) {
     initialState.comments = initialComments
@@ -189,6 +190,7 @@ const useComments = ({ navigate }, post, commentInput, scrollView, audioRecorder
     loadReplies,
     clearToReply,
     onCommentPress,
+    audioRecorder,
     isLoading,
     authors,
     comments,

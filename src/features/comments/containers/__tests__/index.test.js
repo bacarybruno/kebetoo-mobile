@@ -1,33 +1,32 @@
 import { act } from 'react-test-renderer'
-import reactNavigation from '@react-navigation/native'
 
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 import { api } from '@app/shared/services'
 import comments from '@fixtures/comments'
 
-import Comments, { CommentReply } from '../index'
+import Comments from '../index'
 import SwipeableComment from '../../components/swipeable'
 import { CommentInput } from '../../components/comment-input'
 import Comment from '../../components/comment'
+import { CommentReply } from '../../components/comments-view'
 
 const posts = require('@fixtures/posts').default
 
-reactNavigation.useRoute = jest.fn().mockReturnValue({
-  params: {
-    post: posts.audio,
-  },
-})
-
-reactNavigation.useNavigation = () => ({
-  navigate: jest.fn(),
-  setOptions: jest.fn(),
-  addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
-})
-
 beforeEach(jest.clearAllMocks)
 
-const givenComments = setupTest(Comments)()
+const givenComments = setupTest(Comments)({
+  route: {
+    params: {
+      post: posts.audio,
+    },
+  },
+  navigation: {
+    navigate: jest.fn(),
+    setOptions: jest.fn(),
+    addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
+  }
+})
 
 it('renders Comments', async () => {
   let wrapper

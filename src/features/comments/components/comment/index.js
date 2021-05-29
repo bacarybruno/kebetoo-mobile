@@ -109,7 +109,15 @@ const Content = ({ item }) => {
 }
 
 const Comment = ({
-  item, displayName, photoURL, user, authorId, repliesCount, onShowReplies, avatarSize = 35,
+  item,
+  displayName,
+  photoURL,
+  user,
+  authorId,
+  repliesCount,
+  onShowReplies,
+  avatarSize = 35,
+  navigation,
 }) => {
   const [reactions, setReactions] = useState(item.reactions)
 
@@ -117,7 +125,7 @@ const Comment = ({
     setReactions(item.reactions)
   }, [item.reactions])
 
-  const { navigate } = useNavigation()
+  const { navigate } = navigation || useNavigation()
 
   const styles = useAppStyles(createThemedStyles)
 
