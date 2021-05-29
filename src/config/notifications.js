@@ -7,6 +7,7 @@ PushNotification.configure({
   requestPermissions: Platform.OS === 'ios',
 })
 
+// TODO: handle in sagas
 // handle background notifications
 messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   if (Platform.OS === 'android') {

@@ -5,9 +5,7 @@ import { enableScreens } from 'react-native-screens'
 import { useDispatch, useSelector } from 'react-redux'
 
 import AppNavigation from '@app/navigation'
-import {
-  useAnalytics, useAppColors, useAppStyles, useNotifications,
-} from '@app/shared/hooks'
+import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
 import { SafeAreaContext } from '@app/shared/contexts'
 import { localeSelector } from '@app/redux/selectors'
 import strings, { updateAppLocale } from '@app/config/strings'
@@ -21,7 +19,6 @@ LogBox.ignoreLogs([
 enableScreens()
 
 const RootContainer = () => {
-  const { setupNotifications } = useNotifications()
   const { trackAppOpen, trackAppBackground } = useAnalytics()
   const dispatch = useDispatch()
 
@@ -29,6 +26,7 @@ const RootContainer = () => {
   const { colors, resetAppBars } = useAppColors()
   const [topSafeAreaColor, updateTopSafeAreaColor] = useState(colors.background)
   const [bottomSafeAreaColor, updateBottomSafeAreaColor] = useState(colors.background)
+  const [tabBarTheme, updateTabBarTheme] = useState(null)
   const locale = useSelector(localeSelector)
 
   useEffect(() => {
@@ -43,13 +41,10 @@ const RootContainer = () => {
     }
   }, [trackAppBackground, trackAppOpen])
 
-  useEffect(() => {
-    setupNotifications()
-  }, [setupNotifications])
-
   const resetStatusBars = useCallback(() => {
     updateTopSafeAreaColor(styles.topSafeArea.backgroundColor)
     updateBottomSafeAreaColor(styles.bottomSafeArea.backgroundColor)
+    updateTabBarTheme(null)
   }, [styles])
 
   useEffect(() => {
@@ -69,7 +64,9 @@ const RootContainer = () => {
     updateTopSafeAreaColor,
     updateBottomSafeAreaColor,
     resetStatusBars,
-  }), [resetStatusBars])
+    updateTabBarTheme,
+    tabBarTheme,
+  }), [resetStatusBars, tabBarTheme])
 
   return (
     <SafeAreaContext.Provider value={safeAreaCtxValue}>
