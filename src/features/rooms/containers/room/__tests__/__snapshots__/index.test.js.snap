@@ -413,7 +413,7 @@ exports[`renders Room 1`] = `
                                   ]
                                 }
                               >
-                                Hey,
+                                
                               </Text>
                               <ActivityIndicator
                                 animating={false}

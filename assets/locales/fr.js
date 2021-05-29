@@ -54,8 +54,8 @@ const locales = Object.freeze({
   },
   tabs: {
     home: 'Accueil',
-    stories: 'Stories',
-    notifications: 'Notifications',
+    stories: 'Virals',
+    notifications: 'Notifs',
     search: 'Recherche',
     profile: 'Profil',
     rooms: 'Rooms',

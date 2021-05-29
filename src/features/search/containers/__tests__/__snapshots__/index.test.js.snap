@@ -308,6 +308,61 @@ exports[`renders SearchPage for posts 1`] = `
                           }
                         >
                           <View
+                            accessible={true}
+                            focusable={false}
+                            hitSlop={
+                              Object {
+                                "bottom": 10,
+                                "left": 10,
+                                "right": 10,
+                                "top": 10,
+                              }
+                            }
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                    "marginLeft": 16,
+                                    "width": 24,
+                                  },
+                                  Object {
+                                    "marginLeft": 0,
+                                    "marginRight": 16,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                    "fontFamily": "icomoon",
+                                    "fontSize": 20,
+                                    "fontStyle": "normal",
+                                    "fontWeight": "normal",
+                                  }
+                                }
+                                text="kebeticon-chevron-left"
+                              />
+                            </View>
+                          </View>
+                          <View
                             style={
                               Object {
                                 "flex": 1,
@@ -1255,6 +1310,61 @@ exports[`renders SearchPage for users 1`] = `
                             }
                           }
                         >
+                          <View
+                            accessible={true}
+                            focusable={false}
+                            hitSlop={
+                              Object {
+                                "bottom": 10,
+                                "left": 10,
+                                "right": 10,
+                                "top": 10,
+                              }
+                            }
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                    "marginLeft": 16,
+                                    "width": 24,
+                                  },
+                                  Object {
+                                    "marginLeft": 0,
+                                    "marginRight": 16,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                    "fontFamily": "icomoon",
+                                    "fontSize": 20,
+                                    "fontStyle": "normal",
+                                    "fontWeight": "normal",
+                                  }
+                                }
+                                text="kebeticon-chevron-left"
+                              />
+                            </View>
+                          </View>
                           <View
                             style={
                               Object {

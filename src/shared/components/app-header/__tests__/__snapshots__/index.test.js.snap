@@ -342,7 +342,7 @@ exports[`renders Header 1`] = `
                                 ]
                               }
                             >
-                              Hey Bruno,
+                              
                             </Text>
                             <ActivityIndicator
                               animating={false}
@@ -353,61 +353,6 @@ exports[`renders Header 1`] = `
                                 Object {
                                   "marginLeft": 8,
                                 }
-                              }
-                            />
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "#000000",
-                                    "fontFamily": "System",
-                                    "fontSize": 17,
-                                    "fontWeight": "400",
-                                    "letterSpacing": -0.408,
-                                    "lineHeight": 22,
-                                  },
-                                  Array [
-                                    Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
-                                ]
-                              }
-                            >
-                              Happy to see you!
-                            </Text>
-                            <Image
-                              source={
-                                Object {
-                                  "testUri": "../../../assets/images/logo.png",
-                                }
-                              }
-                              style={
-                                Array [
-                                  Object {
-                                    "alignSelf": "center",
-                                    "height": 118,
-                                    "resizeMode": "contain",
-                                    "width": "80%",
-                                  },
-                                  Object {
-                                    "height": 20,
-                                    "marginLeft": 4,
-                                    "width": 20,
-                                  },
-                                ]
                               }
                             />
                           </View>
@@ -439,8 +384,8 @@ exports[`renders Header 1`] = `
                               "width": 30,
                             },
                             Object {
-                              "height": 35,
-                              "width": 35,
+                              "height": 30,
+                              "width": 30,
                             },
                             undefined,
                           ]

@@ -31,6 +31,7 @@ export default StyleSheet.create({
   },
   title: {
     flex: 1,
+    // TODO: text shadow and icon shadow
   },
   headerAvatar: {
     marginLeft: metrics.spacing.sm,

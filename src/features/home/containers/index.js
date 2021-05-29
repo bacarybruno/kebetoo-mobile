@@ -69,7 +69,7 @@ const HomePage = ({ navigation }) => {
         sharedFile = dest
       }
       trackReceiveIntent(mimeType, getExtension(sharedFile))
-      navigation.navigate(routes.CREATE_POST, { sharedFile })
+      navigation.navigate(routes.CREATE_POST, { file: sharedFile })
     }
   }, [navigation, trackReceiveIntent])
 

@@ -375,57 +375,6 @@ exports[`renders NotificationsPage 1`] = `
                             </View>
                           </View>
                         </View>
-                        <View
-                          accessible={true}
-                          focusable={true}
-                          onClick={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
-                          style={
-                            Object {
-                              "marginLeft": 8,
-                              "opacity": 1,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "height": 30,
-                                  "width": 30,
-                                },
-                                Object {
-                                  "height": 35,
-                                  "width": 35,
-                                },
-                                undefined,
-                              ]
-                            }
-                          >
-                            <Image
-                              source={
-                                Object {
-                                  "uri": "https://avatars1.githubusercontent.com/u/14147533",
-                                }
-                              }
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "rgba(0, 122, 255, 255)",
-                                  "borderRadius": 1000,
-                                  "flex": 1,
-                                  "justifyContent": "center",
-                                }
-                              }
-                              testID="image-avatar-https://avatars1.githubusercontent.com/u/14147533"
-                            />
-                          </View>
-                        </View>
                       </View>
                       <View
                         style={

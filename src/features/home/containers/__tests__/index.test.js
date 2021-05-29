@@ -68,7 +68,7 @@ describe('incoming file sharing', () => {
     })
     expect(navigate).toBeCalledTimes(1)
     expect(navigate).toBeCalledWith(routes.CREATE_POST, {
-      sharedFile: receivedFile.copiedPath,
+      file: receivedFile.copiedPath,
     })
   })
 
@@ -86,7 +86,7 @@ describe('incoming file sharing', () => {
     })
     expect(navigate).toBeCalledTimes(1)
     expect(navigate).toBeCalledWith(routes.CREATE_POST, {
-      sharedFile: receivedFile.data,
+      file: receivedFile.data,
     })
   })
 

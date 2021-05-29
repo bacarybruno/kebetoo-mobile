@@ -18,12 +18,12 @@ import useFilePicker from '@app/features/post/hooks/file-picker'
 import routes from '@app/navigation/routes'
 import {
   useAnalytics,
+  useAppColors,
   useAppStyles,
   useAudioRecorder,
   useKeyboard,
   useUser,
 } from '@app/shared/hooks'
-import iosColors from '@app/theme/ios-colors'
 import { VideoMarker } from '@app/shared/components/camera-roll-picker'
 import { warnNotImplemented } from '@app/shared/components/no-content'
 import { OutlinedTextInput } from '@app/shared/components/inputs'
@@ -39,6 +39,7 @@ export const actionTypes = {
   CREATE: 'create',
   SHARE: 'share',
   REPORT: 'report',
+  CREATE_STORY: 'create_story'
 }
 
 export const PostTextMessage = ({
@@ -103,7 +104,11 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
     <View style={styles.imagePreviewer}>
       <TouchableWithoutFeedback onPress={onPress}>
         <View>
-          <ImageViewer source={{ uri }} borderRadius={metrics.radius.md} onDelete={onDelete} />
+          <ImageViewer
+            source={{ uri }}
+            borderRadius={metrics.radius.md}
+            onDelete={onDelete}
+          />
           <VideoMarker style={styles.videoMarker} />
         </View>
       </TouchableWithoutFeedback>
@@ -113,8 +118,10 @@ export const VideoPreviewer = ({ uri, onDelete, onPress }) => {
 
 // FIXME: separate UI from logic to make unit tests easier
 // or use redux-saga to handle post creation
+// create separate components or page per action type
 const CreatePostPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
+  const { colors } = useAppColors()
   navigation.setOptions(routeOptions)
 
   const { profile } = useUser()
@@ -122,12 +129,13 @@ const CreatePostPage = ({ route, navigation }) => {
 
   const { params } = route
   const [isLoading, setIsLoading] = useState(false)
-  const editMode = params && params.action === actionTypes.EDIT
-  const shareMode = params && params.action === actionTypes.SHARE
-  const reportMode = params && params.action === actionTypes.REPORT
-  const mediaType = getMediaType(params && params.sharedFile)
-  const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.sharedFile : undefined)
-  const filePicker = useFilePicker(['image', 'video'].includes(mediaType) ? params.sharedFile : undefined)
+  const editMode = params?.action === actionTypes.EDIT
+  const shareMode = params?.action === actionTypes.SHARE
+  const reportMode = params?.action === actionTypes.REPORT
+  const createStoryMode = params?.action === actionTypes.CREATE_STORY
+  const mediaType = getMediaType(params?.file)
+  const audioRecorder = useAudioRecorder(mediaType === 'audio' ? params.file : undefined)
+  const filePicker = useFilePicker(['image', 'video'].includes(mediaType) ? params.file : undefined)
   const payload = (editMode ? params.payload.content : (params && params.sharedText)) || ''
   const [text, setText] = useState((value) => value || payload)
   const { keyboardHeight, keyboardShown } = useKeyboard()
@@ -158,6 +166,8 @@ const CreatePostPage = ({ route, navigation }) => {
       } else if (reportMode) {
         if (filePicker.hasFile) post = await filePicker.saveFeedback(profile.uid, text)
         else post = api.feedbacks.create({ content: text, author: profile.uid })
+      } else if (createStoryMode) {
+        post = await filePicker.saveStory(profile.uid, text)
       } else if (audioRecorder.hasRecording) {
         post = await audioRecorder.savePost(profile.uid, text, repost)
       } else if (filePicker.hasFile) {
@@ -167,6 +177,10 @@ const CreatePostPage = ({ route, navigation }) => {
       }
 
       if (post.error) throw new Error(post.error)
+
+      if (createStoryMode) {
+        return navigation.goBack()
+      }
 
       const updatedPost = { ...post }
       if (filePicker?.file?.uri) {
@@ -210,7 +224,7 @@ const CreatePostPage = ({ route, navigation }) => {
         duration: Snackbar.LENGTH_LONG,
         action: {
           text: strings.create_post.show_post_created.toUpperCase(),
-          textColor: iosColors.systemBlue.dark,
+          textColor: colors.blue,
           onPress: () => {
             navigation.navigate(routes.COMMENTS, { post: updatedPost })
           },
@@ -225,13 +239,13 @@ const CreatePostPage = ({ route, navigation }) => {
         duration: Snackbar.LENGTH_LONG,
         action: {
           text: strings.errors.retry.toUpperCase(),
-          textColor: iosColors.systemBlue.dark,
+          textColor: colors.blue,
           onPress: () => onHeaderSavePress(),
         },
       })
       return setIsLoading(false)
     }
-  }, [params, editMode, audioRecorder, filePicker, reportMode, navigation, text, profile.uid, reportError])
+  }, [params, editMode, audioRecorder, filePicker, reportMode, createStoryMode, navigation, text, profile.uid, reportError])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
@@ -250,6 +264,12 @@ const CreatePostPage = ({ route, navigation }) => {
       return {
         post: strings.general.send,
         title: strings.general.support,
+      }
+    }
+    if (createStoryMode) {
+      return {
+        post: strings.general.post,
+        title: strings.general.create,
       }
     }
     return {
@@ -305,7 +325,7 @@ const CreatePostPage = ({ route, navigation }) => {
             {audioRecorder.hasRecording && (
               <AudioPlayer
                 source={audioRecorder.recordUri}
-                onDelete={audioRecorder.reset}
+                onDelete={mediaType !== 'audio' ? filePicker.reset : null}
                 duration={audioRecorder.elapsedTime}
                 style={styles.audioPlayer}
               />
@@ -313,19 +333,19 @@ const CreatePostPage = ({ route, navigation }) => {
             {filePicker.hasFile && filePicker.type === 'image' && (
               <ImagePreviewer
                 uri={filePicker.file.uri}
-                onDelete={filePicker.reset}
+                onDelete={mediaType !== 'image' ? filePicker.reset : null}
                 onPress={openImagePreview}
               />
             )}
             {filePicker.hasFile && filePicker.type === 'video' && (
               <VideoPreviewer
                 uri={filePicker.file.originalUri || filePicker.file.uri}
-                onDelete={filePicker.reset}
+                onDelete={mediaType !== 'video' ? filePicker.reset : null}
                 onPress={openVideoPreview}
               />
             )}
           </View>
-          {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && (
+          {!editMode && !audioRecorder.hasRecording && !filePicker.hasFile && !createStoryMode && (
             <View style={styles.buttonsWrapper}>
               <View style={styles.buttonsContainer}>
                 {!audioRecorder.isRecording && !shareMode && (

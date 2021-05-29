@@ -42,7 +42,7 @@ export const Message = ({ text }) => (
     numberOfLines={2}
     type={Typography.types.body}
     color={Typography.colors.secondary}
-    text={text + text + text}
+    text={text}
   />
 )
 

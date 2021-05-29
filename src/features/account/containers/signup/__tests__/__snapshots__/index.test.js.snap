@@ -324,7 +324,7 @@ exports[`renders SignUp 1`] = `
                         <View
                           style={
                             Object {
-                              "height": 1011.5,
+                              "height": 999.5,
                               "justifyContent": "space-between",
                               "maxHeight": 424,
                             }

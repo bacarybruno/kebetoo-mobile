@@ -275,13 +275,13 @@ exports[`renders CommentReactions 1`] = `
                       Object {
                         "backgroundColor": "rgba(255, 255, 255, 255)",
                         "borderLeftColor": "rgba(229, 229, 234, 255)",
-                        "borderLeftWidth": 1,
+                        "borderLeftWidth": 0.5,
                         "borderRightColor": "rgba(229, 229, 234, 255)",
-                        "borderRightWidth": 1,
+                        "borderRightWidth": 0.5,
                         "borderTopColor": "rgba(229, 229, 234, 255)",
                         "borderTopLeftRadius": 40,
                         "borderTopRightRadius": 40,
-                        "borderTopWidth": 1,
+                        "borderTopWidth": 0.5,
                         "height": 105,
                         "paddingHorizontal": 24,
                       }
@@ -299,11 +299,11 @@ exports[`renders CommentReactions 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(229, 229, 234, 255)",
+                            "backgroundColor": "rgba(199, 199, 204, 255)",
                             "borderRadius": 5,
-                            "height": 5,
-                            "margin": 8,
-                            "width": 60,
+                            "height": 8,
+                            "margin": 10,
+                            "width": 40,
                           }
                         }
                       />

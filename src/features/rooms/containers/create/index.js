@@ -10,9 +10,9 @@ import {
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import routes from '@app/navigation/routes'
+import useRooms from '@app/features/rooms/hooks/rooms'
 
 import createThemedStyles from './styles'
-import useRooms from '../../hooks/rooms'
 
 const routeOptions = { title: strings.create_room.create_room }
 

@@ -2,8 +2,8 @@ import { View, TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Badge, Pressable, Typography } from '@app/shared/components'
 
-import { Badge, Pressable, Typography } from '../../'
 import createThemedStyles from './styles'
 
 const IconButton = ({

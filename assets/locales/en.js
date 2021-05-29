@@ -54,8 +54,8 @@ const locales = Object.freeze({
   },
   tabs: {
     home: 'Home',
-    stories: 'Stories',
-    notifications: 'Notifications',
+    stories: 'Virals',
+    notifications: 'Notifs',
     search: 'Search',
     profile: 'Profile',
     rooms: 'Rooms',
@@ -176,6 +176,7 @@ const locales = Object.freeze({
     replied_comment: 'replied to your comment',
     no_content: 'Your notifications will appear here',
     new_count: '{0} new',
+    notifications: 'Notifications',
   },
   rooms: {
     created_by: 'Created by {0}',

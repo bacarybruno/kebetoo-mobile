@@ -287,360 +287,151 @@ exports[`renders Comments 1`] = `
                       <RCTScrollView
                         ListEmptyComponent={[Function]}
                         ListHeaderComponent={
-                          <Component
-                            style={
+                          <ListHeader
+                            audioRecorder={
                               Object {
-                                "backgroundColor": "#F5F5F5",
-                                "paddingTop": 16,
-                                "width": "100%",
+                                "elapsedTime": 0,
+                                "hasRecording": false,
+                                "isRecording": false,
+                                "recordUri": undefined,
+                                "reset": [Function],
+                                "saveAsset": [Function],
+                                "saveComment": [Function],
+                                "savePost": [Function],
+                                "saveStoryComment": [Function],
+                                "start": [Function],
+                                "stop": [Function],
                               }
                             }
-                          >
-                            <Component
-                              style={
+                            authors={Object {}}
+                            clearToReply={[Function]}
+                            comment=""
+                            comments={
+                              Array [
                                 Object {
-                                  "minHeight": 200.1,
-                                }
-                              }
-                            >
-                              <Header
-                                Left={[Function]}
-                                author={
-                                  Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
-                                    "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                  }
-                                }
-                                post={
-                                  Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbb",
-                                    "audio": Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9a43acba504d4a1cfbc",
-                                      "alternativeText": null,
-                                      "caption": null,
-                                      "createdAt": "2020-06-20T09:40:52.832Z",
-                                      "ext": ".mp3",
-                                      "hash": "PTT_20200620_6_5e895bdeae",
-                                      "height": null,
-                                      "id": "5eedd9a43acba504d4a1cfbc",
-                                      "mime": "audio/mp3",
-                                      "name": "PTT-20200620-6",
-                                      "provider": "local",
-                                      "related": Array [
-                                        "5eedd9a43acba504d4a1cfbb",
-                                      ],
-                                      "size": 13.24,
-                                      "updatedAt": "2020-06-20T09:40:52.839Z",
-                                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                      "width": null,
-                                    },
-                                    "author": Object {
-                                      "displayName": "Bruno Bodian",
-                                      "email": "bacarybruno@kebetoo.com",
-                                      "id": "1",
-                                      "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                    },
-                                    "comments": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9d43acba504d4a1cfbf",
-                                        "author": "1",
-                                        "content": "Fgyjj",
-                                        "createdAt": "2020-06-20T09:41:40.401Z",
-                                        "id": "5eedd9d43acba504d4a1cfbf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:41:40.405Z",
-                                      },
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc0",
-                                        "audio": Object {
-                                          "__v": 0,
-                                          "_id": "5eedd9e83acba504d4a1cfc1",
-                                          "alternativeText": null,
-                                          "caption": null,
-                                          "createdAt": "2020-06-20T09:42:00.174Z",
-                                          "ext": ".mp3",
-                                          "hash": "PTT_20200620_3_1669bbfc5d",
-                                          "height": null,
-                                          "id": "5eedd9e83acba504d4a1cfc1",
-                                          "mime": "audio/mp3",
-                                          "name": "PTT-20200620-3",
-                                          "provider": "local",
-                                          "related": Array [
-                                            "5eedd9e83acba504d4a1cfc0",
-                                          ],
-                                          "size": 8.02,
-                                          "updatedAt": "2020-06-20T09:42:00.178Z",
-                                          "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                          "width": null,
-                                        },
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T09:42:00.149Z",
-                                        "id": "5eedd9e83acba504d4a1cfc0",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:42:00.179Z",
-                                      },
-                                    ],
-                                    "content": "Fhgjjyjj",
-                                    "createdAt": "2020-06-20T09:40:52.790Z",
-                                    "id": "5eedd9a43acba504d4a1cfbb",
-                                    "reactions": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedf49b3acba504d4a1cfcf",
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T11:35:55.591Z",
-                                        "id": "5eedf49b3acba504d4a1cfcf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "type": "like",
-                                        "updatedAt": "2020-06-20T17:45:39.642Z",
-                                      },
-                                    ],
-                                    "reposts": Array [],
-                                    "updatedAt": "2020-06-20T09:40:53.841Z",
-                                  }
-                                }
-                                size={35}
-                              />
-                              <Content
-                                mode="comments"
-                                onPress={[Function]}
-                                originalAuthor={
-                                  Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
-                                    "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                  }
-                                }
-                                post={
-                                  Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbb",
-                                    "audio": Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9a43acba504d4a1cfbc",
-                                      "alternativeText": null,
-                                      "caption": null,
-                                      "createdAt": "2020-06-20T09:40:52.832Z",
-                                      "ext": ".mp3",
-                                      "hash": "PTT_20200620_6_5e895bdeae",
-                                      "height": null,
-                                      "id": "5eedd9a43acba504d4a1cfbc",
-                                      "mime": "audio/mp3",
-                                      "name": "PTT-20200620-6",
-                                      "provider": "local",
-                                      "related": Array [
-                                        "5eedd9a43acba504d4a1cfbb",
-                                      ],
-                                      "size": 13.24,
-                                      "updatedAt": "2020-06-20T09:40:52.839Z",
-                                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                      "width": null,
-                                    },
-                                    "author": Object {
-                                      "displayName": "Bruno Bodian",
-                                      "email": "bacarybruno@kebetoo.com",
-                                      "id": "1",
-                                      "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                    },
-                                    "comments": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9d43acba504d4a1cfbf",
-                                        "author": "1",
-                                        "content": "Fgyjj",
-                                        "createdAt": "2020-06-20T09:41:40.401Z",
-                                        "id": "5eedd9d43acba504d4a1cfbf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:41:40.405Z",
-                                      },
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc0",
-                                        "audio": Object {
-                                          "__v": 0,
-                                          "_id": "5eedd9e83acba504d4a1cfc1",
-                                          "alternativeText": null,
-                                          "caption": null,
-                                          "createdAt": "2020-06-20T09:42:00.174Z",
-                                          "ext": ".mp3",
-                                          "hash": "PTT_20200620_3_1669bbfc5d",
-                                          "height": null,
-                                          "id": "5eedd9e83acba504d4a1cfc1",
-                                          "mime": "audio/mp3",
-                                          "name": "PTT-20200620-3",
-                                          "provider": "local",
-                                          "related": Array [
-                                            "5eedd9e83acba504d4a1cfc0",
-                                          ],
-                                          "size": 8.02,
-                                          "updatedAt": "2020-06-20T09:42:00.178Z",
-                                          "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                          "width": null,
-                                        },
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T09:42:00.149Z",
-                                        "id": "5eedd9e83acba504d4a1cfc0",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:42:00.179Z",
-                                      },
-                                    ],
-                                    "content": "Fhgjjyjj",
-                                    "createdAt": "2020-06-20T09:40:52.790Z",
-                                    "id": "5eedd9a43acba504d4a1cfbb",
-                                    "reactions": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedf49b3acba504d4a1cfcf",
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T11:35:55.591Z",
-                                        "id": "5eedf49b3acba504d4a1cfcf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "type": "like",
-                                        "updatedAt": "2020-06-20T17:45:39.642Z",
-                                      },
-                                    ],
-                                    "reposts": Array [],
-                                    "updatedAt": "2020-06-20T09:40:53.841Z",
-                                  }
-                                }
-                                style={
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderRadius": 0,
-                                    "marginBottom": 0,
-                                    "padding": 16,
-                                    "paddingTop": 0,
-                                  }
-                                }
-                              />
-                            </Component>
-                            <Memo(Reactions)
-                              author="1"
-                              comments={
-                                Array [
-                                  Object {
-                                    "author": Object {
-                                      "displayName": " ",
-                                      "id": "1",
-                                      "photoURL": null,
-                                    },
-                                    "id": "5eedd9d43acba504d4a1cfbf",
-                                    "reactions": Array [],
-                                  },
-                                  Object {
-                                    "author": Object {
-                                      "displayName": " ",
-                                      "id": "1",
-                                      "photoURL": null,
-                                    },
-                                    "id": "5eedd9e83acba504d4a1cfc0",
-                                    "reactions": Array [],
-                                  },
-                                ]
-                              }
-                              onComment={[Function]}
-                              post={
-                                Object {
-                                  "__v": 0,
-                                  "_id": "5eedd9a43acba504d4a1cfbb",
-                                  "audio": Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbc",
-                                    "alternativeText": null,
-                                    "caption": null,
-                                    "createdAt": "2020-06-20T09:40:52.832Z",
-                                    "ext": ".mp3",
-                                    "hash": "PTT_20200620_6_5e895bdeae",
-                                    "height": null,
-                                    "id": "5eedd9a43acba504d4a1cfbc",
-                                    "mime": "audio/mp3",
-                                    "name": "PTT-20200620-6",
-                                    "provider": "local",
-                                    "related": Array [
-                                      "5eedd9a43acba504d4a1cfbb",
-                                    ],
-                                    "size": 13.24,
-                                    "updatedAt": "2020-06-20T09:40:52.839Z",
-                                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                    "width": null,
-                                  },
                                   "author": Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
+                                    "displayName": " ",
                                     "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                                    "photoURL": null,
                                   },
-                                  "comments": Array [
-                                    Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9d43acba504d4a1cfbf",
-                                      "author": "1",
-                                      "content": "Fgyjj",
-                                      "createdAt": "2020-06-20T09:41:40.401Z",
-                                      "id": "5eedd9d43acba504d4a1cfbf",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "updatedAt": "2020-06-20T09:41:40.405Z",
-                                    },
-                                    Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9e83acba504d4a1cfc0",
-                                      "audio": Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc1",
-                                        "alternativeText": null,
-                                        "caption": null,
-                                        "createdAt": "2020-06-20T09:42:00.174Z",
-                                        "ext": ".mp3",
-                                        "hash": "PTT_20200620_3_1669bbfc5d",
-                                        "height": null,
-                                        "id": "5eedd9e83acba504d4a1cfc1",
-                                        "mime": "audio/mp3",
-                                        "name": "PTT-20200620-3",
-                                        "provider": "local",
-                                        "related": Array [
-                                          "5eedd9e83acba504d4a1cfc0",
-                                        ],
-                                        "size": 8.02,
-                                        "updatedAt": "2020-06-20T09:42:00.178Z",
-                                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                        "width": null,
-                                      },
-                                      "author": "1",
-                                      "createdAt": "2020-06-20T09:42:00.149Z",
-                                      "id": "5eedd9e83acba504d4a1cfc0",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "updatedAt": "2020-06-20T09:42:00.179Z",
-                                    },
+                                  "id": "5eedd9d43acba504d4a1cfbf",
+                                  "reactions": Array [],
+                                },
+                                Object {
+                                  "author": Object {
+                                    "displayName": " ",
+                                    "id": "1",
+                                    "photoURL": null,
+                                  },
+                                  "id": "5eedd9e83acba504d4a1cfc0",
+                                  "reactions": Array [],
+                                },
+                              ]
+                            }
+                            isLoading={false}
+                            loadReplies={[Function]}
+                            onComment={[Function]}
+                            onCommentPress={[Function]}
+                            onSend={[Function]}
+                            onSetReply={[Function]}
+                            post={
+                              Object {
+                                "__v": 0,
+                                "_id": "5eedd9a43acba504d4a1cfbb",
+                                "audio": Object {
+                                  "__v": 0,
+                                  "_id": "5eedd9a43acba504d4a1cfbc",
+                                  "alternativeText": null,
+                                  "caption": null,
+                                  "createdAt": "2020-06-20T09:40:52.832Z",
+                                  "ext": ".mp3",
+                                  "hash": "PTT_20200620_6_5e895bdeae",
+                                  "height": null,
+                                  "id": "5eedd9a43acba504d4a1cfbc",
+                                  "mime": "audio/mp3",
+                                  "name": "PTT-20200620-6",
+                                  "provider": "local",
+                                  "related": Array [
+                                    "5eedd9a43acba504d4a1cfbb",
                                   ],
-                                  "content": "Fhgjjyjj",
-                                  "createdAt": "2020-06-20T09:40:52.790Z",
-                                  "id": "5eedd9a43acba504d4a1cfbb",
-                                  "reactions": Array [
-                                    Object {
+                                  "size": 13.24,
+                                  "updatedAt": "2020-06-20T09:40:52.839Z",
+                                  "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                                  "width": null,
+                                },
+                                "author": Object {
+                                  "displayName": "Bruno Bodian",
+                                  "email": "bacarybruno@kebetoo.com",
+                                  "id": "1",
+                                  "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                                },
+                                "comments": Array [
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedd9d43acba504d4a1cfbf",
+                                    "author": "1",
+                                    "content": "Fgyjj",
+                                    "createdAt": "2020-06-20T09:41:40.401Z",
+                                    "id": "5eedd9d43acba504d4a1cfbf",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "updatedAt": "2020-06-20T09:41:40.405Z",
+                                  },
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedd9e83acba504d4a1cfc0",
+                                    "audio": Object {
                                       "__v": 0,
-                                      "_id": "5eedf49b3acba504d4a1cfcf",
-                                      "author": "1",
-                                      "createdAt": "2020-06-20T11:35:55.591Z",
-                                      "id": "5eedf49b3acba504d4a1cfcf",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "type": "like",
-                                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                                      "_id": "5eedd9e83acba504d4a1cfc1",
+                                      "alternativeText": null,
+                                      "caption": null,
+                                      "createdAt": "2020-06-20T09:42:00.174Z",
+                                      "ext": ".mp3",
+                                      "hash": "PTT_20200620_3_1669bbfc5d",
+                                      "height": null,
+                                      "id": "5eedd9e83acba504d4a1cfc1",
+                                      "mime": "audio/mp3",
+                                      "name": "PTT-20200620-3",
+                                      "provider": "local",
+                                      "related": Array [
+                                        "5eedd9e83acba504d4a1cfc0",
+                                      ],
+                                      "size": 8.02,
+                                      "updatedAt": "2020-06-20T09:42:00.178Z",
+                                      "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                                      "width": null,
                                     },
-                                  ],
-                                  "reposts": Array [],
-                                  "updatedAt": "2020-06-20T09:40:53.841Z",
-                                }
+                                    "author": "1",
+                                    "createdAt": "2020-06-20T09:42:00.149Z",
+                                    "id": "5eedd9e83acba504d4a1cfc0",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "updatedAt": "2020-06-20T09:42:00.179Z",
+                                  },
+                                ],
+                                "content": "Fhgjjyjj",
+                                "createdAt": "2020-06-20T09:40:52.790Z",
+                                "id": "5eedd9a43acba504d4a1cfbb",
+                                "reactions": Array [
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedf49b3acba504d4a1cfcf",
+                                    "author": "1",
+                                    "createdAt": "2020-06-20T11:35:55.591Z",
+                                    "id": "5eedf49b3acba504d4a1cfcf",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "type": "like",
+                                    "updatedAt": "2020-06-20T17:45:39.642Z",
+                                  },
+                                ],
+                                "reposts": Array [],
+                                "updatedAt": "2020-06-20T09:40:53.841Z",
                               }
-                            />
-                          </Component>
+                            }
+                            replies={Object {}}
+                            setComment={[Function]}
+                            toReply={null}
+                          />
                         }
+                        collapsable={false}
                         contentContainerStyle={
                           Object {
                             "backgroundColor": "rgba(255, 255, 255, 255)",
@@ -678,6 +469,8 @@ exports[`renders Comments 1`] = `
                         maxToRenderPerBatch={10}
                         onContentSizeChange={[Function]}
                         onEndReachedThreshold={2}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
                         onLayout={[Function]}
                         onMomentumScrollEnd={[Function]}
                         onScroll={[Function]}
@@ -685,6 +478,7 @@ exports[`renders Comments 1`] = `
                         onScrollEndDrag={[Function]}
                         removeClippedSubviews={true}
                         renderItem={[Function]}
+                        renderScrollComponent={[Function]}
                         scrollEventThrottle={50}
                         stickyHeaderIndices={Array []}
                         updateCellsBatchingPeriod={50}
@@ -1157,13 +951,13 @@ exports[`renders Comments 1`] = `
                                   Object {
                                     "backgroundColor": "rgba(255, 255, 255, 255)",
                                     "borderLeftColor": "rgba(229, 229, 234, 255)",
-                                    "borderLeftWidth": 1,
+                                    "borderLeftWidth": 0.5,
                                     "borderRightColor": "rgba(229, 229, 234, 255)",
-                                    "borderRightWidth": 1,
+                                    "borderRightWidth": 0.5,
                                     "borderTopColor": "rgba(229, 229, 234, 255)",
                                     "borderTopLeftRadius": 40,
                                     "borderTopRightRadius": 40,
-                                    "borderTopWidth": 1,
+                                    "borderTopWidth": 0.5,
                                     "height": 70,
                                     "paddingHorizontal": 24,
                                   }
@@ -1181,11 +975,11 @@ exports[`renders Comments 1`] = `
                                   <View
                                     style={
                                       Object {
-                                        "backgroundColor": "rgba(229, 229, 234, 255)",
+                                        "backgroundColor": "rgba(199, 199, 204, 255)",
                                         "borderRadius": 5,
-                                        "height": 5,
-                                        "margin": 8,
-                                        "width": 60,
+                                        "height": 8,
+                                        "margin": 10,
+                                        "width": 40,
                                       }
                                     }
                                   />
@@ -2119,86 +1913,81 @@ exports[`renders Comments 1`] = `
                             }
                           }
                         >
-                          <View>
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#F5F5F5",
+                                "borderBottomLeftRadius": 22.5,
+                                "borderBottomRightRadius": 22.5,
+                                "borderColor": "rgba(229, 229, 234, 255)",
+                                "borderRadius": 15,
+                                "borderTopLeftRadius": 22.5,
+                                "borderTopRightRadius": 22.5,
+                                "borderWidth": 0.5,
+                                "elevation": 1,
+                                "height": 0,
+                                "minHeight": 45,
+                                "overflow": "hidden",
+                                "shadowColor": "rgba(0, 0, 0, 255)",
+                                "shadowOffset": Object {
+                                  "x": 0,
+                                  "y": 0,
+                                },
+                                "shadowOpacity": 0.18,
+                                "shadowRadius": 1,
+                              }
+                            }
+                          >
                             <View
                               style={
-                                Object {
-                                  "backgroundColor": "#F5F5F5",
-                                  "borderBottomLeftRadius": 22.5,
-                                  "borderBottomRightRadius": 22.5,
-                                  "borderColor": "rgba(229, 229, 234, 255)",
-                                  "borderRadius": 15,
-                                  "borderTopLeftRadius": 22.5,
-                                  "borderTopRightRadius": 22.5,
-                                  "borderWidth": 0.5,
-                                  "elevation": 1,
-                                  "height": 0,
-                                  "minHeight": 45,
-                                  "overflow": "hidden",
-                                  "shadowColor": "rgba(0, 0, 0, 255)",
-                                  "shadowOffset": Object {
-                                    "x": 0,
-                                    "y": 0,
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                    "flexDirection": "row",
+                                    "paddingLeft": 16,
                                   },
-                                  "shadowOpacity": 0.18,
-                                  "shadowRadius": 1,
-                                }
+                                  undefined,
+                                ]
                               }
                             >
-                              <View
+                              <TextInput
+                                allowFontScaling={true}
+                                blurOnSubmit={false}
+                                disableAutofocus={true}
+                                editable={true}
+                                maxLength={1024}
+                                multiline={true}
+                                onBlur={[Function]}
+                                onChangeText={[Function]}
+                                onContentSizeChange={[Function]}
+                                onFocus={[Function]}
+                                placeholder="Add a comment..."
+                                placeholderTextColor="rgba(174, 174, 178, 255)"
+                                rejectResponderTermination={true}
+                                returnKeyType="default"
                                 style={
                                   Array [
                                     Object {
-                                      "alignItems": "center",
+                                      "backgroundColor": "transparent",
+                                      "color": "rgba(0,0,0,0.87)",
                                       "flex": 1,
-                                      "flexDirection": "row",
-                                      "paddingLeft": 16,
+                                      "fontFamily": "System",
+                                      "fontSize": 16,
+                                      "fontWeight": "400",
+                                      "height": "100%",
+                                      "letterSpacing": -0.32,
+                                      "lineHeight": 21,
+                                    },
+                                    Object {
+                                      "minHeight": 45,
                                     },
                                     undefined,
                                   ]
                                 }
-                              >
-                                <TextInput
-                                  allowFontScaling={true}
-                                  blurOnSubmit={false}
-                                  disableAutofocus={true}
-                                  disableEmojis={true}
-                                  editable={true}
-                                  maxLength={1024}
-                                  multiline={false}
-                                  onBlur={[Function]}
-                                  onChangeText={[Function]}
-                                  onContentSizeChange={[Function]}
-                                  onFocus={[Function]}
-                                  onTouchStart={[Function]}
-                                  placeholder="Add a comment..."
-                                  placeholderTextColor="rgba(174, 174, 178, 255)"
-                                  rejectResponderTermination={true}
-                                  returnKeyType="default"
-                                  showSoftInputOnFocus={true}
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "rgba(0,0,0,0.87)",
-                                        "flex": 1,
-                                        "fontFamily": "System",
-                                        "fontSize": 16,
-                                        "fontWeight": "400",
-                                        "height": "100%",
-                                        "letterSpacing": -0.32,
-                                        "lineHeight": 21,
-                                      },
-                                      Object {
-                                        "minHeight": 45,
-                                      },
-                                      undefined,
-                                    ]
-                                  }
-                                  underlineColorAndroid="transparent"
-                                  value=""
-                                />
-                              </View>
+                                underlineColorAndroid="transparent"
+                                value=""
+                              />
                             </View>
                           </View>
                         </View>
@@ -2574,360 +2363,151 @@ exports[`renders Comments in loading state 1`] = `
                       <RCTScrollView
                         ListEmptyComponent={[Function]}
                         ListHeaderComponent={
-                          <Component
-                            style={
+                          <ListHeader
+                            audioRecorder={
                               Object {
-                                "backgroundColor": "#F5F5F5",
-                                "paddingTop": 16,
-                                "width": "100%",
+                                "elapsedTime": 0,
+                                "hasRecording": false,
+                                "isRecording": false,
+                                "recordUri": undefined,
+                                "reset": [Function],
+                                "saveAsset": [Function],
+                                "saveComment": [Function],
+                                "savePost": [Function],
+                                "saveStoryComment": [Function],
+                                "start": [Function],
+                                "stop": [Function],
                               }
                             }
-                          >
-                            <Component
-                              style={
+                            authors={Object {}}
+                            clearToReply={[Function]}
+                            comment=""
+                            comments={
+                              Array [
                                 Object {
-                                  "minHeight": 200.1,
-                                }
-                              }
-                            >
-                              <Header
-                                Left={[Function]}
-                                author={
-                                  Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
-                                    "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                  }
-                                }
-                                post={
-                                  Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbb",
-                                    "audio": Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9a43acba504d4a1cfbc",
-                                      "alternativeText": null,
-                                      "caption": null,
-                                      "createdAt": "2020-06-20T09:40:52.832Z",
-                                      "ext": ".mp3",
-                                      "hash": "PTT_20200620_6_5e895bdeae",
-                                      "height": null,
-                                      "id": "5eedd9a43acba504d4a1cfbc",
-                                      "mime": "audio/mp3",
-                                      "name": "PTT-20200620-6",
-                                      "provider": "local",
-                                      "related": Array [
-                                        "5eedd9a43acba504d4a1cfbb",
-                                      ],
-                                      "size": 13.24,
-                                      "updatedAt": "2020-06-20T09:40:52.839Z",
-                                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                      "width": null,
-                                    },
-                                    "author": Object {
-                                      "displayName": "Bruno Bodian",
-                                      "email": "bacarybruno@kebetoo.com",
-                                      "id": "1",
-                                      "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                    },
-                                    "comments": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9d43acba504d4a1cfbf",
-                                        "author": "1",
-                                        "content": "Fgyjj",
-                                        "createdAt": "2020-06-20T09:41:40.401Z",
-                                        "id": "5eedd9d43acba504d4a1cfbf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:41:40.405Z",
-                                      },
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc0",
-                                        "audio": Object {
-                                          "__v": 0,
-                                          "_id": "5eedd9e83acba504d4a1cfc1",
-                                          "alternativeText": null,
-                                          "caption": null,
-                                          "createdAt": "2020-06-20T09:42:00.174Z",
-                                          "ext": ".mp3",
-                                          "hash": "PTT_20200620_3_1669bbfc5d",
-                                          "height": null,
-                                          "id": "5eedd9e83acba504d4a1cfc1",
-                                          "mime": "audio/mp3",
-                                          "name": "PTT-20200620-3",
-                                          "provider": "local",
-                                          "related": Array [
-                                            "5eedd9e83acba504d4a1cfc0",
-                                          ],
-                                          "size": 8.02,
-                                          "updatedAt": "2020-06-20T09:42:00.178Z",
-                                          "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                          "width": null,
-                                        },
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T09:42:00.149Z",
-                                        "id": "5eedd9e83acba504d4a1cfc0",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:42:00.179Z",
-                                      },
-                                    ],
-                                    "content": "Fhgjjyjj",
-                                    "createdAt": "2020-06-20T09:40:52.790Z",
-                                    "id": "5eedd9a43acba504d4a1cfbb",
-                                    "reactions": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedf49b3acba504d4a1cfcf",
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T11:35:55.591Z",
-                                        "id": "5eedf49b3acba504d4a1cfcf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "type": "like",
-                                        "updatedAt": "2020-06-20T17:45:39.642Z",
-                                      },
-                                    ],
-                                    "reposts": Array [],
-                                    "updatedAt": "2020-06-20T09:40:53.841Z",
-                                  }
-                                }
-                                size={35}
-                              />
-                              <Content
-                                mode="comments"
-                                onPress={[Function]}
-                                originalAuthor={
-                                  Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
-                                    "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                  }
-                                }
-                                post={
-                                  Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbb",
-                                    "audio": Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9a43acba504d4a1cfbc",
-                                      "alternativeText": null,
-                                      "caption": null,
-                                      "createdAt": "2020-06-20T09:40:52.832Z",
-                                      "ext": ".mp3",
-                                      "hash": "PTT_20200620_6_5e895bdeae",
-                                      "height": null,
-                                      "id": "5eedd9a43acba504d4a1cfbc",
-                                      "mime": "audio/mp3",
-                                      "name": "PTT-20200620-6",
-                                      "provider": "local",
-                                      "related": Array [
-                                        "5eedd9a43acba504d4a1cfbb",
-                                      ],
-                                      "size": 13.24,
-                                      "updatedAt": "2020-06-20T09:40:52.839Z",
-                                      "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                      "width": null,
-                                    },
-                                    "author": Object {
-                                      "displayName": "Bruno Bodian",
-                                      "email": "bacarybruno@kebetoo.com",
-                                      "id": "1",
-                                      "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
-                                    },
-                                    "comments": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9d43acba504d4a1cfbf",
-                                        "author": "1",
-                                        "content": "Fgyjj",
-                                        "createdAt": "2020-06-20T09:41:40.401Z",
-                                        "id": "5eedd9d43acba504d4a1cfbf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:41:40.405Z",
-                                      },
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc0",
-                                        "audio": Object {
-                                          "__v": 0,
-                                          "_id": "5eedd9e83acba504d4a1cfc1",
-                                          "alternativeText": null,
-                                          "caption": null,
-                                          "createdAt": "2020-06-20T09:42:00.174Z",
-                                          "ext": ".mp3",
-                                          "hash": "PTT_20200620_3_1669bbfc5d",
-                                          "height": null,
-                                          "id": "5eedd9e83acba504d4a1cfc1",
-                                          "mime": "audio/mp3",
-                                          "name": "PTT-20200620-3",
-                                          "provider": "local",
-                                          "related": Array [
-                                            "5eedd9e83acba504d4a1cfc0",
-                                          ],
-                                          "size": 8.02,
-                                          "updatedAt": "2020-06-20T09:42:00.178Z",
-                                          "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                          "width": null,
-                                        },
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T09:42:00.149Z",
-                                        "id": "5eedd9e83acba504d4a1cfc0",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "updatedAt": "2020-06-20T09:42:00.179Z",
-                                      },
-                                    ],
-                                    "content": "Fhgjjyjj",
-                                    "createdAt": "2020-06-20T09:40:52.790Z",
-                                    "id": "5eedd9a43acba504d4a1cfbb",
-                                    "reactions": Array [
-                                      Object {
-                                        "__v": 0,
-                                        "_id": "5eedf49b3acba504d4a1cfcf",
-                                        "author": "1",
-                                        "createdAt": "2020-06-20T11:35:55.591Z",
-                                        "id": "5eedf49b3acba504d4a1cfcf",
-                                        "post": "5eedd9a43acba504d4a1cfbb",
-                                        "type": "like",
-                                        "updatedAt": "2020-06-20T17:45:39.642Z",
-                                      },
-                                    ],
-                                    "reposts": Array [],
-                                    "updatedAt": "2020-06-20T09:40:53.841Z",
-                                  }
-                                }
-                                style={
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderRadius": 0,
-                                    "marginBottom": 0,
-                                    "padding": 16,
-                                    "paddingTop": 0,
-                                  }
-                                }
-                              />
-                            </Component>
-                            <Memo(Reactions)
-                              author="1"
-                              comments={
-                                Array [
-                                  Object {
-                                    "author": Object {
-                                      "displayName": " ",
-                                      "id": "1",
-                                      "photoURL": null,
-                                    },
-                                    "id": "5eedd9d43acba504d4a1cfbf",
-                                    "reactions": Array [],
-                                  },
-                                  Object {
-                                    "author": Object {
-                                      "displayName": " ",
-                                      "id": "1",
-                                      "photoURL": null,
-                                    },
-                                    "id": "5eedd9e83acba504d4a1cfc0",
-                                    "reactions": Array [],
-                                  },
-                                ]
-                              }
-                              onComment={[Function]}
-                              post={
-                                Object {
-                                  "__v": 0,
-                                  "_id": "5eedd9a43acba504d4a1cfbb",
-                                  "audio": Object {
-                                    "__v": 0,
-                                    "_id": "5eedd9a43acba504d4a1cfbc",
-                                    "alternativeText": null,
-                                    "caption": null,
-                                    "createdAt": "2020-06-20T09:40:52.832Z",
-                                    "ext": ".mp3",
-                                    "hash": "PTT_20200620_6_5e895bdeae",
-                                    "height": null,
-                                    "id": "5eedd9a43acba504d4a1cfbc",
-                                    "mime": "audio/mp3",
-                                    "name": "PTT-20200620-6",
-                                    "provider": "local",
-                                    "related": Array [
-                                      "5eedd9a43acba504d4a1cfbb",
-                                    ],
-                                    "size": 13.24,
-                                    "updatedAt": "2020-06-20T09:40:52.839Z",
-                                    "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
-                                    "width": null,
-                                  },
                                   "author": Object {
-                                    "displayName": "Bruno Bodian",
-                                    "email": "bacarybruno@kebetoo.com",
+                                    "displayName": " ",
                                     "id": "1",
-                                    "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                                    "photoURL": null,
                                   },
-                                  "comments": Array [
-                                    Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9d43acba504d4a1cfbf",
-                                      "author": "1",
-                                      "content": "Fgyjj",
-                                      "createdAt": "2020-06-20T09:41:40.401Z",
-                                      "id": "5eedd9d43acba504d4a1cfbf",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "updatedAt": "2020-06-20T09:41:40.405Z",
-                                    },
-                                    Object {
-                                      "__v": 0,
-                                      "_id": "5eedd9e83acba504d4a1cfc0",
-                                      "audio": Object {
-                                        "__v": 0,
-                                        "_id": "5eedd9e83acba504d4a1cfc1",
-                                        "alternativeText": null,
-                                        "caption": null,
-                                        "createdAt": "2020-06-20T09:42:00.174Z",
-                                        "ext": ".mp3",
-                                        "hash": "PTT_20200620_3_1669bbfc5d",
-                                        "height": null,
-                                        "id": "5eedd9e83acba504d4a1cfc1",
-                                        "mime": "audio/mp3",
-                                        "name": "PTT-20200620-3",
-                                        "provider": "local",
-                                        "related": Array [
-                                          "5eedd9e83acba504d4a1cfc0",
-                                        ],
-                                        "size": 8.02,
-                                        "updatedAt": "2020-06-20T09:42:00.178Z",
-                                        "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
-                                        "width": null,
-                                      },
-                                      "author": "1",
-                                      "createdAt": "2020-06-20T09:42:00.149Z",
-                                      "id": "5eedd9e83acba504d4a1cfc0",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "updatedAt": "2020-06-20T09:42:00.179Z",
-                                    },
+                                  "id": "5eedd9d43acba504d4a1cfbf",
+                                  "reactions": Array [],
+                                },
+                                Object {
+                                  "author": Object {
+                                    "displayName": " ",
+                                    "id": "1",
+                                    "photoURL": null,
+                                  },
+                                  "id": "5eedd9e83acba504d4a1cfc0",
+                                  "reactions": Array [],
+                                },
+                              ]
+                            }
+                            isLoading={false}
+                            loadReplies={[Function]}
+                            onComment={[Function]}
+                            onCommentPress={[Function]}
+                            onSend={[Function]}
+                            onSetReply={[Function]}
+                            post={
+                              Object {
+                                "__v": 0,
+                                "_id": "5eedd9a43acba504d4a1cfbb",
+                                "audio": Object {
+                                  "__v": 0,
+                                  "_id": "5eedd9a43acba504d4a1cfbc",
+                                  "alternativeText": null,
+                                  "caption": null,
+                                  "createdAt": "2020-06-20T09:40:52.832Z",
+                                  "ext": ".mp3",
+                                  "hash": "PTT_20200620_6_5e895bdeae",
+                                  "height": null,
+                                  "id": "5eedd9a43acba504d4a1cfbc",
+                                  "mime": "audio/mp3",
+                                  "name": "PTT-20200620-6",
+                                  "provider": "local",
+                                  "related": Array [
+                                    "5eedd9a43acba504d4a1cfbb",
                                   ],
-                                  "content": "Fhgjjyjj",
-                                  "createdAt": "2020-06-20T09:40:52.790Z",
-                                  "id": "5eedd9a43acba504d4a1cfbb",
-                                  "reactions": Array [
-                                    Object {
+                                  "size": 13.24,
+                                  "updatedAt": "2020-06-20T09:40:52.839Z",
+                                  "url": "/uploads/PTT_20200620_6_5e895bdeae.mp3",
+                                  "width": null,
+                                },
+                                "author": Object {
+                                  "displayName": "Bruno Bodian",
+                                  "email": "bacarybruno@kebetoo.com",
+                                  "id": "1",
+                                  "photoURL": "https://avatars1.githubusercontent.com/u/14147533",
+                                },
+                                "comments": Array [
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedd9d43acba504d4a1cfbf",
+                                    "author": "1",
+                                    "content": "Fgyjj",
+                                    "createdAt": "2020-06-20T09:41:40.401Z",
+                                    "id": "5eedd9d43acba504d4a1cfbf",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "updatedAt": "2020-06-20T09:41:40.405Z",
+                                  },
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedd9e83acba504d4a1cfc0",
+                                    "audio": Object {
                                       "__v": 0,
-                                      "_id": "5eedf49b3acba504d4a1cfcf",
-                                      "author": "1",
-                                      "createdAt": "2020-06-20T11:35:55.591Z",
-                                      "id": "5eedf49b3acba504d4a1cfcf",
-                                      "post": "5eedd9a43acba504d4a1cfbb",
-                                      "type": "like",
-                                      "updatedAt": "2020-06-20T17:45:39.642Z",
+                                      "_id": "5eedd9e83acba504d4a1cfc1",
+                                      "alternativeText": null,
+                                      "caption": null,
+                                      "createdAt": "2020-06-20T09:42:00.174Z",
+                                      "ext": ".mp3",
+                                      "hash": "PTT_20200620_3_1669bbfc5d",
+                                      "height": null,
+                                      "id": "5eedd9e83acba504d4a1cfc1",
+                                      "mime": "audio/mp3",
+                                      "name": "PTT-20200620-3",
+                                      "provider": "local",
+                                      "related": Array [
+                                        "5eedd9e83acba504d4a1cfc0",
+                                      ],
+                                      "size": 8.02,
+                                      "updatedAt": "2020-06-20T09:42:00.178Z",
+                                      "url": "/uploads/PTT_20200620_3_1669bbfc5d.mp3",
+                                      "width": null,
                                     },
-                                  ],
-                                  "reposts": Array [],
-                                  "updatedAt": "2020-06-20T09:40:53.841Z",
-                                }
+                                    "author": "1",
+                                    "createdAt": "2020-06-20T09:42:00.149Z",
+                                    "id": "5eedd9e83acba504d4a1cfc0",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "updatedAt": "2020-06-20T09:42:00.179Z",
+                                  },
+                                ],
+                                "content": "Fhgjjyjj",
+                                "createdAt": "2020-06-20T09:40:52.790Z",
+                                "id": "5eedd9a43acba504d4a1cfbb",
+                                "reactions": Array [
+                                  Object {
+                                    "__v": 0,
+                                    "_id": "5eedf49b3acba504d4a1cfcf",
+                                    "author": "1",
+                                    "createdAt": "2020-06-20T11:35:55.591Z",
+                                    "id": "5eedf49b3acba504d4a1cfcf",
+                                    "post": "5eedd9a43acba504d4a1cfbb",
+                                    "type": "like",
+                                    "updatedAt": "2020-06-20T17:45:39.642Z",
+                                  },
+                                ],
+                                "reposts": Array [],
+                                "updatedAt": "2020-06-20T09:40:53.841Z",
                               }
-                            />
-                          </Component>
+                            }
+                            replies={Object {}}
+                            setComment={[Function]}
+                            toReply={null}
+                          />
                         }
+                        collapsable={false}
                         contentContainerStyle={
                           Object {
                             "backgroundColor": "rgba(255, 255, 255, 255)",
@@ -2965,6 +2545,8 @@ exports[`renders Comments in loading state 1`] = `
                         maxToRenderPerBatch={10}
                         onContentSizeChange={[Function]}
                         onEndReachedThreshold={2}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
                         onLayout={[Function]}
                         onMomentumScrollEnd={[Function]}
                         onScroll={[Function]}
@@ -2972,6 +2554,7 @@ exports[`renders Comments in loading state 1`] = `
                         onScrollEndDrag={[Function]}
                         removeClippedSubviews={true}
                         renderItem={[Function]}
+                        renderScrollComponent={[Function]}
                         scrollEventThrottle={50}
                         stickyHeaderIndices={Array []}
                         updateCellsBatchingPeriod={50}
@@ -3444,13 +3027,13 @@ exports[`renders Comments in loading state 1`] = `
                                   Object {
                                     "backgroundColor": "rgba(255, 255, 255, 255)",
                                     "borderLeftColor": "rgba(229, 229, 234, 255)",
-                                    "borderLeftWidth": 1,
+                                    "borderLeftWidth": 0.5,
                                     "borderRightColor": "rgba(229, 229, 234, 255)",
-                                    "borderRightWidth": 1,
+                                    "borderRightWidth": 0.5,
                                     "borderTopColor": "rgba(229, 229, 234, 255)",
                                     "borderTopLeftRadius": 40,
                                     "borderTopRightRadius": 40,
-                                    "borderTopWidth": 1,
+                                    "borderTopWidth": 0.5,
                                     "height": 70,
                                     "paddingHorizontal": 24,
                                   }
@@ -3468,11 +3051,11 @@ exports[`renders Comments in loading state 1`] = `
                                   <View
                                     style={
                                       Object {
-                                        "backgroundColor": "rgba(229, 229, 234, 255)",
+                                        "backgroundColor": "rgba(199, 199, 204, 255)",
                                         "borderRadius": 5,
-                                        "height": 5,
-                                        "margin": 8,
-                                        "width": 60,
+                                        "height": 8,
+                                        "margin": 10,
+                                        "width": 40,
                                       }
                                     }
                                   />
@@ -4406,86 +3989,81 @@ exports[`renders Comments in loading state 1`] = `
                             }
                           }
                         >
-                          <View>
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#F5F5F5",
+                                "borderBottomLeftRadius": 22.5,
+                                "borderBottomRightRadius": 22.5,
+                                "borderColor": "rgba(229, 229, 234, 255)",
+                                "borderRadius": 15,
+                                "borderTopLeftRadius": 22.5,
+                                "borderTopRightRadius": 22.5,
+                                "borderWidth": 0.5,
+                                "elevation": 1,
+                                "height": 0,
+                                "minHeight": 45,
+                                "overflow": "hidden",
+                                "shadowColor": "rgba(0, 0, 0, 255)",
+                                "shadowOffset": Object {
+                                  "x": 0,
+                                  "y": 0,
+                                },
+                                "shadowOpacity": 0.18,
+                                "shadowRadius": 1,
+                              }
+                            }
+                          >
                             <View
                               style={
-                                Object {
-                                  "backgroundColor": "#F5F5F5",
-                                  "borderBottomLeftRadius": 22.5,
-                                  "borderBottomRightRadius": 22.5,
-                                  "borderColor": "rgba(229, 229, 234, 255)",
-                                  "borderRadius": 15,
-                                  "borderTopLeftRadius": 22.5,
-                                  "borderTopRightRadius": 22.5,
-                                  "borderWidth": 0.5,
-                                  "elevation": 1,
-                                  "height": 0,
-                                  "minHeight": 45,
-                                  "overflow": "hidden",
-                                  "shadowColor": "rgba(0, 0, 0, 255)",
-                                  "shadowOffset": Object {
-                                    "x": 0,
-                                    "y": 0,
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "flex": 1,
+                                    "flexDirection": "row",
+                                    "paddingLeft": 16,
                                   },
-                                  "shadowOpacity": 0.18,
-                                  "shadowRadius": 1,
-                                }
+                                  undefined,
+                                ]
                               }
                             >
-                              <View
+                              <TextInput
+                                allowFontScaling={true}
+                                blurOnSubmit={false}
+                                disableAutofocus={true}
+                                editable={true}
+                                maxLength={1024}
+                                multiline={true}
+                                onBlur={[Function]}
+                                onChangeText={[Function]}
+                                onContentSizeChange={[Function]}
+                                onFocus={[Function]}
+                                placeholder="Add a comment..."
+                                placeholderTextColor="rgba(174, 174, 178, 255)"
+                                rejectResponderTermination={true}
+                                returnKeyType="default"
                                 style={
                                   Array [
                                     Object {
-                                      "alignItems": "center",
+                                      "backgroundColor": "transparent",
+                                      "color": "rgba(0,0,0,0.87)",
                                       "flex": 1,
-                                      "flexDirection": "row",
-                                      "paddingLeft": 16,
+                                      "fontFamily": "System",
+                                      "fontSize": 16,
+                                      "fontWeight": "400",
+                                      "height": "100%",
+                                      "letterSpacing": -0.32,
+                                      "lineHeight": 21,
+                                    },
+                                    Object {
+                                      "minHeight": 45,
                                     },
                                     undefined,
                                   ]
                                 }
-                              >
-                                <TextInput
-                                  allowFontScaling={true}
-                                  blurOnSubmit={false}
-                                  disableAutofocus={true}
-                                  disableEmojis={true}
-                                  editable={true}
-                                  maxLength={1024}
-                                  multiline={false}
-                                  onBlur={[Function]}
-                                  onChangeText={[Function]}
-                                  onContentSizeChange={[Function]}
-                                  onFocus={[Function]}
-                                  onTouchStart={[Function]}
-                                  placeholder="Add a comment..."
-                                  placeholderTextColor="rgba(174, 174, 178, 255)"
-                                  rejectResponderTermination={true}
-                                  returnKeyType="default"
-                                  showSoftInputOnFocus={true}
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "transparent",
-                                        "color": "rgba(0,0,0,0.87)",
-                                        "flex": 1,
-                                        "fontFamily": "System",
-                                        "fontSize": 16,
-                                        "fontWeight": "400",
-                                        "height": "100%",
-                                        "letterSpacing": -0.32,
-                                        "lineHeight": 21,
-                                      },
-                                      Object {
-                                        "minHeight": 45,
-                                      },
-                                      undefined,
-                                    ]
-                                  }
-                                  underlineColorAndroid="transparent"
-                                  value=""
-                                />
-                              </View>
+                                underlineColorAndroid="transparent"
+                                value=""
+                              />
                             </View>
                           </View>
                         </View>

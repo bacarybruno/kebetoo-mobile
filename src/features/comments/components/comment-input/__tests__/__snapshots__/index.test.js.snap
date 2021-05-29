@@ -183,86 +183,81 @@ exports[`renders CommentInput 1`] = `
                         }
                       }
                     >
-                      <View>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#F5F5F5",
+                            "borderBottomLeftRadius": 22.5,
+                            "borderBottomRightRadius": 22.5,
+                            "borderColor": "rgba(229, 229, 234, 255)",
+                            "borderRadius": 15,
+                            "borderTopLeftRadius": 22.5,
+                            "borderTopRightRadius": 22.5,
+                            "borderWidth": 0.5,
+                            "elevation": 1,
+                            "height": 0,
+                            "minHeight": 45,
+                            "overflow": "hidden",
+                            "shadowColor": "rgba(0, 0, 0, 255)",
+                            "shadowOffset": Object {
+                              "x": 0,
+                              "y": 0,
+                            },
+                            "shadowOpacity": 0.18,
+                            "shadowRadius": 1,
+                          }
+                        }
+                      >
                         <View
                           style={
-                            Object {
-                              "backgroundColor": "#F5F5F5",
-                              "borderBottomLeftRadius": 22.5,
-                              "borderBottomRightRadius": 22.5,
-                              "borderColor": "rgba(229, 229, 234, 255)",
-                              "borderRadius": 15,
-                              "borderTopLeftRadius": 22.5,
-                              "borderTopRightRadius": 22.5,
-                              "borderWidth": 0.5,
-                              "elevation": 1,
-                              "height": 0,
-                              "minHeight": 45,
-                              "overflow": "hidden",
-                              "shadowColor": "rgba(0, 0, 0, 255)",
-                              "shadowOffset": Object {
-                                "x": 0,
-                                "y": 0,
+                            Array [
+                              Object {
+                                "alignItems": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                                "paddingLeft": 16,
                               },
-                              "shadowOpacity": 0.18,
-                              "shadowRadius": 1,
-                            }
+                              undefined,
+                            ]
                           }
                         >
-                          <View
+                          <TextInput
+                            allowFontScaling={true}
+                            blurOnSubmit={false}
+                            disableAutofocus={true}
+                            editable={true}
+                            maxLength={1024}
+                            multiline={true}
+                            onBlur={[Function]}
+                            onChangeText={[Function]}
+                            onContentSizeChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Add a comment..."
+                            placeholderTextColor="rgba(174, 174, 178, 255)"
+                            rejectResponderTermination={true}
+                            returnKeyType="default"
                             style={
                               Array [
                                 Object {
-                                  "alignItems": "center",
+                                  "backgroundColor": "transparent",
+                                  "color": "rgba(0,0,0,0.87)",
                                   "flex": 1,
-                                  "flexDirection": "row",
-                                  "paddingLeft": 16,
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                  "fontWeight": "400",
+                                  "height": "100%",
+                                  "letterSpacing": -0.32,
+                                  "lineHeight": 21,
+                                },
+                                Object {
+                                  "minHeight": 45,
                                 },
                                 undefined,
                               ]
                             }
-                          >
-                            <TextInput
-                              allowFontScaling={true}
-                              blurOnSubmit={false}
-                              disableAutofocus={true}
-                              disableEmojis={true}
-                              editable={true}
-                              maxLength={1024}
-                              multiline={true}
-                              onBlur={[Function]}
-                              onChangeText={[Function]}
-                              onContentSizeChange={[Function]}
-                              onFocus={[Function]}
-                              onTouchStart={[Function]}
-                              placeholder="Add a comment..."
-                              placeholderTextColor="rgba(174, 174, 178, 255)"
-                              rejectResponderTermination={true}
-                              returnKeyType="default"
-                              showSoftInputOnFocus={true}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "color": "rgba(0,0,0,0.87)",
-                                    "flex": 1,
-                                    "fontFamily": "System",
-                                    "fontSize": 16,
-                                    "fontWeight": "400",
-                                    "height": "100%",
-                                    "letterSpacing": -0.32,
-                                    "lineHeight": 21,
-                                  },
-                                  Object {
-                                    "minHeight": 45,
-                                  },
-                                  undefined,
-                                ]
-                              }
-                              underlineColorAndroid="transparent"
-                              value=""
-                            />
-                          </View>
+                            underlineColorAndroid="transparent"
+                            value=""
+                          />
                         </View>
                       </View>
                     </View>

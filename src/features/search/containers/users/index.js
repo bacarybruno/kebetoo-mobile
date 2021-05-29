@@ -13,10 +13,11 @@ import { recentSearchHistory } from '@app/redux/selectors'
 import { strings } from '@app/config'
 import routes from '@app/navigation/routes'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import HistoryItem from '@app/features/search/components/history-item'
+import NoResult from '@app/features/search/components/no-result'
 
 import createThemedStyles from './styles'
-import HistoryItem from '../../components/history-item'
-import NoResult from '../../components/no-result'
+
 
 export const SearchResult = ({ item, onPress }) => {
   const styles = useAppStyles(createThemedStyles)

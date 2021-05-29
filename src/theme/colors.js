@@ -50,6 +50,24 @@ export const hexToRgba = (hex, opacity) => {
 //   ...middleHexColorsToRgb(colors.primary, colors.secondary),
 // )
 
+// https://gist.github.com/gskema/2f56dc2e087894ffc756c11e6de1b5ed
+export const colorGradient = (fade, color1, color2) => {
+  const [r1, g1, b1] = hexToRgb(rgbaToHex(color1))
+  const [r2, g2, b2] = hexToRgb(rgbaToHex(color2))
+
+  const diffRed = r2 - r1
+  const diffGreen = g2 - g1
+  const diffBlue = b2 - b1
+
+  const gradient = {
+    red: parseInt(Math.floor(r1 + (diffRed * fade))),
+    green: parseInt(Math.floor(g1 + (diffGreen * fade))),
+    blue: parseInt(Math.floor(b1 + (diffBlue * fade))),
+  }
+
+  return 'rgb(' + gradient.red + ',' + gradient.green + ',' + gradient.blue + ')'
+}
+
 export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => {
   const baseColors = {
     blue: iosColors.systemBlue[colorScheme],

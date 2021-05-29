@@ -8,6 +8,7 @@ import Header, { HeaderAvatar } from '../index'
 const givenHeader = setupTest(Header)({
   displayName: 'Bruno Bodian',
   imageSrc: 'https://avatars1.githubusercontent.com/u/14147533',
+  showAvatar: true,
   style: {
     backgroundColor: 'red',
   },

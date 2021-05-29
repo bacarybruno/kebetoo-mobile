@@ -147,7 +147,7 @@ const NotificationsPage = () => {
   return (
     <ScrollView style={styles.wrapper} contentContainerStyle={styles.content}>
       <AppHeader
-        title={strings.tabs.notifications}
+        title={strings.notifications.notifications}
         displayName={profile.displayName}
         imageSrc={profile.photoURL}
         style={styles.pageTitle}

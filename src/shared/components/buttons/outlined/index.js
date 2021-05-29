@@ -1,11 +1,10 @@
 import { memo } from 'react'
 import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
 
-import { Pressable } from '@app/shared/components'
+import { Pressable, Typography } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles from './styles'
-import Typography from '../../typography'
 
 const OutlinedButton = ({
   text, onPress, style, disabled, loading = false,

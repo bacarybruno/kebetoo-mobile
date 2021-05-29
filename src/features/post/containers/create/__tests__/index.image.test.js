@@ -18,7 +18,7 @@ const givenCreatePost = setupTest(CreatePost)({
   route: {
     params: {
       action: actionTypes.CREATE,
-      sharedFile: 'fake-image.png',
+      file: 'fake-image.png',
       sharedText: 'hello world',
       payload: {
         content: 'hello content',

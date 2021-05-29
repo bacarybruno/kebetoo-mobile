@@ -21,7 +21,7 @@ const givenCreatePost = setupTest(CreatePost)({
       payload: {
         content: 'Hello',
       },
-      sharedFile: 'fake-video.mp4',
+      file: 'fake-video.mp4',
     },
   },
 })

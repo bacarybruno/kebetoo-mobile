@@ -9,7 +9,13 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemeColors from './styles'
 
-export const getSource = (url) => ({ uri: url.startsWith('http') ? url : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}` })
+export const getSource = (url) => ({
+  uri: url.startsWith('http')
+    ? url
+    : `${env.assetsBaseUrl}/${url.startsWith('/')
+      ? url.substr(1)
+      : url}`,
+})
 
 export const DeleteIconButton = ({ onPress }) => {
   const styles = useAppStyles(createThemeColors)
