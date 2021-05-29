@@ -214,7 +214,6 @@ const RoomPage = ({ navigation }) => {
         audioRecorder={audioRecorder}
         value={message}
         isLoading={isLoading}
-        disableEmojis
         disableAutofocus
         handleContentSizeChange={false}
       // reply={toReply}

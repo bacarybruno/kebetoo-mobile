@@ -40,19 +40,8 @@ export default (colors) => StyleSheet.create({
   trailing: {
     paddingRight: metrics.spacing.xxl,
   },
-  emojiSelector: {
-    marginTop: metrics.spacing.md,
-    width: metrics.screenWidth,
-    marginLeft: -metrics.marginHorizontal,
-    marginBottom: -metrics.spacing.sm,
-    display: 'flex',
-    backgroundColor: colors.secondary,
-  },
   hide: {
     display: 'none',
-  },
-  emojiPicker: {
-    marginRight: metrics.spacing.xs,
   },
   inputWrapper: {
     flexDirection: 'row',

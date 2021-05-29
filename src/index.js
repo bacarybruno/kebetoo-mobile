@@ -1,4 +1,3 @@
-import 'react-native-gesture-handler'
 import './config/strings'
 import './config/init'
 // import './config/wdyr'

@@ -2,12 +2,11 @@ import { Appearance } from 'react-native'
 
 import { strings } from '@app/config'
 
-import { SET_LOCALE, SET_THEME, SET_EMOJI_HISTORY } from '../types'
+import { SET_LOCALE, SET_THEME } from '../types'
 
 const initialState = {
   locale: strings.getInterfaceLanguage(),
   theme: Appearance.getColorScheme(),
-  emojiHistory: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,11 +20,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         theme: action.payload,
-      }
-    case SET_EMOJI_HISTORY:
-      return {
-        ...state,
-        emojiHistory: action.payload,
       }
     default:
       return state

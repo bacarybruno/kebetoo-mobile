@@ -1,7 +1,7 @@
 import { memo, useState, useCallback, useRef, useEffect } from 'react'
 import { Animated, View } from 'react-native'
 
-import { EmojiTextInput, AudioPlayer } from '@app/shared/components'
+import { AudioPlayer, TextInput } from '@app/shared/components'
 import { env, strings } from '@app/config'
 import { readableSeconds } from '@app/shared/helpers/dates'
 import { useAppStyles } from '@app/shared/hooks'
@@ -24,7 +24,6 @@ export const CommentInput = ({
   theme,
   placeholder,
   style,
-  disableEmojis = true,
   disableAutofocus = true,
   handleContentSizeChange = true,
   maxLength = env.maxLength.post.comments,
@@ -67,7 +66,7 @@ export const CommentInput = ({
     <View style={[styles.commentInputWrapper, style]}>
       <View style={styles.flexible}>
         {!audioRecorder.hasRecording && (
-          <EmojiTextInput
+          <TextInput
             multiline
             fieldName="comment"
             onValueChange={onChange}
@@ -78,7 +77,6 @@ export const CommentInput = ({
             onContentSizeChange={updateInputHeight}
             height={inputSize.current}
             returnKeyType="default"
-            disableEmojis={disableEmojis}
             disableAutofocus={disableAutofocus}
             maxLength={maxLength}
             wrapperStyle={wrapperStyle}
@@ -88,7 +86,7 @@ export const CommentInput = ({
             {reply && (
               <ReplyInfo info={reply} size={baseReplyInfoSize} onClose={onReplyClose} />
             )}
-          </EmojiTextInput>
+          </TextInput>
         )}
         {audioRecorder.hasRecording && (
           <View style={styles.audioWrapper}>

@@ -2,9 +2,6 @@
 export const SET_THEME = 'app:set_theme'
 export const TOGGLE_THEME = 'app:toggle_theme'
 export const SET_LOCALE = 'app:set_locale'
-export const SET_EMOJI_HISTORY = 'app:set_emoji_history'
-export const ADD_EMOJI_HISTORY = 'app:add_emoji_history'
-export const ADD_EMOJI_HISTORY_ERROR = 'app:add_emoji_history_error'
 
 // -- user reducer --
 export const SET_USER_PROFILE = 'user:set_user_profile'

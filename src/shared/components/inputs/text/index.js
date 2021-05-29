@@ -41,7 +41,6 @@ const InputText = forwardRef((props, ref) => {
     wrapperStyle,
     textStyle,
     error,
-    withEmoji,
     Left,
     Right,
     children,
@@ -91,7 +90,7 @@ const InputText = forwardRef((props, ref) => {
         </TextInput>
         {error
           ? <PopoverTooltip message={error} />
-          : Right && <Right />}
+          : Right}
       </View>
     </Animated.View>
   )

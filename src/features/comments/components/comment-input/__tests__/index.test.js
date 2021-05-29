@@ -4,7 +4,7 @@ import { act } from 'react-test-renderer'
 import setupTest from '@app/config/jest-setup'
 import { AudioPlayer } from '@app/shared/components/audio-player'
 import { strings } from '@app/config'
-import { EmojiTextInput } from '@app/shared/components'
+import { TextInput } from '@app/shared/components'
 
 import CommentInput from '../index'
 import ReplyInfo from '../../reply-info'
@@ -101,5 +101,5 @@ it('renders duration as placeholder if it is recording', () => {
       elapsedTime: 10,
     },
   })
-  expect(wrapper.root.findByType(EmojiTextInput).props.placeholder).toBe('Recording (0:10)')
+  expect(wrapper.root.findByType(TextInput).props.placeholder).toBe('Recording (0:10)')
 })

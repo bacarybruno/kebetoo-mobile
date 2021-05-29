@@ -11,7 +11,6 @@ export const blockedItemsSelector = (state) => ({
   authors: state.userReducer.blockedAuthors,
 })
 export const appSelector = (state) => state.appReducer
-export const emojiHistorySelector = (state) => state.appReducer.emojiHistory
 export const localeSelector = (state) => state.appReducer.locale
 export const notificationsSelector = (state) => state
   .notificationsReducer

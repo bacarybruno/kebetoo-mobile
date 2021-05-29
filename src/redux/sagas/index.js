@@ -1,8 +1,7 @@
 import {
-  takeLeading, call, put, all, select, debounce,
+  takeLeading, call, put, all, select,
 } from 'redux-saga/effects'
 
-import helpers from '@app/shared/components/emoji-selector/helpers'
 import {
   api,
   getFacebookPicture,
@@ -14,7 +13,6 @@ import channels from './channels'
 import * as types from '../types'
 import {
   blockedItemsSelector,
-  emojiHistorySelector,
   userProfileSelector,
   postsFilterSelector,
   postsPageSelector,
@@ -43,40 +41,6 @@ function* fetchPosts(action) {
   } finally {
     yield put({ type: types.IS_LOADING_POSTS, payload: false })
     yield put({ type: types.IS_REFRESHING_POSTS, payload: false })
-  }
-}
-
-const sortHistoryItems = (items) => items.sort((a, b) => {
-  const count = b.count - a.count
-  const addedOn = b.addedOn - a.addedOn
-  return count || addedOn
-})
-
-function* addEmojiHistory(action) {
-  try {
-    const item = action.payload
-    const historyItemsState = yield select(emojiHistorySelector)
-    const historyItems = historyItemsState || []
-    let newHistoryItems = []
-    const foundHistoryItem = historyItems.find((historyItem) => historyItem.symbol === item)
-    if (foundHistoryItem) {
-      foundHistoryItem.count += 1
-      newHistoryItems = [
-        ...historyItems.filter((historyItem) => historyItem.symbol !== item),
-        foundHistoryItem,
-      ]
-    } else {
-      newHistoryItems = [...historyItems]
-      if (newHistoryItems.length >= helpers.history.maxItems) {
-        const removed = newHistoryItems.pop()
-        console.log('Removed history item', removed)
-      }
-      const newHistoryItem = { count: 1, symbol: item, addedOn: Date.now() }
-      newHistoryItems = [...newHistoryItems, newHistoryItem]
-    }
-    yield put({ type: types.SET_EMOJI_HISTORY, payload: sortHistoryItems(newHistoryItems) })
-  } catch (error) {
-    yield put({ type: types.ADD_EMOJI_HISTORY_ERROR, payload: error })
   }
 }
 
@@ -177,7 +141,6 @@ function* initPosts() {
 export default function* root() {
   yield all([
     yield takeLeading(types.API_FETCH_POSTS, fetchPosts),
-    yield debounce(3000, types.ADD_EMOJI_HISTORY, addEmojiHistory),
     yield takeLeading(types.SET_USER_PROFILE_REQUEST, setUserProfile),
     yield takeLeading(types.POSTS_NEXT_PAGE_REQUEST, fetchPostsNextPage),
     yield takeLeading(types.UPDATE_POSTS_FILTER_REQUEST, updatePostsFilter),
