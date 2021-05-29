@@ -114,6 +114,23 @@ const useAudioRecorder = (
     return response
   }, [elapsedTime, recordUri])
 
+  const saveStoryComment = useCallback(async (story, author, toReply) => {
+    const time = dayjs().format('YYYYMMDD')
+    const response = await api.comments.createAudio({
+      story: toReply ? null : story,
+      thread: toReply ? toReply.id : null,
+      author,
+      audio: {
+        uri: recordUri,
+        mimeType: getMimeType(recordUri),
+        name: constructFileName(time, elapsedTime, getExtension(recordUri)),
+      },
+    })
+    setHasRecording(false)
+    await RNFetchBlob.fs.unlink(recordUri)
+    return response
+  }, [elapsedTime, recordUri])
+
   const start = useCallback(async () => {
     const { isNew, success } = await permissions.recordAudio()
     if (isNew || !success) return
@@ -180,6 +197,7 @@ const useAudioRecorder = (
     savePost,
     saveAsset,
     saveComment,
+    saveStoryComment,
     recordUri,
     elapsedTime,
     isRecording,

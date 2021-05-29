@@ -46,6 +46,7 @@ const useFilePicker = (uri) => {
       })
     })
     if (fileData) setFile(fileData)
+    return fileData
   }, [navigate])
 
   useEffect(() => {
@@ -134,6 +135,22 @@ const useFilePicker = (uri) => {
     return response
   }, [file, reset])
 
+  const saveStory = useCallback(async (author, content) => {
+    const time = dayjs().format('YYYYMMDD')
+    const fileUri = file.uri.replace('file://', '')
+    const response = await api.stories.createVideo({
+      author,
+      content,
+      video: {
+        uri: fileUri,
+        mimeType: file.type,
+        name: constructFileName(time, 'VID', getExtension(fileUri)),
+      },
+    })
+    await reset()
+    return response
+  }, [])
+
   return {
     file,
     hasFile: file !== null,
@@ -144,6 +161,7 @@ const useFilePicker = (uri) => {
     pickImage,
     pickVideo,
     saveFeedback,
+    saveStory,
   }
 }
 
