@@ -1,45 +1,49 @@
-import { cloneElement, useEffect, useCallback, useRef } from 'react'
-import { AppState, Image, Platform, View } from 'react-native'
+import { cloneElement, useEffect, useCallback, useRef, useContext } from 'react'
+import { Image, Platform, View } from 'react-native'
+import Ionicon from 'react-native-vector-icons/Ionicons'
+import RNBootSplash from 'react-native-bootsplash'
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
-import RNBootSplash from 'react-native-bootsplash'
-import messaging from '@react-native-firebase/messaging'
-import PushNotification from 'react-native-push-notification'
-import AsyncStorage from '@react-native-community/async-storage'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { PortalProvider, PortalHost } from '@gorhom/portal'
 
+import Kebeticon from '@app/shared/icons/kebeticons'
+import { images } from '@app/theme'
+import { strings } from '@app/config'
+import { SafeAreaContext } from '@app/shared/contexts'
 import {
   TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
 } from '@app/shared/components'
-import { images } from '@app/theme'
-import OnboardingPage from '@app/features/onboarding/containers'
-import SignUpPage from '@app/features/account/containers/signup'
-import SignInPage from '@app/features/account/containers/signin'
-import HomePage from '@app/features/home/containers'
-import RoomsPage from '@app/features/rooms/containers'
-import CreateRoomPage from '@app/features/rooms/containers/create'
-import LanguagesPage from '@app/features/languages/containers'
-import RoomPage from '@app/features/rooms/containers/room'
-import NotificationsPage from '@app/features/notifications/containers'
-import ProfilePage from '@app/features/profile/containers'
-import EditProfilePage from '@app/features/profile/containers/edit'
-import SearchPage from '@app/features/search/containers'
-import CreatePostPage from '@app/features/post/containers/create'
-import CommentsPage from '@app/features/comments/containers'
-import ManagePostsPage from '@app/features/post/containers/manage'
-import ImageModal from '@app/features/modal/containers/image'
-import VideoModal from '@app/features/modal/containers/video'
-import UserProfilePage from '@app/features/profile/containers/user'
-import { api } from '@app/shared/services'
 import {
-  useUser, useNotifications, useAnalytics, useAppStyles, useAppColors,
+  useUser, useNotifications, useAnalytics, useAppStyles, useAppColors, useMessaging,
 } from '@app/shared/hooks'
+
+import {
+  HomePage,
+  RoomPage,
+  RoomsPage,
+  VideoModal,
+  ImageModal,
+  SignUpPage,
+  SignInPage,
+  SearchPage,
+  StoriesPage,
+  ProfilePage,
+  CommentsPage,
+  LanguagesPage,
+  CreatePostPage,
+  OnboardingPage,
+  CreateRoomPage,
+  EditProfilePage,
+  ManagePostsPage,
+  UserProfilePage,
+  NotificationsPage,
+} from './pages'
 
 import routes from './routes'
 import createThemedStyles from './styles'
-import { strings } from '@app/config'
+
 
 enableScreens()
 
@@ -85,13 +89,22 @@ const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
     const iconNames = {
       [routes.HOME]: 'home',
+      [routes.STORIES]: 'stories',
       [routes.ROOMS]: 'chatbubble-ellipses',
-      [routes.SEARCH]: 'search',
       [routes.NOTIFICATIONS]: 'notifications',
     }
     const size = 24
     const iconName = iconNames[route.name]
-    if (iconName === undefined) return
+    if (!iconName) return
+    if (iconName === 'stories') {
+      return (
+        <Kebeticon
+          name="stories"
+          size={size}
+          color={color}
+        />
+      )
+    }
     return (
       <Ionicon
         name={focused ? iconName : (iconName + '-outline')}
@@ -103,8 +116,8 @@ const defaultTabOptions = ({ route }) => ({
   tabBarLabel: ({ focused, color }) => {
     const labels = {
       [routes.HOME]: strings.tabs.home,
+      [routes.STORIES]: strings.tabs.stories,
       [routes.ROOMS]: strings.tabs.rooms,
-      [routes.SEARCH]: strings.tabs.search,
       [routes.NOTIFICATIONS]: strings.tabs.notifications,
     }
     return (
@@ -127,40 +140,54 @@ const defaultMainScreenOptions = {
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
+  <Tab.Screen name={routes.STORIES} component={StoriesPage} />,
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
   <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
-  <Tab.Screen name={routes.SEARCH} component={SearchPage} />,
+  <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
 ]
 
-export const TabBar = (styles, colors) => (props) => (
-  <View>
-    <Image
-      source={
-        colors.colorScheme === 'dark'
-          ? images.bottom_tab_overlay_dark
-          : images.bottom_tab_overlay
-      }
-      fadeDuration={0}
-      style={styles.bottomTabOverlay}
-    />
+export const TabBar = (props, styles, colors, tabBarTheme) => {
+  let background = colors.colorScheme === 'dark'
+    ? images.bottom_tab_overlay_dark
+    : images.bottom_tab_overlay
+
+  if (tabBarTheme) {
+    background = tabBarTheme === 'dark'
+      ? images.bottom_tab_overlay_dark
+      : images.bottom_tab_overlay
+  }
+
+  return (
     <View>
-      <TabBarAddButton />
-      <BottomTabBar {...props} />
+      <Image
+        source={background}
+        fadeDuration={0}
+        style={styles.bottomTabOverlay}
+      />
+      <View>
+        <TabBarAddButton />
+        <BottomTabBar {...props} />
+      </View>
     </View>
-  </View>
-)
+  )
+}
 
 export const TabPage = () => {
   const { badgeCount } = useNotifications()
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
+  const { tabBarTheme } = useContext(SafeAreaContext)
+
   return (
     <Tab.Navigator
+      lazy={false}
       screenOptions={defaultTabOptions}
       tabBarOptions={defaultTabBarOptions(styles, colors)}
-      tabBar={TabBar(styles, colors)}
-      lazy={false}
+      tabBar={(
+        (props) => tabBarTheme !== 'hide'
+          ? TabBar(props, styles, colors, tabBarTheme)
+          : null
+      )}
     >
       {tabPages.map((page, key) => (
         cloneElement(page, {
@@ -210,18 +237,21 @@ export const loggedInPages = [
   <Stack.Screen component={CreateRoomPage} name={routes.CREATE_ROOM} />,
   <Stack.Screen component={RoomPage} name={routes.ROOM} />,
   <Stack.Screen component={LanguagesPage} name={routes.LANGUAGES} />,
+  <Stack.Screen component={SearchPage} name={routes.SEARCH} />,
 ]
 
 // Main Section
 // TODO: use sagas
 const AppNavigation = () => {
+  const { colors } = useAppColors()
+
   const { isLoggedIn, profile } = useUser()
-  const { persistNotification, fetchPendingNotifications } = useNotifications()
   const { trackPageView } = useAnalytics()
+
   const navigationRef = useRef()
   const routeNameRef = useRef()
 
-  const { colors } = useAppColors()
+  const { setupNotifications } = useMessaging(navigationRef)
 
   const navigationTheme = {
     dark: colors.colorScheme === 'dark',
@@ -237,85 +267,9 @@ const AppNavigation = () => {
 
   useEffect(() => {
     RNBootSplash.hide({ fade: true })
+    setupNotifications()
     trackPageView(routes.HOME)
-  }, [trackPageView])
-
-  const handleInitialNotification = useCallback((remoteMessage) => {
-    if (remoteMessage && isLoggedIn) {
-      navigationRef.current?.navigate(routes.NOTIFICATIONS)
-    }
-  }, [isLoggedIn])
-
-  useEffect(() => {
-    const handlePendingNotifications = async () => {
-      fetchPendingNotifications()
-      // remove background notifications
-      await AsyncStorage.removeItem('backgroundNotifications')
-      // reset badge number
-      PushNotification.setApplicationIconBadgeNumber(0)
-    }
-
-    const appStateChange = (state) => {
-      if (state === 'active') {
-        handlePendingNotifications()
-      }
-    }
-
-    handlePendingNotifications()
-
-    AppState.addEventListener('change', appStateChange)
-    return () => {
-      AppState.removeEventListener('change', appStateChange)
-    }
-  }, [fetchPendingNotifications])
-
-  useEffect(() => {
-    // persistNotification({
-    //   messageId: 'test-1',
-    //   sentTime: Date.now(),
-    //   data: {
-    //     type: 'system',
-    //     payload: JSON.stringify({
-    //       author: {
-    //         displayName: 'Kebetoo',
-    //         certified: true,
-    //         photoURL: 'https://kebetoo.com/assets/img/icon.png',
-    //       },
-    //       systemMessage: '',
-    //       content: 'Kebetoo vous souhaite la bienvenue!',
-    //       postId: '600316e3c78fa70017137655',
-    //     }),
-    //   },
-    // })
-
-    // persistNotification({
-    //   messageId: 'test-2',
-    //   sentTime: Date.now(),
-    //   data: {
-    //     type: 'system',
-    //     payload: JSON.stringify({
-    //       author: {
-    //         displayName: 'Kebetoo',
-    //         certified: true,
-    //         photoURL: 'https://kebetoo.com/assets/img/icon.png',
-    //       },
-    //       systemMessage: 'Du nouveau sur Kebetoo — photos de profil, rooms ...',
-    //       content: 'Cliquez ici pour en savoir plus',
-    //       postId: '600316e3c78fa70017137655',
-    //     }),
-    //   },
-    // })
-
-    // notification opened app from quit state
-    messaging().getInitialNotification().then(handleInitialNotification)
-    // notification opened app from background state
-    messaging().onNotificationOpenedApp(handleInitialNotification)
-    // fcm token refresh
-    const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
-      api.authors.update(profile.uid, { notificationToken })
-    })  
-    return unsubscribeTokenRefresh
-  }, [handleInitialNotification, persistNotification, profile.uid])
+  }, [])
 
   const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name
 
@@ -335,18 +289,21 @@ const AppNavigation = () => {
   }, [trackPageView])
 
   return (
-    <NavigationContainer
-      ref={navigationRef}
-      testRef={navigationRef}
-      onReady={onNavigationReady}
-      onStateChange={onNavigationStateChange}
-      theme={navigationTheme}
-    >
-      <Stack.Navigator screenOptions={defaultMainScreenOptions}>
-        {isLoggedIn && loggedInPages.map(createPage)}
-        {!isLoggedIn && notLoggedInPages.map(createPage)}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PortalProvider>
+      <NavigationContainer
+        ref={navigationRef}
+        testRef={navigationRef}
+        onReady={onNavigationReady}
+        onStateChange={onNavigationStateChange}
+        theme={navigationTheme}
+      >
+        <Stack.Navigator screenOptions={defaultMainScreenOptions}>
+          {isLoggedIn && loggedInPages.map(createPage)}
+          {!isLoggedIn && notLoggedInPages.map(createPage)}
+        </Stack.Navigator>
+      </NavigationContainer>
+      <PortalHost name="bottom-sheet" />
+    </PortalProvider>
   )
 }
 

@@ -70,7 +70,7 @@ describe('app navigation', () => {
   })
 
   it('has 12 pages for authenticated users', () => {
-    expect(loggedInPages.length).toBe(13)
+    expect(loggedInPages.length).toBe(14)
   })
 
   it('has 1 page for unauthenticated users', () => {
