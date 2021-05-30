@@ -97,14 +97,14 @@ const Footer = ({ children }) => {
   )
 }
 
-const CommentsPlaceholder = ({ title, onDismiss }) => {
+export const CommentsCount = ({ count, onDismiss }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
 
   return (
     <View style={styles.commentPanelHeader}>
       <Typography
-        text={title}
+        text={`${readableNumber(count)} comments`}
         systemWeight={Typography.weights.semibold}
         style={styles.text}
       />
@@ -119,7 +119,7 @@ const CommentsPlaceholder = ({ title, onDismiss }) => {
   )
 }
 
-const CommentsSection = ({
+export const CommentsBottomSheet = ({
   story, count, bottomSheet, onBottomSheetIndexChange,
 }) => {
   const commentInput = useRef()
@@ -147,9 +147,9 @@ const CommentsSection = ({
         backdropComponent={renderBackdrop}
         onChange={onBottomSheetIndexChange}
       >
-        <CommentsPlaceholder
+        <CommentsCount
           onDismiss={() => bottomSheet.current.close()}
-          title={`${readableNumber(count)} comments`}
+          count={count}
         />
         <CommentsView
           {...commentHelpers}
@@ -256,7 +256,7 @@ const StorySlide = ({
       </View>
       <StoryViewActionBar actions={actions} />
       {focused && (
-        <CommentsSection
+        <CommentsBottomSheet
           story={story}
           count={count.comments}
           bottomSheet={bottomSheet}

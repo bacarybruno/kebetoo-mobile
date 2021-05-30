@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import { View, TouchableOpacity, Platform } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import dayjs from 'dayjs'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
@@ -173,7 +173,15 @@ export const Content = ({ post, ...otherProps }) => {
 }
 
 const BasicPost = ({
-  post, author, originalAuthor, onOptions, isRepost, mode, size = 35, withReactions = true, badge,
+  post,
+  author,
+  originalAuthor,
+  onOptions,
+  isRepost,
+  mode,
+  size = 35,
+  withReactions = true,
+  badge,
 }) => {
   const { navigate } = useNavigation()
   const { profile } = useUser()

@@ -73,10 +73,10 @@ const Comments = ({ route, navigation }) => {
   const scrollView = useRef()
 
   const commentHelpers = useComments(
-    navigation,
     post,
     commentInput,
     scrollView,
+    navigation,
   )
 
   const renderHeader = (

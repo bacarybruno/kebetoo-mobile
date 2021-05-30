@@ -10,6 +10,7 @@ import auth from '@react-native-firebase/auth'
 import { SafeAreaContext } from '@app/shared/contexts'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import { PortalProvider } from '@gorhom/portal'
 
 // Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper')
@@ -64,17 +65,19 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
     const Component = (
       <SafeAreaContext.Provider value={safeAreaCtxValue}>
         <Provider store={store || mockStore(__storeState__)}>
-          {disconnectNavigation
-            ? <WrappedComponent {...propsWithArgs} />
-            : (
-              <NavigationContainer>
-                <Stack.Navigator>
-                  <Stack.Screen name="jest">
-                    {(props) => <WrappedComponent {...propsWithArgs} />}
-                  </Stack.Screen>
-                </Stack.Navigator>
-              </NavigationContainer>
-            )}
+          <PortalProvider>
+            {disconnectNavigation
+              ? <WrappedComponent {...propsWithArgs} />
+              : (
+                <NavigationContainer>
+                  <Stack.Navigator>
+                    <Stack.Screen name="jest">
+                      {(props) => <WrappedComponent {...propsWithArgs} />}
+                    </Stack.Screen>
+                  </Stack.Navigator>
+                </NavigationContainer>
+              )}
+          </PortalProvider>
         </Provider>
       </SafeAreaContext.Provider>
     )

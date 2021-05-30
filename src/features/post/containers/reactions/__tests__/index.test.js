@@ -8,7 +8,7 @@ import authors from '@fixtures/authors'
 import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
 
-import Reactions from '../index'
+import Reactions, { CommentsBottomSheet } from '../index'
 
 beforeEach(jest.clearAllMocks)
 
@@ -107,13 +107,12 @@ it('toggles reaction', async () => {
 })
 
 describe('handles comments', () => {
-  test('navigation', () => {
+  test('bottom sheet', () => {
     const { wrapper } = givenReactions()
     act(() => {
       wrapper.root.findByProps({ testID: 'comment-button' }).props.onPress()
     })
-    expect(useNavigation().navigate).toBeCalledTimes(1)
-    expect(useNavigation().navigate).toBeCalledWith(routes.COMMENTS, expect.anything())
+    expect(wrapper.root.findAllByType(CommentsBottomSheet).length).toBe(1)
   })
   test('onPress custom handler', () => {
     const { wrapper, props } = givenReactions({

@@ -43,7 +43,7 @@ const mapComments = (comment) => ({
 })
 
 // TODO: paginate comments
-const useComments = ({ navigate }, post, commentInput, scrollView) => {
+const useComments = (post, commentInput, scrollView, { navigate }) => {
   const audioRecorder = useAudioRecorder()
 
   const initialComments = post.comments?.map(mapComments)
