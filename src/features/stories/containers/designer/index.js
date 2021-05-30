@@ -227,6 +227,15 @@ const StoryDesigner = ({
     />
   )
 
+  let headerTitle = ''
+  if (isRecording) {
+    headerTitle = 'Recording...'
+  } else if (preparing) {
+    headerTitle = 'Preparing...'
+  } else if (records.length > 0) {
+    headerTitle = `${records.length} Videos`
+  }
+
   return (
     <RNCamera
       ref={camera}
@@ -243,15 +252,8 @@ const StoryDesigner = ({
     >
       <ProgressIndicator currentProgress={progress} animateColor />
       <AppHeader
-        title={(
-          isRecording
-            ? 'Recording...'
-            : preparing
-              ? 'Preparing...'
-              : records.length > 0
-                ? `${records.length} Videos`
-                : ''
-        )}
+        title={headerTitle}
+        loading={preparing}
         style={styles.padding}
         onGoBack={onGoBack}
         iconColor={colors.white}

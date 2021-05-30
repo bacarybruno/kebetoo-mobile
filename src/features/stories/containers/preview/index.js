@@ -269,6 +269,7 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
           iconColor={colors.white}
           titleStyle={{ color: colors.white }}
           onGoBack={onGoBack}
+          loading={processing}
         />
         <TouchableOpacity
           ref={viewShot}
