@@ -5,6 +5,7 @@ import Video from 'react-native-video'
 import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
 import { useNavigation } from '@react-navigation/core'
 import { Portal } from '@gorhom/portal'
+import convertToProxyURL from 'react-native-video-cache'
 
 import { Avatar, MultipleTapHandler, FormatedTypography, Typography } from '@app/shared/components'
 import { readableNumber } from '@app/shared/helpers/strings'
@@ -238,7 +239,7 @@ const StorySlide = ({
             <Video
               repeat
               poster={thumbnail}
-              source={{ uri: source }}
+              source={{ uri: convertToProxyURL(source) }}
               style={[styles.page, styles.video]}
               paused={!focused || paused || commentsOpened}
               ignoreSilentSwitch="ignore"
