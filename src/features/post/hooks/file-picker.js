@@ -149,7 +149,7 @@ const useFilePicker = (uri) => {
     })
     await reset()
     return response
-  }, [])
+  }, [file, reset])
 
   return {
     file,
