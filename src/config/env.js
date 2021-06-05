@@ -5,6 +5,12 @@ export default {
   apiBaseUrl: API_BASE_URL,
   assetsBaseUrl: ASSETS_BASE_URL,
   googleSigninWebClientId: GOOGLE_SIGNIN_WEB_CLIENT_ID,
+  stories: {
+    aspectRatio: {
+      width: 540,
+      height: 960,
+    },
+  },
   maxLength: {
     fullname: 60,
     username: 20,

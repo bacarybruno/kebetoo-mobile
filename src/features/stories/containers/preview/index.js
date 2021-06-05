@@ -146,8 +146,8 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
       dispatch({ type: 'setReversedVideo', payload: result })
     }
 
-    const createSlowMoVideo = async (video) => {
-      const result = await videoEditor.slowmo(video)
+    const createSlowMoVideo = async (video, videoDuration) => {
+      const result = await videoEditor.slowmo(video, videoDuration)
       dispatch({ type: 'setSlowMoVideo', payload: result })
     }
 
@@ -164,9 +164,13 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
 
       dispatch({ type: 'setMergedVideo', payload: result })
 
-      await createBoomerangVideo(result)
-      await createReversedVideo(result)
-      await createSlowMoVideo(result)
+      const videoDuration = await videoEditor.getDuration(result)
+
+      await Promise.all([
+        createSlowMoVideo(result, videoDuration),
+        createBoomerangVideo(result),
+        createReversedVideo(result)
+      ])
 
       dispatch({ type: 'setProcessing', payload: false })
     }
@@ -224,20 +228,26 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
     text: 'Next',
     disabled: !mergedVideo,
     onPress: async () => {
+      dispatch({ type: 'setProcessing', payload: true })
       const captured = await captureRef(viewShot.current)
       const result = await videoEditor.compose(
-        mergedVideo,
-        videoEditor.overlayVideoWithImage(captured)
+        getDisplayedVideo(),
+        videoEditor.overlayVideoWithImage(captured),
+        videoEditor.compressVideo,
       )
+      dispatch({ type: 'setProcessing', payload: false })
       onFinish(result)
     }
   }]
 
-  let video = records[videoIndex]
-  if (mergedVideo) video = mergedVideo
-  if (videoMode === VideoModes.Boomerang) video = boomerangVideo
-  if (videoMode === VideoModes.Reverse) video = reversedVideo
-  if (videoMode === VideoModes.Slowmo) video = slowMoVideo
+  const getDisplayedVideo = () => {
+    let video = records[videoIndex]
+    if (mergedVideo) video = mergedVideo
+    if (videoMode === VideoModes.Boomerang) video = boomerangVideo
+    if (videoMode === VideoModes.Reverse) video = reversedVideo
+    if (videoMode === VideoModes.Slowmo) video = slowMoVideo
+    return video
+  }
 
   const onPickSticker = (sticker) => {
     storyImageDesigner.current.addNode(sticker)
@@ -248,6 +258,8 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
     storyTextDesigner.current.blurAll()
     storyImageDesigner.current.blurAll()
   }
+
+  const video = getDisplayedVideo()
 
   return (
     <>

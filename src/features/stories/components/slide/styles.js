@@ -1,4 +1,4 @@
-import { PixelRatio, StyleSheet } from 'react-native'
+import { PixelRatio, Platform, StyleSheet } from 'react-native'
 
 import { metrics } from '@app/theme'
 
@@ -20,7 +20,10 @@ export default (colors) => StyleSheet.create({
   },
   footer: {
     position: 'absolute',
-    bottom: metrics.spacing.xl + metrics.spacing.md,
+    bottom: Platform.select({
+      ios: metrics.tabBarFullHeight + metrics.spacing.xl + metrics.spacing.md,
+      android: metrics.spacing.xl + metrics.spacing.md,
+    }),
     left: metrics.spacing.md,
     width: '70%',
     zIndex: 3,
