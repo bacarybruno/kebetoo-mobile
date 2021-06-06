@@ -1,6 +1,6 @@
 
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, View } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import RNFetchBlob from 'rn-fetch-blob'

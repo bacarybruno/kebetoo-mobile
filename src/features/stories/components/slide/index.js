@@ -187,11 +187,9 @@ const StorySlide = ({
   const { count, onReaction, userReactionType } = useStoriesReactions({ story, author: author.id, comments })
 
   useEffect(() => {
-    if (focused) {
-      player.current?.seek(0)
-      setPaused(false)
-    }
-  }, [focused])
+    player.current?.seek(0)
+    setPaused(false)
+  }, [])
 
   const onPress = useCallback(() => setPaused((state) => !state), [])
 

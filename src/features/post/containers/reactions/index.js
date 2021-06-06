@@ -1,5 +1,5 @@
 import { memo, useCallback, useState, useEffect, useMemo, useRef } from 'react'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Portal } from '@gorhom/portal'
 
@@ -43,13 +43,13 @@ export const CommentsBottomSheet = ({
     <Portal hostName="bottom-sheet">
       <BottomSheet
         index={2}
-        animateOnMount
         ref={bottomSheet}
         handleComponent={null}
         snapPoints={snapPoints}
         backgroundComponent={null}
         backdropComponent={renderBackdrop}
         onChange={onBottomSheetIndexChange}
+        animateOnMount={Platform.OS === 'android'}
       >
         <CommentsCount
           onDismiss={() => bottomSheet.current.close()}

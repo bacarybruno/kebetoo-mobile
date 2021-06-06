@@ -1928,6 +1928,7 @@ exports[`renders Comments 1`] = `
                                 "height": 0,
                                 "minHeight": 45,
                                 "overflow": "hidden",
+                                "paddingRight": 8,
                                 "shadowColor": "rgba(0, 0, 0, 255)",
                                 "shadowOffset": Object {
                                   "x": 0,
@@ -1957,7 +1958,6 @@ exports[`renders Comments 1`] = `
                                 disableAutofocus={true}
                                 editable={true}
                                 maxLength={1024}
-                                multiline={true}
                                 onBlur={[Function]}
                                 onChangeText={[Function]}
                                 onContentSizeChange={[Function]}
@@ -4004,6 +4004,7 @@ exports[`renders Comments in loading state 1`] = `
                                 "height": 0,
                                 "minHeight": 45,
                                 "overflow": "hidden",
+                                "paddingRight": 8,
                                 "shadowColor": "rgba(0, 0, 0, 255)",
                                 "shadowOffset": Object {
                                   "x": 0,
@@ -4033,7 +4034,6 @@ exports[`renders Comments in loading state 1`] = `
                                 disableAutofocus={true}
                                 editable={true}
                                 maxLength={1024}
-                                multiline={true}
                                 onBlur={[Function]}
                                 onChangeText={[Function]}
                                 onContentSizeChange={[Function]}

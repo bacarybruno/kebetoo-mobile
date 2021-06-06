@@ -67,7 +67,6 @@ export const CommentInput = ({
       <View style={styles.flexible}>
         {!audioRecorder.hasRecording && (
           <TextInput
-            multiline
             fieldName="comment"
             onValueChange={onChange}
             value={value}
@@ -84,7 +83,12 @@ export const CommentInput = ({
             {...inputProps}
           >
             {reply && (
-              <ReplyInfo info={reply} size={baseReplyInfoSize} onClose={onReplyClose} />
+              <ReplyInfo
+                info={reply}
+                size={baseReplyInfoSize}
+                onClose={onReplyClose}
+                style={styles.reply}
+              />
             )}
           </TextInput>
         )}

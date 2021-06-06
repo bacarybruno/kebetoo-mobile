@@ -14,6 +14,7 @@ export { default as ReadMore } from './read-more'
 export { default as CameraRollPicker } from './camera-roll-picker'
 export { default as VideoPlayer } from './video-player'
 export { default as SegmentedControl } from './segmented-control'
+export { default as ViewPager } from './view-pager'
 export {
   FullButton, IconButton, OutlinedButton, Pressable, TabBarAddButton,
 } from './buttons'

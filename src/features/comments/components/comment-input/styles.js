@@ -24,6 +24,7 @@ export default (colors) => StyleSheet.create({
     borderTopRightRadius: bottomBarSize / 2,
     backgroundColor: colors.backgroundSecondary,
     borderWidth: StyleSheet.hairlineWidth,
+    paddingRight: metrics.spacing.sm,
     ...elevation(1),
   },
   textInputWrapperWithReply: {
@@ -39,5 +40,8 @@ export default (colors) => StyleSheet.create({
     borderColor: colors.border,
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),
+  },
+  reply: {
+    marginLeft: metrics.spacing.sm,
   },
 })

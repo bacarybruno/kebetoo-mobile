@@ -15,9 +15,6 @@ export default (colors) => StyleSheet.create({
   caption: {
     marginBottom: metrics.spacing.xs,
   },
-  replyInfoWrapper: {
-    marginHorizontal: metrics.marginHorizontal / 3,
-  },
   replyInfoContainer: {
     flexDirection: 'row',
     borderRadius: metrics.radius.sm,

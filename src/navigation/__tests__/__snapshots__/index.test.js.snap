@@ -755,7 +755,193 @@ exports[`app navigation renders AppNavigation for authenticated user 1`] = `
                                 },
                               ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "rgba(28, 28, 30, 255)",
+                                  "flex": 1,
+                                }
+                              }
+                            >
+                              <RNCViewPager
+                                initialPage={1}
+                                onMoveShouldSetResponderCapture={[Function]}
+                                onPageScroll={[Function]}
+                                onPageScrollStateChanged={[Function]}
+                                onPageSelected={[Function]}
+                                orientation="horizontal"
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(28, 28, 30, 255)",
+                                    "flex": 1,
+                                  }
+                                }
+                              >
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                />
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                          "height": 60,
+                                        },
+                                        Object {
+                                          "left": 0,
+                                          "paddingHorizontal": 16,
+                                          "position": "absolute",
+                                          "top": 0,
+                                          "width": "100%",
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "flex": 8,
+                                        }
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "flexDirection": "row",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          style={
+                                            Object {
+                                              "flex": 1,
+                                            }
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
+                                            }
+                                          >
+                                            <Text
+                                              numberOfLines={1}
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 22,
+                                                    "fontWeight": "600",
+                                                    "letterSpacing": 0.34375,
+                                                    "lineHeight": 28,
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "color": "rgba(0,0,0,0.87)",
+                                                    },
+                                                    undefined,
+                                                    Array [
+                                                      Object {
+                                                        "flex": 1,
+                                                      },
+                                                      Object {
+                                                        "color": "rgba(255, 255, 255, 255)",
+                                                      },
+                                                    ],
+                                                  ],
+                                                ]
+                                              }
+                                            >
+                                              Virals
+                                            </Text>
+                                            <ActivityIndicator
+                                              animating={false}
+                                              color="rgba(0, 122, 255, 255)"
+                                              hidesWhenStopped={true}
+                                              size="small"
+                                              style={
+                                                Object {
+                                                  "marginLeft": 8,
+                                                }
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                    </View>
+                                    <View
+                                      accessible={true}
+                                      focusable={true}
+                                      onClick={[Function]}
+                                      onResponderGrant={[Function]}
+                                      onResponderMove={[Function]}
+                                      onResponderRelease={[Function]}
+                                      onResponderTerminate={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      style={
+                                        Object {
+                                          "opacity": 1,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        allowFontScaling={false}
+                                        style={
+                                          Object {
+                                            "color": "rgba(255, 255, 255, 255)",
+                                            "fontFamily": "Ionicons",
+                                            "fontSize": 30,
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          }
+                                        }
+                                        text="ionicon-add"
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </RNCViewPager>
+                            </View>
+                          </View>
                         </View>
                       </View>
                       <View
@@ -3060,7 +3246,193 @@ exports[`app navigation renders AppNavigation for unauthenticated user 1`] = `
                                 },
                               ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "rgba(28, 28, 30, 255)",
+                                  "flex": 1,
+                                }
+                              }
+                            >
+                              <RNCViewPager
+                                initialPage={1}
+                                onMoveShouldSetResponderCapture={[Function]}
+                                onPageScroll={[Function]}
+                                onPageScrollStateChanged={[Function]}
+                                onPageSelected={[Function]}
+                                orientation="horizontal"
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(28, 28, 30, 255)",
+                                    "flex": 1,
+                                  }
+                                }
+                              >
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                />
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                          "height": 60,
+                                        },
+                                        Object {
+                                          "left": 0,
+                                          "paddingHorizontal": 16,
+                                          "position": "absolute",
+                                          "top": 0,
+                                          "width": "100%",
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "flex": 8,
+                                        }
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "flexDirection": "row",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          style={
+                                            Object {
+                                              "flex": 1,
+                                            }
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
+                                            }
+                                          >
+                                            <Text
+                                              numberOfLines={1}
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 22,
+                                                    "fontWeight": "600",
+                                                    "letterSpacing": 0.34375,
+                                                    "lineHeight": 28,
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "color": "rgba(0,0,0,0.87)",
+                                                    },
+                                                    undefined,
+                                                    Array [
+                                                      Object {
+                                                        "flex": 1,
+                                                      },
+                                                      Object {
+                                                        "color": "rgba(255, 255, 255, 255)",
+                                                      },
+                                                    ],
+                                                  ],
+                                                ]
+                                              }
+                                            >
+                                              Virals
+                                            </Text>
+                                            <ActivityIndicator
+                                              animating={false}
+                                              color="rgba(0, 122, 255, 255)"
+                                              hidesWhenStopped={true}
+                                              size="small"
+                                              style={
+                                                Object {
+                                                  "marginLeft": 8,
+                                                }
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                    </View>
+                                    <View
+                                      accessible={true}
+                                      focusable={true}
+                                      onClick={[Function]}
+                                      onResponderGrant={[Function]}
+                                      onResponderMove={[Function]}
+                                      onResponderRelease={[Function]}
+                                      onResponderTerminate={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      style={
+                                        Object {
+                                          "opacity": 1,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        allowFontScaling={false}
+                                        style={
+                                          Object {
+                                            "color": "rgba(255, 255, 255, 255)",
+                                            "fontFamily": "Ionicons",
+                                            "fontSize": 30,
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          }
+                                        }
+                                        text="ionicon-add"
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </RNCViewPager>
+                            </View>
+                          </View>
                         </View>
                       </View>
                       <View
@@ -7712,7 +8084,193 @@ exports[`tabs renders TabNavigation 1`] = `
                                 },
                               ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "rgba(28, 28, 30, 255)",
+                                  "flex": 1,
+                                }
+                              }
+                            >
+                              <RNCViewPager
+                                initialPage={1}
+                                onMoveShouldSetResponderCapture={[Function]}
+                                onPageScroll={[Function]}
+                                onPageScrollStateChanged={[Function]}
+                                onPageSelected={[Function]}
+                                orientation="horizontal"
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(28, 28, 30, 255)",
+                                    "flex": 1,
+                                  }
+                                }
+                              >
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                />
+                                <View
+                                  collapsable={false}
+                                  style={
+                                    Array [
+                                      undefined,
+                                      Object {
+                                        "bottom": 0,
+                                        "height": undefined,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "width": undefined,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Array [
+                                        Object {
+                                          "alignItems": "center",
+                                          "flexDirection": "row",
+                                          "height": 60,
+                                        },
+                                        Object {
+                                          "left": 0,
+                                          "paddingHorizontal": 16,
+                                          "position": "absolute",
+                                          "top": 0,
+                                          "width": "100%",
+                                        },
+                                      ]
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "flex": 8,
+                                        }
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "flexDirection": "row",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          style={
+                                            Object {
+                                              "flex": 1,
+                                            }
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Object {
+                                                "alignItems": "center",
+                                                "flexDirection": "row",
+                                              }
+                                            }
+                                          >
+                                            <Text
+                                              numberOfLines={1}
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#000000",
+                                                    "fontFamily": "System",
+                                                    "fontSize": 22,
+                                                    "fontWeight": "600",
+                                                    "letterSpacing": 0.34375,
+                                                    "lineHeight": 28,
+                                                  },
+                                                  Array [
+                                                    Object {
+                                                      "color": "rgba(0,0,0,0.87)",
+                                                    },
+                                                    undefined,
+                                                    Array [
+                                                      Object {
+                                                        "flex": 1,
+                                                      },
+                                                      Object {
+                                                        "color": "rgba(255, 255, 255, 255)",
+                                                      },
+                                                    ],
+                                                  ],
+                                                ]
+                                              }
+                                            >
+                                              Virals
+                                            </Text>
+                                            <ActivityIndicator
+                                              animating={false}
+                                              color="rgba(0, 122, 255, 255)"
+                                              hidesWhenStopped={true}
+                                              size="small"
+                                              style={
+                                                Object {
+                                                  "marginLeft": 8,
+                                                }
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                    </View>
+                                    <View
+                                      accessible={true}
+                                      focusable={true}
+                                      onClick={[Function]}
+                                      onResponderGrant={[Function]}
+                                      onResponderMove={[Function]}
+                                      onResponderRelease={[Function]}
+                                      onResponderTerminate={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      style={
+                                        Object {
+                                          "opacity": 1,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        allowFontScaling={false}
+                                        style={
+                                          Object {
+                                            "color": "rgba(255, 255, 255, 255)",
+                                            "fontFamily": "Ionicons",
+                                            "fontSize": 30,
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          }
+                                        }
+                                        text="ionicon-add"
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </RNCViewPager>
+                            </View>
+                          </View>
                         </View>
                       </View>
                       <View

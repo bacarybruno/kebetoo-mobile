@@ -18,11 +18,11 @@ export const DeleteIconButton = ({ onPress }) => {
   )
 }
 
-const ReplyInfo = ({ info, size, onClose }) => {
+const ReplyInfo = ({ info, size, onClose, style }) => {
   const { content, author } = info
   const styles = useAppStyles(createThemedStyles)
   return (
-    <View style={{ ...styles.replyInfoWrapper, height: size }}>
+    <View style={[{ height: size }, style]}>
       <View style={[styles.replyInfoContainer, { borderColor: generateColor(author.displayName) }]}>
         <View style={styles.replyInfoContent}>
           <Typography

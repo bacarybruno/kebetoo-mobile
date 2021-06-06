@@ -17,6 +17,8 @@ const CreateStoryPage = ({
   resetVideoFile,
   onFinish,
 }) => {
+  if (!isFocused) return null
+
   const [records, setRecords] = useState([])
   const [finishRecording, setFinishRecording] = useState(false)
 
