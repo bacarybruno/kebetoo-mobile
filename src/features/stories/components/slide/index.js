@@ -6,18 +6,22 @@ import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
 import { useNavigation } from '@react-navigation/core'
 import { Portal } from '@gorhom/portal'
 import convertToProxyURL from 'react-native-video-cache'
+import Share from 'react-native-share'
 
 import { Avatar, MultipleTapHandler, FormatedTypography, Typography } from '@app/shared/components'
 import { readableNumber } from '@app/shared/helpers/strings'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
 import { colorGradient } from '@app/theme/colors'
 import { REACTION_TYPES } from '@app/features/stories/hooks/reactions'
 import CommentsView from '@app/features/comments/components/comments-view'
+import { getMimeType } from '@app/shared/helpers/file'
 
 import createThemedStyles from './styles'
 import StoryViewActionBar from '../actions-bar'
 import useStoriesReactions from '../../hooks/reactions'
 import { useComments } from '../../hooks'
+import RNFetchBlob from 'rn-fetch-blob'
+import { strings } from '@app/config'
 
 const StoryAuthor = ({ author }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -185,6 +189,7 @@ const StorySlide = ({
   const bottomSheet = useRef()
 
   const { count, onReaction, userReactionType } = useStoriesReactions({ story, author: author.id, comments })
+  const { profile } = useUser()
 
   useEffect(() => {
     player.current?.seek(0)
@@ -211,6 +216,22 @@ const StorySlide = ({
   }, {
     icon: 'arrow-redo',
     text: readableNumber(count.shares),
+    onPress: async () => {
+      const type = getMimeType(source)
+      const configOptions = { fileCache: true }
+      const file = await RNFetchBlob.config(configOptions).fetch('GET', source)
+      const filePath = file.path()
+      let base64Data = await file.readFile('base64')
+      base64Data = `data:${type};base64,${base64Data}`
+      await Share.open({
+        url: base64Data,
+        title: strings.virals.share_title,
+        message: strings.formatString(strings.virals.share_message, profile.displayName),
+        type,
+      })
+      // remove the image from device's storage
+      await RNFS.unlink(filePath)
+    }
   }]
 
   return (
@@ -253,7 +274,7 @@ const StorySlide = ({
         <View style={[styles.overlay, styles.darkOverlay]} pointerEvents="box-none" />
         <PlayButton onPress={onPress} visible={paused} />
       </View>
-      <StoryViewActionBar actions={actions} />
+      <StoryViewActionBar actions={actions} style={styles.actionBar} />
       {focused && (
         <CommentsBottomSheet
           story={story}

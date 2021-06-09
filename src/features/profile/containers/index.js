@@ -1,7 +1,8 @@
 import { memo, useCallback, useState } from 'react'
 import {
-  View, ScrollView, Platform, Share, TouchableOpacity, Linking,
+  View, ScrollView, Platform, TouchableOpacity, Linking,
 } from 'react-native'
+import Share from 'react-native-share'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -303,10 +304,10 @@ const ProfilePage = memo(() => {
   )
 
   const shareApp = useCallback(() => {
-    Share.share({
-      title: strings.profile.share_title,
-      url: strings.profile.share_url,
-      message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
+    Share.open({
+     title: strings.profile.share_title,
+     url: strings.profile.share_url,
+     message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
     })
   }, [])
 

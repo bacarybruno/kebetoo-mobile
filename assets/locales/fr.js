@@ -196,6 +196,10 @@ const locales = Object.freeze({
     report_room_message: 'Je signale cette room car ...',
     exit_room: 'Quitter cette room',
   },
+  virals: {
+    share_title: 'Nouveau partage Kebetoo',
+    share_message: '{0} a partagé ce viral avec vous. Visionnez plus de contenus de ce genre sur Kebetoo Android et iOS.',
+  },
   dates: {
     format_month_year: 'MMMM YYYY',
   },

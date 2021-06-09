@@ -545,6 +545,8 @@ PODS:
     - React
   - RNScreens (2.4.0):
     - React
+  - RNShare (6.2.1):
+    - React-Core
   - RNShareMenu (5.0.3):
     - React
   - RNSnackbar (2.4.0):
@@ -642,6 +644,7 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNShare (from `../node_modules/react-native-share`)
   - RNShareMenu (from `../node_modules/react-native-share-menu`)
   - RNSnackbar (from `../node_modules/react-native-snackbar`)
   - RNSound (from `../node_modules/react-native-sound`)
@@ -813,6 +816,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNShare:
+    :path: "../node_modules/react-native-share"
   RNShareMenu:
     :path: "../node_modules/react-native-share-menu"
   RNSnackbar:
@@ -923,6 +928,7 @@ SPEC CHECKSUMS:
   RNPermissions: 4c8a37b4dde50f1f152bf8cd08c4a43d2355829e
   RNReanimated: 955cf4068714003d2f1a6e2bae3fb1118f359aff
   RNScreens: b5c0e1b2b04512919e78bd3898e144a157ce2363
+  RNShare: 5ac8f6532ca4cd80fc71caef1cfbba1854a6a045
   RNShareMenu: 555df30344da0d60947ccc781b0447ee9e5cd48f
   RNSnackbar: be3333a21a453ccc272f41a8add5a71f7d44dfcd
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
