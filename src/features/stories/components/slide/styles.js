@@ -4,6 +4,11 @@ import { metrics } from '@app/theme'
 
 export const iconSize = Math.min(110 / PixelRatio.get(), 40)
 
+const bottomOffset = Platform.select({
+  ios: metrics.tabBarFullHeight,
+  android: 0,
+})
+
 export default (colors) => StyleSheet.create({
   page: {
     width: metrics.screenWidth,
@@ -18,12 +23,12 @@ export default (colors) => StyleSheet.create({
     bottom: metrics.spacing.xl,
     right: metrics.spacing.sm,
   },
+  actionBar: {
+    marginBottom: bottomOffset,
+  },
   footer: {
     position: 'absolute',
-    bottom: Platform.select({
-      ios: metrics.tabBarFullHeight + metrics.spacing.xl + metrics.spacing.md,
-      android: metrics.spacing.xl + metrics.spacing.md,
-    }),
+    bottom: metrics.spacing.xl + metrics.spacing.md + bottomOffset,
     left: metrics.spacing.md,
     width: '70%',
     zIndex: 3,

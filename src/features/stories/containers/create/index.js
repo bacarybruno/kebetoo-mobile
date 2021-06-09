@@ -50,6 +50,7 @@ const CreateStoryPage = ({
         records={records}
         onGoBack={() => setFinishRecording(false)}
         onFinish={onFinish}
+        isFocused={isFocused}
       />
     )
   }

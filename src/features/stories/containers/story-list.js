@@ -14,7 +14,7 @@ import createThemedStyles from './styles'
 const StoryItems = ({ stories, currentStory, isFocused }) => {
   const items = stories.map((story, index) => {
     return (
-      <View key={story.id}>
+      <View key={story.id} collapsable={false}>
         <StorySlide
           story={story}
           thumbnail={getVideoThumbnail(story.video.url)}

@@ -1,4 +1,4 @@
-import { Share } from 'react-native'
+import Share from 'react-native-share'
 import { act, fireEvent } from 'react-native-testing-library'
 import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
@@ -108,12 +108,11 @@ describe('buttons', () => {
   })
   it('shares the app', async () => {
     let wrapper = null
-    Share.share = jest.fn()
     await act(async () => {
       const { wrapper: asyncWrapper } = await givenProfile()
       wrapper = asyncWrapper
     })
     fireEvent.press(wrapper.root.findByProps({ text: strings.profile.invite_fiend_title }))
-    expect(Share.share).toBeCalledTimes(1)
+    expect(Share.open).toBeCalledTimes(1)
   })
 })

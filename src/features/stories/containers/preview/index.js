@@ -7,6 +7,7 @@ import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { FlatList } from 'react-native-gesture-handler'
 import RNFetchBlob from 'rn-fetch-blob'
+import { useIsFocused } from '@react-navigation/core'
 
 import { AppHeader, NoContent, Typography } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
@@ -104,6 +105,8 @@ const StickersBottomSheet = ({ bottonSheetRef, data, onPickSticker }) => {
 const StoryPreview = ({ records, onGoBack, onFinish }) => {
   const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
+
+  const isFocused = useIsFocused()
 
   const [state, dispatch] = useReducer(reducer, initialState)
   const {
@@ -272,6 +275,7 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
           rate={video.speed}
           resizeMode="cover"
           style={styles.video}
+          paused={!isFocused}
           onEnd={loadNextVideo}
         />
         <AppHeader

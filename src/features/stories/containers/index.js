@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
 import { useIsFocused } from '@react-navigation/core'
 import RNFetchBlob from 'rn-fetch-blob'
@@ -59,6 +59,10 @@ const StoriesPage = ({ navigation }) => {
   const isStoriesPageFocused = isFocused && currentPage === 1
   const isCreateStoryPageFocused = currentPage === 0
 
+  const createKey = (key, focused) => {
+    return `${key}-${Platform.OS === 'ios' ? focused : ''}`
+  }
+
   return (
     <View style={styles.wrapper}>
       <ViewPager
@@ -68,7 +72,7 @@ const StoriesPage = ({ navigation }) => {
         initialPage={currentPage}
         onPageSelected={onPageSelected}
       >
-        <View key={`create-story-${isCreateStoryPageFocused}`}>
+        <View key={createKey('create-story', isCreateStoryPageFocused)} collapsable={false}>
           <CreateStoryPage
             pickedFile={pickedFile}
             onFinish={onPreviewFinish}
@@ -78,7 +82,7 @@ const StoriesPage = ({ navigation }) => {
             resetVideoFile={() => setPickedFile(null)}
           />
         </View>
-        <View key={`stories-${isStoriesPageFocused}`}>
+        <View key={createKey('stories', isStoriesPageFocused)} collapsable={false}>
           <StoryListPage
             stories={stories}
             isFocused={isStoriesPageFocused}
