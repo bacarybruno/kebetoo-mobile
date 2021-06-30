@@ -13,7 +13,11 @@ export const SendButton = memo(({
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   return (
-    <TouchableOpacity style={[styles.send, defaultBgColor && { backgroundColor: defaultBgColor }]} onPress={isLoading ? undefined : onPress} {...otherProps}>
+    <TouchableOpacity
+      style={[styles.send, defaultBgColor && { backgroundColor: defaultBgColor }]}
+      onPress={isLoading ? undefined : onPress}
+      {...otherProps}
+    >
       {isLoading
         ? <ActivityIndicator size={25} color={colors.white} />
         : (

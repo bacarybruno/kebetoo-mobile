@@ -34,7 +34,7 @@ function* fetchPosts(action) {
       type: action.payload.page === 0
         ? types.REPLACE_POSTS
         : types.API_FETCH_POSTS_SUCCESS,
-      payload: allowedPosts || []
+      payload: allowedPosts || [],
     })
   } catch (error) {
     yield put({ type: types.API_FETCH_POSTS_ERROR, payload: error })

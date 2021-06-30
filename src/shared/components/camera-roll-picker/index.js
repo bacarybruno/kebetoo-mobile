@@ -1,4 +1,6 @@
-import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react'
+import {
+  memo, useCallback, useEffect, useLayoutEffect, useMemo, useState,
+} from 'react'
 import {
   FlatList, Image, Platform, View, Animated,
 } from 'react-native'
@@ -72,14 +74,14 @@ const Albums = memo(({ previews, onSelect }) => {
   const { colors } = useAppColors()
   const styles = useAppStyles(createThemedStyles)
 
-  const pressableStyle = {
+  const pressableStyle = useMemo(() => ({
     flexDirection: 'column',
     height: itemSize,
     width: itemSize,
     marginBottom: imageMargin,
     backgroundColor: colors.backgroundSecondary,
     ...elevation(3),
-  }
+  }), [colors.backgroundSecondary, imageMargin, itemSize])
 
   const renderItem = useCallback(({ item }) => (
     <Pressable testID={item.title} onPress={() => onSelect(item)} style={pressableStyle}>
@@ -122,7 +124,7 @@ const CameraRollPicker = ({ navigation }) => {
 
   const groupTypes = 'All'
 
-  const cropperThemeOptions = {
+  const cropperThemeOptions = useMemo(() => ({
     cropperActiveWidgetColor: rgbaToHex(colors.pink),
     cropperStatusBarColor: rgbaToHex(iosColors.secondarySystemBackground.dark),
     cropperToolbarColor: rgbaToHex(colors.backgroundSecondary),
@@ -139,7 +141,7 @@ const CameraRollPicker = ({ navigation }) => {
       default: {},
     }),
     enableRotationGesture: true,
-  }
+  }), [colors])
 
   const [selected, setSelected] = useState([])
   const [groupName, setGroupName] = useState()
@@ -211,7 +213,7 @@ const CameraRollPicker = ({ navigation }) => {
             const converted = await RNConvertPhAsset.convertVideoFromUrl({
               url: videoUri,
               convertTo: 'mpeg4',
-              quality: 'medium'
+              quality: 'medium',
             })
             videoUri = converted.path.replace('file://', '')
           }

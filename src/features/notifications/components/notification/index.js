@@ -10,7 +10,9 @@ export const Dot = () => {
   return <View style={styles.dot} />
 }
 
-export const Title = ({ name, message, hasBadge, showDot }) => {
+export const Title = ({
+  name, message, hasBadge, showDot,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <View style={styles.headerTitleWrapper}>

@@ -35,22 +35,24 @@ const Permissions = {
 
   readExternalStorage: async () => {
     if (Platform.OS === 'ios') return Promise.resolve(true)
-    const hasPermissions = await Permissions.handlePermissions(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
+    const hasPermissions = await Permissions.handlePermissions(
+      PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
+    )
     return hasPermissions
   },
 
   writeExternalStorage: async () => {
     if (Platform.OS === 'ios') return Promise.resolve(true)
-    const hasPermissions = await Permissions.handlePermissions(PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE)
+    const hasPermissions = await Permissions.handlePermissions(
+      PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE,
+    )
     return hasPermissions
   },
 
-  externalStorage: async () => {
-    return {
-      readExternalStorage: await Permissions.readExternalStorage(),
-      writeExternalStorage: await Permissions.writeExternalStorage(),
-    }
-  },
+  externalStorage: async () => ({
+    readExternalStorage: await Permissions.readExternalStorage(),
+    writeExternalStorage: await Permissions.writeExternalStorage(),
+  }),
 }
 
 export default Permissions

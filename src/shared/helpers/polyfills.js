@@ -18,6 +18,7 @@ if (!Array.prototype.flatMap) {
       // eslint-disable-next-line no-bitwise
       const len = o.length >>> 0
 
+      // eslint-disable-next-line no-plusplus
       for (let k = 0; k < len; ++k) {
         if (k in o) {
           const partList = callback.call(self, o[k], k, o)

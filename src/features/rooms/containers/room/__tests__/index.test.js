@@ -7,7 +7,7 @@ import Room from '../index'
 const givenRoom = setupTest(Room)({
   navigation: {
     navigate: jest.fn(),
-    addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
+    addListener: jest.fn().mockImplementation((e, callback) => { callback(); return jest.fn() }),
   },
 })
 

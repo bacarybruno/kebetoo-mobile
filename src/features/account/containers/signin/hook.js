@@ -118,7 +118,7 @@ const useSignIn = (navigation, passwordRef) => {
     })
 
     return unsubscribe
-  }, [])
+  }, [navigation])
 
   const navigateToSignUp = useCallback(() => {
     navigation.navigate(routes.SIGNUP)

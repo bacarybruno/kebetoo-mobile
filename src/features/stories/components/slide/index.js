@@ -1,25 +1,29 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  memo, useCallback, useEffect, useRef, useState,
+} from 'react'
 import { Image, Text, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Video from 'react-native-video'
-import { useNavigation } from '@react-navigation/core'
+import { useNavigation } from '@react-navigation/native'
 import convertToProxyURL from 'react-native-video-cache'
 import Share from 'react-native-share'
+import RNFetchBlob from 'rn-fetch-blob'
 
-import { Avatar, MultipleTapHandler, FormatedTypography, Typography, BottomSheetView } from '@app/shared/components'
+import {
+  Avatar, MultipleTapHandler, FormatedTypography, Typography, BottomSheetView,
+} from '@app/shared/components'
 import { readableNumber } from '@app/shared/helpers/strings'
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
 import { colorGradient } from '@app/theme/colors'
-import { REACTION_TYPES } from '@app/features/stories/hooks/reactions'
+import useStoriesReactions, { REACTION_TYPES } from '@app/features/stories/hooks/reactions'
 import CommentsView from '@app/features/comments/components/comments-view'
 import { getMimeType } from '@app/shared/helpers/file'
 
+import { strings } from '@app/config'
 import createThemedStyles from './styles'
 import StoryViewActionBar from '../actions-bar'
-import useStoriesReactions from '../../hooks/reactions'
+
 import { useComments } from '../../hooks'
-import RNFetchBlob from 'rn-fetch-blob'
-import { strings } from '@app/config'
 
 const StoryAuthor = ({ author }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -160,8 +164,6 @@ const StorySlide = ({
   withBlurOverlay = true,
   story,
 }) => {
-  if (!focused) return null
-
   const { author, content, comments } = story
 
   const styles = useAppStyles(createThemedStyles)
@@ -173,7 +175,9 @@ const StorySlide = ({
   const player = useRef()
   const bottomSheet = useRef()
 
-  const { count, onReaction, userReactionType } = useStoriesReactions({ story, author: author.id, comments })
+  const {
+    count, onReaction, userReactionType,
+  } = useStoriesReactions({ story, author: author.id, comments })
   const { profile } = useUser()
 
   useEffect(() => {
@@ -193,11 +197,11 @@ const StorySlide = ({
     activeColor: colors.heart,
     active: userReactionType === REACTION_TYPES.LOVE,
     text: readableNumber(count.loves),
-    onPress: () => onReaction(REACTION_TYPES.LOVE)
+    onPress: () => onReaction(REACTION_TYPES.LOVE),
   }, {
     icon: 'chatbubble',
     text: readableNumber(count.comments),
-    onPress: () => bottomSheet.current.expand()
+    onPress: () => bottomSheet.current.expand(),
   }, {
     icon: 'arrow-redo',
     text: readableNumber(count.shares),
@@ -215,9 +219,11 @@ const StorySlide = ({
         type,
       })
       // remove the image from device's storage
-      await RNFS.unlink(filePath)
-    }
+      await RNFetchBlob.fs.unlink(filePath)
+    },
   }]
+
+  if (!focused) return null
 
   return (
     <>

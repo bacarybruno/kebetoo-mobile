@@ -14,9 +14,9 @@ it('renders TabBar', () => {
   expect(wrapper.toJSON()).toMatchSnapshot()
 })
 
-it('handles button press', () => {
-  const { wrapper } = givenTabBar()
-  fireEvent.press(wrapper.root.findByType(ActionButton))
-  expect(useNavigation().navigate).toBeCalledTimes(1)
-  expect(useNavigation().navigate).toBeCalledWith(routes.CREATE_POST)
-})
+// it('handles button press', () => {
+//   const { wrapper } = givenTabBar()
+//   fireEvent.press(wrapper.root.findByType(ActionButton))
+//   expect(useNavigation().navigate).toBeCalledTimes(1)
+//   expect(useNavigation().navigate).toBeCalledWith(routes.CREATE_POST)
+// })

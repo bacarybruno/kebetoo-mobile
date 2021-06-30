@@ -90,7 +90,7 @@ const useBottomSheet = () => {
       cancelButtonIndex: bottomSheetItems.length - 1,
       destructiveButtonIndex,
     })
-  }, [colors.textPrimary, showActionSheet])
+  }, [colors, showActionSheet])
 
   const showSharePostOptions = useCallback(() => {
     const bottomSheetItems = [{

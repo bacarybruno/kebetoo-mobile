@@ -28,7 +28,7 @@ const useStoriesReactions = ({
 
   const createReaction = useCallback(async (type) => {
     // create random negative id
-    const optimisticId = parseInt(Math.random() * -1000000)
+    const optimisticId = parseInt(Math.random() * -1000000, 10)
 
     // display a reaction with expected value and a fake id
     const optimisticStory = {
@@ -62,7 +62,7 @@ const useStoriesReactions = ({
 
   const deleteReaction = useCallback(async (reactionId) => {
     // don't do anything if reactionId is not a valid ID
-    if (parseInt(reactionId) < 0) return
+    if (parseInt(reactionId, 10) < 0) return
 
     // remove reaction from state
     const optimisticStory = { ...story }

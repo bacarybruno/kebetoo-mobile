@@ -3,23 +3,28 @@ import { Component } from 'react'
 import ImageNode from '../image-node'
 
 class StoryImageDesigner extends Component {
-  state = {
-    nodes: [],
+  constructor(...props) {
+    super(...props)
+    this.state = {
+      nodes: [],
+    }
   }
 
-  findNode = (id) => this.state.nodes.find((node) => node.id === id)
+  findNode = (id) => {
+    const { nodes } = this.state
+    nodes.find((node) => node.id === id)
+  }
 
   addNode = (value) => {
+    const { nodes } = this.state
     this.setState({
-      nodes: this.state.nodes.concat({
-        id: Date.now(),
-        value,
-      })
+      nodes: nodes.concat({ id: Date.now(), value }),
     })
   }
 
   removeSingleNode = (id) => {
-    this.setState({ nodes: this.state.nodes.filter((node) => node.id !== id) })
+    const { nodes } = this.state
+    this.setState({ nodes: nodes.filter((node) => node.id !== id) })
   }
 
   removeNode = (id) => {
@@ -28,25 +33,28 @@ class StoryImageDesigner extends Component {
   }
 
   updateNode = (id, object) => {
+    const { nodes } = this.state
     this.setState({
-      nodes: this.state
-        .nodes
-        .map((node) => node.id === id ? ({ ...node, ...object }) : node)
+      nodes: nodes
+        .map((node) => (node.id === id ? ({ ...node, ...object }) : node)),
     })
   }
 
   onFocus = (id) => {
+    const { onFocus } = this.props
     this.updateNode(id, { focused: true })
-    this.props.onFocus()
+    onFocus()
   }
 
   onBlur = (id) => {
+    const { onBlur } = this.props
     this.updateNode(id, { focused: false })
-    this.props.onBlur()
+    onBlur()
   }
 
   blurAll = () => {
-    this.state.nodes.forEach((node) => this.onBlur(node.id))
+    const { nodes } = this.state
+    nodes.forEach((node) => this.onBlur(node.id))
   }
 
   setNodeValue = (id, value) => {

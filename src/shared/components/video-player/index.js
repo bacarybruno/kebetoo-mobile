@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  useCallback, useEffect, useRef, useState,
+} from 'react'
 import { Image, View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'

@@ -13,20 +13,20 @@ const useKeyboard = () => {
       setKeyboardShown(true)
       setKeyboardHeight(e.endCoordinates.height)
     }
-  
+
     const keyboardDidHide = () => {
       setKeyboardShown(false)
       setKeyboardHeight(0)
     }
-  
-    Keyboard.addListener(keyboardShowEvent, keyboardDidShow)
-    Keyboard.addListener(keyboardHideEvent, keyboardDidHide)
+
+    const showEvent = Keyboard.addListener(keyboardShowEvent, keyboardDidShow)
+    const hideEvent = Keyboard.addListener(keyboardHideEvent, keyboardDidHide)
 
     return () => {
-      Keyboard.removeListener(keyboardShowEvent, keyboardDidShow)
-      Keyboard.removeListener(keyboardHideEvent, keyboardDidHide)
+      showEvent.remove()
+      hideEvent.remove()
     }
-  }, [])
+  }, [keyboardHideEvent, keyboardShowEvent])
 
   return { keyboardShown, keyboardHeight }
 }

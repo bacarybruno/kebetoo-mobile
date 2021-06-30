@@ -1,4 +1,6 @@
-import { cloneElement, useEffect, useCallback, useRef, useContext } from 'react'
+import {
+  cloneElement, useEffect, useCallback, useRef, useContext,
+} from 'react'
 import { Image, Platform, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import RNBootSplash from 'react-native-bootsplash'
@@ -184,9 +186,9 @@ export const TabPage = () => {
       screenOptions={defaultTabOptions}
       tabBarOptions={defaultTabBarOptions(styles, colors)}
       tabBar={(
-        (props) => tabBarTheme !== 'hide'
+        (props) => (tabBarTheme !== 'hide'
           ? TabBar(props, styles, colors, tabBarTheme)
-          : null
+          : null)
       )}
     >
       {tabPages.map((page, key) => (
@@ -269,6 +271,7 @@ const AppNavigation = () => {
     RNBootSplash.hide({ fade: true })
     setupNotifications()
     trackPageView(routes.HOME)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name

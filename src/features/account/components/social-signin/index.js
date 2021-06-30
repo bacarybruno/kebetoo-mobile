@@ -36,6 +36,7 @@ const SocialSignIn = ({
   onLoading,
   disabled,
   type,
+  // eslint-disable-next-line no-undef
   enabled = Platform.OS !== 'ios' || __DEV__,
   onError,
 }) => {

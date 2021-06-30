@@ -5,7 +5,6 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 import setupTest from '@app/config/jest-setup'
 import posts from '@fixtures/posts'
 import authors from '@fixtures/authors'
-import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
 
 import Reactions, { CommentsBottomSheet } from '../index'

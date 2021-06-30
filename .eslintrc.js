@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: ['jest'],
   extends: [
     'airbnb',
@@ -10,15 +10,21 @@ module.exports = {
     'plugin:import/warnings'
   ],
   rules: {
-    'global-require': 0,
-    'react/jsx-filename-extension': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'react/jsx-props-no-spreading': 0,
-    'react/jsx-uses-react': 0,
-    'react/no-array-index-key': 0,
-    'react/react-in-jsx-scope': 0,
-    'react/prop-types': 0,
-    'semi': 0,
+    'global-require': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/no-array-index-key': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'semi': 'off',
+    'import/prefer-default-export': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-unused-expressions': 'off',
+    'jsx-a11y/accessible-emoji': 'off',
+    'import/no-cycle': 'warn'
   },
   settings: {
     'import/resolver': {

@@ -5,9 +5,9 @@ import auth from '@react-native-firebase/auth'
 import setupTest from '@app/config/jest-setup'
 import { strings } from '@app/config'
 
+import routes from '@app/navigation/routes'
 import SearchPage, { SearchIcon, CancelIcon } from '../index'
 import SearchUsers from '../users'
-import routes from '@app/navigation/routes'
 
 const givenSearchPage = setupTest(SearchPage)({
   __storeState__: {

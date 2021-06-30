@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { RNFFmpeg, RNFFprobe, RNFFmpegConfig } from 'react-native-ffmpeg'
 import RNFetchBlob from 'rn-fetch-blob'
 
@@ -13,7 +14,7 @@ if (disableLogs) {
 // isnpired by https://github.com/shahen94/react-native-video-processing/blob/master/android/src/main/java/com/shahenlibrary/Trimmer/Trimmer.java
 const rootDir = RNFetchBlob.fs.dirs.DocumentDir
 const fastPreset = '-preset ultrafast -crf 28 -profile:v baseline'
-const pix_fmt = '-pix_fmt yuv420p'
+const pixFmt = '-pix_fmt yuv420p'
 const outputDir = `${rootDir}/kebetoo-ffmpeg-cache-dir`
 export const getOutputPath = () => `${outputDir}/${Date.now()}.mp4`
 
@@ -22,17 +23,16 @@ const videoEditor = {
     const commandArgs = command.split(' ')
     const commandOutput = commandArgs.pop()
     const ffmpegCommand = `-y ${commandArgs.join(' ')} ${commandOutput}`
-    return new Promise(async (resolve, reject) => {
-      await RNFFmpeg.executeAsync(ffmpegCommand, (result) => {
-        if (result.returnCode !== 0) {
-          return reject(result)
-        }
-        resolve(result)
+    return new Promise((resolve, reject) => (
+      RNFFmpeg.executeAsync(ffmpegCommand, (result) => {
+        if (result.returnCode !== 0) return reject(result)
+        return resolve(result)
       })
-    })
+    ))
   },
 
-  executeFFmpegCommand: async (input, command, output) => {
+  executeFFmpegCommand: async (input, command, commandOutput) => {
+    let output = commandOutput
     if (input === output) {
       const outputExtension = getExtension(output)
       const outputFileName = getFileName(output).replace(`.${outputExtension}`, '')
@@ -47,7 +47,9 @@ const videoEditor = {
 
   compose: async (initialParam, ...operations) => {
     let lastResult = initialParam
+    // eslint-disable-next-line no-restricted-syntax
     for (const operation of operations) {
+      // eslint-disable-next-line no-await-in-loop
       lastResult = await operation(lastResult)
     }
     return lastResult
@@ -107,11 +109,11 @@ const videoEditor = {
     let videoSpeedCmd = `[0:v]setpts=${speed.toFixed(1)}*PTS[v]`
     let audioSpeedCmd = `[0:a]atempo=${speed.toFixed(1)}[a]`
 
-    if (speed === 0.3) audioSpeedCmd = `[0:a]atempo=0.6,atempo=0.5[a]`
+    if (speed === 0.3) audioSpeedCmd = '[0:a]atempo=0.6,atempo=0.5[a]'
     if (speed < 1) videoSpeedCmd = `[0:v]setpts=${(speed * 10).toFixed(1)}*PTS[v]`
     else videoSpeedCmd = `[0:v]setpts=${(speed / 10).toFixed(1)}*PTS[v]`
 
-    const setVideoSpeedArgs = `-filter_complex "${videoSpeedCmd};${audioSpeedCmd}" ${fastPreset} ${pix_fmt} -map "[v]" -map "[a]"`
+    const setVideoSpeedArgs = `-filter_complex "${videoSpeedCmd};${audioSpeedCmd}" ${fastPreset} ${pixFmt} -map "[v]" -map "[a]"`
 
     await videoEditor.executeFFmpegCommand(videoUri, setVideoSpeedArgs, outputFile)
     return { ...video, uri: outputFile }
@@ -134,21 +136,21 @@ const videoEditor = {
 
   compressVideo: async (video, outputFile = getOutputPath()) => {
     const { width: maxWidth, height: maxHeight } = env.stories.aspectRatio
-    const compressVideoArgs = `-filter:v "scale='min(${maxWidth},iw)':min'(${maxHeight},ih)':force_original_aspect_ratio=decrease,pad=${maxWidth}:${maxHeight}:(ow-iw)/2:(oh-ih)/2" ${fastPreset} ${pix_fmt}`
-    // const compressVideoArgs = `-vcodec libx264 ${fastPreset} ${pix_fmt}`
-    // const compressVideoArgs = `-vf "scale=iw/2:ih/2" ${fastPreset} ${pix_fmt}`
+    const compressVideoArgs = `-filter:v "scale='min(${maxWidth},iw)':min'(${maxHeight},ih)':force_original_aspect_ratio=decrease,pad=${maxWidth}:${maxHeight}:(ow-iw)/2:(oh-ih)/2" ${fastPreset} ${pixFmt}`
+    // const compressVideoArgs = `-vcodec libx264 ${fastPreset} ${pixFmt}`
+    // const compressVideoArgs = `-vf "scale=iw/2:ih/2" ${fastPreset} ${pixFmt}`
     await videoEditor.executeFFmpegCommand(video.uri, compressVideoArgs, outputFile)
     return { uri: outputFile }
   },
 
   boomerang: async (video, outputFile = getOutputPath()) => {
-    const boomerangVideoArgs = `-filter_complex "[0:v]reverse,fifo[r];[0:v][0:a][r] [0:a]concat=n=2:v=1:a=1 [v] [a]" ${fastPreset} ${pix_fmt} -map "[v]" -map "[a]"`
+    const boomerangVideoArgs = `-filter_complex "[0:v]reverse,fifo[r];[0:v][0:a][r] [0:a]concat=n=2:v=1:a=1 [v] [a]" ${fastPreset} ${pixFmt} -map "[v]" -map "[a]"`
     await videoEditor.executeFFmpegCommand(video.uri, boomerangVideoArgs, outputFile)
     return { uri: outputFile }
   },
 
   reverse: async (video, outputFile = getOutputPath()) => {
-    const reverseVideoArgs = `${fastPreset} ${pix_fmt} -vf reverse -c:a copy`
+    const reverseVideoArgs = `${fastPreset} ${pixFmt} -vf reverse -c:a copy`
     await videoEditor.executeFFmpegCommand(video.uri, reverseVideoArgs, outputFile)
     return { uri: outputFile }
   },
@@ -156,8 +158,8 @@ const videoEditor = {
   slowmo: async (video, videoDuration, outputFile = getOutputPath()) => {
     const bounds = {
       start: 0,
-      middleLeft: videoDuration * 1 / 3,
-      middleRight: videoDuration * 2 / 3,
+      middleLeft: (videoDuration * 1) / 3,
+      middleRight: (videoDuration * 2) / 3,
     }
 
     const slowmoVideoArgs = ''
@@ -167,7 +169,7 @@ const videoEditor = {
       + `[0:a]atrim=${bounds.start}:${bounds.middleLeft},asetpts=PTS-STARTPTS[a1];`
       + `[0:a]atrim=${bounds.middleLeft}:${bounds.middleRight},asetpts=PTS-STARTPTS,atempo=0.5[a2];`
       + `[0:a]atrim=${bounds.middleRight},asetpts=PTS-STARTPTS[a3];`
-      + `[v1][a1][v2][a2][v3][a3]concat=n=3:v=1:a=1" ${fastPreset} ${pix_fmt}`
+      + `[v1][a1][v2][a2][v3][a3]concat=n=3:v=1:a=1" ${fastPreset} ${pixFmt}`
 
     await videoEditor.executeFFmpegCommand(video.uri, slowmoVideoArgs, outputFile)
     return { uri: outputFile }
@@ -189,14 +191,12 @@ const videoEditor = {
   },
 
   overlayVideo: async (overlay, video, outputFile = getOutputPath()) => {
-    const overlayVideoArgs = `-i ${overlay} -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,0,20)'" ${fastPreset} ${pix_fmt} -c:a copy`
+    const overlayVideoArgs = `-i ${overlay} -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,0,20)'" ${fastPreset} ${pixFmt} -c:a copy`
     await videoEditor.executeFFmpegCommand(video.uri, overlayVideoArgs, outputFile)
     return { uri: outputFile }
   },
 
-  overlayVideoWithImage: (overlay) => (video, outputFile = getOutputPath()) => {
-    return videoEditor.overlayVideo(overlay, video, outputFile)
-  }
+  overlayVideoWithImage: (overlay) => (video, outputFile = getOutputPath()) => videoEditor.overlayVideo(overlay, video, outputFile),
 }
 
 export default videoEditor

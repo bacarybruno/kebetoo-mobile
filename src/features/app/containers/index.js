@@ -1,4 +1,6 @@
-import { useEffect, useCallback, useState, useMemo } from 'react'
+import {
+  useEffect, useCallback, useState, useMemo,
+} from 'react'
 import { AppState, SafeAreaView as RNSafeAreaView, LogBox } from 'react-native'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
@@ -50,6 +52,7 @@ const RootContainer = () => {
   useEffect(() => {
     resetAppBars()
     resetStatusBars()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colors])
 
   useEffect(() => {
@@ -58,7 +61,7 @@ const RootContainer = () => {
     } else {
       dispatch({ type: SET_LOCALE, payload: strings.getInterfaceLanguage() })
     }
-  }, [locale])
+  }, [dispatch, locale])
 
   const safeAreaCtxValue = useMemo(() => ({
     updateTopSafeAreaColor,

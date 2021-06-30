@@ -44,7 +44,7 @@ const VideoModal = ({ route, navigation }) => {
   // componentWillUnmount
   useEffect(() => () => {
     onBack(true)
-  }, [])
+  }, [onBack])
 
   return (
     <VideoPlayer

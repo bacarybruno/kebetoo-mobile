@@ -37,7 +37,7 @@ export const TextAvatar = ({
       <View style={[
         styles.content,
         noRadius && { borderRadius: 0 },
-        color ? { backgroundColor: color } : backgroundColor(text)
+        color ? { backgroundColor: color } : backgroundColor(text),
       ]}
       >
         <Text
@@ -51,7 +51,9 @@ export const TextAvatar = ({
   )
 }
 
-const Avatar = ({ src, text, size, badge, ...props }) => {
+const Avatar = ({
+  src, text, size, badge, ...props
+}) => {
   const styles = useAppStyles(createThemedStyles)
   return (
     <>

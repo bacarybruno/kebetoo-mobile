@@ -1,4 +1,6 @@
-import { memo, useState, useCallback, useRef } from 'react'
+import {
+  memo, useState, useCallback, useRef,
+} from 'react'
 import {
   TouchableOpacity, ActivityIndicator, View, Image,
 } from 'react-native'

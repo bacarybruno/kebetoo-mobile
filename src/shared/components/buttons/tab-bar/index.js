@@ -6,11 +6,13 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import routes from '@app/navigation/routes'
-import { Typography, BottomSheetView, Pressable, Badge } from '@app/shared/components'
+import {
+  Typography, BottomSheetView, Pressable, Badge,
+} from '@app/shared/components'
 import { StoriesPage } from '@app/navigation/pages'
 
-import createThemedStyles, { size } from './styles'
 import { metrics } from '@app/theme'
+import createThemedStyles, { size } from './styles'
 
 const IconButton = ({
   icon, text, message, onPress, children, badge, ...otherProps
@@ -103,7 +105,7 @@ const TabBarActionButton = () => {
           fixNativeFeedbackRadius
           buttonColor={colors.primary}
           buttonTextStyle={styles.fab}
-          onPress={() => bottomSheet.current.expand()}
+          onPress={() => bottomSheet.current?.expand()}
         />
       </View>
       <BottomSheetView

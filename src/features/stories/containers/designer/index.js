@@ -1,5 +1,7 @@
 
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
+import {
+  useCallback, useEffect, useReducer, useRef, useState,
+} from 'react'
 import { Image, View } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import Ionicon from 'react-native-vector-icons/Ionicons'
@@ -79,19 +81,21 @@ const StoryDesigner = ({
 
   const recordTimer = useRef()
 
-  const addRecord = ({ uri, mute = true, speed = 1, ...record }) => {
+  const addRecord = ({
+    uri, mute: isRecordMute = true, speed: recordSpeed = 1, ...record
+  }) => {
     const payload = {
       type: 'addRecord',
       payload: {
         uri,
-        mute,
-        speed,
+        mute: isRecordMute,
+        speed: recordSpeed,
         recordedAt: Date.now(),
         // shouldMirror: Platform.OS === 'android' && frontCamera,
         shouldMirror: false,
         state: RecordState.Unprocessed,
         ...record,
-      }
+      },
     }
     dispatch(payload)
     return payload.payload
@@ -100,29 +104,29 @@ const StoryDesigner = ({
   useEffect(() => {
     const addUploadedVideo = async () => {
       if (pickedVideoFile) {
-        const mute = await videoEditor.isMute(pickedVideoFile)
-        const payload = addRecord({ uri: pickedVideoFile.uri, mute })
+        const isVideoMute = await videoEditor.isMute(pickedVideoFile)
+        const payload = addRecord({ uri: pickedVideoFile.uri, mute: isVideoMute })
         resetVideoFile()
         onFinish([payload])
       }
     }
 
     addUploadedVideo()
-  }, [pickedVideoFile])
+  }, [onFinish, pickedVideoFile, resetVideoFile])
 
   let rightActions = [{
     icon: 'flash',
     text: 'Flash',
     active: flashOn,
-    onPress: () => dispatch({ type: 'toggleFlash' })
+    onPress: () => dispatch({ type: 'toggleFlash' }),
   }, {
     icon: mute ? 'mic-off' : 'mic',
     text: 'Mute',
-    onPress: () => dispatch({ type: 'toggleMute' })
+    onPress: () => dispatch({ type: 'toggleMute' }),
   }, {
     icon: (
       <Typography
-        text={speed.toString().replace(0, '') + 'x'}
+        text={`${speed.toString().replace(0, '')}x`}
         type={Typography.types.headline2}
         style={[styles.text, styles.textShadow]}
       />
@@ -133,11 +137,11 @@ const StoryDesigner = ({
       const currentValueIndex = values.findIndex((value) => value === speed)
       const nextValueIndex = currentValueIndex + 1
       dispatch({ type: 'setSpeed', payload: values[nextValueIndex] ?? values[0] })
-    }
+    },
   }, {
     icon: 'camera-reverse',
     text: 'Flip',
-    onPress: () => dispatch({ type: 'flipCamera' })
+    onPress: () => dispatch({ type: 'flipCamera' }),
   }]
 
   const nextAction = {
@@ -147,7 +151,7 @@ const StoryDesigner = ({
     onPress: () => {
       camera.current.pausePreview()
       onFinish(records)
-    }
+    },
   }
 
   if (elapsedTime > minVideoDurationInSeconds) {
@@ -183,8 +187,10 @@ const StoryDesigner = ({
       orientation: RNCamera.Constants.Orientation.portrait,
       mirrorVideo: false,
     })
-    addRecord({ ...record, uri: recordPath, mute, speed })
-  }, [dispatch, mute, speed, frontCamera])
+    addRecord({
+      ...record, uri: recordPath, mute, speed,
+    })
+  }, [mute, speed])
 
   const onEndRecord = useCallback(() => {
     camera.current.stopRecording()
@@ -199,9 +205,11 @@ const StoryDesigner = ({
     if (progress >= 1) {
       onEndRecord()
     }
-  }, [progress])
+  }, [onEndRecord, progress])
 
-  const { VideoQuality, VideoCodec, Type: CameraType, FlashMode } = RNCamera.Constants
+  const {
+    VideoQuality, VideoCodec, Type: CameraType, FlashMode,
+  } = RNCamera.Constants
 
   const reloadButton = records.length > 0 && !preparing && (
     <Ionicon

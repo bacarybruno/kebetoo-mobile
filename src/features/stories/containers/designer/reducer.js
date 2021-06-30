@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 const maxVideoDurationInSeconds = 15
 
 export const initialState = {
@@ -46,7 +47,7 @@ const reducer = (state, action) => {
             return { ...record, ...action.payload }
           }
           return record
-        })
+        }),
       }
     case 'resetRecords':
       return { ...state, records: [] }

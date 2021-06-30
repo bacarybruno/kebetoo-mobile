@@ -125,6 +125,7 @@ const Comment = ({
     setReactions(item.reactions)
   }, [item.reactions])
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { navigate } = navigation || useNavigation()
 
   const styles = useAppStyles(createThemedStyles)

@@ -88,7 +88,8 @@ const Header = ({
       {showAvatar && (
         <HeaderAvatar
           displayName={displayName}
-          photoURL={imageSrc} onPress={onHeaderPress}
+          photoURL={imageSrc}
+          onPress={onHeaderPress}
         />
       )}
     </View>

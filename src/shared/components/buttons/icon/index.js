@@ -21,7 +21,7 @@ const IconButton = ({
   )
 }
 
-IconButton.Text = ({
+const TextIconButton = ({
   icon, text, badge, onPress, children, badgeColor, ...otherProps
 }) => {
   const styles = useAppStyles(createThemedStyles)
@@ -51,5 +51,7 @@ IconButton.Text = ({
     </Pressable>
   )
 }
+
+IconButton.Text = TextIconButton
 
 export default IconButton

@@ -1,20 +1,24 @@
 import { useEffect, useRef } from 'react'
-import { TextInput, Keyboard, Animated, TouchableOpacity, View } from 'react-native'
-import { PanGestureHandler, PinchGestureHandler, RotationGestureHandler, State } from 'react-native-gesture-handler'
+import {
+  TextInput, Keyboard, Animated, View,
+} from 'react-native'
+import {
+  PanGestureHandler, PinchGestureHandler, RotationGestureHandler, State,
+} from 'react-native-gesture-handler'
 
-import { useAppStyles, useKeyboard } from '@app/shared/hooks'
+import { useKeyboard } from '@app/shared/hooks'
 import { colors, edgeInsets } from '@app/theme'
 import { Typography } from '@app/shared/components'
 
 import StoryViewActionBar from '../actions-bar'
-import createThemedStyles from './styles'
+import styles from './styles'
 
 const createBox = (name, boxColor = 'transparent', textColor = colors.white) => ({
   name,
   style: {
     text: { color: textColor },
     box: { backgroundColor: boxColor },
-  }
+  },
 })
 
 export const nodeModes = [
@@ -51,7 +55,6 @@ const TextNode = ({
   switchMode,
   updateFontStyle,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
   const bounds = { top, left }
 
   const input = useRef()
@@ -64,12 +67,12 @@ const TextNode = ({
   const { keyboardHeight, keyboardShown } = useKeyboard()
 
   useEffect(() => {
-    Keyboard.addListener('keyboardDidHide', onBlur)
+    const hideEvent = Keyboard.addListener('keyboardDidHide', onBlur)
 
     return () => {
-      Keyboard.removeListener('keyboardDidHide', onBlur)
+      hideEvent.remove()
     }
-  }, [])
+  }, [onBlur])
 
   useEffect(() => {
     if (focused) {
@@ -99,17 +102,17 @@ const TextNode = ({
 
   const onScaleGestureEvent = Animated.event(
     [{ nativeEvent: { scale } }],
-    { useNativeDriver: false }
+    { useNativeDriver: false },
   )
 
   const onRotateGestureEvent = Animated.event(
     [{ nativeEvent: { rotation } }],
-    { useNativeDriver: false }
+    { useNativeDriver: false },
   )
 
   const onMoveGestureEvent = (event) => {
     const { absoluteX, absoluteY } = event.nativeEvent
-    movableRef.current.measure((x, y, width, height, pageX, pageY) => {
+    movableRef.current.measure((x, y, width, height) => {
       const scaleFactor = Math.max(scale._value, 1)
       top.setValue(absoluteY - height / scaleFactor)
       left.setValue(absoluteX - width / 2 / scaleFactor)

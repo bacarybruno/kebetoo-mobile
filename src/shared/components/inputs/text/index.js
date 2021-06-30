@@ -51,7 +51,7 @@ const InputText = forwardRef((props, ref) => {
     hideValue,
     ...otherProps
   } = props
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
 
   const styles = useAppStyles(createThemedStyles)
 
@@ -66,7 +66,12 @@ const InputText = forwardRef((props, ref) => {
 
   return (
     <Animated.View
-      style={[styles.wrapper, wrapperStyle, height && { height }, error && !borderless && styles.error]}
+      style={[
+        styles.wrapper,
+        wrapperStyle,
+        height && { height },
+        error && !borderless && styles.error,
+      ]}
     >
       {children}
       <View style={[styles.inputWrapper, inputWrapperStyle]}>

@@ -15,7 +15,7 @@ const persistConfig = {
 const sagaMiddleware = createSagaMiddleware()
 
 const persistedReducer = persistReducer(persistConfig, (state, action) => {
-  let ownState = state
+  const ownState = state
   if (action.type === types.LOGOUT) {
     // remove all persisted redux data
     persistConfig.storage.removeItem('persist:root')

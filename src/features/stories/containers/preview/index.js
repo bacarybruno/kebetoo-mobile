@@ -1,11 +1,13 @@
 
 import { useEffect, useReducer, useRef } from 'react'
-import { Image, Platform, TouchableOpacity, View } from 'react-native'
+import {
+  Image, Platform, TouchableOpacity, View,
+} from 'react-native'
 import Video from 'react-native-video'
 import { captureRef } from 'react-native-view-shot'
 import { FlatList } from 'react-native-gesture-handler'
 import RNFetchBlob from 'rn-fetch-blob'
-import { useIsFocused } from '@react-navigation/core'
+import { useIsFocused } from '@react-navigation/native'
 
 import { AppHeader, BottomSheetView, NoContent } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'

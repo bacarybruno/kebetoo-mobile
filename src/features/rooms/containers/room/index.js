@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useState, useContext, useRef, forwardRef } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import {
+  useCallback, useEffect, useState, useContext, useRef, forwardRef,
+} from 'react'
 import {
   InteractionManager, StatusBar, TouchableOpacity, View,
 } from 'react-native'
@@ -277,16 +280,13 @@ const RoomPage = ({ navigation }) => {
         text: getSystemMessage(props.currentMessage),
       }}
     />
-  ), [colors.textSecondary])
+  ), [styles.bubbleLeftTimeText])
 
   const renderMessageText = useCallback((props) => {
     const { user, text } = props.currentMessage
     const isOwnMessage = user._id === profile.uid
-    const textStyle = {
-      color: isOwnMessage
-        ? (colors.colorScheme === 'dark' ? colors.textPrimary : colors.white)
-        : colors.textPrimary
-    }
+    const colorIfOwnMessage = colors.colorScheme === 'dark' ? colors.textPrimary : colors.white
+    const textStyle = { color: isOwnMessage ? colorIfOwnMessage : colors.textPrimary }
     const linkStyle = {
       color: textStyle.color,
       textDecorationLine: 'underline',
@@ -305,7 +305,7 @@ const RoomPage = ({ navigation }) => {
         />
       </View>
     )
-  }, [styles, profile])
+  }, [profile.uid, colors, styles.messageText])
 
   return (
     <View style={styles.wrapper}>

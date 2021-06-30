@@ -29,8 +29,17 @@ const MultipleTapHandler = ({
 
   return (
     <LongPressGestureHandler onHandlerStateChange={onLongTap}>
-      <TapGestureHandler maxDelayMs={100} onHandlerStateChange={onSingleTap} waitFor={doubleTapRef}>
-        <TapGestureHandler maxDelayMs={100} ref={doubleTapRef} onHandlerStateChange={onDoubleTap} numberOfTaps={2}>
+      <TapGestureHandler
+        maxDelayMs={100}
+        onHandlerStateChange={onSingleTap}
+        waitFor={doubleTapRef}
+      >
+        <TapGestureHandler
+          maxDelayMs={100}
+          ref={doubleTapRef}
+          onHandlerStateChange={onDoubleTap}
+          numberOfTaps={2}
+        >
           {children}
         </TapGestureHandler>
       </TapGestureHandler>

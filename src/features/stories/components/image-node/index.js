@@ -2,11 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Image, TouchableOpacity, View } from 'react-native'
 import Gestures from 'react-native-easy-gestures'
 
-import { useAppStyles } from '@app/shared/hooks'
-
 import StoryViewActionBar from '../actions-bar'
-import createThemedStyles from './styles'
-
+import styles from './styles'
 
 /**
  * TODO:
@@ -23,8 +20,6 @@ const ImageNode = ({
   onFocus,
   removeNode,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-
   const input = useRef()
 
   useEffect(() => {

@@ -1,4 +1,6 @@
-import { memo, useCallback, useState, useRef, useEffect, useMemo, useContext } from 'react'
+import {
+  memo, useCallback, useState, useRef, useEffect, useMemo, useContext,
+} from 'react'
 import {
   View, TouchableOpacity, ImageBackground, StatusBar,
 } from 'react-native'
@@ -56,11 +58,14 @@ const OnboardingPage = ({ navigation }) => {
   const swiperRef = useRef()
   const isLastSlideItem = slideItems.length - 1 === slideIndex
   const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
-  const { updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
+  const {
+    updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars,
+  } = useContext(SafeAreaContext)
 
   useEffect(() => {
     updateTopSafeAreaColor(colors.onboarding)
     updateBottomSafeAreaColor(colors.onboarding)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -76,7 +81,7 @@ const OnboardingPage = ({ navigation }) => {
       removeFocusListener()
       removeBlurListener()
     }
-  }, [])
+  }, [colors.onboarding, navigation, resetAppBars, trackOnboardingStart])
 
   const onSlideNext = useCallback(() => {
     swiperRef.current.scrollBy(1)
@@ -86,7 +91,7 @@ const OnboardingPage = ({ navigation }) => {
     trackOnboardingEnd()
     resetStatusBars()
     navigation.navigate(routes.SIGNUP)
-  }, [navigation, trackOnboardingEnd])
+  }, [navigation, resetStatusBars, trackOnboardingEnd])
 
   const slides = useMemo(() => (
     slideItems.map((slideItem, index) => (

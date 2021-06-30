@@ -60,26 +60,27 @@ const useNotifications = () => {
     setBadgeCount(notifsBadgeItems.length)
   }, [notifications])
 
+  const persistNotification = useCallback((notification) => {
+    dispatch({ type: types.ADD_NOTIFICATION, payload: notification })
+  }, [dispatch])
+
   const fetchPendingNotifications = useCallback(async () => {
     const pendingNotifications = (await notificationsRef.child(profile.uid).once('value')).val()
     // persist notifications
     Object.values(pendingNotifications).forEach((pendingNotification) => {
       // only if it isn't already persisted
-      if (!notifications.some((notification) => notification.id === pendingNotification.messageId)) {
+      if (!notifications.some((notif) => notif.id === pendingNotification.messageId)) {
         persistNotification(pendingNotification)
       }
     })
 
     // delete notifications because we've already processed them
     const deletePromises = Object.keys(pendingNotifications).map((notificationId) => (
-      database().ref(notificationsPath).child(profile.uid).child(notificationId).remove()
+      database().ref(notificationsPath).child(profile.uid).child(notificationId)
+        .remove()
     ))
     await Promise.all(deletePromises)
-  }, [profile.uid, persistNotification])
-
-  const persistNotification = useCallback((notification) => {
-    dispatch({ type: types.ADD_NOTIFICATION, payload: notification })
-  }, [dispatch])
+  }, [notificationsRef, profile.uid, notifications, persistNotification])
 
   const updateSeenStatus = useCallback(() => {
     newItems.forEach((newItem) => {

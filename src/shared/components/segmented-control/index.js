@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 
 import { useAppStyles } from '@app/shared/hooks'
@@ -34,7 +34,7 @@ const SegmentedControl = ({
     if (selectedValue !== selectedItem.value) {
       onSelect(selectedItem)
     }
-  }, [selectedValue, selectedItem])
+  }, [selectedValue, selectedItem, onSelect])
 
   if (!items?.length) {
     console.warn('SegmentedControl items should not be empty')

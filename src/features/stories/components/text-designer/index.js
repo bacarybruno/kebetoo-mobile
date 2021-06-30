@@ -6,28 +6,35 @@ import { metrics } from '@app/theme'
 import TextNode, { nodeModes } from '../text-node'
 
 class StoryTextDesigner extends Component {
-  state = {
-    nodes: [],
-    fontStyles: [
-      'headline3',
-      'headline2',
-      'headline1',
-    ]
+  constructor(...params) {
+    super(...params)
+    this.state = {
+      nodes: [],
+      fontStyles: [
+        'headline3',
+        'headline2',
+        'headline1',
+      ],
+    }
   }
 
-  findNode = (id) => this.state.nodes.find((node) => node.id === id)
+  findNode = (id) => {
+    const { nodes } = this.state
+    return nodes.find((node) => node.id === id)
+  }
 
   addNode = () => {
+    const { nodes, fontStyles } = this.state
     const dimensions = { height: 48 }
     this.setState({
-      nodes: this.state.nodes.concat({
+      nodes: nodes.concat({
         id: Date.now(),
         focused: true,
         value: '',
 
         // styling
         mode: nodeModes[0].name,
-        fontStyle: this.state.fontStyles[0],
+        fontStyle: fontStyles[0],
 
         // position
         dimensions,
@@ -35,12 +42,13 @@ class StoryTextDesigner extends Component {
         rotation: new Animated.Value(0),
         top: new Animated.Value(metrics.screenHeight / 2 - dimensions.height / 2),
         left: new Animated.Value(metrics.screenWidth / 2 - (dimensions.width || 0) / 2),
-      })
+      }),
     })
   }
 
   removeSingleNode = (id) => {
-    this.setState({ nodes: this.state.nodes.filter((node) => node.id !== id) })
+    const { nodes } = this.state
+    this.setState({ nodes: nodes.filter((node) => node.id !== id) })
   }
 
   removeNode = (id) => {
@@ -53,19 +61,21 @@ class StoryTextDesigner extends Component {
   }
 
   updateNode = (id, object) => {
+    const { nodes } = this.state
     this.setState({
-      nodes: this.state
-        .nodes
-        .map((node) => node.id === id ? ({ ...node, ...object }) : node)
+      nodes: nodes
+        .map((node) => (node.id === id ? ({ ...node, ...object }) : node)),
     })
   }
 
   onFocus = (id) => {
+    const { onFocus } = this.props
     this.updateNode(id, { focused: true })
-    this.props.onFocus()
+    onFocus()
   }
 
   onBlur = (id) => {
+    const { onBlur } = this.props
     const node = this.findNode(id)
     if (!node) return
     if (node.value.trim()) {
@@ -73,11 +83,12 @@ class StoryTextDesigner extends Component {
     } else {
       this.removeSingleNode(id)
     }
-    this.props.onBlur()
+    onBlur()
   }
 
   blurAll = () => {
-    this.state.nodes.forEach((node) => this.onBlur(node.id))
+    const { nodes } = this.state
+    nodes.forEach((node) => this.onBlur(node.id))
   }
 
   setNodeValue = (id, value) => {

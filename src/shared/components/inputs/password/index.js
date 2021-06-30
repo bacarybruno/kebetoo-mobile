@@ -1,4 +1,6 @@
-import { memo, useState, useCallback, forwardRef } from 'react'
+import {
+  memo, useState, useCallback, forwardRef,
+} from 'react'
 import { TouchableOpacity } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 

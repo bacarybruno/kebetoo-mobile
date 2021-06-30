@@ -18,7 +18,9 @@ export const DeleteIconButton = ({ onPress }) => {
   )
 }
 
-const ReplyInfo = ({ info, size, onClose, style }) => {
+const ReplyInfo = ({
+  info, size, onClose, style,
+}) => {
   const { content, author } = info
   const styles = useAppStyles(createThemedStyles)
   return (

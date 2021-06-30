@@ -1,4 +1,6 @@
-import { memo, useEffect, useState, useMemo } from 'react'
+import {
+  memo, useEffect, useState, useMemo,
+} from 'react'
 import { View } from 'react-native'
 
 import BaseReactions from '@app/features/post/containers/reactions'

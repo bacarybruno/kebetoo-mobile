@@ -305,9 +305,9 @@ const ProfilePage = memo(() => {
 
   const shareApp = useCallback(() => {
     Share.open({
-     title: strings.profile.share_title,
-     url: strings.profile.share_url,
-     message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
+      title: strings.profile.share_title,
+      url: strings.profile.share_url,
+      message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
     })
   }, [])
 

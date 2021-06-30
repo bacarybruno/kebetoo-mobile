@@ -60,9 +60,9 @@ export const colorGradient = (fade, color1, color2) => {
   const diffBlue = b2 - b1
 
   const gradient = {
-    red: parseInt(Math.floor(r1 + (diffRed * fade))),
-    green: parseInt(Math.floor(g1 + (diffGreen * fade))),
-    blue: parseInt(Math.floor(b1 + (diffBlue * fade))),
+    red: parseInt(Math.floor(r1 + (diffRed * fade)), 10),
+    green: parseInt(Math.floor(g1 + (diffGreen * fade)), 10),
+    blue: parseInt(Math.floor(b1 + (diffBlue * fade)), 10),
   }
 
   return 'rgb(' + gradient.red + ',' + gradient.green + ',' + gradient.blue + ')'

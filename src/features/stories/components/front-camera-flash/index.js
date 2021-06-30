@@ -8,8 +8,6 @@ import { useAppStyles } from '@app/shared/hooks'
 import createThemedStyles from './styles'
 
 const FrontCameraFlash = () => {
-  if (!Platform.OS === 'android') return
-
   const styles = useAppStyles(createThemedStyles)
   const [brithness, setBrightness] = useState(0.5)
 
@@ -20,8 +18,9 @@ const FrontCameraFlash = () => {
     return () => {
       ScreenBrightness.setBrightnessLevel(brithness)
     }
-  }, [])
+  }, [brithness])
 
+  if (!Platform.OS === 'android') return null
   return <View style={styles.frontCameraFlash} />
 }
 

@@ -24,8 +24,8 @@ const givenComments = setupTest(Comments)({
   navigation: {
     navigate: jest.fn(),
     setOptions: jest.fn(),
-    addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
-  }
+    addListener: jest.fn().mockImplementation((e, callback) => { callback(); return jest.fn() }),
+  },
 })
 
 it('renders Comments', async () => {

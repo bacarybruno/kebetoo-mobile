@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import { metrics } from '@app/theme'
 
-export default (colors) => StyleSheet.create({
+export default StyleSheet.create({
   flex: {
     flex: 1,
   },

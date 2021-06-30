@@ -148,7 +148,7 @@ const useComments = (post, commentInput, scrollView, { navigate }) => {
     })
   }, [replies])
 
-  const onComment = useCallback(() => commentInput.current?.focus(), [])
+  const onComment = useCallback(() => commentInput.current?.focus(), [commentInput])
 
   const handleCommentPress = useCallback((p) => {
     const type = getPostType(p)
@@ -160,7 +160,7 @@ const useComments = (post, commentInput, scrollView, { navigate }) => {
       return false
     }
     return true
-  }, [])
+  }, [navigate])
 
   const onCommentPress = useCallback(() => {
     const type = getPostType(post)

@@ -37,9 +37,7 @@ const useUser = () => {
     await api.authors.update(profile.uid, { photoURL })
   }, [dispatch, profile])
 
-  const deleteProfilePicture = useCallback(async () => {
-    return updateProfilePicture('')
-  }, [updateProfilePicture])
+  const deleteProfilePicture = useCallback(async () => updateProfilePicture(''), [updateProfilePicture])
 
   const showAvatarOptions = useCallback(async ({ onLoading, navigate, saveImage }) => {
     try {

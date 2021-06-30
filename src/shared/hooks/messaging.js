@@ -1,6 +1,8 @@
 import { useCallback, useEffect } from 'react'
 import { AppState } from 'react-native'
 import messaging from '@react-native-firebase/messaging'
+import AsyncStorage from '@react-native-community/async-storage'
+import PushNotification from 'react-native-push-notification'
 
 import routes from '@app/navigation/routes'
 import { api } from '@app/shared/services'
@@ -10,6 +12,7 @@ import useNotifications from './notifications'
 
 const useMessaging = (navigation) => {
   const { isLoggedIn } = useUser()
+  const { profile } = useUser()
   const { fetchPendingNotifications, setupNotifications } = useNotifications()
 
   const handleInitialNotification = useCallback((remoteMessage) => {
@@ -28,7 +31,7 @@ const useMessaging = (navigation) => {
     })
 
     return unsubscribeTokenRefresh
-  }, [handleInitialNotification])
+  }, [handleInitialNotification, profile.uid])
 
   useEffect(() => {
     const handlePendingNotifications = async () => {
@@ -54,7 +57,7 @@ const useMessaging = (navigation) => {
   }, [fetchPendingNotifications])
 
   return {
-    setupNotifications
+    setupNotifications,
   }
 }
 

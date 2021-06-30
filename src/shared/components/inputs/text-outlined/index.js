@@ -38,7 +38,7 @@ export const TextOutlinedInput = ({
         placeholder={placeholder}
         onValueChange={onChange}
         fieldName={fieldName}
-        borderless={true}
+        borderless
         error={error}
         returnKeyType="default"
         maxLength={maxLength}

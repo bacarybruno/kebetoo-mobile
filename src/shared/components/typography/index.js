@@ -103,19 +103,17 @@ const styles = {
 
 const Headline = ({
   children, style, size, ...otherProps
-}) => {
-  return (
-    <Text
-      style={[
-        styles[`headline${size}`],
-        style,
-      ]}
-      {...otherProps}
-    >
-      {children}
-    </Text>
-  )
-}
+}) => (
+  <Text
+    style={[
+      styles[`headline${size}`],
+      style,
+    ]}
+    {...otherProps}
+  >
+    {children}
+  </Text>
+)
 
 const Subheading = ({ children, style, ...otherProps }) => (
   <Text style={[styles.subheading, style]} {...otherProps}>
@@ -198,7 +196,9 @@ const Typography = ({
 
   if (text === null || text === undefined) return null
 
-  const typography = createTypography(text, style, color, onPress, themeColors, hasBadge, otherProps)
+  const typography = createTypography(
+    text, style, color, onPress, themeColors, hasBadge, otherProps,
+  )
 
   switch (type) {
     case types.headline1:

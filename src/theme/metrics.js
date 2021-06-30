@@ -41,7 +41,7 @@ const metrics = {
   isIPhoneX: DeviceInfo.hasNotch(),
   tabBarHeight: 50,
   tabBarFullHeight: 80,
-  headerHeight: getDefaultHeaderHeight(),
+  // headerHeight: getDefaultHeaderHeight(),
   spacing,
   headerHeight: 60,
   radius: {

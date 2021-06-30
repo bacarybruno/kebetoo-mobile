@@ -21,7 +21,9 @@ class ApiClient extends HttpClient {
       getById: (id) => this.get(`/authors/${id}`),
       update: (id, data) => this.put(`/authors/${id}`, data),
       countActivities: (id) => this.get(`/authors/${id}/activities/count`),
-      getActivities: (id, from = new Date().toISOString()) => this.get(`/authors/${id}/activities?_from=${from}&_limit=10`),
+      getActivities: (id, from = new Date().toISOString()) => (
+        this.get(`/authors/${id}/activities?_from=${from}&_limit=10`)
+      ),
       batchGetById: (ids) => {
         const queryString = ids.map((id) => `id_eq=${id}`).join('&')
         return this.get(`/authors?${queryString}`)

@@ -9,7 +9,9 @@ import createThemedStyles from './styles'
 
 const scale = (value = 1) => ({ transform: [{ scale: value }] })
 
-const RecordButton = ({ onRecord, onEndRecord, isRecording, isDisabled }) => {
+const RecordButton = ({
+  onRecord, onEndRecord, isRecording, isDisabled,
+}) => {
   const styles = useAppStyles(createThemedStyles)
 
   const [animatedScale] = useState(new Animated.Value(1))
@@ -25,7 +27,7 @@ const RecordButton = ({ onRecord, onEndRecord, isRecording, isDisabled }) => {
     } else {
       animatedScale.setValue(1)
     }
-  }, [isRecording])
+  }, [animatedScale, isRecording])
 
   return (
     <View style={styles.recordButtonWrapper}>

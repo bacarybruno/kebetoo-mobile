@@ -21,6 +21,6 @@ export default (colors) => StyleSheet.create({
   headerBackButton: {
     width: metrics.spacing.xl,
     paddingVertical: metrics.spacing.sm,
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
 })

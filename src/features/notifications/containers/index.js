@@ -108,7 +108,7 @@ const NotificationsPage = () => {
   const onNotificationOpen = useCallback(async ({ id, message, status }) => {
     try {
       setIsLoading(true)
-  
+
       let postId = null
       const payload = JSON.parse(message.data.payload)
       switch (message.data.type) {
@@ -118,6 +118,7 @@ const NotificationsPage = () => {
         case NOTIFICATION_TYPES.REPLY:
         case NOTIFICATION_TYPES.SYSTEM:
           postId = payload.postId
+          break
         default:
           break
       }

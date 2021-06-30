@@ -22,7 +22,9 @@ export const Reveal = ({ onPress, text, type }) => (
   </TouchableWithoutFeedback>
 )
 
-const ReadMore = ({ numberOfLines = 5, text, revealType, children, ...typographyProps }) => {
+const ReadMore = ({
+  numberOfLines = 5, text, revealType, children, ...typographyProps
+}) => {
   const renderViewLess = useCallback((onPress) => (
     <Reveal
       type={revealType}

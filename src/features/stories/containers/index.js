@@ -1,6 +1,6 @@
 import { Platform, View, InteractionManager } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
-import { useIsFocused } from '@react-navigation/core'
+import { useIsFocused } from '@react-navigation/native'
 import RNFetchBlob from 'rn-fetch-blob'
 
 import { strings } from '@app/config'

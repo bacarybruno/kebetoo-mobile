@@ -99,5 +99,5 @@ export default (colors) => StyleSheet.create({
   messageText: {
     marginHorizontal: metrics.spacing.sm,
     marginVertical: metrics.spacing.xs,
-  }
+  },
 })

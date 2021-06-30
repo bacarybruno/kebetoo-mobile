@@ -28,7 +28,7 @@ it('renders EditProfile', () => {
 
 it('updates profile', async () => {
   const { wrapper, props } = givenEditProfile()
-  const [displayName, username, _, bio] = wrapper.root.findAllByType(TextOutlinedInput)
+  const [displayName, username,, bio] = wrapper.root.findAllByType(TextOutlinedInput)
 
   await act(async () => {
     await displayName.props.onChange('jest', fieldNames.fullName)
@@ -49,7 +49,7 @@ it('updates profile', async () => {
 it('aborts profile update if username exists', async () => {
   api.authors.getByUsername.mockResolvedValue([{ id: 'fake-id-123' }])
   const { wrapper, props } = givenEditProfile()
-  const [displayName, username, _, bio] = wrapper.root.findAllByType(TextOutlinedInput)
+  const [displayName, username,, bio] = wrapper.root.findAllByType(TextOutlinedInput)
 
   expect(username.props.error).toBeNull()
 

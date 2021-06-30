@@ -1,5 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
-import { View, SectionList, Image, Text, ActivityIndicator } from 'react-native'
+import {
+  View, SectionList, Image, Text, ActivityIndicator,
+} from 'react-native'
 import dayjs from 'dayjs'
 
 import { api } from '@app/shared/services'
@@ -83,7 +85,7 @@ const UserProfile = ({ route, navigation }) => {
       setIsLoading(true)
       const [author, activities] = await Promise.all([
         api.authors.getById(userId),
-        api.authors.getActivities(userId)
+        api.authors.getActivities(userId),
       ])
       setUser(author)
       setPosts(activities.items)
@@ -98,11 +100,11 @@ const UserProfile = ({ route, navigation }) => {
     setIsLoading(true)
     if (next) {
       const activities = await api.authors.getActivities(userId, next)
-      setPosts((posts) => [...posts, ...activities.items])
+      setPosts((state) => [...state, ...activities.items])
       setNext(activities.metadata?.next)
     }
     setIsLoading(false)
-  }, [next])
+  }, [next, userId])
 
   useEffect(() => {
     const dateMap = {}
@@ -195,7 +197,7 @@ const UserProfile = ({ route, navigation }) => {
         />
       </View>
     )
-  }, [authors, styles.paddingHorizontal, user])
+  }, [authors, styles.paddingHorizontal, styles.subheading, user])
 
   const renderListHeader = useCallback(() => {
     const joinedAt = strings.formatString(
@@ -207,7 +209,14 @@ const UserProfile = ({ route, navigation }) => {
         <AppHeader headerBack style={styles.header} />
         {photoURL
           ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
-          : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
+          : (
+            <TextAvatar
+              noRadius
+              fontSize={150}
+              text={user.displayName}
+              size={metrics.screenWidth}
+            />
+          )}
         <View style={styles.profileInfos}>
           <View style={styles.profileInfoSection}>
             <Typography

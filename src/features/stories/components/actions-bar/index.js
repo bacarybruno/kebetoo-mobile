@@ -1,4 +1,4 @@
-import { isValidElement, memo } from 'react'
+import { isValidElement } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
@@ -7,7 +7,9 @@ import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
 import createThemedStyles, { iconSize } from './styles'
 
-const StoryReaction = ({ icon, value, active, activeColor, onPress, disabled }) => {
+const StoryReaction = ({
+  icon, value, active, activeColor, onPress, disabled,
+}) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
 
@@ -48,7 +50,7 @@ const StoryViewActionBar = ({ actions, style, position = StoryViewActionBar.Posi
         position === StoryViewActionBar.Positions.Left
           ? styles.left
           : styles.right,
-        style
+        style,
       ]}
     >
       {actions.map((action) => (
@@ -67,8 +69,7 @@ const StoryViewActionBar = ({ actions, style, position = StoryViewActionBar.Posi
 
 StoryViewActionBar.Positions = {
   Left: 'StoryViewActionBar.Positions.Left',
-  Right: 'StoryViewActionBar.Positions.Right'
+  Right: 'StoryViewActionBar.Positions.Right',
 }
 
 export default StoryViewActionBar
-

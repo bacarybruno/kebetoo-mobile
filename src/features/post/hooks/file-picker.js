@@ -83,7 +83,7 @@ const useFilePicker = (uri) => {
     })
     reset()
     return response[0].url
-  }, [file, pickImage, reset])
+  }, [pickImage, reset])
 
   const savePost = useCallback(async (author, content, repost) => {
     // TODO: check if it's necessary to have unique file names

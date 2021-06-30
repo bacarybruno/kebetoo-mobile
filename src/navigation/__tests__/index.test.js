@@ -27,7 +27,7 @@ const __storeState__ = {
       users: [],
       posts: [],
     },
-  }
+  },
 }
 
 describe('tabs', () => {
@@ -57,7 +57,10 @@ describe('onboarding', () => {
 })
 
 describe('app navigation', () => {
-  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__, disconnectNavigation: true })
+  const givenAppNavigation = setupTest(AppNavigation)({
+    __storeState__,
+    disconnectNavigation: true,
+  })
 
   it('renders AppNavigation for authenticated user', async () => {
     auth.setMockOptions({
@@ -91,7 +94,10 @@ describe('app navigation', () => {
 })
 
 describe('route state change', () => {
-  const givenAppNavigation = setupTest(AppNavigation)({ __storeState__, disconnectNavigation: true })
+  const givenAppNavigation = setupTest(AppNavigation)({
+    __storeState__,
+    disconnectNavigation: true,
+  })
 
   it('handles route state change', () => {
     const getCurrentRoute = jest.fn()

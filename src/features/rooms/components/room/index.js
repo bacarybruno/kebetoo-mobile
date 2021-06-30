@@ -1,7 +1,9 @@
 import { View, Text } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { Pressable, Avatar, Typography, FormatedTypography } from '@app/shared/components'
+import {
+  Pressable, Avatar, Typography, FormatedTypography,
+} from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { readableNumber } from '@app/shared/helpers/strings'
 import { strings } from '@app/config'

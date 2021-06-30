@@ -1,4 +1,6 @@
-import { memo, useEffect, useState, useCallback } from 'react'
+import {
+  memo, useEffect, useState, useCallback,
+} from 'react'
 import {
   View, SectionList, Alert, LogBox,
 } from 'react-native'
@@ -33,7 +35,7 @@ export const NoPosts = () => (
   <NoContent title={strings.general.no_content} text={strings.manage_posts.no_content} />
 )
 
-const ManagePostsPage = ({ route, navigation }) => {
+const ManagePostsPage = ({ navigation }) => {
   const styles = useAppStyles(createThemedStyles)
   const { colors } = useAppColors()
   navigation.setOptions(routeOptions)
@@ -45,8 +47,6 @@ const ManagePostsPage = ({ route, navigation }) => {
   const [loading, setLoading] = useState(true)
 
   const { getRepostAuthors } = usePosts()
-  const { params } = route
-
 
   const { showManagePostsOptions } = useBottomSheet()
   const { navigate } = navigation
@@ -163,24 +163,18 @@ const ManagePostsPage = ({ route, navigation }) => {
     photoURL,
   })
 
-  const renderItem = useCallback(({ item }) => {
-    // const badge = params?.action === actionTypes.EDIT
-    //   ? strings.general.edited
-    //   : strings.general.new
-    return (
-      <BasicPost
-        onOptions={() => showPostOptions(item)}
-        author={userToAuthor(profile)}
-        // badge={params?.payload === item.id ? badge : undefined}
-        originalAuthor={
-          item.repost
-            ? authors[item.repost.author]
-            : userToAuthor(profile)
-        }
-        post={item}
-      />
-    )
-  }, [profile, params, authors, showPostOptions])
+  const renderItem = useCallback(({ item }) => (
+    <BasicPost
+      onOptions={() => showPostOptions(item)}
+      author={userToAuthor(profile)}
+      originalAuthor={
+        item.repost
+          ? authors[item.repost.author]
+          : userToAuthor(profile)
+      }
+      post={item}
+    />
+  ), [profile, authors, showPostOptions])
 
   const renderNoPost = useCallback(() => loading === false && <NoPosts />, [loading])
 

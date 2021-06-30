@@ -144,7 +144,7 @@ const useComments = (story, commentInput, scrollView) => {
     })
   }, [replies])
 
-  const onComment = useCallback(() => commentInput.current?.focus(), [])
+  const onComment = useCallback(() => commentInput.current?.focus(), [commentInput])
 
   const clearToReply = useCallback(() => {
     dispatch({ type: actionTypes.CLEAR_TO_REPLY })

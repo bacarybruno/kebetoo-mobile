@@ -1,5 +1,5 @@
 import {
-  memo, useCallback, useState, useEffect, useMemo, useRef,
+  memo, useCallback, useState, useEffect, useRef,
 } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'

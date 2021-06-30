@@ -60,9 +60,8 @@ const ImageModal = ({ route, navigation }) => {
     hideControls()
   }, [hideControls])
 
-  useEffect(() => {
-    return resetAppBars
-  }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => resetAppBars, [])
 
   useEffect(() => {
     if (Number.isNaN(aspectRatio)) {
@@ -78,7 +77,7 @@ const ImageModal = ({ route, navigation }) => {
   }, [aspectRatio, sourceUri])
 
   let imageHeight = (dimensions.height * metrics.screenWidth) / dimensions.width
-  if (isNaN(imageHeight)) {
+  if (Number.isNaN(imageHeight)) {
     imageHeight = metrics.screenHeight
   }
   return (

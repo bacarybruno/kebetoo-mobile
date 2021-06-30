@@ -16,7 +16,10 @@ const Badge = ({
   const { colors } = useAppColors()
   if (!text) return null
   return (
-    <View style={[styles.wrapper, getBackgroundColor(primary, colors, color), style]} testID={testID}>
+    <View
+      style={[styles.wrapper, getBackgroundColor(primary, colors, color), style]}
+      testID={testID}
+    >
       <Typography
         type={typography || Typography.types.headline5}
         text={text}

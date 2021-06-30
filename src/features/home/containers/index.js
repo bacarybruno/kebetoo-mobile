@@ -1,5 +1,7 @@
 /* eslint-disable import/default */
-import { useEffect, useState, useCallback, useMemo } from 'react'
+import {
+  useEffect, useState, useCallback, useMemo,
+} from 'react'
 import {
   View, FlatList, RefreshControl, Platform, ActivityIndicator, LogBox,
 } from 'react-native'
@@ -42,6 +44,7 @@ const HomePage = ({ navigation }) => {
   const { trackReceiveIntent } = useAnalytics()
   const { profile } = useUser()
   const { getRepostAuthors } = usePosts()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const posts = useSelector(postsSelector) || []
   const isLoading = useSelector(isLoadingPostsSelector)
   const isRefreshing = useSelector(isRefreshingPostsSelector)
@@ -79,15 +82,26 @@ const HomePage = ({ navigation }) => {
     return () => {
       if (listener.remove) listener.remove()
     }
-  }, [])
+  }, [handleShare])
+
+  const onSelectFilter = useCallback((item) => {
+    setTimeout(() => {
+      dispatch({
+        type: types.UPDATE_POSTS_FILTER_REQUEST,
+        payload: {
+          filter: item.value,
+        },
+      })
+    }, 1)
+  }, [dispatch])
 
   const onRefresh = useCallback(() => {
     onSelectFilter({ value: postsFilter })
-  }, [onSelectFilter])
+  }, [onSelectFilter, postsFilter])
 
   useEffect(() => {
     dispatch({ type: types.INIT_POSTS })
-  }, [])
+  }, [dispatch])
 
   const onEndReached = useCallback(() => {
     dispatch({ type: types.POSTS_NEXT_PAGE_REQUEST })
@@ -139,6 +153,7 @@ const HomePage = ({ navigation }) => {
     } else if (actionIndex === 2) {
       blockAuthor(post)
     }
+    return null
   }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor, navigation])
 
   const renderBasicPost = useCallback(({ item }) => (
@@ -153,17 +168,6 @@ const HomePage = ({ navigation }) => {
       }
     />
   ), [authors, showPostOptions])
-
-  const onSelectFilter = useCallback((item) => {
-    setTimeout(() => {
-      dispatch({
-        type: types.UPDATE_POSTS_FILTER_REQUEST,
-        payload: {
-          filter: item.value,
-        }
-      })
-    }, 1)
-  }, [])
 
   const renderListHeader = useMemo(() => (user) => {
     const filterItems = [{
@@ -183,7 +187,7 @@ const HomePage = ({ navigation }) => {
           title={(
             strings.formatString(
               strings.home.welcome,
-              user.displayName?.trim()?.split(' ')[0] || ''
+              user.displayName?.trim()?.split(' ')[0] || '',
             )
           )}
           text={strings.home.whats_new}
@@ -204,7 +208,7 @@ const HomePage = ({ navigation }) => {
         />
       </View>
     )
-  }, [styles, onSelectFilter, postsFilter, navigation])
+  }, [styles, colors.textPrimary, onSelectFilter, postsFilter, navigation])
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl

@@ -50,7 +50,9 @@ const mockedStoreState = {
 const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
   let wrapper = null
   return (defaultProps = {}) => (additionalProps = {}) => {
-    const { store, __storeState__ = mockedStoreState, disconnectNavigation, ...props } = defaultProps
+    const {
+      store, __storeState__ = mockedStoreState, disconnectNavigation, ...props
+    } = defaultProps
     const propsWithArgs = {
       ...props,
       ...additionalProps,
@@ -72,7 +74,7 @@ const setupTest = (WrappedComponent, renderFn = TestRenderer.create) => {
                 <NavigationContainer>
                   <Stack.Navigator>
                     <Stack.Screen name="jest">
-                      {(props) => <WrappedComponent {...propsWithArgs} />}
+                      {() => <WrappedComponent {...propsWithArgs} />}
                     </Stack.Screen>
                   </Stack.Navigator>
                 </NavigationContainer>

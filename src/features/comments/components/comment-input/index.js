@@ -1,4 +1,6 @@
-import { memo, useState, useCallback, useRef, useEffect } from 'react'
+import {
+  memo, useState, useCallback, useRef, useEffect,
+} from 'react'
 import { Animated, View } from 'react-native'
 
 import { AudioPlayer, TextInput } from '@app/shared/components'

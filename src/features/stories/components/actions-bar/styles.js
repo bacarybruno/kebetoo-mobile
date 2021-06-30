@@ -26,7 +26,7 @@ export default (colors) => StyleSheet.create({
   icon: {
     shadowOpacity: 2,
     textShadowRadius: 1,
-    textShadowOffset: { width: 1, height: 1 }
+    textShadowOffset: { width: 1, height: 1 },
   },
   disabled: {
     opacity: 0.4,

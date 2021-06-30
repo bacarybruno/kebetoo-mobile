@@ -112,20 +112,19 @@ const CommentsView = ({
   useEffect(() => {
     updateTopSafeAreaColor(colors.backgroundSecondary)
     return resetStatusBars
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const renderComment = useMemo(() => ({ item }) => {
-    return (
-      <CommentItem
-        item={item}
-        replies={replies}
-        toReply={toReply}
-        onSetReply={onSetReply}
-        loadReplies={loadReplies}
-        navigation={navigation}
-      />
-    )
-  }, [replies, toReply, loadReplies, onSetReply, navigation])
+  const renderComment = useMemo(() => ({ item }) => (
+    <CommentItem
+      item={item}
+      replies={replies}
+      toReply={toReply}
+      onSetReply={onSetReply}
+      loadReplies={loadReplies}
+      navigation={navigation}
+    />
+  ), [replies, toReply, loadReplies, onSetReply, navigation])
 
   const keyExtractor = useCallback((item, index) => `comment-${item?.id}-${index}`, [])
 

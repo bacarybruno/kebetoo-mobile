@@ -7,7 +7,7 @@ import { HeaderBack } from '@app/shared/components'
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
 import CommentsView from '@app/features/comments/components/comments-view'
 import Reactions from '@app/features/comments/components/reactions'
-import { useNavigation } from '@react-navigation/core'
+import { useNavigation } from '@react-navigation/native'
 
 import createThemedStyles from './styles'
 import useComments from './hook'

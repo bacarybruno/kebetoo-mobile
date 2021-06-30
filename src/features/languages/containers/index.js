@@ -2,14 +2,16 @@ import { useCallback, useState } from 'react'
 import { Alert, FlatList, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import { AppHeader, OutlinedButton, Pressable, Typography } from '@app/shared/components'
+import {
+  AppHeader, OutlinedButton, Pressable, Typography,
+} from '@app/shared/components'
 import { strings } from '@app/config'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 
-import createThemedStyles from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { SET_LOCALE } from '@app/redux/types'
 import { localeSelector } from '@app/redux/selectors'
+import createThemedStyles from './styles'
 
 const routeOptions = { title: strings.languages.languages }
 
@@ -36,7 +38,7 @@ const LanguageChooser = ({ data, onSelect, defaultLanguage }) => {
         )}
       </Pressable>
     )
-  }, [onSelect, defaultLanguage])
+  }, [styles, defaultLanguage, colors.primary, onSelect])
 
   const keyExtractor = useCallback((item) => `language-${item.locale}`, [])
 
@@ -70,8 +72,8 @@ const LanguagesPage = () => {
         text: strings.general.ok.toUpperCase(),
         onPress: () => {
           dispatch({ type: SET_LOCALE, payload: selectedLanguage })
-        }
-      }]
+        },
+      }],
     )
   }, [dispatch, selectedLanguage])
 

@@ -1,4 +1,6 @@
-import { memo, useState, useCallback, useEffect, useRef } from 'react'
+import {
+  memo, useState, useCallback, useEffect, useRef,
+} from 'react'
 import {
   View, TouchableWithoutFeedback, Platform, ScrollView, Keyboard, InteractionManager,
 } from 'react-native'
@@ -6,7 +8,9 @@ import { CommonActions } from '@react-navigation/native'
 import Snackbar from 'react-native-snackbar'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
-import { OutlinedButton, AudioPlayer, AppHeader, FormatedTypography } from '@app/shared/components'
+import {
+  OutlinedButton, AudioPlayer, AppHeader, FormatedTypography,
+} from '@app/shared/components'
 import IconButton from '@app/features/post/components/icon-button'
 import { ImageViewer } from '@app/features/post/components/image-content'
 import { api } from '@app/shared/services'
@@ -39,7 +43,7 @@ export const actionTypes = {
   CREATE: 'create',
   SHARE: 'share',
   REPORT: 'report',
-  CREATE_STORY: 'create_story'
+  CREATE_STORY: 'create_story',
 }
 
 export const PostTextMessage = ({
@@ -245,7 +249,8 @@ const CreatePostPage = ({ route, navigation }) => {
       })
       return setIsLoading(false)
     }
-  }, [params, editMode, audioRecorder, filePicker, reportMode, createStoryMode, navigation, text, profile.uid, reportError])
+  // eslint-disable-next-line max-len
+  }, [params, editMode, reportMode, createStoryMode, audioRecorder, filePicker, text, colors.blue, navigation, profile.uid, reportError])
 
   const getHeaderMessages = useCallback(() => {
     if (editMode) {
@@ -276,7 +281,7 @@ const CreatePostPage = ({ route, navigation }) => {
       post: strings.general.post,
       title: strings.create_post.create_post,
     }
-  }, [editMode, shareMode, reportMode])
+  }, [editMode, shareMode, reportMode, createStoryMode])
 
   const openImagePreview = useCallback(() => {
     navigation.navigate(routes.MODAL_IMAGE, {

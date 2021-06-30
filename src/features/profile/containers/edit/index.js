@@ -1,5 +1,9 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
-import { TouchableOpacity, View, ActivityIndicator, InteractionManager } from 'react-native'
+import {
+  useCallback, useEffect, useReducer, useRef, useState,
+} from 'react'
+import {
+  TouchableOpacity, View, ActivityIndicator, InteractionManager,
+} from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { addMethod as addYupMethod, string as yupString, object as yupObject } from 'yup'
@@ -42,8 +46,8 @@ export const fieldNames = {
   bio: 'bio',
 }
 
-addYupMethod(yupString, 'usernameValidator', function (message) {
-  return this.test('validate-username', message, function (value) {
+addYupMethod(yupString, 'usernameValidator', function usernameValidator(message) {
+  return this.test('validate-username', message, function validateUsername(value) {
     const { path, createError } = this
     const username = value.startsWith('@') ? value : `@${value}`
     return isValidUsername(username) || createError({ path, message })
@@ -96,9 +100,9 @@ const EditProfile = ({ route, navigation }) => {
   })
 
   const formatUsername = useCallback((val) => {
-    value = val.toLowerCase()
+    let value = val.toLowerCase()
     if (value.length > 0 && value[0] !== '@') {
-      value = '@' + value
+      value = `@${value}`
     }
     return value
   }, [])

@@ -15,7 +15,7 @@ export default (colors) => StyleSheet.create({
   textShadow: {
     shadowOpacity: 2,
     textShadowRadius: 1,
-    textShadowOffset: { width: 1, height: 1 }
+    textShadowOffset: { width: 1, height: 1 },
   },
   padding: {
     paddingHorizontal: metrics.marginHorizontal,

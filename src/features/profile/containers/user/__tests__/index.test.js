@@ -118,7 +118,7 @@ describe('posts', () => {
     api.authors.getById.mockResolvedValue(author)
 
     const activities = {
-      items: [{ type: 'post', data: userPosts[0] }]
+      items: [{ type: 'post', data: userPosts[0] }],
     }
     api.authors.getActivities.mockResolvedValue(activities)
 
@@ -138,13 +138,13 @@ describe('posts', () => {
         next: new Date().toISOString(),
       },
     })
-    
+
     let wrapper
     await act(async () => {
       const { wrapper: wrapperAsync } = await givenUserProfile()
       wrapper = wrapperAsync
     })
-  
+
     expect(wrapper.root.findAllByType(BasicPost).length).toBe(0)
 
     api.authors.getActivities.mockResolvedValue({

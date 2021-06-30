@@ -116,7 +116,7 @@ const useRooms = (roomId) => {
       // also delete messages
       await messagesRef.child(roomId).remove()
     }
-  }, [])
+  }, [messagesRef, profile.uid, roomId, roomsRef])
 
   const createMessage = useCallback(async ({
     room, text, audio, ...other
