@@ -2,13 +2,11 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Image, Text, View } from 'react-native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import Video from 'react-native-video'
-import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
 import { useNavigation } from '@react-navigation/core'
-import { Portal } from '@gorhom/portal'
 import convertToProxyURL from 'react-native-video-cache'
 import Share from 'react-native-share'
 
-import { Avatar, MultipleTapHandler, FormatedTypography, Typography } from '@app/shared/components'
+import { Avatar, MultipleTapHandler, FormatedTypography, Typography, BottomSheetView } from '@app/shared/components'
 import { readableNumber } from '@app/shared/helpers/strings'
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
 import { colorGradient } from '@app/theme/colors'
@@ -137,33 +135,20 @@ export const CommentsBottomSheet = ({
     scrollView,
   )
 
-  const snapPoints = useMemo(() => ['0%', '50%', '70%'], [])
-
-  const renderBackdrop = useCallback((props) => <BottomSheetBackdrop {...props} />, [])
-
   return (
-    <Portal hostName="bottom-sheet">
-      <BottomSheet
-        index={0}
-        ref={bottomSheet}
-        handleComponent={null}
-        snapPoints={snapPoints}
-        backgroundComponent={null}
-        backdropComponent={renderBackdrop}
-        onChange={onBottomSheetIndexChange}
-      >
-        <CommentsCount
-          onDismiss={() => bottomSheet.current.close()}
-          count={count}
-        />
-        <CommentsView
-          {...commentHelpers}
-          navigation={navigation}
-          scrollView={scrollView}
-          commentInput={commentInput}
-        />
-      </BottomSheet>
-    </Portal>
+    <BottomSheetView
+      index={0}
+      bottomSheet={bottomSheet}
+      header={`${readableNumber(count)} comments`}
+      onBottomSheetIndexChange={onBottomSheetIndexChange}
+    >
+      <CommentsView
+        {...commentHelpers}
+        navigation={navigation}
+        scrollView={scrollView}
+        commentInput={commentInput}
+      />
+    </BottomSheetView>
   )
 }
 

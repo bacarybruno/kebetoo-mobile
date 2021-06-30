@@ -17,8 +17,6 @@ const CreateStoryPage = ({
   resetVideoFile,
   onFinish,
 }) => {
-  if (!isFocused) return null
-
   const [records, setRecords] = useState([])
   const [finishRecording, setFinishRecording] = useState(false)
 
@@ -40,9 +38,9 @@ const CreateStoryPage = ({
     return () => {
       BackHandler.removeEventListener('hardwareBackPress', onGoBackHandler)
     }
-  }, [isFocused])
+  }, [isFocused, onGoBack])
 
-  
+  if (!isFocused) return null
 
   if (finishRecording) {
     return (

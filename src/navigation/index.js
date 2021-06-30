@@ -95,7 +95,7 @@ const defaultTabOptions = ({ route }) => ({
     }
     const size = 24
     const iconName = iconNames[route.name]
-    if (!iconName) return
+    if (!iconName) return null
     if (iconName === 'stories') {
       return (
         <Kebeticon
@@ -107,7 +107,7 @@ const defaultTabOptions = ({ route }) => ({
     }
     return (
       <Ionicon
-        name={focused ? iconName : (iconName + '-outline')}
+        name={focused ? iconName : `${iconName}-outline`}
         size={size}
         color={color}
       />
@@ -245,7 +245,7 @@ export const loggedInPages = [
 const AppNavigation = () => {
   const { colors } = useAppColors()
 
-  const { isLoggedIn, profile } = useUser()
+  const { isLoggedIn } = useUser()
   const { trackPageView } = useAnalytics()
 
   const navigationRef = useRef()

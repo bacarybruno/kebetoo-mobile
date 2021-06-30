@@ -1,15 +1,13 @@
 
-import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react'
+import { useEffect, useReducer, useRef } from 'react'
 import { Image, Platform, TouchableOpacity, View } from 'react-native'
 import Video from 'react-native-video'
 import { captureRef } from 'react-native-view-shot'
-import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
-import Ionicon from 'react-native-vector-icons/Ionicons'
 import { FlatList } from 'react-native-gesture-handler'
 import RNFetchBlob from 'rn-fetch-blob'
 import { useIsFocused } from '@react-navigation/core'
 
-import { AppHeader, NoContent, Typography } from '@app/shared/components'
+import { AppHeader, BottomSheetView, NoContent } from '@app/shared/components'
 import { useAppColors, useAppStyles } from '@app/shared/hooks'
 import { videoEditor } from '@app/features/stories/services'
 import StoryViewActionBar from '@app/features/stories/components/actions-bar'
@@ -31,9 +29,12 @@ const StickersPicker = ({ data, onPickSticker }) => {
   const styles = useAppStyles(createThemedStyles)
 
   const renderSticker = ({ item }) => {
-    const stickerUri = 'file://' + item.path
+    const stickerUri = `file://${item.path}`
     return (
-      <TouchableOpacity style={styles.sticker} onPress={() => onPickSticker({ ...item, uri: stickerUri })}>
+      <TouchableOpacity
+        style={styles.sticker}
+        onPress={() => onPickSticker({ ...item, uri: stickerUri })}
+      >
         <Image source={{ uri: stickerUri }} style={styles.stickerImage} />
       </TouchableOpacity>
     )
@@ -61,45 +62,11 @@ const StickersPicker = ({ data, onPickSticker }) => {
   )
 }
 
-const StickersBottomSheet = ({ bottonSheetRef, data, onPickSticker }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
-
-  const renderBackdrop = useCallback((props) => <BottomSheetBackdrop {...props} />, [])
-
-  const snapPoints = useMemo(() => ['0%', '50%', '70%'], [])
-
-  const panelHeader = useMemo(() => (
-    <View style={styles.panelHeader}>
-      <Typography
-        text="Stickers"
-        systemWeight={Typography.weights.semibold}
-        style={styles.text}
-      />
-      <Ionicon
-        name="ios-close"
-        color={colors.textPrimary}
-        size={23}
-        style={styles.modalCloseIcon}
-        onPress={() => bottonSheetRef.current?.close()}
-      />
-    </View>
-  ))
-
-  return (
-    <BottomSheet
-      ref={bottonSheetRef}
-      snapPoints={snapPoints}
-      index={0}
-      handleComponent={null}
-      backgroundComponent={null}
-      backdropComponent={renderBackdrop}
-    >
-      {panelHeader}
-      <StickersPicker data={data} onPickSticker={onPickSticker} />
-    </BottomSheet>
-  )
-}
+const StickersBottomSheet = ({ bottonSheetRef, data, onPickSticker }) => (
+  <BottomSheetView bottomSheet={bottonSheetRef} header="Stickers">
+    <StickersPicker data={data} onPickSticker={onPickSticker} />
+  </BottomSheetView>
+)
 
 // TODO: use reducer
 const StoryPreview = ({ records, onGoBack, onFinish }) => {
@@ -172,7 +139,7 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
       await Promise.all([
         createSlowMoVideo(result, videoDuration),
         createBoomerangVideo(result),
-        createReversedVideo(result)
+        createReversedVideo(result),
       ])
 
       dispatch({ type: 'setProcessing', payload: false })
@@ -182,7 +149,7 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
   }, [records])
 
   const loadNextVideo = () => {
-    let nextVideoIndex = videoIndex + 1
+    const nextVideoIndex = videoIndex + 1
     dispatch({
       type: 'setVideoIndex',
       payload: nextVideoIndex < records.length
@@ -200,32 +167,41 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
     })
   }
 
+  const getDisplayedVideo = () => {
+    let video = records[videoIndex]
+    if (mergedVideo) video = mergedVideo
+    if (videoMode === VideoModes.Boomerang) video = boomerangVideo
+    if (videoMode === VideoModes.Reverse) video = reversedVideo
+    if (videoMode === VideoModes.Slowmo) video = slowMoVideo
+    return video
+  }
+
   const actions = [{
     icon: 'text',
     text: 'Text',
-    onPress: () => storyTextDesigner.current.addNode()
+    onPress: () => storyTextDesigner.current.addNode(),
   }, {
     icon: 'happy',
     text: 'Stickers',
-    onPress: () => bottomSheet.current?.expand()
+    onPress: () => bottomSheet.current?.expand(),
   }, {
     icon: 'infinite',
     text: 'B∞mrang',
     disabled: !boomerangVideo,
     active: videoMode === VideoModes.Boomerang,
-    onPress: () => updateVideoMode(VideoModes.Boomerang)
+    onPress: () => updateVideoMode(VideoModes.Boomerang),
   }, {
     icon: 'play-back',
     text: 'Reverse',
     disabled: !reversedVideo,
     active: videoMode === VideoModes.Reverse,
-    onPress: () => updateVideoMode(VideoModes.Reverse)
+    onPress: () => updateVideoMode(VideoModes.Reverse),
   }, {
     icon: 'hourglass',
     text: 'Slowmo',
     disabled: !slowMoVideo,
     active: videoMode === VideoModes.Slowmo,
-    onPress: () => updateVideoMode(VideoModes.Slowmo)
+    onPress: () => updateVideoMode(VideoModes.Slowmo),
   }, {
     icon: 'arrow-forward-circle',
     text: 'Next',
@@ -240,17 +216,8 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
       )
       dispatch({ type: 'setProcessing', payload: false })
       onFinish(result)
-    }
+    },
   }]
-
-  const getDisplayedVideo = () => {
-    let video = records[videoIndex]
-    if (mergedVideo) video = mergedVideo
-    if (videoMode === VideoModes.Boomerang) video = boomerangVideo
-    if (videoMode === VideoModes.Reverse) video = reversedVideo
-    if (videoMode === VideoModes.Slowmo) video = slowMoVideo
-    return video
-  }
 
   const onPickSticker = (sticker) => {
     storyImageDesigner.current.addNode(sticker)

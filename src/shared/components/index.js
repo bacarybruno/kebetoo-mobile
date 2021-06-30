@@ -15,6 +15,7 @@ export { default as CameraRollPicker } from './camera-roll-picker'
 export { default as VideoPlayer } from './video-player'
 export { default as SegmentedControl } from './segmented-control'
 export { default as ViewPager } from './view-pager'
+export { default as BottomSheetView } from './bottom-sheet-view'
 export {
   FullButton, IconButton, OutlinedButton, Pressable, TabBarAddButton,
 } from './buttons'

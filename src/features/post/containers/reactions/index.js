@@ -1,15 +1,16 @@
-import { memo, useCallback, useState, useEffect, useMemo, useRef } from 'react'
-import { Platform, View } from 'react-native'
+import {
+  memo, useCallback, useState, useEffect, useMemo, useRef,
+} from 'react'
+import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { Portal } from '@gorhom/portal'
 
 import useReactions from '@app/features/post/hooks/reactions'
 import Reaction from '@app/features/post/components/reaction'
 import { api } from '@app/shared/services'
-import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
 import useComments from '@app/features/comments/containers/hook'
-import { CommentsCount } from '@app/features/stories/components/slide'
 import CommentsView from '@app/features/comments/components/comments-view'
+import { readableNumber } from '@app/shared/helpers/strings'
+import { BottomSheetView } from '@app/shared/components'
 
 import styles from './styles'
 
@@ -35,34 +36,20 @@ export const CommentsBottomSheet = ({
     navigation,
   )
 
-  const snapPoints = useMemo(() => ['0%', '50%', '70%'], [])
-
-  const renderBackdrop = useCallback((props) => <BottomSheetBackdrop {...props} />, [])
-
   return (
-    <Portal hostName="bottom-sheet">
-      <BottomSheet
-        index={2}
-        ref={bottomSheet}
-        handleComponent={null}
-        snapPoints={snapPoints}
-        backgroundComponent={null}
-        backdropComponent={renderBackdrop}
-        onChange={onBottomSheetIndexChange}
-        animateOnMount={Platform.OS === 'android'}
-      >
-        <CommentsCount
-          onDismiss={() => bottomSheet.current.close()}
-          count={count}
-        />
-        <CommentsView
-          {...commentHelpers}
-          navigation={navigation}
-          scrollView={scrollView}
-          commentInput={commentInput}
-        />
-      </BottomSheet>
-    </Portal>
+    <BottomSheetView
+      index={2}
+      bottomSheet={bottomSheet}
+      header={`${readableNumber(count)} comments`}
+      onBottomSheetIndexChange={onBottomSheetIndexChange}
+    >
+      <CommentsView
+        {...commentHelpers}
+        navigation={navigation}
+        scrollView={scrollView}
+        commentInput={commentInput}
+      />
+    </BottomSheetView>
   )
 }
 

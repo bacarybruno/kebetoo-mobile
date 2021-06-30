@@ -1,4 +1,4 @@
-import { Platform, View } from 'react-native'
+import { Platform, View, InteractionManager } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
 import { useIsFocused } from '@react-navigation/core'
 import RNFetchBlob from 'rn-fetch-blob'
@@ -19,7 +19,7 @@ import StoryListPage from './story-list'
 
 const routeOptions = { title: strings.tabs.stories }
 
-const StoriesPage = ({ navigation }) => {
+const StoriesPage = ({ route, navigation }) => {
   const styles = useAppStyles(createThemedStyles)
 
   const pager = useRef()
@@ -46,6 +46,14 @@ const StoriesPage = ({ navigation }) => {
   }
 
   useEffect(() => {
+    if (route.params?.mode === StoriesPage.Modes.CreateStory) {
+      InteractionManager.runAfterInteractions(() => {
+        pager.current.setPage(0)
+      })
+    }
+  }, [route.params])
+
+  useEffect(() => {
     const fetchVideos = async () => {
       const videos = await api.stories.get({})
       setStories(videos)
@@ -54,14 +62,12 @@ const StoriesPage = ({ navigation }) => {
     fetchVideos()
   }, [])
 
-  const onPageSelected = e => setCurrentPage(e.nativeEvent.position)
+  const onPageSelected = (e) => setCurrentPage(e.nativeEvent.position)
 
   const isStoriesPageFocused = isFocused && currentPage === 1
   const isCreateStoryPageFocused = currentPage === 0
 
-  const createKey = (key, focused) => {
-    return `${key}-${Platform.OS === 'ios' ? focused : ''}`
-  }
+  const createKey = (key, focused) => `${key}-${Platform.OS === 'ios' ? focused : ''}`
 
   return (
     <View style={styles.wrapper}>
@@ -92,6 +98,11 @@ const StoriesPage = ({ navigation }) => {
       </ViewPager>
     </View>
   )
+}
+
+StoriesPage.Modes = {
+  CreateStory: 'StoriesPage.Modes.CreateStory',
+  Default: 'StoriesPage.Modes.Default',
 }
 
 StoriesPage.routeOptions = routeOptions
