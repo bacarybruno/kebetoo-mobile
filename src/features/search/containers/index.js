@@ -1,36 +1,36 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef } from 'react';
 import {
   View, ActivityIndicator, TouchableOpacity, InteractionManager,
-} from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+} from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { metrics, edgeInsets } from '@app/theme'
-import { strings } from '@app/config'
-import { AppHeader, SegmentedControl, TextInput } from '@app/shared/components'
-import routes from '@app/navigation/routes'
+import { metrics, edgeInsets } from '@app/theme';
+import { strings } from '@app/config';
+import { AppHeader, SegmentedControl, TextInput } from '@app/shared/components';
+import routes from '@app/navigation/routes';
 import {
   useUser, useDebounce, useAnalytics, useAppStyles, useAppColors,
-} from '@app/shared/hooks'
+} from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
-import SearchPosts from './posts'
-import SearchUsers from './users'
+import createThemedStyles from './styles';
+import SearchPosts from './posts';
+import SearchUsers from './users';
 
-const routeOptions = { title: strings.tabs.search }
+const routeOptions = { title: strings.tabs.search };
 
 export const SearchIcon = ({ onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(15)} style={styles.searchIcon}>
       <Ionicon name="search" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export const CancelIcon = ({ isLoading, onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <View style={styles.cancelIcon}>
       {!isLoading && (
@@ -40,57 +40,57 @@ export const CancelIcon = ({ isLoading, onPress }) => {
       )}
       {isLoading && <ActivityIndicator size={23} color={colors.textPrimary} />}
     </View>
-  )
-}
+  );
+};
 
 const SearchPage = () => {
-  const [searchQuery, setSearchQuery] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const { profile } = useUser()
-  const { trackSearch } = useAnalytics()
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { profile } = useUser();
+  const { trackSearch } = useAnalytics();
 
-  const textInputRef = useRef()
+  const textInputRef = useRef();
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const [selectedTab, setSelectedTab] = useState(routes.SEARCH_USERS)
+  const [selectedTab, setSelectedTab] = useState(routes.SEARCH_USERS);
   const tabs = [{
     label: strings.search.users_tab,
     value: routes.SEARCH_USERS,
   }, {
     label: strings.search.posts_tab,
     value: routes.SEARCH_POSTS,
-  }]
+  }];
 
   const onChange = useCallback((terms) => {
-    setSearchQuery(terms)
-  }, [])
+    setSearchQuery(terms);
+  }, []);
 
-  const debouncedOnChange = useDebounce(onChange)
+  const debouncedOnChange = useDebounce(onChange);
 
   const onCancel = useCallback(() => {
-    setSearchQuery(null)
-    textInputRef.current.clear()
-    textInputRef.current.blur()
-  }, [])
+    setSearchQuery(null);
+    textInputRef.current.clear();
+    textInputRef.current.blur();
+  }, []);
 
   const onSearch = useCallback((isSearching) => {
     if (isSearching) {
-      trackSearch(searchQuery)
+      trackSearch(searchQuery);
     }
-    setIsLoading(isSearching)
-  }, [trackSearch, searchQuery])
+    setIsLoading(isSearching);
+  }, [trackSearch, searchQuery]);
 
   const onRecentSearch = useCallback((text) => {
-    onChange(text)
+    onChange(text);
     InteractionManager.runAfterInteractions(() => {
-      textInputRef.current?.setNativeProps({ text })
-    })
-  }, [onChange])
+      textInputRef.current?.setNativeProps({ text });
+    });
+  }, [onChange]);
 
   const onShowSearchbar = useCallback(() => {
-    setSearchQuery('')
-  }, [])
+    setSearchQuery('');
+  }, []);
 
   return (
     <View style={styles.wrapper}>
@@ -144,9 +144,9 @@ const SearchPage = () => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-SearchPage.routeOptions = routeOptions
+SearchPage.routeOptions = routeOptions;
 
-export default SearchPage
+export default SearchPage;

@@ -24,6 +24,6 @@ const routes = {
   LANGUAGES: 'route:languages',
   CREATE_ROOM: 'route:create_room',
   ROOM: 'route:room',
-}
+};
 
-export default routes
+export default routes;

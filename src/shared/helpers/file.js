@@ -19,37 +19,37 @@ export const mimeTypes = Object.freeze({
   wmv: 'video/x-ms-wmv',
   avi: 'video/x-msvideo',
   webm: 'video/webm',
-})
+});
 
 const videoExtensions = Object
   .keys(mimeTypes)
-  .filter((mime) => mimeTypes[mime].startsWith('video'))
+  .filter((mime) => mimeTypes[mime].startsWith('video'));
 
 export const getFileName = (path) => {
-  if (typeof path !== 'string') return undefined
-  const parts = path.split('/')
-  return parts[parts.length - 1]
-}
+  if (typeof path !== 'string') return undefined;
+  const parts = path.split('/');
+  return parts[parts.length - 1];
+};
 
 export const getExtension = (filename) => {
-  if (typeof filename !== 'string') return undefined
-  const parts = filename.split('.')
-  return parts[parts.length - 1]
-}
+  if (typeof filename !== 'string') return undefined;
+  const parts = filename.split('.');
+  return parts[parts.length - 1];
+};
 
 export const getMimeType = (filename) => {
-  const extension = getExtension(filename)
-  if (!extension) return undefined
-  return mimeTypes[extension.toLowerCase()]
-}
+  const extension = getExtension(filename);
+  if (!extension) return undefined;
+  return mimeTypes[extension.toLowerCase()];
+};
 
 export const getMediaType = (filename) => {
-  const mimeType = getMimeType(filename)
-  if (mimeType === undefined) return undefined
-  return mimeType.split('/')[0]
-}
+  const mimeType = getMimeType(filename);
+  if (mimeType === undefined) return undefined;
+  return mimeType.split('/')[0];
+};
 
 export const isVideo = (filename) => {
-  const extension = getExtension(filename)
-  return videoExtensions.includes(extension)
-}
+  const extension = getExtension(filename);
+  return videoExtensions.includes(extension);
+};

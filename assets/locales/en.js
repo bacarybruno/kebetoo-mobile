@@ -25,6 +25,7 @@ const locales = Object.freeze({
     not_implemented_description: 'This feature has not been enabled yet. It will be available in the next versions of Kebetoo.',
     create: 'Create',
     ok: 'Ok',
+    beta: 'Beta',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -59,6 +60,11 @@ const locales = Object.freeze({
     search: 'Search',
     profile: 'Profile',
     rooms: 'Rooms',
+  },
+  tabbar: {
+    create_post: 'Create a Post',
+    create_viral: 'Create a Viral',
+    create_room: 'Create a Room',
   },
   home: {
     welcome: 'Hey {0},',

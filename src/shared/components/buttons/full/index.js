@@ -1,9 +1,9 @@
-import { TouchableOpacity, ActivityIndicator } from 'react-native'
+import { TouchableOpacity, ActivityIndicator } from 'react-native';
 
-import { Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Typography } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const FullButton = ({
   onPress,
@@ -13,9 +13,9 @@ const FullButton = ({
   disabled = false,
   ...rest
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
-  const isDisabled = disabled || loading
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
+  const isDisabled = disabled || loading;
   return (
     <TouchableOpacity
       disabled={isDisabled}
@@ -26,7 +26,7 @@ const FullButton = ({
       <Typography type={Typography.types.button} text={text.toUpperCase()} />
       <ActivityIndicator color={colors.primary} style={styles.loading} animating={loading} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export default FullButton
+export default FullButton;

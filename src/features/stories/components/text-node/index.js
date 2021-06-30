@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 import {
   TextInput, Keyboard, Animated, View,
-} from 'react-native'
+} from 'react-native';
 import {
   PanGestureHandler, PinchGestureHandler, RotationGestureHandler, State,
-} from 'react-native-gesture-handler'
+} from 'react-native-gesture-handler';
 
-import { useKeyboard } from '@app/shared/hooks'
-import { colors, edgeInsets } from '@app/theme'
-import { Typography } from '@app/shared/components'
+import { useKeyboard } from '@app/shared/hooks';
+import { colors, edgeInsets } from '@app/theme';
+import { Typography } from '@app/shared/components';
 
-import StoryViewActionBar from '../actions-bar'
-import styles from './styles'
+import StoryViewActionBar from '../actions-bar';
+import styles from './styles';
 
 const createBox = (name, boxColor = 'transparent', textColor = colors.white) => ({
   name,
@@ -19,7 +19,7 @@ const createBox = (name, boxColor = 'transparent', textColor = colors.white) => 
     text: { color: textColor },
     box: { backgroundColor: boxColor },
   },
-})
+});
 
 export const nodeModes = [
   createBox('Classic'),
@@ -32,12 +32,12 @@ export const nodeModes = [
   createBox('BoxPink', colors.pink),
   createBox('BoxTeal', colors.teal),
   createBox('BoxRed', colors.red),
-]
+];
 
-const transform = (rotate, scale) => ({ transform: [{ rotate }, { scale }] })
-const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
+const transform = (rotate, scale) => ({ transform: [{ rotate }, { scale }] });
+const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
-const hitSlop = edgeInsets.symmetric({ horizontal: 50, vertical: 20 })
+const hitSlop = edgeInsets.symmetric({ horizontal: 50, vertical: 20 });
 
 const TextNode = ({
   top,
@@ -55,32 +55,32 @@ const TextNode = ({
   switchMode,
   updateFontStyle,
 }) => {
-  const bounds = { top, left }
+  const bounds = { top, left };
 
-  const input = useRef()
-  const lastTapRef = useRef(0)
-  const panRef = useRef()
-  const rotationRef = useRef()
-  const pinchRef = useRef()
-  const movableRef = useRef()
+  const input = useRef();
+  const lastTapRef = useRef(0);
+  const panRef = useRef();
+  const rotationRef = useRef();
+  const pinchRef = useRef();
+  const movableRef = useRef();
 
-  const { keyboardHeight, keyboardShown } = useKeyboard()
+  const { keyboardHeight, keyboardShown } = useKeyboard();
 
   useEffect(() => {
-    const hideEvent = Keyboard.addListener('keyboardDidHide', onBlur)
+    const hideEvent = Keyboard.addListener('keyboardDidHide', onBlur);
 
     return () => {
-      hideEvent.remove()
-    }
-  }, [onBlur])
+      hideEvent.remove();
+    };
+  }, [onBlur]);
 
   useEffect(() => {
     if (focused) {
-      input.current?.focus()
+      input.current?.focus();
     } else {
-      input.current?.blur()
+      input.current?.blur();
     }
-  }, [focused, input])
+  }, [focused, input]);
 
   const actions = [{
     icon: 'color-palette',
@@ -98,46 +98,46 @@ const TextNode = ({
     icon: 'checkmark-circle',
     text: 'Done',
     onPress: onBlur,
-  }]
+  }];
 
   const onScaleGestureEvent = Animated.event(
     [{ nativeEvent: { scale } }],
     { useNativeDriver: false },
-  )
+  );
 
   const onRotateGestureEvent = Animated.event(
     [{ nativeEvent: { rotation } }],
     { useNativeDriver: false },
-  )
+  );
 
   const onMoveGestureEvent = (event) => {
-    const { absoluteX, absoluteY } = event.nativeEvent
+    const { absoluteX, absoluteY } = event.nativeEvent;
     movableRef.current.measure((x, y, width, height) => {
-      const scaleFactor = Math.max(scale._value, 1)
-      top.setValue(absoluteY - height / scaleFactor)
-      left.setValue(absoluteX - width / 2 / scaleFactor)
-    })
-  }
+      const scaleFactor = Math.max(scale._value, 1);
+      top.setValue(absoluteY - height / scaleFactor);
+      left.setValue(absoluteX - width / 2 / scaleFactor);
+    });
+  };
 
   const onMoveHandlerStateChange = (event) => {
-    const { oldState, state } = event.nativeEvent
-    const currentTapTs = Date.now()
+    const { oldState, state } = event.nativeEvent;
+    const currentTapTs = Date.now();
 
-    const isPressIn = oldState === State.UNDETERMINED && state === State.BEGAN
-    const isPressOut = oldState === State.BEGAN && state === State.END
+    const isPressIn = oldState === State.UNDETERMINED && state === State.BEGAN;
+    const isPressOut = oldState === State.BEGAN && state === State.END;
 
 
     if (isPressIn) {
-      lastTapRef.current = currentTapTs
-      return
+      lastTapRef.current = currentTapTs;
+      return;
     }
     if (isPressOut && currentTapTs - lastTapRef.current <= 1000) {
-      onFocus()
+      onFocus();
     }
-    lastTapRef.current = null
-  }
+    lastTapRef.current = null;
+  };
 
-  const nodeMode = nodeModes.find((n) => n.name === mode)
+  const nodeMode = nodeModes.find((n) => n.name === mode);
   const inputStyles = [
     bounds,
     styles.textInput,
@@ -146,17 +146,17 @@ const TextNode = ({
     focused && styles.centeredText,
     keyboardShown && focused && { top: keyboardHeight },
     nodeMode.style.box.backgroundColor !== 'transparent' && styles.box,
-  ]
+  ];
 
   const textStyles = [
     nodeMode.style.text,
     focused && Typography.styles[fontStyle],
-  ]
+  ];
 
   const rotateStr = rotation.interpolate({
     inputRange: [-100, 100],
     outputRange: ['-100rad', '100rad'],
-  })
+  });
 
   let body = (
     <PanGestureHandler
@@ -191,7 +191,7 @@ const TextNode = ({
         </PinchGestureHandler>
       </RotationGestureHandler>
     </PanGestureHandler>
-  )
+  );
 
   if (focused) {
     body = (
@@ -204,7 +204,7 @@ const TextNode = ({
         value={value}
         onChangeText={setValue}
       />
-    )
+    );
   }
 
   return (
@@ -217,7 +217,7 @@ const TextNode = ({
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default TextNode
+export default TextNode;

@@ -1,12 +1,12 @@
-import { useCallback } from 'react'
-import { TouchableWithoutFeedback } from 'react-native'
-import ReadMoreText from 'react-native-view-more-text'
+import { useCallback } from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
+import ReadMoreText from 'react-native-view-more-text';
 
-import { strings } from '@app/config'
-import { edgeInsets } from '@app/theme'
+import { strings } from '@app/config';
+import { edgeInsets } from '@app/theme';
 
-import Typography from '../typography'
-import styles from './styles'
+import Typography from '../typography';
+import styles from './styles';
 
 export const Reveal = ({ onPress, text, type }) => (
   <TouchableWithoutFeedback
@@ -20,7 +20,7 @@ export const Reveal = ({ onPress, text, type }) => (
       color="primary"
     />
   </TouchableWithoutFeedback>
-)
+);
 
 const ReadMore = ({
   numberOfLines = 5, text, revealType, children, ...typographyProps
@@ -31,7 +31,7 @@ const ReadMore = ({
       text={strings.general.show_less.toLowerCase()}
       onPress={onPress}
     />
-  ), [revealType])
+  ), [revealType]);
 
   const renderViewMore = useCallback((onPress) => (
     <Reveal
@@ -39,7 +39,7 @@ const ReadMore = ({
       text={strings.general.read_more.toLowerCase()}
       onPress={onPress}
     />
-  ), [revealType])
+  ), [revealType]);
 
   return (
     <ReadMoreText
@@ -50,7 +50,7 @@ const ReadMore = ({
     >
       {children || <Typography text={text} {...typographyProps} />}
     </ReadMoreText>
-  )
-}
+  );
+};
 
-export default ReadMore
+export default ReadMore;

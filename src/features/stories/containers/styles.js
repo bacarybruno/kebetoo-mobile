@@ -1,7 +1,7 @@
-import { metrics } from '@app/theme'
-import { StyleSheet } from 'react-native'
+import { metrics } from '@app/theme';
+import { StyleSheet } from 'react-native';
 
-import iosColors from '@app/theme/ios-colors'
+import iosColors from '@app/theme/ios-colors';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -18,4 +18,4 @@ export default (colors) => StyleSheet.create({
   text: {
     color: colors.white,
   },
-})
+});

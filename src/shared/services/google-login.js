@@ -1,15 +1,15 @@
-import { GoogleSignin } from '@react-native-community/google-signin'
-import auth from '@react-native-firebase/auth'
+import { GoogleSignin } from '@react-native-community/google-signin';
+import auth from '@react-native-firebase/auth';
 
 const googleLogin = async () => {
-  const result = { error: null, data: null }
+  const result = { error: null, data: null };
   try {
-    await GoogleSignin.hasPlayServices()
-    await GoogleSignin.signOut()
-    const { idToken } = await GoogleSignin.signIn()
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken)
-    const data = await auth().signInWithCredential(googleCredential)
-    result.data = data
+    await GoogleSignin.hasPlayServices();
+    await GoogleSignin.signOut();
+    const { idToken } = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    const data = await auth().signInWithCredential(googleCredential);
+    result.data = data;
   } catch (error) {
     // if (error.code === statusCodes.SIGN_IN_CANCELLED) {
     //   // user cancelled the login flow
@@ -20,9 +20,9 @@ const googleLogin = async () => {
     // } else {
     //   // some other error happened
     // }
-    result.error = error
+    result.error = error;
   }
-  return Promise.resolve(result)
-}
+  return Promise.resolve(result);
+};
 
-export default googleLogin
+export default googleLogin;

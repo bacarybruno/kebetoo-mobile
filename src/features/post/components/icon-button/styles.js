@@ -1,14 +1,14 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { elevation, metrics } from '@app/theme'
+import { elevation, metrics } from '@app/theme';
 
 export const getDimensions = (size) => ({
   width: size,
   height: size,
   borderRadius: metrics.radius.round,
-})
+});
 
-export const getIconSize = (size) => size / 2.22
+export const getIconSize = (size) => size / 2.22;
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -34,4 +34,4 @@ export default (colors) => StyleSheet.create({
   badge: {
     marginRight: metrics.spacing.lg,
   },
-})
+});

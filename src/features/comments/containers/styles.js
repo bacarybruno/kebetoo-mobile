@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default (colors) => StyleSheet.create({
   post: {
@@ -23,4 +23,4 @@ export default (colors) => StyleSheet.create({
     paddingVertical: metrics.spacing.sm,
     alignItems: 'flex-start',
   },
-})
+});

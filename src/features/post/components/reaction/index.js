@@ -1,17 +1,17 @@
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native';
 
-import Kebeticon from '@app/shared/icons/kebeticons'
-import { edgeInsets } from '@app/theme'
-import { Typography } from '@app/shared/components'
-import { useAppColors } from '@app/shared/hooks'
-import { readableNumber } from '@app/shared/helpers/strings'
+import Kebeticon from '@app/shared/icons/kebeticons';
+import { edgeInsets } from '@app/theme';
+import { Typography } from '@app/shared/components';
+import { useAppColors } from '@app/shared/hooks';
+import { readableNumber } from '@app/shared/helpers/strings';
 
-import styles from './styles'
+import styles from './styles';
 
 const Reaction = ({
   iconName, count, onPress, color = 'reactions', ...otherProps
 }) => {
-  const { colors } = useAppColors()
+  const { colors } = useAppColors();
   return (
     <TouchableOpacity
       style={styles.reaction}
@@ -27,7 +27,7 @@ const Reaction = ({
         color={color}
       />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export default Reaction
+export default Reaction;

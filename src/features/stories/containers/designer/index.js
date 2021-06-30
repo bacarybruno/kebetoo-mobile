@@ -1,48 +1,48 @@
 
 import {
   useCallback, useEffect, useReducer, useRef, useState,
-} from 'react'
-import { Image, View } from 'react-native'
-import { RNCamera } from 'react-native-camera'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import RNFetchBlob from 'rn-fetch-blob'
-import CameraRoll from '@react-native-community/cameraroll'
+} from 'react';
+import { Image, View } from 'react-native';
+import { RNCamera } from 'react-native-camera';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import RNFetchBlob from 'rn-fetch-blob';
+import CameraRoll from '@react-native-community/cameraroll';
 
-import { AppHeader, Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import BackgroundTimer from '@app/shared/helpers/background-timer'
-import { permissions } from '@app/shared/services'
-import { ProgressIndicator } from '@app/features/stories/components/slide'
-import StoryViewActionBar from '@app/features/stories/components/actions-bar'
-import RecordButton from '@app/features/stories/components/record-button'
-import FrontCameraFlash from '@app/features/stories/components/front-camera-flash'
-import { videoEditor } from '@app/features/stories/services'
-import { metrics } from '@app/theme'
+import { AppHeader, Typography } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import BackgroundTimer from '@app/shared/helpers/background-timer';
+import { permissions } from '@app/shared/services';
+import { ProgressIndicator } from '@app/features/stories/components/slide';
+import StoryViewActionBar from '@app/features/stories/components/actions-bar';
+import RecordButton from '@app/features/stories/components/record-button';
+import FrontCameraFlash from '@app/features/stories/components/front-camera-flash';
+import { videoEditor } from '@app/features/stories/services';
+import { metrics } from '@app/theme';
 
-import reducer, { initialState } from './reducer'
-import createThemedStyles from './styles'
+import reducer, { initialState } from './reducer';
+import createThemedStyles from './styles';
 
-const minVideoDurationInSeconds = 1
-const videoBitrate = 516 * 1024
+const minVideoDurationInSeconds = 1;
+const videoBitrate = 516 * 1024;
 
 const RecordState = {
   Unprocessed: -1,
   Processing: 0,
   Processed: 1,
-}
+};
 
 const CameraPreviewIcon = () => {
-  const styles = useAppStyles(createThemedStyles)
-  const [uri, setUri] = useState(null)
+  const styles = useAppStyles(createThemedStyles);
+  const [uri, setUri] = useState(null);
 
   useEffect(() => {
     const fetchCameraThumbnail = async () => {
-      const preview = await CameraRoll.getPhotos({ first: 1, assetType: 'Videos' })
-      setUri(preview.edges[0].node.image.uri)
-    }
+      const preview = await CameraRoll.getPhotos({ first: 1, assetType: 'Videos' });
+      setUri(preview.edges[0].node.image.uri);
+    };
 
-    fetchCameraThumbnail()
-  }, [])
+    fetchCameraThumbnail();
+  }, []);
 
   return (
     <View style={styles.videoIconWrapper}>
@@ -52,8 +52,8 @@ const CameraPreviewIcon = () => {
         borderRadius={metrics.radius.round}
       />
     </View>
-  )
-}
+  );
+};
 
 const StoryDesigner = ({
   onFinish,
@@ -62,11 +62,11 @@ const StoryDesigner = ({
   pickedVideoFile,
   resetVideoFile,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const camera = useRef()
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const camera = useRef();
+  const [state, dispatch] = useReducer(reducer, initialState);
   const {
     flashOn,
     frontCamera,
@@ -77,9 +77,9 @@ const StoryDesigner = ({
     preparing,
     progress,
     records,
-  } = state
+  } = state;
 
-  const recordTimer = useRef()
+  const recordTimer = useRef();
 
   const addRecord = ({
     uri, mute: isRecordMute = true, speed: recordSpeed = 1, ...record
@@ -96,23 +96,23 @@ const StoryDesigner = ({
         state: RecordState.Unprocessed,
         ...record,
       },
-    }
-    dispatch(payload)
-    return payload.payload
-  }
+    };
+    dispatch(payload);
+    return payload.payload;
+  };
 
   useEffect(() => {
     const addUploadedVideo = async () => {
       if (pickedVideoFile) {
-        const isVideoMute = await videoEditor.isMute(pickedVideoFile)
-        const payload = addRecord({ uri: pickedVideoFile.uri, mute: isVideoMute })
-        resetVideoFile()
-        onFinish([payload])
+        const isVideoMute = await videoEditor.isMute(pickedVideoFile);
+        const payload = addRecord({ uri: pickedVideoFile.uri, mute: isVideoMute });
+        resetVideoFile();
+        onFinish([payload]);
       }
-    }
+    };
 
-    addUploadedVideo()
-  }, [onFinish, pickedVideoFile, resetVideoFile])
+    addUploadedVideo();
+  }, [onFinish, pickedVideoFile, resetVideoFile]);
 
   let rightActions = [{
     icon: 'flash',
@@ -133,83 +133,83 @@ const StoryDesigner = ({
     ),
     text: 'Speed',
     onPress: () => {
-      const values = [0.5, 0.75, 1, 1.25, 1.5]
-      const currentValueIndex = values.findIndex((value) => value === speed)
-      const nextValueIndex = currentValueIndex + 1
-      dispatch({ type: 'setSpeed', payload: values[nextValueIndex] ?? values[0] })
+      const values = [0.5, 0.75, 1, 1.25, 1.5];
+      const currentValueIndex = values.findIndex((value) => value === speed);
+      const nextValueIndex = currentValueIndex + 1;
+      dispatch({ type: 'setSpeed', payload: values[nextValueIndex] ?? values[0] });
     },
   }, {
     icon: 'camera-reverse',
     text: 'Flip',
     onPress: () => dispatch({ type: 'flipCamera' }),
-  }]
+  }];
 
   const nextAction = {
     icon: 'arrow-forward-circle',
     text: 'Next',
     disabled: preparing,
     onPress: () => {
-      camera.current.pausePreview()
-      onFinish(records)
+      camera.current.pausePreview();
+      onFinish(records);
     },
-  }
+  };
 
   if (elapsedTime > minVideoDurationInSeconds) {
-    rightActions.push(nextAction)
+    rightActions.push(nextAction);
   }
 
   if (progress >= 1) {
-    rightActions = [nextAction]
+    rightActions = [nextAction];
   }
 
   const leftActions = [{
     icon: <CameraPreviewIcon />,
     onPress: pickVideoFile,
-  }]
+  }];
 
   useEffect(() => {
-    permissions.externalStorage()
-  }, [])
+    permissions.externalStorage();
+  }, []);
 
   const startRecording = useCallback(() => {
-    dispatch({ type: 'setIsRecording', payload: true })
-    const interval = 100
+    dispatch({ type: 'setIsRecording', payload: true });
+    const interval = 100;
     recordTimer.current = BackgroundTimer.setInterval(() => {
-      dispatch({ type: 'incElapsedTime', payload: interval / 1000 })
-    }, interval)
-  }, [dispatch])
+      dispatch({ type: 'incElapsedTime', payload: interval / 1000 });
+    }, interval);
+  }, [dispatch]);
 
   const onRecord = useCallback(async () => {
-    const recordPath = `${RNFetchBlob.fs.dirs.DocumentDir}/${Date.now()}.mp4`
+    const recordPath = `${RNFetchBlob.fs.dirs.DocumentDir}/${Date.now()}.mp4`;
     const record = await camera.current.recordAsync({
       path: recordPath,
       mute,
       orientation: RNCamera.Constants.Orientation.portrait,
       mirrorVideo: false,
-    })
+    });
     addRecord({
       ...record, uri: recordPath, mute, speed,
-    })
-  }, [mute, speed])
+    });
+  }, [mute, speed]);
 
   const onEndRecord = useCallback(() => {
-    camera.current.stopRecording()
-  }, [])
+    camera.current.stopRecording();
+  }, []);
 
   const endRecording = useCallback(() => {
-    BackgroundTimer.clearInterval(recordTimer.current)
-    dispatch({ type: 'endRecord' })
-  }, [])
+    BackgroundTimer.clearInterval(recordTimer.current);
+    dispatch({ type: 'endRecord' });
+  }, []);
 
   useEffect(() => {
     if (progress >= 1) {
-      onEndRecord()
+      onEndRecord();
     }
-  }, [onEndRecord, progress])
+  }, [onEndRecord, progress]);
 
   const {
     VideoQuality, VideoCodec, Type: CameraType, FlashMode,
-  } = RNCamera.Constants
+  } = RNCamera.Constants;
 
   const reloadButton = records.length > 0 && !preparing && (
     <Ionicon
@@ -217,11 +217,11 @@ const StoryDesigner = ({
       size={30}
       color={colors.white}
       onPress={() => {
-        dispatch({ type: 'reset' })
-        camera.current.resumePreview()
+        dispatch({ type: 'reset' });
+        camera.current.resumePreview();
       }}
     />
-  )
+  );
 
   const closeButton = (
     <Ionicon
@@ -229,19 +229,19 @@ const StoryDesigner = ({
       size={30}
       color={colors.white}
       onPress={() => {
-        dispatch({ type: 'reset' })
-        onGoBack()
+        dispatch({ type: 'reset' });
+        onGoBack();
       }}
     />
-  )
+  );
 
-  let headerTitle = ''
+  let headerTitle = '';
   if (isRecording) {
-    headerTitle = 'Recording...'
+    headerTitle = 'Recording...';
   } else if (preparing) {
-    headerTitle = 'Preparing...'
+    headerTitle = 'Preparing...';
   } else if (records.length > 0) {
-    headerTitle = `${records.length} Videos`
+    headerTitle = `${records.length} Videos`;
   }
 
   return (
@@ -283,7 +283,7 @@ const StoryDesigner = ({
         />
       )}
     </RNCamera>
-  )
-}
+  );
+};
 
-export default StoryDesigner
+export default StoryDesigner;

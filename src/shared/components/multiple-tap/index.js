@@ -1,5 +1,5 @@
-import { useCallback, useRef } from 'react'
-import { TapGestureHandler, State, LongPressGestureHandler } from 'react-native-gesture-handler'
+import { useCallback, useRef } from 'react';
+import { TapGestureHandler, State, LongPressGestureHandler } from 'react-native-gesture-handler';
 
 const MultipleTapHandler = ({
   onPress = () => { },
@@ -7,25 +7,25 @@ const MultipleTapHandler = ({
   onLongPress = () => { },
   children,
 }) => {
-  const doubleTapRef = useRef()
+  const doubleTapRef = useRef();
 
   const onSingleTap = useCallback((event) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      onPress()
+      onPress();
     }
-  }, [onPress])
+  }, [onPress]);
 
   const onDoubleTap = useCallback((event) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      onDoublePress()
+      onDoublePress();
     }
-  }, [onDoublePress])
+  }, [onDoublePress]);
 
   const onLongTap = useCallback((event) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      onLongPress()
+      onLongPress();
     }
-  }, [onLongPress])
+  }, [onLongPress]);
 
   return (
     <LongPressGestureHandler onHandlerStateChange={onLongTap}>
@@ -44,7 +44,7 @@ const MultipleTapHandler = ({
         </TapGestureHandler>
       </TapGestureHandler>
     </LongPressGestureHandler>
-  )
-}
+  );
+};
 
-export default MultipleTapHandler
+export default MultipleTapHandler;

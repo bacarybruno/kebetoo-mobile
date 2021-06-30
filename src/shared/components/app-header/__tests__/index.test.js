@@ -1,9 +1,9 @@
-import setupTest from '@app/config/jest-setup'
-import routes from '@app/navigation/routes'
-import { useNavigation } from '@react-navigation/native'
-import { fireEvent } from 'react-native-testing-library'
+import setupTest from '@app/config/jest-setup';
+import routes from '@app/navigation/routes';
+import { useNavigation } from '@react-navigation/native';
+import { fireEvent } from 'react-native-testing-library';
 
-import Header, { HeaderAvatar } from '../index'
+import Header, { HeaderAvatar } from '../index';
 
 const givenHeader = setupTest(Header)({
   displayName: 'Bruno Bodian',
@@ -12,16 +12,16 @@ const givenHeader = setupTest(Header)({
   style: {
     backgroundColor: 'red',
   },
-})
+});
 
 it('renders Header', () => {
-  const { wrapper } = givenHeader()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenHeader();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});
 
 it('navigates to profile', () => {
-  const { wrapper } = givenHeader()
-  fireEvent.press(wrapper.root.findByType(HeaderAvatar))
-  expect(useNavigation().navigate).toBeCalledTimes(1)
-  expect(useNavigation().navigate).toBeCalledWith(routes.PROFILE)
-})
+  const { wrapper } = givenHeader();
+  fireEvent.press(wrapper.root.findByType(HeaderAvatar));
+  expect(useNavigation().navigate).toBeCalledTimes(1);
+  expect(useNavigation().navigate).toBeCalledWith(routes.PROFILE);
+});

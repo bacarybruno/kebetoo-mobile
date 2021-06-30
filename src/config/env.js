@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { API_BASE_URL, ASSETS_BASE_URL, GOOGLE_SIGNIN_WEB_CLIENT_ID } from '@env'
+import { API_BASE_URL, ASSETS_BASE_URL, GOOGLE_SIGNIN_WEB_CLIENT_ID } from '@env';
 
 export default {
   apiBaseUrl: API_BASE_URL,
@@ -23,4 +23,4 @@ export default {
       comments: 1024,
     },
   },
-}
+};

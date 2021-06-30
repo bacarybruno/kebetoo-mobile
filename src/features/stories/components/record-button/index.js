@@ -1,20 +1,20 @@
 
-import { useEffect, useState } from 'react'
-import { View, Animated, Pressable } from 'react-native'
+import { useEffect, useState } from 'react';
+import { View, Animated, Pressable } from 'react-native';
 
-import { useAppStyles } from '@app/shared/hooks'
-import { edgeInsets, metrics } from '@app/theme'
+import { useAppStyles } from '@app/shared/hooks';
+import { edgeInsets, metrics } from '@app/theme';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
-const scale = (value = 1) => ({ transform: [{ scale: value }] })
+const scale = (value = 1) => ({ transform: [{ scale: value }] });
 
 const RecordButton = ({
   onRecord, onEndRecord, isRecording, isDisabled,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const [animatedScale] = useState(new Animated.Value(1))
+  const [animatedScale] = useState(new Animated.Value(1));
 
   useEffect(() => {
     if (isRecording) {
@@ -23,11 +23,11 @@ const RecordButton = ({
         bounciness: 10,
         speed: 10,
         useNativeDriver: true,
-      }).start()
+      }).start();
     } else {
-      animatedScale.setValue(1)
+      animatedScale.setValue(1);
     }
-  }, [animatedScale, isRecording])
+  }, [animatedScale, isRecording]);
 
   return (
     <View style={styles.recordButtonWrapper}>
@@ -48,7 +48,7 @@ const RecordButton = ({
         </Animated.View>
       </Pressable>
     </View>
-  )
-}
+  );
+};
 
-export default RecordButton
+export default RecordButton;

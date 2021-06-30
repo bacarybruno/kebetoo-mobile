@@ -1,13 +1,13 @@
-import { memo } from 'react'
-import { View, TouchableOpacity, ImageBackground } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { memo } from 'react';
+import { View, TouchableOpacity, ImageBackground } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { Pressable, Typography, FormatedTypography } from '@app/shared/components'
-import { edgeInsets } from '@app/theme'
-import { env } from '@app/config'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Pressable, Typography, FormatedTypography } from '@app/shared/components';
+import { edgeInsets } from '@app/theme';
+import { env } from '@app/config';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemeColors from './styles'
+import createThemeColors from './styles';
 
 export const getSource = (url) => ({
   uri: url.startsWith('http')
@@ -15,11 +15,11 @@ export const getSource = (url) => ({
     : `${env.assetsBaseUrl}/${url.startsWith('/')
       ? url.substr(1)
       : url}`,
-})
+});
 
 export const DeleteIconButton = ({ onPress }) => {
-  const styles = useAppStyles(createThemeColors)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemeColors);
+  const { colors } = useAppColors();
   return (
     <TouchableOpacity
       style={styles.deleteWrapper}
@@ -28,13 +28,13 @@ export const DeleteIconButton = ({ onPress }) => {
     >
       <Ionicon name="ios-close" size={25} color={colors.textPrimary} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export const ImageViewer = ({
   source, style, onDelete, onPress, borderRadius = 0, ...otherProps
 }) => {
-  const styles = useAppStyles(createThemeColors)
+  const styles = useAppStyles(createThemeColors);
   return (
     <>
       <View style={[styles.imageWrapper, style, { borderRadius }]} {...otherProps}>
@@ -44,13 +44,13 @@ export const ImageViewer = ({
       </View>
       {onDelete && <DeleteIconButton onPress={onDelete} />}
     </>
-  )
-}
+  );
+};
 
 const ImageContent = ({
   content, url, style, mode, onPress,
 }) => {
-  const styles = useAppStyles(createThemeColors)
+  const styles = useAppStyles(createThemeColors);
   return (
     <View style={[styles.wrapper, style, mode === 'comments' && styles.commentMode]}>
       <View style={styles.text}>
@@ -67,7 +67,7 @@ const ImageContent = ({
         testID="image-viewer"
       />
     </View>
-  )
-}
+  );
+};
 
-export default memo(ImageContent)
+export default memo(ImageContent);

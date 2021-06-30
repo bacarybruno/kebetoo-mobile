@@ -1,27 +1,27 @@
-import { useEffect, useState, useCallback } from 'react'
-import { View, FlatList } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigation } from '@react-navigation/native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useEffect, useState, useCallback } from 'react';
+import { View, FlatList } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { api } from '@app/shared/services'
+import { api } from '@app/shared/services';
 import {
   Typography, Avatar, Pressable, NoContent,
-} from '@app/shared/components'
-import * as types from '@app/redux/types'
-import { recentSearchHistory } from '@app/redux/selectors'
-import { strings } from '@app/config'
-import routes from '@app/navigation/routes'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import HistoryItem from '@app/features/search/components/history-item'
-import NoResult from '@app/features/search/components/no-result'
+} from '@app/shared/components';
+import * as types from '@app/redux/types';
+import { recentSearchHistory } from '@app/redux/selectors';
+import { strings } from '@app/config';
+import routes from '@app/navigation/routes';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import HistoryItem from '@app/features/search/components/history-item';
+import NoResult from '@app/features/search/components/no-result';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 
 export const SearchResult = ({ item, onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const onItemPress = useCallback(() => onPress(item), [item, onPress])
+  const styles = useAppStyles(createThemedStyles);
+  const onItemPress = useCallback(() => onPress(item), [item, onPress]);
   return (
     <Pressable style={[styles.searchResult, styles.paddingHorizontal]} onPress={onItemPress}>
       <View style={styles.row}>
@@ -54,12 +54,12 @@ export const SearchResult = ({ item, onPress }) => {
         </View>
       </View>
     </Pressable>
-  )
-}
+  );
+};
 
 export const SearchHistoryHeader = ({ onClear }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <View style={[styles.historyHeader, styles.paddingHorizontal]}>
       <View style={styles.container}>
@@ -79,43 +79,43 @@ export const SearchHistoryHeader = ({ onClear }) => {
         text={strings.search.clear_all}
       />
     </View>
-  )
-}
+  );
+};
 
 const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
-  const [users, setUsers] = useState([])
-  const [lastQuery, setLastQuery] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [users, setUsers] = useState([]);
+  const [lastQuery, setLastQuery] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { users: usersHistory } = useSelector(recentSearchHistory)
-  const dispatch = useDispatch()
-  const { navigate } = useNavigation()
+  const { users: usersHistory } = useSelector(recentSearchHistory);
+  const dispatch = useDispatch();
+  const { navigate } = useNavigation();
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   useEffect(() => {
-    const query = searchQuery.trim()
+    const query = searchQuery.trim();
     if (query.length > 0) {
-      setIsLoading(true)
+      setIsLoading(true);
       api.authors.search(query)
         .then((data) => {
-          setUsers(data)
-          setLastQuery(query)
-          dispatch({ type: types.ADD_USER_HISTORY, payload: query })
+          setUsers(data);
+          setLastQuery(query);
+          dispatch({ type: types.ADD_USER_HISTORY, payload: query });
         })
         .finally(() => {
-          setIsLoading(false)
-        })
+          setIsLoading(false);
+        });
     } else {
-      setUsers([])
+      setUsers([]);
     }
-  }, [dispatch, onSearch, searchQuery, lastQuery])
+  }, [dispatch, onSearch, searchQuery, lastQuery]);
 
   useEffect(() => {
-    onSearch(isLoading)
-  }, [isLoading, onSearch])
+    onSearch(isLoading);
+  }, [isLoading, onSearch]);
 
-  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
+  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, []);
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
@@ -125,31 +125,31 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
       style={[styles.sectionHeader, styles.paddingHorizontal]}
       text={strings.search.results}
     />
-  ), [styles])
+  ), [styles]);
 
   const onClearAllRecentSearches = useCallback(() => {
-    dispatch({ type: types.CLEAR_USER_HISTORY })
-  }, [dispatch])
+    dispatch({ type: types.CLEAR_USER_HISTORY });
+  }, [dispatch]);
 
   const onClearRecentSearch = useCallback((payload) => {
-    dispatch({ type: types.REMOVE_USER_HISTORY, payload })
-  }, [dispatch])
+    dispatch({ type: types.REMOVE_USER_HISTORY, payload });
+  }, [dispatch]);
 
   const renderSearchHistoryHeader = useCallback(() => (
     <SearchHistoryHeader onClear={onClearAllRecentSearches} />
-  ), [onClearAllRecentSearches])
+  ), [onClearAllRecentSearches]);
 
   const renderSearchHistory = useCallback(({ item }) => (
     <HistoryItem onPress={onRecentSearch} onDelete={onClearRecentSearch} item={item} />
-  ), [onClearRecentSearch, onRecentSearch])
+  ), [onClearRecentSearch, onRecentSearch]);
 
   const displayProfile = useCallback((user) => {
-    navigate(routes.USER_PROFILE, { userId: user.id })
-  }, [navigate])
+    navigate(routes.USER_PROFILE, { userId: user.id });
+  }, [navigate]);
 
   const renderUser = useCallback(({ item }) => (
     <SearchResult item={item} onPress={displayProfile} />
-  ), [displayProfile])
+  ), [displayProfile]);
 
   return (
     <View style={styles.wrapper}>
@@ -182,7 +182,7 @@ const SearchUsers = ({ searchQuery, onSearch, onRecentSearch }) => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default SearchUsers
+export default SearchUsers;

@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
-import { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import { metrics, elevation } from '@app/theme';
+import { hexToRgba, rgbaToHex } from '@app/theme/colors';
 
-const profileInfoSize = 140
+const profileInfoSize = 140;
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -76,4 +76,4 @@ export default (colors) => StyleSheet.create({
     borderBottomColor: colors.border,
     borderBottomWidth: 1.5,
   },
-})
+});

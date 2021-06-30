@@ -1,25 +1,25 @@
-import { useCallback, useMemo } from 'react'
-import { View } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import { Portal } from '@gorhom/portal'
-import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
+import { useCallback, useMemo } from 'react';
+import { View } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import { Portal } from '@gorhom/portal';
+import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 
-import { Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Typography } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const BottomSheetHeader = ({ header, headerType, onDismiss }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <View style={styles.commentPanelHeader}>
       <Typography
         text={header}
         type={headerType}
-        systemWeight={Typography.weights.semibold}
         style={styles.text}
+        systemWeight={Typography.weights.semibold}
       />
       <Ionicon
         size={28}
@@ -29,8 +29,8 @@ export const BottomSheetHeader = ({ header, headerType, onDismiss }) => {
         style={styles.modalCloseIcon}
       />
     </View>
-  )
-}
+  );
+};
 
 const BottomSheetView = ({
   header,
@@ -41,11 +41,11 @@ const BottomSheetView = ({
   onBottomSheetIndexChange = () => {},
   ...otherProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const snapPoints = useMemo(() => ['0%', '50%', '70%'], [])
+  const snapPoints = useMemo(() => ['0%', '50%', '70%'], []);
 
-  const renderBackdrop = useCallback((props) => <BottomSheetBackdrop {...props} />, [])
+  const renderBackdrop = useCallback((props) => <BottomSheetBackdrop {...props} />, []);
 
   return (
     <Portal hostName="bottom-sheet">
@@ -67,8 +67,8 @@ const BottomSheetView = ({
         <View style={styles.content}>{children}</View>
       </BottomSheet>
     </Portal>
-  )
-}
+  );
+};
 
 
-export default BottomSheetView
+export default BottomSheetView;

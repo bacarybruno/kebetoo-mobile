@@ -1,20 +1,20 @@
-import { memo } from 'react'
-import { Image, View, Text } from 'react-native'
-import { systemWeights } from 'react-native-typography'
+import { memo } from 'react';
+import { Image, View, Text } from 'react-native';
+import { systemWeights } from 'react-native-typography';
 
-import generateColor from '@app/shared/helpers/color-generator'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import generateColor from '@app/shared/helpers/color-generator';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
-import Typography from '../typography'
+import createThemedStyles from './styles';
+import Typography from '../typography';
 
-const dimensions = (size) => size && { width: size, height: size }
-const backgroundColor = (text) => text && { backgroundColor: generateColor(text) }
+const dimensions = (size) => size && { width: size, height: size };
+const backgroundColor = (text) => text && { backgroundColor: generateColor(text) };
 
 export const ImageAvatar = ({
   src, size, style, children,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={[styles.wrapper, dimensions(size), style]}>
       <Image
@@ -24,14 +24,14 @@ export const ImageAvatar = ({
       />
       {children}
     </View>
-  )
-}
+  );
+};
 
 export const TextAvatar = ({
   text, size, style, fontSize, noRadius, color, children,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <View style={[styles.wrapper, dimensions(size), style]}>
       <View style={[
@@ -48,13 +48,13 @@ export const TextAvatar = ({
         {children}
       </View>
     </View>
-  )
-}
+  );
+};
 
 const Avatar = ({
   src, text, size, badge, ...props
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <>
       {src
@@ -73,7 +73,7 @@ const Avatar = ({
         </View>
       )}
     </>
-  )
-}
+  );
+};
 
-export default memo(Avatar)
+export default memo(Avatar);

@@ -1,32 +1,32 @@
-import { useCallback, useEffect, useReducer } from 'react'
-import auth from '@react-native-firebase/auth'
-import { object as yupObject, string as yupString, reach as yupReach } from 'yup'
+import { useCallback, useEffect, useReducer } from 'react';
+import auth from '@react-native-firebase/auth';
+import { object as yupObject, string as yupString, reach as yupReach } from 'yup';
 
-import routes from '@app/navigation/routes'
-import { strings } from '@app/config'
-import { useAnalytics } from '@app/shared/hooks'
+import routes from '@app/navigation/routes';
+import { strings } from '@app/config';
+import { useAnalytics } from '@app/shared/hooks';
 
-import reducer, { actionTypes } from '../../reducer'
+import reducer, { actionTypes } from '../../reducer';
 
 export const fieldNames = {
   fullName: 'fullName',
   email: 'email',
   password: 'password',
-}
+};
 
 
 export const initialState = {
   values: { [fieldNames.email]: '', [fieldNames.password]: '', [fieldNames.fullName]: '' },
   errors: { [fieldNames.email]: null, [fieldNames.password]: null, [fieldNames.fullName]: null },
   isLoading: false,
-}
+};
 
 const useSignUp = (navigation, emailRef, passwordRef) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { values, errors, isLoading } = state
+  const { values, errors, isLoading } = state;
 
-  const { trackSignUp, reportError } = useAnalytics()
+  const { trackSignUp, reportError } = useAnalytics();
 
   const schema = yupObject().shape({
     [fieldNames.fullName]: yupString().required(
@@ -41,12 +41,12 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
       8,
       strings.formatString(strings.errors.min_length_field, strings.auth.password, 8),
     ),
-  })
+  });
 
   const onChangeText = useCallback((value, field) => {
-    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } })
-    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
-  }, [])
+    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } });
+    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field });
+  }, []);
 
   const handleAuthError = useCallback((error) => {
     switch (error.code) {
@@ -57,8 +57,8 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
             field: fieldNames.email,
             value: strings.errors.auth_email_already_in_use,
           },
-        })
-        break
+        });
+        break;
       case 'auth/account-exists-with-different-credential':
         dispatch({
           type: actionTypes.SET_ERROR,
@@ -66,8 +66,8 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
             field: fieldNames.email,
             value: strings.errors.auth_account_exists_different_credential,
           },
-        })
-        break
+        });
+        break;
       // case 'auth/network-request-failed':
       //   //TODO: handler network request fail
       //   break
@@ -79,59 +79,59 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
               field: error.path,
               value: error.message,
             },
-          })
+          });
         } else {
-          reportError(error)
+          reportError(error);
         }
-        break
+        break;
     }
-    dispatch({ type: actionTypes.END_LOADING })
-  }, [reportError])
+    dispatch({ type: actionTypes.END_LOADING });
+  }, [reportError]);
 
   const onSubmit = useCallback(async () => {
     try {
-      dispatch({ type: actionTypes.START_LOADING })
-      await schema.validate(values)
-      const created = await auth().createUserWithEmailAndPassword(values.email, values.password)
-      await created.user.updateProfile({ displayName: values.fullName })
-      trackSignUp('password')
+      dispatch({ type: actionTypes.START_LOADING });
+      await schema.validate(values);
+      const created = await auth().createUserWithEmailAndPassword(values.email, values.password);
+      await created.user.updateProfile({ displayName: values.fullName });
+      trackSignUp('password');
     } catch (error) {
-      handleAuthError(error)
+      handleAuthError(error);
     }
-  }, [schema, values, trackSignUp, handleAuthError])
+  }, [schema, values, trackSignUp, handleAuthError]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('blur', () => {
-      dispatch({ type: actionTypes.END_LOADING })
-    })
+      dispatch({ type: actionTypes.END_LOADING });
+    });
 
-    return unsubscribe
-  }, [navigation])
+    return unsubscribe;
+  }, [navigation]);
 
   const navigateToSignIn = useCallback(() => {
-    navigation.navigate(routes.SIGNIN)
-  }, [navigation])
+    navigation.navigate(routes.SIGNIN);
+  }, [navigation]);
 
   const focusEmail = useCallback(() => {
-    emailRef.current.focus()
-  }, [emailRef])
+    emailRef.current.focus();
+  }, [emailRef]);
 
   const focusPassword = useCallback(() => {
-    passwordRef.current.focus()
-  }, [passwordRef])
+    passwordRef.current.focus();
+  }, [passwordRef]);
 
   const validate = useCallback((field) => {
     try {
-      yupReach(schema, field).validateSync(values[field])
-      dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
+      yupReach(schema, field).validateSync(values[field]);
+      dispatch({ type: actionTypes.CLEAR_ERROR, payload: field });
     } catch (error) {
-      dispatch({ type: actionTypes.SET_ERROR, payload: { field, value: error.message } })
+      dispatch({ type: actionTypes.SET_ERROR, payload: { field, value: error.message } });
     }
-  }, [values, schema])
+  }, [values, schema]);
 
   const onLoading = useCallback(() => {
-    dispatch({ type: actionTypes.START_LOADING })
-  }, [])
+    dispatch({ type: actionTypes.START_LOADING });
+  }, []);
 
   return {
     onChangeText,
@@ -144,7 +144,7 @@ const useSignUp = (navigation, emailRef, passwordRef) => {
     handleAuthError,
     errors,
     isLoading,
-  }
-}
+  };
+};
 
-export default useSignUp
+export default useSignUp;

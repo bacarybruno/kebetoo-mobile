@@ -1,29 +1,29 @@
-import { Dimensions, Platform } from 'react-native'
-import DeviceInfo from 'react-native-device-info'
+import { Dimensions, Platform } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 
-const { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
 
 export const getDefaultHeaderHeight = (
   statusBarHeight = 0, platform = Platform, w = width, h = height,
 ) => {
-  const isLandscape = w > h
+  const isLandscape = w > h;
 
-  let headerHeight
+  let headerHeight;
 
   if (platform.OS === 'ios') {
     if (isLandscape && !platform.isPad) {
-      headerHeight = 32
+      headerHeight = 32;
     } else {
-      headerHeight = 44
+      headerHeight = 44;
     }
   } else if (platform.OS === 'android') {
-    headerHeight = 56
+    headerHeight = 56;
   } else {
-    headerHeight = 64
+    headerHeight = 64;
   }
 
-  return headerHeight + statusBarHeight
-}
+  return headerHeight + statusBarHeight;
+};
 
 const spacing = {
   xs: 4,
@@ -32,7 +32,7 @@ const spacing = {
   lg: 24,
   xl: 32,
   xxl: 40,
-}
+};
 const metrics = {
   screenWidth: width,
   screenHeight: height,
@@ -67,6 +67,6 @@ const metrics = {
     square: 1 / 1,
     vertical: 9 / 16,
   },
-}
+};
 
-export default metrics
+export default metrics;

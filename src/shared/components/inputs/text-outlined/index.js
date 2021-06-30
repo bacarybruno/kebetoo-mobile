@@ -1,10 +1,10 @@
-import { memo } from 'react'
+import { memo } from 'react';
 
-import { TextInput, Typography } from '@app/shared/components'
-import { metrics } from '@app/theme'
-import { useAppStyles } from '@app/shared/hooks'
+import { TextInput, Typography } from '@app/shared/components';
+import { metrics } from '@app/theme';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const TextOutlinedInput = ({
   autoFocus = false,
@@ -24,7 +24,7 @@ export const TextOutlinedInput = ({
   inputChildren,
   ...otherProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <>
       <Typography
@@ -61,7 +61,7 @@ export const TextOutlinedInput = ({
         {...otherProps}
       />
     </>
-  )
-}
+  );
+};
 
-export default memo(TextOutlinedInput)
+export default memo(TextOutlinedInput);

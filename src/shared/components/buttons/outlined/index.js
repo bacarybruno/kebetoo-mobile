@@ -1,16 +1,16 @@
-import { memo } from 'react'
-import { TouchableNativeFeedback, ActivityIndicator } from 'react-native'
+import { memo } from 'react';
+import { TouchableNativeFeedback, ActivityIndicator } from 'react-native';
 
-import { Pressable, Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Pressable, Typography } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const OutlinedButton = ({
   text, onPress, style, disabled, loading = false,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <Pressable
       style={[styles.wrapper, style, disabled && { borderColor: colors.inactive }]}
@@ -22,7 +22,7 @@ const OutlinedButton = ({
         ? <ActivityIndicator animating={loading} color={colors.primary} />
         : <Typography type={Typography.types.button} text={text} color={disabled ? 'inactive' : 'primary'} />}
     </Pressable>
-  )
-}
+  );
+};
 
-export default memo(OutlinedButton)
+export default memo(OutlinedButton);

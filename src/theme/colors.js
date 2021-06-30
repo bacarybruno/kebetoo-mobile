@@ -1,37 +1,37 @@
 /* eslint-disable prefer-template */
 /* eslint-disable no-bitwise */
 
-import { Appearance } from 'react-native'
+import { Appearance } from 'react-native';
 
-import iosColors from './ios-colors'
-import mdColors from './md-colors'
+import iosColors from './ios-colors';
+import mdColors from './md-colors';
 
 const componentToHex = (c) => {
-  const hex = c.toString(16)
-  return hex.length === 1 ? `0${hex}` : hex
-}
+  const hex = c.toString(16);
+  return hex.length === 1 ? `0${hex}` : hex;
+};
 
 export const rgbaToHex = (rgba) => {
-  const rgb = rgba.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+)/i)
+  const rgb = rgba.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+)/i);
   return (rgb && rgb.length === 4) ? '#'
     + componentToHex(parseInt(rgb[1], 10)).slice(-2)
     + componentToHex(parseInt(rgb[2], 10)).slice(-2)
-    + componentToHex(parseInt(rgb[3], 10)).slice(-2) : rgba
-}
+    + componentToHex(parseInt(rgb[3], 10)).slice(-2) : rgba;
+};
 
 export const hexToRgb = (hex) => {
-  const sanitizedHex = hex.replace('#', '')
-  const bigint = parseInt(sanitizedHex, 16)
-  const r = (bigint >> 16) & 255
-  const g = (bigint >> 8) & 255
-  const b = bigint & 255
-  return [r, g, b]
-}
+  const sanitizedHex = hex.replace('#', '');
+  const bigint = parseInt(sanitizedHex, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return [r, g, b];
+};
 
 export const hexToRgba = (hex, opacity) => {
-  const [r, g, b] = hexToRgb(hex)
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`
-}
+  const [r, g, b] = hexToRgb(hex);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
 
 // export const rgbToHex = (r, g, b) => (
 //   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
@@ -52,21 +52,21 @@ export const hexToRgba = (hex, opacity) => {
 
 // https://gist.github.com/gskema/2f56dc2e087894ffc756c11e6de1b5ed
 export const colorGradient = (fade, color1, color2) => {
-  const [r1, g1, b1] = hexToRgb(rgbaToHex(color1))
-  const [r2, g2, b2] = hexToRgb(rgbaToHex(color2))
+  const [r1, g1, b1] = hexToRgb(rgbaToHex(color1));
+  const [r2, g2, b2] = hexToRgb(rgbaToHex(color2));
 
-  const diffRed = r2 - r1
-  const diffGreen = g2 - g1
-  const diffBlue = b2 - b1
+  const diffRed = r2 - r1;
+  const diffGreen = g2 - g1;
+  const diffBlue = b2 - b1;
 
   const gradient = {
     red: parseInt(Math.floor(r1 + (diffRed * fade)), 10),
     green: parseInt(Math.floor(g1 + (diffGreen * fade)), 10),
     blue: parseInt(Math.floor(b1 + (diffBlue * fade)), 10),
-  }
+  };
 
-  return 'rgb(' + gradient.red + ',' + gradient.green + ',' + gradient.blue + ')'
-}
+  return 'rgb(' + gradient.red + ',' + gradient.green + ',' + gradient.blue + ')';
+};
 
 export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => {
   const baseColors = {
@@ -81,7 +81,7 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
     yellow: iosColors.systemYellow[colorScheme],
     black: iosColors.black,
     white: iosColors.white,
-  }
+  };
 
   const customColors = {
     blue_dark: {
@@ -112,7 +112,7 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
       dark: '#E0F2F8',
       light: '#E0F2F8',
     },
-  }
+  };
 
   const iconColors = {
     like: baseColors.blue,
@@ -121,13 +121,13 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
     reactions: mdColors.textSecondary[colorScheme],
     facebook: '#3b5998',
     icon: '#7A8FA6',
-  }
+  };
 
   const textColors = {
     textPrimary: mdColors.textPrimary[colorScheme],
     textSecondary: mdColors.textSecondary[colorScheme],
     textTertiary: mdColors.textTertiary[colorScheme],
-  }
+  };
 
   const colors = {
     background: customColors.background[colorScheme],
@@ -152,9 +152,9 @@ export const createThemeColors = (colorScheme = Appearance.getColorScheme()) => 
     ...baseColors,
 
     colorScheme,
-  }
+  };
 
-  return colors
-}
+  return colors;
+};
 
-export default createThemeColors()
+export default createThemeColors();

@@ -210,4 +210,4 @@ export default {
     light: 'rgba(0, 122, 255, 255)',
     dark: 'rgba(9, 132, 255, 255)',
   },
-}
+};

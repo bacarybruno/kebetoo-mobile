@@ -9,10 +9,10 @@ const fromTRBL = (top, right, bottom, left) => {
   if (top && right && bottom && left) {
     return {
       top, right, bottom, left,
-    }
+    };
   }
-  throw new Error('fromTRBL requires all values to be defined. Use only instead!')
-}
+  throw new Error('fromTRBL requires all values to be defined. Use only instead!');
+};
 
 /**
  * Create a symmetric insets values :
@@ -25,7 +25,7 @@ const symmetric = ({ horizontal = 0, vertical = 0 }) => ({
   right: horizontal,
   bottom: vertical,
   left: horizontal,
-})
+});
 
 /**
  * Create insets by only passing the required field.
@@ -39,7 +39,7 @@ const only = ({
   right,
   bottom,
   left,
-})
+});
 
 /**
  * Create insets with the same value
@@ -50,12 +50,12 @@ const all = (value) => ({
   right: value,
   bottom: value,
   left: value,
-})
+});
 
 /**
  * Create insets with all values equal to 0
  */
-const zero = () => only({})
+const zero = () => only({});
 
 export default {
   fromTRBL,
@@ -63,4 +63,4 @@ export default {
   only,
   all,
   zero,
-}
+};

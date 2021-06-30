@@ -1,6 +1,6 @@
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import VideoContent from '../index'
+import VideoContent from '../index';
 
 const givenVideoContent = setupTest(VideoContent)({
   content: 'Hello wirkd',
@@ -9,9 +9,9 @@ const givenVideoContent = setupTest(VideoContent)({
   localFileUri: 'rnfs://local-file.mp4',
   style: {},
   onPress: jest.fn(),
-})
+});
 
 it('renders VideoContent', () => {
-  const { wrapper } = givenVideoContent()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenVideoContent();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

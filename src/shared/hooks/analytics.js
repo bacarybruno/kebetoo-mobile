@@ -1,29 +1,29 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback } from 'react';
 import {
   getSystemName, getSystemVersion, getDeviceType, getModel, getBrand,
-} from 'react-native-device-info'
-import firebaseAnalytics from '@react-native-firebase/analytics'
-import firebaseCrashlytics from '@react-native-firebase/crashlytics'
+} from 'react-native-device-info';
+import firebaseAnalytics from '@react-native-firebase/analytics';
+import firebaseCrashlytics from '@react-native-firebase/crashlytics';
 
-import { useUser } from '@app/shared/hooks'
-import { strings } from '@app/config'
+import { useUser } from '@app/shared/hooks';
+import { strings } from '@app/config';
 
-import useAppColors from './app-colors'
+import useAppColors from './app-colors';
 
 const Types = {
   POST: 'post',
   RECEIVE_INTENT: 'receive_intent',
-}
+};
 
-const analyticsModule = firebaseAnalytics()
-const crashlyticsModule = firebaseCrashlytics()
+const analyticsModule = firebaseAnalytics();
+const crashlyticsModule = firebaseCrashlytics();
 
-let didSetUserId = false
-let didSetUserAttributes = false
+let didSetUserId = false;
+let didSetUserAttributes = false;
 
 const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModule) => {
-  const { profile } = useUser()
-  const { colors } = useAppColors()
+  const { profile } = useUser();
+  const { colors } = useAppColors();
 
   useEffect(() => {
     const declareUserProperties = async () => {
@@ -34,47 +34,47 @@ const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModu
           type: getDeviceType(),
           locale: strings.getLanguage(),
           theme: colors.colorScheme,
-        }
-        await analytics.setUserProperties(attributes)
-        await crashlytics.setAttributes(attributes)
-        didSetUserAttributes = true
+        };
+        await analytics.setUserProperties(attributes);
+        await crashlytics.setAttributes(attributes);
+        didSetUserAttributes = true;
       }
-    }
-    declareUserProperties()
-  }, [analytics, colors.colorScheme, crashlytics])
+    };
+    declareUserProperties();
+  }, [analytics, colors.colorScheme, crashlytics]);
 
   useEffect(() => {
     const declareUserId = async () => {
       if (!didSetUserId) {
-        await analytics.setUserId(profile.uid)
-        await crashlytics.setUserId(profile.uid)
-        didSetUserId = true
+        await analytics.setUserId(profile.uid);
+        await crashlytics.setUserId(profile.uid);
+        didSetUserId = true;
       }
-    }
-    if (profile.uid) declareUserId()
-  }, [analytics, crashlytics, profile.uid])
+    };
+    if (profile.uid) declareUserId();
+  }, [analytics, crashlytics, profile.uid]);
 
   // crash reporting
-  const reportError = useCallback((error) => crashlytics.recordError(error), [crashlytics])
+  const reportError = useCallback((error) => crashlytics.recordError(error), [crashlytics]);
 
   // tracking
-  const trackOnboardingStart = useCallback(() => analytics.logTutorialBegin(), [analytics])
-  const trackOnboardingEnd = useCallback(() => analytics.logTutorialComplete(), [analytics])
-  const trackSignIn = useCallback((method) => analytics.logLogin({ method }), [analytics])
-  const trackSignUp = useCallback((method) => analytics.logSignUp({ method }), [analytics])
-  const trackSignOut = useCallback(() => analytics.logEvent('sign_out'), [analytics])
-  const trackAppOpen = useCallback(() => analytics.logAppOpen(), [analytics])
-  const trackAppBackground = useCallback(() => analytics.logEvent('background'), [analytics])
-  const trackSearch = useCallback((term) => analytics.logSearch({ search_term: term }), [analytics])
+  const trackOnboardingStart = useCallback(() => analytics.logTutorialBegin(), [analytics]);
+  const trackOnboardingEnd = useCallback(() => analytics.logTutorialComplete(), [analytics]);
+  const trackSignIn = useCallback((method) => analytics.logLogin({ method }), [analytics]);
+  const trackSignUp = useCallback((method) => analytics.logSignUp({ method }), [analytics]);
+  const trackSignOut = useCallback(() => analytics.logEvent('sign_out'), [analytics]);
+  const trackAppOpen = useCallback(() => analytics.logAppOpen(), [analytics]);
+  const trackAppBackground = useCallback(() => analytics.logEvent('background'), [analytics]);
+  const trackSearch = useCallback((term) => analytics.logSearch({ search_term: term }), [analytics]);
   const trackSelectPost = useCallback((id) => (
     analytics.logSelectContent({ content_type: Types.POST, item_id: id })
-  ), [analytics])
+  ), [analytics]);
   const trackReceiveIntent = useCallback((type, item) => (
     analytics.logShare({ content_type: type, method: Types.RECEIVE_INTENT, item_id: item })
-  ), [analytics])
+  ), [analytics]);
   const trackPageView = useCallback((routeName) => (
     analytics.logScreenView({ screen_name: routeName, screen_class: routeName })
-  ), [analytics])
+  ), [analytics]);
 
   return {
     reportError,
@@ -89,7 +89,7 @@ const useAnalytics = (analytics = analyticsModule, crashlytics = crashlyticsModu
     trackSearch,
     trackSelectPost,
     trackReceiveIntent,
-  }
-}
+  };
+};
 
-export default useAnalytics
+export default useAnalytics;

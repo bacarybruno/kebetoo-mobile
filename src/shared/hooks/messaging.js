@@ -1,65 +1,65 @@
-import { useCallback, useEffect } from 'react'
-import { AppState } from 'react-native'
-import messaging from '@react-native-firebase/messaging'
-import AsyncStorage from '@react-native-community/async-storage'
-import PushNotification from 'react-native-push-notification'
+import { useCallback, useEffect } from 'react';
+import { AppState } from 'react-native';
+import messaging from '@react-native-firebase/messaging';
+import AsyncStorage from '@react-native-community/async-storage';
+import PushNotification from 'react-native-push-notification';
 
-import routes from '@app/navigation/routes'
-import { api } from '@app/shared/services'
+import routes from '@app/navigation/routes';
+import { api } from '@app/shared/services';
 
-import useUser from './user'
-import useNotifications from './notifications'
+import useUser from './user';
+import useNotifications from './notifications';
 
 const useMessaging = (navigation) => {
-  const { isLoggedIn } = useUser()
-  const { profile } = useUser()
-  const { fetchPendingNotifications, setupNotifications } = useNotifications()
+  const { isLoggedIn } = useUser();
+  const { profile } = useUser();
+  const { fetchPendingNotifications, setupNotifications } = useNotifications();
 
   const handleInitialNotification = useCallback((remoteMessage) => {
     if (remoteMessage && isLoggedIn) {
-      navigation.current.navigate(routes.NOTIFICATIONS)
+      navigation.current.navigate(routes.NOTIFICATIONS);
     }
-  }, [isLoggedIn, navigation])
+  }, [isLoggedIn, navigation]);
 
   useEffect(() => {
-    messaging().getInitialNotification().then(handleInitialNotification)
+    messaging().getInitialNotification().then(handleInitialNotification);
     // notification opened app from background state
-    messaging().onNotificationOpenedApp(handleInitialNotification)
+    messaging().onNotificationOpenedApp(handleInitialNotification);
 
     const unsubscribeTokenRefresh = messaging().onTokenRefresh((notificationToken) => {
-      api.authors.update(profile.uid, { notificationToken })
-    })
+      api.authors.update(profile.uid, { notificationToken });
+    });
 
-    return unsubscribeTokenRefresh
-  }, [handleInitialNotification, profile.uid])
+    return unsubscribeTokenRefresh;
+  }, [handleInitialNotification, profile.uid]);
 
   useEffect(() => {
     const handlePendingNotifications = async () => {
-      fetchPendingNotifications()
+      fetchPendingNotifications();
       // remove background notifications
-      await AsyncStorage.removeItem('backgroundNotifications')
+      await AsyncStorage.removeItem('backgroundNotifications');
       // reset badge number
-      PushNotification.setApplicationIconBadgeNumber(0)
-    }
+      PushNotification.setApplicationIconBadgeNumber(0);
+    };
 
     const appStateChange = (state) => {
       if (state === 'active') {
-        handlePendingNotifications()
+        handlePendingNotifications();
       }
-    }
+    };
 
-    handlePendingNotifications()
+    handlePendingNotifications();
 
-    AppState.addEventListener('change', appStateChange)
+    AppState.addEventListener('change', appStateChange);
     return () => {
-      AppState.removeEventListener('change', appStateChange)
-    }
-  }, [fetchPendingNotifications])
+      AppState.removeEventListener('change', appStateChange);
+    };
+  }, [fetchPendingNotifications]);
 
   return {
     setupNotifications,
-  }
-}
+  };
+};
 
 // persistNotification({
 //   messageId: 'test-1',
@@ -79,4 +79,4 @@ const useMessaging = (navigation) => {
 //   },
 // })
 
-export default useMessaging
+export default useMessaging;

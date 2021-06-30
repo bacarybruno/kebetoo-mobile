@@ -1,13 +1,13 @@
-import { Appearance } from 'react-native'
+import { Appearance } from 'react-native';
 
-import { strings } from '@app/config'
+import { strings } from '@app/config';
 
-import { SET_LOCALE, SET_THEME } from '../types'
+import { SET_LOCALE, SET_THEME } from '../types';
 
 const initialState = {
   locale: strings.getInterfaceLanguage(),
   theme: Appearance.getColorScheme(),
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,15 +15,15 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         locale: action.payload,
-      }
+      };
     case SET_THEME:
       return {
         ...state,
         theme: action.payload,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

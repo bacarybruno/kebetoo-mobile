@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-const maxVideoDurationInSeconds = 15
+const maxVideoDurationInSeconds = 15;
 
 export const initialState = {
   flashOn: false,
@@ -11,57 +11,57 @@ export const initialState = {
   preparing: false,
   progress: 0,
   records: [],
-}
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'toggleFlash':
-      return { ...state, flashOn: !state.flashOn }
+      return { ...state, flashOn: !state.flashOn };
     case 'flipCamera':
-      return { ...state, frontCamera: !state.frontCamera }
+      return { ...state, frontCamera: !state.frontCamera };
     case 'toggleMute':
-      return { ...state, mute: !state.mute }
+      return { ...state, mute: !state.mute };
     case 'setSpeed':
-      return { ...state, speed: action.payload }
+      return { ...state, speed: action.payload };
     case 'incElapsedTime':
-      const elapsedTime = state.elapsedTime + action.payload
-      const progress = elapsedTime / maxVideoDurationInSeconds
+      const elapsedTime = state.elapsedTime + action.payload;
+      const progress = elapsedTime / maxVideoDurationInSeconds;
       return {
         ...state,
         elapsedTime,
         progress,
-      }
+      };
     case 'resetElapsedTime':
-      return { ...state, elapsedTime: 0 }
+      return { ...state, elapsedTime: 0 };
     case 'setIsRecording':
-      return { ...state, isRecording: action.payload }
+      return { ...state, isRecording: action.payload };
     case 'setProgress':
-      return { ...state, progress: action.payload }
+      return { ...state, progress: action.payload };
     case 'addRecord':
-      return { ...state, records: state.records.concat(action.payload) }
+      return { ...state, records: state.records.concat(action.payload) };
     case 'updateRecord':
       return {
         ...state,
         records: state.records.map((record) => {
           if (record.recordedAt === action.payload.recordedAt) {
-            return { ...record, ...action.payload }
+            return { ...record, ...action.payload };
           }
-          return record
+          return record;
         }),
-      }
+      };
     case 'resetRecords':
-      return { ...state, records: [] }
+      return { ...state, records: [] };
     case 'endRecord':
-      return { ...state, isRecording: false, flashOn: false }
+      return { ...state, isRecording: false, flashOn: false };
     case 'reset':
-      return initialState
+      return initialState;
     case 'startPreparing':
-      return { ...state, preparing: true }
+      return { ...state, preparing: true };
     case 'finishPreparing':
-      return { ...state, preparing: false }
+      return { ...state, preparing: false };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

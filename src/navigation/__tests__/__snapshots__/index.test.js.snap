@@ -2578,7 +2578,7 @@ Array [
           style={
             Object {
               "overflow": "hidden",
-              "paddingBottom": 259.1175892857143,
+              "paddingBottom": 204.56651785714303,
             }
           }
         >
@@ -2592,7 +2592,7 @@ Array [
                   "flex": 1,
                 },
                 Object {
-                  "height": 259.1175892857143,
+                  "height": 204.56651785714303,
                 },
               ]
             }
@@ -2718,10 +2718,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -2731,7 +2731,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
@@ -2815,10 +2815,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -2828,7 +2828,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
@@ -2956,10 +2956,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -2969,7 +2969,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
@@ -5596,7 +5596,7 @@ Array [
           style={
             Object {
               "overflow": "hidden",
-              "paddingBottom": 259.1175892857143,
+              "paddingBottom": 204.56651785714303,
             }
           }
         >
@@ -5610,7 +5610,7 @@ Array [
                   "flex": 1,
                 },
                 Object {
-                  "height": 259.1175892857143,
+                  "height": 204.56651785714303,
                 },
               ]
             }
@@ -5736,10 +5736,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -5749,7 +5749,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
@@ -5833,10 +5833,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -5846,7 +5846,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }
@@ -5974,10 +5974,10 @@ Array [
                             "alignItems": "center",
                             "backgroundColor": "#F5F5F5",
                             "borderRadius": 1000,
-                            "height": 48,
+                            "height": 44,
                             "justifyContent": "center",
                             "marginRight": 16,
-                            "width": 48,
+                            "width": 44,
                           }
                         }
                       >
@@ -5987,7 +5987,7 @@ Array [
                             Object {
                               "color": "#0B1B77",
                               "fontFamily": "Ionicons",
-                              "fontSize": 28,
+                              "fontSize": 24,
                               "fontStyle": "normal",
                               "fontWeight": "normal",
                             }

@@ -1,35 +1,35 @@
-import { memo, useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react';
 import {
   View, ScrollView, Platform, TouchableOpacity, Linking,
-} from 'react-native'
-import Share from 'react-native-share'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigation, useFocusEffect } from '@react-navigation/native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import DeviceInfo from 'react-native-device-info'
+} from 'react-native';
+import Share from 'react-native-share';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import DeviceInfo from 'react-native-device-info';
 
 import {
   Pressable, Typography, Avatar, AppHeader,
-} from '@app/shared/components'
-import routes from '@app/navigation/routes'
-import { api } from '@app/shared/services'
-import * as types from '@app/redux/types'
-import { appSelector, userStatsSelector } from '@app/redux/selectors'
-import { strings } from '@app/config'
+} from '@app/shared/components';
+import routes from '@app/navigation/routes';
+import { api } from '@app/shared/services';
+import * as types from '@app/redux/types';
+import { appSelector, userStatsSelector } from '@app/redux/selectors';
+import { strings } from '@app/config';
 import {
   useAppColors, useAppStyles, useBottomSheet, useUser,
-} from '@app/shared/hooks'
-import { actionTypes } from '@app/features/post/containers/create'
-import { readableNumber } from '@app/shared/helpers/strings'
-import { warnNotImplemented } from '@app/shared/components/no-content'
-import useFilePicker from '@app/features/post/hooks/file-picker'
+} from '@app/shared/hooks';
+import { actionTypes } from '@app/features/post/containers/create';
+import { readableNumber } from '@app/shared/helpers/strings';
+import { warnNotImplemented } from '@app/shared/components/no-content';
+import useFilePicker from '@app/features/post/hooks/file-picker';
 
-import createThemedStyles, { imageSize } from './styles'
+import createThemedStyles, { imageSize } from './styles';
 
-const routeOptions = { title: strings.tabs.profile }
+const routeOptions = { title: strings.tabs.profile };
 
 export const SectionTitle = memo(({ text }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <Typography
       text={text}
@@ -38,20 +38,20 @@ export const SectionTitle = memo(({ text }) => {
       type={Typography.types.headline5}
       systemColor={Typography.colors.tertiary}
     />
-  )
-})
+  );
+});
 
 export const Summary = memo(({
   photoURL, info, displayName, onLoading,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { navigate } = useNavigation()
-  const { showAvatarOptions } = useUser()
-  const { saveImage } = useFilePicker()
+  const styles = useAppStyles(createThemedStyles);
+  const { navigate } = useNavigation();
+  const { showAvatarOptions } = useUser();
+  const { saveImage } = useFilePicker();
 
   const onAvatarOptions = useCallback(async () => {
-    await showAvatarOptions({ onLoading, navigate, saveImage })
-  }, [onLoading, navigate, saveImage, showAvatarOptions])
+    await showAvatarOptions({ onLoading, navigate, saveImage });
+  }, [onLoading, navigate, saveImage, showAvatarOptions]);
 
   return (
     <View style={styles.summary}>
@@ -71,11 +71,11 @@ export const Summary = memo(({
         />
       </View>
     </View>
-  )
-})
+  );
+});
 
 export const Stat = memo(({ title, value }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.stat}>
       <Typography
@@ -90,14 +90,14 @@ export const Stat = memo(({ title, value }) => {
         systemColor={Typography.colors.tertiary}
       />
     </View>
-  )
-})
+  );
+});
 
 export const IconButton = memo(({
   icon, text, message, onPress, children, ...otherProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <View style={styles.iconButtonWrapper}>
       <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
@@ -119,24 +119,24 @@ export const IconButton = memo(({
       </Pressable>
       {children}
     </View>
-  )
-})
+  );
+});
 
 export const Stats = memo(({
   postsCount, reactionsCount, commentsCount, style,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={[styles.stats, style]}>
       <Stat value={postsCount} title={strings.profile.posts.toLowerCase()} />
       <Stat value={commentsCount} title={strings.profile.comments.toLowerCase()} />
       <Stat value={reactionsCount} title={strings.profile.reactions.toLowerCase()} />
     </View>
-  )
-})
+  );
+});
 
 const ProfileSection = memo(({ managePosts }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.section}>
       <IconButton
@@ -146,13 +146,13 @@ const ProfileSection = memo(({ managePosts }) => {
         onPress={managePosts}
       />
     </View>
-  )
-})
+  );
+});
 
 const AccountSection = memo(({
   signOut, editProfile, editUsername, username,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.section}>
       <SectionTitle text={strings.profile.account} />
@@ -173,25 +173,25 @@ const AccountSection = memo(({
         onPress={signOut}
       />
     </View>
-  )
-})
+  );
+});
 
 const PreferencesSection = memo(({ updateAppearance, openLanguages }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { theme } = useSelector(appSelector)
+  const styles = useAppStyles(createThemedStyles);
+  const { theme } = useSelector(appSelector);
 
   const getAppearanceMessage = useCallback(() => {
     switch (theme) {
       case 'dark':
-        return strings.general.on
+        return strings.general.on;
       case 'light':
-        return strings.general.off
+        return strings.general.off;
       case 'system':
-        return strings.general.system_default
+        return strings.general.system_default;
       default:
-        return null
+        return null;
     }
-  }, [theme])
+  }, [theme]);
 
   return (
     <View style={styles.section}>
@@ -215,13 +215,13 @@ const PreferencesSection = memo(({ updateAppearance, openLanguages }) => {
         onPress={openLanguages}
       />
     </View>
-  )
-})
+  );
+});
 
 const AppInfosSection = memo(({
   name, version, shareApp, reportIssue,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.section}>
       <SectionTitle text={strings.profile.application} />
@@ -243,13 +243,13 @@ const AppInfosSection = memo(({
         message={strings.auth.terms_and_conditions}
       />
     </View>
-  )
-})
+  );
+});
 
 export const ProfileHeader = memo(({
   profile, postsCount, reactionsCount, commentsCount, onLoading,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.header}>
       <Summary
@@ -264,82 +264,82 @@ export const ProfileHeader = memo(({
         commentsCount={commentsCount}
       />
     </View>
-  )
-})
+  );
+});
 
 const ProfilePage = memo(() => {
-  const { profile, signOut } = useUser()
-  const { navigate } = useNavigation()
-  const [loading, setLoading] = useState(false)
+  const { profile, signOut } = useUser();
+  const { navigate } = useNavigation();
+  const [loading, setLoading] = useState(false);
 
-  const stats = useSelector(userStatsSelector)
-  const [postsCount, setPostsCount] = useState(stats.posts)
-  const [commentsCount, setCommentsCount] = useState(stats.comments)
-  const [reactionsCount, setReactionsCount] = useState(stats.reactions)
+  const stats = useSelector(userStatsSelector);
+  const [postsCount, setPostsCount] = useState(stats.posts);
+  const [commentsCount, setCommentsCount] = useState(stats.comments);
+  const [reactionsCount, setReactionsCount] = useState(stats.reactions);
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const { showAppearanceOptions } = useBottomSheet()
+  const { showAppearanceOptions } = useBottomSheet();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useFocusEffect(
     useCallback(() => {
       const fetchStats = async () => {
         // fetch latest stats
-        const userId = profile.uid
+        const userId = profile.uid;
         if (userId) {
-          const result = await api.authors.countActivities(userId)
+          const result = await api.authors.countActivities(userId);
           // update data in component
-          setPostsCount(result.posts)
-          setCommentsCount(result.comments)
-          setReactionsCount(result.reactions)
+          setPostsCount(result.posts);
+          setCommentsCount(result.comments);
+          setReactionsCount(result.reactions);
 
           // store the data in redux
-          dispatch({ type: types.SET_USER_STATS, payload: result })
+          dispatch({ type: types.SET_USER_STATS, payload: result });
         }
-      }
-      fetchStats()
+      };
+      fetchStats();
     }, [dispatch, profile.uid]),
-  )
+  );
 
   const shareApp = useCallback(() => {
     Share.open({
       title: strings.profile.share_title,
       url: strings.profile.share_url,
       message: `${strings.profile.share_message} - ${strings.profile.share_url}`,
-    })
-  }, [])
+    });
+  }, []);
 
   const updateAppearance = useCallback(async () => {
-    const actionIndex = await showAppearanceOptions()
+    const actionIndex = await showAppearanceOptions();
 
     if (actionIndex === 0) {
-      dispatch({ type: types.SET_THEME, payload: 'system' })
+      dispatch({ type: types.SET_THEME, payload: 'system' });
     } else if (actionIndex === 1) {
-      dispatch({ type: types.SET_THEME, payload: 'dark' })
+      dispatch({ type: types.SET_THEME, payload: 'dark' });
     } else if (actionIndex === 2) {
-      dispatch({ type: types.SET_THEME, payload: 'light' })
+      dispatch({ type: types.SET_THEME, payload: 'light' });
     }
-  }, [dispatch, showAppearanceOptions])
+  }, [dispatch, showAppearanceOptions]);
 
-  const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate])
+  const managePosts = useCallback(() => navigate(routes.MANAGE_POSTS), [navigate]);
 
   const reportIssue = useCallback(() => {
-    navigate(routes.CREATE_POST, { action: actionTypes.REPORT })
-  }, [navigate])
+    navigate(routes.CREATE_POST, { action: actionTypes.REPORT });
+  }, [navigate]);
 
   const editProfile = useCallback(() => {
-    navigate(routes.EDIT_PROFILE)
-  }, [navigate])
+    navigate(routes.EDIT_PROFILE);
+  }, [navigate]);
 
   const editUsername = useCallback(() => {
-    navigate(routes.EDIT_PROFILE, { field: 'username' })
-  }, [navigate])
+    navigate(routes.EDIT_PROFILE, { field: 'username' });
+  }, [navigate]);
 
   const openLanguages = useCallback(() => {
-    navigate(routes.LANGUAGES)
-  }, [navigate])
+    navigate(routes.LANGUAGES);
+  }, [navigate]);
 
   return (
     <View style={styles.wrapper}>
@@ -377,9 +377,9 @@ const ProfilePage = memo(() => {
         />
       </ScrollView>
     </View>
-  )
-})
+  );
+});
 
-ProfilePage.routeOptions = routeOptions
+ProfilePage.routeOptions = routeOptions;
 
-export default ProfilePage
+export default ProfilePage;

@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { elevation, metrics } from '@app/theme'
-import iosColors from '@app/theme/ios-colors'
-import { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import { elevation, metrics } from '@app/theme';
+import iosColors from '@app/theme/ios-colors';
+import { hexToRgba, rgbaToHex } from '@app/theme/colors';
 
-export const borderRadius = metrics.radius.md
+export const borderRadius = metrics.radius.md;
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -47,4 +47,4 @@ export default (colors) => StyleSheet.create({
     width: 0,
     height: 0,
   },
-})
+});

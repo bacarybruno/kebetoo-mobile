@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { elevation, metrics } from '@app/theme'
+import { elevation, metrics } from '@app/theme';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -22,4 +22,4 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.background,
     ...elevation(0),
   },
-})
+});

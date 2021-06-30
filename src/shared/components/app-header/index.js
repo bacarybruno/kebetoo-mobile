@@ -1,28 +1,28 @@
-import { useCallback, isValidElement } from 'react'
-import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useCallback, isValidElement } from 'react';
+import { View, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Avatar, Logo, Typography } from '@app/shared/components'
-import routes from '@app/navigation/routes'
-import { useAppColors } from '@app/shared/hooks'
-import { edgeInsets } from '@app/theme'
+import { Avatar, Logo, Typography } from '@app/shared/components';
+import routes from '@app/navigation/routes';
+import { useAppColors } from '@app/shared/hooks';
+import { edgeInsets } from '@app/theme';
 
-import styles from './styles'
-import HeaderBack from '../header-back'
+import styles from './styles';
+import HeaderBack from '../header-back';
 
-export const routeOptions = { headerShown: false }
+export const routeOptions = { headerShown: false };
 
 export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.headerAvatar}>
     <Avatar src={photoURL} text={displayName} size={30} fontSize={18} />
   </TouchableOpacity>
-)
+);
 
 const HeaderNavigationBack = ({ onPress, tintColor }) => (
   <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(10)}>
     <HeaderBack tintColor={tintColor} style={styles.headerBack} />
   </TouchableOpacity>
-)
+);
 
 const Header = ({
   title = '',
@@ -40,12 +40,12 @@ const Header = ({
   Right,
   Logo: HeaderLogo,
 }) => {
-  const { navigate, goBack } = useNavigation()
-  const { colors } = useAppColors()
+  const { navigate, goBack } = useNavigation();
+  const { colors } = useAppColors();
 
   const onHeaderPress = useCallback(() => {
-    navigate(routes.PROFILE)
-  }, [navigate])
+    navigate(routes.PROFILE);
+  }, [navigate]);
 
   return (
     <View style={[styles.header, style]}>
@@ -93,7 +93,7 @@ const Header = ({
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

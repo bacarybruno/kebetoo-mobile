@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export default (colors) => StyleSheet.create({
   frontCameraFlash: {
@@ -7,4 +7,4 @@ export default (colors) => StyleSheet.create({
     opacity: 0.8,
     zIndex: 1,
   },
-})
+});

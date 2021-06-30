@@ -1,18 +1,18 @@
 import {
   memo, useState, useCallback, useRef, useEffect,
-} from 'react'
-import { Animated, View } from 'react-native'
+} from 'react';
+import { Animated, View } from 'react-native';
 
-import { AudioPlayer, TextInput } from '@app/shared/components'
-import { env, strings } from '@app/config'
-import { readableSeconds } from '@app/shared/helpers/dates'
-import { useAppStyles } from '@app/shared/hooks'
+import { AudioPlayer, TextInput } from '@app/shared/components';
+import { env, strings } from '@app/config';
+import { readableSeconds } from '@app/shared/helpers/dates';
+import { useAppStyles } from '@app/shared/hooks';
 
-import { SendButton, RecordButton } from '../send-button'
-import ReplyInfo from '../reply-info'
-import createThemedStyles from './styles'
+import { SendButton, RecordButton } from '../send-button';
+import ReplyInfo from '../reply-info';
+import createThemedStyles from './styles';
 
-const baseReplyInfoSize = 62
+const baseReplyInfoSize = 62;
 
 export const CommentInput = ({
   onChange,
@@ -31,38 +31,38 @@ export const CommentInput = ({
   maxLength = env.maxLength.post.comments,
   ...inputProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight)
-  const inputSize = useRef(new Animated.Value(0))
+  const [inputHeight, setInputHeight] = useState(styles.textInputSize.minHeight);
+  const inputSize = useRef(new Animated.Value(0));
 
   useEffect(() => {
     Animated.timing(inputSize.current, {
       toValue: inputHeight + (reply ? baseReplyInfoSize : 0),
       useNativeDriver: false,
       duration: 200,
-    }).start()
-  }, [inputHeight, reply])
+    }).start();
+  }, [inputHeight, reply]);
 
   const updateInputHeight = useCallback((event) => {
-    if (!handleContentSizeChange) return
+    if (!handleContentSizeChange) return;
     setInputHeight(
       Math.max(
         styles.textInputSize.minHeight,
         event.nativeEvent.contentSize.height,
       ),
-    )
-  }, [styles.textInputSize.minHeight, handleContentSizeChange])
+    );
+  }, [styles.textInputSize.minHeight, handleContentSizeChange]);
 
   const inputPlaceholder = audioRecorder.isRecording
     ? `${strings.comments.recording} (${readableSeconds(audioRecorder.elapsedTime)})`
-    : (placeholder || strings.comments.add_comment)
+    : (placeholder || strings.comments.add_comment);
 
   const wrapperStyle = [
     styles.textInputSize,
     styles.textInputWrapper,
     reply && styles.textInputWrapperWithReply,
-  ]
+  ];
 
   return (
     <View style={[styles.commentInputWrapper, style]}>
@@ -125,7 +125,7 @@ export const CommentInput = ({
           />
         )}
     </View>
-  )
-}
+  );
+};
 
-export default memo(CommentInput)
+export default memo(CommentInput);

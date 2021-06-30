@@ -1,14 +1,14 @@
-import { memo, useEffect, useState } from 'react'
-import { TouchableOpacity, Animated, View } from 'react-native'
+import { memo, useEffect, useState } from 'react';
+import { TouchableOpacity, Animated, View } from 'react-native';
 
-import Kebeticon from '@app/shared/icons/kebeticons'
-import { edgeInsets, metrics } from '@app/theme'
-import { Badge } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import Kebeticon from '@app/shared/icons/kebeticons';
+import { edgeInsets, metrics } from '@app/theme';
+import { Badge } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles, { getDimensions, getIconSize } from './styles'
+import createThemedStyles, { getDimensions, getIconSize } from './styles';
 
-const scale = (value = 1) => ({ transform: [{ scale: value }] })
+const scale = (value = 1) => ({ transform: [{ scale: value }] });
 
 const IconButton = ({
   onPress,
@@ -24,9 +24,9 @@ const IconButton = ({
   defaultHitSlop = 20,
   ...otherProps
 }) => {
-  const [animatedScale] = useState(new Animated.Value(1))
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const [animatedScale] = useState(new Animated.Value(1));
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   useEffect(() => {
     if (activable && isActive) {
@@ -35,11 +35,11 @@ const IconButton = ({
         bounciness: 20,
         speed: 20,
         useNativeDriver: true,
-      }).start()
+      }).start();
     } else {
-      animatedScale.setValue(1)
+      animatedScale.setValue(1);
     }
-  }, [activable, isActive, animatedScale])
+  }, [activable, isActive, animatedScale]);
 
   return (
     <View style={styles.wrapper}>
@@ -74,7 +74,7 @@ const IconButton = ({
         />
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default memo(IconButton)
+export default memo(IconButton);

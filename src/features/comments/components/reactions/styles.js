@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-export const paddingHorizontal = metrics.marginHorizontal * 1.5
-export const borderRadiusSize = metrics.radius.xl
-export const summaryHeight = 35
-export const bottomBarSize = 45
-export const reactionsHeight = borderRadiusSize + 30
-export const imgSize = 28
+export const paddingHorizontal = metrics.marginHorizontal * 1.5;
+export const borderRadiusSize = metrics.radius.xl;
+export const summaryHeight = 35;
+export const bottomBarSize = 45;
+export const reactionsHeight = borderRadiusSize + 30;
+export const imgSize = 28;
 
 export default (colors) => StyleSheet.create({
   reactionsContainer: {
@@ -52,4 +52,4 @@ export default (colors) => StyleSheet.create({
     marginLeft: -imgSize / 2.5,
     zIndex: 0,
   },
-})
+});

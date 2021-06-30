@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import { TouchableOpacity, View } from 'react-native'
-import { ViewPager, AppHeader } from '@app/shared/components'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useState } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import { ViewPager, AppHeader } from '@app/shared/components';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
 
-import { strings } from '@app/config'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import { getVideoThumbnail } from '@app/features/post/components/video-content'
-import StorySlide from '@app/features/stories/components/slide'
+import { strings } from '@app/config';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import { getVideoThumbnail } from '@app/features/post/components/video-content';
+import StorySlide from '@app/features/stories/components/slide';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const StoryItems = ({ stories, currentStory, isFocused }) => {
   const items = stories.map((story, index) => (
@@ -21,19 +21,19 @@ const StoryItems = ({ stories, currentStory, isFocused }) => {
         source={story.video.url}
       />
     </View>
-  ))
+  ));
 
-  return items
-}
+  return items;
+};
 
 
 const StoryListPage = ({ onAddStory, stories, isFocused }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const [currentStory, setCurrentStory] = useState(0)
+  const [currentStory, setCurrentStory] = useState(0);
 
-  const onStoryPageSelected = (e) => setCurrentStory(e.nativeEvent.position)
+  const onStoryPageSelected = (e) => setCurrentStory(e.nativeEvent.position);
 
   return (
     <>
@@ -67,7 +67,7 @@ const StoryListPage = ({ onAddStory, stories, isFocused }) => {
         )}
       />
     </>
-  )
-}
+  );
+};
 
-export default StoryListPage
+export default StoryListPage;

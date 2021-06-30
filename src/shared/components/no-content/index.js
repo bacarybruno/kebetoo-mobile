@@ -1,16 +1,16 @@
-import { memo } from 'react'
-import { Alert, View } from 'react-native'
+import { memo } from 'react';
+import { Alert, View } from 'react-native';
 
-import { strings } from '@app/config'
+import { strings } from '@app/config';
 
-import Typography from '../typography'
+import Typography from '../typography';
 
-import styles from './styles'
+import styles from './styles';
 
 export const warnNotImplemented = () => Alert.alert(
   strings.general.not_implemented_title,
   strings.general.not_implemented_description,
-)
+);
 
 const NoContent = ({ title, text, children }) => (
   <View style={styles.noContent}>
@@ -31,6 +31,6 @@ const NoContent = ({ title, text, children }) => (
     )}
     {children}
   </View>
-)
+);
 
-export default memo(NoContent)
+export default memo(NoContent);

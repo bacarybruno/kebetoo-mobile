@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default StyleSheet.create({
   header: {
@@ -12,4 +12,4 @@ export default StyleSheet.create({
   headerBadge: {
     marginLeft: metrics.spacing.sm,
   },
-})
+});

@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
-import { metrics } from '@app/theme'
+import { StyleSheet } from 'react-native';
+import { metrics } from '@app/theme';
 
-export const size = 56
+export const size = 56;
 export default (colors) => StyleSheet.create({
   flex: {
     flex: 1,
@@ -47,4 +47,4 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-})
+});

@@ -1,28 +1,28 @@
 import {
   memo, useCallback, useMemo, useContext, useEffect,
-} from 'react'
-import { View, KeyboardAvoidingView, Platform } from 'react-native'
-import { FlatList } from 'react-native-gesture-handler'
-import { getBottomSpace } from 'react-native-iphone-x-helper'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+} from 'react';
+import { View, KeyboardAvoidingView, Platform } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { NoContent } from '@app/shared/components'
-import { strings } from '@app/config'
-import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-import { metrics } from '@app/theme'
-import { SafeAreaContext } from '@app/shared/contexts'
-import CommentInput from '@app/features/comments/components/comment-input'
-import Comment from '@app/features/comments/components/comment'
-import SwipeableComment from '@app/features/comments/components/swipeable'
+import { NoContent } from '@app/shared/components';
+import { strings } from '@app/config';
+import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks';
+import { metrics } from '@app/theme';
+import { SafeAreaContext } from '@app/shared/contexts';
+import CommentInput from '@app/features/comments/components/comment-input';
+import Comment from '@app/features/comments/components/comment';
+import SwipeableComment from '@app/features/comments/components/swipeable';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const NoComments = () => (
   <NoContent title={strings.general.no_content} text={strings.comments.no_content} />
-)
+);
 
 export const CommentReply = ({ reply, profile, navigation }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.replyWrapper}>
       <Comment
@@ -35,23 +35,23 @@ export const CommentReply = ({ reply, profile, navigation }) => {
         navigation={navigation}
       />
     </View>
-  )
-}
+  );
+};
 
 const CommentItem = ({
   item, replies, toReply, onSetReply, loadReplies, navigation,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const { profile } = useUser()
+  const { profile } = useUser();
 
   const checkSelectedComment = (comment) => (
     toReply?.id === comment.id ? styles.selectedComment : {}
-  )
+  );
 
-  const onShowReplies = () => loadReplies(item)
+  const onShowReplies = () => loadReplies(item);
 
-  if (!item.author) return null
+  if (!item.author) return null;
 
   return (
     <View style={styles.comment}>
@@ -80,8 +80,8 @@ const CommentItem = ({
         </SwipeableComment>
       ))}
     </View>
-  )
-}
+  );
+};
 
 // TODO: paginate comments
 const CommentsView = ({
@@ -103,17 +103,17 @@ const CommentsView = ({
   replies,
   comment,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const { updateTopSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
-  const insets = useSafeAreaInsets()
+  const { updateTopSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
-    updateTopSafeAreaColor(colors.backgroundSecondary)
-    return resetStatusBars
+    updateTopSafeAreaColor(colors.backgroundSecondary);
+    return resetStatusBars;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   const renderComment = useMemo(() => ({ item }) => (
     <CommentItem
@@ -124,9 +124,9 @@ const CommentsView = ({
       loadReplies={loadReplies}
       navigation={navigation}
     />
-  ), [replies, toReply, loadReplies, onSetReply, navigation])
+  ), [replies, toReply, loadReplies, onSetReply, navigation]);
 
-  const keyExtractor = useCallback((item, index) => `comment-${item?.id}-${index}`, [])
+  const keyExtractor = useCallback((item, index) => `comment-${item?.id}-${index}`, []);
 
   return (
     <View style={styles.wrapper}>
@@ -160,7 +160,7 @@ const CommentsView = ({
         />
       </KeyboardAvoidingView>
     </View>
-  )
-}
+  );
+};
 
-export default memo(CommentsView)
+export default memo(CommentsView);

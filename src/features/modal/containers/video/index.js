@@ -1,50 +1,50 @@
-import { useCallback, useEffect, useRef } from 'react'
-import { StatusBar } from 'react-native'
-import { TransitionPresets } from '@react-navigation/stack'
-import VideoPlayer from 'react-native-video-controls'
+import { useCallback, useEffect, useRef } from 'react';
+import { StatusBar } from 'react-native';
+import { TransitionPresets } from '@react-navigation/stack';
+import VideoPlayer from 'react-native-video-controls';
 
-import { useAppColors } from '@app/shared/hooks'
-import changeNavigationBarColor from 'react-native-navigation-bar-color'
-import { rgbaToHex } from '@app/theme/colors'
+import { useAppColors } from '@app/shared/hooks';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import { rgbaToHex } from '@app/theme/colors';
 
 export const routeOptions = {
   title: '',
   headerShown: false,
   headerTransparent: true,
   ...TransitionPresets.ScaleFromCenterAndroid,
-}
+};
 
 const VideoModal = ({ route, navigation }) => {
-  navigation.setOptions(routeOptions)
+  navigation.setOptions(routeOptions);
 
-  const { colors, resetAppBars } = useAppColors()
-  const playerRef = useRef()
-  const { source, poster } = route.params
+  const { colors, resetAppBars } = useAppColors();
+  const playerRef = useRef();
+  const { source, poster } = route.params;
 
   const showControls = useCallback(() => {
-    StatusBar.setBarStyle('light-content')
-  }, [])
+    StatusBar.setBarStyle('light-content');
+  }, []);
 
   const hideControls = useCallback(() => {
-    StatusBar.setBackgroundColor(colors.black)
-    StatusBar.setBarStyle('dark-content')
-    changeNavigationBarColor(rgbaToHex(colors.black))
-  }, [colors.black])
+    StatusBar.setBackgroundColor(colors.black);
+    StatusBar.setBarStyle('dark-content');
+    changeNavigationBarColor(rgbaToHex(colors.black));
+  }, [colors.black]);
 
   useEffect(() => {
-    hideControls()
-  }, [hideControls])
+    hideControls();
+  }, [hideControls]);
 
   const onBack = useCallback((unmount) => {
-    showControls()
-    resetAppBars()
-    if (!unmount) navigation.goBack()
-  }, [navigation, resetAppBars, showControls])
+    showControls();
+    resetAppBars();
+    if (!unmount) navigation.goBack();
+  }, [navigation, resetAppBars, showControls]);
 
   // componentWillUnmount
   useEffect(() => () => {
-    onBack(true)
-  }, [onBack])
+    onBack(true);
+  }, [onBack]);
 
   return (
     <VideoPlayer
@@ -64,7 +64,7 @@ const VideoModal = ({ route, navigation }) => {
       onShowControls={showControls}
       onHideControls={hideControls}
     />
-  )
-}
+  );
+};
 
-export default VideoModal
+export default VideoModal;

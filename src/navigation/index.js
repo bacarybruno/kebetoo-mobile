@@ -1,25 +1,25 @@
 import {
   cloneElement, useEffect, useCallback, useRef, useContext,
-} from 'react'
-import { Image, Platform, View } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import RNBootSplash from 'react-native-bootsplash'
-import { enableScreens } from 'react-native-screens'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
-import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
-import { PortalProvider, PortalHost } from '@gorhom/portal'
+} from 'react';
+import { Image, Platform, View } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import RNBootSplash from 'react-native-bootsplash';
+import { enableScreens } from 'react-native-screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
+import { PortalProvider, PortalHost } from '@gorhom/portal';
 
-import Kebeticon from '@app/shared/icons/kebeticons'
-import { images } from '@app/theme'
-import { strings } from '@app/config'
-import { SafeAreaContext } from '@app/shared/contexts'
+import Kebeticon from '@app/shared/icons/kebeticons';
+import { images } from '@app/theme';
+import { strings } from '@app/config';
+import { SafeAreaContext } from '@app/shared/contexts';
 import {
   TabBarAddButton, HeaderBack, Typography, CameraRollPicker,
-} from '@app/shared/components'
+} from '@app/shared/components';
 import {
   useUser, useNotifications, useAnalytics, useAppStyles, useAppColors, useMessaging,
-} from '@app/shared/hooks'
+} from '@app/shared/hooks';
 
 import {
   HomePage,
@@ -41,23 +41,23 @@ import {
   ManagePostsPage,
   UserProfilePage,
   NotificationsPage,
-} from './pages'
+} from './pages';
 
-import routes from './routes'
-import createThemedStyles from './styles'
+import routes from './routes';
+import createThemedStyles from './styles';
 
 
-enableScreens()
+enableScreens();
 
-const Stack = createStackNavigator()
-const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const createPage = (page, key) => cloneElement(page, {
   key,
   options: { headerBackTitleVisible: false },
-})
+});
 
-const EmptyPage = () => null
+const EmptyPage = () => null;
 
 // Screen options
 const defaultScreenOptions = {
@@ -67,7 +67,7 @@ const defaultScreenOptions = {
   }),
   gestureEnabled: true,
   ...TransitionPresets.ModalSlideFromBottomIOS,
-}
+};
 
 const defaultOnboardingScreenOptions = (styles, colors) => ({
   ...defaultScreenOptions,
@@ -78,14 +78,14 @@ const defaultOnboardingScreenOptions = (styles, colors) => ({
   headerTitleAlign: 'center',
   headerBackTitleVisible: false,
   headerTitleStyle: { color: colors.textPrimary },
-})
+});
 
 const defaultTabBarOptions = (styles, colors) => ({
   ...defaultScreenOptions,
   activeTintColor: colors.primary,
   inactiveTintColor: colors.icon,
   style: styles.tabBar,
-})
+});
 
 const defaultTabOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
@@ -94,10 +94,10 @@ const defaultTabOptions = ({ route }) => ({
       [routes.STORIES]: 'stories',
       [routes.ROOMS]: 'chatbubble-ellipses',
       [routes.NOTIFICATIONS]: 'notifications',
-    }
-    const size = 24
-    const iconName = iconNames[route.name]
-    if (!iconName) return null
+    };
+    const size = 24;
+    const iconName = iconNames[route.name];
+    if (!iconName) return null;
     if (iconName === 'stories') {
       return (
         <Kebeticon
@@ -105,7 +105,7 @@ const defaultTabOptions = ({ route }) => ({
           size={size}
           color={color}
         />
-      )
+      );
     }
     return (
       <Ionicon
@@ -113,7 +113,7 @@ const defaultTabOptions = ({ route }) => ({
         size={size}
         color={color}
       />
-    )
+    );
   },
   tabBarLabel: ({ focused, color }) => {
     const labels = {
@@ -121,7 +121,7 @@ const defaultTabOptions = ({ route }) => ({
       [routes.STORIES]: strings.tabs.stories,
       [routes.ROOMS]: strings.tabs.rooms,
       [routes.NOTIFICATIONS]: strings.tabs.notifications,
-    }
+    };
     return (
       <Typography
         type={Typography.types.caption}
@@ -130,14 +130,14 @@ const defaultTabOptions = ({ route }) => ({
         numberOfLines={1}
         style={{ color }}
       />
-    )
+    );
   },
-})
+});
 
 const defaultMainScreenOptions = {
   ...defaultScreenOptions,
   headerShown: false,
-}
+};
 
 // Pages
 export const tabPages = [
@@ -146,17 +146,17 @@ export const tabPages = [
   <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
   <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
   <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
-]
+];
 
 export const TabBar = (props, styles, colors, tabBarTheme) => {
   let background = colors.colorScheme === 'dark'
     ? images.bottom_tab_overlay_dark
-    : images.bottom_tab_overlay
+    : images.bottom_tab_overlay;
 
   if (tabBarTheme) {
     background = tabBarTheme === 'dark'
       ? images.bottom_tab_overlay_dark
-      : images.bottom_tab_overlay
+      : images.bottom_tab_overlay;
   }
 
   return (
@@ -171,14 +171,14 @@ export const TabBar = (props, styles, colors, tabBarTheme) => {
         <BottomTabBar {...props} />
       </View>
     </View>
-  )
-}
+  );
+};
 
 export const TabPage = () => {
-  const { badgeCount } = useNotifications()
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
-  const { tabBarTheme } = useContext(SafeAreaContext)
+  const { badgeCount } = useNotifications();
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
+  const { tabBarTheme } = useContext(SafeAreaContext);
 
   return (
     <Tab.Navigator
@@ -202,28 +202,28 @@ export const TabPage = () => {
         })
       ))}
     </Tab.Navigator>
-  )
-}
+  );
+};
 
 export const onboardingPages = [
   <Stack.Screen name={routes.ONBOARDING} component={OnboardingPage} />,
   <Stack.Screen name={routes.SIGNUP} component={SignUpPage} />,
   <Stack.Screen name={routes.SIGNIN} component={SignInPage} />,
-]
+];
 
 export const OnboardingStack = () => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <Stack.Navigator screenOptions={defaultOnboardingScreenOptions(styles, colors)}>
       {onboardingPages.map(createPage)}
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 export const notLoggedInPages = [
   <Stack.Screen component={OnboardingStack} name={routes.ONBARDING_NAV} />,
-]
+];
 
 export const loggedInPages = [
   <Stack.Screen component={TabPage} name={routes.HOME_NAV} />,
@@ -240,20 +240,20 @@ export const loggedInPages = [
   <Stack.Screen component={RoomPage} name={routes.ROOM} />,
   <Stack.Screen component={LanguagesPage} name={routes.LANGUAGES} />,
   <Stack.Screen component={SearchPage} name={routes.SEARCH} />,
-]
+];
 
 // Main Section
 // TODO: use sagas
 const AppNavigation = () => {
-  const { colors } = useAppColors()
+  const { colors } = useAppColors();
 
-  const { isLoggedIn } = useUser()
-  const { trackPageView } = useAnalytics()
+  const { isLoggedIn } = useUser();
+  const { trackPageView } = useAnalytics();
 
-  const navigationRef = useRef()
-  const routeNameRef = useRef()
+  const navigationRef = useRef();
+  const routeNameRef = useRef();
 
-  const { setupNotifications } = useMessaging(navigationRef)
+  const { setupNotifications } = useMessaging(navigationRef);
 
   const navigationTheme = {
     dark: colors.colorScheme === 'dark',
@@ -265,31 +265,31 @@ const AppNavigation = () => {
       border: colors.border,
       notification: colors.pink,
     },
-  }
+  };
 
   useEffect(() => {
-    RNBootSplash.hide({ fade: true })
-    setupNotifications()
-    trackPageView(routes.HOME)
+    RNBootSplash.hide({ fade: true });
+    setupNotifications();
+    trackPageView(routes.HOME);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
-  const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name
+  const getCurrentRouteName = () => navigationRef.current.getCurrentRoute().name;
 
   const onNavigationReady = useCallback(() => {
-    routeNameRef.current = getCurrentRouteName()
-  }, [])
+    routeNameRef.current = getCurrentRouteName();
+  }, []);
 
   const onNavigationStateChange = useCallback(() => {
-    const previousRouteName = routeNameRef.current
-    const currentRouteName = getCurrentRouteName()
+    const previousRouteName = routeNameRef.current;
+    const currentRouteName = getCurrentRouteName();
 
     if (previousRouteName !== currentRouteName) {
-      trackPageView(currentRouteName)
+      trackPageView(currentRouteName);
     }
 
-    routeNameRef.current = currentRouteName
-  }, [trackPageView])
+    routeNameRef.current = currentRouteName;
+  }, [trackPageView]);
 
   return (
     <PortalProvider>
@@ -307,7 +307,7 @@ const AppNavigation = () => {
       </NavigationContainer>
       <PortalHost name="bottom-sheet" />
     </PortalProvider>
-  )
-}
+  );
+};
 
-export default AppNavigation
+export default AppNavigation;

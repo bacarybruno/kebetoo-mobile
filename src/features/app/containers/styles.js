@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { StyleSheet } from 'react-native';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -16,4 +16,4 @@ export default (colors) => StyleSheet.create({
     flex: 0,
     backgroundColor: colors.background,
   },
-})
+});

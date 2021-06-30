@@ -1,4 +1,4 @@
-import { materialColors } from 'react-native-typography'
+import { materialColors } from 'react-native-typography';
 
 export default {
   textPrimary: {
@@ -13,4 +13,4 @@ export default {
     light: materialColors.blackTertiary,
     dark: materialColors.whiteTertiary,
   },
-}
+};

@@ -1,14 +1,14 @@
-import setupTest from '@app/config/jest-setup'
-import { strings } from '@app/config'
+import setupTest from '@app/config/jest-setup';
+import { strings } from '@app/config';
 
-import HrLine from '../index'
+import HrLine from '../index';
 
-const givenHrLine = setupTest(HrLine)()
+const givenHrLine = setupTest(HrLine)();
 
 it('renders HrLine', () => {
   const { wrapper } = givenHrLine({
     text: strings.auth.or_signup_with,
     style: { backgroundColor: 'red', color: 'white' },
-  })
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  });
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

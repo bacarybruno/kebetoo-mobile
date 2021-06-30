@@ -1,8 +1,8 @@
 
-import { env } from '@app/config'
+import { env } from '@app/config';
 
-import ApiClient from './api-client'
+import ApiClient from './api-client';
 
-const api = new ApiClient(env.apiBaseUrl, 'en')
+const api = new ApiClient(env.apiBaseUrl, 'en');
 
-export default api
+export default api;

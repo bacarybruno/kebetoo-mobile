@@ -1,30 +1,30 @@
-import { useCallback, useEffect, useReducer } from 'react'
-import auth from '@react-native-firebase/auth'
-import { object as yupObject, string as yupString, reach as yupReach } from 'yup'
+import { useCallback, useEffect, useReducer } from 'react';
+import auth from '@react-native-firebase/auth';
+import { object as yupObject, string as yupString, reach as yupReach } from 'yup';
 
-import routes from '@app/navigation/routes'
-import { strings } from '@app/config'
-import { useAnalytics } from '@app/shared/hooks'
+import routes from '@app/navigation/routes';
+import { strings } from '@app/config';
+import { useAnalytics } from '@app/shared/hooks';
 
-import reducer, { actionTypes } from '../../reducer'
+import reducer, { actionTypes } from '../../reducer';
 
 export const fieldNames = {
   email: 'email',
   password: 'password',
-}
+};
 
 export const initialState = {
   values: { [fieldNames.email]: '', [fieldNames.password]: '' },
   errors: { [fieldNames.email]: null, [fieldNames.password]: null },
   isLoading: false,
-}
+};
 
 const useSignIn = (navigation, passwordRef) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { values, errors, isLoading } = state
+  const { values, errors, isLoading } = state;
 
-  const { trackSignIn, reportError } = useAnalytics()
+  const { trackSignIn, reportError } = useAnalytics();
 
   const schema = yupObject().shape({
     [fieldNames.email]: yupString().email(
@@ -36,12 +36,12 @@ const useSignIn = (navigation, passwordRef) => {
       8,
       strings.formatString(strings.errors.min_length_field, strings.auth.password, 8),
     ),
-  })
+  });
 
   const onChangeText = useCallback((value, field) => {
-    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } })
-    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
-  }, [])
+    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } });
+    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field });
+  }, []);
 
   const handleAuthError = useCallback((error) => {
     switch (error.code) {
@@ -52,8 +52,8 @@ const useSignIn = (navigation, passwordRef) => {
             field: fieldNames.email,
             value: strings.errors.auth_user_not_found,
           },
-        })
-        break
+        });
+        break;
       case 'auth/wrong-password':
         dispatch({
           type: actionTypes.SET_ERROR,
@@ -61,8 +61,8 @@ const useSignIn = (navigation, passwordRef) => {
             field: fieldNames.password,
             value: strings.errors.auth_wrong_password,
           },
-        })
-        break
+        });
+        break;
       case 'auth/user-disabled':
         dispatch({
           type: actionTypes.SET_ERROR,
@@ -70,8 +70,8 @@ const useSignIn = (navigation, passwordRef) => {
             field: fieldNames.email,
             value: strings.errors.auth_user_disabled,
           },
-        })
-        break
+        });
+        break;
       case 'auth/account-exists-with-different-credential':
         dispatch({
           type: actionTypes.SET_ERROR,
@@ -79,8 +79,8 @@ const useSignIn = (navigation, passwordRef) => {
             field: fieldNames.email,
             value: strings.errors.auth_account_exists_different_credential,
           },
-        })
-        break
+        });
+        break;
       // case 'auth/network-request-failed':
       //   //TODO: handler network request fail
       //   break
@@ -92,54 +92,54 @@ const useSignIn = (navigation, passwordRef) => {
               field: error.path,
               value: error.message,
             },
-          })
+          });
         } else {
-          reportError(error)
+          reportError(error);
         }
-        break
+        break;
     }
-    dispatch({ type: actionTypes.END_LOADING })
-  }, [reportError])
+    dispatch({ type: actionTypes.END_LOADING });
+  }, [reportError]);
 
   const onSubmit = useCallback(async () => {
     try {
-      dispatch({ type: actionTypes.START_LOADING })
-      await schema.validate(values)
-      await auth().signInWithEmailAndPassword(values.email, values.password)
-      trackSignIn('password')
+      dispatch({ type: actionTypes.START_LOADING });
+      await schema.validate(values);
+      await auth().signInWithEmailAndPassword(values.email, values.password);
+      trackSignIn('password');
     } catch (error) {
-      handleAuthError(error)
+      handleAuthError(error);
     }
-  }, [schema, values, trackSignIn, handleAuthError])
+  }, [schema, values, trackSignIn, handleAuthError]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('blur', () => {
-      dispatch({ type: actionTypes.END_LOADING })
-    })
+      dispatch({ type: actionTypes.END_LOADING });
+    });
 
-    return unsubscribe
-  }, [navigation])
+    return unsubscribe;
+  }, [navigation]);
 
   const navigateToSignUp = useCallback(() => {
-    navigation.navigate(routes.SIGNUP)
-  }, [navigation])
+    navigation.navigate(routes.SIGNUP);
+  }, [navigation]);
 
   const focusPassword = useCallback(() => {
-    passwordRef.current.focus()
-  }, [passwordRef])
+    passwordRef.current.focus();
+  }, [passwordRef]);
 
   const validate = useCallback((field) => {
     try {
-      yupReach(schema, field).validateSync(values[field])
-      dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
+      yupReach(schema, field).validateSync(values[field]);
+      dispatch({ type: actionTypes.CLEAR_ERROR, payload: field });
     } catch (error) {
-      dispatch({ type: actionTypes.SET_ERROR, payload: { field, value: error.message } })
+      dispatch({ type: actionTypes.SET_ERROR, payload: { field, value: error.message } });
     }
-  }, [values, schema])
+  }, [values, schema]);
 
   const onLoading = useCallback(() => {
-    dispatch({ type: actionTypes.START_LOADING })
-  }, [])
+    dispatch({ type: actionTypes.START_LOADING });
+  }, []);
 
   return {
     onChangeText,
@@ -151,7 +151,7 @@ const useSignIn = (navigation, passwordRef) => {
     handleAuthError,
     errors,
     isLoading,
-  }
-}
+  };
+};
 
-export default useSignIn
+export default useSignIn;

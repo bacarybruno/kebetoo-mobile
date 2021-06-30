@@ -1,4 +1,4 @@
-import * as types from '../types'
+import * as types from '../types';
 
 const initialState = {
   stats: {
@@ -21,7 +21,7 @@ const initialState = {
   },
   hiddenPosts: [],
   blockedAuthors: [],
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
           ...state.profile,
           ...action.payload,
         },
-      }
+      };
     case types.SET_USER_STATS:
       return {
         ...state,
@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
           ...state.stats,
           ...action.payload,
         },
-      }
+      };
     case types.ADD_POST_HISTORY:
       return {
         ...state,
@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
             ...state.searchHistory.posts.filter((post) => post !== action.payload),
           ],
         },
-      }
+      };
     case types.CLEAR_POST_HISTORY:
       return {
         ...state,
@@ -59,7 +59,7 @@ const reducer = (state = initialState, action) => {
           ...state.searchHistory,
           posts: [],
         },
-      }
+      };
     case types.REMOVE_POST_HISTORY:
       return {
         ...state,
@@ -67,7 +67,7 @@ const reducer = (state = initialState, action) => {
           ...state.searchHistory,
           posts: state.searchHistory.posts.filter((post) => post !== action.payload),
         },
-      }
+      };
     case types.ADD_USER_HISTORY:
       return {
         ...state,
@@ -78,7 +78,7 @@ const reducer = (state = initialState, action) => {
             ...state.searchHistory.users.filter((user) => user !== action.payload),
           ],
         },
-      }
+      };
     case types.CLEAR_USER_HISTORY:
       return {
         ...state,
@@ -86,7 +86,7 @@ const reducer = (state = initialState, action) => {
           ...state.searchHistory,
           users: [],
         },
-      }
+      };
     case types.REMOVE_USER_HISTORY:
       return {
         ...state,
@@ -94,20 +94,20 @@ const reducer = (state = initialState, action) => {
           ...state.searchHistory,
           users: state.searchHistory.users.filter((user) => user !== action.payload),
         },
-      }
+      };
     case types.HIDE_POST:
       return {
         ...state,
         hiddenPosts: [...(state.hiddenPosts || []), action.payload.id],
-      }
+      };
     case types.BLOCK_AUTHOR:
       return {
         ...state,
         blockedAuthors: [...(state.blockedAuthors || []), action.payload.author.id],
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

@@ -1,13 +1,13 @@
-import { PixelRatio, Platform, StyleSheet } from 'react-native'
+import { PixelRatio, Platform, StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-export const iconSize = Math.min(110 / PixelRatio.get(), 40)
+export const iconSize = Math.min(110 / PixelRatio.get(), 40);
 
 const bottomOffset = Platform.select({
   ios: metrics.tabBarFullHeight,
   android: 0,
-})
+});
 
 export default (colors) => StyleSheet.create({
   page: {
@@ -104,4 +104,4 @@ export default (colors) => StyleSheet.create({
   disabled: {
     opacity: 0.4,
   },
-})
+});

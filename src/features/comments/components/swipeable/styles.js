@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-export const swipeableThresold = metrics.screenWidth / 3.5
-export const swipeableMargin = metrics.spacing.xxl * 2
-const iconWrapperSize = 40
+export const swipeableThresold = metrics.screenWidth / 3.5;
+export const swipeableMargin = metrics.spacing.xxl * 2;
+const iconWrapperSize = 40;
 
 export default (colors) => StyleSheet.create({
   leftAction: {
@@ -20,4 +20,4 @@ export default (colors) => StyleSheet.create({
     borderRadius: iconWrapperSize / 2,
     backgroundColor: colors.backgroundSecondary,
   },
-})
+});

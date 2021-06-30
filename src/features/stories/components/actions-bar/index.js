@@ -1,17 +1,17 @@
-import { isValidElement } from 'react'
-import { TouchableOpacity, View } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { isValidElement } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { Typography } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Typography } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles, { iconSize } from './styles'
+import createThemedStyles, { iconSize } from './styles';
 
 const StoryReaction = ({
   icon, value, active, activeColor, onPress, disabled,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <TouchableOpacity onPress={onPress} disabled={disabled}>
@@ -36,12 +36,12 @@ const StoryReaction = ({
         )}
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const StoryViewActionBar = ({ actions, style, position = StoryViewActionBar.Positions.Right }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <View
@@ -64,12 +64,12 @@ const StoryViewActionBar = ({ actions, style, position = StoryViewActionBar.Posi
         />
       ))}
     </View>
-  )
-}
+  );
+};
 
 StoryViewActionBar.Positions = {
   Left: 'StoryViewActionBar.Positions.Left',
   Right: 'StoryViewActionBar.Positions.Right',
-}
+};
 
-export default StoryViewActionBar
+export default StoryViewActionBar;

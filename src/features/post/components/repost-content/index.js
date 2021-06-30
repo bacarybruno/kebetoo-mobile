@@ -1,16 +1,16 @@
-import { memo } from 'react'
-import { View, TouchableWithoutFeedback } from 'react-native'
+import { memo } from 'react';
+import { View, TouchableWithoutFeedback } from 'react-native';
 
-import BasicPost, { Content, POST_TYPES, getPostType } from '@app/features/post/containers/basic-post'
-import { deleteProperty } from '@app/shared/helpers/object'
-import { useAppStyles } from '@app/shared/hooks'
+import BasicPost, { Content, POST_TYPES, getPostType } from '@app/features/post/containers/basic-post';
+import { deleteProperty } from '@app/shared/helpers/object';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const RepostContent = ({
   post, originalAuthor, style, onPress, mode,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={[styles.wrapper, style]}>
       <TouchableWithoutFeedback onPress={onPress}>
@@ -32,7 +32,7 @@ const RepostContent = ({
         </View>
       </TouchableWithoutFeedback>
     </View>
-  )
-}
+  );
+};
 
-export default memo(RepostContent)
+export default memo(RepostContent);

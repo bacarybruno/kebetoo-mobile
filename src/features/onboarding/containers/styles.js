@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
-import { Typography } from '@app/shared/components'
+import { metrics } from '@app/theme';
+import { Typography } from '@app/shared/components';
 
-export const paginationBottom = metrics.marginVertical
-export const dotHeight = 8
+export const paginationBottom = metrics.marginVertical;
+export const dotHeight = 8;
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -54,4 +54,4 @@ export default (colors) => StyleSheet.create({
     fontSize: Typography.fontSizes.md,
     color: colors.border,
   },
-})
+});

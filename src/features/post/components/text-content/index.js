@@ -1,15 +1,15 @@
-import { memo } from 'react'
+import { memo } from 'react';
 
-import { Pressable, Typography, FormatedTypography } from '@app/shared/components'
-import { POST_TYPES } from '@app/features/post/containers/basic-post'
-import { useAppStyles } from '@app/shared/hooks'
+import { Pressable, Typography, FormatedTypography } from '@app/shared/components';
+import { POST_TYPES } from '@app/features/post/containers/basic-post';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const TextContent = ({
   content, style, onPress, type, mode, isRepost,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <Pressable
@@ -25,7 +25,7 @@ const TextContent = ({
     >
       <FormatedTypography text={content.trim()} type={Typography.types.body} />
     </Pressable>
-  )
-}
+  );
+};
 
-export default memo(TextContent)
+export default memo(TextContent);

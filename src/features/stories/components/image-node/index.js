@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react'
-import { Image, TouchableOpacity, View } from 'react-native'
-import Gestures from 'react-native-easy-gestures'
+import { useEffect, useRef } from 'react';
+import { Image, TouchableOpacity, View } from 'react-native';
+import Gestures from 'react-native-easy-gestures';
 
-import StoryViewActionBar from '../actions-bar'
-import styles from './styles'
+import StoryViewActionBar from '../actions-bar';
+import styles from './styles';
 
 /**
  * TODO:
@@ -20,15 +20,15 @@ const ImageNode = ({
   onFocus,
   removeNode,
 }) => {
-  const input = useRef()
+  const input = useRef();
 
   useEffect(() => {
     if (focused) {
-      input.current?.focus()
+      input.current?.focus();
     } else {
-      input.current?.blur()
+      input.current?.blur();
     }
-  }, [focused, input])
+  }, [focused, input]);
 
   const actions = [{
     icon: 'trash',
@@ -38,7 +38,7 @@ const ImageNode = ({
     icon: 'checkmark-circle',
     text: 'Done',
     onPress: onBlur,
-  }]
+  }];
 
   return (
     <View style={styles.wrapper}>
@@ -52,7 +52,7 @@ const ImageNode = ({
       </Gestures>
       {focused && <StoryViewActionBar actions={actions} />}
     </View>
-  )
-}
+  );
+};
 
-export default ImageNode
+export default ImageNode;

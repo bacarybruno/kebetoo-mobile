@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
-import { rgbaToHex, hexToRgba } from '@app/theme/colors'
+import { metrics } from '@app/theme';
+import { rgbaToHex, hexToRgba } from '@app/theme/colors';
 
 export default (colors) => StyleSheet.create({
   deleteWrapper: {
@@ -27,4 +27,4 @@ export default (colors) => StyleSheet.create({
   replyInfoContent: {
     flex: 1,
   },
-})
+});

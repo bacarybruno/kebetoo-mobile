@@ -1,19 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native';
 
-import { Pressable, Avatar, Typography } from '@app/shared/components'
-import { useAppStyles } from '@app/shared/hooks'
+import { Pressable, Avatar, Typography } from '@app/shared/components';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const Dot = () => {
-  const styles = useAppStyles(createThemedStyles)
-  return <View style={styles.dot} />
-}
+  const styles = useAppStyles(createThemedStyles);
+  return <View style={styles.dot} />;
+};
 
 export const Title = ({
   name, message, hasBadge, showDot,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.headerTitleWrapper}>
       <Text style={styles.headerTitle} numberOfLines={2}>
@@ -31,17 +31,17 @@ export const Title = ({
       </Text>
       {showDot && <Dot />}
     </View>
-  )
-}
+  );
+};
 
 export const Message = ({ text }) => (
   <Typography numberOfLines={1} type={Typography.types.body} text={text} />
-)
+);
 
 const Notification = ({
   isOpened, title, message, caption, author, onPress,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <Pressable
       style={[styles.notificationWrapper, !isOpened && styles.pendingNotification]}
@@ -68,7 +68,7 @@ const Notification = ({
         </View>
       </View>
     </Pressable>
-  )
-}
+  );
+};
 
-export default Notification
+export default Notification;

@@ -1,45 +1,45 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
   useCallback, useEffect, useState, useContext, useRef, forwardRef,
-} from 'react'
+} from 'react';
 import {
   InteractionManager, StatusBar, TouchableOpacity, View,
-} from 'react-native'
-import { GiftedChat, Bubble, SystemMessage } from 'react-native-gifted-chat'
-import { useRoute } from '@react-navigation/native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import Popover, { PopoverPlacement } from 'react-native-popover-view'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+} from 'react-native';
+import { GiftedChat, Bubble, SystemMessage } from 'react-native-gifted-chat';
+import { useRoute } from '@react-navigation/native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import Popover, { PopoverPlacement } from 'react-native-popover-view';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {
   AppHeader, AudioPlayer, Avatar, FormatedTypography, IconButton, Typography,
-} from '@app/shared/components'
+} from '@app/shared/components';
 import {
   useAppColors, useAppStyles, useAudioRecorder, useUser,
-} from '@app/shared/hooks'
-import { SafeAreaContext } from '@app/shared/contexts'
+} from '@app/shared/hooks';
+import { SafeAreaContext } from '@app/shared/contexts';
 
-import { CommentInput } from '@app/features/comments/components/comment-input'
-import { strings } from '@app/config'
-import { edgeInsets, metrics } from '@app/theme'
-import { isIphoneX } from 'react-native-iphone-x-helper'
-import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder'
-import { readableNumber } from '@app/shared/helpers/strings'
-import { actionTypes } from '@app/features/post/containers/create'
-import routes from '@app/navigation/routes'
-import useRooms from '@app/features/rooms/hooks/rooms'
+import { CommentInput } from '@app/features/comments/components/comment-input';
+import { strings } from '@app/config';
+import { edgeInsets, metrics } from '@app/theme';
+import { isIphoneX } from 'react-native-iphone-x-helper';
+import { extractMetadataFromUrl } from '@app/shared/hooks/audio-recorder';
+import { readableNumber } from '@app/shared/helpers/strings';
+import { actionTypes } from '@app/features/post/containers/create';
+import routes from '@app/navigation/routes';
+import useRooms from '@app/features/rooms/hooks/rooms';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const getSystemMessage = (currentMessage) => {
-  const { user, text } = currentMessage
-  const string = strings.room[text.toLowerCase()]
-  const message = string ? strings.formatString(string, user.name) : text
-  return message
-}
+  const { user, text } = currentMessage;
+  const string = strings.room[text.toLowerCase()];
+  const message = string ? strings.formatString(string, user.name) : text;
+  return message;
+};
 
 export const RightIcon = forwardRef(((props, ref) => {
-  const { colors } = useAppColors()
+  const { colors } = useAppColors();
   return (
     <TouchableOpacity
       ref={ref}
@@ -48,31 +48,31 @@ export const RightIcon = forwardRef(((props, ref) => {
     >
       <Ionicon name="ellipsis-vertical" size={24} color={colors.white} />
     </TouchableOpacity>
-  )
-}))
+  );
+}));
 
 const HeaderMenu = ({ report, exit }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const [isVisible, setIsVisible] = useState(false)
-  const insets = useSafeAreaInsets()
+  const styles = useAppStyles(createThemedStyles);
+  const [isVisible, setIsVisible] = useState(false);
+  const insets = useSafeAreaInsets();
 
   const open = useCallback(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const close = useCallback(() => {
-    setIsVisible(false)
-  }, [])
+    setIsVisible(false);
+  }, []);
 
   const reportRoom = useCallback(() => {
-    report()
-    close()
-  }, [close, report])
+    report();
+    close();
+  }, [close, report]);
 
   const exitRoom = useCallback(() => {
-    exit()
-    close()
-  }, [close, exit])
+    exit();
+    close();
+  }, [close, exit]);
 
   return (
     <Popover
@@ -100,102 +100,102 @@ const HeaderMenu = ({ report, exit }) => {
         />
       </View>
     </Popover>
-  )
-}
+  );
+};
 
 const RoomPage = ({ navigation }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors, resetAppBars } = useAppColors()
-  const { params } = useRoute()
-  const { profile } = useUser()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors, resetAppBars } = useAppColors();
+  const { params } = useRoute();
+  const { profile } = useUser();
   const {
     messages: roomMessages,
     createMessage,
     onlineCount,
     quitRoom,
-  } = useRooms(params._id)
-  const themeColor = colors[params.theme]
-  const [isReady, setIsReady] = useState(false)
-  const [message, setMessage] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [messages, setMessages] = useState(roomMessages)
-  const messageInput = useRef()
-  const audioRecorder = useAudioRecorder()
+  } = useRooms(params._id);
+  const themeColor = colors[params.theme];
+  const [isReady, setIsReady] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState(roomMessages);
+  const messageInput = useRef();
+  const audioRecorder = useAudioRecorder();
   const {
     updateTopSafeAreaColor,
     updateBottomSafeAreaColor,
     resetStatusBars,
-  } = useContext(SafeAreaContext)
+  } = useContext(SafeAreaContext);
 
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
-      setIsReady(true)
-    })
-  }, [])
+      setIsReady(true);
+    });
+  }, []);
 
   useEffect(() => {
     const unsubscribeFocus = navigation.addListener('focus', () => {
-      updateTopSafeAreaColor(themeColor)
-      updateBottomSafeAreaColor(colors.backgroundSecondary)
-      StatusBar.setBackgroundColor(themeColor)
-      StatusBar.setBarStyle('light-content')
-    })
+      updateTopSafeAreaColor(themeColor);
+      updateBottomSafeAreaColor(colors.backgroundSecondary);
+      StatusBar.setBackgroundColor(themeColor);
+      StatusBar.setBarStyle('light-content');
+    });
     const unsubscribeBlur = navigation.addListener('blur', () => {
-      resetStatusBars()
-      resetAppBars()
-    })
+      resetStatusBars();
+      resetAppBars();
+    });
 
     return () => {
-      unsubscribeFocus()
-      unsubscribeBlur()
-    }
-  }, [navigation])
+      unsubscribeFocus();
+      unsubscribeBlur();
+    };
+  }, [navigation]);
 
   useEffect(() => {
-    setMessages(roomMessages)
-  }, [roomMessages])
+    setMessages(roomMessages);
+  }, [roomMessages]);
 
   const reportRoom = useCallback(() => {
     navigation.navigate(routes.CREATE_POST, {
       action: actionTypes.REPORT,
       sharedText: `[${params._id}]\n\n ${strings.room.report_room_message}`,
-    })
-  }, [navigation, params._id])
+    });
+  }, [navigation, params._id]);
 
   const exitRoom = useCallback(() => {
-    quitRoom()
-    navigation.goBack()
-  }, [navigation, quitRoom])
+    quitRoom();
+    navigation.goBack();
+  }, [navigation, quitRoom]);
 
   const onSend = useCallback(async () => {
     try {
-      if (!message && !audioRecorder.hasRecording) return
-      setIsLoading(true)
-      messageInput.current?.clear()
-      let audio = null
+      if (!message && !audioRecorder.hasRecording) return;
+      setIsLoading(true);
+      messageInput.current?.clear();
+      let audio = null;
       if (audioRecorder.hasRecording) {
-        audio = await audioRecorder.saveAsset()
+        audio = await audioRecorder.saveAsset();
       }
-      setIsLoading(false)
-      await createMessage({ room: params._id, text: message, audio })
-      setMessage('')
+      setIsLoading(false);
+      await createMessage({ room: params._id, text: message, audio });
+      setMessage('');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }, [message, audioRecorder, createMessage, params._id])
+  }, [message, audioRecorder, createMessage, params._id]);
 
   const renderBubble = useCallback((props) => {
     const textStyle = {
       left: styles.bubbleLeftText,
       right: styles.bubbleRightText,
-    }
+    };
     const timeTextStyle = {
       left: styles.bubbleLeftTimeText,
       right: styles.bubbleRightTimeText,
-    }
+    };
     const wrapperStyle = {
       left: styles.bubbleLeftWrapper,
-    }
+    };
     return (
       <Bubble
         {...props}
@@ -203,8 +203,8 @@ const RoomPage = ({ navigation }) => {
         timeTextStyle={timeTextStyle}
         wrapperStyle={wrapperStyle}
       />
-    )
-  }, [styles])
+    );
+  }, [styles]);
 
   const renderInputToolbar = useCallback(() => (
     <>
@@ -223,25 +223,25 @@ const RoomPage = ({ navigation }) => {
       // onReplyClose={clearToReply}
       />
     </>
-  ), [themeColor, onSend, audioRecorder, message, isLoading])
+  ), [themeColor, onSend, audioRecorder, message, isLoading]);
 
   const renderAvatar = useCallback((props) => {
-    const { user } = props.currentMessage
+    const { user } = props.currentMessage;
     const navigateToUserProfile = () => (
       // eslint-disable-next-line no-underscore-dangle
       navigation.navigate(routes.USER_PROFILE, { userId: user._id })
-    )
+    );
     return (
       <TouchableOpacity onPress={navigateToUserProfile}>
         <Avatar size={35} fontSize={20} text={user.name} src={user.avatar} />
       </TouchableOpacity>
-    )
-  }, [navigation])
+    );
+  }, [navigation]);
 
   const renderMessageAudio = useCallback((props) => {
-    const { audio, user } = props.currentMessage
-    const metadata = extractMetadataFromUrl(audio)
-    const isOwnMessage = user._id === profile.uid
+    const { audio, user } = props.currentMessage;
+    const metadata = extractMetadataFromUrl(audio);
+    const isOwnMessage = user._id === profile.uid;
     return (
       <View style={styles.audioWrapper}>
         <AudioPlayer
@@ -250,17 +250,17 @@ const RoomPage = ({ navigation }) => {
           style={{ ...styles.audio, ...[isOwnMessage ? {} : styles.incomingAudio][0] }}
         />
       </View>
-    )
-  }, [profile.uid, styles])
+    );
+  }, [profile.uid, styles]);
 
   const renderTicks = useCallback((currentMessage) => {
     // eslint-disable-next-line no-underscore-dangle
-    if (currentMessage.user._id !== profile.uid) return null
-    const { sent, pending, received } = currentMessage
-    let icon = null
-    if (pending) icon = 'time'
-    if (sent) icon = 'checkmark'
-    if (received) icon = 'checkmark-done'
+    if (currentMessage.user._id !== profile.uid) return null;
+    const { sent, pending, received } = currentMessage;
+    let icon = null;
+    if (pending) icon = 'time';
+    if (sent) icon = 'checkmark';
+    if (received) icon = 'checkmark-done';
     return (
       <Ionicon
         name={icon}
@@ -268,8 +268,8 @@ const RoomPage = ({ navigation }) => {
         color={colors.white}
         style={{ marginRight: metrics.spacing.xs }}
       />
-    )
-  }, [colors.white, profile.uid])
+    );
+  }, [colors.white, profile.uid]);
 
   const renderSystemMessage = useCallback((props) => (
     <SystemMessage
@@ -280,18 +280,18 @@ const RoomPage = ({ navigation }) => {
         text: getSystemMessage(props.currentMessage),
       }}
     />
-  ), [styles.bubbleLeftTimeText])
+  ), [styles.bubbleLeftTimeText]);
 
   const renderMessageText = useCallback((props) => {
-    const { user, text } = props.currentMessage
-    const isOwnMessage = user._id === profile.uid
-    const colorIfOwnMessage = colors.colorScheme === 'dark' ? colors.textPrimary : colors.white
-    const textStyle = { color: isOwnMessage ? colorIfOwnMessage : colors.textPrimary }
+    const { user, text } = props.currentMessage;
+    const isOwnMessage = user._id === profile.uid;
+    const colorIfOwnMessage = colors.colorScheme === 'dark' ? colors.textPrimary : colors.white;
+    const textStyle = { color: isOwnMessage ? colorIfOwnMessage : colors.textPrimary };
     const linkStyle = {
       color: textStyle.color,
       textDecorationLine: 'underline',
       textDecorationColor: textStyle.color,
-    }
+    };
     return (
       <View style={styles.messageText}>
         <FormatedTypography
@@ -304,8 +304,8 @@ const RoomPage = ({ navigation }) => {
           style={textStyle}
         />
       </View>
-    )
-  }, [profile.uid, colors, styles.messageText])
+    );
+  }, [profile.uid, colors, styles.messageText]);
 
   return (
     <View style={styles.wrapper}>
@@ -342,7 +342,7 @@ const RoomPage = ({ navigation }) => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default RoomPage
+export default RoomPage;

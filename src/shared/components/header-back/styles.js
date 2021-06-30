@@ -1,5 +1,5 @@
-import { metrics } from '@app/theme'
-import { Platform, StyleSheet } from 'react-native'
+import { metrics } from '@app/theme';
+import { Platform, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   wrapper: {
@@ -8,4 +8,4 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-})
+});

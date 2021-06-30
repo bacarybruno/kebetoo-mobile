@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default StyleSheet.create({
   flex: {
@@ -28,4 +28,4 @@ export default StyleSheet.create({
     left: 0,
     alignSelf: 'center',
   },
-})
+});

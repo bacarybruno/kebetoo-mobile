@@ -1,88 +1,88 @@
 /* eslint-disable import/default */
 import {
   useEffect, useState, useCallback, useMemo,
-} from 'react'
+} from 'react';
 import {
   View, FlatList, RefreshControl, Platform, ActivityIndicator, LogBox,
-} from 'react-native'
-import { useSelector, useDispatch } from 'react-redux'
-import ShareMenu from 'react-native-share-menu'
-import RNFetchBlob from 'rn-fetch-blob'
-import Snackbar from 'react-native-snackbar'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+} from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import ShareMenu from 'react-native-share-menu';
+import RNFetchBlob from 'rn-fetch-blob';
+import Snackbar from 'react-native-snackbar';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import * as types from '@app/redux/types'
+import * as types from '@app/redux/types';
 import {
   isLoadingPostsSelector,
   isRefreshingPostsSelector,
   postsSelector,
   postsFilterSelector,
-} from '@app/redux/selectors'
-import BasicPost from '@app/features/post/containers/basic-post'
-import { getFileName, getExtension } from '@app/shared/helpers/file'
-import { strings } from '@app/config'
-import routes from '@app/navigation/routes'
-import RealPathUtils from '@app/shared/helpers/native-modules/real-path'
+} from '@app/redux/selectors';
+import BasicPost from '@app/features/post/containers/basic-post';
+import { getFileName, getExtension } from '@app/shared/helpers/file';
+import { strings } from '@app/config';
+import routes from '@app/navigation/routes';
+import RealPathUtils from '@app/shared/helpers/native-modules/real-path';
 
-import { AppHeader, SegmentedControl } from '@app/shared/components'
-import { actionTypes } from '@app/features/post/containers/create'
+import { AppHeader, SegmentedControl } from '@app/shared/components';
+import { actionTypes } from '@app/features/post/containers/create';
 import {
   useAnalytics, useAppColors, useAppStyles, useBottomSheet, usePosts, useUser,
-} from '@app/shared/hooks'
+} from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
-LogBox.ignoreAllLogs(true)
+LogBox.ignoreAllLogs(true);
 
-const routeOptions = { title: strings.tabs.home }
+const routeOptions = { title: strings.tabs.home };
 
 // TODO: use local reducer
 // or sagas
 const HomePage = ({ navigation }) => {
-  const dispatch = useDispatch()
-  const [authors, setAuthors] = useState({})
-  const { trackReceiveIntent } = useAnalytics()
-  const { profile } = useUser()
-  const { getRepostAuthors } = usePosts()
+  const dispatch = useDispatch();
+  const [authors, setAuthors] = useState({});
+  const { trackReceiveIntent } = useAnalytics();
+  const { profile } = useUser();
+  const { getRepostAuthors } = usePosts();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const posts = useSelector(postsSelector) || []
-  const isLoading = useSelector(isLoadingPostsSelector)
-  const isRefreshing = useSelector(isRefreshingPostsSelector)
-  const postsFilter = useSelector(postsFilterSelector)
+  const posts = useSelector(postsSelector) || [];
+  const isLoading = useSelector(isLoadingPostsSelector);
+  const isRefreshing = useSelector(isRefreshingPostsSelector);
+  const postsFilter = useSelector(postsFilterSelector);
 
-  const { colors } = useAppColors()
-  const styles = useAppStyles(createThemedStyles)
-  const { showFeedPostsOptions } = useBottomSheet()
+  const { colors } = useAppColors();
+  const styles = useAppStyles(createThemedStyles);
+  const { showFeedPostsOptions } = useBottomSheet();
 
   const handleShare = useCallback(async (item) => {
-    if (!item?.data) return
-    const { mimeType, data } = item
+    if (!item?.data) return;
+    const { mimeType, data } = item;
     if (mimeType.startsWith('text/')) {
       // text
-      navigation.navigate(routes.CREATE_POST, { sharedText: data })
-      trackReceiveIntent(mimeType, data)
+      navigation.navigate(routes.CREATE_POST, { sharedText: data });
+      trackReceiveIntent(mimeType, data);
     } else {
       // other assets: image, audio and video
-      let sharedFile = data
+      let sharedFile = data;
       if (Platform.OS === 'android') {
-        const file = await RealPathUtils.getOriginalFilePath(sharedFile)
-        const filename = getFileName(file)
-        const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`
-        await RNFetchBlob.fs.cp(file, dest)
-        sharedFile = dest
+        const file = await RealPathUtils.getOriginalFilePath(sharedFile);
+        const filename = getFileName(file);
+        const dest = `${RNFetchBlob.fs.dirs.DocumentDir}/${filename}`;
+        await RNFetchBlob.fs.cp(file, dest);
+        sharedFile = dest;
       }
-      trackReceiveIntent(mimeType, getExtension(sharedFile))
-      navigation.navigate(routes.CREATE_POST, { file: sharedFile })
+      trackReceiveIntent(mimeType, getExtension(sharedFile));
+      navigation.navigate(routes.CREATE_POST, { file: sharedFile });
     }
-  }, [navigation, trackReceiveIntent])
+  }, [navigation, trackReceiveIntent]);
 
   useEffect(() => {
-    ShareMenu.getInitialShare(handleShare)
-    const listener = ShareMenu.addNewShareListener(handleShare)
+    ShareMenu.getInitialShare(handleShare);
+    const listener = ShareMenu.addNewShareListener(handleShare);
     return () => {
-      if (listener.remove) listener.remove()
-    }
-  }, [handleShare])
+      if (listener.remove) listener.remove();
+    };
+  }, [handleShare]);
 
   const onSelectFilter = useCallback((item) => {
     setTimeout(() => {
@@ -91,70 +91,70 @@ const HomePage = ({ navigation }) => {
         payload: {
           filter: item.value,
         },
-      })
-    }, 1)
-  }, [dispatch])
+      });
+    }, 1);
+  }, [dispatch]);
 
   const onRefresh = useCallback(() => {
-    onSelectFilter({ value: postsFilter })
-  }, [onSelectFilter, postsFilter])
+    onSelectFilter({ value: postsFilter });
+  }, [onSelectFilter, postsFilter]);
 
   useEffect(() => {
-    dispatch({ type: types.INIT_POSTS })
-  }, [dispatch])
+    dispatch({ type: types.INIT_POSTS });
+  }, [dispatch]);
 
   const onEndReached = useCallback(() => {
-    dispatch({ type: types.POSTS_NEXT_PAGE_REQUEST })
-  }, [dispatch])
+    dispatch({ type: types.POSTS_NEXT_PAGE_REQUEST });
+  }, [dispatch]);
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
-      const data = await getRepostAuthors(posts)
-      setAuthors(data)
-    }
-    fetchRepostAuthors()
-  }, [posts, getRepostAuthors])
+      const data = await getRepostAuthors(posts);
+      setAuthors(data);
+    };
+    fetchRepostAuthors();
+  }, [posts, getRepostAuthors]);
 
-  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
+  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, []);
 
   const hidePost = useCallback((post) => {
-    dispatch({ type: types.HIDE_POST, payload: post })
+    dispatch({ type: types.HIDE_POST, payload: post });
     Snackbar.show({
       text: strings.home.hide_post_done,
       duration: Snackbar.LENGTH_SHORT,
-    })
-  }, [dispatch])
+    });
+  }, [dispatch]);
 
   const reportPost = useCallback((post) => {
     navigation.navigate(routes.CREATE_POST, {
       action: actionTypes.REPORT,
       sharedText: `[${post.id}]\n\n ${strings.home.report_post_message}`,
       onGoBack: () => hidePost(post),
-    })
-  }, [hidePost, navigation])
+    });
+  }, [hidePost, navigation]);
 
   const blockAuthor = useCallback((post) => {
-    dispatch({ type: types.BLOCK_AUTHOR, payload: post })
+    dispatch({ type: types.BLOCK_AUTHOR, payload: post });
     Snackbar.show({
       text: strings.formatString(strings.home.block_author_done, post.author.displayName.split(' ')[0]),
       duration: Snackbar.LENGTH_SHORT,
-    })
-  }, [dispatch])
+    });
+  }, [dispatch]);
 
   const showPostOptions = useCallback(async (post) => {
     if (post.author.id === profile.uid) {
-      return navigation.navigate(routes.MANAGE_POSTS)
+      return navigation.navigate(routes.MANAGE_POSTS);
     }
-    const actionIndex = await showFeedPostsOptions(post)
+    const actionIndex = await showFeedPostsOptions(post);
     if (actionIndex === 0) {
-      hidePost(post)
+      hidePost(post);
     } else if (actionIndex === 1) {
-      reportPost(post)
+      reportPost(post);
     } else if (actionIndex === 2) {
-      blockAuthor(post)
+      blockAuthor(post);
     }
-    return null
-  }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor, navigation])
+    return null;
+  }, [profile.uid, showFeedPostsOptions, hidePost, reportPost, blockAuthor, navigation]);
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
@@ -167,7 +167,7 @@ const HomePage = ({ navigation }) => {
           : item.author
       }
     />
-  ), [authors, showPostOptions])
+  ), [authors, showPostOptions]);
 
   const renderListHeader = useMemo(() => (user) => {
     const filterItems = [{
@@ -176,7 +176,7 @@ const HomePage = ({ navigation }) => {
     }, {
       label: strings.home.sort_recent,
       value: 'updatedAt',
-    }]
+    }];
     return (
       <View style={styles.headerWrapper}>
         <AppHeader
@@ -207,8 +207,8 @@ const HomePage = ({ navigation }) => {
           selectedValue={postsFilter}
         />
       </View>
-    )
-  }, [styles, colors.textPrimary, onSelectFilter, postsFilter, navigation])
+    );
+  }, [styles, colors.textPrimary, onSelectFilter, postsFilter, navigation]);
 
   const renderRefreshControl = useMemo(() => (
     <RefreshControl
@@ -219,7 +219,7 @@ const HomePage = ({ navigation }) => {
       refreshing={isRefreshing}
       onRefresh={onRefresh}
     />
-  ), [colors, onRefresh, isRefreshing])
+  ), [colors, onRefresh, isRefreshing]);
 
   return (
     <View style={styles.wrapper}>
@@ -242,9 +242,9 @@ const HomePage = ({ navigation }) => {
         )}
       />
     </View>
-  )
-}
+  );
+};
 
-HomePage.routeOptions = routeOptions
+HomePage.routeOptions = routeOptions;
 
-export default HomePage
+export default HomePage;

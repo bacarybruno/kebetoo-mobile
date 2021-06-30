@@ -1,23 +1,23 @@
-import { useRef } from 'react'
-import { View } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useRef } from 'react';
+import { View } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import {
   Logo, Typography, TextInput, PasswordInput, FullButton,
-} from '@app/shared/components'
-import SocialSignIn from '@app/features/account/components/social-signin'
-import { metrics } from '@app/theme'
-import { env, strings } from '@app/config'
-import { useAppStyles } from '@app/shared/hooks'
+} from '@app/shared/components';
+import SocialSignIn from '@app/features/account/components/social-signin';
+import { metrics } from '@app/theme';
+import { env, strings } from '@app/config';
+import { useAppStyles } from '@app/shared/hooks';
 
-import useSignin, { fieldNames } from './hook'
-import createThemedStyles from './styles'
+import useSignin, { fieldNames } from './hook';
+import createThemedStyles from './styles';
 
 const SignIn = ({ navigation }) => {
-  navigation.setOptions({ title: strings.auth.signin })
+  navigation.setOptions({ title: strings.auth.signin });
 
-  const emailRef = useRef()
-  const passwordRef = useRef()
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const {
     errors,
@@ -29,9 +29,9 @@ const SignIn = ({ navigation }) => {
     onSubmit,
     validate,
     handleAuthError,
-  } = useSignin(navigation, passwordRef)
+  } = useSignin(navigation, passwordRef);
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <KeyboardAwareScrollView
@@ -104,7 +104,7 @@ const SignIn = ({ navigation }) => {
         </SocialSignIn>
       </View>
     </KeyboardAwareScrollView>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;

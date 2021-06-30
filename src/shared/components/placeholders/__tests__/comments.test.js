@@ -1,10 +1,10 @@
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import CommentPlaceholder from '../comments'
+import CommentPlaceholder from '../comments';
 
-const givenCommentPlaceholder = setupTest(CommentPlaceholder)()
+const givenCommentPlaceholder = setupTest(CommentPlaceholder)();
 
 it('renders CommentPlaceholder', () => {
-  const { wrapper } = givenCommentPlaceholder()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenCommentPlaceholder();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

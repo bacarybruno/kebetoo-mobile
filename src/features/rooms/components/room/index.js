@@ -1,22 +1,22 @@
-import { View, Text } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { View, Text } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
 import {
   Pressable, Avatar, Typography, FormatedTypography,
-} from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import { readableNumber } from '@app/shared/helpers/strings'
-import { strings } from '@app/config'
+} from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import { readableNumber } from '@app/shared/helpers/strings';
+import { strings } from '@app/config';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const Dot = () => {
-  const styles = useAppStyles(createThemedStyles)
-  return <View style={styles.dot} />
-}
+  const styles = useAppStyles(createThemedStyles);
+  return <View style={styles.dot} />;
+};
 
 export const Title = ({ name, info, Right }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.headerTitleWrapper}>
       <Text style={styles.headerTitle} numberOfLines={2} ellipsizeMode="middle">
@@ -34,8 +34,8 @@ export const Title = ({ name, info, Right }) => {
       </Text>
       {Right}
     </View>
-  )
-}
+  );
+};
 
 export const Message = ({ text }) => (
   <FormatedTypography
@@ -46,13 +46,13 @@ export const Message = ({ text }) => (
     color={Typography.colors.secondary}
     text={text}
   />
-)
+);
 
 const Room = ({
   isOpened = true, title, membersCount = 0, message, caption, room, onPress, theme,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <Pressable
@@ -87,21 +87,21 @@ const Room = ({
         />
       </View>
     </Pressable>
-  )
-}
+  );
+};
 
 const NextButton = () => {
-  const { colors } = useAppColors()
+  const { colors } = useAppColors();
   return (
     <Ionicon name="chevron-forward-outline" size={25} color={colors.textPrimary} />
-  )
-}
+  );
+};
 
 const Discover = ({
   title, membersCount = 0, author, caption, room, onPress, theme,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <Pressable style={styles.roomWrapper} onPress={onPress}>
@@ -133,9 +133,9 @@ const Discover = ({
         />
       </View>
     </Pressable>
-  )
-}
+  );
+};
 
-Room.Discover = Discover
+Room.Discover = Discover;
 
-export default Room
+export default Room;

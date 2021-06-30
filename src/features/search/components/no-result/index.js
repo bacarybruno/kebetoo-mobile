@@ -1,13 +1,13 @@
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native';
 
-import { Typography } from '@app/shared/components'
-import { strings } from '@app/config'
-import { useAppStyles } from '@app/shared/hooks'
+import { Typography } from '@app/shared/components';
+import { strings } from '@app/config';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const NoResult = ({ query }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.wrapper}>
       <Text style={styles.title}>🔎</Text>
@@ -17,7 +17,7 @@ const NoResult = ({ query }) => {
         text={strings.formatString(strings.search.no_result, query)}
       />
     </View>
-  )
-}
+  );
+};
 
-export default NoResult
+export default NoResult;

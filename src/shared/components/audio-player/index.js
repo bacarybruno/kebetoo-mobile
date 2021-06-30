@@ -1,33 +1,33 @@
 import {
   memo, useState, useCallback, useRef,
-} from 'react'
+} from 'react';
 import {
   TouchableOpacity, ActivityIndicator, View, Image,
-} from 'react-native'
-import Video from 'react-native-video'
-import { MediaStates } from '@react-native-community/audio-toolkit'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+} from 'react-native';
+import Video from 'react-native-video';
+import { MediaStates } from '@react-native-community/audio-toolkit';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { edgeInsets, images } from '@app/theme'
-import { Pressable } from '@app/shared/components'
-import { readableSeconds } from '@app/shared/helpers/dates'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { edgeInsets, images } from '@app/theme';
+import { Pressable } from '@app/shared/components';
+import { readableSeconds } from '@app/shared/helpers/dates';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
-import Typography from '../typography'
+import createThemedStyles from './styles';
+import Typography from '../typography';
 
 const Waves = () => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={styles.wavesContainer}>
       <Image style={styles.waves} source={images.waves} />
     </View>
-  )
-}
+  );
+};
 
 export const PlayButton = ({ onPress, state, ...otherProps }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <TouchableOpacity
@@ -48,73 +48,73 @@ export const PlayButton = ({ onPress, state, ...otherProps }) => {
         />
       )}
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export const DeleteIconButton = ({ onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <TouchableOpacity style={styles.deleteWrapper} onPress={onPress} hitSlop={edgeInsets.all(50)}>
       <Ionicon name="ios-close" size={20} color={colors.textPrimary} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 // TODO: cleanup on component unmount
 export const AudioPlayer = ({
   duration, source, onDelete, round, onPress, style = {}, textColor,
 }) => {
-  const [playerState, setPlayerState] = useState(MediaStates.IDLE)
-  const [progress, setProgress] = useState(0)
-  const [audioDuration, setAudioDuration] = useState(duration)
-  const [prepared, setPrepared] = useState(false)
+  const [playerState, setPlayerState] = useState(MediaStates.IDLE);
+  const [progress, setProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(duration);
+  const [prepared, setPrepared] = useState(false);
 
-  const videoRef = useRef()
+  const videoRef = useRef();
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   const onEnd = useCallback(() => {
-    setPlayerState(MediaStates.IDLE)
-    setProgress(0)
+    setPlayerState(MediaStates.IDLE);
+    setProgress(0);
     // seek after a certain amount of time to avoid looping
     setTimeout(() => {
-      videoRef.current?.seek(0)
-    }, 100)
-  }, [])
+      videoRef.current?.seek(0);
+    }, 100);
+  }, []);
 
   const onPlayPause = useCallback(() => {
-    if (!prepared) setPrepared(true)
+    if (!prepared) setPrepared(true);
     setPlayerState((state) => (
       state === MediaStates.PLAYING
         ? MediaStates.PAUSED
         : MediaStates.PLAYING
-    ))
-  }, [prepared])
+    ));
+  }, [prepared]);
 
   const onPressDelegate = useCallback(() => {
-    if (!onPress) return onPlayPause()
-    const bubbleEvent = onPress()
+    if (!onPress) return onPlayPause();
+    const bubbleEvent = onPress();
     if (bubbleEvent) {
-      onPlayPause()
+      onPlayPause();
     }
-    return true
-  }, [onPress, onPlayPause])
+    return true;
+  }, [onPress, onPlayPause]);
 
   const onProgress = useCallback((data) => {
-    const currentProgress = (data.currentTime / audioDuration) * 100
-    setProgress(currentProgress < 100 ? currentProgress : 0)
-  }, [audioDuration])
+    const currentProgress = (data.currentTime / audioDuration) * 100;
+    setProgress(currentProgress < 100 ? currentProgress : 0);
+  }, [audioDuration]);
 
   const onLoad = useCallback((data) => {
-    setPlayerState(MediaStates.PREPARED)
+    setPlayerState(MediaStates.PREPARED);
     // we can play the audio right away
     // because it is preloaded when the user clicks the play button
-    setPlayerState(MediaStates.PLAYING)
-    setAudioDuration(data.duration)
-  }, [])
+    setPlayerState(MediaStates.PLAYING);
+    setAudioDuration(data.duration);
+  }, []);
 
-  const { height, ...pressableStyle } = style
+  const { height, ...pressableStyle } = style;
   return (
     <>
       {prepared && (
@@ -155,7 +155,7 @@ export const AudioPlayer = ({
         {onDelete && <DeleteIconButton onPress={onDelete} />}
       </View>
     </>
-  )
-}
+  );
+};
 
-export default memo(AudioPlayer)
+export default memo(AudioPlayer);

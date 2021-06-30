@@ -1,13 +1,13 @@
 
-import { useEffect, useState } from 'react'
-import { BackHandler } from 'react-native'
+import { useEffect, useState } from 'react';
+import { BackHandler } from 'react-native';
 
-import { strings } from '@app/config'
+import { strings } from '@app/config';
 
-import StoryPreview from '../preview'
-import StoryDesigner from '../designer'
+import StoryPreview from '../preview';
+import StoryDesigner from '../designer';
 
-const routeOptions = { title: strings.tabs.stories }
+const routeOptions = { title: strings.tabs.stories };
 
 const CreateStoryPage = ({
   onGoBack,
@@ -17,30 +17,30 @@ const CreateStoryPage = ({
   resetVideoFile,
   onFinish,
 }) => {
-  const [records, setRecords] = useState([])
-  const [finishRecording, setFinishRecording] = useState(false)
+  const [records, setRecords] = useState([]);
+  const [finishRecording, setFinishRecording] = useState(false);
 
   const onRecordVideoFinish = (videos) => {
-    setRecords(videos)
-    setFinishRecording(true)
-  }
+    setRecords(videos);
+    setFinishRecording(true);
+  };
 
   useEffect(() => {
     const onGoBackHandler = () => {
-      onGoBack()
-      return true
-    }
+      onGoBack();
+      return true;
+    };
 
     if (isFocused) {
-      BackHandler.addEventListener('hardwareBackPress', onGoBackHandler)
+      BackHandler.addEventListener('hardwareBackPress', onGoBackHandler);
     }
 
     return () => {
-      BackHandler.removeEventListener('hardwareBackPress', onGoBackHandler)
-    }
-  }, [isFocused, onGoBack])
+      BackHandler.removeEventListener('hardwareBackPress', onGoBackHandler);
+    };
+  }, [isFocused, onGoBack]);
 
-  if (!isFocused) return null
+  if (!isFocused) return null;
 
   if (finishRecording) {
     return (
@@ -50,7 +50,7 @@ const CreateStoryPage = ({
         onFinish={onFinish}
         isFocused={isFocused}
       />
-    )
+    );
   }
 
   return (
@@ -61,9 +61,9 @@ const CreateStoryPage = ({
       pickedVideoFile={pickedFile}
       resetVideoFile={resetVideoFile}
     />
-  )
-}
+  );
+};
 
-CreateStoryPage.routeOptions = routeOptions
+CreateStoryPage.routeOptions = routeOptions;
 
-export default CreateStoryPage
+export default CreateStoryPage;

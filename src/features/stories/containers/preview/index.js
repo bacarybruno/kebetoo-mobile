@@ -1,37 +1,37 @@
 
-import { useEffect, useReducer, useRef } from 'react'
+import { useEffect, useReducer, useRef } from 'react';
 import {
   Image, Platform, TouchableOpacity, View,
-} from 'react-native'
-import Video from 'react-native-video'
-import { captureRef } from 'react-native-view-shot'
-import { FlatList } from 'react-native-gesture-handler'
-import RNFetchBlob from 'rn-fetch-blob'
-import { useIsFocused } from '@react-navigation/native'
+} from 'react-native';
+import Video from 'react-native-video';
+import { captureRef } from 'react-native-view-shot';
+import { FlatList } from 'react-native-gesture-handler';
+import RNFetchBlob from 'rn-fetch-blob';
+import { useIsFocused } from '@react-navigation/native';
 
-import { AppHeader, BottomSheetView, NoContent } from '@app/shared/components'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import { videoEditor } from '@app/features/stories/services'
-import StoryViewActionBar from '@app/features/stories/components/actions-bar'
-import StoryTextDesigner from '@app/features/stories/components/text-designer'
-import StoryImageDesigner from '@app/features/stories/components/image-designer'
-import { strings } from '@app/config'
+import { AppHeader, BottomSheetView, NoContent } from '@app/shared/components';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import { videoEditor } from '@app/features/stories/services';
+import StoryViewActionBar from '@app/features/stories/components/actions-bar';
+import StoryTextDesigner from '@app/features/stories/components/text-designer';
+import StoryImageDesigner from '@app/features/stories/components/image-designer';
+import { strings } from '@app/config';
 
-import reducer, { initialState } from './reducer'
-import createThemedStyles from './styles'
+import reducer, { initialState } from './reducer';
+import createThemedStyles from './styles';
 
 const VideoModes = {
   Normal: 'Normal',
   Boomerang: 'Boomerang',
   Reverse: 'Reverse',
   Slowmo: 'Slowmo',
-}
+};
 
 const StickersPicker = ({ data, onPickSticker }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   const renderSticker = ({ item }) => {
-    const stickerUri = `file://${item.path}`
+    const stickerUri = `file://${item.path}`;
     return (
       <TouchableOpacity
         style={styles.sticker}
@@ -39,17 +39,17 @@ const StickersPicker = ({ data, onPickSticker }) => {
       >
         <Image source={{ uri: stickerUri }} style={styles.stickerImage} />
       </TouchableOpacity>
-    )
-  }
+    );
+  };
 
-  const keyExtractor = (item) => item.filename
+  const keyExtractor = (item) => item.filename;
 
   const renderListEmpty = () => (
     <NoContent
       title={strings.general.no_content}
       text="No sticker pack found on this device"
     />
-  )
+  );
 
   return (
     <FlatList
@@ -61,23 +61,23 @@ const StickersPicker = ({ data, onPickSticker }) => {
       ListEmptyComponent={renderListEmpty}
       contentContainerStyle={{ flexGrow: 1 }}
     />
-  )
-}
+  );
+};
 
 const StickersBottomSheet = ({ bottonSheetRef, data, onPickSticker }) => (
   <BottomSheetView bottomSheet={bottonSheetRef} header="Stickers">
     <StickersPicker data={data} onPickSticker={onPickSticker} />
   </BottomSheetView>
-)
+);
 
 // TODO: use reducer
 const StoryPreview = ({ records, onGoBack, onFinish }) => {
-  const { colors } = useAppColors()
-  const styles = useAppStyles(createThemedStyles)
+  const { colors } = useAppColors();
+  const styles = useAppStyles(createThemedStyles);
 
-  const isFocused = useIsFocused()
+  const isFocused = useIsFocused();
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
   const {
     videoIndex,
     mergedVideo,
@@ -88,43 +88,43 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
     videoMode,
     showActions,
     stickers,
-  } = state
+  } = state;
 
-  const storyTextDesigner = useRef()
-  const storyImageDesigner = useRef()
-  const viewShot = useRef()
-  const bottomSheet = useRef()
+  const storyTextDesigner = useRef();
+  const storyImageDesigner = useRef();
+  const viewShot = useRef();
+  const bottomSheet = useRef();
 
   useEffect(() => {
     const fetchStickers = async () => {
-      if (Platform.OS !== 'android') return
-      const waStickersPath = '/WhatsApp/Media/Whatsapp Stickers'
-      let rawStickers = await RNFetchBlob.fs.lstat(RNFetchBlob.fs.dirs.SDCardDir + waStickersPath)
-      rawStickers = rawStickers.sort((a, b) => b.lastModified - a.lastModified)
-      dispatch({ type: 'setStickers', payload: rawStickers.slice(0, 99) })
-    }
+      if (Platform.OS !== 'android') return;
+      const waStickersPath = '/WhatsApp/Media/Whatsapp Stickers';
+      let rawStickers = await RNFetchBlob.fs.lstat(RNFetchBlob.fs.dirs.SDCardDir + waStickersPath);
+      rawStickers = rawStickers.sort((a, b) => b.lastModified - a.lastModified);
+      dispatch({ type: 'setStickers', payload: rawStickers.slice(0, 99) });
+    };
 
-    fetchStickers()
-  }, [])
+    fetchStickers();
+  }, []);
 
   useEffect(() => {
     const createBoomerangVideo = async (video) => {
-      const result = await videoEditor.boomerang(video)
-      dispatch({ type: 'setBoomerangVideo', payload: result })
-    }
+      const result = await videoEditor.boomerang(video);
+      dispatch({ type: 'setBoomerangVideo', payload: result });
+    };
 
     const createReversedVideo = async (video) => {
-      const result = await videoEditor.reverse(video)
-      dispatch({ type: 'setReversedVideo', payload: result })
-    }
+      const result = await videoEditor.reverse(video);
+      dispatch({ type: 'setReversedVideo', payload: result });
+    };
 
     const createSlowMoVideo = async (video, videoDuration) => {
-      const result = await videoEditor.slowmo(video, videoDuration)
-      dispatch({ type: 'setSlowMoVideo', payload: result })
-    }
+      const result = await videoEditor.slowmo(video, videoDuration);
+      dispatch({ type: 'setSlowMoVideo', payload: result });
+    };
 
     const mergeVideos = async () => {
-      dispatch({ type: 'setProcessing', payload: true })
+      dispatch({ type: 'setProcessing', payload: true });
 
       const result = await videoEditor.compose(
         records,
@@ -132,33 +132,33 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
         videoEditor.addMultipleVideosEmptySoundIfNeeded,
         videoEditor.setMultipleVideosSpeed,
         videoEditor.mergeMultipleVideos,
-      )
+      );
 
-      dispatch({ type: 'setMergedVideo', payload: result })
+      dispatch({ type: 'setMergedVideo', payload: result });
 
-      const videoDuration = await videoEditor.getDuration(result)
+      const videoDuration = await videoEditor.getDuration(result);
 
       await Promise.all([
         createSlowMoVideo(result, videoDuration),
         createBoomerangVideo(result),
         createReversedVideo(result),
-      ])
+      ]);
 
-      dispatch({ type: 'setProcessing', payload: false })
-    }
+      dispatch({ type: 'setProcessing', payload: false });
+    };
 
-    mergeVideos()
-  }, [records])
+    mergeVideos();
+  }, [records]);
 
   const loadNextVideo = () => {
-    const nextVideoIndex = videoIndex + 1
+    const nextVideoIndex = videoIndex + 1;
     dispatch({
       type: 'setVideoIndex',
       payload: nextVideoIndex < records.length
         ? nextVideoIndex
         : 0,
-    })
-  }
+    });
+  };
 
   const updateVideoMode = (mode) => {
     dispatch({
@@ -166,17 +166,17 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
       payload: videoMode === mode
         ? VideoModes.Normal
         : mode,
-    })
-  }
+    });
+  };
 
   const getDisplayedVideo = () => {
-    let video = records[videoIndex]
-    if (mergedVideo) video = mergedVideo
-    if (videoMode === VideoModes.Boomerang) video = boomerangVideo
-    if (videoMode === VideoModes.Reverse) video = reversedVideo
-    if (videoMode === VideoModes.Slowmo) video = slowMoVideo
-    return video
-  }
+    let video = records[videoIndex];
+    if (mergedVideo) video = mergedVideo;
+    if (videoMode === VideoModes.Boomerang) video = boomerangVideo;
+    if (videoMode === VideoModes.Reverse) video = reversedVideo;
+    if (videoMode === VideoModes.Slowmo) video = slowMoVideo;
+    return video;
+  };
 
   const actions = [{
     icon: 'text',
@@ -209,29 +209,29 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
     text: 'Next',
     disabled: !mergedVideo,
     onPress: async () => {
-      dispatch({ type: 'setProcessing', payload: true })
-      const captured = await captureRef(viewShot.current)
+      dispatch({ type: 'setProcessing', payload: true });
+      const captured = await captureRef(viewShot.current);
       const result = await videoEditor.compose(
         getDisplayedVideo(),
         videoEditor.overlayVideoWithImage(captured),
         videoEditor.compressVideo,
-      )
-      dispatch({ type: 'setProcessing', payload: false })
-      onFinish(result)
+      );
+      dispatch({ type: 'setProcessing', payload: false });
+      onFinish(result);
     },
-  }]
+  }];
 
   const onPickSticker = (sticker) => {
-    storyImageDesigner.current.addNode(sticker)
-    bottomSheet.current?.close()
-  }
+    storyImageDesigner.current.addNode(sticker);
+    bottomSheet.current?.close();
+  };
 
   const blurDesigner = () => {
-    storyTextDesigner.current.blurAll()
-    storyImageDesigner.current.blurAll()
-  }
+    storyTextDesigner.current.blurAll();
+    storyImageDesigner.current.blurAll();
+  };
 
-  const video = getDisplayedVideo()
+  const video = getDisplayedVideo();
 
   return (
     <>
@@ -284,7 +284,7 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default StoryPreview
+export default StoryPreview;

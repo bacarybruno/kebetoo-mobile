@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-import Typography from '../typography'
+import Typography from '../typography';
 
 export default StyleSheet.create({
   header: {
@@ -36,4 +36,4 @@ export default StyleSheet.create({
   headerAvatar: {
     marginLeft: metrics.spacing.sm,
   },
-})
+});

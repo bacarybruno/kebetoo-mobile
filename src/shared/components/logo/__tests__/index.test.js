@@ -1,10 +1,10 @@
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import Logo from '../index'
+import Logo from '../index';
 
-const givenLogo = setupTest(Logo)()
+const givenLogo = setupTest(Logo)();
 
 it('renders Logo', () => {
-  const { wrapper } = givenLogo()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenLogo();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

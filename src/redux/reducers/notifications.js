@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 
-import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
+import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications';
 
-import * as types from '../types'
+import * as types from '../types';
 
 const initialState = {
   notifications: [],
-}
+};
 
 const notifications = (state = initialState.notifications, action) => {
   switch (action.type) {
@@ -18,19 +18,19 @@ const notifications = (state = initialState.notifications, action) => {
           message: action.payload,
           status: NOTIFICATION_STATUS.NEW,
         },
-      ]
+      ];
     case types.UPDATE_NOTIFICATION_STATUS:
       return [
         ...state.filter((message) => message.id !== action.payload.id), {
           ...state.find((message) => message.id === action.payload.id),
           status: action.payload.status,
         },
-      ]
+      ];
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default combineReducers({
   notifications,
-})
+});

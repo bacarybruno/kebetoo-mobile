@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme';
 
-export const imageSize = 90
+export const imageSize = 90;
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -88,4 +88,4 @@ export default (colors) => StyleSheet.create({
   scrollViewContent: {
     paddingBottom: metrics.marginVertical,
   },
-})
+});

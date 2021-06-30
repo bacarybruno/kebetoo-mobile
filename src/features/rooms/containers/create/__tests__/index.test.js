@@ -1,19 +1,19 @@
-import { act } from 'react-test-renderer'
+import { act } from 'react-test-renderer';
 
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import CreateRoom from '../index'
+import CreateRoom from '../index';
 
 const givenCreateRoom = setupTest(CreateRoom)({
   navigation: {
     navigate: jest.fn(),
   },
-})
+});
 
 it('renders CreateRoom', () => {
-  let wrapper
+  let wrapper;
   act(() => {
-    wrapper = givenCreateRoom().wrapper
-  })
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+    wrapper = givenCreateRoom().wrapper;
+  });
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

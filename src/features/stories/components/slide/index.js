@@ -1,32 +1,32 @@
 import {
   memo, useCallback, useEffect, useRef, useState,
-} from 'react'
-import { Image, Text, View } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import Video from 'react-native-video'
-import { useNavigation } from '@react-navigation/native'
-import convertToProxyURL from 'react-native-video-cache'
-import Share from 'react-native-share'
-import RNFetchBlob from 'rn-fetch-blob'
+} from 'react';
+import { Image, Text, View } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import Video from 'react-native-video';
+import { useNavigation } from '@react-navigation/native';
+import convertToProxyURL from 'react-native-video-cache';
+import Share from 'react-native-share';
+import RNFetchBlob from 'rn-fetch-blob';
 
 import {
   Avatar, MultipleTapHandler, FormatedTypography, Typography, BottomSheetView,
-} from '@app/shared/components'
-import { readableNumber } from '@app/shared/helpers/strings'
-import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-import { colorGradient } from '@app/theme/colors'
-import useStoriesReactions, { REACTION_TYPES } from '@app/features/stories/hooks/reactions'
-import CommentsView from '@app/features/comments/components/comments-view'
-import { getMimeType } from '@app/shared/helpers/file'
+} from '@app/shared/components';
+import { readableNumber } from '@app/shared/helpers/strings';
+import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks';
+import { colorGradient } from '@app/theme/colors';
+import useStoriesReactions, { REACTION_TYPES } from '@app/features/stories/hooks/reactions';
+import CommentsView from '@app/features/comments/components/comments-view';
+import { getMimeType } from '@app/shared/helpers/file';
 
-import { strings } from '@app/config'
-import createThemedStyles from './styles'
-import StoryViewActionBar from '../actions-bar'
+import { strings } from '@app/config';
+import createThemedStyles from './styles';
+import StoryViewActionBar from '../actions-bar';
 
-import { useComments } from '../../hooks'
+import { useComments } from '../../hooks';
 
 const StoryAuthor = ({ author }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <View style={styles.storyAuthor}>
@@ -52,12 +52,12 @@ const StoryAuthor = ({ author }) => {
         />
       </Text>
     </View>
-  )
-}
+  );
+};
 
 const PlayButton = ({ visible }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <View
@@ -73,16 +73,16 @@ const PlayButton = ({ visible }) => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
 export const ProgressIndicator = ({ currentProgress, animateColor }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  let progressColor = colors.blue
+  let progressColor = colors.blue;
   if (animateColor) {
-    progressColor = colorGradient(currentProgress, colors.blue, colors.pink)
+    progressColor = colorGradient(currentProgress, colors.blue, colors.pink);
   }
   return (
     <View
@@ -91,22 +91,22 @@ export const ProgressIndicator = ({ currentProgress, animateColor }) => {
         { width: `${currentProgress * 100}%`, backgroundColor: progressColor },
       ]}
     />
-  )
-}
+  );
+};
 
 const Footer = ({ children }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <View style={styles.footer}>
       {children}
     </View>
-  )
-}
+  );
+};
 
 export const CommentsCount = ({ count, onDismiss }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <View style={styles.commentPanelHeader}>
@@ -123,21 +123,21 @@ export const CommentsCount = ({ count, onDismiss }) => {
         onPress={onDismiss}
       />
     </View>
-  )
-}
+  );
+};
 
 export const CommentsBottomSheet = ({
   story, count, bottomSheet, onBottomSheetIndexChange,
 }) => {
-  const commentInput = useRef()
-  const scrollView = useRef()
-  const navigation = useNavigation()
+  const commentInput = useRef();
+  const scrollView = useRef();
+  const navigation = useNavigation();
 
   const commentHelpers = useComments(
     story,
     commentInput,
     scrollView,
-  )
+  );
 
   return (
     <BottomSheetView
@@ -153,8 +153,8 @@ export const CommentsBottomSheet = ({
         commentInput={commentInput}
       />
     </BottomSheetView>
-  )
-}
+  );
+};
 
 const StorySlide = ({
   source,
@@ -164,30 +164,30 @@ const StorySlide = ({
   withBlurOverlay = true,
   story,
 }) => {
-  const { author, content, comments } = story
+  const { author, content, comments } = story;
 
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const [paused, setPaused] = useState(false)
-  const [commentsOpened, setCommentsOpened] = useState(false)
+  const [paused, setPaused] = useState(false);
+  const [commentsOpened, setCommentsOpened] = useState(false);
 
-  const player = useRef()
-  const bottomSheet = useRef()
+  const player = useRef();
+  const bottomSheet = useRef();
 
   const {
     count, onReaction, userReactionType,
-  } = useStoriesReactions({ story, author: author.id, comments })
-  const { profile } = useUser()
+  } = useStoriesReactions({ story, author: author.id, comments });
+  const { profile } = useUser();
 
   useEffect(() => {
-    player.current?.seek(0)
-    setPaused(false)
-  }, [])
+    player.current?.seek(0);
+    setPaused(false);
+  }, []);
 
-  const onPress = useCallback(() => setPaused((state) => !state), [])
+  const onPress = useCallback(() => setPaused((state) => !state), []);
 
-  const onBottomSheetIndexChange = useCallback((index) => setCommentsOpened(index > 0), [])
+  const onBottomSheetIndexChange = useCallback((index) => setCommentsOpened(index > 0), []);
 
   const actions = [{
     icon: 'eye',
@@ -206,24 +206,24 @@ const StorySlide = ({
     icon: 'arrow-redo',
     text: readableNumber(count.shares),
     onPress: async () => {
-      const type = getMimeType(source)
-      const configOptions = { fileCache: true }
-      const file = await RNFetchBlob.config(configOptions).fetch('GET', source)
-      const filePath = file.path()
-      let base64Data = await file.readFile('base64')
-      base64Data = `data:${type};base64,${base64Data}`
+      const type = getMimeType(source);
+      const configOptions = { fileCache: true };
+      const file = await RNFetchBlob.config(configOptions).fetch('GET', source);
+      const filePath = file.path();
+      let base64Data = await file.readFile('base64');
+      base64Data = `data:${type};base64,${base64Data}`;
       await Share.open({
         url: base64Data,
         title: strings.virals.share_title,
         message: strings.formatString(strings.virals.share_message, profile.displayName),
         type,
-      })
+      });
       // remove the image from device's storage
-      await RNFetchBlob.fs.unlink(filePath)
+      await RNFetchBlob.fs.unlink(filePath);
     },
-  }]
+  }];
 
-  if (!focused) return null
+  if (!focused) return null;
 
   return (
     <>
@@ -275,7 +275,7 @@ const StorySlide = ({
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default memo(StorySlide)
+export default memo(StorySlide);

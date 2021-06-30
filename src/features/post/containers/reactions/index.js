@@ -1,18 +1,18 @@
 import {
   memo, useCallback, useState, useEffect, useRef,
-} from 'react'
-import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+} from 'react';
+import { View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import useReactions from '@app/features/post/hooks/reactions'
-import Reaction from '@app/features/post/components/reaction'
-import { api } from '@app/shared/services'
-import useComments from '@app/features/comments/containers/hook'
-import CommentsView from '@app/features/comments/components/comments-view'
-import { readableNumber } from '@app/shared/helpers/strings'
-import { BottomSheetView } from '@app/shared/components'
+import useReactions from '@app/features/post/hooks/reactions';
+import Reaction from '@app/features/post/components/reaction';
+import { api } from '@app/shared/services';
+import useComments from '@app/features/comments/containers/hook';
+import CommentsView from '@app/features/comments/components/comments-view';
+import { readableNumber } from '@app/shared/helpers/strings';
+import { BottomSheetView } from '@app/shared/components';
 
-import styles from './styles'
+import styles from './styles';
 
 export const REACTION_TYPES = {
   LIKE: 'like',
@@ -20,21 +20,21 @@ export const REACTION_TYPES = {
   COMMENT: 'comment',
   LOVE: 'love',
   SHARE: 'share',
-}
+};
 
 export const CommentsBottomSheet = ({
   post, count, bottomSheet, onBottomSheetIndexChange,
 }) => {
-  const commentInput = useRef()
-  const scrollView = useRef()
-  const navigation = useNavigation()
+  const commentInput = useRef();
+  const scrollView = useRef();
+  const navigation = useNavigation();
 
   const commentHelpers = useComments(
     post,
     commentInput,
     scrollView,
     navigation,
-  )
+  );
 
   return (
     <BottomSheetView
@@ -50,40 +50,40 @@ export const CommentsBottomSheet = ({
         commentInput={commentInput}
       />
     </BottomSheetView>
-  )
-}
+  );
+};
 
 const Reactions = ({
   post: givenPost, author, comments, onComment,
 }) => {
-  const [post, setPost] = useState(givenPost)
-  const bottomSheet = useRef()
-  const [commentsOpened, setCommentsOpened] = useState(false)
+  const [post, setPost] = useState(givenPost);
+  const bottomSheet = useRef();
+  const [commentsOpened, setCommentsOpened] = useState(false);
 
   const { count, onReaction, userReactionType } = useReactions({
     post, author, comments, onComment,
-  })
+  });
 
-  const { addListener: addNavigationListener } = useNavigation()
+  const { addListener: addNavigationListener } = useNavigation();
 
   const updatePost = useCallback(async () => {
-    const updatedPost = await api.posts.getById(post.id)
-    setPost(updatedPost)
-  }, [post.id])
+    const updatedPost = await api.posts.getById(post.id);
+    setPost(updatedPost);
+  }, [post.id]);
 
   useEffect(() => {
-    const unsusbcribeFocus = addNavigationListener('focus', updatePost)
-    return unsusbcribeFocus
-  }, [addNavigationListener, updatePost])
+    const unsusbcribeFocus = addNavigationListener('focus', updatePost);
+    return unsusbcribeFocus;
+  }, [addNavigationListener, updatePost]);
 
   const onCommentReaction = useCallback(() => {
     if (onComment) {
-      return onComment()
+      return onComment();
     }
-    return setCommentsOpened(true)
-  }, [onComment])
+    return setCommentsOpened(true);
+  }, [onComment]);
 
-  const onBottomSheetIndexChange = useCallback((index) => setCommentsOpened(index > 0), [])
+  const onBottomSheetIndexChange = useCallback((index) => setCommentsOpened(index > 0), []);
 
   return (
     <>
@@ -124,7 +124,7 @@ const Reactions = ({
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default memo(Reactions)
+export default memo(Reactions);

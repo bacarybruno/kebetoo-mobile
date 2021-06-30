@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme';
 
 export default (colors) => StyleSheet.create({
   safeArea: {
@@ -28,4 +28,4 @@ export default (colors) => StyleSheet.create({
     width: '100%',
     resizeMode: 'stretch',
   },
-})
+});

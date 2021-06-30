@@ -3,7 +3,7 @@ export const VideoModes = {
   Boomerang: 'Boomerang',
   Reverse: 'Reverse',
   Slowmo: 'Slowmo',
-}
+};
 
 export const initialState = {
   videoIndex: 0,
@@ -15,31 +15,31 @@ export const initialState = {
   videoMode: VideoModes.Normal,
   showActions: true,
   stickers: [],
-}
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'setVideoIndex':
-      return { ...state, videoIndex: action.payload }
+      return { ...state, videoIndex: action.payload };
     case 'setMergedVideo':
-      return { ...state, mergedVideo: action.payload }
+      return { ...state, mergedVideo: action.payload };
     case 'setProcessing':
-      return { ...state, processing: action.payload }
+      return { ...state, processing: action.payload };
     case 'setBoomerangVideo':
-      return { ...state, boomerangVideo: action.payload }
+      return { ...state, boomerangVideo: action.payload };
     case 'setReversedVideo':
-      return { ...state, reversedVideo: action.payload }
+      return { ...state, reversedVideo: action.payload };
     case 'setSlowMoVideo':
-      return { ...state, slowMoVideo: action.payload }
+      return { ...state, slowMoVideo: action.payload };
     case 'setVideoMode':
-      return { ...state, videoMode: action.payload }
+      return { ...state, videoMode: action.payload };
     case 'setShowActions':
-      return { ...state, showActions: action.payload }
+      return { ...state, showActions: action.payload };
     case 'setStickers':
-      return { ...state, stickers: action.payload }
+      return { ...state, stickers: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

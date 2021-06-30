@@ -1,13 +1,13 @@
-import { memo } from 'react'
-import { View } from 'react-native'
+import { memo } from 'react';
+import { View } from 'react-native';
 
-import { FormatedTypography, Typography } from '@app/shared/components'
-import { metrics } from '@app/theme'
+import { FormatedTypography, Typography } from '@app/shared/components';
+import { metrics } from '@app/theme';
 
-import styles from './styles'
+import styles from './styles';
 
 const OnboardingSlide = ({ slideTitle, slideDescription }) => {
-  const showTitle = metrics.screenHeight > 568
+  const showTitle = metrics.screenHeight > 568;
   return (
     <View style={styles.wrapper}>
       {showTitle && (
@@ -28,7 +28,7 @@ const OnboardingSlide = ({ slideTitle, slideDescription }) => {
         />
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default memo(OnboardingSlide)
+export default memo(OnboardingSlide);

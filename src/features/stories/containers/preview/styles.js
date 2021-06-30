@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
-import iosColors from '@app/theme/ios-colors'
+import { metrics } from '@app/theme';
+import iosColors from '@app/theme/ios-colors';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -48,4 +48,4 @@ export default (colors) => StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-})
+});

@@ -1,22 +1,22 @@
-import { memo, useRef } from 'react'
-import { View } from 'react-native'
-import { HeaderBackButton } from '@react-navigation/stack'
+import { memo, useRef } from 'react';
+import { View } from 'react-native';
+import { HeaderBackButton } from '@react-navigation/stack';
 
-import { Content, Header } from '@app/features/post/containers/basic-post'
-import { HeaderBack } from '@app/shared/components'
-import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks'
-import CommentsView from '@app/features/comments/components/comments-view'
-import Reactions from '@app/features/comments/components/reactions'
-import { useNavigation } from '@react-navigation/native'
+import { Content, Header } from '@app/features/post/containers/basic-post';
+import { HeaderBack } from '@app/shared/components';
+import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks';
+import CommentsView from '@app/features/comments/components/comments-view';
+import Reactions from '@app/features/comments/components/reactions';
+import { useNavigation } from '@react-navigation/native';
 
-import createThemedStyles from './styles'
-import useComments from './hook'
+import createThemedStyles from './styles';
+import useComments from './hook';
 
 const ListHeaderLeft = () => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const { goBack } = useNavigation()
+  const { goBack } = useNavigation();
 
   return (
     <HeaderBackButton
@@ -26,14 +26,14 @@ const ListHeaderLeft = () => {
         <HeaderBack tintColor={colors.textPrimary} style={styles.headerBackButton} />
       )}
     />
-  )
-}
+  );
+};
 
 const ListHeader = ({
   post, comments, authors, onComment, onCommentPress,
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { profile } = useUser()
+  const styles = useAppStyles(createThemedStyles);
+  const { profile } = useUser();
 
   return (
     <View style={styles.post}>
@@ -63,25 +63,25 @@ const ListHeader = ({
         onComment={onComment}
       />
     </View>
-  )
-}
+  );
+};
 
 const Comments = ({ route, navigation }) => {
-  const { post } = route.params
+  const { post } = route.params;
 
-  const commentInput = useRef()
-  const scrollView = useRef()
+  const commentInput = useRef();
+  const scrollView = useRef();
 
   const commentHelpers = useComments(
     post,
     commentInput,
     scrollView,
     navigation,
-  )
+  );
 
   const renderHeader = (
     <ListHeader post={post} {...commentHelpers} />
-  )
+  );
 
   return (
     <CommentsView
@@ -90,7 +90,7 @@ const Comments = ({ route, navigation }) => {
       commentInput={commentInput}
       renderHeader={renderHeader}
     />
-  )
-}
+  );
+};
 
-export default memo(Comments)
+export default memo(Comments);

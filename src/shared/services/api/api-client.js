@@ -1,4 +1,4 @@
-import HttpClient from './http-client'
+import HttpClient from './http-client';
 
 class ApiClient extends HttpClient {
   constructor(baseURL, langCode) {
@@ -8,11 +8,11 @@ class ApiClient extends HttpClient {
         'Content-Type': 'application/json',
         'Accept-Language': langCode,
       },
-    })
+    });
   }
 
   get authors() {
-    const pageSize = 30
+    const pageSize = 30;
     return {
       search: (query) => this.get(`/authors?displayName_contains=${query}&_limit=${pageSize}`),
       getByUsername: (username) => this.get(`/authors?username=${username}&_limit=1`),
@@ -25,23 +25,23 @@ class ApiClient extends HttpClient {
         this.get(`/authors/${id}/activities?_from=${from}&_limit=10`)
       ),
       batchGetById: (ids) => {
-        const queryString = ids.map((id) => `id_eq=${id}`).join('&')
-        return this.get(`/authors?${queryString}`)
+        const queryString = ids.map((id) => `id_eq=${id}`).join('&');
+        return this.get(`/authors?${queryString}`);
       },
-    }
+    };
   }
 
   get stories() {
-    const pageSize = 10
+    const pageSize = 10;
     return {
       createVideo: ({ video, ...payload }) => this.postAsset('/stories', 'video', video, payload),
       get: ({ page = 0, filter = 'updatedAt' }) => this.get(`/stories?_sort=${filter}:desc&_start=${page * pageSize}&_limit=${pageSize}`),
       delete: (id) => this.delete(`/stories/${id}`),
-    }
+    };
   }
 
   get posts() {
-    const pageSize = 20
+    const pageSize = 20;
     return {
       getByAuthor: (authorId) => this.get(`/posts?author.id=${authorId}&_sort=updatedAt:desc`),
       getById: (id) => this.get(`/posts/${id}`),
@@ -54,11 +54,11 @@ class ApiClient extends HttpClient {
       delete: (id) => this.delete(`/posts/${id}`),
       search: (query) => this.get(`/posts?content_contains=${query}&_limit=${pageSize}`),
       q: (queryParams) => this.get(`/posts?${queryParams}`),
-    }
+    };
   }
 
   get comments() {
-    const pageSize = -1
+    const pageSize = -1;
     return {
       getByPostId: (postId) => this.get(`/comments?post.id=${postId}&_limit=${pageSize}`),
       getByStoryId: (storyId) => this.get(`/comments?story.id=${storyId}&_limit=${pageSize}`),
@@ -66,7 +66,7 @@ class ApiClient extends HttpClient {
       create: (comment) => this.post('/comments', comment),
       createAudio: ({ audio, ...payload }) => this.postAsset('/comments', 'audio', audio, payload),
       delete: (id) => this.delete(`/comments/${id}`),
-    }
+    };
   }
 
   get reactions() {
@@ -76,14 +76,14 @@ class ApiClient extends HttpClient {
       createStoryReaction: (type, story, author) => this.post('/reactions', { type, story, author }),
       update: (id, type) => this.put(`/reactions/${id}`, { type }),
       delete: (id) => this.delete(`/reactions/${id}`),
-    }
+    };
   }
 
   get feedbacks() {
     return {
       create: (feedback) => this.post('/feedbacks', feedback),
       createImage: ({ image, ...payload }) => this.postAsset('/feedbacks', 'image', image, payload),
-    }
+    };
   }
 
   get assets() {
@@ -92,9 +92,9 @@ class ApiClient extends HttpClient {
       createImage: ({ image }) => this.postAsset('/upload', null, image),
       findByUrl: (url) => this.get(`/upload/files?url=${url}`),
       delete: (id) => this.get(`/upload/delete/${id}`),
-    }
+    };
   }
 }
 
 
-export default ApiClient
+export default ApiClient;
