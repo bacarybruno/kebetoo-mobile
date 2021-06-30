@@ -33,8 +33,8 @@ export default (colors) => StyleSheet.create({
     marginBottom: metrics.spacing.xs / 2,
   },
   iconWrapper: {
-    width: 48,
-    height: 48,
+    width: 44,
+    height: 44,
     borderRadius: metrics.radius.round,
     justifyContent: 'center',
     alignItems: 'center',

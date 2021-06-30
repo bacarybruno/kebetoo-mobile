@@ -24,7 +24,12 @@ const IconButton = ({
       <Pressable style={styles.iconButton} onPress={onPress} {...otherProps}>
         <View style={styles.iconButtonContent}>
           <View style={styles.iconWrapper}>
-            <Ionicon style={styles.icon} name={icon} size={28} color={colors.blue_dark} />
+            <Ionicon
+              size={24}
+              name={icon}
+              style={styles.icon}
+              color={colors.blue_dark}
+            />
           </View>
           <View>
             <Typography
@@ -85,7 +90,7 @@ const TabBarActionButton = () => {
   const bottomSheet = useRef()
 
   const baseline = {
-    percent: 38,
+    percent: 30,
     height: 896,
   }
   const percent = (metrics.screenHeight * baseline.percent) / baseline.height
