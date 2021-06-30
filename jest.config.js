@@ -28,4 +28,4 @@ module.exports = {
     '/__fixtures__/',
     './src/shared/icons/',
   ],
-}
+};

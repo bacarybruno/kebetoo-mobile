@@ -1,3 +1,3 @@
 module.exports = {
-  convertVideoFromUrl: jest.fn()
-}
+  convertVideoFromUrl: jest.fn(),
+};

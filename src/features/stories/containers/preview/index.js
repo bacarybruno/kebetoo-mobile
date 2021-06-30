@@ -233,6 +233,8 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
 
   const video = getDisplayedVideo();
 
+  if (!isFocused) return null;
+
   return (
     <>
       <View style={styles.wrapper}>
@@ -244,17 +246,20 @@ const StoryPreview = ({ records, onGoBack, onFinish }) => {
           rate={video.speed}
           resizeMode="cover"
           style={styles.video}
-          paused={!isFocused}
           onEnd={loadNextVideo}
         />
         <AppHeader
-          title={processing ? 'Preparing...' : 'Preview'}
           headerBack
           style={styles.previewHeader}
           iconColor={colors.white}
           titleStyle={{ color: colors.white }}
           onGoBack={onGoBack}
           loading={processing}
+          title={
+            processing
+              ? strings.virals.preparing_state
+              : strings.virals.preview_state
+          }
         />
         <TouchableOpacity
           ref={viewShot}

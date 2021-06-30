@@ -10,8 +10,8 @@ module.exports = {
       platforms: {
         android: {
           sourceDir: '../node_modules/react-native-video/android-exoplayer',
-        }
-      }
-    }
+        },
+      },
+    },
   },
 };

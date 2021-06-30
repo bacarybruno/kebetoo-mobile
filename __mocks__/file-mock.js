@@ -1,1 +1,1 @@
-module.exports = 'test-uri-mock'
+module.exports = 'test-uri-mock';

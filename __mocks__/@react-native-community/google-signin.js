@@ -1,6 +1,6 @@
-import authors from '@fixtures/authors'
+import authors from '@fixtures/authors';
 
-const author = authors[0]
+const author = authors[0];
 const mockUserInfo = {
   idToken: 'mockIdToken',
   accessToken: null,
@@ -14,7 +14,7 @@ const mockUserInfo = {
     photo: author.photoURL,
     name: author.displayName,
   },
-}
+};
 
 const GoogleSignin = {
   configure: jest.fn(),
@@ -23,16 +23,16 @@ const GoogleSignin = {
   signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
   revokeAccess: jest.fn(() => Promise.resolve(true)),
   signOut: jest.fn(() => Promise.resolve(true)),
-}
+};
 
 const GoogleSigninMock = {
   GoogleSignin,
-}
+};
 
 GoogleSigninMock.setGoogleSigninMockOptions = (options) => {
   Object.keys(options).forEach((key) => {
-    GoogleSigninMock[key] = options[key]
-  })
-}
+    GoogleSigninMock[key] = options[key];
+  });
+};
 
-module.exports = GoogleSigninMock
+module.exports = GoogleSigninMock;

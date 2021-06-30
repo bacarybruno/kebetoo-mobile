@@ -51,7 +51,12 @@ it('display a no-content message if there is no post', async () => {
     const { wrapper: asyncWrapper } = await givenManagePost();
     wrapper = asyncWrapper;
   });
-  expect(wrapper.root.findAllByProps({ text: strings.manage_posts.no_content }).length).toBeTruthy();
+  expect(
+    wrapper
+      .root
+      .findAllByProps({ text: strings.manage_posts.no_content })
+      .length,
+  ).toBeTruthy();
 });
 
 it('navigates to post creation page on fab press', async () => {

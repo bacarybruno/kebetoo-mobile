@@ -1,5 +1,5 @@
-const existsMock = jest.fn()
-existsMock.mockReturnValueOnce({ then: jest.fn() })
+const existsMock = jest.fn();
+existsMock.mockReturnValueOnce({ then: jest.fn() });
 
 export default {
   DocumentDir: jest.fn(),
@@ -18,4 +18,4 @@ export default {
       DocumentDir: 'jest://rnfs:DocumentDir',
     },
   },
-}
+};

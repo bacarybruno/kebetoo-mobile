@@ -1,4 +1,4 @@
-import { Text } from 'react-native'
+import { Text } from 'react-native';
 
 // custom icons doesn't show up correctly
 // so, create a custom mock
@@ -17,4 +17,4 @@ export default ({
     }}
     text={`kebeticon-${name}`}
   />
-)
+);

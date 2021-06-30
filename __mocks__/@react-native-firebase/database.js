@@ -1,10 +1,10 @@
-const data = {}
+const data = {};
 
 const snapshot = {
   val: () => data,
   exportVal: () => data,
   exists: jest.fn(() => true),
-}
+};
 
 const database = jest.fn().mockReturnValue({
   ref: jest.fn().mockReturnThis(),
@@ -18,6 +18,6 @@ const database = jest.fn().mockReturnValue({
   child: jest.fn().mockReturnThis(),
   orderByChild: jest.fn().mockReturnThis(),
   limitToLast: jest.fn().mockReturnThis(),
-})
+});
 
-export default database
+export default database;

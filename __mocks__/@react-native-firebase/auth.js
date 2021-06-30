@@ -1,16 +1,16 @@
-import authors from '@fixtures/authors'
+import authors from '@fixtures/authors';
 
 const user = {
   ...authors[0],
   updateProfile: jest.fn(),
-}
+};
 
 export const authCredentials = {
   user,
   additionalUserInfo: {
     profile: { id: 'mock-user-profile-id' },
   },
-}
+};
 
 const mockOptions = {
   createUserAndRetrieveDataWithEmailAndPassword: jest.fn().mockReturnValue(Promise.resolve(true)),
@@ -24,9 +24,9 @@ const mockOptions = {
   signInWithEmailAndPassword: jest.fn().mockReturnValue(Promise.resolve({ user })),
   createUserWithEmailAndPassword: jest.fn().mockReturnValue(Promise.resolve({ user })),
   currentUser: user,
-}
+};
 
-const auth = jest.fn(() => mockOptions)
+const auth = jest.fn(() => mockOptions);
 
 const socialAuthProviderData = {
   credential: jest.fn().mockReturnValue({
@@ -34,16 +34,16 @@ const socialAuthProviderData = {
     secret: 'mock-google-credentials-secret',
     token: 'mock-google-credentials-token',
   }),
-}
+};
 
-auth.GoogleAuthProvider = socialAuthProviderData
+auth.GoogleAuthProvider = socialAuthProviderData;
 
-auth.FacebookAuthProvider = socialAuthProviderData
+auth.FacebookAuthProvider = socialAuthProviderData;
 
 auth.setMockOptions = (options) => {
   Object.keys(options).forEach((key) => {
-    mockOptions[key] = options[key]
-  })
-}
+    mockOptions[key] = options[key];
+  });
+};
 
-export default auth
+export default auth;

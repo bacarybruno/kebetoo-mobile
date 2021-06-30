@@ -18,6 +18,7 @@ import RecordButton from '@app/features/stories/components/record-button';
 import FrontCameraFlash from '@app/features/stories/components/front-camera-flash';
 import { videoEditor } from '@app/features/stories/services';
 import { metrics } from '@app/theme';
+import { strings } from '@app/config';
 
 import reducer, { initialState } from './reducer';
 import createThemedStyles from './styles';
@@ -237,11 +238,11 @@ const StoryDesigner = ({
 
   let headerTitle = '';
   if (isRecording) {
-    headerTitle = 'Recording...';
+    headerTitle = strings.virals.recording_state;
   } else if (preparing) {
-    headerTitle = 'Preparing...';
+    headerTitle = strings.virals.preparing_state;
   } else if (records.length > 0) {
-    headerTitle = `${records.length} Videos`;
+    headerTitle = strings.formatString(strings.virals.videos_count, records.length);
   }
 
   return (

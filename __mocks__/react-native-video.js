@@ -1,1 +1,1 @@
-module.exports = 'Video'
+module.exports = 'Video';

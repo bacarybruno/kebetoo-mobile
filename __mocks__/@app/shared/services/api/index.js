@@ -1,9 +1,9 @@
-import posts, { postsList } from '@fixtures/posts'
-import authors from '@fixtures/authors'
-import comments from '@fixtures/comments'
+import posts, { postsList } from '@fixtures/posts';
+import authors from '@fixtures/authors';
+import comments from '@fixtures/comments';
 
 // eslint-disable-next-line radix
-const createRandomId = () => parseInt(Math.random() * 10000000).toString()
+const createRandomId = () => parseInt(Math.random() * 10000000).toString();
 
 const api = {
   authors: {
@@ -24,15 +24,15 @@ const api = {
           reactions: 0,
           pageSize: 0,
         },
-        next: "2021-01-11T17:39:03.701Z"
+        next: '2021-01-11T17:39:03.701Z',
       },
       items: [
         {
-          type: "post",
-          data: {}
-        }
-      ]
-    })
+          type: 'post',
+          data: {},
+        },
+      ],
+    }),
   },
 
   posts: {
@@ -103,6 +103,6 @@ const api = {
     update: jest.fn().mockResolvedValue(true),
     delete: jest.fn().mockResolvedValue(true),
   },
-}
+};
 
-export default api
+export default api;

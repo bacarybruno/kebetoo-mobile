@@ -5,4 +5,4 @@ module.exports = {
   getAlbums: jest.fn(),
   save: jest.fn(),
   saveImageWithTag: jest.fn(),
-}
+};

@@ -3,6 +3,6 @@ const crashlytics = () => ({
   setAttribute: jest.fn().mockResolvedValue(true),
   setUserId: jest.fn().mockResolvedValue(true),
   recordError: jest.fn().mockResolvedValue(true),
-})
+});
 
-export default crashlytics
+export default crashlytics;

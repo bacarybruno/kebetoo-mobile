@@ -206,6 +206,10 @@ const locales = Object.freeze({
   virals: {
     share_title: 'New Kebetoo share',
     share_message: '{0} shared this Viral with you. See more content like this on Kebetoo Android and iOS apps.',
+    preparing_state: 'Preparing...',
+    preview_state: 'Preview',
+    recording_state: 'Recording...',
+    videos_count: '{0} videos',
   },
   dates: {
     format_month_year: 'MMMM YYYY',
@@ -225,6 +229,6 @@ const locales = Object.freeze({
     username_taken: 'This username is already taken. Please try another one.',
     username_not_exist: 'This user does not exist',
   },
-})
+});
 
-export default locales
+export default locales;

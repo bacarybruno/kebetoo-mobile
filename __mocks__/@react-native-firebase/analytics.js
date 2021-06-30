@@ -12,6 +12,6 @@ const analytics = () => ({
   logSelectContent: jest.fn().mockResolvedValue(true),
   logShare: jest.fn().mockResolvedValue(true),
   logScreenView: jest.fn().mockResolvedValue(true),
-})
+});
 
-export default analytics
+export default analytics;
