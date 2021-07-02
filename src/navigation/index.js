@@ -142,10 +142,10 @@ const defaultMainScreenOptions = {
 // Pages
 export const tabPages = [
   <Tab.Screen name={routes.HOME} component={HomePage} />,
-  <Tab.Screen name={routes.STORIES} component={StoriesPage} />,
-  <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} />,
-  <Tab.Screen name={routes.ROOMS} component={RoomsPage} />,
-  <Stack.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} />,
+  <Tab.Screen name={routes.STORIES} component={StoriesPage} unmountOnBlur />,
+  <Tab.Screen name={routes.TABS_FAB} component={EmptyPage} unmountOnBlur />,
+  <Tab.Screen name={routes.ROOMS} component={RoomsPage} unmountOnBlur />,
+  <Tab.Screen name={routes.NOTIFICATIONS} component={NotificationsPage} unmountOnBlur />,
 ];
 
 export const TabBar = (props, styles, colors, tabBarTheme) => {
@@ -191,16 +191,18 @@ export const TabPage = () => {
           : null)
       )}
     >
-      {tabPages.map((page, key) => (
-        cloneElement(page, {
+      {tabPages.map((page, key) => {
+        const { unmountOnBlur, name } = page.props;
+        return cloneElement(page, {
           key,
           options: {
-            tabBarBadge: page.props.name === routes.NOTIFICATIONS && badgeCount > 0
+            unmountOnBlur,
+            tabBarBadge: name === routes.NOTIFICATIONS && badgeCount > 0
               ? badgeCount
               : undefined,
           },
-        })
-      ))}
+        });
+      })}
     </Tab.Navigator>
   );
 };

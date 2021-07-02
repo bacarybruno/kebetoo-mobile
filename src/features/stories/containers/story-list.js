@@ -40,7 +40,6 @@ const StoryListPage = ({ onAddStory, stories, isFocused }) => {
       {stories.length > 0 && (
         <ViewPager
           initialPage={0}
-          unmountOnBlur
           style={styles.wrapper}
           orientation="vertical"
           onPageSelected={onStoryPageSelected}

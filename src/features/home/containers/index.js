@@ -1,6 +1,6 @@
 /* eslint-disable import/default */
 import {
-  useEffect, useState, useCallback, useMemo,
+  useEffect, useState, useCallback, useMemo, useContext,
 } from 'react';
 import {
   View, FlatList, RefreshControl, Platform, ActivityIndicator, LogBox,
@@ -31,6 +31,9 @@ import {
 } from '@app/shared/hooks';
 
 import createThemedStyles from './styles';
+import { useDarkBackground } from '@app/features/stories/hooks';
+import { useIsFocused } from '@react-navigation/native';
+import { SafeAreaContext } from '@app/shared/contexts';
 
 LogBox.ignoreAllLogs(true);
 
@@ -49,10 +52,22 @@ const HomePage = ({ navigation }) => {
   const isLoading = useSelector(isLoadingPostsSelector);
   const isRefreshing = useSelector(isRefreshingPostsSelector);
   const postsFilter = useSelector(postsFilterSelector);
+  const isFocused = useIsFocused();
 
   const { colors } = useAppColors();
   const styles = useAppStyles(createThemedStyles);
   const { showFeedPostsOptions } = useBottomSheet();
+
+  const { resetAppBars } = useAppColors();
+  const { resetStatusBars } = useContext(SafeAreaContext);
+
+
+  useEffect(() => {
+    if (isFocused) {
+      resetAppBars();
+      resetStatusBars();
+    }
+  }, [isFocused, resetAppBars, resetStatusBars]);
 
   const handleShare = useCallback(async (item) => {
     if (!item?.data) return;

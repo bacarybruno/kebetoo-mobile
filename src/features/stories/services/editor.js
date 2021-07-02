@@ -5,10 +5,11 @@ import RNFetchBlob from 'rn-fetch-blob';
 import { getExtension, getFileName } from '@app/shared/helpers/file';
 import { env } from '@app/config';
 
-const disableLogs = true;
-if (disableLogs) {
-  // RNFFmpegConfig.disableStatistics()
+const debug = false;
+if (!debug) {
   RNFFmpegConfig.disableLogs();
+  RNFFmpegConfig.disableStatistics();
+  RNFFmpegConfig.disableRedirection();
 }
 
 // isnpired by https://github.com/shahen94/react-native-video-processing/blob/master/android/src/main/java/com/shahenlibrary/Trimmer/Trimmer.java
@@ -19,6 +20,10 @@ const outputDir = `${rootDir}/kebetoo-ffmpeg-cache-dir`;
 export const getOutputPath = () => `${outputDir}/${Date.now()}.mp4`;
 
 const videoEditor = {
+  createOutputDirectory: () => (
+    RNFetchBlob.fs.mkdir(outputDir).catch(() => {})
+  ),
+
   executeRawFFmpegCommand: async (command) => {
     const commandArgs = command.split(' ');
     const commandOutput = commandArgs.pop();
@@ -55,17 +60,6 @@ const videoEditor = {
     return lastResult;
   },
 
-  // cleanup: async (args) => {
-  //   await RNFetchBlob.fs.unlink(outputDir).catch(() => { })
-  //   await RNFetchBlob.fs.mkdir(outputDir).catch(() => { })
-  //   return args
-  // },
-
-  // cleanup: async () => {
-  //   await RNFetchBlob.fs.unlink(outputDir).catch(() => { })
-  //   return videos
-  // },
-
   addSingleVideoEmptySoundIfNeeded: async (video, outputFile = getOutputPath()) => {
     if (!video.mute) return video;
     const generateSilenceArgs = `-f lavfi -i aevalsrc=0 -i ${video.uri} ${fastPreset} -c:v copy -c:a aac -map 0 -map 1:v -shortest ${outputFile}`;
@@ -91,16 +85,15 @@ const videoEditor = {
     return { ...video, uri: outputFile };
   },
 
-  flipSingleVideo: async (video) => {
-    let result = await videoEditor.removeSingleVideoMetadata(video);
-    result = videoEditor.mirrorSingleVideo(result);
-    return result;
-  },
+  flipSingleVideo: (video) => (
+    videoEditor.compose(
+      video,
+      videoEditor.removeSingleVideoMetadata,
+      videoEditor.mirrorSingleVideo,
+    )
+  ),
 
-  flipMultipleVideos: async (videos) => {
-    const results = await Promise.all(videos.map((video) => videoEditor.flipSingleVideo(video)));
-    return results;
-  },
+  flipMultipleVideos: (videos) => Promise.all(videos.map(videoEditor.flipSingleVideo)),
 
   setSingleVideoSpeed: async (video, outputFile = getOutputPath()) => {
     const { speed, uri: videoUri } = video;
@@ -198,5 +191,7 @@ const videoEditor = {
 
   overlayVideoWithImage: (overlay) => (video, outputFile = getOutputPath()) => videoEditor.overlayVideo(overlay, video, outputFile),
 };
+
+videoEditor.createOutputDirectory();
 
 export default videoEditor;
