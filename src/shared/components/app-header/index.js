@@ -2,13 +2,15 @@ import { useCallback, isValidElement } from 'react';
 import { View, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { Avatar, Logo, Typography } from '@app/shared/components';
 import routes from '@app/navigation/routes';
 import { useAppColors } from '@app/shared/hooks';
 import { edgeInsets } from '@app/theme';
 
-import styles from './styles';
+import Avatar from '../avatar';
+import Logo from '../logo';
+import Typography from '../typography';
 import HeaderBack from '../header-back';
+import styles from './styles';
 
 export const routeOptions = { headerShown: false };
 

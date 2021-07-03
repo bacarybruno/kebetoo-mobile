@@ -1,6 +1,6 @@
 import setupTest from '@app/config/jest-setup';
 
-import CommentPlaceholder from '../comments';
+import { CommentPlaceholder } from '../comments';
 
 const givenCommentPlaceholder = setupTest(CommentPlaceholder)();
 

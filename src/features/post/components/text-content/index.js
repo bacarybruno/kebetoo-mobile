@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { Pressable, Typography, FormatedTypography } from '@app/shared/components';
-import { POST_TYPES } from '@app/features/post/containers/basic-post';
+import { POST_TYPES } from '@app/features/post/containers/basic-post/helpers';
 import { useAppStyles } from '@app/shared/hooks';
 
 import createThemedStyles from './styles';

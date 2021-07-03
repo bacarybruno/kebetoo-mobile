@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useReducer } from 'react';
 
-import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post';
+import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post/helpers';
 import { useUser, usePosts, useAudioRecorder } from '@app/shared/hooks';
 import { api } from '@app/shared/services';
 import routes from '@app/navigation/routes';

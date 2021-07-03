@@ -4,10 +4,10 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import { Portal } from '@gorhom/portal';
 import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 
-import { Typography } from '@app/shared/components';
 import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
 import createThemedStyles from './styles';
+import Typography from '../typography';
 
 export const BottomSheetHeader = ({ header, headerType, onDismiss }) => {
   const styles = useAppStyles(createThemedStyles);

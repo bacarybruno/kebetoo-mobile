@@ -20,9 +20,10 @@ import { rgbaToHex } from '@app/theme/colors';
 import iosColors from '@app/theme/ios-colors';
 import { getMimeType } from '@app/shared/helpers/file';
 
-import createThemedStyles from './styles';
 import HeaderBack from '../header-back';
-import { Pressable, Typography } from '../index';
+import Typography from '../typography';
+import Pressable from '../buttons/pressable';
+import createThemedStyles from './styles';
 
 const AssetTypes = {
   Photos: 'Photos',

@@ -10,6 +10,7 @@ import ShareMenu from 'react-native-share-menu';
 import RNFetchBlob from 'rn-fetch-blob';
 import Snackbar from 'react-native-snackbar';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+import { useIsFocused } from '@react-navigation/native';
 
 import * as types from '@app/redux/types';
 import {
@@ -23,17 +24,14 @@ import { getFileName, getExtension } from '@app/shared/helpers/file';
 import { strings } from '@app/config';
 import routes from '@app/navigation/routes';
 import RealPathUtils from '@app/shared/helpers/native-modules/real-path';
-
 import { AppHeader, SegmentedControl } from '@app/shared/components';
 import { actionTypes } from '@app/features/post/containers/create';
 import {
   useAnalytics, useAppColors, useAppStyles, useBottomSheet, usePosts, useUser,
 } from '@app/shared/hooks';
+import { SafeAreaContext } from '@app/shared/contexts';
 
 import createThemedStyles from './styles';
-import { useDarkBackground } from '@app/features/stories/hooks';
-import { useIsFocused } from '@react-navigation/native';
-import { SafeAreaContext } from '@app/shared/contexts';
 
 LogBox.ignoreAllLogs(true);
 

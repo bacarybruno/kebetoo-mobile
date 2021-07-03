@@ -8,8 +8,8 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import {
   CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, MultipleTapHandler,
 } from '@app/shared/components';
-import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post';
-import { REACTION_TYPES } from '@app/features/post/containers/reactions';
+import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post/helpers';
+import { REACTION_TYPES } from '@app/features/post/containers/reactions/helpers';
 import { api } from '@app/shared/services';
 import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder';
 import routes from '@app/navigation/routes';

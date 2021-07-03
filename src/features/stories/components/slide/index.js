@@ -15,14 +15,14 @@ import {
 import { readableNumber } from '@app/shared/helpers/strings';
 import { useAppColors, useAppStyles, useUser } from '@app/shared/hooks';
 import { colorGradient } from '@app/theme/colors';
-import useStoriesReactions, { REACTION_TYPES } from '@app/features/stories/hooks/reactions';
+import useStoriesReactions from '@app/features/stories/hooks/reactions';
 import CommentsView from '@app/features/comments/components/comments-view';
 import { getMimeType } from '@app/shared/helpers/file';
-
 import { strings } from '@app/config';
+import { REACTION_TYPES } from '@app/features/post/containers/reactions/helpers';
+
 import createThemedStyles from './styles';
 import StoryViewActionBar from '../actions-bar';
-
 import { useComments } from '../../hooks';
 
 const StoryAuthor = ({ author }) => {

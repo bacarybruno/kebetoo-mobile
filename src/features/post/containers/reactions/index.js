@@ -13,14 +13,7 @@ import { readableNumber } from '@app/shared/helpers/strings';
 import { BottomSheetView } from '@app/shared/components';
 
 import styles from './styles';
-
-export const REACTION_TYPES = {
-  LIKE: 'like',
-  DISLIKE: 'dislike',
-  COMMENT: 'comment',
-  LOVE: 'love',
-  SHARE: 'share',
-};
+import { REACTION_TYPES } from './helpers';
 
 export const CommentsBottomSheet = ({
   post, count, bottomSheet, onBottomSheetIndexChange,

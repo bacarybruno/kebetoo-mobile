@@ -1,11 +1,12 @@
 import { memo } from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
 
-import BasicPost, { Content, POST_TYPES, getPostType } from '@app/features/post/containers/basic-post';
+import BasicPost, { Content } from '@app/features/post/containers/basic-post';
 import { deleteProperty } from '@app/shared/helpers/object';
 import { useAppStyles } from '@app/shared/hooks';
 
 import createThemedStyles from './styles';
+import { getPostType, POST_TYPES } from '../../containers/basic-post/helpers';
 
 const RepostContent = ({
   post, originalAuthor, style, onPress, mode,

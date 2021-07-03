@@ -8,14 +8,7 @@ import { api } from '@app/shared/services';
 import { useAnalytics, useBottomSheet } from '@app/shared/hooks';
 
 import { actionTypes } from '../containers/create';
-
-export const REACTION_TYPES = {
-  LIKE: 'like',
-  DISLIKE: 'dislike',
-  COMMENT: 'comment',
-  LOVE: 'love',
-  SHARE: 'share',
-};
+import { REACTION_TYPES } from '../containers/reactions/helpers';
 
 export const bottomSheetItems = [{
   title: strings.reactions.share_now,

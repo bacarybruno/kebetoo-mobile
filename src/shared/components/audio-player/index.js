@@ -9,12 +9,13 @@ import { MediaStates } from '@react-native-community/audio-toolkit';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
 import { edgeInsets, images } from '@app/theme';
-import { Pressable } from '@app/shared/components';
+
 import { readableSeconds } from '@app/shared/helpers/dates';
 import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
 import createThemedStyles from './styles';
 import Typography from '../typography';
+import Pressable from '../buttons/pressable';
 
 const Waves = () => {
   const styles = useAppStyles(createThemedStyles);

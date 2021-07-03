@@ -5,11 +5,12 @@ import ParsedText from 'react-native-parsed-text';
 import Snackbar from 'react-native-snackbar';
 
 import { useAppColors, useAppStyles } from '@app/shared/hooks';
-import { ReadMore, Typography } from '@app/shared/components';
 import { api } from '@app/shared/services';
 import routes from '@app/navigation/routes';
 import { strings } from '@app/config';
 
+import ReadMore from '../../read-more';
+import Typography from '../index';
 import { warnNotImplemented } from '../../no-content';
 
 import createThemedStyles from './styles';

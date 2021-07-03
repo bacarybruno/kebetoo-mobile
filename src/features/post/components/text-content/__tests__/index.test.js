@@ -1,5 +1,5 @@
 import setupTest from '@app/config/jest-setup';
-import { POST_TYPES } from '@app/features/post/containers/basic-post';
+import { POST_TYPES } from '@app/features/post/containers/basic-post/helpers';
 
 import ImageContent from '../index';
 

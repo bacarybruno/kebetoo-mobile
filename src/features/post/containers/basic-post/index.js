@@ -20,39 +20,13 @@ import TextContent from '@app/features/post/components/text-content';
 import RepostContent from '@app/features/post/components/repost-content';
 
 import styles from './styles';
+import { getPostType, POST_TYPES } from './helpers';
 
 const isUpdated = (post) => {
   if (!post.createdAt || !post.updatedAt) return false;
   // the backend updates the post when there is an attachment
   // so we allow a difference of 5s between the post creation and update date
   return dayjs(post.updatedAt).diff(dayjs(post.createdAt), 'seconds') >= 5;
-};
-
-export const POST_TYPES = {
-  AUDIO: 'audio',
-  IMAGE: 'image',
-  TEXT: 'text',
-  REPOST: 'repost',
-  VIDEO: 'video',
-};
-
-export const getPostType = (post) => {
-  if (post.repost) {
-    return POST_TYPES.REPOST;
-  }
-  if (post.audio && post.audio.url) {
-    return POST_TYPES.AUDIO;
-  }
-  if (post.image && post.image.url) {
-    return POST_TYPES.IMAGE;
-  }
-  if (post.video && post.video.url) {
-    return POST_TYPES.VIDEO;
-  }
-  if (post.content && post.content.length > 0) {
-    return POST_TYPES.TEXT;
-  }
-  return null;
 };
 
 const Edited = () => (

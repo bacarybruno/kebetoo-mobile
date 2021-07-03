@@ -1,12 +1,7 @@
 import { useCallback, useState, useEffect } from 'react';
 
 import { api } from '@app/shared/services';
-
-export const REACTION_TYPES = {
-  COMMENT: 'comment',
-  LOVE: 'love',
-  SHARE: 'share',
-};
+import { REACTION_TYPES } from '@app/features/post/containers/reactions/helpers';
 
 export const countReactions = (story, type) => (
   story.reactions.filter((r) => r.type === type).length
