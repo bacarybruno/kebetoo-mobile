@@ -7,6 +7,6 @@ const images = {
   bottom_tab_overlay_dark: require('@assets/images/bottom-tab-overlay-dark.png'),
   logo: require('@assets/images/logo.png'),
   waves: require('@assets/images/waves.png'),
-}
+};
 
-export default images
+export default images;

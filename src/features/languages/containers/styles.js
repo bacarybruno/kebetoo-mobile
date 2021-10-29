@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -19,4 +19,4 @@ export default (colors) => StyleSheet.create({
     position: 'absolute',
     right: 0,
   },
-})
+});

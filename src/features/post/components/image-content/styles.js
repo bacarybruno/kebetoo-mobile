@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
-import { reactionsHeight } from '@app/features/comments/components/reactions/styles'
+import { metrics, elevation } from '@app/theme';
+import { reactionsHeight } from '@app/features/comments/components/reactions/styles';
 
 export default (colors) => StyleSheet.create({
   commentMode: {
@@ -37,4 +37,4 @@ export default (colors) => StyleSheet.create({
     marginBottom: metrics.spacing.sm,
     flex: 1,
   },
-})
+});

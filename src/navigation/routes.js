@@ -7,7 +7,8 @@ const routes = {
   HOME: 'tab:home',
   ROOMS: 'tab:rooms',
   NOTIFICATIONS: 'tab:notifications',
-  SEARCH: 'tab:search',
+  STORIES: 'tab:stories',
+  SEARCH: 'route:search',
   CREATE_POST: 'route:create_post',
   TABS_FAB: 'tab:tabs_fab',
   COMMENTS: 'route:comments',
@@ -23,6 +24,6 @@ const routes = {
   LANGUAGES: 'route:languages',
   CREATE_ROOM: 'route:create_room',
   ROOM: 'route:room',
-}
+};
 
-export default routes
+export default routes;

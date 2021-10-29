@@ -1,30 +1,18 @@
 export const capitalize = (s) => {
-  if (typeof s !== 'string') return ''
-  const splitCharacters = '. '
-  const parts = s.split(splitCharacters)
+  if (typeof s !== 'string') return '';
+  const splitCharacters = '. ';
+  const parts = s.split(splitCharacters);
   return parts
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
-    .join(splitCharacters)
-}
+    .join(splitCharacters);
+};
 
 
-export const abbreviateNumber = (number) => {
-  const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E']
-
-  // what tier? (determines SI symbol)
-  // eslint-disable-next-line no-bitwise
-  const tier = Math.log10(number) / 3 | 0
-
-  // if zero, we don't need a suffix
-  if (tier === 0) return number
-
-  // get suffix and determine scale
-  const suffix = SI_SYMBOL[tier]
-  const scale = 10 ** (tier * 3)
-
-  // scale the number
-  const scaled = number / scale
-
-  // format number and add suffix
-  return parseFloat(scaled.toFixed(1)) + suffix
-}
+export const readableNumber = (number) => {
+  if (number < 1e3) return number;
+  if (number >= 1e3 && number < 1e6) return `${parseFloat((number / 1e3).toFixed(1))}K`;
+  if (number >= 1e6 && number < 1e9) return `${parseFloat((number / 1e6).toFixed(1))}M`;
+  if (number >= 1e9 && number < 1e12) return `${parseFloat((number / 1e9).toFixed(1))}B`;
+  if (number >= 1e12) return `${parseFloat((number / 1e12).toFixed(1))}T`;
+  return null;
+};

@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default StyleSheet.create({
   wrapper: {
@@ -10,4 +10,4 @@ export default StyleSheet.create({
   description: {
     marginTop: metrics.screenHeight * 0.035,
   },
-})
+});

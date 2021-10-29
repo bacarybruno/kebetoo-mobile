@@ -1,10 +1,10 @@
-import { View, TouchableOpacity } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { View, TouchableOpacity } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import { Badge, Pressable, Typography } from '@app/shared/components';
 
-import { Badge, Pressable, Typography } from '../../'
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const IconButton = ({
   onPress,
@@ -13,19 +13,19 @@ const IconButton = ({
   iconName,
   ...rest
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={onPress} {...rest}>
       <Ionicon style={styles.icon} name={iconName} size={30} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-IconButton.Text = ({
+const TextIconButton = ({
   icon, text, badge, onPress, children, badgeColor, ...otherProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <Pressable style={styles.iconButtonWrapper} onPress={onPress} {...otherProps}>
       <View style={styles.iconWrapper}>
@@ -49,7 +49,9 @@ IconButton.Text = ({
         )}
       </View>
     </Pressable>
-  )
-}
+  );
+};
 
-export default IconButton
+IconButton.Text = TextIconButton;
+
+export default IconButton;

@@ -308,6 +308,61 @@ exports[`renders SearchPage for posts 1`] = `
                           }
                         >
                           <View
+                            accessible={true}
+                            focusable={false}
+                            hitSlop={
+                              Object {
+                                "bottom": 10,
+                                "left": 10,
+                                "right": 10,
+                                "top": 10,
+                              }
+                            }
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                    "marginLeft": 16,
+                                    "width": 24,
+                                  },
+                                  Object {
+                                    "marginLeft": 0,
+                                    "marginRight": 16,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                    "fontFamily": "icomoon",
+                                    "fontSize": 20,
+                                    "fontStyle": "normal",
+                                    "fontWeight": "normal",
+                                  }
+                                }
+                                text="kebeticon-chevron-left"
+                              />
+                            </View>
+                          </View>
+                          <View
                             style={
                               Object {
                                 "flex": 1,
@@ -452,62 +507,6 @@ exports[`renders SearchPage for posts 1`] = `
                         style={
                           Object {
                             "alignItems": "center",
-                            "borderBottomLeftRadius": 20,
-                            "borderBottomRightRadius": 20,
-                            "borderTopLeftRadius": 20,
-                            "borderTopRightRadius": 20,
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "height": "100%",
-                            "justifyContent": "center",
-                            "opacity": 1,
-                            "paddingHorizontal": 16,
-                          }
-                        }
-                      >
-                        <Text
-                          numberOfLines={1}
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "color": "#FFFFFF",
-                                "fontFamily": "System",
-                                "fontSize": 16,
-                                "fontWeight": "600",
-                                "letterSpacing": -0.32,
-                                "lineHeight": 21,
-                              },
-                              Array [
-                                Object {
-                                  "color": "rgba(0,0,0,0.38)",
-                                },
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "fontFamily": "System",
-                                  "fontWeight": "700",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                          Users
-                        </Text>
-                      </View>
-                      <View
-                        accessible={true}
-                        focusable={true}
-                        onClick={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                        style={
-                          Object {
-                            "alignItems": "center",
                             "backgroundColor": "rgba(0, 122, 255, 255)",
                             "borderBottomLeftRadius": 20,
                             "borderBottomRightRadius": 20,
@@ -546,6 +545,62 @@ exports[`renders SearchPage for posts 1`] = `
                               Array [
                                 Object {
                                   "color": "rgba(255, 255, 255, 255)",
+                                },
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "fontFamily": "System",
+                                  "fontWeight": "700",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          Users
+                        </Text>
+                      </View>
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "borderBottomLeftRadius": 20,
+                            "borderBottomRightRadius": 20,
+                            "borderTopLeftRadius": 20,
+                            "borderTopRightRadius": 20,
+                            "flex": 1,
+                            "flexDirection": "row",
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "opacity": 1,
+                            "paddingHorizontal": 16,
+                          }
+                        }
+                      >
+                        <Text
+                          numberOfLines={1}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#FFFFFF",
+                                "fontFamily": "System",
+                                "fontSize": 16,
+                                "fontWeight": "600",
+                                "letterSpacing": -0.32,
+                                "lineHeight": 21,
+                              },
+                              Array [
+                                Object {
+                                  "color": "rgba(0,0,0,0.38)",
                                 },
                                 Object {
                                   "backgroundColor": "transparent",
@@ -1255,6 +1310,61 @@ exports[`renders SearchPage for users 1`] = `
                             }
                           }
                         >
+                          <View
+                            accessible={true}
+                            focusable={false}
+                            hitSlop={
+                              Object {
+                                "bottom": 10,
+                                "left": 10,
+                                "right": 10,
+                                "top": 10,
+                              }
+                            }
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                    "marginLeft": 16,
+                                    "width": 24,
+                                  },
+                                  Object {
+                                    "marginLeft": 0,
+                                    "marginRight": 16,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                    "fontFamily": "icomoon",
+                                    "fontSize": 20,
+                                    "fontStyle": "normal",
+                                    "fontWeight": "normal",
+                                  }
+                                }
+                                text="kebeticon-chevron-left"
+                              />
+                            </View>
+                          </View>
                           <View
                             style={
                               Object {

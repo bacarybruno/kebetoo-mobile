@@ -1,24 +1,26 @@
-import { memo, useCallback, useState, useRef, useEffect, useMemo, useContext } from 'react'
+import {
+  memo, useCallback, useState, useRef, useEffect, useMemo, useContext,
+} from 'react';
 import {
   View, TouchableOpacity, ImageBackground, StatusBar,
-} from 'react-native'
-import Swiper from 'react-native-swiper'
-import changeNavigationBarColor from 'react-native-navigation-bar-color'
+} from 'react-native';
+import Swiper from 'react-native-swiper';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
-import { IconButton, FullButton, Typography } from '@app/shared/components'
-import OnbordingSlide from '@app/features/onboarding/components'
-import routes from '@app/navigation/routes'
-import { images } from '@app/theme'
-import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks'
-import { strings } from '@app/config'
-import { SafeAreaContext } from '@app/shared/contexts'
+import { IconButton, FullButton, Typography } from '@app/shared/components';
+import OnbordingSlide from '@app/features/onboarding/components';
+import routes from '@app/navigation/routes';
+import { images } from '@app/theme';
+import { useAnalytics, useAppColors, useAppStyles } from '@app/shared/hooks';
+import { strings } from '@app/config';
+import { SafeAreaContext } from '@app/shared/contexts';
 
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 const routeOptions = {
   headerShown: false,
-}
+};
 
 export const slideItems = [{
   imageSrc: images.onboarding1,
@@ -32,10 +34,10 @@ export const slideItems = [{
   imageSrc: images.onboarding3,
   title: strings.onboarding.screen_three_title,
   description: strings.onboarding.screen_three_description,
-}]
+}];
 
 export const SkipButton = ({ onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <TouchableOpacity style={styles.skipButton} onPress={onPress}>
       <Typography
@@ -45,48 +47,51 @@ export const SkipButton = ({ onPress }) => {
         text={strings.general.skip}
       />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const OnboardingPage = ({ navigation }) => {
-  navigation.setOptions(routeOptions)
-  const styles = useAppStyles(createThemedStyles)
-  const { colors, resetAppBars } = useAppColors()
-  const [slideIndex, setSlideIndex] = useState(0)
-  const swiperRef = useRef()
-  const isLastSlideItem = slideItems.length - 1 === slideIndex
-  const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics()
-  const { updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars } = useContext(SafeAreaContext)
+  navigation.setOptions(routeOptions);
+  const styles = useAppStyles(createThemedStyles);
+  const { colors, resetAppBars } = useAppColors();
+  const [slideIndex, setSlideIndex] = useState(0);
+  const swiperRef = useRef();
+  const isLastSlideItem = slideItems.length - 1 === slideIndex;
+  const { trackOnboardingStart, trackOnboardingEnd } = useAnalytics();
+  const {
+    updateTopSafeAreaColor, updateBottomSafeAreaColor, resetStatusBars,
+  } = useContext(SafeAreaContext);
 
   useEffect(() => {
-    updateTopSafeAreaColor(colors.onboarding)
-    updateBottomSafeAreaColor(colors.onboarding)
-  }, [])
+    updateTopSafeAreaColor(colors.onboarding);
+    updateBottomSafeAreaColor(colors.onboarding);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    trackOnboardingStart()
+    trackOnboardingStart();
 
     const removeFocusListener = navigation.addListener('focus', () => {
-      StatusBar.setBackgroundColor(colors.onboarding)
-      changeNavigationBarColor(colors.onboarding)
-      StatusBar.setBarStyle('dark-content')
-    })
-    const removeBlurListener = navigation.addListener('blur', resetAppBars)
+      StatusBar.setBackgroundColor(colors.onboarding);
+      changeNavigationBarColor(colors.onboarding);
+      StatusBar.setBarStyle('dark-content');
+    });
+    const removeBlurListener = navigation.addListener('blur', resetAppBars);
     return () => {
-      removeFocusListener()
-      removeBlurListener()
-    }
-  }, [])
+      removeFocusListener();
+      removeBlurListener();
+    };
+  }, [colors.onboarding, navigation, resetAppBars, trackOnboardingStart]);
 
   const onSlideNext = useCallback(() => {
-    swiperRef.current.scrollBy(1)
-  }, [swiperRef])
+    swiperRef.current.scrollBy(1);
+  }, [swiperRef]);
 
   const onGetStarted = useCallback(() => {
-    trackOnboardingEnd()
-    resetStatusBars()
-    navigation.navigate(routes.SIGNUP)
-  }, [navigation, trackOnboardingEnd])
+    trackOnboardingEnd();
+    resetStatusBars();
+    navigation.navigate(routes.SIGNUP);
+  }, [navigation, resetStatusBars, trackOnboardingEnd]);
 
   const slides = useMemo(() => (
     slideItems.map((slideItem, index) => (
@@ -96,7 +101,7 @@ const OnboardingPage = ({ navigation }) => {
         key={`onboarding-slide-item-${index}`}
       />
     ))
-  ), [])
+  ), []);
 
   return (
     <ImageBackground source={slideItems[slideIndex].imageSrc} style={styles.wrapper}>
@@ -118,9 +123,13 @@ const OnboardingPage = ({ navigation }) => {
           {slides}
         </Swiper>
         <View style={styles.buttonWrapper}>
-          {isLastSlideItem ? (
-            <FullButton text={strings.general.get_started} onPress={onGetStarted} />
-          ) : (
+          {isLastSlideItem && (
+            <FullButton
+              text={strings.general.get_started}
+              onPress={onGetStarted}
+            />
+          )}
+          {!isLastSlideItem && (
             <IconButton
               style={styles.nextButton}
               onPress={onSlideNext}
@@ -131,7 +140,7 @@ const OnboardingPage = ({ navigation }) => {
         </View>
       </View>
     </ImageBackground>
-  )
-}
+  );
+};
 
-export default memo(OnboardingPage)
+export default memo(OnboardingPage);

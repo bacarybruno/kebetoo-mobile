@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-let safeHeight = metrics.screenHeight - metrics.headerHeight
+let safeHeight = metrics.screenHeight - metrics.headerHeight;
 if (metrics.isIPhoneX) {
-  safeHeight -= metrics.screenHeight * 0.1
+  safeHeight -= metrics.screenHeight * 0.1;
 }
 
-const termsHeight = 40 + metrics.spacing.xs
+const termsHeight = 40 + metrics.spacing.xs;
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -35,4 +35,4 @@ export default (colors) => StyleSheet.create({
     marginTop: metrics.spacing.sm,
     textAlign: 'center',
   },
-})
+});

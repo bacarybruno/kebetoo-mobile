@@ -9,4 +9,4 @@ module.exports = {
   requestPermissions: jest.fn(() => Promise.resolve()),
   getInitialNotification: jest.fn(() => Promise.resolve()),
   setApplicationIconBadgeNumber: jest.fn(),
-}
+};

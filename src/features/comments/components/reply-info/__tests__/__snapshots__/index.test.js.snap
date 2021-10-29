@@ -272,10 +272,12 @@ exports[`renders ReplyInfo 1`] = `
                 >
                   <View
                     style={
-                      Object {
-                        "height": 20,
-                        "marginHorizontal": 5.333333333333333,
-                      }
+                      Array [
+                        Object {
+                          "height": 20,
+                        },
+                        undefined,
+                      ]
                     }
                   >
                     <View

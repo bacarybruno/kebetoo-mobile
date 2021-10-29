@@ -70,6 +70,13 @@
 		<string>fb-messenger-share-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+		<string>instagram-stories</string>
+		<string>instagram</string>
+		<string>fb</string>
+		<string>fb-stories</string>
+		<string>whatsapp</string>
+		<string>message</string>
+		<string>kebetoo</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true />

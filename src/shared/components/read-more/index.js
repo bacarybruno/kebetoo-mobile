@@ -1,35 +1,45 @@
-import { useCallback } from 'react'
-import { TouchableWithoutFeedback } from 'react-native'
-import ReadMoreText from 'react-native-view-more-text'
+import { useCallback } from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
+import ReadMoreText from 'react-native-view-more-text';
 
-import { strings } from '@app/config'
-import { edgeInsets } from '@app/theme'
+import { strings } from '@app/config';
+import { edgeInsets } from '@app/theme';
 
-import Typography from '../typography'
-import styles from './styles'
+import Typography from '../typography';
+import styles from './styles';
 
-export const Reveal = ({ onPress, text }) => (
+export const Reveal = ({ onPress, text, type }) => (
   <TouchableWithoutFeedback
     onPress={onPress}
     hitSlop={edgeInsets.symmetric({ horizontal: 5, vertical: 10 })}
   >
     <Typography
       text={text}
-      type={Typography.types.textButton}
+      type={type || Typography.types.textButton}
       style={styles.reveal}
       color="primary"
     />
   </TouchableWithoutFeedback>
-)
+);
 
-const ReadMore = ({ numberOfLines = 5, text, children, ...typographyProps }) => {
+const ReadMore = ({
+  numberOfLines = 5, text, revealType, children, ...typographyProps
+}) => {
   const renderViewLess = useCallback((onPress) => (
-    <Reveal text={strings.general.show_less.toLowerCase()} onPress={onPress} />
-  ), [])
+    <Reveal
+      type={revealType}
+      text={strings.general.show_less.toLowerCase()}
+      onPress={onPress}
+    />
+  ), [revealType]);
 
   const renderViewMore = useCallback((onPress) => (
-    <Reveal text={strings.general.read_more.toLowerCase()} onPress={onPress} />
-  ), [])
+    <Reveal
+      type={revealType}
+      text={strings.general.read_more.toLowerCase()}
+      onPress={onPress}
+    />
+  ), [revealType]);
 
   return (
     <ReadMoreText
@@ -40,7 +50,7 @@ const ReadMore = ({ numberOfLines = 5, text, children, ...typographyProps }) => 
     >
       {children || <Typography text={text} {...typographyProps} />}
     </ReadMoreText>
-  )
-}
+  );
+};
 
-export default ReadMore
+export default ReadMore;

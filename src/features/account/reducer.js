@@ -4,7 +4,7 @@ export const actionTypes = {
   CLEAR_ERROR: 'CLEAR_ERROR',
   START_LOADING: 'START_LOADING',
   END_LOADING: 'END_LOADING',
-}
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -15,7 +15,7 @@ const reducer = (state, action) => {
           ...state.values,
           [action.payload.field]: action.payload.value,
         },
-      }
+      };
     case actionTypes.SET_ERROR:
       return {
         ...state,
@@ -23,7 +23,7 @@ const reducer = (state, action) => {
           ...state.errors,
           [action.payload.field]: action.payload.value,
         },
-      }
+      };
     case actionTypes.CLEAR_ERROR:
       return {
         ...state,
@@ -31,14 +31,14 @@ const reducer = (state, action) => {
           ...state.errors,
           [action.payload]: null,
         },
-      }
+      };
     case actionTypes.START_LOADING:
-      return { ...state, isLoading: true }
+      return { ...state, isLoading: true };
     case actionTypes.END_LOADING:
-      return { ...state, isLoading: false }
+      return { ...state, isLoading: false };
     default:
-      throw new Error(`Unknown action type ${action.type} send with payload ${action.payload}`)
+      throw new Error(`Unknown action type ${action.type} send with payload ${action.payload}`);
   }
-}
+};
 
-export default reducer
+export default reducer;

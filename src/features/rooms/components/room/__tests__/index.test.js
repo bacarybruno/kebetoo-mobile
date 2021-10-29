@@ -1,6 +1,6 @@
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import Room from '../index'
+import Room from '../index';
 
 const givenRoom = setupTest(Room)({
   isOpened: true,
@@ -14,7 +14,7 @@ const givenRoom = setupTest(Room)({
   },
   onPress: jest.fn(),
   theme: 'blue',
-})
+});
 
 const givenDiscoverRoom = setupTest(Room.Discover)({
   title: 'Hello World',
@@ -28,14 +28,14 @@ const givenDiscoverRoom = setupTest(Room.Discover)({
   onPress: jest.fn(),
   theme: 'orange',
   author: 'Jest',
-})
+});
 
 it('renders Room', () => {
-  const { wrapper } = givenRoom()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenRoom();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});
 
 it('renders discover Room', () => {
-  const { wrapper } = givenDiscoverRoom()
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+  const { wrapper } = givenDiscoverRoom();
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

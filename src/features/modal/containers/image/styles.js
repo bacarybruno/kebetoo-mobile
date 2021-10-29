@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -6,4 +6,4 @@ export default (colors) => StyleSheet.create({
     backgroundColor: colors.black,
     justifyContent: 'center',
   },
-})
+});

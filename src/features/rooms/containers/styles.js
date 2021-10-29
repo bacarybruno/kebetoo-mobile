@@ -1,5 +1,5 @@
-import { metrics } from '@app/theme'
-import { StyleSheet } from 'react-native'
+import { metrics } from '@app/theme';
+import { StyleSheet } from 'react-native';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -13,4 +13,4 @@ export default (colors) => StyleSheet.create({
     marginHorizontal: metrics.marginHorizontal,
     marginBottom: metrics.spacing.md,
   },
-})
+});

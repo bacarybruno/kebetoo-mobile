@@ -1,62 +1,63 @@
-import { useCallback } from 'react'
-import { View, ActivityIndicator, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useCallback, isValidElement } from 'react';
+import { View, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Avatar, Logo, Typography } from '@app/shared/components'
-import { strings } from '@app/config'
-import routes from '@app/navigation/routes'
-import { useAppColors } from '@app/shared/hooks'
-import { edgeInsets } from '@app/theme'
+import routes from '@app/navigation/routes';
+import { useAppColors } from '@app/shared/hooks';
+import { edgeInsets } from '@app/theme';
 
-import styles from './styles'
-import HeaderBack from '../header-back'
+import Avatar from '../avatar';
+import Logo from '../logo';
+import Typography from '../typography';
+import HeaderBack from '../header-back';
+import styles from './styles';
 
-export const routeOptions = { headerShown: false }
+export const routeOptions = { headerShown: false };
 
 export const HeaderAvatar = ({ photoURL, displayName, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.headerAvatar}>
-    <Avatar src={photoURL} text={displayName} size={35} fontSize={20} />
+    <Avatar src={photoURL} text={displayName} size={30} fontSize={18} />
   </TouchableOpacity>
-)
+);
 
 const HeaderNavigationBack = ({ onPress, tintColor }) => (
   <TouchableOpacity onPress={onPress} hitSlop={edgeInsets.all(10)}>
     <HeaderBack tintColor={tintColor} style={styles.headerBack} />
   </TouchableOpacity>
-)
+);
 
 const Header = ({
+  title = '',
+  titleStyle,
+  text = '',
+  textStyle,
   displayName = '',
   imageSrc,
   style,
-  titleStyle,
-  textStyle,
   iconColor,
-  title = strings.formatString(strings.home.welcome, (
-    displayName && displayName.trim()
-      ? displayName.trim().split(' ')[0]
-      : ''
-  )),
-  text = strings.home.whats_new,
+  onGoBack,
   loading = false,
-  showAvatar = true,
+  showAvatar = false,
   headerBack = false,
   Right,
   Logo: HeaderLogo,
 }) => {
-  const { navigate, goBack } = useNavigation()
-  const { colors } = useAppColors()
+  const { navigate, goBack } = useNavigation();
+  const { colors } = useAppColors();
 
   const onHeaderPress = useCallback(() => {
-    navigate(routes.PROFILE)
-  }, [navigate])
+    navigate(routes.PROFILE);
+  }, [navigate]);
 
   return (
     <View style={[styles.header, style]}>
       <View style={styles.greetings}>
         <View style={styles.section}>
           {headerBack && (
-            <HeaderNavigationBack tintColor={iconColor || colors.textPrimary} onPress={goBack} />
+            <HeaderNavigationBack
+              tintColor={iconColor || colors.textPrimary}
+              onPress={onGoBack || goBack}
+            />
           )}
           <View style={{ flex: 1 }}>
             <View style={styles.section}>
@@ -85,12 +86,16 @@ const Header = ({
           </View>
         </View>
       </View>
-      {Right && <Right />}
+      {isValidElement(Right) && Right}
       {showAvatar && (
-        <HeaderAvatar displayName={displayName} photoURL={imageSrc} onPress={onHeaderPress} />
+        <HeaderAvatar
+          displayName={displayName}
+          photoURL={imageSrc}
+          onPress={onHeaderPress}
+        />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

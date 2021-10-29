@@ -1,14 +1,16 @@
-import { memo, useState, useCallback, forwardRef } from 'react'
-import { TouchableOpacity } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import {
+  memo, useState, useCallback, forwardRef,
+} from 'react';
+import { TouchableOpacity } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppStyles } from '@app/shared/hooks';
 
-import TextInput from '../text'
-import createThemedStyles from '../styles'
+import TextInput from '../text';
+import createThemedStyles from '../styles';
 
 export const EyeButton = ({ secureTextEntry, onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <TouchableOpacity style={styles.iconWrapper} onPress={onPress}>
       <Ionicon
@@ -17,22 +19,22 @@ export const EyeButton = ({ secureTextEntry, onPress }) => {
         size={30}
       />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const InputPassword = forwardRef((props, ref) => {
-  const [value, setValue] = useState(null)
-  const [secureTextEntry, setSecureTextEntry] = useState(true)
+  const [value, setValue] = useState(null);
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
 
   const onChangeText = useCallback((text) => {
-    const { fieldName, onValueChange } = props
-    onValueChange(text, fieldName)
-    setValue(text)
-  }, [props])
+    const { fieldName, onValueChange } = props;
+    onValueChange(text, fieldName);
+    setValue(text);
+  }, [props]);
 
   const togglePassword = useCallback(() => {
-    setSecureTextEntry((state) => !state)
-  }, [])
+    setSecureTextEntry((state) => !state);
+  }, []);
 
   return (
     <TextInput
@@ -41,11 +43,11 @@ const InputPassword = forwardRef((props, ref) => {
       onChangeText={onChangeText}
       ref={ref}
       {...props}
-      Right={() => (
+      Right={(
         <EyeButton secureTextEntry={secureTextEntry} onPress={togglePassword} />
       )}
     />
-  )
-})
+  );
+});
 
-export default memo(InputPassword)
+export default memo(InputPassword);

@@ -1,13 +1,13 @@
-import * as redux from 'react-redux'
-import { act } from 'react-test-renderer'
+import * as redux from 'react-redux';
+import { act } from 'react-test-renderer';
 
-import setupTest from '@app/config/jest-setup'
-import { api } from '@app/shared/services'
-import NoResult from '@app/features/search/components/no-result'
-import HistoryItem from '@app/features/search/components/history-item'
-import * as types from '@app/redux/types'
+import setupTest from '@app/config/jest-setup';
+import { api } from '@app/shared/services';
+import NoResult from '@app/features/search/components/no-result';
+import HistoryItem from '@app/features/search/components/history-item';
+import * as types from '@app/redux/types';
 
-import SearchUsers, { SearchHistoryHeader, SearchResult } from '../index'
+import SearchUsers, { SearchHistoryHeader, SearchResult } from '../index';
 
 const users = [{
   id: 1,
@@ -30,14 +30,14 @@ const users = [{
   photoURL: null,
   posts: Array(3),
   comments: Array(40),
-}]
+}];
 
 api.authors.search = jest.fn().mockImplementation(async (query) => {
   const results = users.filter((user) => (
     user.displayName.toLowerCase().includes(query.toLowerCase())
-  ))
-  return results
-})
+  ));
+  return results;
+});
 
 const givenSearchUsers = setupTest(SearchUsers)({
   __storeState__: {
@@ -50,70 +50,70 @@ const givenSearchUsers = setupTest(SearchUsers)({
   searchQuery: '',
   onSearch: jest.fn(),
   onRecentSearch: jest.fn(),
-})
+});
 
 it('renders SearchUsers history', async () => {
-  let wrapper
-  let props
+  let wrapper;
+  let props;
 
-  const useDispatchSpy = jest.spyOn(redux, 'useDispatch')
-  const mockDispatchFn = jest.fn()
-  useDispatchSpy.mockReturnValue(mockDispatchFn)
+  const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
+  const mockDispatchFn = jest.fn();
+  useDispatchSpy.mockReturnValue(mockDispatchFn);
 
   await act(async () => {
-    const { wrapper: asyncWrapper, props: asyncProps } = await givenSearchUsers()
-    wrapper = asyncWrapper
-    props = asyncProps
-  })
+    const { wrapper: asyncWrapper, props: asyncProps } = await givenSearchUsers();
+    wrapper = asyncWrapper;
+    props = asyncProps;
+  });
 
-  expect(wrapper.toJSON()).toMatchSnapshot()
-  expect(wrapper.root.findAllByType(SearchResult).length).toBe(0)
-  expect(wrapper.root.findAllByType(HistoryItem).length).toBe(2)
-
-  act(() => {
-    wrapper.root.findAllByType(HistoryItem)[0].props.onPress()
-  })
-
-  expect(props.onRecentSearch).toBeCalledTimes(1)
+  expect(wrapper.toJSON()).toMatchSnapshot();
+  expect(wrapper.root.findAllByType(SearchResult).length).toBe(0);
+  expect(wrapper.root.findAllByType(HistoryItem).length).toBe(2);
 
   act(() => {
-    wrapper.root.findAllByType(HistoryItem)[0].props.onDelete('user-to-delete')
-  })
+    wrapper.root.findAllByType(HistoryItem)[0].props.onPress();
+  });
 
-  expect(mockDispatchFn).toBeCalledTimes(1)
-  expect(mockDispatchFn).toBeCalledWith({ type: types.REMOVE_USER_HISTORY, payload: 'user-to-delete' })
+  expect(props.onRecentSearch).toBeCalledTimes(1);
 
   act(() => {
-    wrapper.root.findAllByType(SearchHistoryHeader)[0].props.onClear()
-  })
+    wrapper.root.findAllByType(HistoryItem)[0].props.onDelete('user-to-delete');
+  });
 
-  expect(mockDispatchFn).toBeCalledWith({ type: types.CLEAR_USER_HISTORY })
+  expect(mockDispatchFn).toBeCalledTimes(1);
+  expect(mockDispatchFn).toBeCalledWith({ type: types.REMOVE_USER_HISTORY, payload: 'user-to-delete' });
 
-  useDispatchSpy.mockClear()
-})
+  act(() => {
+    wrapper.root.findAllByType(SearchHistoryHeader)[0].props.onClear();
+  });
+
+  expect(mockDispatchFn).toBeCalledWith({ type: types.CLEAR_USER_HISTORY });
+
+  useDispatchSpy.mockClear();
+});
 
 it('renders SearchUsers results', async () => {
-  let wrapper
+  let wrapper;
   await act(async () => {
     const { wrapper: asyncWrapper } = await givenSearchUsers({
       searchQuery: ' bruno ',
-    })
-    wrapper = asyncWrapper
-  })
+    });
+    wrapper = asyncWrapper;
+  });
 
-  expect(wrapper.toJSON()).toMatchSnapshot()
-  expect(wrapper.root.findAllByType(SearchResult).length).toBe(2)
-})
+  expect(wrapper.toJSON()).toMatchSnapshot();
+  expect(wrapper.root.findAllByType(SearchResult).length).toBe(2);
+});
 
 it('renders SearchUsers empty results', async () => {
-  let wrapper
+  let wrapper;
   await act(async () => {
     const { wrapper: asyncWrapper } = await givenSearchUsers({
       searchQuery: 'Kebetoo',
-    })
-    wrapper = asyncWrapper
-  })
+    });
+    wrapper = asyncWrapper;
+  });
 
-  expect(wrapper.root.findAllByType(SearchResult).length).toBe(0)
-  expect(wrapper.root.findAllByType(NoResult).length).toBe(1)
-})
+  expect(wrapper.root.findAllByType(SearchResult).length).toBe(0);
+  expect(wrapper.root.findAllByType(NoResult).length).toBe(1);
+});

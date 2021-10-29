@@ -297,13 +297,24 @@ exports[`renders HomePage 1`] = `
                           }
                         >
                           <Header
+                            Right={
+                              <_default
+                                color="rgba(0,0,0,0.87)"
+                                name="search-outline"
+                                onPress={[Function]}
+                                size={30}
+                              />
+                            }
                             displayName="Bruno Bodian"
                             imageSrc="https://avatars1.githubusercontent.com/u/14147533"
+                            showAvatar={true}
                             style={
                               Object {
                                 "marginBottom": 16,
                               }
                             }
+                            text="Happy to see you!"
+                            title="Hey Bruno,"
                           />
                           <Memo(SegmentedControl)
                             items={
@@ -774,6 +785,19 @@ exports[`renders HomePage 1`] = `
                                   </View>
                                 </View>
                               </View>
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Object {
+                                    "color": "rgba(0,0,0,0.87)",
+                                    "fontFamily": "Ionicons",
+                                    "fontSize": 30,
+                                    "fontStyle": "normal",
+                                    "fontWeight": "normal",
+                                  }
+                                }
+                                text="ionicon-search-outline"
+                              />
                               <View
                                 accessible={true}
                                 focusable={true}
@@ -799,8 +823,8 @@ exports[`renders HomePage 1`] = `
                                         "width": 30,
                                       },
                                       Object {
-                                        "height": 35,
-                                        "width": 35,
+                                        "height": 30,
+                                        "width": 30,
                                       },
                                       undefined,
                                     ]

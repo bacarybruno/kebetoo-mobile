@@ -1,8 +1,8 @@
-import { elevation, metrics } from '@app/theme'
-import { StyleSheet } from 'react-native'
+import { elevation, metrics } from '@app/theme';
+import { StyleSheet } from 'react-native';
 
-const height = 40
-const borderRadius = height / 2
+const height = 40;
+const borderRadius = height / 2;
 export default (colors) => StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -31,4 +31,4 @@ export default (colors) => StyleSheet.create({
     borderTopRightRadius: borderRadius,
     borderBottomRightRadius: borderRadius,
   },
-})
+});

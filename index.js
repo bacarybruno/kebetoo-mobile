@@ -1,20 +1,16 @@
-import { AppRegistry } from 'react-native'
-import { KeyboardRegistry } from 'react-native-ui-lib/keyboard'
+import { AppRegistry } from 'react-native';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 
-import '@app/shared/helpers/polyfills'
-import '@app/config/notifications'
-import '@app/config/firebase'
+import '@app/shared/helpers/polyfills';
+import '@app/config/notifications';
+import '@app/config/firebase';
 
-import { EmojiSelector } from '@app/shared/components'
-import { keyboardName } from '@app/shared/components/emoji-selector'
-
-import { name as appName } from './app.json'
-import App from './src'
+import { name as appName } from './app.json';
+import App from './src';
 
 const HeadlessCheck = ({ isHeadless }) => {
-  if (isHeadless) return null
-  return <App />
-}
+  if (isHeadless) return null;
+  return <App />;
+};
 
-AppRegistry.registerComponent(appName, () => HeadlessCheck)
-KeyboardRegistry.registerKeyboard(keyboardName, () => EmojiSelector)
+AppRegistry.registerComponent(appName, () => gestureHandlerRootHOC(HeadlessCheck));

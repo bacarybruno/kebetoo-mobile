@@ -1,20 +1,20 @@
-import { act } from 'react-test-renderer'
+import { act } from 'react-test-renderer';
 
-import setupTest from '@app/config/jest-setup'
+import setupTest from '@app/config/jest-setup';
 
-import Room from '../index'
+import Room from '../index';
 
 const givenRoom = setupTest(Room)({
   navigation: {
     navigate: jest.fn(),
-    addListener: jest.fn().mockImplementation((event, callback) => { callback(); return jest.fn() })
+    addListener: jest.fn().mockImplementation((e, callback) => { callback(); return jest.fn(); }),
   },
-})
+});
 
 it('renders Room', () => {
-  let wrapper
+  let wrapper;
   act(() => {
-    wrapper = givenRoom().wrapper
-  })
-  expect(wrapper.toJSON()).toMatchSnapshot()
-})
+    wrapper = givenRoom().wrapper;
+  });
+  expect(wrapper.toJSON()).toMatchSnapshot();
+});

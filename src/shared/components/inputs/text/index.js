@@ -1,25 +1,25 @@
-import { useState, useCallback, forwardRef } from 'react'
+import { useState, useCallback, forwardRef } from 'react';
 import {
   View, TextInput, TouchableOpacity, Animated,
-} from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import Popover, { PopoverPlacement } from 'react-native-popover-view'
+} from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import Popover, { PopoverPlacement } from 'react-native-popover-view';
 
-import { Typography } from '@app/shared/components'
-import { capitalize } from '@app/shared/helpers/strings'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
+import { Typography } from '@app/shared/components';
+import { capitalize } from '@app/shared/helpers/strings';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from '../styles'
+import createThemedStyles from '../styles';
 
 export const ErrorTooltip = (styles, colors) => (
   <TouchableOpacity style={styles.iconWrapper}>
     <Ionicon name="alert-circle" size={28} color={colors.pink} />
   </TouchableOpacity>
-)
+);
 
 export const PopoverTooltip = ({ message, from = ErrorTooltip }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <Popover
@@ -29,8 +29,8 @@ export const PopoverTooltip = ({ message, from = ErrorTooltip }) => {
     >
       <Typography text={capitalize(message)} />
     </Popover>
-  )
-}
+  );
+};
 
 const InputText = forwardRef((props, ref) => {
   const {
@@ -41,7 +41,6 @@ const InputText = forwardRef((props, ref) => {
     wrapperStyle,
     textStyle,
     error,
-    withEmoji,
     Left,
     Right,
     children,
@@ -51,23 +50,28 @@ const InputText = forwardRef((props, ref) => {
     inputChildren,
     hideValue,
     ...otherProps
-  } = props
-  const [value, setValue] = useState("")
+  } = props;
+  const [value, setValue] = useState('');
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   const onChangeText = useCallback((newValue) => {
-    if (onValueChange) onValueChange(newValue, fieldName)
+    if (onValueChange) onValueChange(newValue, fieldName);
     if (!hideValue) {
-      setValue(newValue)
+      setValue(newValue);
     }
-  }, [onValueChange, fieldName, hideValue])
+  }, [onValueChange, fieldName, hideValue]);
 
-  const hasTrailingItem = error || Right
+  const hasTrailingItem = error || Right;
 
   return (
     <Animated.View
-      style={[styles.wrapper, wrapperStyle, height && { height }, error && !borderless && styles.error]}
+      style={[
+        styles.wrapper,
+        wrapperStyle,
+        height && { height },
+        error && !borderless && styles.error,
+      ]}
     >
       {children}
       <View style={[styles.inputWrapper, inputWrapperStyle]}>
@@ -91,11 +95,11 @@ const InputText = forwardRef((props, ref) => {
         </TextInput>
         {error
           ? <PopoverTooltip message={error} />
-          : Right && <Right />}
+          : Right}
       </View>
     </Animated.View>
-  )
-})
+  );
+});
 
 
-export default InputText
+export default InputText;

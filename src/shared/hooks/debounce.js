@@ -1,12 +1,12 @@
 const debounce = (func, wait = 500) => {
-  let timeout
+  let timeout;
   return (...args) => {
-    if (timeout) clearTimeout(timeout)
+    if (timeout) clearTimeout(timeout);
     timeout = setTimeout(() => {
-      timeout = null
-      func(...args)
-    }, wait)
-  }
-}
+      timeout = null;
+      func(...args);
+    }, wait);
+  };
+};
 
-export default debounce
+export default debounce;

@@ -1,23 +1,23 @@
-import { useEffect, useState, useCallback } from 'react'
-import { View, FlatList } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useEffect, useState, useCallback } from 'react';
+import { View, FlatList } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { api } from '@app/shared/services'
-import { NoContent, Typography } from '@app/shared/components'
-import BasicPost from '@app/features/post/containers/basic-post'
-import * as types from '@app/redux/types'
-import { recentSearchHistory } from '@app/redux/selectors'
-import { strings } from '@app/config'
-import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks'
+import { api } from '@app/shared/services';
+import { NoContent, Typography } from '@app/shared/components';
+import BasicPost from '@app/features/post/containers/basic-post';
+import * as types from '@app/redux/types';
+import { recentSearchHistory } from '@app/redux/selectors';
+import { strings } from '@app/config';
+import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks';
+import HistoryItem from '@app/features/search/components/history-item';
+import NoResult from '@app/features/search/components/no-result';
 
-import createThemedStyles from './styles'
-import HistoryItem from '../../components/history-item'
-import NoResult from '../../components/no-result'
+import createThemedStyles from './styles';
 
 export const SearchHistoryHeader = ({ onClear }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
   return (
     <View style={[styles.historyHeader, styles.paddingHorizontal]}>
       <View style={styles.container}>
@@ -37,51 +37,51 @@ export const SearchHistoryHeader = ({ onClear }) => {
         text={strings.search.clear_all}
       />
     </View>
-  )
-}
+  );
+};
 
 const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
-  const [posts, setPosts] = useState([])
-  const [authors, setAuthors] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
+  const [posts, setPosts] = useState([]);
+  const [authors, setAuthors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
-  const { posts: postsHistory } = useSelector(recentSearchHistory)
-  const dispatch = useDispatch()
+  const { posts: postsHistory } = useSelector(recentSearchHistory);
+  const dispatch = useDispatch();
 
-  const { getRepostAuthors } = usePosts()
+  const { getRepostAuthors } = usePosts();
 
   useEffect(() => {
-    const query = searchQuery.trim()
+    const query = searchQuery.trim();
     if (query.length > 0) {
-      setIsLoading(true)
+      setIsLoading(true);
       api.posts.search(query)
         .then((data) => {
-          setPosts(data)
-          dispatch({ type: types.ADD_POST_HISTORY, payload: query })
+          setPosts(data);
+          dispatch({ type: types.ADD_POST_HISTORY, payload: query });
         })
         .finally(() => {
-          setIsLoading(false)
-        })
+          setIsLoading(false);
+        });
     } else {
-      setPosts([])
+      setPosts([]);
     }
-  }, [dispatch, onSearch, searchQuery])
+  }, [dispatch, onSearch, searchQuery]);
 
   useEffect(() => {
-    onSearch(isLoading)
-  }, [isLoading, onSearch])
+    onSearch(isLoading);
+  }, [isLoading, onSearch]);
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
-      const data = await getRepostAuthors(posts)
-      setAuthors(data)
-    }
-    fetchRepostAuthors()
-  }, [posts, getRepostAuthors])
+      const data = await getRepostAuthors(posts);
+      setAuthors(data);
+    };
+    fetchRepostAuthors();
+  }, [posts, getRepostAuthors]);
 
-  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, [])
+  const createKey = useCallback((item, index) => `basic-post-${item.id}-${index}`, []);
 
   const renderBasicPost = useCallback(({ item }) => (
     <BasicPost
@@ -93,7 +93,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
           : item.author
       }
     />
-  ), [authors])
+  ), [authors]);
 
   const renderSearchResultsHeader = useCallback(() => (
     <Typography
@@ -103,23 +103,23 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
       style={styles.sectionHeader}
       text={strings.search.results}
     />
-  ), [styles.sectionHeader])
+  ), [styles.sectionHeader]);
 
   const onClearAllRecentSearches = useCallback(() => {
-    dispatch({ type: types.CLEAR_POST_HISTORY })
-  }, [dispatch])
+    dispatch({ type: types.CLEAR_POST_HISTORY });
+  }, [dispatch]);
 
   const onClearRecentSearch = useCallback((payload) => {
-    dispatch({ type: types.REMOVE_POST_HISTORY, payload })
-  }, [dispatch])
+    dispatch({ type: types.REMOVE_POST_HISTORY, payload });
+  }, [dispatch]);
 
   const renderSearchHistoryHeader = useCallback(() => (
     <SearchHistoryHeader onClear={onClearAllRecentSearches} />
-  ), [onClearAllRecentSearches])
+  ), [onClearAllRecentSearches]);
 
   const renderSearchHistory = useCallback(({ item }) => (
     <HistoryItem onPress={onRecentSearch} onDelete={onClearRecentSearch} item={item} />
-  ), [onClearRecentSearch, onRecentSearch])
+  ), [onClearRecentSearch, onRecentSearch]);
 
   return (
     <View style={styles.wrapper}>
@@ -152,7 +152,7 @@ const SearchPosts = ({ searchQuery, onSearch, onRecentSearch }) => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
-export default SearchPosts
+export default SearchPosts;

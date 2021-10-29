@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default StyleSheet.create({
   wrapper: {
@@ -8,4 +8,4 @@ export default StyleSheet.create({
     paddingVertical: metrics.spacing.xs,
     borderRadius: metrics.radius.round,
   },
-})
+});

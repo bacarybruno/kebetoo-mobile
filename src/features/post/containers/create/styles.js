@@ -1,8 +1,8 @@
-import { Platform, StyleSheet } from 'react-native'
-import { human, systemWeights } from 'react-native-typography'
+import { Platform, StyleSheet } from 'react-native';
+import { human, systemWeights } from 'react-native-typography';
 
-import { metrics, elevation } from '@app/theme'
-import Typography from '@app/shared/components/typography'
+import { metrics, elevation } from '@app/theme';
+import Typography from '@app/shared/components/typography';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -63,4 +63,4 @@ export default (colors) => StyleSheet.create({
     left: 10,
     bottom: 5,
   },
-})
+});

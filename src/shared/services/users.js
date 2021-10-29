@@ -1,28 +1,28 @@
-import messaging from '@react-native-firebase/messaging'
+import messaging from '@react-native-firebase/messaging';
 
-import { api } from '@app/shared/services'
+import { api } from '@app/shared/services';
 
 export const getUser = async (uid) => {
-  const [author] = await api.authors.getByUid(uid)
-  return author
-}
+  const [author] = await api.authors.getByUid(uid);
+  return author;
+};
 
 export const createOrUpdateUser = async ({ id, displayName, photoURL }) => {
-  let author = await getUser(id)
+  let author = await getUser(id);
   if (author) {
-    await api.authors.update(author.id, { displayName, photoURL })
+    await api.authors.update(author.id, { displayName, photoURL });
   } else {
-    author = await api.authors.create({ uid: id, displayName, photoURL })
+    author = await api.authors.create({ uid: id, displayName, photoURL });
   }
-  return author
-}
+  return author;
+};
 
 export const getNotificationToken = async () => {
   if (messaging().isDeviceRegisteredForRemoteMessages) {
-    const token = await messaging().getToken()
-    return token
+    const token = await messaging().getToken();
+    return token;
   }
-  return null
-}
+  return null;
+};
 
-export const getUsers = (ids) => api.authors.batchGetById(ids)
+export const getUsers = (ids) => api.authors.batchGetById(ids);

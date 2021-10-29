@@ -1,13 +1,13 @@
-import { memo } from 'react'
-import { TouchableOpacity, View } from 'react-native'
+import { memo, useEffect, useState } from 'react';
+import { TouchableOpacity, View } from 'react-native';
 
-import { useAppStyles } from '@app/shared/hooks'
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
-import Typography from '../typography'
+import createThemedStyles from './styles';
+import Typography from '../typography';
 
 export const Segment = ({ item, selected, onPress }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <TouchableOpacity
       style={[styles.item, styles.bordered, selected && styles.selected]}
@@ -21,17 +21,24 @@ export const Segment = ({ item, selected, onPress }) => {
         numberOfLines={1}
       />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const SegmentedControl = ({
   items, selectedValue, onSelect = () => {}, style, ...otherProps
 }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const [selectedItem, setSelectedItem] = useState({ value: selectedValue });
+  const styles = useAppStyles(createThemedStyles);
+
+  useEffect(() => {
+    if (selectedValue !== selectedItem.value) {
+      onSelect(selectedItem);
+    }
+  }, [selectedValue, selectedItem, onSelect]);
 
   if (!items?.length) {
-    console.warn('SegmentedControl items should not be empty')
-    return null
+    console.warn('SegmentedControl items should not be empty');
+    return null;
   }
 
   return (
@@ -40,12 +47,12 @@ const SegmentedControl = ({
         <Segment
           key={`item-${item.label}-${item.value}-${index}`}
           item={item}
-          selected={selectedValue === item.value}
-          onPress={onSelect}
+          selected={selectedItem.value === item.value}
+          onPress={setSelectedItem}
         />
       ))}
     </View>
-  )
-}
+  );
+};
 
-export default memo(SegmentedControl)
+export default memo(SegmentedControl);

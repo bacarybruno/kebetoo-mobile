@@ -1,22 +1,24 @@
-import { useEffect, useState, useCallback } from 'react'
-import { View, SectionList, Image, Text, ActivityIndicator } from 'react-native'
-import dayjs from 'dayjs'
+import { useEffect, useState, useCallback } from 'react';
+import {
+  View, SectionList, Image, Text, ActivityIndicator,
+} from 'react-native';
+import dayjs from 'dayjs';
 
-import { api } from '@app/shared/services'
+import { api } from '@app/shared/services';
 import {
   Badge, Typography, Pressable, TextAvatar, AppHeader,
-} from '@app/shared/components'
-import BasicPost from '@app/features/post/containers/basic-post'
-import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks'
-import { metrics } from '@app/theme'
-import { strings } from '@app/config'
-import routes from '@app/navigation/routes'
+} from '@app/shared/components';
+import BasicPost from '@app/features/post/containers/basic-post';
+import { useAppColors, useAppStyles, usePosts } from '@app/shared/hooks';
+import { metrics } from '@app/theme';
+import { strings } from '@app/config';
+import routes from '@app/navigation/routes';
 
-import { Stats } from '../index'
-import createThemedStyles from './styles'
+import { Stats } from '../index';
+import createThemedStyles from './styles';
 
 export const SectionHeader = ({ section, dateFormat }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <View style={[styles.sectionHeader, styles.paddingHorizontal]}>
       <Typography
@@ -26,14 +28,14 @@ export const SectionHeader = ({ section, dateFormat }) => {
       />
       <Badge text={`${section.data.length}+`} />
     </View>
-  )
-}
+  );
+};
 
-const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com')
+const isGoogleImageUrl = (url) => url && url.includes('googleusercontent.com');
 
 const Bio = ({ text }) => {
-  const styles = useAppStyles(createThemedStyles)
-  if (!text) return null
+  const styles = useAppStyles(createThemedStyles);
+  if (!text) return null;
   return (
     <View style={styles.bio}>
       <Typography
@@ -47,19 +49,19 @@ const Bio = ({ text }) => {
         color={Typography.colors.tertiary}
       />
     </View>
-  )
-}
+  );
+};
 
 const UserProfile = ({ route, navigation }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
-  const { params: { userId } } = route
-  const [posts, setPosts] = useState([])
-  const [sortedPosts, setSortedPosts] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [authors, setAuthors] = useState({})
-  const [next, setNext] = useState(null)
+  const { params: { userId } } = route;
+  const [posts, setPosts] = useState([]);
+  const [sortedPosts, setSortedPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [authors, setAuthors] = useState({});
+  const [next, setNext] = useState(null);
   const [user, setUser] = useState({
     displayName: ' ',
     photoURL: null,
@@ -70,53 +72,53 @@ const UserProfile = ({ route, navigation }) => {
     createdAt: dayjs().toISOString(),
     username: null,
     bio: null,
-  })
+  });
 
-  const dateFormat = 'YYYY-MM'
+  const dateFormat = 'YYYY-MM';
 
-  const { getRepostAuthors } = usePosts()
+  const { getRepostAuthors } = usePosts();
 
-  const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL
+  const photoURL = isGoogleImageUrl(user.photoURL) ? user.photoURL.replace('s96-c', 's400-c') : user.photoURL;
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       const [author, activities] = await Promise.all([
         api.authors.getById(userId),
-        api.authors.getActivities(userId)
-      ])
-      setUser(author)
-      setPosts(activities.items)
-      setNext(activities.metadata?.next)
-      setIsLoading(false)
-    }
+        api.authors.getActivities(userId),
+      ]);
+      setUser(author);
+      setPosts(activities.items);
+      setNext(activities.metadata?.next);
+      setIsLoading(false);
+    };
 
-    fetchData()
-  }, [userId])
+    fetchData();
+  }, [userId]);
 
   const loadMore = useCallback(async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (next) {
-      const activities = await api.authors.getActivities(userId, next)
-      setPosts((posts) => [...posts, ...activities.items])
-      setNext(activities.metadata?.next)
+      const activities = await api.authors.getActivities(userId, next);
+      setPosts((state) => [...state, ...activities.items]);
+      setNext(activities.metadata?.next);
     }
-    setIsLoading(false)
-  }, [next])
+    setIsLoading(false);
+  }, [next, userId]);
 
   useEffect(() => {
-    const dateMap = {}
+    const dateMap = {};
     posts.forEach((post) => {
-      const date = dayjs(post.createdAt).format(dateFormat)
-      if (!dateMap[date]) dateMap[date] = []
-      dateMap[date].push(post)
-    })
+      const date = dayjs(post.createdAt).format(dateFormat);
+      if (!dateMap[date]) dateMap[date] = [];
+      dateMap[date].push(post);
+    });
     const formattedPosts = Object.keys(dateMap).map((key) => ({
       title: key,
       data: dateMap[key],
-    }))
-    setSortedPosts(formattedPosts)
-  }, [posts])
+    }));
+    setSortedPosts(formattedPosts);
+  }, [posts]);
 
   useEffect(() => {
     const fetchRepostAuthors = async () => {
@@ -128,12 +130,12 @@ const UserProfile = ({ route, navigation }) => {
               || post.author?._id
               || post.author,
           },
-        }))
-      const data = await getRepostAuthors(postsData)
-      setAuthors(data)
-    }
-    fetchRepostAuthors()
-  }, [posts, getRepostAuthors])
+        }));
+      const data = await getRepostAuthors(postsData);
+      setAuthors(data);
+    };
+    fetchRepostAuthors();
+  }, [posts, getRepostAuthors]);
 
   const onListHeaderPress = useCallback(() => {
     if (photoURL) {
@@ -141,29 +143,29 @@ const UserProfile = ({ route, navigation }) => {
         source: {
           uri: photoURL,
         },
-      })
+      });
     }
-  }, [navigation, photoURL])
+  }, [navigation, photoURL]);
 
-  const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, [])
+  const keyExtractor = useCallback((item, index) => `section-item-${item.title}-${index}`, []);
 
   const renderSectionHeader = useCallback(({ section }) => (
     <SectionHeader section={section} dateFormat={dateFormat} />
-  ), [])
+  ), []);
 
   const renderItem = useCallback(({ item }) => {
-    const { type, data } = item
-    const post = data.post || data
+    const { type, data } = item;
+    const post = data.post || data;
 
     if (!post?.reactions) {
       // comments reactions or replies
-      return null
+      return null;
     }
 
-    let message = strings.user_profile.published_post
-    if (type === 'post' && post.repost) message = strings.user_profile.shared_post
-    else if (type === 'comment') message = strings.user_profile.commented_post
-    else if (type === 'reaction') message = strings.user_profile.reacted_post
+    let message = strings.user_profile.published_post;
+    if (type === 'post' && post.repost) message = strings.user_profile.shared_post;
+    else if (type === 'comment') message = strings.user_profile.commented_post;
+    else if (type === 'reaction') message = strings.user_profile.reacted_post;
 
     return (
       <View style={styles.paddingHorizontal}>
@@ -194,20 +196,27 @@ const UserProfile = ({ route, navigation }) => {
           post={post}
         />
       </View>
-    )
-  }, [authors, styles.paddingHorizontal, user])
+    );
+  }, [authors, styles.paddingHorizontal, styles.subheading, user]);
 
   const renderListHeader = useCallback(() => {
     const joinedAt = strings.formatString(
       strings.user_profile.joined_in,
       dayjs(user.createdAt).format(strings.dates.format_month_year),
-    )
+    );
     return (
       <Pressable style={styles.listHeader} testID="list-header" onPress={onListHeaderPress}>
-        <AppHeader headerBack showAvatar={false} title="" text="" style={styles.header} />
+        <AppHeader headerBack style={styles.header} />
         {photoURL
           ? <Image source={{ uri: photoURL }} style={styles.listHeaderImage} />
-          : <TextAvatar text={user.displayName} size={metrics.screenWidth} fontSize={150} noRadius />}
+          : (
+            <TextAvatar
+              noRadius
+              fontSize={150}
+              text={user.displayName}
+              size={metrics.screenWidth}
+            />
+          )}
         <View style={styles.profileInfos}>
           <View style={styles.profileInfoSection}>
             <Typography
@@ -235,8 +244,8 @@ const UserProfile = ({ route, navigation }) => {
         </View>
         <Bio text={user.bio} />
       </Pressable>
-    )
-  }, [onListHeaderPress, photoURL, styles, user])
+    );
+  }, [onListHeaderPress, photoURL, styles, user]);
 
   return (
     <View style={styles.wrapper}>
@@ -259,7 +268,7 @@ const UserProfile = ({ route, navigation }) => {
         )}
       />
     </View>
-  )
-}
+  );
+};
 
-export default UserProfile
+export default UserProfile;

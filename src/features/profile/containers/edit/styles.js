@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
-import { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import { metrics } from '@app/theme';
+import { hexToRgba, rgbaToHex } from '@app/theme/colors';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -32,4 +32,4 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
     marginBottom: metrics.spacing.md,
   },
-})
+});

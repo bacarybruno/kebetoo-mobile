@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
+import { metrics, elevation } from '@app/theme';
 
-export const bottomBarSize = 45
+export const bottomBarSize = 45;
 export default (colors) => StyleSheet.create({
   flexible: {
     flex: 1,
@@ -24,6 +24,7 @@ export default (colors) => StyleSheet.create({
     borderTopRightRadius: bottomBarSize / 2,
     backgroundColor: colors.backgroundSecondary,
     borderWidth: StyleSheet.hairlineWidth,
+    paddingRight: metrics.spacing.sm,
     ...elevation(1),
   },
   textInputWrapperWithReply: {
@@ -40,4 +41,7 @@ export default (colors) => StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     ...elevation(1),
   },
-})
+  reply: {
+    marginLeft: metrics.spacing.sm,
+  },
+});

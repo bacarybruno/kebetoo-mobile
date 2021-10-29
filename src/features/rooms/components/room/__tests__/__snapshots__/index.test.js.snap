@@ -441,7 +441,7 @@ exports[`renders Room 1`] = `
                               ]
                             }
                           >
-                            100k members
+                            100K members
                           </Text>
                         </Text>
                       </View>
@@ -487,7 +487,7 @@ exports[`renders Room 1`] = `
                             ]
                           }
                         >
-                          Hello and welcome to kebetoo!Hello and welcome to kebetoo!Hello and welcome to kebetoo!
+                          Hello and welcome to kebetoo!
                         </Text>
                       </Text>
                       <Text
@@ -965,7 +965,7 @@ exports[`renders discover Room 1`] = `
                               ]
                             }
                           >
-                            100k members
+                            100K members
                           </Text>
                         </Text>
                         <Text
@@ -1024,7 +1024,7 @@ exports[`renders discover Room 1`] = `
                             ]
                           }
                         >
-                          Created by JestCreated by JestCreated by Jest
+                          Created by Jest
                         </Text>
                       </Text>
                       <Text

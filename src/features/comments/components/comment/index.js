@@ -1,40 +1,40 @@
-import { useCallback, useState, useEffect } from 'react'
-import { View } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import dayjs from 'dayjs'
-import { useNavigation } from '@react-navigation/native'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { useCallback, useState, useEffect } from 'react';
+import { View } from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import dayjs from 'dayjs';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 import {
-  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, DoubleTapHandler,
-} from '@app/shared/components'
-import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post'
-import { REACTION_TYPES } from '@app/features/post/containers/reactions'
-import { api } from '@app/shared/services'
-import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder'
-import routes from '@app/navigation/routes'
-import { env } from '@app/config'
-import Kebeticon from '@app/shared/icons/kebeticons'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import { abbreviateNumber } from '@app/shared/helpers/strings'
+  CommentPlaceholder, Avatar, Typography, AudioPlayer, Pressable, MultipleTapHandler,
+} from '@app/shared/components';
+import { getPostType, POST_TYPES } from '@app/features/post/containers/basic-post/helpers';
+import { REACTION_TYPES } from '@app/features/post/containers/reactions/helpers';
+import { api } from '@app/shared/services';
+import { extractMetadataFromName } from '@app/shared/hooks/audio-recorder';
+import routes from '@app/navigation/routes';
+import { env } from '@app/config';
+import Kebeticon from '@app/shared/icons/kebeticons';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import { readableNumber } from '@app/shared/helpers/strings';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
 export const getAudioSource = (url) => (
   url.startsWith('http')
     ? url
     : `${env.assetsBaseUrl}/${url.startsWith('/') ? url.substr(1) : url}`
-)
+);
 
 export const Reactions = ({
   onReaction, reactions, user, repliesCount, onShowReplies,
 }) => {
   const loved = reactions.find((reaction) => (
     reaction.author === user && reaction.type === REACTION_TYPES.LOVE
-  ))
+  ));
 
-  const styles = useAppStyles(createThemedStyles)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const { colors } = useAppColors();
 
   return (
     <View style={styles.reactionsWrapper}>
@@ -42,7 +42,7 @@ export const Reactions = ({
         <Pressable borderless style={styles.reactionsButton} onPress={onShowReplies}>
           <Typography
             type={Typography.types.headline5}
-            text={abbreviateNumber(repliesCount)}
+            text={readableNumber(repliesCount)}
             systemColor={Typography.colors.primary}
           />
           <Typography type={Typography.types.body} text=" " />
@@ -74,11 +74,11 @@ export const Reactions = ({
           )}
       </Pressable>
     </View>
-  )
-}
+  );
+};
 
 const Header = ({ displayName, updatedAt }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <View style={styles.header}>
@@ -86,11 +86,11 @@ const Header = ({ displayName, updatedAt }) => {
       <Typography type={Typography.types.headline5} text=" • " />
       <Typography type={Typography.types.headline6} text={dayjs(updatedAt).fromNow()} />
     </View>
-  )
-}
+  );
+};
 
 const Content = ({ item }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   switch (getPostType(item)) {
     case POST_TYPES.AUDIO:
@@ -100,37 +100,46 @@ const Content = ({ item }) => {
           source={getAudioSource(item.audio.url)}
           duration={parseInt(extractMetadataFromName(item.audio.name).duration, 10)}
         />
-      )
+      );
     case POST_TYPES.TEXT:
-      return <Typography type={Typography.types.body} text={item.content.trim()} />
+      return <Typography type={Typography.types.body} text={item.content.trim()} />;
     default:
-      return null
+      return null;
   }
-}
+};
 
 const Comment = ({
-  item, displayName, photoURL, user, authorId, repliesCount, onShowReplies, avatarSize = 35,
+  item,
+  displayName,
+  photoURL,
+  user,
+  authorId,
+  repliesCount,
+  onShowReplies,
+  avatarSize = 35,
+  navigation,
 }) => {
-  const [reactions, setReactions] = useState(item.reactions)
+  const [reactions, setReactions] = useState(item.reactions);
 
   useEffect(() => {
-    setReactions(item.reactions)
-  }, [item.reactions])
+    setReactions(item.reactions);
+  }, [item.reactions]);
 
-  const { navigate } = useNavigation()
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { navigate } = navigation || useNavigation();
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   // TODO: optimistic ui update
   const onReaction = useCallback(async (type) => {
-    const userReaction = reactions.find((r) => r.author === user)
+    const userReaction = reactions.find((r) => r.author === user);
     if (userReaction === undefined) {
-      const result = await api.reactions.createCommentReaction(type, item.id, user)
-      result.author = result.author.id
-      setReactions((values) => values.concat([result]))
+      const result = await api.reactions.createCommentReaction(type, item.id, user);
+      result.author = result.author.id;
+      setReactions((values) => values.concat([result]));
     } else if (userReaction.type === type) {
-      await api.reactions.delete(userReaction.id)
-      setReactions((values) => values.filter((r) => r.id !== userReaction.id))
+      await api.reactions.delete(userReaction.id);
+      setReactions((values) => values.filter((r) => r.id !== userReaction.id));
     }
     // // Will be used when we'll have many reactions for comments
     // else {
@@ -142,21 +151,21 @@ const Comment = ({
     //     return [...values]
     //   })
     // }
-  }, [item.id, reactions, user])
+  }, [item.id, reactions, user]);
 
-  const onDoublePress = useCallback(async () => onReaction(REACTION_TYPES.LOVE), [onReaction])
+  const onDoublePress = useCallback(async () => onReaction(REACTION_TYPES.LOVE), [onReaction]);
 
   const onPress = useCallback(async () => {
     if (onShowReplies) {
-      await onShowReplies()
+      await onShowReplies();
     }
-  }, [onShowReplies])
+  }, [onShowReplies]);
 
   const onShowProfile = useCallback(() => {
-    navigate(routes.USER_PROFILE, { userId: authorId })
-  }, [navigate, authorId])
+    navigate(routes.USER_PROFILE, { userId: authorId });
+  }, [navigate, authorId]);
 
-  if (!displayName?.trim().length > 0) return <CommentPlaceholder />
+  if (!displayName?.trim().length > 0) return <CommentPlaceholder />;
 
   return (
     <View style={styles.row}>
@@ -165,7 +174,7 @@ const Comment = ({
           <Avatar src={photoURL} text={displayName} size={avatarSize} />
         </View>
       </TouchableWithoutFeedback>
-      <DoubleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
+      <MultipleTapHandler onPress={onPress} onDoublePress={onDoublePress}>
         <View style={styles.flexible}>
           <Header displayName={displayName} updatedAt={item.updatedAt} />
           <Content item={item} />
@@ -177,9 +186,9 @@ const Comment = ({
             onShowReplies={onShowReplies}
           />
         </View>
-      </DoubleTapHandler>
+      </MultipleTapHandler>
     </View>
-  )
-}
+  );
+};
 
-export default Comment
+export default Comment;

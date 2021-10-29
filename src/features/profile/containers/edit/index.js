@@ -1,27 +1,31 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
-import { TouchableOpacity, View, ActivityIndicator, InteractionManager } from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { addMethod as addYupMethod, string as yupString, object as yupObject } from 'yup'
-import auth from '@react-native-firebase/auth'
-import { useDispatch } from 'react-redux'
-import { isValidUsername } from 'twitter-text'
+import {
+  useCallback, useEffect, useReducer, useRef, useState,
+} from 'react';
+import {
+  TouchableOpacity, View, ActivityIndicator, InteractionManager,
+} from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { addMethod as addYupMethod, string as yupString, object as yupObject } from 'yup';
+import auth from '@react-native-firebase/auth';
+import { useDispatch } from 'react-redux';
+import { isValidUsername } from 'twitter-text';
 
-import { AppHeader, Avatar, OutlinedButton } from '@app/shared/components'
-import { env, strings } from '@app/config'
-import { useAppStyles, useUser } from '@app/shared/hooks'
-import { OutlinedTextInput } from '@app/shared/components/inputs'
-import useFilePicker from '@app/features/post/hooks/file-picker'
-import reducer, { actionTypes } from '@app/features/account/reducer'
-import { SET_USER_PROFILE } from '@app/redux/types'
-import { api } from '@app/shared/services'
+import { AppHeader, Avatar, OutlinedButton } from '@app/shared/components';
+import { env, strings } from '@app/config';
+import { useAppStyles, useUser } from '@app/shared/hooks';
+import { OutlinedTextInput } from '@app/shared/components/inputs';
+import useFilePicker from '@app/features/post/hooks/file-picker';
+import reducer, { actionTypes } from '@app/features/account/reducer';
+import { SET_USER_PROFILE } from '@app/redux/types';
+import { api } from '@app/shared/services';
 
-import createThemedStyles from './styles'
+import createThemedStyles from './styles';
 
-const routeOptions = { title: strings.profile.edit_profile }
+const routeOptions = { title: strings.profile.edit_profile };
 
 const TouchableAvatar = ({ profile, onPress, isLoading }) => {
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.8} disabled={isLoading}>
       <Avatar src={profile.photoURL} text={profile.displayName} size={115} fontSize={50}>
@@ -32,33 +36,33 @@ const TouchableAvatar = ({ profile, onPress, isLoading }) => {
         </View>
       </Avatar>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export const fieldNames = {
   fullName: 'fullName',
   email: 'email',
   username: 'username',
   bio: 'bio',
-}
+};
 
-addYupMethod(yupString, 'usernameValidator', function (message) {
-  return this.test('validate-username', message, function (value) {
-    const { path, createError } = this
-    const username = value.startsWith('@') ? value : `@${value}`
-    return isValidUsername(username) || createError({ path, message })
-  })
-})
+addYupMethod(yupString, 'usernameValidator', function usernameValidator(message) {
+  return this.test('validate-username', message, function validateUsername(value) {
+    const { path, createError } = this;
+    const username = value.startsWith('@') ? value : `@${value}`;
+    return isValidUsername(username) || createError({ path, message });
+  });
+});
 
 const EditProfile = ({ route, navigation }) => {
-  const [avatarLoading, setAvatarLoading] = useState(false)
-  const { profile, showAvatarOptions } = useUser()
-  const usernameRef = useRef()
-  const styles = useAppStyles(createThemedStyles)
-  const { navigate, goBack } = navigation
-  const { saveImage } = useFilePicker()
-  const reduxDispatch = useDispatch()
-  const { currentUser } = auth()
+  const [avatarLoading, setAvatarLoading] = useState(false);
+  const { profile, showAvatarOptions } = useUser();
+  const usernameRef = useRef();
+  const styles = useAppStyles(createThemedStyles);
+  const { navigate, goBack } = navigation;
+  const { saveImage } = useFilePicker();
+  const reduxDispatch = useDispatch();
+  const { currentUser } = auth();
 
   const initialState = {
     values: {
@@ -74,9 +78,9 @@ const EditProfile = ({ route, navigation }) => {
       [fieldNames.bio]: null,
     },
     isLoading: false,
-  }
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const { values, errors, isLoading } = state
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { values, errors, isLoading } = state;
 
   const schema = yupObject().shape({
     [fieldNames.email]: yupString().email(
@@ -93,48 +97,48 @@ const EditProfile = ({ route, navigation }) => {
       strings.formatString(strings.errors.invalid_field, strings.auth.username),
     ),
     [fieldNames.bio]: yupString().optional().nullable(),
-  })
+  });
 
   const formatUsername = useCallback((val) => {
-    value = val.toLowerCase()
+    let value = val.toLowerCase();
     if (value.length > 0 && value[0] !== '@') {
-      value = '@' + value
+      value = `@${value}`;
     }
-    return value
-  }, [])
+    return value;
+  }, []);
 
   const onChangeText = useCallback((val, field) => {
-    let value = val
+    let value = val;
     if (field === fieldNames.username) {
-      value = formatUsername(value)
+      value = formatUsername(value);
     }
-    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } })
-    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field })
-  }, [formatUsername])
+    dispatch({ type: actionTypes.SET_VALUE, payload: { field, value } });
+    dispatch({ type: actionTypes.CLEAR_ERROR, payload: field });
+  }, [formatUsername]);
 
   const onSubmit = useCallback(async () => {
     try {
-      dispatch({ type: actionTypes.START_LOADING })
-      await schema.validate(values)
+      dispatch({ type: actionTypes.START_LOADING });
+      await schema.validate(values);
 
       const payload = {
         username: values[fieldNames.username] || profile.username,
         displayName: values[fieldNames.fullName] || profile.displayName,
         bio: values[fieldNames.bio] || null,
-      }
+      };
 
-      const foundAuthors = await api.authors.getByUsername(payload.username)
+      const foundAuthors = await api.authors.getByUsername(payload.username);
       if (foundAuthors.length > 0 && foundAuthors[0].id !== profile.uid) {
-        const usernameTakenError = new Error(strings.errors.username_taken)
-        usernameTakenError.name = 'ValidationError'
-        usernameTakenError.path = fieldNames.username
-        throw usernameTakenError
+        const usernameTakenError = new Error(strings.errors.username_taken);
+        usernameTakenError.name = 'ValidationError';
+        usernameTakenError.path = fieldNames.username;
+        throw usernameTakenError;
       }
 
-      await api.authors.update(profile.uid, payload)
-      await currentUser.updateProfile(payload)
-      reduxDispatch({ type: SET_USER_PROFILE, payload })
-      goBack()
+      await api.authors.update(profile.uid, payload);
+      await currentUser.updateProfile(payload);
+      reduxDispatch({ type: SET_USER_PROFILE, payload });
+      goBack();
     } catch (error) {
       if (error.name === 'ValidationError') {
         dispatch({
@@ -143,24 +147,24 @@ const EditProfile = ({ route, navigation }) => {
             field: error.path,
             value: error.message,
           },
-        })
+        });
       }
     } finally {
-      dispatch({ type: actionTypes.END_LOADING })
+      dispatch({ type: actionTypes.END_LOADING });
     }
-  }, [schema, values, profile, currentUser, reduxDispatch, goBack])
+  }, [schema, values, profile, currentUser, reduxDispatch, goBack]);
 
   const onAvatarOptions = useCallback(async () => {
-    await showAvatarOptions({ onLoading: setAvatarLoading, navigate, saveImage })
-  }, [navigate, saveImage, showAvatarOptions])
+    await showAvatarOptions({ onLoading: setAvatarLoading, navigate, saveImage });
+  }, [navigate, saveImage, showAvatarOptions]);
 
   useEffect(() => {
     if (route.params?.field === 'username' && usernameRef.current) {
       InteractionManager.runAfterInteractions(() => {
-        usernameRef.current.focus()
-      })
+        usernameRef.current.focus();
+      });
     }
-  }, [route])
+  }, [route]);
 
   return (
     <KeyboardAwareScrollView
@@ -170,10 +174,8 @@ const EditProfile = ({ route, navigation }) => {
     >
       <AppHeader
         title={strings.profile.edit_profile}
-        text=""
-        showAvatar={false}
         headerBack
-        Right={() => (
+        Right={(
           <OutlinedButton
             text={strings.general.save.toUpperCase()}
             disabled={false}
@@ -252,9 +254,9 @@ const EditProfile = ({ route, navigation }) => {
         </View>
       </View>
     </KeyboardAwareScrollView>
-  )
-}
+  );
+};
 
-EditProfile.routeOptions = routeOptions
+EditProfile.routeOptions = routeOptions;
 
-export default EditProfile
+export default EditProfile;

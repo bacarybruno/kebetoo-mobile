@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { systemWeights } from 'react-native-typography'
+import { StyleSheet } from 'react-native';
+import { systemWeights } from 'react-native-typography';
 
 export default (colors) => StyleSheet.create({
   bold: systemWeights.bold,
@@ -14,4 +14,4 @@ export default (colors) => StyleSheet.create({
     textDecorationLine: 'line-through',
     textDecorationStyle: 'solid',
   },
-})
+});

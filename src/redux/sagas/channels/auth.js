@@ -1,14 +1,14 @@
-import { take, call, put } from 'redux-saga/effects'
-import { eventChannel } from 'redux-saga'
-import auth from '@react-native-firebase/auth'
+import { take, call, put } from 'redux-saga/effects';
+import { eventChannel } from 'redux-saga';
+import auth from '@react-native-firebase/auth';
 
-import * as types from '../../types'
+import * as types from '../../types';
 
 function getAuthChannel() {
   if (!this.authChannel) {
     this.authChannel = eventChannel((emit) => {
       const unsubscribe = auth().onUserChanged((user) => {
-        let payload = { isLoggedIn: false }
+        let payload = { isLoggedIn: false };
 
         if (user) {
           payload = {
@@ -20,37 +20,37 @@ function getAuthChannel() {
             displayName: user.displayName,
             providerUid: user.providerData[0].uid,
             provider: user.providerData[0].providerId,
-          }
+          };
         }
 
         if (payload.provider === 'password' && !payload.displayName) {
           // user have been created with email and password
           // but displayName is not yet assigned
           // we wait for the next event that will be assigning displayName to user
-          return
+          return;
         }
 
-        emit({ payload })
-      })
-      return unsubscribe
-    })
+        emit({ payload });
+      });
+      return unsubscribe;
+    });
   }
-  return this.authChannel
+  return this.authChannel;
 }
 
 function* watchForFirebaseAuth() {
-  const authChannel = yield call(getAuthChannel)
+  const authChannel = yield call(getAuthChannel);
   try {
     while (true) {
-      const { payload } = yield take(authChannel)
-      console.log('Received auth event', payload)
-      yield put({ type: types.SET_USER_PROFILE_REQUEST, payload })
+      const { payload } = yield take(authChannel);
+      console.log('Received auth event', payload);
+      yield put({ type: types.SET_USER_PROFILE_REQUEST, payload });
     }
   } catch (error) {
-    console.log('An error occured in auth channel', error)
+    console.log('An error occured in auth channel', error);
   } finally {
-    console.log('Auth channel terminated gracefully')
+    console.log('Auth channel terminated gracefully');
   }
 }
 
-export default watchForFirebaseAuth
+export default watchForFirebaseAuth;

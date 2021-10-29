@@ -6,4 +6,4 @@ module.exports = {
   AccessToken: {
     getCurrentAccessToken: jest.fn().mockReturnValue(Promise.resolve('mock-access-token')),
   },
-}
+};

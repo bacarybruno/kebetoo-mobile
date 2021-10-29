@@ -5,7 +5,7 @@ export const initialState = {
   comments: [],
   replies: {},
   isLoading: false,
-}
+};
 
 export const actionTypes = {
   SET_AUTHORS: 'SET_AUTHORS',
@@ -19,28 +19,28 @@ export const actionTypes = {
   SET_COMMENT: 'SET_COMMENT',
   START_LOADING: 'START_LOADING',
   END_LOADING: 'END_LOADING',
-}
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
     case actionTypes.SET_COMMENTS:
-      return { ...state, comments: action.payload }
+      return { ...state, comments: action.payload };
     case actionTypes.SET_COMMENT:
-      return { ...state, comment: action.payload }
+      return { ...state, comment: action.payload };
     case actionTypes.SET_AUTHORS:
-      return { ...state, authors: action.payload }
+      return { ...state, authors: action.payload };
     case actionTypes.CLEAR_COMMENT:
-      return { ...state, comment: '' }
+      return { ...state, comment: '' };
     case actionTypes.CLEAR_TO_REPLY:
-      return { ...state, toReply: null }
+      return { ...state, toReply: null };
     case actionTypes.ADD_COMMENT:
-      return { ...state, comments: [...state.comments, action.payload] }
+      return { ...state, comments: [...state.comments, action.payload] };
     case actionTypes.SET_TO_REPLY:
-      return { ...state, toReply: action.payload }
+      return { ...state, toReply: action.payload };
     case actionTypes.START_LOADING:
-      return { ...state, isLoading: true }
+      return { ...state, isLoading: true };
     case actionTypes.END_LOADING:
-      return { ...state, isLoading: false }
+      return { ...state, isLoading: false };
     case actionTypes.ADD_REPLIES:
       return {
         ...state,
@@ -50,7 +50,7 @@ const reducer = (state, action) => {
             ...(state.replies[action.payload.threadId] || []).concat(action.payload.replies),
           ],
         },
-      }
+      };
     case actionTypes.SET_REPLIES:
       return {
         ...state,
@@ -58,10 +58,10 @@ const reducer = (state, action) => {
           ...state.replies,
           [action.payload.threadId]: action.payload.replies,
         },
-      }
+      };
     default:
-      throw new Error(`Unknown action type ${action.type} send with payload ${action.payload}`)
+      throw new Error(`Unknown action type ${action.type} send with payload ${action.payload}`);
   }
-}
+};
 
-export default reducer
+export default reducer;

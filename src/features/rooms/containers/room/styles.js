@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
-import { human } from 'react-native-typography'
+import { StyleSheet } from 'react-native';
+import { human } from 'react-native-typography';
 
-import { metrics } from '@app/theme'
-import { hexToRgba, rgbaToHex } from '@app/theme/colors'
-import mdColors from '@app/theme/md-colors'
+import { metrics } from '@app/theme';
+import { hexToRgba, rgbaToHex } from '@app/theme/colors';
+import mdColors from '@app/theme/md-colors';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -99,5 +99,5 @@ export default (colors) => StyleSheet.create({
   messageText: {
     marginHorizontal: metrics.spacing.sm,
     marginVertical: metrics.spacing.xs,
-  }
-})
+  },
+});

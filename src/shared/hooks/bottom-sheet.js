@@ -1,24 +1,24 @@
 /* eslint-disable consistent-return */
-import { useCallback } from 'react'
-import { Keyboard } from 'react-native'
-import { useActionSheet } from '@expo/react-native-action-sheet'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { useCallback } from 'react';
+import { Keyboard } from 'react-native';
+import { useActionSheet } from '@expo/react-native-action-sheet';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { strings } from '@app/config'
-import { rgbaToHex } from '@app/theme/colors'
+import { strings } from '@app/config';
+import { rgbaToHex } from '@app/theme/colors';
 
-import useAppColors from './app-colors'
+import useAppColors from './app-colors';
 
 const createBottomSheetIcon = (color) => (item) => (
   <Ionicon name={item.icon} size={24} color={color} />
-)
+);
 
 const useBottomSheet = () => {
-  const { showActionSheetWithOptions } = useActionSheet()
-  const { colors } = useAppColors()
+  const { showActionSheetWithOptions } = useActionSheet();
+  const { colors } = useAppColors();
 
   const showActionSheet = useCallback((args) => {
-    Keyboard.dismiss()
+    Keyboard.dismiss();
     return (
       new Promise((resolve) => {
         showActionSheetWithOptions({
@@ -28,11 +28,11 @@ const useBottomSheet = () => {
           containerStyle: { backgroundColor: rgbaToHex(colors.backgroundSecondary) },
           ...args,
         }, (index) => {
-          resolve(index)
-        })
+          resolve(index);
+        });
       })
-    )
-  }, [colors, showActionSheetWithOptions])
+    );
+  }, [colors, showActionSheetWithOptions]);
 
   const showFeedPostsOptions = useCallback((post) => {
     const bottomSheetItems = [{
@@ -50,21 +50,21 @@ const useBottomSheet = () => {
     }, {
       title: strings.general.cancel,
       icon: 'md-close',
-    }]
+    }];
 
-    const destructiveButtonIndex = bottomSheetItems.length - 2
+    const destructiveButtonIndex = bottomSheetItems.length - 2;
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map((item, index) => {
         if (index === destructiveButtonIndex) {
-          return createBottomSheetIcon(colors.danger)(item)
+          return createBottomSheetIcon(colors.danger)(item);
         }
-        return createBottomSheetIcon(colors.textPrimary)(item)
+        return createBottomSheetIcon(colors.textPrimary)(item);
       }),
       cancelButtonIndex: bottomSheetItems.length - 1,
       destructiveButtonIndex: bottomSheetItems.length - 2,
-    })
-  }, [colors.danger, colors.textPrimary, showActionSheet])
+    });
+  }, [colors.danger, colors.textPrimary, showActionSheet]);
 
   const showManagePostsOptions = useCallback(() => {
     const bottomSheetItems = [{
@@ -76,21 +76,21 @@ const useBottomSheet = () => {
     }, {
       title: strings.general.cancel,
       icon: 'md-close',
-    }]
+    }];
 
-    const destructiveButtonIndex = bottomSheetItems.length - 2
+    const destructiveButtonIndex = bottomSheetItems.length - 2;
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map((item, index) => {
         if (index === destructiveButtonIndex) {
-          return createBottomSheetIcon(colors.danger)(item)
+          return createBottomSheetIcon(colors.danger)(item);
         }
-        return createBottomSheetIcon(colors.textPrimary)(item)
+        return createBottomSheetIcon(colors.textPrimary)(item);
       }),
       cancelButtonIndex: bottomSheetItems.length - 1,
       destructiveButtonIndex,
-    })
-  }, [colors.textPrimary, showActionSheet])
+    });
+  }, [colors, showActionSheet]);
 
   const showSharePostOptions = useCallback(() => {
     const bottomSheetItems = [{
@@ -102,15 +102,15 @@ const useBottomSheet = () => {
     }, {
       title: strings.general.cancel,
       icon: 'close-outline',
-    }]
+    }];
 
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
       cancelButtonIndex: bottomSheetItems.length - 1,
       title: strings.general.share,
-    })
-  }, [colors.textPrimary, showActionSheet])
+    });
+  }, [colors.textPrimary, showActionSheet]);
 
   const showAppearanceOptions = useCallback(() => {
     const bottomSheetItems = [{
@@ -121,13 +121,13 @@ const useBottomSheet = () => {
       title: strings.profile.light,
     }, {
       title: strings.general.cancel,
-    }]
+    }];
 
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
       cancelButtonIndex: bottomSheetItems.length - 1,
-    })
-  }, [showActionSheet])
+    });
+  }, [showActionSheet]);
 
   const showAvatarOptions = useCallback(() => {
     const bottomSheetItems = [{
@@ -142,14 +142,14 @@ const useBottomSheet = () => {
     }, {
       title: strings.general.cancel,
       icon: 'close-outline',
-    }]
+    }];
 
     return showActionSheet({
       options: bottomSheetItems.map((item) => item.title),
       icons: bottomSheetItems.map(createBottomSheetIcon(colors.textPrimary)),
       cancelButtonIndex: bottomSheetItems.length - 1,
-    })
-  }, [colors.textPrimary, showActionSheet])
+    });
+  }, [colors.textPrimary, showActionSheet]);
 
   return {
     showFeedPostsOptions,
@@ -157,7 +157,7 @@ const useBottomSheet = () => {
     showSharePostOptions,
     showAppearanceOptions,
     showAvatarOptions,
-  }
-}
+  };
+};
 
-export default useBottomSheet
+export default useBottomSheet;

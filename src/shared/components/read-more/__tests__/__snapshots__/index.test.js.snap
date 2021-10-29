@@ -681,7 +681,6 @@ exports[`Reveal renders Reveal 1`] = `
                           },
                           undefined,
                           Object {
-                            "fontSize": 14,
                             "marginTop": 4,
                             "opacity": 0.75,
                           },

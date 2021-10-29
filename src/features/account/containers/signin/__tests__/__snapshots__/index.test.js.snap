@@ -324,7 +324,7 @@ exports[`renders Signin 1`] = `
                         <View
                           style={
                             Object {
-                              "height": 967.5,
+                              "height": 955.5,
                               "justifyContent": "space-between",
                               "maxHeight": 360,
                             }

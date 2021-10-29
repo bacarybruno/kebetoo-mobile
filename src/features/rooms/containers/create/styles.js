@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
-import { human } from 'react-native-typography'
+import { StyleSheet } from 'react-native';
+import { human } from 'react-native-typography';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
 export default (colors) => StyleSheet.create({
   wrapper: {
@@ -54,4 +54,4 @@ export default (colors) => StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-})
+});

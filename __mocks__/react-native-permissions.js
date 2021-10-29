@@ -1,1 +1,1 @@
-export * from 'react-native-permissions/mock'
+export * from 'react-native-permissions/mock';

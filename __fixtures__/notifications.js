@@ -1,9 +1,9 @@
-import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications'
-import { NOTIFICATION_TYPES } from '@app/features/notifications/containers'
+import { NOTIFICATION_STATUS } from '@app/shared/hooks/notifications';
+import { NOTIFICATION_TYPES } from '@app/features/notifications/containers';
 
-import authors from './authors.json'
-import textPost from './posts/text.json'
-import audioPost from './posts/audio.json'
+import authors from './authors.json';
+import textPost from './posts/text.json';
+import audioPost from './posts/audio.json';
 
 const notifications = [{
   id: 'notification-1',
@@ -47,6 +47,6 @@ const notifications = [{
     },
   },
   status: NOTIFICATION_STATUS.OPENED,
-}]
+}];
 
-export default notifications
+export default notifications;

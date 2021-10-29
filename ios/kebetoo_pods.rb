@@ -1,12 +1,12 @@
 def use_kebetoo_pods!()
-    # react-native-permissions
-    permissions_path = '../node_modules/react-native-permissions/ios'
-    pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
-
-    # react-native-google-signin
     pod 'GoogleSignIn', '~> 5.0.2'
-
+    pod 'Permission-Microphone', :path => '../node_modules/react-native-permissions/ios/Microphone'
     pod 'RNConvertPhAsset', :path => '../node_modules/react-native-convert-ph-asset'
+    pod 'react-native-ffmpeg/full-gpl-lts', :podspec => '../node_modules/react-native-ffmpeg/react-native-ffmpeg.podspec'
+end
+
+def use_kebetoo_share_extensions_pods!()
+    pod 'RNShareMenu', :path => '../node_modules/react-native-share-menu'
 end
 
 def react_native_share_menu_post_install(installer)
@@ -17,7 +17,7 @@ def react_native_share_menu_post_install(installer)
     end
     # ref https://medium.com/@khushwanttanwar/xcode-12-compilation-errors-while-running-with-ios-14-simulators-5731c91326e9
     installer.pods_project.build_configurations.each do |config|
-        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
     end
 end
 

@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import defaultStyles from '../styles'
+import defaultStyles from '../styles';
 
 export default (colors) => StyleSheet.create({
   button: {
@@ -14,4 +14,4 @@ export default (colors) => StyleSheet.create({
   loading: {
     ...defaultStyles(colors).loading,
   },
-})
+});

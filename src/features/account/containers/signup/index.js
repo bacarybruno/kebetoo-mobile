@@ -1,23 +1,23 @@
-import { useRef } from 'react'
-import { Linking, View } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useRef } from 'react';
+import { Linking, View } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import {
   Typography, TextInput, PasswordInput, Logo, FullButton,
-} from '@app/shared/components'
-import SocialSignIn from '@app/features/account/components/social-signin'
-import { env, strings } from '@app/config'
-import { metrics } from '@app/theme'
-import { useAppStyles } from '@app/shared/hooks'
+} from '@app/shared/components';
+import SocialSignIn from '@app/features/account/components/social-signin';
+import { env, strings } from '@app/config';
+import { metrics } from '@app/theme';
+import { useAppStyles } from '@app/shared/hooks';
 
-import createThemedStyles from './styles'
-import useSignUp from './hook'
+import createThemedStyles from './styles';
+import useSignUp from './hook';
 
 export const fieldNames = {
   fullName: 'fullName',
   email: 'email',
   password: 'password',
-}
+};
 
 const createKeyword = ({ word, link }) => (
   <Typography
@@ -26,18 +26,18 @@ const createKeyword = ({ word, link }) => (
     color={Typography.colors.link}
     onPress={() => Linking.openURL(link)}
   />
-)
+);
 
 const withKeyword = (string, ...keywords) => (
   strings.formatString(string, ...keywords.map(createKeyword))
-)
+);
 
 const SignUp = ({ navigation }) => {
-  navigation.setOptions({ title: strings.auth.signup })
+  navigation.setOptions({ title: strings.auth.signup });
 
-  const fullNameRef = useRef()
-  const emailRef = useRef()
-  const passwordRef = useRef()
+  const fullNameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const {
     errors,
@@ -50,9 +50,9 @@ const SignUp = ({ navigation }) => {
     onLoading,
     onSubmit,
     validate,
-  } = useSignUp(navigation, emailRef, passwordRef)
+  } = useSignUp(navigation, emailRef, passwordRef);
 
-  const styles = useAppStyles(createThemedStyles)
+  const styles = useAppStyles(createThemedStyles);
 
   return (
     <KeyboardAwareScrollView
@@ -144,7 +144,7 @@ const SignUp = ({ navigation }) => {
         </SocialSignIn>
       </View>
     </KeyboardAwareScrollView>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

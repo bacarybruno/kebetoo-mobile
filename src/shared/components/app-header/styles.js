@@ -1,11 +1,12 @@
-import { metrics } from '@app/theme'
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import Typography from '../typography'
+import { metrics } from '@app/theme';
+
+import Typography from '../typography';
 
 export default StyleSheet.create({
   header: {
-    height: 60,
+    height: metrics.headerHeight,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -30,8 +31,9 @@ export default StyleSheet.create({
   },
   title: {
     flex: 1,
+    // TODO: text shadow and icon shadow
   },
   headerAvatar: {
     marginLeft: metrics.spacing.sm,
   },
-})
+});

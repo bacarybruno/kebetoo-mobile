@@ -25,6 +25,7 @@ const locales = Object.freeze({
     not_implemented_description: 'This feature has not been enabled yet. It will be available in the next versions of Kebetoo.',
     create: 'Create',
     ok: 'Ok',
+    beta: 'Beta',
   },
   onboarding: {
     screen_one_title: 'Join Our Social Media',
@@ -54,11 +55,16 @@ const locales = Object.freeze({
   },
   tabs: {
     home: 'Home',
-    stories: 'Stories',
-    notifications: 'Notifications',
+    stories: 'Virals',
+    notifications: 'Notifs',
     search: 'Search',
     profile: 'Profile',
     rooms: 'Rooms',
+  },
+  tabbar: {
+    create_post: 'Create a Post',
+    create_viral: 'Create a Viral',
+    create_room: 'Create a Room',
   },
   home: {
     welcome: 'Hey {0},',
@@ -176,6 +182,7 @@ const locales = Object.freeze({
     replied_comment: 'replied to your comment',
     no_content: 'Your notifications will appear here',
     new_count: '{0} new',
+    notifications: 'Notifications',
   },
   rooms: {
     created_by: 'Created by {0}',
@@ -196,6 +203,14 @@ const locales = Object.freeze({
     report_room_message: 'I\'m reporting this room because ...',
     exit_room: 'Exit room',
   },
+  virals: {
+    share_title: 'New Kebetoo share',
+    share_message: '{0} shared this Viral with you. See more content like this on Kebetoo Android and iOS apps.',
+    preparing_state: 'Preparing...',
+    preview_state: 'Preview',
+    recording_state: 'Recording...',
+    videos_count: '{0} videos',
+  },
   dates: {
     format_month_year: 'MMMM YYYY',
   },
@@ -214,6 +229,6 @@ const locales = Object.freeze({
     username_taken: 'This username is already taken. Please try another one.',
     username_not_exist: 'This user does not exist',
   },
-})
+});
 
-export default locales
+export default locales;

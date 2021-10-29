@@ -1,35 +1,35 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react';
 import {
   FlatList, ScrollView, TouchableOpacity, View,
-} from 'react-native'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+} from 'react-native';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
 import {
   AppHeader, Avatar, FullButton, TextInput, Typography,
-} from '@app/shared/components'
-import { strings } from '@app/config'
-import { useAppColors, useAppStyles } from '@app/shared/hooks'
-import routes from '@app/navigation/routes'
+} from '@app/shared/components';
+import { strings } from '@app/config';
+import { useAppColors, useAppStyles } from '@app/shared/hooks';
+import routes from '@app/navigation/routes';
+import useRooms from '@app/features/rooms/hooks/rooms';
 
-import createThemedStyles from './styles'
-import useRooms from '../../hooks/rooms'
+import createThemedStyles from './styles';
 
-const routeOptions = { title: strings.create_room.create_room }
+const routeOptions = { title: strings.create_room.create_room };
 
 const ColorPicker = ({ items, selectedItem, onChange = () => { } }) => {
-  const { colors } = useAppColors()
-  const styles = useAppStyles(createThemedStyles)
+  const { colors } = useAppColors();
+  const styles = useAppStyles(createThemedStyles);
 
-  const itemsPerRow = 3
-  const itemSize = 65
+  const itemsPerRow = 3;
+  const itemSize = 65;
 
   const renderColor = useCallback(({ item }) => {
-    const isSelected = selectedItem === item.name
+    const isSelected = selectedItem === item.name;
     const itemStyle = {
       width: itemSize,
       height: itemSize,
       backgroundColor: item.color,
-    }
+    };
     return (
       <TouchableOpacity
         onPress={() => onChange(item.name)}
@@ -39,10 +39,10 @@ const ColorPicker = ({ items, selectedItem, onChange = () => { } }) => {
           <Ionicon name="checkmark-sharp" size={40} color={colors.white} />
         )}
       </TouchableOpacity>
-    )
-  }, [selectedItem, styles.colorPickerItem, colors.white, onChange])
+    );
+  }, [selectedItem, styles.colorPickerItem, colors.white, onChange]);
 
-  const keyExtractor = useCallback((item) => item.name, [])
+  const keyExtractor = useCallback((item) => item.name, []);
 
   return (
     <FlatList
@@ -53,14 +53,14 @@ const ColorPicker = ({ items, selectedItem, onChange = () => { } }) => {
       contentContainerStyle={styles.flatlistContent}
       columnWrapperStyle={styles.flatlistColumn}
     />
-  )
-}
+  );
+};
 
 const CreateRoomPage = ({ navigation }) => {
-  const styles = useAppStyles(createThemedStyles)
-  const [name, setName] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const { colors } = useAppColors()
+  const styles = useAppStyles(createThemedStyles);
+  const [name, setName] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const { colors } = useAppColors();
   const roomColors = [{
     color: colors.blue,
     name: 'blue',
@@ -88,26 +88,21 @@ const CreateRoomPage = ({ navigation }) => {
   }, {
     color: colors.red,
     name: 'red',
-  }]
-  const [color, setColor] = useState(roomColors[0].name)
-  const { createRoom } = useRooms()
+  }];
+  const [color, setColor] = useState(roomColors[0].name);
+  const { createRoom } = useRooms();
 
   const onSubmit = useCallback(async () => {
-    if (!name) return
-    setIsLoading(true)
-    const createdRoom = await createRoom({ name, theme: color })
-    setIsLoading(false)
-    navigation.replace(routes.ROOM, createdRoom)
-  }, [name, createRoom, color, navigation])
+    if (!name) return;
+    setIsLoading(true);
+    const createdRoom = await createRoom({ name, theme: color });
+    setIsLoading(false);
+    navigation.replace(routes.ROOM, createdRoom);
+  }, [name, createRoom, color, navigation]);
 
   return (
     <View style={styles.wrapper}>
-      <AppHeader
-        title={routeOptions.title}
-        text=""
-        showAvatar={false}
-        headerBack
-      />
+      <AppHeader title={routeOptions.title} headerBack />
       <ScrollView style={styles.content}>
         <View style={styles.inputWrapper}>
           <Typography type={Typography.types.headline4} text="" style={styles.label} />
@@ -139,9 +134,9 @@ const CreateRoomPage = ({ navigation }) => {
         disabled={!name}
       />
     </View>
-  )
-}
+  );
+};
 
-CreateRoomPage.routeOptions = routeOptions
+CreateRoomPage.routeOptions = routeOptions;
 
-export default CreateRoomPage
+export default CreateRoomPage;

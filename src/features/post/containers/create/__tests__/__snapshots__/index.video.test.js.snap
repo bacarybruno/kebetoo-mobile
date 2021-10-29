@@ -736,61 +736,6 @@ exports[`renders VideoPreviewer if post has video file 1`] = `
                                   />
                                 </View>
                               </View>
-                              <View
-                                accessible={true}
-                                focusable={true}
-                                hitSlop={
-                                  Object {
-                                    "bottom": 20,
-                                    "left": 20,
-                                    "right": 20,
-                                    "top": 20,
-                                  }
-                                }
-                                onClick={[Function]}
-                                onResponderGrant={[Function]}
-                                onResponderMove={[Function]}
-                                onResponderRelease={[Function]}
-                                onResponderTerminate={[Function]}
-                                onResponderTerminationRequest={[Function]}
-                                onStartShouldSetResponder={[Function]}
-                                style={
-                                  Object {
-                                    "alignItems": "center",
-                                    "backgroundColor": "rgba(199, 199, 204, 255)",
-                                    "borderRadius": 1000,
-                                    "elevation": 2,
-                                    "height": 25,
-                                    "justifyContent": "center",
-                                    "opacity": 1,
-                                    "position": "absolute",
-                                    "right": -10,
-                                    "shadowColor": "rgba(0, 0, 0, 255)",
-                                    "shadowOffset": Object {
-                                      "x": 0,
-                                      "y": 1,
-                                    },
-                                    "shadowOpacity": 0.2,
-                                    "shadowRadius": 1.41,
-                                    "top": -10,
-                                    "width": 25,
-                                  }
-                                }
-                              >
-                                <Text
-                                  allowFontScaling={false}
-                                  style={
-                                    Object {
-                                      "color": "rgba(0,0,0,0.87)",
-                                      "fontFamily": "Ionicons",
-                                      "fontSize": 25,
-                                      "fontStyle": "normal",
-                                      "fontWeight": "normal",
-                                    }
-                                  }
-                                  text="ionicon-ios-close"
-                                />
-                              </View>
                               <Text
                                 allowFontScaling={false}
                                 style={

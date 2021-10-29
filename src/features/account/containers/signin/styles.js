@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-let safeHeight = metrics.screenHeight - metrics.headerHeight
+let safeHeight = metrics.screenHeight - metrics.headerHeight;
 if (metrics.isIPhoneX) {
-  safeHeight -= metrics.screenHeight * 0.1
+  safeHeight -= metrics.screenHeight * 0.1;
 }
 
 export default (colors) => StyleSheet.create({
@@ -35,4 +35,4 @@ export default (colors) => StyleSheet.create({
   keyboard: {
     backgroundColor: colors.background,
   },
-})
+});

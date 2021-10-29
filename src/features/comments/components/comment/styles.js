@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics } from '@app/theme'
+import { metrics } from '@app/theme';
 
-export const bottomBarSize = 45
+export const bottomBarSize = 45;
 
 export default (colors) => StyleSheet.create({
   flexible: {
@@ -37,4 +37,4 @@ export default (colors) => StyleSheet.create({
     alignItems: 'center',
     marginBottom: metrics.spacing.xs,
   },
-})
+});

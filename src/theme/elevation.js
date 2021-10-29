@@ -1,6 +1,6 @@
 // https://github.com/ethercreative/react-native-shadow-generator
 
-import colors from './colors'
+import colors from './colors';
 
 const penumbra = [
   '0px 1px 1px 0px',
@@ -27,17 +27,17 @@ const penumbra = [
   '0px 22px 35px 3px',
   '0px 23px 36px 3px',
   '0px 24px 38px 3px',
-]
+];
 
 const parseShadow = (raw) => {
-  const [x, y, blur] = raw.split(' ').map((val) => val.replace('px', ''))
-  return { x, y, blur }
-}
+  const [x, y, blur] = raw.split(' ').map((val) => val.replace('px', ''));
+  return { x, y, blur };
+};
 
 const interpolate = (i, a, b, a2, b2) => (
   // eslint-disable-next-line no-mixed-operators
   (i - a) * (b2 - a2) / (b - a) + a2
-)
+);
 
 const buildElevation = ({
   x = 0, y = 0, shadowOpacity = 0, shadowRadius = 0, elevation = 0,
@@ -47,18 +47,18 @@ const buildElevation = ({
   shadowOpacity,
   shadowRadius,
   elevation,
-})
+});
 
 const elevation = (value) => {
-  if (value === 0) return buildElevation({})
-  const depth = value - 1
-  const shadow = parseShadow(penumbra[depth])
+  if (value === 0) return buildElevation({});
+  const depth = value - 1;
+  const shadow = parseShadow(penumbra[depth]);
   return buildElevation({
     y: shadow.y === 1 ? 1 : Math.floor(shadow.y * 0.5),
     shadowOpacity: parseFloat(interpolate(depth, 1, 24, 0.2, 0.6).toFixed(2)),
     shadowRadius: parseFloat(interpolate(shadow.blur, 1, 38, 1, 16).toFixed(2)),
     elevation: value,
-  })
-}
+  });
+};
 
-export default elevation
+export default elevation;

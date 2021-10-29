@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { elevation, metrics } from '@app/theme'
+import { elevation, metrics } from '@app/theme';
 
-export const bottomBarSize = 45
+export const bottomBarSize = 45;
 
 const defaultButtonStyle = {
   width: bottomBarSize,
@@ -14,7 +14,7 @@ const defaultButtonStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   ...elevation(2),
-}
+};
 
 export default (colors) => StyleSheet.create({
   send: {
@@ -27,4 +27,4 @@ export default (colors) => StyleSheet.create({
   sendIcon: {
     marginLeft: bottomBarSize / 9,
   },
-})
+});

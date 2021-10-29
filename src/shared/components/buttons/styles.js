@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { metrics, elevation } from '@app/theme'
-import { hexToRgba, rgbaToHex } from '@app/theme/colors'
+import { metrics, elevation } from '@app/theme';
+import { hexToRgba, rgbaToHex } from '@app/theme/colors';
 
 export default (colors) => StyleSheet.create({
   button: {
@@ -22,4 +22,4 @@ export default (colors) => StyleSheet.create({
     position: 'absolute',
     right: metrics.marginHorizontal,
   },
-})
+});

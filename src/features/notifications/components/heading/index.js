@@ -1,8 +1,8 @@
-import { View } from 'react-native'
+import { View } from 'react-native';
 
-import { Badge, Typography } from '@app/shared/components'
+import { Badge, Typography } from '@app/shared/components';
 
-import styles from './styles'
+import styles from './styles';
 
 const Heading = ({ name, value }) => (
   <View style={styles.header}>
@@ -13,6 +13,6 @@ const Heading = ({ name, value }) => (
     />
     <Badge text={value} style={styles.headerBadge} />
   </View>
-)
+);
 
-export default Heading
+export default Heading;

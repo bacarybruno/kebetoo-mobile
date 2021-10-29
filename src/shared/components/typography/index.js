@@ -1,8 +1,8 @@
-import { Text } from 'react-native'
-import { human, systemWeights, material } from 'react-native-typography'
-import Ionicon from 'react-native-vector-icons/Ionicons'
+import { Text } from 'react-native';
+import { human, systemWeights, material } from 'react-native-typography';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import { useAppColors } from '@app/shared/hooks'
+import { useAppColors } from '@app/shared/hooks';
 
 const weights = {
   thin: 'thin',
@@ -10,7 +10,7 @@ const weights = {
   regular: 'regular',
   semibold: 'semibold',
   bold: 'bold',
-}
+};
 
 const colors = {
   primary: 'textPrimary',
@@ -18,7 +18,7 @@ const colors = {
   tertiary: 'textTertiary',
   link: 'link',
   white: 'white',
-}
+};
 
 const fontSizes = {
   tiny: 10,
@@ -28,7 +28,7 @@ const fontSizes = {
   header: 20,
   lg: 24,
   xl: 27,
-}
+};
 
 const types = {
   headline1: 'headline1',
@@ -44,7 +44,7 @@ const types = {
   textButtonLight: 'textButtonLight',
   body: 'body',
   caption: 'caption',
-}
+};
 
 const styles = {
   [types.headline1]: {
@@ -99,41 +99,39 @@ const styles = {
     ...human.caption1,
     ...systemWeights[weights.regular],
   },
-}
+};
 
 const Headline = ({
   children, style, size, ...otherProps
-}) => {
-  return (
-    <Text
-      style={[
-        styles[`headline${size}`],
-        style,
-      ]}
-      {...otherProps}
-    >
-      {children}
-    </Text>
-  )
-}
+}) => (
+  <Text
+    style={[
+      styles[`headline${size}`],
+      style,
+    ]}
+    {...otherProps}
+  >
+    {children}
+  </Text>
+);
 
 const Subheading = ({ children, style, ...otherProps }) => (
   <Text style={[styles.subheading, style]} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const Button = ({ children, style, ...otherProps }) => (
   <Text style={[styles.button, style]} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const Separator = ({ children, style, ...otherProps }) => (
   <Text style={[styles.separator, style]} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const TextButton = ({
   children, style, onPress, ...otherProps
@@ -141,7 +139,7 @@ const TextButton = ({
   <Text style={[styles.textButton, style]} onPress={onPress} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const TextButtonLight = ({
   children, style, onPress, ...otherProps
@@ -149,19 +147,19 @@ const TextButtonLight = ({
   <Text style={[styles.textButtonLight, style]} onPress={onPress} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const Body = ({ children, style, ...otherProps }) => (
   <Text style={[styles.body, style]} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const Caption = ({ children, style, ...otherProps }) => (
   <Text style={[styles.caption, style]} {...otherProps}>
     {children}
   </Text>
-)
+);
 
 const createTypography = (
   text, style, color, onPress, themeColors, hasBadge, defaultProps,
@@ -169,7 +167,7 @@ const createTypography = (
   const { systemWeight, systemColor = colors.primary, ...textProps } = {
     ...props,
     ...defaultProps,
-  }
+  };
   return (
     <Baseline
       style={[
@@ -188,54 +186,56 @@ const createTypography = (
         </>
       )}
     </Baseline>
-  )
-}
+  );
+};
 
 const Typography = ({
   type = types.body, text, style, color, onPress, hasBadge, ...otherProps
 }) => {
-  const { colors: themeColors } = useAppColors()
+  const { colors: themeColors } = useAppColors();
 
-  if (text === null || text === undefined) return null
+  if (text === null || text === undefined) return null;
 
-  const typography = createTypography(text, style, color, onPress, themeColors, hasBadge, otherProps)
+  const typography = createTypography(
+    text, style, color, onPress, themeColors, hasBadge, otherProps,
+  );
 
   switch (type) {
     case types.headline1:
-      return typography(Headline, { size: 1 })
+      return typography(Headline, { size: 1 });
     case types.headline2:
-      return typography(Headline, { size: 2 })
+      return typography(Headline, { size: 2 });
     case types.headline3:
-      return typography(Headline, { size: 3 })
+      return typography(Headline, { size: 3 });
     case types.headline4:
-      return typography(Headline, { size: 4 })
+      return typography(Headline, { size: 4 });
     case types.headline5:
-      return typography(Headline, { size: 5 })
+      return typography(Headline, { size: 5 });
     case types.headline6:
-      return typography(Headline, { size: 6, systemColor: colors.secondary })
+      return typography(Headline, { size: 6, systemColor: colors.secondary });
     case types.subheading:
-      return typography(Subheading)
+      return typography(Subheading);
     case types.button:
-      return typography(Button, { systemColor: colors.white })
+      return typography(Button, { systemColor: colors.white });
     case types.separator:
-      return typography(Separator)
+      return typography(Separator);
     case types.textButton:
-      return typography(TextButton)
+      return typography(TextButton);
     case types.textButtonLight:
-      return typography(TextButtonLight)
+      return typography(TextButtonLight);
     case types.body:
-      return typography(Body)
+      return typography(Body);
     case types.caption:
-      return typography(Caption)
+      return typography(Caption);
     default:
-      return null
+      return null;
   }
-}
+};
 
-Typography.types = types
-Typography.colors = colors
-Typography.weights = weights
-Typography.fontSizes = fontSizes
-Typography.styles = styles
+Typography.types = types;
+Typography.colors = colors;
+Typography.weights = weights;
+Typography.fontSizes = fontSizes;
+Typography.styles = styles;
 
-export default Typography
+export default Typography;

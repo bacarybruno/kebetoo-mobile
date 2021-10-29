@@ -1,86 +1,86 @@
-import { useEffect, useCallback, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import messaging from '@react-native-firebase/messaging'
-import database from '@react-native-firebase/database'
+import { useEffect, useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import messaging from '@react-native-firebase/messaging';
+import database from '@react-native-firebase/database';
 
-import { usePermissions } from '@app/shared/hooks'
-import { notificationsSelector } from '@app/redux/selectors'
-import * as types from '@app/redux/types'
+import { notificationsSelector } from '@app/redux/selectors';
+import { permissions } from '@app/shared/services';
+import * as types from '@app/redux/types';
 
-import useUser from './user'
+import useUser from './user';
 
 export const NOTIFICATION_STATUS = {
   NEW: 'notification_status_new',
   SEEN: 'notification_status_seen',
   OPENED: 'notification_status_opened',
-}
+};
 
-const notificationsPath = '/notifications'
+const notificationsPath = '/notifications';
 
 const useNotifications = () => {
-  const permissions = usePermissions()
-  const dispatch = useDispatch()
-  const [notificationsRef] = useState(database().ref(notificationsPath))
-  const { profile } = useUser()
+  const dispatch = useDispatch();
+  const [notificationsRef] = useState(database().ref(notificationsPath));
+  const { profile } = useUser();
 
-  const notifications = useSelector(notificationsSelector)
+  const notifications = useSelector(notificationsSelector);
 
-  const [newItems, setNewItems] = useState([])
-  const [seenItems, setSeenItems] = useState([])
-  const [badgeCount, setBadgeCount] = useState(0)
+  const [newItems, setNewItems] = useState([]);
+  const [seenItems, setSeenItems] = useState([]);
+  const [badgeCount, setBadgeCount] = useState(0);
 
   useEffect(() => {
-    const newNotifications = []
-    const seenNotifications = []
-    const notifsBadgeItems = []
+    const newNotifications = [];
+    const seenNotifications = [];
+    const notifsBadgeItems = [];
 
-    const sortNotifications = (notifA, notifB) => notifB.time - notifA.time
+    const sortNotifications = (notifA, notifB) => notifB.time - notifA.time;
 
     notifications
       .sort(sortNotifications)
       .forEach((notif) => {
         switch (notif.status) {
           case NOTIFICATION_STATUS.NEW:
-            newNotifications.push(notif)
-            notifsBadgeItems.push(notif)
-            break
+            newNotifications.push(notif);
+            notifsBadgeItems.push(notif);
+            break;
           case NOTIFICATION_STATUS.OPENED:
-            seenNotifications.push(notif)
-            break
+            seenNotifications.push(notif);
+            break;
           case NOTIFICATION_STATUS.SEEN:
-            seenNotifications.push(notif)
-            notifsBadgeItems.push(notif)
-            break
+            seenNotifications.push(notif);
+            notifsBadgeItems.push(notif);
+            break;
           default:
-            break
+            break;
         }
-      })
+      });
 
-    setNewItems(newNotifications)
-    setSeenItems(seenNotifications)
-    setBadgeCount(notifsBadgeItems.length)
-  }, [notifications])
+    setNewItems(newNotifications);
+    setSeenItems(seenNotifications);
+    setBadgeCount(notifsBadgeItems.length);
+  }, [notifications]);
+
+  const persistNotification = useCallback((notification) => {
+    dispatch({ type: types.ADD_NOTIFICATION, payload: notification });
+  }, [dispatch]);
 
   const fetchPendingNotifications = useCallback(async () => {
-    const pendingNotifications = (await notificationsRef.child(profile.uid).once('value')).val()
+    const pendingNotifications = (await notificationsRef.child(profile.uid).once('value')).val();
     // persist notifications
     Object.values(pendingNotifications).forEach((pendingNotification) => {
       // only if it isn't already persisted
-      if (!notifications.some((notification) => notification.id === pendingNotification.messageId)) {
-        persistNotification(pendingNotification)
+      if (!notifications.some((notif) => notif.id === pendingNotification.messageId)) {
+        persistNotification(pendingNotification);
       }
-    })
+    });
 
     // delete notifications because we've already processed them
     const deletePromises = Object.keys(pendingNotifications).map((notificationId) => (
-      database().ref(notificationsPath).child(profile.uid).child(notificationId).remove()
-    ))
-    await Promise.all(deletePromises)
-  }, [profile.uid, persistNotification])
-
-  const persistNotification = useCallback((notification) => {
-    dispatch({ type: types.ADD_NOTIFICATION, payload: notification })
-  }, [dispatch])
+      database().ref(notificationsPath).child(profile.uid).child(notificationId)
+        .remove()
+    ));
+    await Promise.all(deletePromises);
+  }, [notificationsRef, profile.uid, notifications, persistNotification]);
 
   const updateSeenStatus = useCallback(() => {
     newItems.forEach((newItem) => {
@@ -90,9 +90,9 @@ const useNotifications = () => {
           id: newItem.id,
           status: NOTIFICATION_STATUS.SEEN,
         },
-      })
-    })
-  }, [dispatch, newItems])
+      });
+    });
+  }, [dispatch, newItems]);
 
   const updateOpenStatus = useCallback((id) => {
     dispatch({
@@ -101,16 +101,16 @@ const useNotifications = () => {
         id,
         status: NOTIFICATION_STATUS.OPENED,
       },
-    })
-  }, [dispatch])
+    });
+  }, [dispatch]);
 
   const setupNotifications = useCallback(async () => {
-    const hasPermissions = await permissions.notifications()
-    const alreadyRegistered = messaging().isDeviceRegisteredForRemoteMessages
+    const hasPermissions = await permissions.notifications();
+    const alreadyRegistered = messaging().isDeviceRegisteredForRemoteMessages;
     if (hasPermissions && !alreadyRegistered) {
-      await messaging().registerDeviceForRemoteMessages()
+      await messaging().registerDeviceForRemoteMessages();
     }
-  }, [permissions])
+  }, []);
 
   return {
     newItems,
@@ -123,7 +123,7 @@ const useNotifications = () => {
     setupNotifications,
     persistNotification,
     fetchPendingNotifications,
-  }
-}
+  };
+};
 
-export default useNotifications
+export default useNotifications;
